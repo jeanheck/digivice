@@ -1,4 +1,4 @@
-import type { DigimonSlot } from "@/models/party/digimon-slot";
+import type { DigimonSlot } from "@/models";
 
 export class PartyPresenter {
   public static getFilledSlots(slots: DigimonSlot[]): DigimonSlot[] {

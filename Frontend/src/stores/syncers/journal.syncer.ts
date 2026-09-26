@@ -1,9 +1,10 @@
 import type { Journal, Quest } from "@/models";
-import type * as Events from "@/events/events.map";
+import type { JournalDTO } from "@/events/dto/journal.dto";
+import type { QuestDTO } from "@/events/dto/journals/quest.dto";
 import { QuestSyncer } from "./journals/quest.syncer";
 
 export class JournalSyncer {
-  public static sync(previousJournal: Journal, newJournalDto: Events.JournalDTO): void {
+  public static sync(previousJournal: Journal, newJournalDto: JournalDTO): void {
     if (newJournalDto.mainQuest !== undefined) {
       QuestSyncer.sync(previousJournal.mainQuest, newJournalDto.mainQuest);
     }
@@ -14,7 +15,7 @@ export class JournalSyncer {
     this.syncQuests(previousJournal.duelIsland, newJournalDto.duelIsland);
   }
 
-  private static syncQuests(previousQuests: Quest[], newQuestDtos: Events.QuestDTO[] | undefined): void {
+  private static syncQuests(previousQuests: Quest[], newQuestDtos: QuestDTO[] | undefined): void {
     if (!newQuestDtos) {
       return;
     }

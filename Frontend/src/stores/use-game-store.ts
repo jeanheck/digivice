@@ -1,8 +1,16 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-import type { State } from "@/models";
-import type * as Events from "@/events/events.map";
-import { HealthStatus } from "@/models/health-status";
+import { HealthStatus, type State } from "@/models";
+import type { HealthDTO } from "@/events/dto/health.dto";
+import type { StateDTO } from "@/events/dto/state.dto";
+import type { PlayerDTO } from "@/events/dto/player.dto";
+import type { ImportantItemsDTO } from "@/events/dto/important-items.dto";
+import type { PartyDTO } from "@/events/dto/party.dto";
+import type { DigimonBattleDTO } from "@/events/dto/digimon-battle.dto";
+import type { CardBattleDTO } from "@/events/dto/card-battle.dto";
+import type { AuctionsDTO } from "@/events/dto/auctions.dto";
+import type { NpcsDTO } from "@/events/dto/npcs.dto";
+import type { JournalDTO } from "@/events/dto/journal.dto";
 import { storeLogger } from "@/events/logger";
 import { PlayerConverter } from "@/events/converters/player.converter";
 import { ImportantItemsConverter } from "@/events/converters/important-items.converter";
@@ -66,7 +74,7 @@ export const useGameStore = defineStore("game", () => {
     }
   }
 
-  function syncHealth(healthDto: Events.HealthDTO): void {
+  function syncHealth(healthDto: HealthDTO): void {
     healthStatus.value = healthDto.status;
 
     if (healthDto.status === HealthStatus.Healthy) {
@@ -86,7 +94,7 @@ export const useGameStore = defineStore("game", () => {
     lastErrorDetail.value = healthDto.errorDetail;
   }
 
-  function setInitialState(state: Events.StateDTO): void {
+  function setInitialState(state: StateDTO): void {
     currentState.value = {
       player: PlayerConverter.convert(state.player),
       importantItems: ImportantItemsConverter.convert(state.importantItems),
@@ -109,7 +117,7 @@ export const useGameStore = defineStore("game", () => {
     return state;
   }
 
-  function syncPlayer(newPlayerDto: Events.PlayerDTO): void {
+  function syncPlayer(newPlayerDto: PlayerDTO): void {
     const state = getStateOrWarn("PlayerChanged");
     if (!state) {
       return;
@@ -118,7 +126,7 @@ export const useGameStore = defineStore("game", () => {
     PlayerSyncer.sync(state.player, newPlayerDto);
   }
 
-  function syncImportantItems(newImportantItemsDto: Events.ImportantItemsDTO): void {
+  function syncImportantItems(newImportantItemsDto: ImportantItemsDTO): void {
     const state = getStateOrWarn("ImportantItemsChanged");
     if (!state) {
       return;
@@ -127,7 +135,7 @@ export const useGameStore = defineStore("game", () => {
     ImportantItemsSyncer.sync(state.importantItems, newImportantItemsDto);
   }
 
-  function syncJournal(newJournalDto: Events.JournalDTO): void {
+  function syncJournal(newJournalDto: JournalDTO): void {
     const state = getStateOrWarn("JournalChanged");
     if (!state) {
       return;
@@ -136,7 +144,7 @@ export const useGameStore = defineStore("game", () => {
     JournalSyncer.sync(state.journal, newJournalDto);
   }
 
-  function syncParty(newPartyDto: Events.PartyDTO): void {
+  function syncParty(newPartyDto: PartyDTO): void {
     const state = getStateOrWarn("PartyChanged");
     if (!state) {
       return;
@@ -145,7 +153,7 @@ export const useGameStore = defineStore("game", () => {
     PartySyncer.sync(state.party, newPartyDto);
   }
 
-  function syncDigimonBattle(newDigimonBattleDto: Events.DigimonBattleDTO): void {
+  function syncDigimonBattle(newDigimonBattleDto: DigimonBattleDTO): void {
     const state = getStateOrWarn("DigimonBattleChanged");
     if (!state) {
       return;
@@ -154,7 +162,7 @@ export const useGameStore = defineStore("game", () => {
     DigimonBattleSyncer.sync(state.digimonBattle, newDigimonBattleDto);
   }
 
-  function syncCardBattle(newCardBattleDto: Events.CardBattleDTO): void {
+  function syncCardBattle(newCardBattleDto: CardBattleDTO): void {
     const state = getStateOrWarn("CardBattleChanged");
     if (!state) {
       return;
@@ -163,7 +171,7 @@ export const useGameStore = defineStore("game", () => {
     CardBattleSyncer.sync(state.cardBattle, newCardBattleDto);
   }
 
-  function syncAuctions(newAuctionsDto: Events.AuctionsDTO): void {
+  function syncAuctions(newAuctionsDto: AuctionsDTO): void {
     const state = getStateOrWarn("AuctionsChanged");
     if (!state) {
       return;
@@ -172,7 +180,7 @@ export const useGameStore = defineStore("game", () => {
     AuctionsSyncer.sync(state.auctions, newAuctionsDto);
   }
 
-  function syncNpcs(newNpcsDto: Events.NpcsDTO): void {
+  function syncNpcs(newNpcsDto: NpcsDTO): void {
     const state = getStateOrWarn("NpcsChanged");
     if (!state) {
       return;

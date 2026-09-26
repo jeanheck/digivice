@@ -1,8 +1,8 @@
-import type { Auctions } from "@/models/auctions";
-import type * as Events from "@/events/events.map";
+import type { Auctions } from "@/models";
+import type { AuctionsDTO } from "@/events/dto/auctions.dto";
 
 export class AuctionsSyncer {
-  public static sync(previousAuctions: Auctions, newAuctionsDto: Events.AuctionsDTO): void {
+  public static sync(previousAuctions: Auctions, newAuctionsDto: AuctionsDTO): void {
     if (newAuctionsDto.divineBarrier !== undefined) {
       previousAuctions.divineBarrier = newAuctionsDto.divineBarrier;
     }

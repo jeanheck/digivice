@@ -1,6 +1,6 @@
 import type { DeepRequired } from "@/events/dto/deep-required";
 import type { AttributesDTO } from "@/events/dto/parties/digimons/attributes.dto";
-import type { Attributes } from "@/models/party/digimon/attributes";
+import type { Attributes } from "@/models";
 
 export class AttributesConverter {
   public static convert(attributesDto: DeepRequired<AttributesDTO>): Attributes {

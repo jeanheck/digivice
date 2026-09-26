@@ -1,6 +1,5 @@
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
-import type { Enemy } from "@/models/battle/enemy";
-import type { Vital } from "@/models/party/digimon/vital";
+import type { Enemy, Vital } from "@/models";
 import { DigimonBattleConverter } from "@/presenters/converter/digimon-battle.converter";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { DigimonService } from "@/services/digimon.service";

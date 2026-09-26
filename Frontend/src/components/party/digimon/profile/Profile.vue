@@ -10,7 +10,7 @@ import DigievolutionsButton from "@/components/party/digimon/profile/Digievoluti
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
-import type { Digimon } from "@/models/party/digimon/digimon.ts";
+import type { Digimon } from "@/models";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { useGameState } from "@/composables/use-game-state";

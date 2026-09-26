@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
-import type { Vital } from "@/models/party/digimon/vital";
+import type { Vital } from "@/models";
 import { DigimonBattleEnemyStatusPresenter } from "@/presenters/map/digimon-battle-enemy-status.presenter";
 
 const props = defineProps<{

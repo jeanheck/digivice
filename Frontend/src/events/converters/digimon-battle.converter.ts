@@ -1,6 +1,6 @@
 import type { DeepRequired } from "@/events/dto/deep-required";
 import type { DigimonBattleDTO } from "@/events/dto/digimon-battle.dto";
-import type { DigimonBattle } from "@/models/digimon-battle";
+import type { DigimonBattle } from "@/models";
 import { EnemyConverter } from "./battles/enemy.converter";
 
 export class DigimonBattleConverter {

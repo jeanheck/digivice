@@ -1,5 +1,5 @@
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
-import type { Vital } from "@/models/party/digimon/vital";
+import type { Vital } from "@/models";
 
 export class DigimonService {
   public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {

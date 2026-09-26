@@ -1,7 +1,7 @@
 import { computed } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
-import { HealthStatus } from "@/models/health-status";
-import type { AppHealthyScreenViewModel } from "@/models/app-healthy-screen";
+import { HealthStatus } from "@/models";
+import type { AppHealthyScreenViewModel } from "@/viewmodels/app-healthy/app-healthy-screen.viewmodel";
 import { EmulatorConnectionErrorHelper } from "@/events/helpers/emulator-connection-error.helper";
 
 export function useAppHealthyScreen() {

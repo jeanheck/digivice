@@ -1,6 +1,6 @@
 import type { DeepRequired } from "@/events/dto/deep-required";
 import type { AuctionsDTO } from "@/events/dto/auctions.dto";
-import type { Auctions } from "@/models/auctions";
+import type { Auctions } from "@/models";
 
 export class AuctionsConverter {
   public static convert(auctionsDto: DeepRequired<AuctionsDTO>): Auctions {

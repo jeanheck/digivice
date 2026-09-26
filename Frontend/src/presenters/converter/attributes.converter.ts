@@ -1,4 +1,4 @@
-import type { Attributes } from "@/models/party/digimon/attributes";
+import type { Attributes } from "@/models";
 import { StatConverter } from "@/presenters/converter/stat.converter";
 import type { AttributesViewModel } from "@/viewmodels/digimon/attributes.viewmodel";
 import type { DigievolutionAttributesViewModel } from "@/viewmodels/digievolution/digievolution-attributes.viewmodel";

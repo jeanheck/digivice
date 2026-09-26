@@ -23,3 +23,4 @@ export * from "./party/digimon/resistances";
 export * from "./state";
 export * from "./journal/step";
 export * from "./party/digimon/vital";
+export * from "./health-status";

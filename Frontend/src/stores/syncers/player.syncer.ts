@@ -1,8 +1,8 @@
 import type { Player } from "@/models";
-import type * as Events from "@/events/events.map";
+import type { PlayerDTO } from "@/events/dto/player.dto";
 
 export class PlayerSyncer {
-  public static sync(previousPlayer: Player, newPlayerDto: Events.PlayerDTO): void {
+  public static sync(previousPlayer: Player, newPlayerDto: PlayerDTO): void {
     if (newPlayerDto.bits !== undefined) {
       previousPlayer.bits = newPlayerDto.bits;
     }

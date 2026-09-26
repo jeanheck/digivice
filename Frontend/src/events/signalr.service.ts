@@ -1,6 +1,7 @@
 import * as signalR from "@microsoft/signalr";
 import { invoke } from "@tauri-apps/api/core";
-import type { EventDTO, EventsMap } from "./events.map";
+import type { EventsMap } from "./events.map";
+import type { EventDTO } from "./dto/event.dto";
 import { signalRLogger } from "./logger";
 import { APP_CONFIG } from "@/config";
 import { formatHubConnectionError } from "./hub-connection-error";

@@ -1,34 +1,3 @@
-// Export everything from individual modular files in dto folder
-export type { EventDTO } from "./dto/event.dto";
-export type { PlayerDTO } from "./dto/player.dto";
-export type { ImportantItemsDTO } from "./dto/important-items.dto";
-export type { HealthDTO } from "./dto/health.dto";
-export type { PartyDTO } from "./dto/party.dto";
-export type { DigimonBattleDTO } from "./dto/digimon-battle.dto";
-export type { CardBattleDTO } from "./dto/card-battle.dto";
-export type { EnemyDTO } from "./dto/battles/enemy.dto";
-export type { AuctionsDTO } from "./dto/auctions.dto";
-export type { NpcsDTO } from "./dto/npcs.dto";
-export type { JournalDTO } from "./dto/journal.dto";
-export type { StateDTO } from "./dto/state.dto";
-
-export type { NpcDTO } from "./dto/npcs/npc.dto";
-export type { NpcBattleDTO } from "./dto/npcs/npc-battle.dto";
-export type { QuestDTO } from "./dto/journals/quest.dto";
-export type { RequisiteDTO } from "./dto/journals/quests/requisite.dto";
-export type { StepDTO } from "./dto/journals/quests/step.dto";
-
-export type { DigimonDTO } from "./dto/parties/digimon.dto";
-export type { DigimonSlotDTO } from "./dto/parties/digimon-slot.dto";
-export type { VitalDTO } from "./dto/parties/digimons/vital.dto";
-export type { AttributesDTO } from "./dto/parties/digimons/attributes.dto";
-export type { ResistancesDTO } from "./dto/parties/digimons/resistances.dto";
-export type { EquipmentsDTO } from "./dto/parties/digimons/equipments.dto";
-export type { DigievolutionDTO } from "./dto/parties/digimons/digievolution.dto";
-export type { DigievolutionSlotDTO } from "./dto/parties/digimons/digievolution-slot.dto";
-export type { StoredDigievolutionDTO } from "./dto/parties/digimons/stored-digievolution.dto";
-
-// Import local types to define the main Event DTO Map
 import type { HealthDTO } from "./dto/health.dto";
 import type { StateDTO } from "./dto/state.dto";
 import type { PlayerDTO } from "./dto/player.dto";

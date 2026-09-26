@@ -1,8 +1,4 @@
-export type AppHealthyScreenKind =
-  | "loading"
-  | "sidecar-crashed"
-  | "hub-unreachable"
-  | "operational-error";
+import type { AppHealthyScreenKind } from "./app-healthy-screen-kind.viewmodel";
 
 export interface AppHealthyScreenViewModel {
   kind: AppHealthyScreenKind;

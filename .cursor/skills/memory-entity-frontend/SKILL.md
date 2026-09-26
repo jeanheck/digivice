@@ -28,7 +28,7 @@ Paths under `Frontend/src/`. Property name = backend JSON camelCase (`{entity}`)
 
 - [ ] `events/dto/{entity}.dto.ts` — `export interface {Entity}DTO` with **optional** props (`field?: type`); nested DTOs in a kebab subfolder
 - [ ] `events/dto/state.dto.ts` — `{entity}: DeepRequired<{Entity}DTO>;` (never null)
-- [ ] `events/events.map.ts` — `export type { {Entity}DTO }`, import, and `{Entity}Changed: {Entity}DTO;` in `EventsMap`
+- [ ] `events/events.map.ts` — import and `{Entity}Changed: {Entity}DTO;` in `EventsMap` (no DTO reexports; consumers import from `@/events/dto/...`)
 
 ### 2. Model
 

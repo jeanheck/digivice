@@ -1,4 +1,4 @@
-import { HealthStatus } from "@/models/health-status";
+import { HealthStatus } from "@/models";
 
 export interface HealthDTO {
   status: HealthStatus;

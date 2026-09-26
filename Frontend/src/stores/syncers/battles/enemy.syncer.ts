@@ -1,5 +1,5 @@
 import type { EnemyDTO } from "@/events/dto/battles/enemy.dto";
-import type { Enemy } from "@/models/battle/enemy";
+import type { Enemy } from "@/models";
 import { VitalSyncer } from "@/stores/syncers/parties/digimons/vital.syncer";
 
 export class EnemySyncer {

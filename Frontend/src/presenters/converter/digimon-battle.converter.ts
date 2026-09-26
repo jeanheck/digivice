@@ -2,7 +2,7 @@ import { ImageCatalog } from "@/catalogs/image.catalog";
 import { EnemySourceConstant } from "@/constants/enemy-source.constant";
 import { IconConstant } from "@/constants/icon.constant";
 import { toSpeciesConstant } from "@/constants/species.constant";
-import type { Vital } from "@/models/party/digimon/vital";
+import type { Vital } from "@/models";
 import { EnemyConditionConverter } from "@/presenters/converter/enemy-condition.converter";
 import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";

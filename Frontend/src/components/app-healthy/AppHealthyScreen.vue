@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import type { AppHealthyScreenViewModel } from "@/models/app-healthy-screen";
+import type { AppHealthyScreenViewModel } from "@/viewmodels/app-healthy/app-healthy-screen.viewmodel";
 
 const props = defineProps<{
   viewModel: AppHealthyScreenViewModel;
