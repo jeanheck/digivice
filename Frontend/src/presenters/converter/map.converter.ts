@@ -1,4 +1,4 @@
-import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { ImageCatalog } from "@/catalogs/image.catalog";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import type { LocationRaw } from "@/repositories/tables/raws/location/location.raw";
 import type { MapViewModel } from "@/viewmodels/map/map.viewmodel";

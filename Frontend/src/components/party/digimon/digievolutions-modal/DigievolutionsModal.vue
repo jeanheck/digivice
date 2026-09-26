@@ -5,7 +5,7 @@ import Modal from "@/components/modal/Modal.vue";
 import Tree from "./tree/Tree.vue";
 import DigievolutionTechniques from "@/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
-import { DigievolutionsModalPresenter } from "@/presenters/digievolution/digievolutions-modal.presenter.ts";
+import { DigievolutionsModalPresenter } from "@/presenters/digievolution/digievolutions-modal.presenter";
 import { useI18n } from "vue-i18n";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 

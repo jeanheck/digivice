@@ -4,7 +4,7 @@ import type { Equipments } from "@/models";
 import Equipment from "./Equipment.vue";
 import EquipmentsTooltip from "./EquipmentsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { EquipmentsPresenter } from "@/presenters/party/digimon/equipments.presenter.ts";
+import { EquipmentsPresenter } from "@/presenters/party/digimon/equipments.presenter";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = defineProps<{

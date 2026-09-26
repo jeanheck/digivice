@@ -2,13 +2,13 @@
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import type { Digimon } from "@/models";
-import { Constant } from "@/constants/constant.ts";
+import { Constant } from "@/constants/constant";
 import Stat from "./Stat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { StatsPresenter } from "@/presenters/party/digimon/stats.presenter.ts";
+import { StatsPresenter } from "@/presenters/party/digimon/stats.presenter";
 import { useGameState } from "@/composables/use-game-state";
 
 const props = defineProps<{

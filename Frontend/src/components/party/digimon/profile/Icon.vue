@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 
 const props = defineProps<{

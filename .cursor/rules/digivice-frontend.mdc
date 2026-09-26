@@ -15,7 +15,7 @@ Regras especializadas por pasta:
 
 1. Sempre `;` no fim das instruções.
 2. Prefira aspas duplas `"` em strings.
-3. Importações com `@/` (ex.: `@/models/`) em vez de caminhos relativos longos.
+3. Importações com `@/` (ex.: `@/models`, `@/presenters/map/map.presenter`) em vez de caminhos relativos longos; sem extensão `.ts` (`.vue` mantém a extensão).
 4. Arquivos kebab-case com sufixo de papel (`.converter.ts`, `.dto.ts`, `.viewmodel.ts`, `.presenter.ts`, `.service.ts`, `.repository.ts`, `.syncer.ts`, `.selector.ts`, `.extensions.ts`); classes/tipos PascalCase.
 5. **Converters:** classe `{AlgumaCoisa}Converter`; arquivo `{alguma-coisa}.converter.ts`; API pública estática `convert` (helpers privados permitidos). Dois contextos, pastas distintas:
    - `events/converters/` — DTO (SignalR) → Model (Pinia)

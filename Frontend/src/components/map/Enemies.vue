@@ -4,7 +4,7 @@ import { IconConstant } from "@/constants/icon.constant";
 import { EnemySourceConstant } from "@/constants/enemy-source.constant";
 import { NpcBattleIconConstant } from "@/constants/npc-battle-icon.constant";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
-import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
+import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter";
 import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
 
 const props = withDefaults(

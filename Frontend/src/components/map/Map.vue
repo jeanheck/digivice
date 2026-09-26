@@ -8,7 +8,7 @@ import WikiModal from "@/components/wiki-modal/WikiModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameState } from "@/composables/use-game-state";
-import { MapPresenter } from "@/presenters/map/map.presenter.ts";
+import { MapPresenter } from "@/presenters/map/map.presenter";
 
 const gameState = useGameState();
 

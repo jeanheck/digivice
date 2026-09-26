@@ -8,7 +8,7 @@ import DesertExitNorth from "./DesertExitNorth.vue";
 import DesertExitEast from "./DesertExitEast.vue";
 import DesertExitSouth from "./DesertExitSouth.vue";
 import { useGameState } from "@/composables/use-game-state";
-import { MobiusDesertMapPresenter } from "@/presenters/map/mobius-desert-map.presenter.ts";
+import { MobiusDesertMapPresenter } from "@/presenters/map/mobius-desert-map.presenter";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 
 const emit = defineEmits<{
