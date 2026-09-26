@@ -1,6 +1,7 @@
 namespace Tests.Events.Converters;
 
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Backend.Events.DTO;
 using Backend.Events.DTO.Interfaces;
 using Backend.Events.Models;
@@ -26,6 +27,20 @@ public class DtoRuntimeTypeJsonConverterTests
         Assert.True(payload.EnumerateObject().Any(), "Payload must not serialize as empty object {}");
         Assert.Equal(200, payload.GetProperty("Bits").GetInt32());
         Assert.Equal("00AF", payload.GetProperty("MapId").GetString());
+    }
+
+    [Fact]
+    public void Serialize_Event_ShouldWriteTypeAsString_WhenStringEnumConverterIsRegistered()
+    {
+        var ev = new Event(EventType.PlayerChanged, new PlayerDTO { Bits = 200 });
+        var options = new JsonSerializerOptions { Converters = { new JsonStringEnumConverter() } };
+
+        var json = JsonSerializer.Serialize(ev, options);
+        using var document = JsonDocument.Parse(json);
+        var type = document.RootElement.GetProperty("Type");
+
+        Assert.Equal(JsonValueKind.String, type.ValueKind);
+        Assert.Equal("PlayerChanged", type.GetString());
     }
 
     [Fact]
