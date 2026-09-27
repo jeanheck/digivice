@@ -70,7 +70,7 @@ graph TD
 - **DVEXP:** valor **acumulado**, nunca zera. Cada 10 de DVEXP = 1 nível, para **qualquer** digievolução (sem tabela individual). Progresso dentro do nível = `dvexp % 10` (0–9), calculado no `DigievolutionSelector`. RAM negativa → `0` no `DigievolutionSlotAssembler`. Nome canônico **DVEXP** (`Dvexp` em C#, `dvexp` em TS/JSON); não usar `dvxp`.
 - **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0`, inclusive sentinela `0xFFFF`, → `null`; não usar `0` como “vazio” no contrato).
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
-- Técnicas por `digievolutionId` em JSON estático (`digievolution-technique.json`); assinatura = maior `learnAt`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
+- Técnicas no campo `techniques` de cada entrada do `digievolution.json`; assinatura = maior `learnAt`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
 - Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
 - Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE (`BlastAddress` em `DigimonsAddresses.json`).
 
