@@ -1,7 +1,7 @@
 import type { Auctions, Quest } from "@/models";
 import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import { AuctionRepository } from "@/repositories/auction.repository";
-import type { AuctionStepsRaw } from "@/repositories/tables/raws/auction/auction-steps.raw";
+import type { MainQuestAvailabilityWindowRaw } from "@/repositories/tables/raws/auction/main-quest-availability-window.raw";
 import { QuestService } from "@/services/quest.service";
 import type { AuctionStatus } from "@/types/auction-status.type";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
@@ -21,7 +21,7 @@ export class AuctionService {
     return AuctionRepository.getAuctions().map((auctionRaw) => {
       const hasParticipated = auctions[auctionRaw.id as keyof Auctions] ?? false;
       const auctionStatus = this.getCalculatedAuctionStatus(
-        auctionRaw.steps,
+        auctionRaw.mainQuestAvailabilityWindow,
         lastCompletedMainQuestStep,
         hasParticipated,
       );
@@ -31,17 +31,20 @@ export class AuctionService {
   }
 
   private static getCalculatedAuctionStatus(
-    steps: AuctionStepsRaw,
+    mainQuestAvailabilityWindow: MainQuestAvailabilityWindowRaw,
     lastCompletedStep: number,
     hasParticipated: boolean,
   ): AuctionStatus {
     if (hasParticipated) {
       return "participated";
     }
-    if (lastCompletedStep < steps.startsWhenComplete) {
+    if (lastCompletedStep < mainQuestAvailabilityWindow.starts) {
       return "notYetOccurred";
     }
-    if (lastCompletedStep >= steps.startsWhenComplete && lastCompletedStep < steps.endsWhenComplete) {
+    if (
+      lastCompletedStep >= mainQuestAvailabilityWindow.starts &&
+      lastCompletedStep < mainQuestAvailabilityWindow.ends
+    ) {
       return "available";
     }
 

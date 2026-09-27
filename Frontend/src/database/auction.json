@@ -2,51 +2,51 @@
   {
     "id": "divineBarrier",
     "equipmentId": "281",
-    "steps": {
-      "startsWhenComplete": 4,
-      "endsWhenComplete": 6
+    "mainQuestAvailabilityWindow": {
+      "starts": 4,
+      "ends": 6
     },
-    "price": 800,
+    "bid": 800,
     "resale": 11000
   },
   {
     "id": "hazardShield",
     "equipmentId": "287",
-    "steps": {
-      "startsWhenComplete": 15,
-      "endsWhenComplete": 23
+    "mainQuestAvailabilityWindow": {
+      "starts": 15,
+      "ends": 23
     },
-    "price": 800,
+    "bid": 800,
     "resale": 11000
   },
   {
     "id": "sniperShield",
     "equipmentId": "282",
-    "steps": {
-      "startsWhenComplete": 28,
-      "endsWhenComplete": 34
+    "mainQuestAvailabilityWindow": {
+      "starts": 28,
+      "ends": 34
     },
-    "price": 1600,
+    "bid": 1600,
     "resale": 11000
   },
   {
     "id": "dramonShield",
     "equipmentId": "288",
-    "steps": {
-      "startsWhenComplete": 36,
-      "endsWhenComplete": 42
+    "mainQuestAvailabilityWindow": {
+      "starts": 36,
+      "ends": 42
     },
-    "price": 1600,
+    "bid": 1600,
     "resale": 11000
   },
   {
     "id": "yinYangWand",
     "equipmentId": "137",
-    "steps": {
-      "startsWhenComplete": 47,
-      "endsWhenComplete": 48
+    "mainQuestAvailabilityWindow": {
+      "starts": 47,
+      "ends": 48
     },
-    "price": 2700,
+    "bid": 2700,
     "resale": 30000
   }
 ]

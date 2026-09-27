@@ -8,7 +8,7 @@ export class AuctionConverter {
       id: auctionRaw.id,
       equipmentId: Number(auctionRaw.equipmentId),
       status,
-      price: auctionRaw.price,
+      bid: auctionRaw.bid,
       resale: auctionRaw.resale,
     };
   }

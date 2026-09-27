@@ -41,8 +41,8 @@ const closesWhenText = computed(() => {
 
       <div class="flex flex-wrap gap-x-4 gap-y-1 pt-1">
         <p class="text-[10px]">
-          <span class="text-white">{{ $t("auction.purchasePriceLabel") }} </span>
-          <span class="text-cyan-300">&nbsp;{{ auction.price }}&nbsp;</span>
+          <span class="text-white">{{ $t("auction.bidLabel") }} </span>
+          <span class="text-cyan-300">&nbsp;{{ auction.bid }}&nbsp;</span>
           <span class="text-white"> {{ $t("auction.bitsLabel") }}&nbsp;-</span>
         </p>
         <p class="text-[10px]">

@@ -10,7 +10,7 @@
     "currentIdleSubtitle": "Keep progressing through the main quest",
     "currentActiveTitle": "Now! Auction at Cargo Tower!",
     "currentActiveAcquirePrefix": "Acquire",
-    "purchasePriceLabel": "Price:",
+    "bidLabel": "Bid:",
     "resalePriceLabel": "Resale:",
     "bitsLabel": "bits",
     "closesWhenLabel": "CLOSES WHEN:",

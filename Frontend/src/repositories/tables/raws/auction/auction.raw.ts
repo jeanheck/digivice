@@ -1,9 +1,9 @@
-import type { AuctionStepsRaw } from "./auction-steps.raw";
+import type { MainQuestAvailabilityWindowRaw } from "./main-quest-availability-window.raw";
 
 export interface AuctionRaw {
   id: string;
   equipmentId: string;
-  steps: AuctionStepsRaw;
-  price: number;
+  mainQuestAvailabilityWindow: MainQuestAvailabilityWindowRaw;
+  bid: number;
   resale: number;
 }
