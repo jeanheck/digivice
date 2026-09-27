@@ -72,10 +72,23 @@ across all three — only the active marker moved.
 |---------|------|----------|
 | `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
 | `0xA446C` | Active **enemy** slot index (0/1/2) | **Confirmed** Gordon tamer snaps: `gordon-crabmon` `0`, `gordon-gizamon` `1`, `gordon-suposed-to-be-gekomon` `2` — mirrors ally `@0xA4468`; required when multiple enemy slots alive and `0xA4558` holds ally id |
-| `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon); Gordon: `386→132→386` — can be **ally** memoryId while enemy front changes |
+| `0xA4558` | Active unit id → **focused / target unit** | `386→234→375` (Dinohumon→Angewomon→Taomon); Gordon: `386→132→386` — can be **ally** memoryId while enemy front changes. Phase snaps (2026-09-27, Kunemon fight): stays `386` through Dinohumon self-buff and Kunemon attack on Dinohumon; flips to `32` only at `dinohumon-animacao-ataque-10` (animation start, **not** at declaration `-9`); stays `32` after KO/victory. = unit on camera/receiving the action, **not** the actor, stale between actions |
 | slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain). Wired as `InBattle.Strength` in `InBattleAddresses.json` |
 | slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`). Wired as `InBattle.Defense` |
 | slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`). Ally offset same; party wired as `InBattle.Speed` |
+
+**Ally slot `+0x00` id (2026-09-27, `on-wild-digimon-battle-1..7`, Kotemon/Dinohumon
+vs Kunemon, no switch):** slot0 `0xA4470` = `386` = Kotemon `ActiveDigievolution`
+(persistent `0x4949C-4`); Agumon without digievo showed `3` (rookie index). RA note
+"Current Digivolution @ 0xA4470" = only slot0's id. Slots 1/2 held `31` / `373`
+while Patamon/Renamon actives were `56` / `19` — ids not in digievolution.json nor
+enemy.json. **Confirmed stale** (`dinohumon` / `digitamamon` / `kabuterimon` switch
+snaps): slot id is written only when the member **enters the field** — slot1
+`31→56` on switch to Patamon, slot2 `373→19` on switch to Renamon; ids stay after
+switching away. `0xA4468` `0→1→2` and `0xA4558` `386→56→19` tracked the switch.
+Do **not** use slot `+0x00` as active digievo for members that have not fought yet;
+use persistent `ActiveDigievolution`. `0xA4558` went `386` (#1–4) → `32` Kunemon
+(#5–7, enemy turn).
 
 Pre-battle (`out-combat-west-1`): table zeroed. Post-battle (`out-west-2`) may
 still hold last values briefly (enemy current 0, ally current 1400).
@@ -153,6 +166,29 @@ bases across turns/actions (not a fixed ally-only / enemy-only address).
 | +0x24 | Species / family | Int16 `N×0x100` — table in species section below |
 | +0x26… | unused / zero in snaps seen | |
 
+**Only computed-attrs source (confirmed, 2026-09-27).** Snaps
+`dinohumon-644-on-{battle,central-park,menu}` (Kotemon slot 1, base STR 352,
+menu STR 644 = base + equips, 674 = + Dinohumon bonus): `0xA4580` holds
+STR **674** in battle (digievo bonus **is** applied because the engaged unit is
+the digievo) and is all-zero out of battle. Out of battle there is **no**
+RAM copy of 644/674 near `0x4949C` nor anywhere stable — every Int16 644 hit
+is a static curve table (`0x56156`, `0x56BC4`, `0x5888C`, `0x59BC6`,
+`0x4C03E`, `0x18CBA`) or a transient sequential/graphics buffer. Menu value
+is computed on the fly. Equip bonus alone (292/322) not stored near the block
+either. Conclusion: out-of-battle final attributes must be computed
+(base + equipment [+ digievo]).
+
+Cross-check with `agumon-on-{battle,asuka-city,menu}` (Agumon slot 1, no
+digievo, base STR 48, equipped 340): battle block `0xA45C0` = lv1, STR **340**,
+DEF 50, SPI 52, WIS 30, SPD **11** (base 19 — equipment also subtracts),
+resists identical to base. No address holds 340 (Agumon) and 644/674
+(Kotemon) out of battle in any alignment/size — negative result confirmed.
+**Stale data:** out of battle the pair is **not** cleared; it keeps the last
+fight (Agumon out-of-battle snaps still show Dinohumon 674 + old enemy).
+Zero only before the first fight after load. Always gate by `isInBattle`.
+RetroAchievements notes `0x48DA4` (party slot 1) and `0x4A058` (Agumon STR)
+are the already-integrated party slot and **base** STR (`0x4A030 + 0x28`).
+
 **No Charisma** in this block (persistent `DigimonStatusAddresses` still has Cha
 at +0x32; combat block jumps Speed → Fire).
 
@@ -189,6 +225,15 @@ which of the three enemy slots to expose as `State.Battle.Enemy`:
 5. Else slot 0 (empty battle fallback).
 
 Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveUnitId`, `ActiveEnemySlotIndex`.
+
+**Tamer phase snaps (2026-09-27, 41 snaps, Dinohumon vs Crabmon/Gizamon/Gekomon,
+voluntary tamer switch + KO switches):** step 1 result always equalled
+`ActiveEnemySlotIndex` alone. `0xA446C` flips when the new enemy is **on field**
+(`troca-realizada-*`; already at switch animation after a KO). `0xA4558` behaves
+as **camera focus**: target during attack animation, but also resets to the ally
+(`386`) at action choice / after switches, and shows a stale enemy (`132` during
+switch animation to Gekomon, `110` during switch back to Gizamon). Not reliable
+alone; harmless as step 1 here.
 
 **Bug (confirmed 2026-09-02, fixed):** step 2 (first live slot) failed when tamer
 switches front while prior Digimons stay alive. Fix: `ActiveEnemySlotIndex` @
@@ -242,6 +287,18 @@ Filename = whose action turn it was:
 Same attacker label appears with **both** arrangements → neither base is
 “always attacker” or “always defender”. Goburimon in those snaps matches
 `enemy.json` **Goburimon(Red)** (`405,270,212,230,216`), not base Goburimon.
+
+**Revised (suspected actor/target, 2026-09-27):** phase-labelled Kunemon fight
+(`dinohumon-escolhendo-acao-1` … `batalha-ganha-13`) fits **`0xA4580` = actor**
+(written at action **declaration**: Kunemon at `kunemon-declarou-ataque-5`,
+Dinohumon at `dinohumon-declarou-ataque-9`) and **`0xA45C0` = target** (Dinohumon
+while Kunemon attacks; Kunemon while Dinohumon attacks; Dinohumon in **both**
+blocks at `terminou-animacao-poder-duplo-4` — self-buff). Blocks stay stale until
+the next action. The older `*-attacking-*` snaps above were likely captured at
+ambiguous phases; re-test before relying on it. **Reinforced** by 41 tamer snaps
+(Crabmon/Gizamon/Gekomon): actor written at every `*-escolheu-ataque-*`; tamer
+switch does not rewrite the pair until the new enemy acts or is targeted
+(exception: Gekomon appeared as actor right after entering, before its attack).
 
 **Party coverage:** only the **engaged** ally appears in this pair. Bench
 party members keep HP in `0xA4470+n×0x20` but have **no** per-slot combat

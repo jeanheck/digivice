@@ -139,7 +139,7 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 |-------|---------|-------|
 | ~0x000494xxx | Digimon stat blocks (persistent / post-battle) | HP Current syncs **after** combat only — see DigimonStatusAddresses.json |
 | `0x00042B74` + `2 × rookieId` | Blast gauge (Int16, 0–1000, per Digimon) | Confirmed — see [patterns-battle.md](patterns/patterns-battle.md); updates in combat |
-| `0x00042B28` – `0x00042B3E` | Enemy battle strip (near Blast) | `0x42B28` counter; **`0x42B2C` GroupId** (Int16, wired in `EnemyAddresses.json` → `Enemy.GroupId`); `0x42B34+` token/level/max HP+MP — does **not** track current HP damage |
+| `0x00042B28` – `0x00042B3E` | Enemy battle strip (near Blast) | `0x42B28` counter; **`0x42B2C` GroupId** (Int16, wired in `EnemyAddresses.json` → `Enemy.GroupId`); `0x42B34+` token/level/max HP+MP — does **not** track current HP damage. Tamer fight: stays on the **first** enemy (Crabmon 197, lv17, HP 528) after it is KO'd and replaced |
 | `0x00042B6C` | Enemy **drop item Val** (Int16, live) | **Confirmed** — see [patterns-battle.md](patterns/patterns-battle.md) “Enemy drops (variable)”. Same Digimon can show different Vals by map or roll; static single `dropId` is incomplete. |
 | `0x000A4470` + `n × 0x20` | Battle HP/MP slot table | **Confirmed** live HP/MP + Condition @ +0x1C; attr buff deltas STR/DEF/SPD @ +0x10/+0x12/+0x14 — allies in `Parties/InBattleAddresses.json`; enemy slots start `0xA44D0` (also `0xA44F0`, `0xA4510` for NPC multi-enemy parties — each has own memoryId+HP) in `EnemyAddresses.json` |
 | `0x000A4468` | Active ally slot index | 0/1/2 — switches with front Digimon (`in-combat-kotemon/patamon/renamon`) |
@@ -152,6 +152,7 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | Enemy catalog (variable) | Enemy base attrs copy | `enemyId` then attrs at **+0x0E** (e.g. Mammothmon `0xB97A2`→`0xB97B0`); address moves per fight — audit helper, not a fixed absolute |
 | `0x000E1408` / `0x000E141C` | HUD HP mirrors | Track current HP; discard for authoritative state |
 | Offsets | See DigimonStatusAddresses.json | Relative to each digimon base (persistent; mid-combat attrs differ from `0xA4580` pair) |
+| Computed attrs out of battle | **Not in RAM** | Menu STR 644 (base+equips) has no stable Int16 copy; 644 hits `0x56156`/`0x56BC4`/`0x5888C`/`0x59BC6`/`0x4C03E`/`0x18CBA` are static curve tables — discard (`dinohumon-644-on-*`). Re-confirmed with Agumon 340 (`agumon-on-*`). `0xA4580`/`0xA45C0` keep **stale** last-fight data out of battle |
 
 Diffs here are expected after battles; usually not quest flags.
 
@@ -183,6 +184,7 @@ Offsets in `DigimonStatusAddresses.json` → `Digievolutions` (`UnlockedDigievol
 | 0x0004B618 – 0x0004B653 | Entity pointer table (map load) | seabed-routing investigation |
 | 0x00048DA0 | Player bits — money/spend | Divine Barrier investigation (`PlayerAddresses.json` `Bits`) |
 | ASCII runs (0x20, 0x73…) | Dialog/text buffers | Muramasa investigation |
+| 0x000895FD (and `~0x89xxx` overlay area) | MIPS **overlay code** byte, not a flag. RetroAchievements "01 = battle, 25 = card duel" matches (`on-map` 0x00, wild/tamer battle 0x01, card 0x25) only because a different overlay is loaded; value is part of an instruction. Prefer `MapId` `0x4B3F8` (`0600` battle / `0700` card). Wild vs tamer identical. **False positive confirmed:** Piximon/Kadomatsu screen (MapId `0D00`) = `0x01` (different instruction `8E620110`); NPC menu (`0F00`) = `0x80`; inn save (`0C01`) = `0x00` | `on-*` snaps 2026-09-27 |
 
 ---
 
