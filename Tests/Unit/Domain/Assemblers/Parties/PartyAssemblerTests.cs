@@ -26,7 +26,7 @@ public class PartyAssemblerTests
                         HP = new VitalResource(),
                         MP = new VitalResource(),
                         Attributes = new AttributesResource(),
-                        Resistances = new ResistancesResource(),
+                        Elements = new ElementsResource(),
                         Equipments = new EquipmentsResource(),
                         Digievolutions = []
                     }

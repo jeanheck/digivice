@@ -59,15 +59,15 @@ namespace Backend.Memory.Readers
                     Speed = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Speed),
                     Charisma = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Charisma)
                 },
-                Resistances = new ResistancesResource
+                Elements = new ElementsResource
                 {
-                    Fire = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Fire),
-                    Water = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Water),
-                    Ice = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Ice),
-                    Wind = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Wind),
-                    Thunder = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Thunder),
-                    Machine = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Machine),
-                    Dark = memoryBlockReader.ReadInt16(digimonStatusAddresses.Resistances.Dark)
+                    Fire = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Fire),
+                    Water = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Water),
+                    Ice = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Ice),
+                    Wind = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Wind),
+                    Thunder = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Thunder),
+                    Machine = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Machine),
+                    Dark = memoryBlockReader.ReadInt16(digimonStatusAddresses.Elements.Dark)
                 },
                 Equipments = new EquipmentsResource
                 {

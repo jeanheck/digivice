@@ -132,9 +132,9 @@ namespace Backend.Diagnostics
             var attributes = digimon.Attributes;
             sb.AppendLine($"{Gray}   Stats:   {Reset}Atk:{attributes.Strength.ToString(StatFormat)} Def:{attributes.Defense.ToString(StatFormat)} Spt:{attributes.Spirit.ToString(StatFormat)} Wis:{attributes.Wisdom.ToString(StatFormat)} Spd:{attributes.Speed.ToString(StatFormat)} Cha:{attributes.Charisma.ToString(StatFormat)}");
 
-            // Resistances
-            var resistances = digimon.Resistances;
-            sb.AppendLine($"{Gray}   Resist:  {Reset}Fir:{resistances.Fire.ToString(StatFormat)} Wat:{resistances.Water.ToString(StatFormat)} Ice:{resistances.Ice.ToString(StatFormat)} Wnd:{resistances.Wind.ToString(StatFormat)} Tdr:{resistances.Thunder.ToString(StatFormat)} Mtl:{resistances.Machine.ToString(StatFormat)} Drk:{resistances.Dark.ToString(StatFormat)}");
+            // Elements
+            var elements = digimon.Elements;
+            sb.AppendLine($"{Gray}   Elem:    {Reset}Fir:{elements.Fire.ToString(StatFormat)} Wat:{elements.Water.ToString(StatFormat)} Ice:{elements.Ice.ToString(StatFormat)} Wnd:{elements.Wind.ToString(StatFormat)} Tdr:{elements.Thunder.ToString(StatFormat)} Mtl:{elements.Machine.ToString(StatFormat)} Drk:{elements.Dark.ToString(StatFormat)}");
 
             // Equipments
             var equipments = digimon.Equipments;

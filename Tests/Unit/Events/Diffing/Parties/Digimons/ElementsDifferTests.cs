@@ -3,15 +3,15 @@ namespace Tests.Events.Diffing.Parties.Digimons;
 using Backend.Events.Diffing.Parties.Digimons;
 using Backend.Domain.Models.Parties.Digimons;
 
-public class ResistancesDifferTests
+public class ElementsDifferTests
 {
     [Fact]
     public void Diff_ShouldReturnNull_WhenNoChanges()
     {
-        var previous = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 };
-        var newObj = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 };
+        var previous = new Elements { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 };
+        var newObj = new Elements { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 };
 
-        var result = ResistancesDiffer.Diff(previous, newObj);
+        var result = ElementsDiffer.Diff(previous, newObj);
 
         Assert.Null(result);
     }
@@ -19,9 +19,9 @@ public class ResistancesDifferTests
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
-        var newObj = new Resistances { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 };
+        var newObj = new Elements { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 };
 
-        var result = ResistancesDiffer.Diff(null, newObj);
+        var result = ElementsDiffer.Diff(null, newObj);
 
         Assert.NotNull(result);
         Assert.True(result.Fire.HasValue);
@@ -43,10 +43,10 @@ public class ResistancesDifferTests
     [Fact]
     public void Diff_ShouldReturnOnlyChangedFields_WhenPartialChanges()
     {
-        var previous = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 };
-        var newObj = new Resistances { Fire = 1, Water = 3, Ice = 1, Wind = 1, Thunder = 1, Machine = 5, Dark = 1 };
+        var previous = new Elements { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 };
+        var newObj = new Elements { Fire = 1, Water = 3, Ice = 1, Wind = 1, Thunder = 1, Machine = 5, Dark = 1 };
 
-        var result = ResistancesDiffer.Diff(previous, newObj);
+        var result = ElementsDiffer.Diff(previous, newObj);
 
         Assert.NotNull(result);
         Assert.False(result.Fire.HasValue);

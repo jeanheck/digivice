@@ -1,6 +1,6 @@
 namespace Backend.Domain.Models.Parties.Digimons
 {
-    public record class Resistances
+    public record class Elements
     {
         public int Fire { get; set; }
         public int Water { get; set; }

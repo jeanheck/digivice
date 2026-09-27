@@ -3,12 +3,12 @@ namespace Tests.Events.Converters.Parties.Digimons;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Events.Converters.Parties.Digimons;
 
-public class ResistancesConverterTests
+public class ElementsConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapAllResistanceFields()
+    public void ToDTO_ShouldMapAllElementFields()
     {
-        var dto = ResistancesConverter.ToDTO(new Resistances
+        var dto = ElementsConverter.ToDTO(new Elements
         {
             Fire = 1,
             Water = 2,

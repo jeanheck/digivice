@@ -61,7 +61,7 @@ public class DigimonReaderTests
             HP = new VitalAddresses { Current = 18, Max = 20 },
             MP = new VitalAddresses { Current = 22, Max = 24 },
             Attributes = new AttributesAddresses { Strength = 26, Defense = 28, Spirit = 30, Wisdom = 32, Speed = 34, Charisma = 36 },
-            Resistances = new ResistancesAddresses { Fire = 38, Water = 40, Ice = 42, Wind = 44, Thunder = 46, Machine = 48, Dark = 50 },
+            Elements = new ElementsAddresses { Fire = 38, Water = 40, Ice = 42, Wind = 44, Thunder = 46, Machine = 48, Dark = 50 },
             Equipments = new EquipmentsAddresses { Head = 52, Body = 54, Right = 56, Left = 58, Accessory1 = 60, Accessory2 = 62 },
             Digievolutions = new DigievolutionsAddresses
             {
@@ -89,7 +89,7 @@ public class DigimonReaderTests
         WriteInt16(block, 34, 110);   // Speed
         WriteInt16(block, 36, 40);    // Charisma
 
-        // Resistances
+        // Elements
         WriteInt16(block, 38, 10);    // Fire
         WriteInt16(block, 40, 20);    // Water
         WriteInt16(block, 42, 30);    // Ice
@@ -149,14 +149,14 @@ public class DigimonReaderTests
         Assert.Equal(110, result.Attributes.Speed);
         Assert.Equal(40, result.Attributes.Charisma);
 
-        // Resistances
-        Assert.Equal(10, result.Resistances.Fire);
-        Assert.Equal(20, result.Resistances.Water);
-        Assert.Equal(30, result.Resistances.Ice);
-        Assert.Equal(40, result.Resistances.Wind);
-        Assert.Equal(50, result.Resistances.Thunder);
-        Assert.Equal(60, result.Resistances.Machine);
-        Assert.Equal(70, result.Resistances.Dark);
+        // Elements
+        Assert.Equal(10, result.Elements.Fire);
+        Assert.Equal(20, result.Elements.Water);
+        Assert.Equal(30, result.Elements.Ice);
+        Assert.Equal(40, result.Elements.Wind);
+        Assert.Equal(50, result.Elements.Thunder);
+        Assert.Equal(60, result.Elements.Machine);
+        Assert.Equal(70, result.Elements.Dark);
 
         // Equipments
         Assert.Equal(101, result.Equipments.Head);
@@ -179,7 +179,7 @@ public class DigimonReaderTests
             HP = new VitalAddresses(),
             MP = new VitalAddresses(),
             Attributes = new AttributesAddresses(),
-            Resistances = new ResistancesAddresses(),
+            Elements = new ElementsAddresses(),
             Equipments = new EquipmentsAddresses(),
             Digievolutions = new DigievolutionsAddresses
             {
@@ -230,7 +230,7 @@ public class DigimonReaderTests
             HP = new VitalAddresses(),
             MP = new VitalAddresses(),
             Attributes = new AttributesAddresses(),
-            Resistances = new ResistancesAddresses(),
+            Elements = new ElementsAddresses(),
             Equipments = new EquipmentsAddresses(),
             Digievolutions = new DigievolutionsAddresses
             {

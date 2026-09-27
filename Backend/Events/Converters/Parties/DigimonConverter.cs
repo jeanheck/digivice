@@ -16,7 +16,7 @@ public static class DigimonConverter
         MP = VitalConverter.ToDTO(digimon.MP),
         InBattle = InBattleConverter.ToDTO(digimon.InBattle),
         Attributes = AttributesConverter.ToDTO(digimon.Attributes),
-        Resistances = ResistancesConverter.ToDTO(digimon.Resistances),
+        Elements = ElementsConverter.ToDTO(digimon.Elements),
         Equipments = EquipmentsConverter.ToDTO(digimon.Equipments),
         Digievolutions = digimon.Digievolutions.Select(DigievolutionSlotConverter.ToDTO).ToList(),
         StoredDigievolutions = digimon.StoredDigievolutions

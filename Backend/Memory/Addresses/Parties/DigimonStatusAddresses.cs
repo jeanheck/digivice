@@ -15,7 +15,7 @@ namespace Backend.Memory.Addresses.Parties
         public VitalAddresses HP { get; set; } = new();
         public VitalAddresses MP { get; set; } = new();
         public AttributesAddresses Attributes { get; set; } = new();
-        public ResistancesAddresses Resistances { get; set; } = new();
+        public ElementsAddresses Elements { get; set; } = new();
         public EquipmentsAddresses Equipments { get; set; } = new();
         public DigievolutionsAddresses Digievolutions { get; set; } = new();
 
@@ -26,7 +26,7 @@ namespace Backend.Memory.Addresses.Parties
             out VitalAddresses hp,
             out VitalAddresses mp,
             out AttributesAddresses attributes,
-            out ResistancesAddresses resistances,
+            out ElementsAddresses elements,
             out EquipmentsAddresses equipments,
             out DigievolutionsAddresses digievolutions)
         {
@@ -36,7 +36,7 @@ namespace Backend.Memory.Addresses.Parties
             hp = HP;
             mp = MP;
             attributes = Attributes;
-            resistances = Resistances;
+            elements = Elements;
             equipments = Equipments;
             digievolutions = Digievolutions;
         }

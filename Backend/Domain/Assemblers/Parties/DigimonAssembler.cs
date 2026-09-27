@@ -55,15 +55,15 @@ namespace Backend.Domain.Assemblers.Parties
                     Speed = resource.Attributes.Speed,
                     Charisma = resource.Attributes.Charisma
                 },
-                Resistances = new Resistances
+                Elements = new Elements
                 {
-                    Fire = resource.Resistances.Fire,
-                    Water = resource.Resistances.Water,
-                    Ice = resource.Resistances.Ice,
-                    Wind = resource.Resistances.Wind,
-                    Thunder = resource.Resistances.Thunder,
-                    Machine = resource.Resistances.Machine,
-                    Dark = resource.Resistances.Dark
+                    Fire = resource.Elements.Fire,
+                    Water = resource.Elements.Water,
+                    Ice = resource.Elements.Ice,
+                    Wind = resource.Elements.Wind,
+                    Thunder = resource.Elements.Thunder,
+                    Machine = resource.Elements.Machine,
+                    Dark = resource.Elements.Dark
                 },
                 Equipments = new Equipments
                 {

@@ -106,7 +106,7 @@ const moveTooltip = (event: MouseEvent) => {
 
         <div class="flex flex-col gap-1 min-w-0">
           <Stat
-            v-for="(statViewModel, key) in statsViewModel.resistances"
+            v-for="(statViewModel, key) in statsViewModel.elements"
             :key="key"
             :stat-view-model="statViewModel"
             :stat="key"

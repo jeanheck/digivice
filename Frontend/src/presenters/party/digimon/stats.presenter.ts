@@ -4,9 +4,9 @@ import {
   type AttributesEquipmentBonuses,
 } from "@/presenters/converter/attributes.converter";
 import {
-  ResistancesConverter,
-  type ResistancesEquipmentBonuses,
-} from "@/presenters/converter/resistances.converter";
+  ElementsConverter,
+  type ElementsEquipmentBonuses,
+} from "@/presenters/converter/elements.converter";
 import { EquipmentService } from "@/services/equipment.service";
 import { DigimonBattleSelector } from "@/stores/selectors/digimon-battle.selector";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
@@ -33,10 +33,10 @@ export class StatsPresenter {
 
     return {
       attributes: this.applyBattleDeltas(attributes, digimon.inBattle, isInBattle),
-      resistances: ResistancesConverter.convert(
-        digimon.resistances,
+      elements: ElementsConverter.convert(
+        digimon.elements,
         activeDigievolution?.elements ?? null,
-        this.getResistancesEquipmentBonuses(rawEquipments),
+        this.getElementsEquipmentBonuses(rawEquipments),
       ),
     };
   }
@@ -67,9 +67,9 @@ export class StatsPresenter {
     };
   }
 
-  private static getResistancesEquipmentBonuses(
+  private static getElementsEquipmentBonuses(
     rawEquipments: EquipmentRaw[],
-  ): ResistancesEquipmentBonuses {
+  ): ElementsEquipmentBonuses {
     return {
       fire: EquipmentService.calculateBonus("fire", rawEquipments),
       water: EquipmentService.calculateBonus("water", rawEquipments),

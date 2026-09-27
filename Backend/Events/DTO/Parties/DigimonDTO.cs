@@ -32,7 +32,7 @@ public record class DigimonDTO : IDTO
     public Optional<AttributesDTO> Attributes { get; init; } = Optional<AttributesDTO>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<ResistancesDTO> Resistances { get; init; } = Optional<ResistancesDTO>.Empty;
+    public Optional<ElementsDTO> Elements { get; init; } = Optional<ElementsDTO>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<EquipmentsDTO> Equipments { get; init; } = Optional<EquipmentsDTO>.Empty;

@@ -1,6 +1,6 @@
 import type { StatViewModel } from "./stat.viewmodel";
 
-export interface ResistancesViewModel {
+export interface ElementsViewModel {
   fire: StatViewModel;
   water: StatViewModel;
   ice: StatViewModel;

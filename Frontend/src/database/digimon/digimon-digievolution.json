@@ -39,7 +39,7 @@
         "digievolution": 375
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "wind"
       }
@@ -51,7 +51,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "dark"
       }
@@ -63,7 +63,7 @@
         "digievolution": 389
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "machine"
       }
@@ -139,7 +139,7 @@
         "digievolution": 27
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "machine"
       }
@@ -184,7 +184,7 @@
         "digievolution": 375
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 360,
         "stat": "water"
       }
@@ -236,7 +236,7 @@
         "digievolution": 375
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "fire"
       }
@@ -388,7 +388,7 @@
         "digievolution": 368
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "fire"
       }
@@ -421,7 +421,7 @@
         "digievolution": 66
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 280,
         "stat": "wind"
       }
@@ -433,7 +433,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 160,
         "stat": "dark"
       }
@@ -445,7 +445,7 @@
         "digievolution": 391
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 150,
         "stat": "machine"
       }
@@ -521,7 +521,7 @@
         "digievolution": 27
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "machine"
       }
@@ -566,7 +566,7 @@
         "digievolution": 20
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 280,
         "stat": "water"
       }
@@ -812,7 +812,7 @@
         "digievolution": 390
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 120,
         "stat": "wind"
       }
@@ -824,7 +824,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 300,
         "stat": "dark"
       }
@@ -836,7 +836,7 @@
         "digievolution": 390
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 180,
         "stat": "machine"
       }
@@ -912,7 +912,7 @@
         "digievolution": 27
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 240,
         "stat": "machine"
       }
@@ -957,7 +957,7 @@
         "digievolution": 211
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 110,
         "stat": "water"
       }
@@ -988,7 +988,7 @@
         "digievolution": 12
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "thunder"
       }
@@ -1182,7 +1182,7 @@
         "digievolution": 211
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 250,
         "stat": "dark"
       }
@@ -1219,7 +1219,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 130,
         "stat": "dark"
       }
@@ -1355,7 +1355,7 @@
         "digievolution": 12
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 100,
         "stat": "ice"
       }
@@ -1564,7 +1564,7 @@
         "digievolution": 254
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 160,
         "stat": "dark"
       }
@@ -1602,7 +1602,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 190,
         "stat": "dark"
       }
@@ -1614,7 +1614,7 @@
         "digievolution": 254
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 100,
         "stat": "machine"
       }
@@ -1694,7 +1694,7 @@
         "digievolution": 27
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "machine"
       }
@@ -1784,7 +1784,7 @@
         "digievolution": 254
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 90,
         "stat": "fire"
       }
@@ -1817,7 +1817,7 @@
         "digievolution": 254
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 200,
         "stat": "ice"
       }
@@ -1881,7 +1881,7 @@
         "digievolution": 148
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 160,
         "stat": "machine"
       }
@@ -1949,7 +1949,7 @@
         "digievolution": 369
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 280,
         "stat": "fire"
       }
@@ -1961,7 +1961,7 @@
         "digievolution": 391
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 160,
         "stat": "dark"
       }
@@ -1999,7 +1999,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "dark"
       }
@@ -2023,7 +2023,7 @@
         "digievolution": 368
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 120,
         "stat": "dark"
       }
@@ -2087,7 +2087,7 @@
         "digievolution": 27
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 190,
         "stat": "machine"
       }
@@ -2132,7 +2132,7 @@
         "digievolution": 368
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "water"
       }
@@ -2156,7 +2156,7 @@
         "digievolution": 369
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 300,
         "stat": "wind"
       }
@@ -2168,7 +2168,7 @@
         "digievolution": 367
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 80,
         "stat": "thunder"
       }
@@ -2379,7 +2379,7 @@
         "digievolution": 376
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 150,
         "stat": "wind"
       }
@@ -2391,7 +2391,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 250,
         "stat": "dark"
       }
@@ -2403,7 +2403,7 @@
         "digievolution": 375
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 100,
         "stat": "machine"
       }
@@ -2483,7 +2483,7 @@
         "digievolution": 27
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 120,
         "stat": "machine"
       }
@@ -2552,7 +2552,7 @@
         "digievolution": 375
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 120,
         "stat": "wind"
       }
@@ -2746,7 +2746,7 @@
         "digievolution": 211
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "fire"
       }
@@ -2758,7 +2758,7 @@
         "digievolution": 390
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 300,
         "stat": "dark"
       }
@@ -2790,7 +2790,7 @@
         "digievolution": 5
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 220,
         "stat": "dark"
       }
@@ -2802,7 +2802,7 @@
         "digievolution": 390
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 140,
         "stat": "machine"
       }
@@ -2944,7 +2944,7 @@
         "digievolution": 367
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 320,
         "stat": "wind"
       }
@@ -2956,7 +2956,7 @@
         "digievolution": 211
       },
       {
-        "type": "Resistance",
+        "type": "Element",
         "value": 100,
         "stat": "thunder"
       }

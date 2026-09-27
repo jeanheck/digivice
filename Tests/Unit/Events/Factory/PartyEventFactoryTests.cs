@@ -57,7 +57,7 @@ public class PartyEventFactoryTests
                         HP = new Vital(),
                         MP = new Vital(),
                         Attributes = new Attributes(),
-                        Resistances = new Resistances(),
+                        Elements = new Elements(),
                         Equipments = new Equipments(),
                         Digievolutions = []
                     }

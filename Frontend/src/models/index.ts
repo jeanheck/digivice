@@ -19,7 +19,7 @@ export * from "./battle/enemy";
 export * from "./card-battle";
 export * from "./journal/quest";
 export * from "./journal/requisite";
-export * from "./party/digimon/resistances";
+export * from "./party/digimon/elements";
 export * from "./state";
 export * from "./journal/step";
 export * from "./party/digimon/vital";

@@ -12,7 +12,7 @@ namespace Backend.Domain.Models.Parties
         public Vital MP { get; set; } = new();
         public InBattle InBattle { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
-        public Resistances Resistances { get; set; } = new();
+        public Elements Elements { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
         public List<DigievolutionSlot> Digievolutions { get; set; } = [];
         public List<StoredDigievolution> StoredDigievolutions { get; set; } = [];
@@ -30,7 +30,7 @@ namespace Backend.Domain.Models.Parties
                    MP.Equals(other.MP) &&
                    InBattle.Equals(other.InBattle) &&
                    Attributes.Equals(other.Attributes) &&
-                   Resistances.Equals(other.Resistances) &&
+                   Elements.Equals(other.Elements) &&
                    Equipments.Equals(other.Equipments) &&
                    ActiveDigievolutionId == other.ActiveDigievolutionId &&
                    Digievolutions.SequenceEqual(other.Digievolutions) &&
@@ -48,7 +48,7 @@ namespace Backend.Domain.Models.Parties
             hash.Add(MP);
             hash.Add(InBattle);
             hash.Add(Attributes);
-            hash.Add(Resistances);
+            hash.Add(Elements);
             hash.Add(Equipments);
             hash.Add(ActiveDigievolutionId);
             foreach (var digievolutionSlot in Digievolutions)

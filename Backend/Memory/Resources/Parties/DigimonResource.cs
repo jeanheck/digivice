@@ -12,7 +12,7 @@ namespace Backend.Memory.Resources.Parties
         public VitalResource MP { get; set; } = new();
         public InBattleResource InBattle { get; set; } = new();
         public AttributesResource Attributes { get; set; } = new();
-        public ResistancesResource Resistances { get; set; } = new();
+        public ElementsResource Elements { get; set; } = new();
         public EquipmentsResource Equipments { get; set; } = new();
         public List<DigievolutionSlotResource> Digievolutions { get; set; } = [];
         public List<StoredDigievolutionResource> StoredDigievolutions { get; set; } = [];

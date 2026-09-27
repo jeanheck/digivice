@@ -1,6 +1,6 @@
 namespace Backend.Memory.Resources.Parties.Digimons
 {
-    public class ResistancesResource
+    public class ElementsResource
     {
         public int Fire { get; set; }
         public int Water { get; set; }

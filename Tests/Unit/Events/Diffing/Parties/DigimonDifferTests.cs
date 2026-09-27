@@ -169,12 +169,12 @@ public class DigimonDifferTests
     }
 
     [Fact]
-    public void Diff_ShouldReturnNestedDeltas_WhenAttributesResistancesAndEquipmentsChange()
+    public void Diff_ShouldReturnNestedDeltas_WhenAttributesElementsAndEquipmentsChange()
     {
         var previous = CreateBaseDigimon();
         var newObj = CreateBaseDigimon();
         newObj.Attributes.Strength = 6;
-        newObj.Resistances.Fire = 2;
+        newObj.Elements.Fire = 2;
         newObj.Equipments.Head = 101;
 
         var result = DigimonDiffer.Diff(previous, newObj);
@@ -183,9 +183,9 @@ public class DigimonDifferTests
         Assert.True(result.Attributes.HasValue);
         Assert.Equal(6, result.Attributes.Value!.Strength.Value);
         Assert.False(result.Attributes.Value.Defense.HasValue);
-        Assert.True(result.Resistances.HasValue);
-        Assert.Equal(2, result.Resistances.Value!.Fire.Value);
-        Assert.False(result.Resistances.Value.Water.HasValue);
+        Assert.True(result.Elements.HasValue);
+        Assert.Equal(2, result.Elements.Value!.Fire.Value);
+        Assert.False(result.Elements.Value.Water.HasValue);
         Assert.True(result.Equipments.HasValue);
         Assert.Equal(101, result.Equipments.Value!.Head.Value);
         Assert.False(result.Equipments.Value.Body.HasValue);
@@ -238,7 +238,7 @@ public class DigimonDifferTests
                 MP = new Vital { Current = 0, Max = 0 }
             },
             Attributes = new Attributes { Strength = 5, Defense = 5, Spirit = 5, Wisdom = 5, Speed = 5, Charisma = 5 },
-            Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
+            Elements = new Elements { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
             Equipments = new Equipments(),
             Digievolutions = []
         };

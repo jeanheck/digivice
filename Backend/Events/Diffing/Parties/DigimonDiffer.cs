@@ -30,7 +30,7 @@ public static class DigimonDiffer
         var mpDelta = VitalDiffer.Diff(previousDigimon.MP, newDigimon.MP);
         var inBattleDelta = InBattleDiffer.Diff(previousDigimon.InBattle, newDigimon.InBattle);
         var attributesDelta = AttributesDiffer.Diff(previousDigimon.Attributes, newDigimon.Attributes);
-        var resistancesDelta = ResistancesDiffer.Diff(previousDigimon.Resistances, newDigimon.Resistances);
+        var elementsDelta = ElementsDiffer.Diff(previousDigimon.Elements, newDigimon.Elements);
         var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
 
         List<DigievolutionSlotDTO> digievolutionsDelta = [];
@@ -68,7 +68,7 @@ public static class DigimonDiffer
                              mpDelta != null ||
                              inBattleDelta != null ||
                              attributesDelta != null ||
-                             resistancesDelta != null ||
+                             elementsDelta != null ||
                              equipmentsDelta != null ||
                              digievolutionsDelta.Count > 0 ||
                              storedDigievolutionsDelta.Count > 0;
@@ -115,9 +115,9 @@ public static class DigimonDiffer
         {
             dto = dto with { Attributes = attributesDelta };
         }
-        if (resistancesDelta != null)
+        if (elementsDelta != null)
         {
-            dto = dto with { Resistances = resistancesDelta };
+            dto = dto with { Elements = elementsDelta };
         }
         if (equipmentsDelta != null)
         {

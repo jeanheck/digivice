@@ -1,4 +1,4 @@
-export interface Resistances {
+export interface Elements {
   fire: number;
   water: number;
   ice: number;

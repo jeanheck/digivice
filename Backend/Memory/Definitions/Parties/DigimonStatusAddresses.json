@@ -18,7 +18,7 @@
         "Speed": "0x30",
         "Charisma": "0x32"
     },
-    "Resistances": {
+    "Elements": {
         "Fire": "0x34",
         "Water": "0x36",
         "Ice": "0x38",

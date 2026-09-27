@@ -3,7 +3,7 @@ using Backend.Memory.Converters;
 
 namespace Backend.Memory.Addresses.Parties.Digimons
 {
-    public class ResistancesAddresses
+    public class ElementsAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Fire { get; set; }

@@ -69,7 +69,7 @@ public class DigimonAssemblerTests
                 MP = new VitalResource { Current = 40, Max = 60 }
             },
             Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdom = 13, Speed = 14, Charisma = 15 },
-            Resistances = new ResistancesResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
+            Elements = new ElementsResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
             Equipments = new EquipmentsResource { Head = 101, Body = 102, Right = 103, Left = 104, Accessory1 = 105, Accessory2 = 106 },
             Digievolutions = [
                 new DigievolutionSlotResource { Index = 0, DigievolutionId = 1 }
@@ -112,9 +112,9 @@ public class DigimonAssemblerTests
         Assert.Equal(14, result.Attributes.Speed);
         Assert.Equal(15, result.Attributes.Charisma);
 
-        // Resistances
-        Assert.Equal(1, result.Resistances.Fire);
-        Assert.Equal(7, result.Resistances.Dark);
+        // Elements
+        Assert.Equal(1, result.Elements.Fire);
+        Assert.Equal(7, result.Elements.Dark);
 
         // Equipments
         Assert.Equal(101, result.Equipments.Head);
@@ -141,7 +141,7 @@ public class DigimonAssemblerTests
             HP = new VitalResource(),
             MP = new VitalResource(),
             Attributes = new AttributesResource(),
-            Resistances = new ResistancesResource(),
+            Elements = new ElementsResource(),
             Equipments = new EquipmentsResource(),
             Digievolutions = []
         };

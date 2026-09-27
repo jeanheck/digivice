@@ -4,7 +4,7 @@ using Backend.Events.DTO.Shared;
 
 namespace Backend.Events.DTO.Parties.Digimons;
 
-public record class ResistancesDTO : IDTO
+public record class ElementsDTO : IDTO
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<int> Fire { get; init; } = Optional<int>.Empty;

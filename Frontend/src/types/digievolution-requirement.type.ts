@@ -1,1 +1,1 @@
-export type DigievolutionRequirement = "DigimonLevel" | "Attribute" | "Resistance" | "DigievolutionLevel";
+export type DigievolutionRequirement = "DigimonLevel" | "Attribute" | "Element" | "DigievolutionLevel";

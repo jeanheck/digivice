@@ -1,4 +1,4 @@
-export interface ResistancesDTO {
+export interface ElementsDTO {
   fire?: number;
   water?: number;
   ice?: number;

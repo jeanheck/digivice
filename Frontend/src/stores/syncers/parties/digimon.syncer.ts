@@ -6,7 +6,7 @@ import { VitalSyncer } from "./digimons/vital.syncer";
 import { InBattleSyncer } from "./digimons/in-battle.syncer";
 
 import { AttributesSyncer } from "./digimons/attributes.syncer";
-import { ResistancesSyncer } from "./digimons/resistances.syncer";
+import { ElementsSyncer } from "./digimons/elements.syncer";
 import { DigievolutionSlotSyncer } from "./digimons/digievolution-slot.syncer";
 import { StoredDigievolutionSyncer } from "./digimons/stored-digievolution.syncer";
 import { EquipmentsSyncer } from "./digimons/equipments.syncer";
@@ -44,8 +44,8 @@ export class DigimonSyncer {
     if (newDigimonDto.attributes) {
       AttributesSyncer.sync(previousDigimon.attributes, newDigimonDto.attributes);
     }
-    if (newDigimonDto.resistances) {
-      ResistancesSyncer.sync(previousDigimon.resistances, newDigimonDto.resistances);
+    if (newDigimonDto.elements) {
+      ElementsSyncer.sync(previousDigimon.elements, newDigimonDto.elements);
     }
     if (newDigimonDto.digievolutions) {
       newDigimonDto.digievolutions.forEach((newDigievolutionSlotDto) => {

@@ -1,5 +1,5 @@
 import type { ComposerTranslation } from "vue-i18n";
-import type { Attributes, Digimon, Resistances } from "@/models";
+import type { Attributes, Digimon, Elements } from "@/models";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
@@ -16,7 +16,7 @@ export class NodePresenter {
       case "DigimonLevel":
         return `${digimonName} ${levelLabel} ${requirement.value}`;
       case "Attribute":
-      case "Resistance":
+      case "Element":
         return `${digimonName}: ${this.capitalize(requirement.stat!)} >= ${requirement.value}`;
       case "DigievolutionLevel": {
         if (requirement.digievolution === undefined) {
@@ -39,10 +39,9 @@ export class NodePresenter {
         const attribute = digimon.attributes[requirement.stat?.toLowerCase() as keyof Attributes];
         return attribute >= requirement.value;
       }
-      case "Resistance": {
-        const resistance =
-          digimon.resistances[requirement.stat?.toLowerCase() as keyof Resistances];
-        return resistance >= requirement.value;
+      case "Element": {
+        const element = digimon.elements[requirement.stat?.toLowerCase() as keyof Elements];
+        return element >= requirement.value;
       }
       case "DigievolutionLevel": {
         if (requirement.digievolution === undefined) {
