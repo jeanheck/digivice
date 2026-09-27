@@ -42,6 +42,7 @@ Component → (seu) Presenter → Service → Repository → Raw
 
 - Conceito com um único JSON fica direto na raiz de `database/` (ex.: `enemy.json`, `field.json`).
 - Subpasta só quando o conceito tem mais de um JSON (ex.: `digievolution/`, `quest/`, `tcg/`). Quando um arquivo da raiz ganhar um irmão, os dois vão para uma pasta.
+- Exceção: a pasta pode ser criada antes, com um único JSON, quando o conceito já tem novos arquivos previstos (ex.: `shop/`).
 - `repositories/tables/` e `repositories/tables/raws/` não precisam espelhar essa estrutura.
 
 ## i18n
