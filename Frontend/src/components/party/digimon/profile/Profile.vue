@@ -8,7 +8,6 @@ import Icon from "@/components/party/digimon/profile/Icon.vue";
 import TrainingPoints from "@/components/party/digimon/profile/TrainingPoints.vue";
 import DigievolutionsButton from "@/components/party/digimon/profile/DigievolutionsButton.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon } from "@/models";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -77,14 +76,8 @@ const digimonStatus = computed(() => {
 const digimonStatusTooltip = computed(() => {
   const status = digimonStatus.value;
 
-  if (status === DigimonStatusConstant.knockedOut) {
-    return t("digimon.status.knockedOut");
-  }
-  if (status === DigimonStatusConstant.injured) {
-    return t("digimon.status.injured");
-  }
-  if (status === DigimonStatusConstant.healthy) {
-    return t("digimon.status.healthy");
+  if (status !== "debuffed") {
+    return t(`digimon.status.${status}`);
   }
 
   return ProfilePresenter.getActiveDebuffs(condition.value)

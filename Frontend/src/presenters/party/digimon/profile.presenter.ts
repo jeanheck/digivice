@@ -1,9 +1,9 @@
 import type { DigimonDebuff } from "@/constants/digimon-debuff.constant";
-import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon, InBattle, Vital } from "@/models";
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import { DigimonService } from "@/services/digimon.service";
 import { DigimonBattleSelector } from "@/stores/selectors/digimon-battle.selector";
+import type { DigimonStatus } from "@/types/digimon-status.type";
 
 export class ProfilePresenter {
   public static isInBattle(location: string, inBattle: InBattle): boolean {
@@ -26,7 +26,7 @@ export class ProfilePresenter {
     return DigimonRepository.getNameById(id);
   }
 
-  public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {
+  public static getStatus(condition: number, hp: Vital): DigimonStatus {
     return DigimonService.getStatus(condition, hp);
   }
 

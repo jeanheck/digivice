@@ -1,13 +1,13 @@
 import type { DigimonDebuff } from "@/constants/digimon-debuff.constant";
-import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Enemy, Vital } from "@/models";
 import { DigimonBattleConverter } from "@/presenters/converter/digimon-battle.converter";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { DigimonService } from "@/services/digimon.service";
+import type { DigimonStatus } from "@/types/digimon-status.type";
 import type { DigimonBattleViewModel } from "@/viewmodels/map/digimon-battle.viewmodel";
 
 export class DigimonBattlePresenter {
-  public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {
+  public static getStatus(condition: number, hp: Vital): DigimonStatus {
     return DigimonService.getStatus(condition, hp);
   }
 

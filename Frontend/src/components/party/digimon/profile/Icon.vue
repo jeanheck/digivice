@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import type { DigimonStatusConstant } from "@/constants/digimon-status.constant";
+import type { DigimonStatus } from "@/types/digimon-status.type";
 
 const props = defineProps<{
   digimonName: string;
-  condition: DigimonStatusConstant;
+  condition: DigimonStatus;
 }>();
 
 const emit = defineEmits<{
@@ -15,7 +15,7 @@ const emit = defineEmits<{
 }>();
 
 const digimonIconUrl = computed(() => {
-  return ImageCatalog.getDigimonImageUrl(props.digimonName + props.condition);
+  return ImageCatalog.getDigimonImageUrl(`${props.digimonName}-${props.condition}`);
 });
 </script>
 

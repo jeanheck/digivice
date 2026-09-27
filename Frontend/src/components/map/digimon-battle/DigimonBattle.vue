@@ -17,7 +17,6 @@ import {
   type TooltipHorizontalAlign,
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
-import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
 import { useGameState } from "@/composables/use-game-state";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
@@ -61,14 +60,8 @@ const digimonStatusTooltip = computed(() => {
     digimonBattleViewModel.value.hp,
   );
 
-  if (status === DigimonStatusConstant.knockedOut) {
-    return t("digimon.status.knockedOut");
-  }
-  if (status === DigimonStatusConstant.injured) {
-    return t("digimon.status.injured");
-  }
-  if (status === DigimonStatusConstant.healthy) {
-    return t("digimon.status.healthy");
+  if (status !== "debuffed") {
+    return t(`digimon.status.${status}`);
   }
 
   return DigimonBattlePresenter.getActiveDebuffs(enemyCondition.value)

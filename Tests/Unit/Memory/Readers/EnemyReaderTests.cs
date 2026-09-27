@@ -44,7 +44,7 @@ public class EnemyReaderTests
     }
 
     [Fact]
-    public void Read_ShouldReadSecondSlot_WhenFirstSlotIsKnockedOut()
+    public void Read_ShouldReadSecondSlot_WhenFirstSlotIsKo()
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = CreateMemoryReaderMock();
@@ -108,7 +108,7 @@ public class EnemyReaderTests
     }
 
     [Fact]
-    public void Read_ShouldReadLastOccupiedSlot_WhenAllEnemySlotsAreKnockedOut()
+    public void Read_ShouldReadLastOccupiedSlot_WhenAllEnemySlotsAreKo()
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = CreateMemoryReaderMock();
@@ -139,7 +139,7 @@ public class EnemyReaderTests
     }
 
     [Fact]
-    public void Read_ShouldStayOnKnockedOutEnemy_WhenActiveUnitIdStillPointsToThem()
+    public void Read_ShouldStayOnKoEnemy_WhenActiveUnitIdStillPointsToThem()
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = CreateMemoryReaderMock();
@@ -170,7 +170,7 @@ public class EnemyReaderTests
     }
 
     [Fact]
-    public void Read_ShouldReadThirdSlot_WhenAllThreeEnemiesAreKnockedOut()
+    public void Read_ShouldReadThirdSlot_WhenAllThreeEnemiesAreKo()
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = CreateMemoryReaderMock();

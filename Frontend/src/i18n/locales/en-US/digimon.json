@@ -14,7 +14,7 @@
     "status": {
       "healthy": "Healthy",
       "injured": "Injured",
-      "knockedOut": "Knocked Out",
+      "ko": "Knocked Out",
       "debuffed": "Debuffed"
     },
     "debuff": {
