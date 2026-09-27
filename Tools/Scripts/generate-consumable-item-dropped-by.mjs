@@ -7,7 +7,7 @@ const repositoryRoot = path.resolve(scriptDirectory, "../..");
 
 const consumableItemPath = path.join(
   repositoryRoot,
-  "Frontend/src/database/consumable-item/consumable-item.json",
+  "Frontend/src/database/item/consumable-item.json",
 );
 const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy/enemy.json");
 

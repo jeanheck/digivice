@@ -1,4 +1,4 @@
-import ConsumableItemJson from "@/database/consumable-item/consumable-item.json";
+import ConsumableItemJson from "@/database/item/consumable-item.json";
 import type { ConsumableItemTable } from "@/repositories/tables/consumable-item/consumable-item.table";
 import type { ConsumableItemRaw } from "@/repositories/tables/raws/consumable-item/consumable-item.raw";
 
