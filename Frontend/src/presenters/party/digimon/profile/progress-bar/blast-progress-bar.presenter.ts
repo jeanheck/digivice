@@ -1,8 +1,8 @@
 export class BlastProgressBarPresenter {
-  public static readonly MAX_BLAST = 1000;
+  public static readonly MaxBlast = 1000;
 
   public static calculateProgressPercentage(blast: number): number {
-    return Math.calculatePercentage(blast, this.MAX_BLAST);
+    return Math.calculatePercentage(blast, this.MaxBlast);
   }
 
   public static getFillEffectClass(progressPercentage: number): string {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { DvexpPerLevel } from "@/constants/digievolution.constant";
 import { DigievolutionDvexpPresenter } from "@/presenters/digievolution/digievolution-dvexp.presenter";
 
 const props = defineProps<{
@@ -30,7 +31,7 @@ function getDvexpClass(isFilled: boolean): string {
 <template>
   <div class="flex w-full gap-1 h-1" role="presentation">
     <div
-      v-for="i in DigievolutionDvexpPresenter.MAX_DVEXP_BY_LEVEL"
+      v-for="i in DvexpPerLevel"
       :key="i"
       class="flex-1 min-w-0 transition-colors duration-500"
       :class="getDvexpClass(i <= dvexp)"

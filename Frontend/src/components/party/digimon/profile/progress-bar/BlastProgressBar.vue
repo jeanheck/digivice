@@ -29,7 +29,7 @@ const trackExtraClass = computed(() => {
 <template>
   <ProgressBar
     :current-value="blast"
-    :max-value="BlastProgressBarPresenter.MAX_BLAST"
+    :max-value="BlastProgressBarPresenter.MaxBlast"
     :progressPercentage="percentage"
     bar-color-class="bg-yellow-200"
     transition-duration-class="duration-300"

@@ -29,7 +29,7 @@ Regras especializadas por pasta:
    - `constants/{nome}.constant.ts` — consts `as const`, com o type derivado **no mesmo arquivo**.
    - `types/{nome}.type.ts` — unions usadas em mais de um arquivo (mesmo conjunto no Raw e no ViewModel conta como compartilhado).
    - Union usada em um único arquivo fica nesse arquivo.
-3. **Nomes:** PascalCase para consts e types (sem SCREAMING_CASE). Não colidir com globais do DOM (`Element`, `Event`, `Node`). Conceitos de Digimon com prefixo `Digimon` (`DigimonAttribute`, `DigimonElement`, `DigimonCondition`, `DigimonSpecies`, `DigimonStatus`).
+3. **Nomes:** PascalCase para consts, types e membros `static readonly` (sem SCREAMING_CASE). Não colidir com globais do DOM (`Element`, `Event`, `Node`). Conceitos de Digimon com prefixo `Digimon` (`DigimonAttribute`, `DigimonElement`, `DigimonCondition`, `DigimonSpecies`, `DigimonStatus`).
 4. **Valores literais:** iguais à fonte de verdade (JSON de `database/`, contrato do backend ou chave i18n — ex.: `"DigimonLevel"`, `"Healthy"`). Valor gerado no frontend → camelCase igual à chave i18n. Não inventar valor para contornar colisão (separe o mapa por categoria).
 5. **Const e type com o mesmo nome:** const em expressões, type em anotações; `import type` quando só o tipo é usado.
 

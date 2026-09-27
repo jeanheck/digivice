@@ -2,14 +2,14 @@ import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { ExperienceProgressBarViewModel } from "@/viewmodels/party/digimon/profile/experience-progress-bar.viewmodel";
 
 export class ExperienceProgressBarPresenter {
-  private static readonly MAX_LEVEL = 99;
+  private static readonly MaxLevel = 99;
 
   public static getCalculatedExperienceValues(
     digimonId: number,
     level: number,
     experience: number,
   ): ExperienceProgressBarViewModel {
-    if (level === this.MAX_LEVEL) {
+    if (level === this.MaxLevel) {
       return {
         maxValue: 0,
         percentage: 100,

@@ -5,8 +5,8 @@ import { LocationService } from "@/services/location.service";
 import { QuestService } from "@/services/quest.service";
 
 export class LocationEncounterHelper {
-  private static readonly FISHING_POLE_QUEST_ID = "fishingPole";
-  private static readonly TREE_BOOTS_QUEST_ID = "treeBoots";
+  private static readonly FishingPoleQuestId = "fishingPole";
+  private static readonly TreeBootsQuestId = "treeBoots";
 
   public static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
     return (
@@ -30,10 +30,10 @@ export class LocationEncounterHelper {
 
   public static resolveFishingIds(locationId: string, sideQuests: Quest[]): string[] {
     const fishingPoleQuest = sideQuests.find((quest) => {
-      return quest.id === this.FISHING_POLE_QUEST_ID;
+      return quest.id === this.FishingPoleQuestId;
     });
     const fishingPoleRaw = QuestRepository.getSideQuestsRaw().find((questRaw) => {
-      return questRaw.id === this.FISHING_POLE_QUEST_ID;
+      return questRaw.id === this.FishingPoleQuestId;
     });
 
     if (
@@ -48,10 +48,10 @@ export class LocationEncounterHelper {
 
   public static resolveKickingTreeIds(locationId: string, sideQuests: Quest[]): string[] {
     const treeBootsQuest = sideQuests.find((quest) => {
-      return quest.id === this.TREE_BOOTS_QUEST_ID;
+      return quest.id === this.TreeBootsQuestId;
     });
     const treeBootsRaw = QuestRepository.getSideQuestsRaw().find((questRaw) => {
-      return questRaw.id === this.TREE_BOOTS_QUEST_ID;
+      return questRaw.id === this.TreeBootsQuestId;
     });
 
     if (
