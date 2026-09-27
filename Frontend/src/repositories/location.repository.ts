@@ -1,4 +1,4 @@
-import LocationJson from "@/database/location/location.json";
+import LocationJson from "@/database/location.json";
 import type { LocationTable } from "./tables/location/location.table";
 import type { LocationRaw } from "./tables/raws/location/location.raw";
 

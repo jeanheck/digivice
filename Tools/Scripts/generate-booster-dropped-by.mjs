@@ -6,7 +6,7 @@ const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(scriptDirectory, "../..");
 
 const boosterPath = path.join(repositoryRoot, "Frontend/src/database/tcg/booster.json");
-const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy/enemy.json");
+const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy.json");
 const tamerPath = path.join(repositoryRoot, "Frontend/src/database/npc/tamer.json");
 const duelIslandPath = path.join(repositoryRoot, "Frontend/src/database/npc/duel-island.json");
 

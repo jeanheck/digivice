@@ -1,4 +1,4 @@
-import EnemyJson from "@/database/enemy/enemy.json";
+import EnemyJson from "@/database/enemy.json";
 import type { EnemyTable } from "@/repositories/tables/enemy/enemy.table";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
 

@@ -1,4 +1,4 @@
-import FieldJson from "@/database/battle/field.json";
+import FieldJson from "@/database/field.json";
 import type { FieldTable } from "@/repositories/tables/battle/field.table";
 import type { FieldRaw } from "@/repositories/tables/raws/battle/field.raw";
 

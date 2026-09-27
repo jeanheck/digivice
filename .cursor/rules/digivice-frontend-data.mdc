@@ -38,6 +38,12 @@ Component → (seu) Presenter → Service → Repository → Raw
 - Qualquer transformação/projeção (subset, derivados, enriquecimento) → converter. Referência: `enemy-resumed.converter.ts` (`enemyId` + `EnemyRaw` → `EnemyResumedViewModel`). Converter pode receber parâmetros de contexto além do Raw.
 - Raw e ViewModel continuam tipos distintos mesmo quando espelhados.
 
+## Database (`src/database/`)
+
+- Conceito com um único JSON fica direto na raiz de `database/` (ex.: `enemy.json`, `field.json`).
+- Subpasta só quando o conceito tem mais de um JSON (ex.: `digievolution/`, `quest/`, `tcg/`). Quando um arquivo da raiz ganhar um irmão, os dois vão para uma pasta.
+- `repositories/tables/` e `repositories/tables/raws/` não precisam espelhar essa estrutura.
+
 ## i18n
 
 Presenter/converter devolvem **chaves** (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t`, não importam `vue-i18n`. `t` / `useI18n` só no componente. Referências: `CardBattleViewModel.titleKey` (`viewmodels/map/card-battle.viewmodel.ts`) + `CardBattle.vue`; `FieldViewModel` + `DigimonBattleField.vue`.

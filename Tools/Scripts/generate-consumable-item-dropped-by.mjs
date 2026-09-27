@@ -7,9 +7,9 @@ const repositoryRoot = path.resolve(scriptDirectory, "../..");
 
 const consumableItemPath = path.join(
   repositoryRoot,
-  "Frontend/src/database/item/consumable-item.json",
+  "Frontend/src/database/consumable-item.json",
 );
-const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy/enemy.json");
+const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy.json");
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));

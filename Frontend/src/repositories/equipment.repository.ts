@@ -1,4 +1,4 @@
-import EquipmentJson from "@/database/equipment/equipment.json";
+import EquipmentJson from "@/database/equipment.json";
 import type { EquipmentTable } from "./tables/equipment/equipment.table";
 import type { EquipmentRaw } from "./tables/raws/equipment/equipment.raw";
 

@@ -5,8 +5,8 @@ import { fileURLToPath } from "node:url";
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(scriptDirectory, "../..");
 
-const equipmentPath = path.join(repositoryRoot, "Frontend/src/database/equipment/equipment.json");
-const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy/enemy.json");
+const equipmentPath = path.join(repositoryRoot, "Frontend/src/database/equipment.json");
+const enemyPath = path.join(repositoryRoot, "Frontend/src/database/enemy.json");
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
