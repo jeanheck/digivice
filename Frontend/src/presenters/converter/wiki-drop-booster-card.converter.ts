@@ -9,7 +9,7 @@ export class WikiDropBoosterCardConverter {
     return {
       cardId: cardIdString,
       imageName: cardRaw?.imageName ?? "",
-      nameKey: `cards.${cardId}.name`,
+      nameKey: `card.${cardId}.name`,
     };
   }
 }

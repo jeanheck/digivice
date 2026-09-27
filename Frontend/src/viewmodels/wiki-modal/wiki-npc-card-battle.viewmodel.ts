@@ -1,9 +1,9 @@
 import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
-import type { WikiNpcDeckCardViewModel } from "@/viewmodels/wiki-modal/wiki-npc-deck-card.viewmodel";
+import type { WikiNpcFolderCardViewModel } from "@/viewmodels/wiki-modal/wiki-npc-folder-card.viewmodel";
 
 export interface WikiNpcCardBattleViewModel {
   nameKey: string;
   level: number;
-  cards: WikiNpcDeckCardViewModel[];
+  cards: WikiNpcFolderCardViewModel[];
   drops: EnemyDropViewModel[];
 }

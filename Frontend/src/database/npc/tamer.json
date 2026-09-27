@@ -8,7 +8,7 @@
           "min": 60,
           "max": 209
         },
-        "deckId": "bugBugFolder1",
+        "folderId": "bugBugFolder1",
         "boosterId": 521
       },
       "second": {
@@ -17,7 +17,7 @@
           "min": 378
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "bugBugFolder2",
+        "folderId": "bugBugFolder2",
         "boosterId": 521
       }
     },
@@ -66,7 +66,7 @@
           "min": 60,
           "max": 209
         },
-        "deckId": "flyingFolder1",
+        "folderId": "flyingFolder1",
         "boosterId": 522
       },
       "second": {
@@ -75,7 +75,7 @@
           "min": 378
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "flyingFolder2",
+        "folderId": "flyingFolder2",
         "boosterId": 522
       }
     },
@@ -114,7 +114,7 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "coolDigimonFolder1",
+        "folderId": "coolDigimonFolder1",
         "boosterId": 521
       },
       "second": {
@@ -122,7 +122,7 @@
         "charismaRequired": {
           "min": 378
         },
-        "deckId": "coolDigimonFolder2",
+        "folderId": "coolDigimonFolder2",
         "boosterId": 521
       }
     },
@@ -137,7 +137,7 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "mindFolder1",
+        "folderId": "mindFolder1",
         "boosterId": 522
       },
       "second": {
@@ -145,7 +145,7 @@
         "charismaRequired": {
           "min": 378
         },
-        "deckId": "mindFolder2",
+        "folderId": "mindFolder2",
         "boosterId": 522
       }
     },
@@ -160,7 +160,7 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "protectorFolder1",
+        "folderId": "protectorFolder1",
         "boosterId": 521
       },
       "second": {
@@ -168,7 +168,7 @@
         "charismaRequired": {
           "min": 378
         },
-        "deckId": "protectorFolder2",
+        "folderId": "protectorFolder2",
         "boosterId": 521
       }
     },
@@ -183,7 +183,7 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "amazingPatamonFolder1",
+        "folderId": "amazingPatamonFolder1",
         "boosterId": 522
       },
       "second": {
@@ -191,7 +191,7 @@
         "charismaRequired": {
           "min": 378
         },
-        "deckId": "amazingPatamonFolder2",
+        "folderId": "amazingPatamonFolder2",
         "boosterId": 522
       }
     },
@@ -205,7 +205,7 @@
         "charismaRequired": {
           "min": 1218
         },
-        "deckId": "motherNatureFolder1",
+        "folderId": "motherNatureFolder1",
         "boosterId": 524
       },
       "second": {
@@ -214,7 +214,7 @@
           "min": 2277
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "motherNatureFolder2",
+        "folderId": "motherNatureFolder2",
         "boosterId": 524
       }
     },
@@ -254,7 +254,7 @@
           "min": 150,
           "max": 284
         },
-        "deckId": "verminFolder1",
+        "folderId": "verminFolder1",
         "boosterId": 523
       },
       "second": {
@@ -263,7 +263,7 @@
           "min": 492
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "verminFolder2",
+        "folderId": "verminFolder2",
         "boosterId": 523
       }
     },
@@ -302,7 +302,7 @@
           "min": 150,
           "max": 284
         },
-        "deckId": "ogreOgreFolder1",
+        "folderId": "ogreOgreFolder1",
         "boosterId": 523
       },
       "second": {
@@ -311,7 +311,7 @@
           "min": 492
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "ogreOgreFolder2",
+        "folderId": "ogreOgreFolder2",
         "boosterId": 523
       }
     },
@@ -346,7 +346,7 @@
           "min": 150,
           "max": 284
         },
-        "deckId": "waterAnimalFolder1",
+        "folderId": "waterAnimalFolder1",
         "boosterId": 524
       },
       "second": {
@@ -355,7 +355,7 @@
           "min": 492
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "waterAnimalFolder2",
+        "folderId": "waterAnimalFolder2",
         "boosterId": 524
       }
     },
@@ -394,7 +394,7 @@
           "min": 150,
           "max": 284
         },
-        "deckId": "noviceProgramFolder1",
+        "folderId": "noviceProgramFolder1",
         "boosterId": 523
       },
       "second": {
@@ -403,7 +403,7 @@
           "min": 492
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "noviceProgramFolder2",
+        "folderId": "noviceProgramFolder2",
         "boosterId": 523
       }
     },
@@ -434,7 +434,7 @@
           "min": 150,
           "max": 284
         },
-        "deckId": "bugCatcherFolder1",
+        "folderId": "bugCatcherFolder1",
         "boosterId": 523
       },
       "second": {
@@ -443,7 +443,7 @@
           "min": 492
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "bugCatcherFolder2",
+        "folderId": "bugCatcherFolder2",
         "boosterId": 523
       }
     },
@@ -481,7 +481,7 @@
         "charismaRequired": {
           "min": 1218
         },
-        "deckId": "veteranTamerFolder1",
+        "folderId": "veteranTamerFolder1",
         "boosterId": 525
       },
       "second": {
@@ -489,7 +489,7 @@
         "charismaRequired": {
           "min": 2277
         },
-        "deckId": "veteranTamerFolder2",
+        "folderId": "veteranTamerFolder2",
         "boosterId": 525
       }
     },
@@ -529,7 +529,7 @@
           "min": 150,
           "max": 284
         },
-        "deckId": "vegetarianFolder1",
+        "folderId": "vegetarianFolder1",
         "boosterId": 524
       },
       "second": {
@@ -538,7 +538,7 @@
           "min": 492
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "vegetarianFolder2",
+        "folderId": "vegetarianFolder2",
         "boosterId": 524
       }
     },
@@ -577,7 +577,7 @@
           "min": 210,
           "max": 377
         },
-        "deckId": "dinosaurFolder1",
+        "folderId": "dinosaurFolder1",
         "boosterId": 524
       },
       "second": {
@@ -586,7 +586,7 @@
           "min": 630
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "dinosaurFolder2",
+        "folderId": "dinosaurFolder2",
         "boosterId": 524
       }
     },
@@ -621,7 +621,7 @@
           "min": 210,
           "max": 377
         },
-        "deckId": "brownFolder1",
+        "folderId": "brownFolder1",
         "boosterId": 525
       },
       "second": {
@@ -630,7 +630,7 @@
           "min": 630
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "brownFolder2",
+        "folderId": "brownFolder2",
         "boosterId": 525
       }
     },
@@ -665,7 +665,7 @@
           "min": 210,
           "max": 377
         },
-        "deckId": "occultFolder1",
+        "folderId": "occultFolder1",
         "boosterId": 525
       },
       "second": {
@@ -674,7 +674,7 @@
           "min": 630
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "occultFolder2",
+        "folderId": "occultFolder2",
         "boosterId": 525
       }
     },
@@ -709,7 +709,7 @@
           "min": 210,
           "max": 377
         },
-        "deckId": "poisonFolder1",
+        "folderId": "poisonFolder1",
         "boosterId": 527
       },
       "second": {
@@ -718,7 +718,7 @@
           "min": 630
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "poisonFolder2",
+        "folderId": "poisonFolder2",
         "boosterId": 527
       }
     },
@@ -757,7 +757,7 @@
           "min": 210,
           "max": 377
         },
-        "deckId": "blueFolder1",
+        "folderId": "blueFolder1",
         "boosterId": 526
       },
       "second": {
@@ -766,7 +766,7 @@
           "min": 630
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "blueFolder2",
+        "folderId": "blueFolder2",
         "boosterId": 526
       }
     },
@@ -804,7 +804,7 @@
         "charismaRequired": {
           "min": 1218
         },
-        "deckId": "burningFolder1",
+        "folderId": "burningFolder1",
         "boosterId": 526
       },
       "second": {
@@ -812,7 +812,7 @@
         "charismaRequired": {
           "min": 2277
         },
-        "deckId": "burningFolder2",
+        "folderId": "burningFolder2",
         "boosterId": 526
       }
     },
@@ -851,7 +851,7 @@
         "charismaRequired": {
           "min": 1218
         },
-        "deckId": "programManiacFolder1",
+        "folderId": "programManiacFolder1",
         "boosterId": 529
       },
       "second": {
@@ -859,7 +859,7 @@
         "charismaRequired": {
           "min": 2277
         },
-        "deckId": "programManiacFolder2",
+        "folderId": "programManiacFolder2",
         "boosterId": 529
       }
     },

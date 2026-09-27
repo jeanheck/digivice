@@ -161,7 +161,7 @@ export class WikiLocationsPanelPresenter {
     return {
       id: entry.id,
       kind: "cardShop",
-      nameKey: `cardShops.${entry.id}.name`,
+      nameKey: `cardShop.${entry.id}.name`,
       imageUrl: ImageCatalog.getCardShopImageUrl(cardShopRaw.imageName),
       coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
       labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),

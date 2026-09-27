@@ -2,10 +2,10 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import type { WikiNpcDeckCardViewModel } from "@/viewmodels/wiki-modal/wiki-npc-deck-card.viewmodel";
+import type { WikiNpcFolderCardViewModel } from "@/viewmodels/wiki-modal/wiki-npc-folder-card.viewmodel";
 
 const props = defineProps<{
-  card: WikiNpcDeckCardViewModel;
+  card: WikiNpcFolderCardViewModel;
 }>();
 
 const emit = defineEmits<{

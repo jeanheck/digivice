@@ -7,7 +7,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "deckId": "asukaWhiteMaster1",
+        "folderId": "asukaWhiteMaster1",
         "boosterId": 525
       },
       "second": {
@@ -16,7 +16,7 @@
           "min": 1
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "asukaWhiteMaster2",
+        "folderId": "asukaWhiteMaster2",
         "boosterId": 525
       }
     },
@@ -30,7 +30,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "deckId": "asukaBlackMaster1",
+        "folderId": "asukaBlackMaster1",
         "boosterId": 526
       },
       "second": {
@@ -39,7 +39,7 @@
           "min": 1
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "asukaBlackMaster2",
+        "folderId": "asukaBlackMaster2",
         "boosterId": 526
       }
     },
@@ -53,7 +53,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "deckId": "asukaGreenMaster1",
+        "folderId": "asukaGreenMaster1",
         "boosterId": 527
       },
       "second": {
@@ -62,7 +62,7 @@
           "min": 1
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "asukaGreenMaster2",
+        "folderId": "asukaGreenMaster2",
         "boosterId": 527
       }
     },
@@ -76,7 +76,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "deckId": "asukaRedMaster1",
+        "folderId": "asukaRedMaster1",
         "boosterId": 528
       },
       "second": {
@@ -85,7 +85,7 @@
           "min": 1
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "asukaRedMaster2",
+        "folderId": "asukaRedMaster2",
         "boosterId": 528
       }
     },
@@ -99,7 +99,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "deckId": "asukaBlueMaster1",
+        "folderId": "asukaBlueMaster1",
         "boosterId": 516
       },
       "second": {
@@ -108,7 +108,7 @@
           "min": 1
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "asukaBlueMaster2",
+        "folderId": "asukaBlueMaster2",
         "boosterId": 516
       }
     },
@@ -122,7 +122,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "deckId": "asukaDuelKing1",
+        "folderId": "asukaDuelKing1",
         "boosterId": 517
       },
       "second": {
@@ -131,7 +131,7 @@
           "min": 1
         },
         "trophyRequired": "asukaTrophy",
-        "deckId": "asukaDuelKing2",
+        "folderId": "asukaDuelKing2",
         "boosterId": 517
       }
     },

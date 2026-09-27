@@ -5,8 +5,8 @@ export class CardConverter {
   public static convert(cardId: string, cardRaw: CardRaw): CardViewModel {
     return {
       imageName: cardRaw.imageName,
-      nameKey: `cards.${cardId}.name`,
-      noteKey: `cards.${cardId}.note`,
+      nameKey: `card.${cardId}.name`,
+      noteKey: `card.${cardId}.note`,
       type: cardRaw.type,
       points: cardRaw.points,
     };

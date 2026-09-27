@@ -1,4 +1,4 @@
-import CardShopJson from "@/database/tcg/card-shops.json";
+import CardShopJson from "@/database/tcg/card-shop.json";
 import type { CardShopTable } from "@/repositories/tables/tcg/card-shop.table";
 import type { CardShopCatalogRaw } from "@/repositories/tables/raws/tcg/card-shop.raw";
 

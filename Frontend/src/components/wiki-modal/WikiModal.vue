@@ -84,13 +84,13 @@ const allSearchItems = computed(() => {
       return t(labelKey);
     },
     (cardId) => {
-      return t(`cards.${cardId}.name`);
+      return t(`card.${cardId}.name`);
     },
     (locationId) => {
       return t(`location.${locationId}`);
     },
     (cardShopId) => {
-      return t(`cardShops.${cardShopId}.name`);
+      return t(`cardShop.${cardShopId}.name`);
     },
     (tamerId) => {
       return t(`tamers.${tamerId}.name`);

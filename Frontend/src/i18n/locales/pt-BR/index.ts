@@ -4,9 +4,9 @@ import species from "./enemy/specie.json";
 import conditions from "./enemy/condition.json";
 import drops from "./enemy/drop.json";
 import boosters from "./tcg/booster.json";
-import cardShops from "./tcg/card-shops.json";
-import decks from "./tcg/deck.json";
-import cards from "./tcg/cards.json";
+import cardShop from "./tcg/card-shop.json";
+import folder from "./tcg/folder.json";
+import card from "./tcg/card.json";
 import cardType from "./tcg/card-type.json";
 import regularAttacks from "./enemy/enemy-regular-attack.json";
 import enemyTechniques from "./enemy/enemy-technique.json";
@@ -57,9 +57,9 @@ export default {
   ...conditions,
   ...drops,
   ...boosters,
-  ...cardShops,
-  ...decks,
-  ...cards,
+  ...cardShop,
+  ...folder,
+  ...card,
   ...cardType,
   ...regularAttacks,
   ...enemyTechniques,

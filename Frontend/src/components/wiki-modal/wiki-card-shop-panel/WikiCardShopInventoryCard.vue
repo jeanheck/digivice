@@ -16,7 +16,7 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const cardName = computed(() => {
-  return t(`cards.${props.card.cardId}.name`);
+  return t(`card.${props.card.cardId}.name`);
 });
 
 const cardImageUrl = computed(() => {
