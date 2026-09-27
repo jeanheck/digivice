@@ -9,14 +9,16 @@
       "speed": 0,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 60,
       "water": 30,
       "ice": 0,
       "wind": 30,
       "thunder": 30,
       "machine": 30,
-      "dark": 30,
+      "dark": 30
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 20,
@@ -34,14 +36,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 40,
       "ice": 60,
       "wind": 0,
       "thunder": 40,
       "machine": 60,
-      "dark": 80,
+      "dark": 80
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 10,
@@ -59,14 +63,16 @@
       "speed": 0,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 80,
       "water": 40,
       "ice": 0,
       "wind": 40,
       "thunder": 20,
       "machine": 60,
-      "dark": 40,
+      "dark": 40
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 20,
@@ -84,14 +90,16 @@
       "speed": 50,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 20,
       "water": 40,
       "ice": 40,
       "wind": 0,
       "thunder": 80,
       "machine": 40,
-      "dark": 60,
+      "dark": 60
+    },
+    "resistances": {
       "poison": 0,
       "paralyze": 40,
       "confuse": 30,
@@ -109,14 +117,16 @@
       "speed": 10,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 15,
       "water": 45,
       "ice": 30,
       "wind": 45,
       "thunder": 0,
       "machine": 15,
-      "dark": 60,
+      "dark": 60
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 0,
       "confuse": 20,
@@ -134,14 +144,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 60,
       "water": 0,
       "ice": 40,
       "wind": 20,
       "thunder": 20,
       "machine": 60,
-      "dark": 80,
+      "dark": 80
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 10,
@@ -159,14 +171,16 @@
       "speed": 0,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 45,
       "water": 0,
       "ice": 30,
       "wind": 30,
       "thunder": 0,
       "machine": 60,
-      "dark": 45,
+      "dark": 45
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 0,
       "confuse": 0,
@@ -184,14 +198,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 40,
       "water": 40,
       "ice": 40,
       "wind": 40,
       "thunder": 40,
       "machine": 40,
-      "dark": 40,
+      "dark": 40
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 20,
       "confuse": 20,
@@ -209,14 +225,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 100,
       "ice": 25,
       "wind": 75,
       "thunder": 75,
       "machine": 25,
-      "dark": 50,
+      "dark": 50
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 30,
@@ -234,14 +252,16 @@
       "speed": 50,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 50,
       "ice": 75,
       "wind": 0,
       "thunder": 50,
       "machine": 75,
-      "dark": 100,
+      "dark": 100
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 10,
@@ -259,14 +279,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 80,
       "ice": 20,
       "wind": 60,
       "thunder": 60,
       "machine": 20,
-      "dark": 40,
+      "dark": 40
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 20,
@@ -284,14 +306,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 50,
       "ice": 100,
       "wind": 75,
       "thunder": 50,
       "machine": 25,
-      "dark": 75,
+      "dark": 75
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 30,
       "confuse": 10,
@@ -309,14 +333,16 @@
       "speed": 45,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 90,
       "water": 0,
       "ice": 30,
       "wind": 60,
       "thunder": 30,
       "machine": 90,
-      "dark": 120,
+      "dark": 120
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 10,
@@ -334,14 +360,16 @@
       "speed": 70,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 30,
       "water": 60,
       "ice": 60,
       "wind": 0,
       "thunder": 90,
       "machine": 60,
-      "dark": 120,
+      "dark": 120
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 10,
       "confuse": 30,
@@ -359,14 +387,16 @@
       "speed": 10,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 60,
       "water": 0,
       "ice": 40,
       "wind": 40,
       "thunder": 0,
       "machine": 80,
-      "dark": 60,
+      "dark": 60
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 0,
       "confuse": 0,
@@ -384,14 +414,16 @@
       "speed": 20,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 20,
       "water": 60,
       "ice": 40,
       "wind": 60,
       "thunder": 0,
       "machine": 20,
-      "dark": 80,
+      "dark": 80
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 0,
       "confuse": 20,
@@ -409,14 +441,16 @@
       "speed": 0,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 100,
       "water": 50,
       "ice": 0,
       "wind": 50,
       "thunder": 50,
       "machine": 50,
-      "dark": 50,
+      "dark": 50
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 20,
@@ -434,14 +468,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 25,
       "water": 75,
       "ice": 50,
       "wind": 75,
       "thunder": 0,
       "machine": 25,
-      "dark": 100,
+      "dark": 100
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 0,
       "confuse": 20,
@@ -459,14 +495,16 @@
       "speed": 65,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 30,
       "water": 60,
       "ice": 60,
       "wind": 0,
       "thunder": 120,
       "machine": 60,
-      "dark": 90,
+      "dark": 90
+    },
+    "resistances": {
       "poison": 0,
       "paralyze": 40,
       "confuse": 30,
@@ -484,14 +522,16 @@
       "speed": 20,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 60,
       "ice": 15,
       "wind": 45,
       "thunder": 45,
       "machine": 15,
-      "dark": 30,
+      "dark": 30
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 20,
@@ -509,14 +549,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 40,
       "ice": 80,
       "wind": 60,
       "thunder": 40,
       "machine": 20,
-      "dark": 60,
+      "dark": 60
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 30,
       "confuse": 10,
@@ -534,14 +576,16 @@
       "speed": 20,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 30,
       "ice": 60,
       "wind": 45,
       "thunder": 30,
       "machine": 15,
-      "dark": 45,
+      "dark": 45
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 30,
       "confuse": 10,
@@ -559,14 +603,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 15,
       "water": 30,
       "ice": 30,
       "wind": 0,
       "thunder": 60,
       "machine": 30,
-      "dark": 45,
+      "dark": 45
+    },
+    "resistances": {
       "poison": 0,
       "paralyze": 40,
       "confuse": 30,
@@ -584,14 +630,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 75,
       "water": 0,
       "ice": 50,
       "wind": 25,
       "thunder": 25,
       "machine": 75,
-      "dark": 100,
+      "dark": 100
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 10,
@@ -609,14 +657,16 @@
       "speed": 45,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 60,
       "ice": 120,
       "wind": 90,
       "thunder": 60,
       "machine": 30,
-      "dark": 90,
+      "dark": 90
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 30,
       "confuse": 10,
@@ -634,14 +684,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 45,
       "water": 15,
       "ice": 30,
       "wind": 60,
       "thunder": 0,
       "machine": 45,
-      "dark": 15,
+      "dark": 15
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 0,
@@ -659,14 +711,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 60,
       "water": 20,
       "ice": 40,
       "wind": 80,
       "thunder": 0,
       "machine": 60,
-      "dark": 20,
+      "dark": 20
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 0,
@@ -684,14 +738,16 @@
       "speed": 50,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 75,
       "water": 25,
       "ice": 50,
       "wind": 100,
       "thunder": 0,
       "machine": 75,
-      "dark": 25,
+      "dark": 25
+    },
+    "resistances": {
       "poison": 30,
       "paralyze": 20,
       "confuse": 0,
@@ -709,14 +765,16 @@
       "speed": 20,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 75,
       "water": 0,
       "ice": 50,
       "wind": 50,
       "thunder": 0,
       "machine": 100,
-      "dark": 75,
+      "dark": 75
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 0,
       "confuse": 0,
@@ -734,14 +792,16 @@
       "speed": 20,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 30,
       "water": 30,
       "ice": 45,
       "wind": 15,
       "thunder": 60,
       "machine": 0,
-      "dark": 30,
+      "dark": 30
+    },
+    "resistances": {
       "poison": 10,
       "paralyze": 40,
       "confuse": 20,
@@ -759,14 +819,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 40,
       "water": 40,
       "ice": 60,
       "wind": 20,
       "thunder": 80,
       "machine": 0,
-      "dark": 40,
+      "dark": 40
+    },
+    "resistances": {
       "poison": 10,
       "paralyze": 40,
       "confuse": 20,
@@ -784,14 +846,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 50,
       "water": 50,
       "ice": 75,
       "wind": 25,
       "thunder": 100,
       "machine": 0,
-      "dark": 50,
+      "dark": 50
+    },
+    "resistances": {
       "poison": 10,
       "paralyze": 40,
       "confuse": 20,
@@ -809,14 +873,16 @@
       "speed": 60,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 60,
       "ice": 90,
       "wind": 0,
       "thunder": 60,
       "machine": 90,
-      "dark": 120,
+      "dark": 120
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 10,
@@ -834,14 +900,16 @@
       "speed": 55,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 60,
       "ice": 90,
       "wind": 0,
       "thunder": 60,
       "machine": 90,
-      "dark": 120,
+      "dark": 120
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 10,
       "confuse": 10,
@@ -859,14 +927,16 @@
       "speed": 50,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 0,
       "water": 60,
       "ice": 120,
       "wind": 90,
       "thunder": 60,
       "machine": 30,
-      "dark": 90,
+      "dark": 90
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 30,
       "confuse": 10,
@@ -884,14 +954,16 @@
       "speed": 10,
       "charisma": 0
     },
-    "resistances": {
+    "elements": {
       "fire": 15,
       "water": 60,
       "ice": 15,
       "wind": 15,
       "thunder": 45,
       "machine": 30,
-      "dark": 30,
+      "dark": 30
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 0,
       "confuse": 10,
@@ -909,14 +981,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 30,
       "water": 0,
       "ice": 45,
       "wind": 15,
       "thunder": 15,
       "machine": 60,
-      "dark": 45,
+      "dark": 45
+    },
+    "resistances": {
       "poison": 0,
       "paralyze": 20,
       "confuse": 10,
@@ -934,14 +1008,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 15,
       "water": 45,
       "ice": 30,
       "wind": 45,
       "thunder": 15,
       "machine": 45,
-      "dark": 0,
+      "dark": 0
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 20,
       "confuse": 40,
@@ -959,14 +1035,16 @@
       "speed": 20,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 20,
       "water": 80,
       "ice": 20,
       "wind": 20,
       "thunder": 60,
       "machine": 40,
-      "dark": 40,
+      "dark": 40
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 0,
       "confuse": 10,
@@ -984,14 +1062,16 @@
       "speed": 50,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 40,
       "water": 0,
       "ice": 60,
       "wind": 20,
       "thunder": 20,
       "machine": 80,
-      "dark": 60,
+      "dark": 60
+    },
+    "resistances": {
       "poison": 0,
       "paralyze": 20,
       "confuse": 10,
@@ -1009,14 +1089,16 @@
       "speed": 40,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 20,
       "water": 60,
       "ice": 40,
       "wind": 60,
       "thunder": 20,
       "machine": 60,
-      "dark": 0,
+      "dark": 0
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 20,
       "confuse": 40,
@@ -1034,14 +1116,16 @@
       "speed": 30,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 25,
       "water": 100,
       "ice": 25,
       "wind": 75,
       "thunder": 50,
       "machine": 25,
-      "dark": 50,
+      "dark": 50
+    },
+    "resistances": {
       "poison": 40,
       "paralyze": 0,
       "confuse": 10,
@@ -1059,14 +1143,16 @@
       "speed": 60,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 50,
       "water": 0,
       "ice": 75,
       "wind": 25,
       "thunder": 25,
       "machine": 100,
-      "dark": 75,
+      "dark": 75
+    },
+    "resistances": {
       "poison": 0,
       "paralyze": 20,
       "confuse": 10,
@@ -1084,14 +1170,16 @@
       "speed": 50,
       "charisma": 1
     },
-    "resistances": {
+    "elements": {
       "fire": 25,
       "water": 75,
       "ice": 50,
       "wind": 75,
       "thunder": 25,
       "machine": 75,
-      "dark": 0,
+      "dark": 0
+    },
+    "resistances": {
       "poison": 20,
       "paralyze": 20,
       "confuse": 30,

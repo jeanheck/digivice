@@ -1,51 +1,51 @@
 import type { Resistances } from "@/models";
 import { StatConverter } from "@/presenters/converter/stat.converter";
 import type { ResistancesViewModel } from "@/viewmodels/digimon/resistances.viewmodel";
-import type { DigievolutionResistancesViewModel } from "@/viewmodels/digievolution/digievolution-resistances.viewmodel";
+import type { DigievolutionElementsViewModel } from "@/viewmodels/digievolution/digievolution-elements.viewmodel";
 
 export type ResistancesEquipmentBonuses = Record<keyof Resistances, number>;
 
 export class ResistancesConverter {
   public static convert(
     resistances: Resistances,
-    digievolutionResistances: DigievolutionResistancesViewModel | null,
+    digievolutionElements: DigievolutionElementsViewModel | null,
     equipmentBonuses: ResistancesEquipmentBonuses,
   ): ResistancesViewModel {
     return {
       fire: StatConverter.convert(
         resistances.fire,
         equipmentBonuses.fire,
-        digievolutionResistances?.fire ?? 0,
+        digievolutionElements?.fire ?? 0,
       ),
       water: StatConverter.convert(
         resistances.water,
         equipmentBonuses.water,
-        digievolutionResistances?.water ?? 0,
+        digievolutionElements?.water ?? 0,
       ),
       ice: StatConverter.convert(
         resistances.ice,
         equipmentBonuses.ice,
-        digievolutionResistances?.ice ?? 0,
+        digievolutionElements?.ice ?? 0,
       ),
       wind: StatConverter.convert(
         resistances.wind,
         equipmentBonuses.wind,
-        digievolutionResistances?.wind ?? 0,
+        digievolutionElements?.wind ?? 0,
       ),
       thunder: StatConverter.convert(
         resistances.thunder,
         equipmentBonuses.thunder,
-        digievolutionResistances?.thunder ?? 0,
+        digievolutionElements?.thunder ?? 0,
       ),
       machine: StatConverter.convert(
         resistances.machine,
         equipmentBonuses.machine,
-        digievolutionResistances?.machine ?? 0,
+        digievolutionElements?.machine ?? 0,
       ),
       dark: StatConverter.convert(
         resistances.dark,
         equipmentBonuses.dark,
-        digievolutionResistances?.dark ?? 0,
+        digievolutionElements?.dark ?? 0,
       ),
     };
   }

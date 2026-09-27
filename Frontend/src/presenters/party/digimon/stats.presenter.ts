@@ -35,7 +35,7 @@ export class StatsPresenter {
       attributes: this.applyBattleDeltas(attributes, digimon.inBattle, isInBattle),
       resistances: ResistancesConverter.convert(
         digimon.resistances,
-        activeDigievolution?.resistances ?? null,
+        activeDigievolution?.elements ?? null,
         this.getResistancesEquipmentBonuses(rawEquipments),
       ),
     };
@@ -87,6 +87,7 @@ export class StatsPresenter {
     return {
       name: digievolutionRaw.name,
       attributes: digievolutionRaw.attributes,
+      elements: digievolutionRaw.elements,
       resistances: digievolutionRaw.resistances,
     };
   }
