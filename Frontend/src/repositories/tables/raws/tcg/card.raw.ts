@@ -13,7 +13,6 @@ export interface CardShopRaw {
 
 export interface CardRaw {
   imageName: string;
-  boosters: number[];
   cardShops?: CardShopRaw[];
   type: CardType;
   points?: CardPointsRaw;

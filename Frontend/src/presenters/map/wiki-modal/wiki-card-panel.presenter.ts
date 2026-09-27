@@ -1,4 +1,5 @@
 import { CardConverter } from "@/presenters/converter/card.converter";
+import { BoosterCardRepository } from "@/repositories/booster-card.repository";
 import { CardRepository } from "@/repositories/card.repository";
 import type { WikiCardPanelViewModel } from "@/viewmodels/wiki-modal/wiki-card-panel.viewmodel";
 
@@ -11,7 +12,7 @@ export class WikiCardPanelPresenter {
 
     return {
       card: CardConverter.convert(cardId, cardRaw),
-      boosters: cardRaw.boosters,
+      boosters: BoosterCardRepository.getBoosterIdsByCardId(Number(cardId)),
       cardShops: (cardRaw.cardShops ?? []).map((shop) => ({
         id: shop.id,
         startWhenLastMainQuestStepDone: shop.startWhenLastMainQuestStepDone,

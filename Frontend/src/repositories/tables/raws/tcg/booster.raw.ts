@@ -7,6 +7,5 @@ export interface BoosterDroppedByRaw {
 }
 
 export interface BoosterRaw {
-  cards: number[];
   droppedBy?: BoosterDroppedByRaw[];
 }
