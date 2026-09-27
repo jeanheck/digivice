@@ -1,5 +1,5 @@
 {
-  "digimonBattleField": {
+  "field": {
     "neutral": "Neutral Field",
     "fire": "Fire Field",
     "water": "Water Field",

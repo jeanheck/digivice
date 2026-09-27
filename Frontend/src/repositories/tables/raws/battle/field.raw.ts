@@ -1,5 +1,5 @@
-export interface DigimonBattleFieldRaw {
-  type: string;
+export interface FieldRaw {
+  name: string;
   strengthens: string | null;
   weakens: string | null;
 }

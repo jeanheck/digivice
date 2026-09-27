@@ -40,7 +40,7 @@ Component → (seu) Presenter → Service → Repository → Raw
 
 ## i18n
 
-Presenter/converter devolvem **chaves** (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t`, não importam `vue-i18n`. `t` / `useI18n` só no componente. Referências: `CardBattleViewModel.titleKey` (`viewmodels/map/card-battle.viewmodel.ts`) + `CardBattle.vue`; `DigimonBattleFieldViewModel` + `DigimonBattleField.vue`.
+Presenter/converter devolvem **chaves** (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t`, não importam `vue-i18n`. `t` / `useI18n` só no componente. Referências: `CardBattleViewModel.titleKey` (`viewmodels/map/card-battle.viewmodel.ts`) + `CardBattle.vue`; `FieldViewModel` + `DigimonBattleField.vue`.
 
 Nomes de Digimons/Digievoluções são nomes próprios: literais, nunca via i18n.
 

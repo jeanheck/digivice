@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { DigimonBattleFieldPresenter } from "@/presenters/map/digimon-battle-field.presenter";
+import { FieldPresenter } from "@/presenters/map/field.presenter";
 
 const props = defineProps<{
   battleFieldId: number;
@@ -9,8 +9,8 @@ const props = defineProps<{
 
 const { t } = useI18n();
 
-const digimonBattleFieldViewModel = computed(() => {
-  return DigimonBattleFieldPresenter.getDigimonBattleFieldViewModel(props.battleFieldId);
+const fieldViewModel = computed(() => {
+  return FieldPresenter.getFieldViewModel(props.battleFieldId);
 });
 </script>
 
@@ -19,19 +19,19 @@ const digimonBattleFieldViewModel = computed(() => {
     <span
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
     >
-      {{ t(`digimonBattleField.${digimonBattleFieldViewModel.type}`) }}
+      {{ t(`field.${fieldViewModel.name}`) }}
     </span>
     <span
-      v-if="digimonBattleFieldViewModel.strengthen"
+      v-if="fieldViewModel.strengthen"
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
     >
-      {{ t("digimonBattleField.strengthen", { element: t(`stat.${digimonBattleFieldViewModel.strengthen}`) }) }}
+      {{ t("field.strengthen", { element: t(`stat.${fieldViewModel.strengthen}`) }) }}
     </span>
     <span
-      v-if="digimonBattleFieldViewModel.weaken"
+      v-if="fieldViewModel.weaken"
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
     >
-      {{ t("digimonBattleField.weaken", { element: t(`stat.${digimonBattleFieldViewModel.weaken}`) }) }}
+      {{ t("field.weaken", { element: t(`stat.${fieldViewModel.weaken}`) }) }}
     </span>
   </div>
 </template>

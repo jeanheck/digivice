@@ -1,6 +1,6 @@
 import type { DigimonElement } from "@/constants/digimon-element.constant";
 
-const battleFieldElementById: Readonly<Record<number, DigimonElement>> = {
+const fieldElementById: Readonly<Record<number, DigimonElement>> = {
   2: "fire",
   3: "water",
   4: "ice",
@@ -10,16 +10,16 @@ const battleFieldElementById: Readonly<Record<number, DigimonElement>> = {
   8: "dark",
 };
 
-function resolveBattleFieldElement(fieldId: number): DigimonElement | null {
-  return battleFieldElementById[fieldId] ?? null;
+function resolveFieldElement(fieldId: number): DigimonElement | null {
+  return fieldElementById[fieldId] ?? null;
 }
 
-export function resolveBattleFieldAssetName(fieldId: number): string | null {
+export function resolveFieldAssetName(fieldId: number): string | null {
   if (fieldId === 0) {
     return "Neutral";
   }
 
-  const element = resolveBattleFieldElement(fieldId);
+  const element = resolveFieldElement(fieldId);
   if (element === null) {
     return null;
   }

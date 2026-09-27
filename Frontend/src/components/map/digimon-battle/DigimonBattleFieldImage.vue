@@ -7,7 +7,7 @@ const props = defineProps<{
 }>();
 
 const fieldImageUrl = computed(() => {
-  return ImageCatalog.getDigimonBattleFieldImageUrl(props.battleFieldId);
+  return ImageCatalog.getFieldImageUrl(props.battleFieldId);
 });
 </script>
 

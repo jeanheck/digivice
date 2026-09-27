@@ -1,4 +1,4 @@
-import { resolveBattleFieldAssetName } from "@/constants/battle-field.constant";
+import { resolveFieldAssetName } from "@/constants/field.constant";
 
 const MapAssetConfig = {
   pathSuffix: "/maps/",
@@ -193,8 +193,8 @@ export class ImageCatalog {
     );
   }
 
-  public static getDigimonBattleFieldImageUrl(fieldId: number): string | null {
-    const assetName = resolveBattleFieldAssetName(fieldId);
+  public static getFieldImageUrl(fieldId: number): string | null {
+    const assetName = resolveFieldAssetName(fieldId);
     return getImageUrl(
       battleModules,
       BattleFieldAssetConfig.pathSuffix,
