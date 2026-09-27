@@ -8,7 +8,6 @@ using Backend.Memory.Readers.Interfaces;
 public class DigimonBattleLoaderTests : LoaderIntegrationTestBase
 {
     private const long EnemySlotBase = 0x000A44D0;
-    private const long ActiveUnitIdAddress = 0x000A4558;
     private const long ActiveEnemySlotIndexAddress = 0x000A446C;
     private const int SlotStride = 0x20;
 
@@ -28,7 +27,7 @@ public class DigimonBattleLoaderTests : LoaderIntegrationTestBase
             currentHp: 600,
             condition: 0x01,
             speed: 84);
-        memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)122);
+        memoryReaderMock.Setup(m => m.ReadInt16(ActiveEnemySlotIndexAddress)).Returns((short)0);
         memoryReaderMock.Setup(m => m.ReadByte(0x000A4530)).Returns((byte)0x02);
 
         var digimonBattleReader = new DigimonBattleReader(
@@ -54,7 +53,6 @@ public class DigimonBattleLoaderTests : LoaderIntegrationTestBase
         SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 0);
         SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 1);
         SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 2);
-        memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)0);
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveEnemySlotIndexAddress)).Returns((short)-1);
         memoryReaderMock.Setup(m => m.ReadByte(0x000A4530)).Returns((byte)0x00);
 

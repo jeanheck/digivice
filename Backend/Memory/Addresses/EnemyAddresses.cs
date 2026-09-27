@@ -16,9 +16,6 @@ namespace Backend.Memory.Addresses
         public int SlotCount { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]
-        public long ActiveUnitId { get; set; }
-
-        [JsonConverter(typeof(HexStringToLongConverter))]
         public long ActiveEnemySlotIndex { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]

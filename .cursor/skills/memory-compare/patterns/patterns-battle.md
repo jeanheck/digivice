@@ -217,14 +217,18 @@ occupy `0xA44D0`, `0xA44F0`, `0xA4510` (stride `0x20`) — each with its own
 **Active enemy slot resolution (integrated 2026-08-27):** `EnemyReader` picks
 which of the three enemy slots to expose as `State.Battle.Enemy`:
 
-1. Match `ActiveUnitId` @ `0xA4558` to a slot id (`id != 0`) — **no HP gate**
-   (stay on KO'd front enemy until id changes).
-2. Else read `ActiveEnemySlotIndex` @ `0xA446C`; if index valid and slot `id != 0`.
-3. Else first slot with `id != 0` and `HP.Current > 0`.
-4. Else highest-index slot with `id != 0` (all KO — stay on last defeated).
-5. Else slot 0 (empty battle fallback).
+1. `ActiveEnemySlotIndex` @ `0xA446C`, if index valid and slot `id != 0` —
+   **no HP gate** (stays on KO'd front enemy until the next one enters).
+2. Else first slot with `id != 0` and `HP.Current > 0`.
+3. Else highest-index slot with `id != 0` (all KO — stay on last defeated).
+4. Else slot 0 (empty battle fallback).
 
-Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveUnitId`, `ActiveEnemySlotIndex`.
+Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveEnemySlotIndex`.
+
+**Changed 2026-09-27:** removed the former step 1 (match `0xA4558` to a slot id)
+and `ActiveUnitId` from `EnemyAddresses.json`. `0xA4558` is camera focus; it never
+changed the result in wild/tamer phase snaps and risked stale picks mid-switch and
+wrong slot with duplicate enemy ids.
 
 **Tamer phase snaps (2026-09-27, 41 snaps, Dinohumon vs Crabmon/Gizamon/Gekomon,
 voluntary tamer switch + KO switches):** step 1 result always equalled

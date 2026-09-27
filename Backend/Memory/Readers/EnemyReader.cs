@@ -30,19 +30,6 @@ namespace Backend.Memory.Readers
 
         private int ResolveActiveEnemySlotIndex(EnemyAddresses addresses)
         {
-            var activeUnitId = memoryReader.ReadInt16(addresses.ActiveUnitId);
-
-            for (var slotIndex = 0; slotIndex < addresses.SlotCount; slotIndex++)
-            {
-                var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
-                var slotId = memoryReader.ReadInt16(slotBase + addresses.Id);
-
-                if (slotId == activeUnitId && slotId != 0)
-                {
-                    return slotIndex;
-                }
-            }
-
             var activeEnemySlotIndex = memoryReader.ReadInt16(addresses.ActiveEnemySlotIndex);
 
             if (activeEnemySlotIndex >= 0 && activeEnemySlotIndex < addresses.SlotCount)

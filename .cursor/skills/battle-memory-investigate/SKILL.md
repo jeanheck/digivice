@@ -26,8 +26,7 @@ NPC win flags live in `memory-compare/patterns/patterns-card-battle.md`.
 |---------|---------|----------------------|
 | `0xA4470` + `n × 0x20` | Ally slot: HP/MP max+current `+0x06..+0x0C`, STR/DEF/SPD delta `+0x10..+0x14`, condition `+0x1C` | `Parties/InBattleAddresses.json` → `Digimon.InBattle` |
 | `0xA44D0` + `n × 0x20` (3 slots) | Enemy slot (same offsets; `Id @ +0x00`) | `Battles/EnemyAddresses.json` → `DigimonBattle.Enemy` |
-| `0xA446C` | Active enemy slot index | `EnemyAddresses.json` `ActiveEnemySlotIndex` |
-| `0xA4558` | Active unit id (front digievo/token) | `EnemyAddresses.json` `ActiveUnitId` |
+| `0xA446C` | Active enemy slot index (primary active-enemy source) | `EnemyAddresses.json` `ActiveEnemySlotIndex` |
 | `0x42B2C` | Encounter group id (Int16) | `EnemyAddresses.json` `GroupId` |
 | `0xA4530` | Battle field id (`0` neutral, `2` Fire … `8` Dark) | `Battles/DigimonBattleAddresses.json` → `DigimonBattle.Field` |
 | `0x42B74` + `2 × rookieId` | Blast gauge (Int16, 0–1000, per Digimon) | `Parties/DigimonsAddresses.json` `BlastAddress` → `Digimon.Blast` |
@@ -36,6 +35,7 @@ NPC win flags live in `memory-compare/patterns/patterns-card-battle.md`.
 
 - `0xA4580` / `0xA45C0` — combatant attr/resist blocks (stride `0x40`); ally↔enemy base **swaps** — identify by matching slot id, not by base.
 - `0xA4468` — active ally slot index.
+- `0xA4558` — camera focus unit id (target / ally / stale); removed from `EnemyAddresses.json` — do not use to pick the active enemy.
 - `0x42B6C` — live drop item Val (drop model still open — see patterns file).
 - `0xA4532`, `0xA4414…0xA442A` — field companions; not SSOT.
 - `0xE1408` / `0xE141C` — HUD HP mirrors; discard.
