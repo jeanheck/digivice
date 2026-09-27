@@ -1,5 +1,5 @@
 export interface DigievolutionTechniqueRaw {
   id: string;
-  learnLevel: number;
-  loadedLevel: number | null;
+  learnAt: number;
+  loadAt: number | null;
 }

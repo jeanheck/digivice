@@ -7,8 +7,8 @@ export class DigievolutionTechniqueConverter {
   ): DigievolutionTechniqueViewModel {
     return {
       id: digievolutionTechniqueRaw.id,
-      learnLevel: digievolutionTechniqueRaw.learnLevel,
-      loadedLevel: digievolutionTechniqueRaw.loadedLevel,
+      learnAt: digievolutionTechniqueRaw.learnAt,
+      loadAt: digievolutionTechniqueRaw.loadAt,
     };
   }
 }

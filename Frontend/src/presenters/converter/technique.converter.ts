@@ -12,12 +12,12 @@ export class TechniqueConverter {
     const isUnlocked =
       digievolutionLevel === undefined
         ? true
-        : digievolutionTechnique.learnLevel <= digievolutionLevel;
+        : digievolutionTechnique.learnAt <= digievolutionLevel;
 
     return {
       id: digievolutionTechnique.id,
-      learnLevel: digievolutionTechnique.learnLevel,
-      loadedLevel: digievolutionTechnique.loadedLevel,
+      learnAt: digievolutionTechnique.learnAt,
+      loadAt: digievolutionTechnique.loadAt,
       type: techniqueRaw.type,
       element: techniqueRaw.element,
       elementStrength: techniqueRaw.elementStrength,

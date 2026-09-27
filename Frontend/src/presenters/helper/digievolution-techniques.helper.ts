@@ -5,7 +5,7 @@ export class DigievolutionTechniquesHelper {
     digievolutionTechniques: DigievolutionTechniqueViewModel[],
   ): string {
     const lastTechniqueToBeLearned = digievolutionTechniques.reduce((highest, current) => {
-      return current.learnLevel > highest.learnLevel ? current : highest;
+      return current.learnAt > highest.learnAt ? current : highest;
     });
 
     return lastTechniqueToBeLearned.id;

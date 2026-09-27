@@ -113,20 +113,20 @@ function getTechniqueElementColorClass(element: string): string {
         @mouseleave="hideTooltip"
       >
         <span class="text-orange-200 leading-none inline-flex text-[10px] translate-y-px">{{
-          technique.learnLevel
+          technique.learnAt
         }}</span>
         <span class="leading-none inline-flex text-[15px] -translate-y-0.5">📜</span>
       </span>
 
       <span
-        v-if="technique.loadedLevel !== null"
+        v-if="technique.loadAt !== null"
         class="cursor-help whitespace-nowrap flex items-center gap-0.5 text-[9px]"
         @mouseenter="showBadgeTooltip($event, 'digievolution.levelToLoad')"
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
       >
         <span class="text-amber-300 leading-none inline-flex text-[10px] translate-y-px">{{
-          technique.loadedLevel
+          technique.loadAt
         }}</span>
         <span class="leading-none inline-flex text-[15px] -translate-y-0.5">🫴</span>
       </span>
