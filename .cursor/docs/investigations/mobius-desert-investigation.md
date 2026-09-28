@@ -12,7 +12,7 @@ Mobius Desert is a wraparound 4×4 maze. Leaving a border loops you to the
 opposite side. The game reuses only **two** physical map IDs for all 16
 logical cells:
 
-| MapId | `location.json` |
+| MapId | `map.json` |
 |-------|-----------------|
 | `0258` | Mobius Desert |
 | `0259` | Mobius Desert 2 |

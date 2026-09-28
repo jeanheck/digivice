@@ -339,7 +339,7 @@ grid layers at snapshot tile coords, prints `e2e0` / `de30` correlation.
 
 - Location enemies may need **subzone discriminator** (grid value, area index,
   or PreviousMapId for Asuka) — not MapId alone.
-- Pattern exists elsewhere: `location.json` phases via `lastMainQuestStepDone`
+- Pattern exists elsewhere: `map.json` phases via `lastMainQuestStepDone`
   (e.g. Wire Forest). Asuka safe/danger is **not** that pattern in the compare.
 - Do not wire backend addresses until a candidate is validated against grids.
 

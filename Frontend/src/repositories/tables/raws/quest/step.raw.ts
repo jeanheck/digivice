@@ -1,4 +1,4 @@
-import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
+import type { InnerLocationRaw } from "@/repositories/tables/raws/map/inner-location.raw";
 import type { CoordinatesRaw } from "./coordinates.raw";
 import type { RequisiteRaw } from "./requisite.raw";
 

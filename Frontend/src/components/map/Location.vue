@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { LocationService } from "@/services/location.service";
+import { MapService } from "@/services/map.service";
 
 const props = withDefaults(
   defineProps<{
@@ -30,7 +30,7 @@ const locationName = computed(() => {
 });
 
 const isClickable = computed(() => {
-  return LocationService.getWorldLocation(props.locationId) !== undefined;
+  return MapService.getWorldLocation(props.locationId) !== undefined;
 });
 
 const titleClass = computed(() => {

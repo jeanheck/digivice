@@ -1,6 +1,6 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { SeabedModalConverter } from "@/presenters/converter/dock.converter";
-import { LocationRepository } from "@/repositories";
+import { MapRepository } from "@/repositories";
 import { SeabedDockRepository } from "@/repositories/seabed-dock.repository";
 import type { SeabedModalViewModel } from "@/viewmodels/seabed-modal/seabed-modal.viewmodel";
 
@@ -10,7 +10,7 @@ export class SeabedModalPresenter {
       return null;
     }
 
-    const locationRaw = LocationRepository.getLocationById(playerLocationId);
+    const locationRaw = MapRepository.getMapById(playerLocationId);
     if (locationRaw.dock !== true) {
       return null;
     }
@@ -23,7 +23,7 @@ export class SeabedModalPresenter {
       return null;
     }
 
-    const locationRaw = LocationRepository.getLocationById(locationId);
+    const locationRaw = MapRepository.getMapById(locationId);
     if (locationRaw.dock !== true) {
       return null;
     }

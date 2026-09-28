@@ -4,15 +4,15 @@ import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.c
 import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { EnemyRepository } from "@/repositories/enemy.repository";
-import { LocationBossRepository } from "@/repositories/location-boss.repository";
-import { LocationRepository } from "@/repositories/location.repository";
-import { LocationCardShopRepository } from "@/repositories/location-card-shop.repository";
+import { MapBossRepository } from "@/repositories/map-boss.repository";
+import { MapRepository } from "@/repositories/map.repository";
+import { MapCardShopRepository } from "@/repositories/map-card-shop.repository";
 import { CardShopRepository } from "@/repositories/card-shop.repository";
-import type { LocationBossRaw } from "@/repositories/tables/raws/location/location-boss.raw";
-import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
-import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
-import type { LocationCardShopRaw } from "@/repositories/tables/raws/location/location-card-shop.raw";
-import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
+import type { MapBossRaw } from "@/repositories/tables/raws/map/map-boss.raw";
+import type { MapDuelIslandRaw } from "@/repositories/tables/raws/map/map-duel-island.raw";
+import type { MapNpcRaw } from "@/repositories/tables/raws/map/map-npc.raw";
+import type { MapCardShopRaw } from "@/repositories/tables/raws/map/map-card-shop.raw";
+import type { MapTamerRaw } from "@/repositories/tables/raws/map/map-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 import { QuestService } from "@/services/quest.service";
 import type { EnemySource } from "@/types/enemy-source.type";
@@ -31,7 +31,7 @@ export class WikiLocationsPanelPresenter {
     sideQuests: Quest[],
     previousMapId: string,
   ): WikiLocationsPanelViewModel {
-    const locationRaw = LocationRepository.getLocationById(locationId);
+    const locationRaw = MapRepository.getMapById(locationId);
     const worldLocation = WikiLocationsPanelPresenter.toCoordinates(locationRaw.worldLocation);
     const localImageUrl = ImageCatalog.getLocationImageUrl(locationRaw.imageName);
 
@@ -56,7 +56,7 @@ export class WikiLocationsPanelPresenter {
     locationId: string,
     mainQuest: Quest,
   ): WikiLocationMapMarkerViewModel[] {
-    const locationRaw = LocationRepository.getLocationById(locationId);
+    const locationRaw = MapRepository.getMapById(locationId);
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
     const markers: WikiLocationMapMarkerViewModel[] = [];
 
@@ -90,14 +90,14 @@ export class WikiLocationsPanelPresenter {
       }
     }
 
-    for (const locationBoss of LocationBossRepository.getByLocationId(locationId)) {
+    for (const locationBoss of MapBossRepository.getByMapId(locationId)) {
       const marker = WikiLocationsPanelPresenter.toBossMapMarker(locationBoss);
       if (marker !== null) {
         markers.push(marker);
       }
     }
 
-    for (const locationCardShop of LocationCardShopRepository.getByLocationId(locationId)) {
+    for (const locationCardShop of MapCardShopRepository.getByMapId(locationId)) {
       const marker = WikiLocationsPanelPresenter.toCardShopMapMarker(locationCardShop);
       if (marker !== null) {
         markers.push(marker);
@@ -110,7 +110,7 @@ export class WikiLocationsPanelPresenter {
   }
 
   private static toMapMarker(
-    entry: LocationTamerRaw | LocationNpcRaw | LocationDuelIslandRaw,
+    entry: MapTamerRaw | MapNpcRaw | MapDuelIslandRaw,
   ): WikiLocationMapMarkerViewModel | null {
     if (entry.coordinates === undefined) {
       return null;
@@ -131,7 +131,7 @@ export class WikiLocationsPanelPresenter {
     };
   }
 
-  private static toBossMapMarker(entry: LocationBossRaw): WikiLocationMapMarkerViewModel | null {
+  private static toBossMapMarker(entry: MapBossRaw): WikiLocationMapMarkerViewModel | null {
     if (entry.coordinates === undefined) {
       return null;
     }
@@ -148,7 +148,7 @@ export class WikiLocationsPanelPresenter {
     };
   }
 
-  private static toCardShopMapMarker(entry: LocationCardShopRaw): WikiLocationMapMarkerViewModel | null {
+  private static toCardShopMapMarker(entry: MapCardShopRaw): WikiLocationMapMarkerViewModel | null {
     if (entry.coordinates === undefined) {
       return null;
     }

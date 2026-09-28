@@ -2,7 +2,7 @@ import type { DigimonSlot, ImportantItems, Npc, Npcs, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
-import { LocationService } from "@/services/location.service";
+import { MapService } from "@/services/map.service";
 import { NpcService } from "@/services/npc.service";
 import { PartyService } from "@/services/party.service";
 import { QuestService } from "@/services/quest.service";
@@ -17,7 +17,7 @@ export class AsukaServerMapPresenter {
     npcs: Npcs,
     importantItems: ImportantItems,
   ): MapNpcViewModel[] {
-    const opponentIds = LocationService.getMapOpponentIds(
+    const opponentIds = MapService.getMapOpponentIds(
       locationId,
       lastCompletedMainQuestStep,
     );
@@ -65,7 +65,7 @@ export class AsukaServerMapPresenter {
   ): AsukaServerMapViewModel {
     const fishingIds = LocationEncounterHelper.resolveFishingIds(locationId, sideQuests);
     const kickingTreeIds = LocationEncounterHelper.resolveKickingTreeIds(locationId, sideQuests);
-    const bossIds = LocationService.getBoss(locationId);
+    const bossIds = MapService.getBoss(locationId);
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
     const mapNpcs = this.resolveNpcs(
       locationId,

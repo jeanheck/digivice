@@ -1,7 +1,7 @@
 import { MapId } from "@/constants/map-id.constant";
 import type { Quest } from "@/models";
 import { QuestRepository } from "@/repositories/quest.repository";
-import { LocationService } from "@/services/location.service";
+import { MapService } from "@/services/map.service";
 import { QuestService } from "@/services/quest.service";
 
 export class LocationEncounterHelper {
@@ -25,7 +25,7 @@ export class LocationEncounterHelper {
     }
 
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    return LocationService.getWalkingEnemies(locationId, lastCompletedMainQuestStep);
+    return MapService.getWalkingEnemies(locationId, lastCompletedMainQuestStep);
   }
 
   public static resolveFishingIds(locationId: string, sideQuests: Quest[]): string[] {
@@ -43,7 +43,7 @@ export class LocationEncounterHelper {
       return [];
     }
 
-    return LocationService.getFishingEnemies(locationId);
+    return MapService.getFishingEnemies(locationId);
   }
 
   public static resolveKickingTreeIds(locationId: string, sideQuests: Quest[]): string[] {
@@ -61,6 +61,6 @@ export class LocationEncounterHelper {
       return [];
     }
 
-    return LocationService.getKickingTreeEnemies(locationId);
+    return MapService.getKickingTreeEnemies(locationId);
   }
 }

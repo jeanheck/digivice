@@ -1,8 +1,8 @@
 import type { Step } from "@/models";
 import { RequisiteConverter } from "@/presenters/converter/requisite.converter";
-import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
+import type { InnerLocationRaw } from "@/repositories/tables/raws/map/inner-location.raw";
 import type { StepRaw } from "@/repositories/tables/raws/quest/step.raw";
-import { LocationService } from "@/services/location.service";
+import { MapService } from "@/services/map.service";
 import type { InnerLocationViewModel } from "@/viewmodels/quest/inner-location.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
@@ -41,7 +41,7 @@ export class StepConverter {
       return stepRaw.innerLocation;
     }
 
-    return LocationService.getInnerLocation(stepRaw.location);
+    return MapService.getInnerLocation(stepRaw.location);
   }
 
   private static convertInnerLocation(innerLocationRaw: InnerLocationRaw): InnerLocationViewModel {

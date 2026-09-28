@@ -107,7 +107,7 @@ all iterate the full repository array per category.
 
 - `requisites` at quest root and/or per step, ids matching backend (e.g. `sunTrophy` → `asukaTrophy`; DRI step 3 → `{rookie}DDNA`).
 - Locations: `location` = innermost target map id; `coordinates` = pin on that map.
-- Omit `innerLocation` to inherit the path from `location.json`; `"innerLocation": []` skips the canonical path; custom routes (desert cells, unique doors) keep hop `innerLocation` without the target pin.
+- Omit `innerLocation` to inherit the path from `map.json`; `"innerLocation": []` skips the canonical path; custom routes (desert cells, unique doors) keep hop `innerLocation` without the target pin.
 - Coordinates may be provisional `x`/`y` `50` until the user supplies markers — note it in the status file.
 - i18n: `title`, `description`, `steps.{n}` texts, one `locationTarget` per step (marker label), `requisites.{id}` labels.
 

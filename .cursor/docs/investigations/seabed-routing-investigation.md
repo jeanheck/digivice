@@ -25,7 +25,7 @@ Example routes (confirmed):
 | `0227` Divermon's Lake | `02E2` → `02E0` | `0228` Duel Island | `0x08` |
 | `0228` Duel Island | `02E0` → `02E2` | `0227` Divermon's Lake | `0x08` *(same corridor, reverse)* |
 
-Location IDs reference `Frontend/src/database/location.json`.
+Location IDs reference `Frontend/src/database/map.json`.
 
 ---
 

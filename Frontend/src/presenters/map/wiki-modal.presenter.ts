@@ -3,7 +3,7 @@ import { BoosterRepository } from "@/repositories/booster.repository";
 import { ConsumableItemRepository } from "@/repositories/consumable-item.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
-import { LocationRepository } from "@/repositories/location.repository";
+import { MapRepository } from "@/repositories/map.repository";
 import { NpcRepository } from "@/repositories/npc.repository";
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
@@ -87,7 +87,7 @@ export class WikiModalPresenter {
   public static getLocationSearchItems(
     translateLocationName: (locationId: string) => string,
   ): SearchItemViewModel[] {
-    return LocationRepository.getLocationIdsWithWorldLocation().map((locationId) => {
+    return MapRepository.getMapIdsWithWorldLocation().map((locationId) => {
       return SearchItemConverter.convertLocation(locationId, translateLocationName(locationId));
     });
   }

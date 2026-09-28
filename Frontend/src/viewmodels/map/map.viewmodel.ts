@@ -1,6 +1,6 @@
-import type { LocationRegion } from "@/types/location-region.type";
+import type { MapRegion } from "@/types/map-region.type";
 
 export interface MapViewModel {
-  locationRegion: LocationRegion;
+  locationRegion: MapRegion;
   locationImageUrl: string | null;
 }
