@@ -1,9 +1,30 @@
 import EnemyJson from "@/database/enemy.json";
 import type { EnemyTable } from "@/repositories/tables/enemy/enemy.table";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
+import type { EnemyWhoDropsRaw } from "@/repositories/tables/raws/enemy/enemy-who-drops.raw";
 
 export class EnemyRepository {
   private static readonly enemyTable = EnemyJson as EnemyTable;
+  private static readonly enemiesWhoDropByDropKey = this.buildEnemiesWhoDropByDropKey();
+
+  private static buildEnemiesWhoDropByDropKey(): Map<string, EnemyWhoDropsRaw[]> {
+    const enemiesWhoDropByDropKey = new Map<string, EnemyWhoDropsRaw[]>();
+    for (const [enemyId, enemyRaw] of Object.entries(this.enemyTable)) {
+      for (const dropRaw of enemyRaw.drops ?? []) {
+        const dropKey = this.toDropKey(dropRaw.type, dropRaw.dropId);
+        const enemiesWhoDrop = enemiesWhoDropByDropKey.get(dropKey) ?? [];
+        enemiesWhoDrop.push({ enemyId, locationOnly: dropRaw.locationOnly });
+        enemiesWhoDropByDropKey.set(dropKey, enemiesWhoDrop);
+      }
+    }
+
+    return enemiesWhoDropByDropKey;
+  }
+
+  private static toDropKey(dropType: DropType, dropId: number): string {
+    return `${dropType}:${dropId}`;
+  }
 
   public static getEnemyById(enemyId: string): EnemyRaw {
     return this.enemyTable[enemyId]!;
@@ -67,5 +88,9 @@ export class EnemyRepository {
 
   public static getEnemyTable(): EnemyTable {
     return this.enemyTable;
+  }
+
+  public static getEnemiesWhoDropByDrop(dropType: DropType, dropId: number): EnemyWhoDropsRaw[] {
+    return this.enemiesWhoDropByDropKey.get(this.toDropKey(dropType, dropId)) ?? [];
   }
 }
