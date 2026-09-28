@@ -5,15 +5,8 @@ export interface CardPointsRaw {
   hp: number;
 }
 
-export interface CardShopRaw {
-  id: string;
-  startWhenLastMainQuestStepDone: string;
-  finishWhenLastMainQuestStepDone: string;
-}
-
 export interface CardRaw {
   imageName: string;
-  cardShops?: CardShopRaw[];
   type: CardType;
   points?: CardPointsRaw;
 }

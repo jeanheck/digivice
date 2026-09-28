@@ -34,7 +34,7 @@ export class WikiCardShopPanelPresenter {
     for (const phase of phases) {
       const isInRange = QuestService.isOnMainQuestRange(
         lastCompletedMainQuestStep,
-        phase.mainQuestStepDone,
+        phase.mainQuestAvailabilityWindow,
       );
       if (!isInRange) {
         continue;

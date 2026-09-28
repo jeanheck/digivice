@@ -4,9 +4,9 @@
     "imageName": "Divermon",
     "phases": [
       {
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         },
         "inventory": [
           {
@@ -36,8 +36,8 @@
         ]
       },
       {
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         },
         "inventory": [
           {
@@ -73,8 +73,8 @@
     "imageName": "Divermon",
     "phases": [
       {
-        "mainQuestStepDone": {
-          "min": 0
+        "mainQuestAvailabilityWindow": {
+          "starts": 0
         },
         "inventory": [
           {
@@ -110,8 +110,8 @@
     "imageName": "Divermon",
     "phases": [
       {
-        "mainQuestStepDone": {
-          "min": 0
+        "mainQuestAvailabilityWindow": {
+          "starts": 0
         },
         "inventory": [
           {

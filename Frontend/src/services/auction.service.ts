@@ -1,7 +1,7 @@
 import type { Auctions, Quest } from "@/models";
 import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import { AuctionRepository } from "@/repositories/auction.repository";
-import type { MainQuestAvailabilityWindowRaw } from "@/repositories/tables/raws/auction/main-quest-availability-window.raw";
+import type { MainQuestAvailabilityWindowRaw } from "@/repositories/tables/raws/quest/main-quest-availability-window.raw";
 import { QuestService } from "@/services/quest.service";
 import type { AuctionStatus } from "@/types/auction-status.type";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
@@ -41,10 +41,7 @@ export class AuctionService {
     if (lastCompletedStep < mainQuestAvailabilityWindow.starts) {
       return "notYetOccurred";
     }
-    if (
-      lastCompletedStep >= mainQuestAvailabilityWindow.starts &&
-      lastCompletedStep < mainQuestAvailabilityWindow.ends
-    ) {
+    if (QuestService.isOnMainQuestRange(lastCompletedStep, mainQuestAvailabilityWindow)) {
       return "available";
     }
 

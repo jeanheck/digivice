@@ -95,11 +95,11 @@ export class EnemyConverter {
                   y: locationRaw.localCoordinates.y,
                 }
               : undefined,
-          mainQuestStepDone:
-            locationRaw.mainQuestStepDone != null
+          mainQuestAvailabilityWindow:
+            locationRaw.mainQuestAvailabilityWindow != null
               ? {
-                  min: locationRaw.mainQuestStepDone.min,
-                  max: locationRaw.mainQuestStepDone.max,
+                  starts: locationRaw.mainQuestAvailabilityWindow.starts,
+                  ends: locationRaw.mainQuestAvailabilityWindow.ends,
                 }
               : undefined,
         };

@@ -78,7 +78,7 @@ export class WikiLocationsPanelPresenter {
       if (
         !QuestService.isOnMainQuestRange(
           lastCompletedMainQuestStep,
-          locationNpc.mainQuestStepDone,
+          locationNpc.mainQuestAvailabilityWindow,
         )
       ) {
         continue;

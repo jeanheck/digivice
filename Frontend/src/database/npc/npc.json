@@ -3,8 +3,8 @@
     "type": "leader",
     "locationId": "022E",
     "imageName": "Seiryu Leader",
-    "mainQuestStepDone": {
-      "min": 3
+    "mainQuestAvailabilityWindow": {
+      "starts": 3
     },
     "party": [
       {
@@ -28,9 +28,9 @@
     "type": "npc",
     "locationId": "0202",
     "imageName": "Keith",
-    "mainQuestStepDone": {
-      "min": 6,
-      "max": 7
+    "mainQuestAvailabilityWindow": {
+      "starts": 6,
+      "ends": 7
     },
     "party": [
       {
@@ -76,9 +76,9 @@
     "type": "npc",
     "locationId": "025E",
     "imageName": "Fake Byakko Leader",
-    "mainQuestStepDone": {
-      "min": 45,
-      "max": 46
+    "mainQuestAvailabilityWindow": {
+      "starts": 45,
+      "ends": 46
     },
     "party": [
       {
@@ -120,9 +120,9 @@
     "type": "npc",
     "locationId": "0255",
     "imageName": "A.o.A Attacker",
-    "mainQuestStepDone": {
-      "min": 60,
-      "max": 61
+    "mainQuestAvailabilityWindow": {
+      "starts": 60,
+      "ends": 61
     },
     "party": [
       {

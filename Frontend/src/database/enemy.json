@@ -110,8 +110,8 @@
         "sources": [
           "boss"
         ],
-        "mainQuestStepDone": {
-          "min": 2
+        "mainQuestAvailabilityWindow": {
+          "starts": 2
         }
       }
     ]
@@ -170,8 +170,8 @@
         "sources": [
           "boss"
         ],
-        "mainQuestStepDone": {
-          "min": 59
+        "mainQuestAvailabilityWindow": {
+          "starts": 59
         }
       }
     ]
@@ -224,8 +224,8 @@
         "sources": [
           "boss"
         ],
-        "mainQuestStepDone": {
-          "min": 60
+        "mainQuestAvailabilityWindow": {
+          "starts": 60
         }
       }
     ]
@@ -284,8 +284,8 @@
         "sources": [
           "boss"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -344,8 +344,8 @@
         "sources": [
           "boss"
         ],
-        "mainQuestStepDone": {
-          "min": 25
+        "mainQuestAvailabilityWindow": {
+          "starts": 25
         }
       }
     ]
@@ -398,8 +398,8 @@
         "sources": [
           "boss"
         ],
-        "mainQuestStepDone": {
-          "min": 13
+        "mainQuestAvailabilityWindow": {
+          "starts": 13
         }
       }
     ]
@@ -457,9 +457,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -467,9 +467,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -477,9 +477,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       }
     ]
@@ -537,9 +537,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       }
     ]
@@ -641,9 +641,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -707,8 +707,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -784,9 +784,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -794,9 +794,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       }
     ]
@@ -860,9 +860,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       }
     ]
@@ -1126,8 +1126,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -1141,9 +1141,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       }
     ]
@@ -1195,8 +1195,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       }
     ]
@@ -1298,8 +1298,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -1307,8 +1307,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -1316,8 +1316,8 @@
         "sources": [
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1325,8 +1325,8 @@
         "sources": [
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       }
     ]
@@ -1426,9 +1426,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -1436,8 +1436,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       }
     ]
@@ -1551,9 +1551,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -1673,8 +1673,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1682,8 +1682,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1691,8 +1691,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1700,8 +1700,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       }
     ]
@@ -1778,9 +1778,9 @@
           "walking",
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -1788,8 +1788,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -1803,8 +1803,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1812,8 +1812,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1821,8 +1821,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1830,8 +1830,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -1839,8 +1839,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       }
     ]
@@ -1892,8 +1892,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -1993,8 +1993,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -2002,8 +2002,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       }
     ]
@@ -2061,8 +2061,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       },
       {
@@ -2070,8 +2070,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -2129,8 +2129,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -2138,8 +2138,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -2147,8 +2147,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       },
       {
@@ -2157,8 +2157,8 @@
           "walking",
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -2252,8 +2252,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -2261,8 +2261,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -2270,8 +2270,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -2469,8 +2469,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -2528,8 +2528,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -2543,8 +2543,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -2553,8 +2553,8 @@
           "walking",
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -2562,8 +2562,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -2571,8 +2571,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -2580,8 +2580,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -2639,8 +2639,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -2648,8 +2648,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -2707,8 +2707,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -2716,8 +2716,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -2775,8 +2775,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -2784,8 +2784,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -2843,8 +2843,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 27
         }
       },
       {
@@ -2852,8 +2852,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -2861,8 +2861,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3004,8 +3004,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3013,8 +3013,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3022,8 +3022,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3081,8 +3081,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3090,8 +3090,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3149,8 +3149,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3158,8 +3158,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3167,8 +3167,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3176,8 +3176,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3185,8 +3185,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3194,8 +3194,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 60
+        "mainQuestAvailabilityWindow": {
+          "starts": 60
         }
       }
     ]
@@ -3295,8 +3295,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3354,8 +3354,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3413,8 +3413,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3472,8 +3472,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3481,8 +3481,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -3490,8 +3490,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 60
+        "mainQuestAvailabilityWindow": {
+          "starts": 60
         }
       }
     ]
@@ -3549,8 +3549,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 60
+        "mainQuestAvailabilityWindow": {
+          "starts": 60
         }
       }
     ]
@@ -3608,8 +3608,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 60
+        "mainQuestAvailabilityWindow": {
+          "starts": 60
         }
       }
     ]
@@ -3757,8 +3757,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -3816,8 +3816,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -4043,9 +4043,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14,
-          "max": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 14,
+          "ends": 24
         }
       },
       {
@@ -4053,8 +4053,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -6524,9 +6524,9 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
         }
       },
       {
@@ -6534,8 +6534,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       },
       {
@@ -6543,8 +6543,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -6651,8 +6651,8 @@
           "walking",
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -6660,8 +6660,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -6669,8 +6669,8 @@
         "sources": [
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -6679,8 +6679,8 @@
           "walking",
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -6689,8 +6689,8 @@
           "walking",
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -6698,8 +6698,8 @@
         "sources": [
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -6757,8 +6757,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -6766,8 +6766,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -6825,8 +6825,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -6834,8 +6834,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -6984,8 +6984,8 @@
           "walking",
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -7085,8 +7085,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -7094,8 +7094,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -7201,8 +7201,8 @@
         "sources": [
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -7210,8 +7210,8 @@
         "sources": [
           "kickingTree"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -7219,8 +7219,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -7228,8 +7228,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -7237,8 +7237,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       },
       {
@@ -7246,8 +7246,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 43
+        "mainQuestAvailabilityWindow": {
+          "starts": 43
         }
       }
     ]
@@ -7659,8 +7659,8 @@
         "sources": [
           "walking"
         ],
-        "mainQuestStepDone": {
-          "min": 24
+        "mainQuestAvailabilityWindow": {
+          "starts": 24
         }
       }
     ]
@@ -8939,8 +8939,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -8948,8 +8948,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -8957,8 +8957,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 14
+        "mainQuestAvailabilityWindow": {
+          "starts": 14
         }
       },
       {
@@ -8966,8 +8966,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 25
+        "mainQuestAvailabilityWindow": {
+          "starts": 25
         }
       },
       {
@@ -8975,8 +8975,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 25
+        "mainQuestAvailabilityWindow": {
+          "starts": 25
         }
       },
       {
@@ -8984,8 +8984,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 25
+        "mainQuestAvailabilityWindow": {
+          "starts": 25
         }
       },
       {
@@ -8993,8 +8993,8 @@
         "sources": [
           "fishing"
         ],
-        "mainQuestStepDone": {
-          "min": 25
+        "mainQuestAvailabilityWindow": {
+          "starts": 25
         }
       }
     ]

@@ -1,5 +1,5 @@
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
-import type { MainQuestStepDoneViewModel } from "@/viewmodels/quest/main-quest-step-done.viewmodel";
+import type { MainQuestAvailabilityWindowViewModel } from "@/viewmodels/quest/main-quest-availability-window.viewmodel";
 import type { EnemySource } from "@/types/enemy-source.type";
 
 export interface EnemyLocationViewModel {
@@ -7,5 +7,5 @@ export interface EnemyLocationViewModel {
   labelKey: string;
   sources: EnemySource[];
   localCoordinates?: CoordinatesViewModel;
-  mainQuestStepDone?: MainQuestStepDoneViewModel;
+  mainQuestAvailabilityWindow?: MainQuestAvailabilityWindowViewModel;
 }

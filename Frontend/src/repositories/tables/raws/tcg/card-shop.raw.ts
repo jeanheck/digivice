@@ -1,4 +1,4 @@
-import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
+import type { MainQuestAvailabilityWindowRaw } from "@/repositories/tables/raws/quest/main-quest-availability-window.raw";
 
 export interface CardShopInventoryItemRaw {
   cardId: string;
@@ -6,7 +6,7 @@ export interface CardShopInventoryItemRaw {
 }
 
 export interface CardShopPhaseRaw {
-  mainQuestStepDone: NpcMainQuestStepDoneRaw;
+  mainQuestAvailabilityWindow: MainQuestAvailabilityWindowRaw;
   inventory: CardShopInventoryItemRaw[];
 }
 
@@ -14,4 +14,10 @@ export interface CardShopCatalogRaw {
   locationId: string;
   imageName?: string;
   phases: CardShopPhaseRaw[];
+}
+
+export interface CardShopCardRaw {
+  cardShopId: string;
+  mainQuestAvailabilityWindow: MainQuestAvailabilityWindowRaw;
+  price: number;
 }

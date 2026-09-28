@@ -15,7 +15,7 @@ export class LocationNpcRepository {
       if (
         !QuestService.isOnMainQuestRange(
           lastCompletedMainQuestStep,
-          locationNpcRaw.mainQuestStepDone,
+          locationNpcRaw.mainQuestAvailabilityWindow,
         )
       ) {
         return [];

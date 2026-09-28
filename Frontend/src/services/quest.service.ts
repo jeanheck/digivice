@@ -1,5 +1,5 @@
 import type { Quest } from "@/models";
-import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
+import type { MainQuestAvailabilityWindowRaw } from "@/repositories/tables/raws/quest/main-quest-availability-window.raw";
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 
 export class QuestService {
@@ -21,19 +21,19 @@ export class QuestService {
 
   public static isOnMainQuestRange(
     lastCompletedMainQuestStep: number,
-    mainQuestStepDone?: NpcMainQuestStepDoneRaw,
+    mainQuestAvailabilityWindow?: MainQuestAvailabilityWindowRaw,
   ): boolean {
-    if (mainQuestStepDone === undefined) {
+    if (mainQuestAvailabilityWindow === undefined) {
       return true;
     }
 
-    if (lastCompletedMainQuestStep < mainQuestStepDone.min) {
+    if (lastCompletedMainQuestStep < mainQuestAvailabilityWindow.starts) {
       return false;
     }
 
     if (
-      mainQuestStepDone.max !== undefined &&
-      lastCompletedMainQuestStep >= mainQuestStepDone.max
+      mainQuestAvailabilityWindow.ends !== undefined &&
+      lastCompletedMainQuestStep >= mainQuestAvailabilityWindow.ends
     ) {
       return false;
     }

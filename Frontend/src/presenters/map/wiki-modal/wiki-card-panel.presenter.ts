@@ -1,6 +1,7 @@
 import { CardConverter } from "@/presenters/converter/card.converter";
 import { BoosterCardRepository } from "@/repositories/booster-card.repository";
 import { CardRepository } from "@/repositories/card.repository";
+import { CardShopRepository } from "@/repositories/card-shop.repository";
 import type { WikiCardPanelViewModel } from "@/viewmodels/wiki-modal/wiki-card-panel.viewmodel";
 
 export class WikiCardPanelPresenter {
@@ -13,10 +14,9 @@ export class WikiCardPanelPresenter {
     return {
       card: CardConverter.convert(cardId, cardRaw),
       boosters: BoosterCardRepository.getBoosterIdsByCardId(Number(cardId)),
-      cardShops: (cardRaw.cardShops ?? []).map((shop) => ({
-        id: shop.id,
-        startWhenLastMainQuestStepDone: shop.startWhenLastMainQuestStepDone,
-        finishWhenLastMainQuestStepDone: shop.finishWhenLastMainQuestStepDone,
+      cardShops: CardShopRepository.getCardShopsByCardId(cardId).map((cardShopCardRaw) => ({
+        id: cardShopCardRaw.cardShopId,
+        mainQuestAvailabilityWindow: cardShopCardRaw.mainQuestAvailabilityWindow,
       })),
     };
   }

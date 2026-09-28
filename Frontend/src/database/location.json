@@ -118,9 +118,9 @@
     "npcs": [
       {
         "id": "keith",
-        "mainQuestStepDone": {
-          "min": 6,
-          "max": 7
+        "mainQuestAvailabilityWindow": {
+          "starts": 6,
+          "ends": 7
         },
         "coordinates": {
           "x": 56,
@@ -1047,8 +1047,8 @@
     "npcs": [
       {
         "id": "seiryuLeader",
-        "mainQuestStepDone": {
-          "min": 3
+        "mainQuestAvailabilityWindow": {
+          "starts": 3
         },
         "coordinates": {
           "x": 29,
@@ -1880,9 +1880,9 @@
     "npcs": [
       {
         "id": "fakeByakkoLeader",
-        "mainQuestStepDone": {
-          "min": 44,
-          "max": 45
+        "mainQuestAvailabilityWindow": {
+          "starts": 44,
+          "ends": 45
         },
         "coordinates": {
           "x": 40,
