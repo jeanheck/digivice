@@ -3,7 +3,8 @@
     "title": "Agumon (DRI Johann)",
     "description": "Add Agumon to your Digimon party",
     "requisites": {
-      "partyLevel": "Have a party level between 30 and 45"
+      "partyLevel": "Have a party level between 30 and 45",
+      "byakkoLeader": "Have the Seiryu Badge"
     },
     "steps": {
       "1": {

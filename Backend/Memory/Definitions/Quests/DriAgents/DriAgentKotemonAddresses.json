@@ -4,24 +4,32 @@
         {
             "Id": "submarimon",
             "Address": "0x00048DC0",
-            "BitMasks": ["0x01"]
+            "BitMasks": [
+                "0x01"
+            ]
         }
     ],
     "Steps": [
         {
             "Number": 1,
             "Address": "0x0004B38C",
-            "BitMasks": ["0x10"]
+            "BitMasks": [
+                "0x10"
+            ]
         },
         {
             "Number": 2,
             "Address": "0x0004B3B7",
-            "BitMasks": ["0x40"]
+            "BitMasks": [
+                "0x40"
+            ]
         },
         {
             "Number": 3,
             "Address": "0x00049494",
-            "BitMasks": ["0x03"],
+            "BitMasks": [
+                "0x03"
+            ],
             "Requisites": [
                 {
                     "Id": "kotemonDDNA",
