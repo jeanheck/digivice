@@ -17,7 +17,7 @@ export class NodePresenter {
         return `${digimonName} ${levelLabel} ${requirement.value}`;
       case "Attribute":
       case "Element":
-        return `${digimonName}: ${this.capitalize(requirement.stat!)} >= ${requirement.value}`;
+        return `${translate(`stat.${requirement.stat}`)} >= ${requirement.value}`;
       case "DigievolutionLevel": {
         if (requirement.digievolution === undefined) {
           return translate("digievolution.unknownParam");
@@ -75,9 +75,5 @@ export class NodePresenter {
     }
 
     return true;
-  }
-
-  private static capitalize(value: string): string {
-    return value.charAt(0).toUpperCase() + value.slice(1);
   }
 }
