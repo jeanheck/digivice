@@ -1,7 +1,7 @@
 {
   "fishingPole": {
     "title": "The Fishing Pole",
-    "description": "Obtain the Fishing Pole to start fishing for items and Digimon.",
+    "description": "Obtain the Fishing Pole to challenge Cardmons and other aquatic Digimon!",
     "requisites": {
       "folderBag": "Own the Folder Bag"
     },
