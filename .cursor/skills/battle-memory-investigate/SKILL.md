@@ -37,7 +37,8 @@ NPC win flags live in `memory-compare/patterns/patterns-card-battle.md`.
 - `0xA4468` — active ally slot index.
 - `0xA4558` — camera focus unit id (target / ally / stale); removed from `EnemyAddresses.json` — do not use to pick the active enemy.
 - `0x42B6C` — live drop item Val (drop model still open — see patterns file).
-- `0xA4532`, `0xA4414…0xA442A` — field companions; not SSOT.
+- `0xA4532` — field potency (`1 + value / 128`; item `64`, skill `127`). Campo skills are bugged: always `A4530 = 6` (Thunder). Field weaken has no observed effect.
+- `0xA4414…0xA442A` — field companion cluster; not SSOT.
 - `0xE1408` / `0xE141C` — HUD HP mirrors; discard.
 
 ## Workflow

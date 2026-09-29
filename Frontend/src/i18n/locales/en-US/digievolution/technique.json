@@ -268,8 +268,8 @@
       "name": "Electro Bolt",
       "description": "Large thunder ball against enemy."
     },
-    "showstorm": {
-      "name": "Showstorm",
+    "snowStorm": {
+      "name": "snowStorm",
       "description": "Snow spirit inflicts ice damage."
     },
     "thunderField": {

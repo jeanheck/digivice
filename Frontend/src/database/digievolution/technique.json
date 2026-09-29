@@ -468,7 +468,7 @@
     "mp": 48,
     "power": 300
   },
-  "showstorm": {
+  "snowStorm": {
     "type": "magical",
     "element": "ice",
     "elementStrength": 40,

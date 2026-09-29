@@ -146,8 +146,8 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | `0x000A446C` | Active enemy slot index | 0/1/2 — Gordon tamer snaps; wired in `EnemyAddresses.json` as `ActiveEnemySlotIndex` (primary active-enemy source) |
 | `0x000A4558` | Camera focus unit id | Target during attack animation, ally at action choice / after switches, stale during switch animations. **Not integrated** (removed from `EnemyAddresses.json` 2026-09-27) |
 | `0x000A4580` / `0x000A45C0` | Combatant attr/resist blocks (stride `0x40`) | **Confirmed** layout: Level, STR/DEF/SPI/WIS/SPD, 7 elemental resists, status-resist tail, **species @ +0x24**. Ally↔enemy **swap** which base holds whom — identify by matching enemy.json / slot id `0xA44D0`. No Charisma. Not per party slot (engaged pair only). Field skills do **not** rewrite these resists. Species code table: [patterns-battle.md](patterns/patterns-battle.md) |
-| `0x000A4530` | Active battle **field** id (byte) | **Confirmed** + **integrated** in `Battles/DigimonBattleAddresses.json` as `Field` on `DigimonBattle` — `0` neutral; `2` Fire … `8` Dark |
-| `0x000A4532` | Field companion (potency/timer class?) | `0` none; `0x40` while item field active (same for all elements in that series) |
+| `0x000A4530` | Active battle **field** id (byte) | **Confirmed** + **integrated** in `Battles/DigimonBattleAddresses.json` as `Field` on `DigimonBattle` — `0` neutral; `2` Fire … `8` Dark. Item fields write the matching id; **all Campo skills write `6` (Thunder)** regardless of claimed element (game bug) |
+| `0x000A4532` | Field **potency** | **Confirmed**: strengthen multiplier = `1 + value / 128`. `0` none; `64` item (+50%); `127` Campo skill (~+99%). Not integrated |
 | `0x000A4414`…`0xA442A` | Field support cluster | Lights when field active; **not** per-element SSOT — prefer `0xA4530` |
 | Enemy catalog (variable) | Enemy base attrs copy | `enemyId` then attrs at **+0x0E** (e.g. Mammothmon `0xB97A2`→`0xB97B0`); address moves per fight — audit helper, not a fixed absolute |
 | `0x000E1408` / `0x000E141C` | HUD HP mirrors | Track current HP; discard for authoritative state |

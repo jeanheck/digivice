@@ -646,7 +646,7 @@
         "loadAt": 60
       },
       {
-        "id": "showstorm",
+        "id": "snowStorm",
         "learnAt": 50,
         "loadAt": 80
       },
@@ -1707,7 +1707,7 @@
         "loadAt": 65
       },
       {
-        "id": "showstorm",
+        "id": "snowStorm",
         "learnAt": 45,
         "loadAt": 80
       },
@@ -1756,7 +1756,7 @@
         "loadAt": 25
       },
       {
-        "id": "showstorm",
+        "id": "snowStorm",
         "learnAt": 15,
         "loadAt": 35
       },

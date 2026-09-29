@@ -268,7 +268,7 @@
       "name": "Trovão Elétrico",
       "description": "Dispara uma grande bola de trovão no inimigo."
     },
-    "showstorm": {
+    "snowStorm": {
       "name": "Chuva de Neve",
       "description": "Espírito de neve que inflige dano de gelo."
     },

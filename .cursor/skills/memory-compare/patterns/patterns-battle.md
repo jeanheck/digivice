@@ -375,8 +375,9 @@ Same offsets on enemy `0xA44D0` — wired as `State.DigimonBattle.Enemy` via
 **Integrated:** `Battles/DigimonBattleAddresses.json` `Field` → `DigimonBattle.Field` (`DigimonBattleChanged`). `0` = neutral field (valid value).
 
 Live combat attrs/resists (`0xA4580` / `0xA45C0`) do **not** change when a field
-is applied. Field is a global battle state: strengthen one element **+50%**,
-weaken another **−25%** (fixed; independent of which field).
+is applied. Field is a global battle state that **only strengthens** one element.
+Bonus is **not** fixed: it comes from potency `0xA4532` (see *Field potency*).
+The in-game "weakens X" text has **no observable effect** (see *Field weaken*).
 
 **Active field id — `0xA4530` (byte / Int16 LE, low byte):**
 
@@ -402,17 +403,72 @@ snaps `before/after-*-field.bin`. `chain-match` on after-sequence:
 (`before-fire` alone is `0`; later `before-*` keep the previous field id until
 the matching `after-*`.)
 
-**Companion:** `0xA4532` = `0x40` (64) while any item field is active; `0` when
-none. Not an element discriminator.
-
 **Cluster `0xA4414…A442A`:** still lights up when a field becomes active (e.g.
-`A4414=16`, `A442A=1`) but does **not** uniquely identify which field (Fire and
-Water item snaps share the same `A441C` until Ice). Prefer **`0xA4530`** as SSOT.
+`A4414=16`, `A4418=220`, `A441C=2`, `A442A=1`) but does **not** identify which
+field nor its source (item and skill Wind snaps were identical). Can be already
+cleared while `0xA4530` / `0xA4532` still hold the field (`skill-machine-field` /
+`skill-water-field`). Prefer **`0xA4530`** as SSOT.
 
-**Prior skill snaps (Taomon/Sakuya/BKW/Malo)** had misread `A4530` as always `6`
-and treated `A441C` as a coarse enum — superseded by the item series above.
-Skill casts may still write different `A4418` / `A4532` (timer/potency); id
-mapping for Digimon Campo skills should match this table when re-checked.
+#### Field potency — `0xA4532` (**confirmed** 2026-09-28)
+
+Strengthen multiplier = `1 + A4532 / 128`. `0` when no field.
+
+| Source | `A4532` | Multiplier | Damage evidence |
+|--------|--------:|-----------:|-----------------|
+| Item (any element) | `64` (`0x40`) | ×1.5 (+50%) | Sakuyamon thunder tech vs Kunemon 850 → **1275**; Raio Elétrico vs Hagurumon/Clockmon 2200 → **3300**; Giga Congelar 780 → **1170**; Chuva de Neve 650 → **975** (Ice item) |
+| Skill (any Campo skill) | `127` (`0x7F`) | ×1.992 (~+99%) | Sakuyamon thunder tech vs Kunemon 850 → **1693** (predicted 1693.4); repeated to rule out crits |
+
+#### Field skills are bugged — always Thunder (**confirmed** 2026-09-28)
+
+Every Digimon Campo skill writes **`A4530 = 6` (Thunder)** + **`A4532 = 127`**,
+regardless of the element it claims. The item path is the only one that writes
+the matching element id (`2`–`8`, potency `64`).
+
+| Technique | Digimon (id) | Claimed | Written | Evidence |
+|-----------|--------------|---------|---------|----------|
+| `thunderField` | Taomon (375) | Thunder | `6` | old snaps `taomon-*-field` |
+| `iceField` | Sakuyamon (376) | Ice | `6` / `127` | old snaps + `possible-ice-field`; in-game: boosts **Thunder**, Ice unchanged |
+| `fireField` | BK WarGreymon (267) | Fire | `6` | old snaps `bkwargreymon-*-field`; in-game: boosts **Thunder** |
+| `darkField` | MaloMyotismon (378) | Dark | `6` / `127` | old snaps (first pair contaminated, retaken) |
+| `windField` | Seraphimon (214) | Wind | `6` / `127` | `skill-wind-field` (vs `item-wind-field` = `5` / `64`) |
+| `waterField` | Rosemon (144) | Water | `6` / `127` | `skill-water-field` |
+| `metalField` | MetalGarurumon (196) | Machine | `6` / `127` | `skill-machine-field` |
+
+Old snaps only logged `A4530`; `127` was explicitly seen on Malo and all 2026-09-28
+snaps. Taomon matches only by coincidence (still `127` potency, not `64`).
+
+`0xA38A0..A38A3` (zero with no field; item Wind `07 00 14 05`, skill Wind
+`07 00 51 32`, skill Ice `07 00 c9 32`, skill Machine/Water both `07 00 61 31`)
+looked like a last-action record, but **`A38A2` is not the skill id** (Machine and
+Water identical). No address found yet that stores the claimed element / skill used.
+
+#### Field weaken — **no effect observed** (2026-09-28, item fields only)
+
+| Attacker | Move | Field (item) | Should weaken | Result |
+|----------|------|--------------|---------------|--------|
+| Clockmon | Míssil Mágico (magic, Machine) | Thunder | Machine | 426 → 426 (also 426 under skill field) |
+| Airdramon (gold) | Mega Tornado (Wind) | Ice | Wind | 259 → 259 |
+| Sakuyamon (player) | thunder technique | Dark | Thunder | unchanged |
+
+Weaken appears absent for both player and enemy attacks. `field.json` `weakens`
+and technique descriptions reflect game text only. Not yet decided how Digivice
+should present it.
+
+Side notes from the same session:
+
+- Airdramon (gold, `groupId` 207) used **Mega Tornado**, but `enemy.json` lists
+  `techniqueId: "airBlast"` — enemy data to review.
+- Airdramon physical `noElement` attack on Kotemon 49 → 20 with a field: not a
+  field effect (physical, no element) — discard as noise / other modifier.
+
+#### Field — open questions
+
+- Does strengthen also apply to **enemy** attacks? All strengthen evidence so far
+  comes from player attacks.
+- **Duration:** item field ends after **5 player actions** (skill field untested).
+  Countdown address not found (`A441C=2` / `A4418=220` right after apply do not
+  look like a 5-count) — needs one snap per turn until the field expires.
+- Where (if anywhere) the claimed element / skill id of a Campo cast is stored.
 
 ### Enemy catalog attr copy (variable address; id → attrs +0x0E)
 
