@@ -53,7 +53,7 @@ public class JournalAssemblerTests
     {
         var suppressedQuest = new QuestResource
         {
-            Id = "sunTrophy",
+            Id = "asukaRematch",
             Requisites = [new RequisiteResource { Id = "asukaTrophy", Value = 0 }],
             Steps = [
                 new StepResource { Number = 1, Value = 0x80, Requisites = [] },

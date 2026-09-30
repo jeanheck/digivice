@@ -1,7 +1,7 @@
 {
-  "sunTrophy": {
-    "title": "Sun Trophy",
-    "description": "Defeat all Divermons again on Duel Island and win the Sun Trophy",
+  "asukaRematch": {
+    "title": "Asuka (Rematch)",
+    "description": "Defeat all Divermons again on Duel Island",
     "requisites": {
       "asukaTrophy": "Asuka Trophy"
     },

@@ -133,7 +133,7 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 | 0x00048F18 | Monmon DNA — important item (permanent after obtain) | DriAgents/Monmon investigation |
 | 0x00048DD7 | Patamon DNA — important item (permanent after obtain) | DriAgents/Patamon investigation |
 | 0x00048DB4 / 0x00048DB5 | Tree Boots / Fishing Pole — important items | **integrated** — `ImportantItemsAddresses.json` |
-| 0x00048DC2 / 0x00048DC4 | Asuka Trophy / Sun Trophy — important items | **integrated** — `ImportantItemsAddresses.json` + Duel Island requisites/steps |
+| 0x00048DC2 / 0x00048DC4 | Asuka Trophy / Sun Trophy — important items | **integrated** — `ImportantItemsAddresses.json`; Asuka Trophy also Duel Island requisite/step |
 
 Common items: possession may **clear on sell** — not the same as permanent
 progress flags. Important items (DRI DNA) may persist after quest hand-in.

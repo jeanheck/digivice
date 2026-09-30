@@ -57,4 +57,4 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 
 ### Duel Island (2026-08-31)
 
-- `sunTrophy` — `Quests/DuelIsland/SunTrophyAddresses.json` (quest-level requisite `asukaTrophy`; trophy step raw byte `0x48DC4`)
+- `asukaRematch` — `Quests/DuelIsland/AsukaRematchAddresses.json` (quest-level requisite `asukaTrophy`; step 6 provisional = step 5 bit `0x4B3B3` / `0x08`)

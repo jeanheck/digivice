@@ -74,7 +74,7 @@ All categories are wired. Current trackers: [backend-status.md](backend-status.m
 }
 ```
 
-- `Requisites` exist at **two levels**: quest root (gate for the whole quest, e.g. `SunTrophyAddresses.json` → `asukaTrophy`; `DriAgentPatamonAddresses.json` → `submarimon`) and per step (e.g. DRI step 3 → `{rookie}DDNA`). Both are optional.
+- `Requisites` exist at **two levels**: quest root (gate for the whole quest, e.g. `AsukaRematchAddresses.json` → `asukaTrophy`; `DriAgentPatamonAddresses.json` → `submarimon`) and per step (e.g. DRI step 3 → `{rookie}DDNA`). Both are optional.
 - `BitMasks` (array) on steps **and** requisites. Empty = raw byte (`!= 0`). Multiple = **all** must be set. Singular `BitMask` → normalize to `"BitMasks": ["0x04"]`.
 - Single mask on one line (`"BitMasks": ["0x04"]`); multiline only for many entries.
 - **Ids in camelCase** (`muramasa`, `driAgentGuilmon`, `guilmonDDNA`). `Id` must match the frontend quest id.

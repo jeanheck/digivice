@@ -249,20 +249,22 @@ Survives map leave mid-run (user-tested). `0x4B3B2` shares byte with MQ step 26
 
 First-run trophy: `0x48DC2` (Asuka Trophy, important item — not a booster).
 Sun Trophy: `0x48DC4` (important item — RetroAchievements; pending manual validation).
+Not used as a quest step (the rematch below does not award it).
 
-**Sun Trophy rematch (confirmed 2026-08-31):** snapshots
+**Asuka rematch (confirmed 2026-08-31):** snapshots
 `sun-trophy-before/after-divermon-{1..3}.bin` — post-Asuka second round reuses
 **identical** round-state bytes (`0x4B3B2`/`0x4B3B3`) and booster band
 (`0x48F1C`–`0x48F1E` qty `0→1` per win). `0x48DC2` stays `1` throughout;
-Sun Trophy address still needs `before/after-final` snap.
+KingDivermon (final) address still needs `before/after-final` snap.
 
 **Backend integrated (2026-08-30):** `Quests/DuelIsland/AsukaTrophyAddresses.json`
 — `Id` `asukaTrophy`, 6 steps (round flags + trophy), normalize in
 `DuelIslandAssembler`.
 
-**Backend integrated (2026-08-31):** `Quests/DuelIsland/SunTrophyAddresses.json`
-— `Id` `sunTrophy`, requisite `asukaTrophy` @ `0x48DC2`, same round flags,
-trophy @ `0x48DC4`.
+**Backend integrated (2026-08-31, renamed 2026-09-30):**
+`Quests/DuelIsland/AsukaRematchAddresses.json` — `Id` `asukaRematch`, requisite
+`asukaTrophy` @ `0x48DC2`, same round flags; step 6 (KingDivermon) is
+**provisional** = step 5 bit (`0x4B3B3` / `0x08`) until the final snap.
 
 Discard: encounter cache `0x4B824+`, entity table `0x4B618+`, spawn block
 `0x48D6C–0x48D84`.

@@ -59,11 +59,11 @@ public class DuelIslandAssemblerTests
     }
 
     [Fact]
-    public void Assemble_ShouldNormalizeSunTrophyWhenTrophyIsObtained()
+    public void Assemble_ShouldNormalizeAsukaRematchWhenLastStepIsDone()
     {
         var resource = new QuestResource
         {
-            Id = "sunTrophy",
+            Id = "asukaRematch",
             Requisites = [
                 new RequisiteResource { Id = "asukaTrophy", Value = 1 }
             ],
@@ -92,7 +92,7 @@ public class DuelIslandAssemblerTests
     {
         var resource = new QuestResource
         {
-            Id = "sunTrophy",
+            Id = "asukaRematch",
             Requisites = [
                 new RequisiteResource { Id = "asukaTrophy", Value = 0 }
             ],
@@ -121,7 +121,7 @@ public class DuelIslandAssemblerTests
     {
         var resource = new QuestResource
         {
-            Id = "sunTrophy",
+            Id = "asukaRematch",
             Requisites = [
                 new RequisiteResource { Id = "asukaTrophy", Value = 0 }
             ],
