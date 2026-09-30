@@ -249,6 +249,114 @@
       "61": {
         "description": "Siga para os Esgotos atrás de Numemon",
         "locationTarget": "Numemon"
+      },
+      "62": {
+        "description": "Fale com Datamon na Sala de Comando",
+        "locationTarget": "Datamon"
+      },
+      "63": {
+        "description": "Investigue a Sala Secreta nos Esgotos",
+        "locationTarget": "Sala Secreta"
+      },
+      "64": {
+        "description": "Encontre Nicky e Keith no Lago Subterrâneo Suzaku",
+        "locationTarget": "Nicky e Keith"
+      },
+      "65": {
+        "description": "Encontre o Passe Pessoal",
+        "locationTarget": "Passe Pessoal"
+      },
+      "66": {
+        "description": "Volte até Datamon para que ele abra o portão",
+        "locationTarget": "Datamon"
+      },
+      "67": {
+        "description": "Derrote os domadores do Centro Admin Subsolo (1/3)",
+        "locationTarget": "Domador"
+      },
+      "68": {
+        "description": "Derrote os domadores do Centro Admin Subsolo (2/3)",
+        "locationTarget": "Domador"
+      },
+      "69": {
+        "description": "Derrote os domadores do Centro Admin Subsolo (3/3)",
+        "locationTarget": "Domador"
+      },
+      "70": {
+        "description": "Derrote os domadores das Escadas do Subsolo (1/3)",
+        "locationTarget": "Domador"
+      },
+      "71": {
+        "description": "Derrote os domadores das Escadas do Subsolo (2/3)",
+        "locationTarget": "Domador"
+      },
+      "72": {
+        "description": "Derrote os domadores das Escadas do Subsolo (3/3)",
+        "locationTarget": "Domador"
+      },
+      "73": {
+        "description": "Derrote os domadores do Centro Administrativo: Andar 1 (1/2)",
+        "locationTarget": "Domador"
+      },
+      "74": {
+        "description": "Derrote os domadores do Centro Administrativo: Andar 1 (2/2)",
+        "locationTarget": "Domador"
+      },
+      "75": {
+        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (1/4)",
+        "locationTarget": "Domador"
+      },
+      "76": {
+        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (2/4)",
+        "locationTarget": "Domador"
+      },
+      "77": {
+        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (3/4)",
+        "locationTarget": "Domador"
+      },
+      "78": {
+        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (4/4)",
+        "locationTarget": "Domador"
+      },
+      "79": {
+        "description": "Derrote Vennmon",
+        "locationTarget": "Vennmon"
+      },
+      "80": {
+        "description": "Encontre a letra M na Sala Mestre",
+        "locationTarget": "Letra M"
+      },
+      "81": {
+        "description": "Encontre a letra O na Sala Mestre",
+        "locationTarget": "Letra O"
+      },
+      "82": {
+        "description": "Encontre a letra N na Sala Mestre",
+        "locationTarget": "Letra N"
+      },
+      "83": {
+        "description": "Encontre a letra S na Sala Mestre",
+        "locationTarget": "Letra S"
+      },
+      "84": {
+        "description": "Encontre a letra T na Sala Mestre",
+        "locationTarget": "Letra T"
+      },
+      "85": {
+        "description": "Encontre a letra E na Sala Mestre",
+        "locationTarget": "Letra E"
+      },
+      "86": {
+        "description": "Encontre a letra R na Sala Mestre",
+        "locationTarget": "Letra R"
+      },
+      "87": {
+        "description": "Derrote o segurança na entrada do A.o.A Headquarters",
+        "locationTarget": "Segurança"
+      },
+      "88": {
+        "description": "Derrote o Game Master no A.o.A Headquarters",
+        "locationTarget": "Game Master"
       }
     }
   }

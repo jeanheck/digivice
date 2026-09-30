@@ -28,11 +28,12 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(mainQuest);
         Assert.Equal("mainQuest", mainQuest.Id);
         Assert.Empty(mainQuest.Requisites);
-        Assert.Equal(61, mainQuest.Steps.Count);
+        Assert.Equal(88, mainQuest.Steps.Count);
         Assert.Equal(1, mainQuest.Steps[0].Number);
         Assert.Equal(0x80, mainQuest.Steps[0].Value);
         Assert.Equal(2, mainQuest.Steps[1].Number);
         Assert.Equal(0x01, mainQuest.Steps[1].Value);
+        Assert.Equal(88, mainQuest.Steps[^1].Number);
     }
 
     [Fact]

@@ -27,6 +27,40 @@ JSON: `Quests/MainQuestAddresses.json` — `BitMasks` array.
 
 ---
 
+## Main quest 62–88 — A.o.A arc (suspected, 2026-09-29)
+
+Snapshots: `Tools/MemoryScanner/Snapshots/{antes,depois}-*-{1..59}.bin`
+(number suffix = reading order; `opcional` = not required). All chosen bits are
+sticky through the last snapshot.
+
+| Step | Event | Address | BitMask | Alternative lit in same compare |
+|------|-------|---------|---------|---------------------------------|
+| 62 | Talk to Datamon | `0x4B3B8` | `0x08` | — |
+| 63 | Enter/leave Secret Room | `0x4B3B8` | `0x10` | `0x4B3E5` `0x04` |
+| 64 | Nicky & Keith at Suzaku UG Lake | `0x4B3DE` | `0x08` | — |
+| 65 | Find Personal Pass | `0x4B3CA` | `0x40` | item `0x48F41` `0→1`; `0x4B3E5` `0x20` |
+| 66 | Datamon opens the gate | `0x4B3B8` | `0x20` | `0x4B3DE` `0x20` |
+| 67–69 | Admin Center B1F tamers 1, 2, 4 | `0x4B394` | `0x10`, `0x20`, `0x80` | — |
+| 70–72 | Basement Stairs tamers 5, 6, 7 | `0x4B393` | `0x01`, `0x04`, `0x02` | — |
+| 73–74 | Admin Center tamers 8, 9 | `0x4B392` | `0x20`, `0x80` | — |
+| 75–77 | Admin Center 2F tamers 10, 11, 12 | `0x4B393` | `0x08`, `0x40`, `0x80` | — |
+| 78 | Admin Center 2F tamer 13 | `0x4B394` | `0x02` | `0x4B3E7` `0x04` |
+| 79 | Vennmon | `0x4B3E7` | `0x08` + `0x10` | — |
+| 80–81 | Letters M, O | `0x4B3BA` | `0x40`, `0x80` | `0x4B3B9` `0x80`, `0x4B3BA` `0x01` |
+| 82–85 | Letters N, S, T, E | `0x4B3BB` | `0x01`, `0x02`, `0x04`, `0x08` | `0x4B3BA` `0x02`, `0x04`, `0x08`, `0x10` |
+| 86 | Letter R (puzzle done) | `0x4B3BB` | `0x80` | — |
+| 87 | 1st security at A.o.A HQ | `0x4B3E7` | `0x40` | `0x4B394` `0x08` |
+| 88 | Game Master | `0x4B3E7` | `0x80` | — |
+
+Optional tamers (not steps): tamer 3 `0x4B395` `0x01`, tamer 14 `0x4B394`
+`0x01`, tamer 15 `0x4B393` `0x20`.
+
+Not steps: entering A.o.A HQ (`0x4B3C3` `0x02`, door/map flag); `0x4B370`
+behaves as story counter in this arc. `0x4B392`–`0x4B395` differ from Duel
+Island round bytes `0x4B3B2`/`0x4B3B3` (those reset after the final).
+
+---
+
 ## Raw byte step (confirmed)
 
 Empty `BitMasks: []` → step complete when `byte != 0`.

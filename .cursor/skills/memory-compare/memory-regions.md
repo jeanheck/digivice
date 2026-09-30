@@ -69,6 +69,11 @@ Definitions root: `Backend/Memory/Definitions/Quests/`
 | 0x0004B38E | Legendary weapons | `Quests/LegendaryWeapons/` — Eternally 0x01, Invincible 0x02, Muramasa 0x04, Super Nova 0x08, Punishment 0x10 |
 | 0x0004B3B6 – 0x0004B3FF | Main quest steps | `Quests/MainQuestAddresses.json` |
 | 0x0004B3DF bit `0x20` | Genji tutorial digimon battle done (suspected) | genji-before/after-first; MQ step 44 uses same byte `0x10` |
+| 0x0004B370 (value) | Story counter — increments on chapter beats (`0x14`→`0x15` personal pass, `0x16` Datamon gate, `0x17` entering A.o.A HQ) | MQ 62–88 snapshots; not a flag byte in this arc |
+| 0x0004B392 – 0x0004B395 | Admin Center tamer battle win bits (sticky) | MQ 62–88 snapshots — MQ steps 67–78; optional tamers `0x4B395` `0x01`, `0x4B394` `0x01`, `0x4B393` `0x20` |
+| 0x0004B3BA – 0x0004B3BB | Master Room letter puzzle (M-O-N-S-T-E-R) | MQ 62–88 snapshots — steps 80–86; parallel sequence `0x4B3B9` `0x80` → `0x4B3BA` `0x10` also lights per letter |
+| 0x0004B3E7 | A.o.A arc story flags (`0x04` tamer 13, `0x08`+`0x10` Vennmon, `0x20` before Master Room, `0x40` 1st security, `0x80` Game Master) | MQ 62–88 snapshots |
+| 0x0004B3C0 / 0x0004B3C2 / 0x0004B3C3 / 0x0004B3C8 | Door / map visited flags (suspected) — flip on entering areas, not quest steps | MQ 62–88 snapshots |
 | 0x00048F3x – 0x00048F4x | Side quest flags | `Quests/SideQuests/*.json` |
 
 ## DRI agents

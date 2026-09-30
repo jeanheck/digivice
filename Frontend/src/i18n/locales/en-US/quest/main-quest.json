@@ -249,6 +249,114 @@
       "61": {
         "description": "Head to the Sewers to find Numemon",
         "locationTarget": "Numemon"
+      },
+      "62": {
+        "description": "Talk to Datamon in the Control Room",
+        "locationTarget": "Datamon"
+      },
+      "63": {
+        "description": "Investigate the Secret Room in the Sewers",
+        "locationTarget": "Secret Room"
+      },
+      "64": {
+        "description": "Meet Nicky and Keith at Suzaku UG Lake",
+        "locationTarget": "Nicky and Keith"
+      },
+      "65": {
+        "description": "Find the Personal Pass",
+        "locationTarget": "Personal Pass"
+      },
+      "66": {
+        "description": "Go back to Datamon so he opens the gate",
+        "locationTarget": "Datamon"
+      },
+      "67": {
+        "description": "Defeat the tamers in Admin Center B1F (1/3)",
+        "locationTarget": "Tamer"
+      },
+      "68": {
+        "description": "Defeat the tamers in Admin Center B1F (2/3)",
+        "locationTarget": "Tamer"
+      },
+      "69": {
+        "description": "Defeat the tamers in Admin Center B1F (3/3)",
+        "locationTarget": "Tamer"
+      },
+      "70": {
+        "description": "Defeat the tamers on the Basement Stairs (1/3)",
+        "locationTarget": "Tamer"
+      },
+      "71": {
+        "description": "Defeat the tamers on the Basement Stairs (2/3)",
+        "locationTarget": "Tamer"
+      },
+      "72": {
+        "description": "Defeat the tamers on the Basement Stairs (3/3)",
+        "locationTarget": "Tamer"
+      },
+      "73": {
+        "description": "Defeat the tamers in Admin Center 1F (1/2)",
+        "locationTarget": "Tamer"
+      },
+      "74": {
+        "description": "Defeat the tamers in Admin Center 1F (2/2)",
+        "locationTarget": "Tamer"
+      },
+      "75": {
+        "description": "Defeat the tamers in Admin Center 2F (1/4)",
+        "locationTarget": "Tamer"
+      },
+      "76": {
+        "description": "Defeat the tamers in Admin Center 2F (2/4)",
+        "locationTarget": "Tamer"
+      },
+      "77": {
+        "description": "Defeat the tamers in Admin Center 2F (3/4)",
+        "locationTarget": "Tamer"
+      },
+      "78": {
+        "description": "Defeat the tamers in Admin Center 2F (4/4)",
+        "locationTarget": "Tamer"
+      },
+      "79": {
+        "description": "Defeat Vennmon",
+        "locationTarget": "Vennmon"
+      },
+      "80": {
+        "description": "Find the letter M in the Master Room",
+        "locationTarget": "Letter M"
+      },
+      "81": {
+        "description": "Find the letter O in the Master Room",
+        "locationTarget": "Letter O"
+      },
+      "82": {
+        "description": "Find the letter N in the Master Room",
+        "locationTarget": "Letter N"
+      },
+      "83": {
+        "description": "Find the letter S in the Master Room",
+        "locationTarget": "Letter S"
+      },
+      "84": {
+        "description": "Find the letter T in the Master Room",
+        "locationTarget": "Letter T"
+      },
+      "85": {
+        "description": "Find the letter E in the Master Room",
+        "locationTarget": "Letter E"
+      },
+      "86": {
+        "description": "Find the letter R in the Master Room",
+        "locationTarget": "Letter R"
+      },
+      "87": {
+        "description": "Defeat the security guard at the A.o.A Headquarters entrance",
+        "locationTarget": "Security"
+      },
+      "88": {
+        "description": "Defeat the Game Master at the A.o.A Headquarters",
+        "locationTarget": "Game Master"
       }
     }
   }
