@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { DvexpPerLevel } from "@/constants/digievolution.constant";
+import { DvexpBarSegments } from "@/constants/digievolution.constant";
 import { DigievolutionDvexpPresenter } from "@/presenters/digievolution/digievolution-dvexp.presenter";
 
 const props = defineProps<{
   isActiveDigievolution: boolean;
+  digievolutionId: number;
+  level: number;
   dvexp: number;
 }>();
 
-const dvexp = computed(() => {
-  return DigievolutionDvexpPresenter.getCalculatedDvexp(props.dvexp);
+const filledSegments = computed(() => {
+  return DigievolutionDvexpPresenter.getFilledSegments(props.digievolutionId, props.level, props.dvexp);
 });
 function getDvexpClass(isFilled: boolean): string {
   if (props.isActiveDigievolution) {
@@ -31,10 +33,10 @@ function getDvexpClass(isFilled: boolean): string {
 <template>
   <div class="flex w-full gap-1 h-1" role="presentation">
     <div
-      v-for="i in DvexpPerLevel"
+      v-for="i in DvexpBarSegments"
       :key="i"
       class="flex-1 min-w-0 transition-colors duration-500"
-      :class="getDvexpClass(i <= dvexp)"
+      :class="getDvexpClass(i <= filledSegments)"
     ></div>
   </div>
 </template>

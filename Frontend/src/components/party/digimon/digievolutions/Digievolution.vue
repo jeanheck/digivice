@@ -85,7 +85,9 @@ function openTechniques(): void {
       <div class="w-full shrink-0 px-4 pt-0.5">
         <DigievolutionDvexp
           :is-active-digievolution="isActiveDigievolution"
-          :dvexp="digievolutionDvexp ?? 0"
+          :digievolution-id="digievolutionId!"
+          :level="digievolutionLevel!"
+          :dvexp="digievolutionDvexp!"
         />
       </div>
     </div>

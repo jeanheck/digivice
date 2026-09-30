@@ -7,6 +7,7 @@ import type { TechniqueTable } from "@/repositories/tables/digievolution/techniq
 import type { DigievolutionRaw } from "./tables/raws/digievolution/digievolution.raw";
 import type { DigievolutionTechniqueRaw } from "./tables/raws/digievolution/digievolution-technique.raw";
 import type { TechniqueRaw } from "./tables/raws/digievolution/technique.raw";
+import type { DigievolutionTier } from "@/types/digievolution-tier.type";
 
 export class DigievolutionRepository {
   private static readonly digievolutionTable = DigievolutionJson as DigievolutionTable;
@@ -15,6 +16,9 @@ export class DigievolutionRepository {
 
   public static getNameById(id: number): string {
     return this.digievolutionTable[String(id)]!.name;
+  }
+  public static getTierById(id: number): DigievolutionTier {
+    return this.digievolutionTable[String(id)]!.tier;
   }
   public static getAllDigievolutionsNames(): string[] {
     return Object.values(this.digievolutionTable).map((digievolution) => digievolution.name);

@@ -35,7 +35,7 @@ graph TD
 
 - **Responsabilidades:**
   - **Backend** lê a RAM e normaliza o necessário para que cada dado tenha significado próprio (sentinela → `null`, valor inválido ajustado — ex.: negativo → `0`). Não gera informação composta.
-  - **Frontend** gera informação nova a partir de dados já consistentes, em `stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`; progresso de DVEXP = `dvexp % 10`).
+  - **Frontend** gera informação nova a partir de dados já consistentes, em `stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`).
   - Composição com dados estáticos (repositórios, equipamentos, i18n) fica em presenters/services, não em selectors.
 
 - **Game loop:** `GameLoopService` compõe o `State` via `StateComposer` a cada `GameLoop:PollingIntervalMs` (default **500ms**). Também emite `HealthChanged` (`HealthEventFactory`) para conexão com o emulador.
@@ -67,7 +67,7 @@ graph TD
 - Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio — garantido pelo `DigievolutionSlotSyncer`, que ignora o `null` e registra `storeLogger.warn`; o backend repassa a RAM sem guardar estado entre leituras.
 - UI “empty” = slot que **nunca** foi preenchido (RAM `0` → domínio `null`), não um slot que “perdeu” evolução.
 - **Level/Dvexp do slot** (`DigievolutionSlotAssembler`): cruzamento por id com `StoredDigievolutions`; id ausente da lista → `Level = 1`, `Dvexp = 0`.
-- **DVEXP:** valor **acumulado**, nunca zera. Cada 10 de DVEXP = 1 nível, para **qualquer** digievolução (sem tabela individual). Progresso dentro do nível = `dvexp % 10` (0–9), calculado no `DigievolutionSelector`. RAM negativa → `0` no `DigievolutionSlotAssembler`. Nome canônico **DVEXP** (`Dvexp` em C#, `dvexp` em TS/JSON); não usar `dvxp`.
+- **DVEXP:** valor **acumulado**, nunca zera. Custo por nível depende do **tier** da digievolução (`tier` 1–5 em `digievolution.json`): 10 DVEXP por nível até o nível de corte, 50 a partir dele. Cortes: tier 1 = 99 (sempre 10), tier 2 = 95, tier 3 = 90, tier 4 = 80, tier 5 = 60 (totais 980 / 1140 / 1340 / 1740 / 2540). Barra de 10 segmentos (5 DVEXP por segmento no regime de 50); nível 99 = barra cheia. Calculado no `DigievolutionDvexpPresenter` usando o `level` da RAM para escolher o regime. RAM negativa → `0` no `DigievolutionSlotAssembler`. Nome canônico **DVEXP** (`Dvexp` em C#, `dvexp` em TS/JSON); não usar `dvxp`.
 - **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0`, inclusive sentinela `0xFFFF`, → `null`; não usar `0` como “vazio” no contrato).
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
 - Técnicas no campo `techniques` de cada entrada do `digievolution.json`; assinatura = maior `learnAt`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
