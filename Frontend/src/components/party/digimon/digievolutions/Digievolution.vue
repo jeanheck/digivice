@@ -73,9 +73,6 @@ function openTechniques(): void {
         >
           {{ digievolutionName }}
         </div>
-
-        <div class="w-0.5 shrink-0 self-stretch bg-[#0077ff] -skew-x-30"></div>
-
         <div
           class="w-11.25 shrink-0 flex items-center justify-center pl-2 font-bold text-xs 2xl:text-sm mr-2"
         >
