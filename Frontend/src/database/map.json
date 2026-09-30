@@ -154,6 +154,13 @@
       "y": 43
     }
   },
+  "0205": {
+    "imageName": "Asuka City 3",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
   "0206": {
     "imageName": "Digimon Lab",
     "worldLocation": {
@@ -284,6 +291,20 @@
       "y": 43
     }
   },
+  "0215": {
+    "imageName": "Basement Stairs",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0216": {
+    "imageName": "Torre Prisão",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
   "0217": {
     "imageName": "Admin Center 2F",
     "worldLocation": {
@@ -302,6 +323,20 @@
   },
   "0218": {
     "imageName": "Master Room",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0219": {
+    "imageName": "A.o.A Headquarters",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "021A": {
+    "imageName": "Admin Center B1F",
     "worldLocation": {
       "x": 50.5,
       "y": 43
