@@ -2,11 +2,17 @@
 import Requisites from "./Requisites.vue";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
-defineProps<{
-  steps: StepViewModel[];
-  questId: string;
-  selectedStepNumber: string | null;
-}>();
+withDefaults(
+  defineProps<{
+    steps: StepViewModel[];
+    questId: string;
+    selectedStepNumber: string | null;
+    showTitle?: boolean;
+  }>(),
+  {
+    showTitle: true,
+  },
+);
 
 const emit = defineEmits<{
   select: [step: StepViewModel];
@@ -20,6 +26,7 @@ const onSelectStep = (step: StepViewModel) => {
 <template>
   <div class="flex flex-col gap-2">
     <h3
+      v-if="showTitle"
       class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1"
     >
       {{ $t("journal.missionSteps") }}
@@ -39,7 +46,7 @@ const onSelectStep = (step: StepViewModel) => {
       @click="onSelectStep(stepViewModel)"
     >
       <div
-        class="mt-0.5 shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
+        class="shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
         :class="
           stepViewModel.isDone
             ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]'
@@ -51,13 +58,14 @@ const onSelectStep = (step: StepViewModel) => {
 
       <div class="flex-1">
         <p
-          class="text-sm leading-snug transition-colors"
+          class="relative top-px text-sm leading-5 transition-colors"
           :class="
             stepViewModel.isDone
               ? 'text-gray-400 line-through decoration-green-900'
               : 'text-gray-200'
           "
         >
+          {{ stepViewModel.number }} -
           {{ $t(`${questId}.steps.${stepViewModel.number}.description`) }}
         </p>
         <Requisites

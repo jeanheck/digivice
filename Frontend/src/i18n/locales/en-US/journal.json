@@ -10,6 +10,7 @@
     "questUnavailableStarter": "Owned on starter pack",
     "prerequisites": "Prerequisites",
     "missionSteps": "Mission Steps",
+    "chapter": "Chapter {number}",
     "clickStep": "CLICK A MISSION STEP TO BOOT GEOGRAPHIC DATA",
     "noSignal": "NO SIGNAL DETECTED.\nTARGET COORDS UNKNOWN.",
     "noSteps": "No specific steps tracked."

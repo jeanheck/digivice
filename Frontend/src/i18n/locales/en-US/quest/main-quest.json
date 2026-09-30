@@ -2,6 +2,20 @@
   "mainQuest": {
     "title": "Main Quest",
     "description": "Become the greatest tamer of the Digital World!",
+    "chapters": {
+      "1": {
+        "name": "The East Sector!"
+      },
+      "2": {
+        "name": "The South Sector!"
+      },
+      "3": {
+        "name": "The West Sector!"
+      },
+      "4": {
+        "name": "The battle against the A.o.A!"
+      }
+    },
     "steps": {
       "1": {
         "description": "Look for the Seiryu Leader in Seiryu City",

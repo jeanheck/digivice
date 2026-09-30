@@ -10,6 +10,7 @@
     "questUnavailableStarter": "Obtido no pack inicial",
     "prerequisites": "Pré-requisitos",
     "missionSteps": "Passos da Missão",
+    "chapter": "Capítulo {number}",
     "clickStep": "CLIQUE EM UM PASSO DA MISSÃO PARA CARREGAR DADOS GEOGRÁFICOS",
     "noSignal": "NENHUM SINAL DETECTADO.\nCOORDENADAS DESCONHECIDAS.",
     "noSteps": "Nenhum passo específico rastreado."

@@ -115,6 +115,9 @@ const onClick = () => {
     <div class="flex items-center justify-between mb-1 relative z-10">
       <span class="font-bold truncate transition-colors" :class="[titleSizeClass, titleClass]">
         {{ $t(`${quest.id}.title`) }}
+        <template v-if="quest.currentChapter && !quest.isDone">
+          - {{ $t("journal.chapter", { number: quest.currentChapter.number }) }}
+        </template>
       </span>
 
       <span v-if="quest.isDone" :class="doneIconClass">✔</span>

@@ -1,6 +1,28 @@
 {
   "id": "mainQuest",
   "requisites": [],
+  "chapters": [
+    {
+      "number": 1,
+      "starts": 1,
+      "ends": 14
+    },
+    {
+      "number": 2,
+      "starts": 15,
+      "ends": 43
+    },
+    {
+      "number": 3,
+      "starts": 44,
+      "ends": 61
+    },
+    {
+      "number": 4,
+      "starts": 62,
+      "ends": 88
+    }
+  ],
   "steps": {
     "1": {
       "location": "0230",

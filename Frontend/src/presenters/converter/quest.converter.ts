@@ -1,4 +1,5 @@
 import type { Quest } from "@/models";
+import { ChapterConverter } from "@/presenters/converter/chapter.converter";
 import { RequisiteConverter } from "@/presenters/converter/requisite.converter";
 import { StepConverter } from "@/presenters/converter/step.converter";
 import { QuestProgressHelper } from "@/presenters/helper/quest-progress.helper";
@@ -41,16 +42,25 @@ export class QuestConverter {
       firstStep?.isDone === false;
     const currentStep = steps.find((step) => !step.isDone) ?? null;
     const cardVariant = QuestConverter.resolveCardVariant(isUnavailable, isLocked, isDone, isNew);
+    const chapters = ChapterConverter.convert(
+      questRaw.id,
+      questRaw.chapters ?? [],
+      steps,
+      currentStep,
+    );
+    const currentChapter = chapters.find((chapter) => chapter.isCurrent) ?? null;
 
     return {
       id: questRaw.id,
       requisites,
       steps,
+      chapters,
       isDone,
       isLocked,
       isUnavailable,
       isNew,
       currentStep,
+      currentChapter,
       cardVariant,
     };
   }

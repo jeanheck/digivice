@@ -2,6 +2,20 @@
   "mainQuest": {
     "title": "Missão Principal",
     "description": "Torne-se o maior domador(a) do Mundo Digital!",
+    "chapters": {
+      "1": {
+        "name": "O Setor Leste!"
+      },
+      "2": {
+        "name": "O Setor Sul!"
+      },
+      "3": {
+        "name": "O Setor Oeste!"
+      },
+      "4": {
+        "name": "A batalha contra a A.o.A!"
+      }
+    },
     "steps": {
       "1": {
         "description": "Procure pelo Líder Seiryu na Cidade Seiryu",
