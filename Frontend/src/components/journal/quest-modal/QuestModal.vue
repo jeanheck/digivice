@@ -170,7 +170,7 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
 
         <div v-if="questViewModel!.chapters.length > 0" class="flex flex-col gap-2">
           <h3
-            class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1"
+            class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 text-center"
           >
             {{ $t("journal.missionSteps") }}
           </h3>
