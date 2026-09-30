@@ -186,7 +186,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(8, driAgents.Count);
 
         var guilmon = Assert.Single(driAgents, quest => quest.Id == "driAgentGuilmon");
-        Assert.Empty(guilmon.Requisites);
+        Assert.Single(guilmon.Requisites);
+        Assert.Equal("seiryuLeader", guilmon.Requisites[0].Id);
+        Assert.Equal(0, guilmon.Requisites[0].Value);
         Assert.Equal(3, guilmon.Steps.Count);
         Assert.Equal(0x02, guilmon.Steps[0].Value);
         Assert.Equal(0x08, guilmon.Steps[1].Value);
@@ -196,7 +198,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(1, guilmon.Steps[2].Requisites[0].Value);
 
         var agumon = Assert.Single(driAgents, quest => quest.Id == "driAgentAgumon");
-        Assert.Empty(agumon.Requisites);
+        Assert.Single(agumon.Requisites);
+        Assert.Equal("seiryuLeader", agumon.Requisites[0].Id);
+        Assert.Equal(0, agumon.Requisites[0].Value);
         Assert.Equal(3, agumon.Steps.Count);
         Assert.Equal(0x01, agumon.Steps[0].Value);
         Assert.Equal(0x04, agumon.Steps[1].Value);

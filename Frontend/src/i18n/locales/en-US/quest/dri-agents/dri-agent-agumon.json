@@ -4,7 +4,7 @@
     "description": "Add Agumon to your Digimon party",
     "requisites": {
       "partyLevel": "Have a party level between 30 and 45",
-      "byakkoLeader": "Have the Seiryu Badge"
+      "seiryuLeader": "Have the Seiryu Badge"
     },
     "steps": {
       "1": {
