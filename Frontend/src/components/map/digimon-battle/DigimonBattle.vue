@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import DigimonBattleEnemyAffinities from "@/components/map/digimon-battle/DigimonBattleEnemyAffinities.vue";
 import DigimonBattleEnemyImage from "@/components/map/digimon-battle/DigimonBattleEnemyImage.vue";
 import DigimonBattleEnemyLevel from "@/components/map/digimon-battle/DigimonBattleEnemyLevel.vue";
 import DigimonBattleEnemySpecie from "@/components/map/digimon-battle/DigimonBattleEnemySpecie.vue";
@@ -192,6 +193,8 @@ function onHideTooltip(): void {
         :clickable="canOpenWiki"
         @click="openEnemyWiki"
       />
+
+      <DigimonBattleEnemyAffinities />
 
       <DigimonBattleJunior />
 

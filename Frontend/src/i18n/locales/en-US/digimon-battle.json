@@ -1,6 +1,8 @@
 {
   "digimonBattle": {
     "showDetails": "Details ▲",
-    "hideDetails": "Details ▼"
+    "hideDetails": "Details ▼",
+    "effective": "is effective",
+    "notEffective": "is not effective"
   }
 }
