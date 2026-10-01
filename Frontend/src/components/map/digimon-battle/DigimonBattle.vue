@@ -194,7 +194,10 @@ function onHideTooltip(): void {
         @click="openEnemyWiki"
       />
 
-      <DigimonBattleEnemyAffinities />
+      <DigimonBattleEnemyAffinities
+        :effective-icons="digimonBattleViewModel.affinities.effectiveIcons"
+        :not-effective-icons="digimonBattleViewModel.affinities.notEffectiveIcons"
+      />
 
       <DigimonBattleJunior />
 

@@ -1,9 +1,14 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { DigimonSpeciesIcon, EnemySourceIcon } from "@/constants/icon.constant";
+import {
+  DigimonElementIcon,
+  DigimonSpeciesIcon,
+  EnemySourceIcon,
+} from "@/constants/icon.constant";
 import type { Vital } from "@/models";
 import { EnemyConditionConverter } from "@/presenters/converter/enemy-condition.converter";
 import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
+import type { EnemyAffinities } from "@/services/enemy-affinity.service";
 import type { DigimonSpecies } from "@/types/digimon-species.type";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
@@ -21,6 +26,7 @@ export class DigimonBattleConverter {
     hp: Vital,
     title: string,
     enemyId: string | null,
+    affinities: EnemyAffinities,
     battleDeltas?: BattleEnemyDeltas,
   ): DigimonBattleViewModel {
     if (enemyRaw === null) {
@@ -35,6 +41,7 @@ export class DigimonBattleConverter {
         attributes: [],
         elements: [],
         conditions: [],
+        affinities: { effectiveIcons: [], notEffectiveIcons: [] },
         enemyImageUrl: null,
       };
     }
@@ -70,6 +77,10 @@ export class DigimonBattleConverter {
         dark: enemyRaw.dark,
       }),
       conditions: EnemyConditionConverter.convertConditions(conditions),
+      affinities: {
+        effectiveIcons: affinities.effective.map((element) => DigimonElementIcon[element]),
+        notEffectiveIcons: affinities.notEffective.map((element) => DigimonElementIcon[element]),
+      },
       enemyImageUrl: ImageCatalog.getEnemyImageUrl(enemyRaw.name),
     };
   }
