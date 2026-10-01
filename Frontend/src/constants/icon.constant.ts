@@ -47,7 +47,7 @@ export const DigimonSpeciesIcon = {
   insect: "🪰",
   dino: "🦕",
   machine: "🤖",
-  mammal: "🐕",
+  beast: "🦁",
   fish: "🐟",
   evil: "😈",
   plant: "🌿",

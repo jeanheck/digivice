@@ -201,7 +201,7 @@ at +0x32; combat block jumps Speed → Fire).
 | `0x300` | 768 | `evil` | DemiDevimon | Confirmed 2026-08-09 batch |
 | `0x400` | 1024 | `ghoul` | Bakemon, Raremon | Confirmed 2026-08-09 batch |
 | `0x500` | 1280 | `machine` | Andromon, Hagurumon, Mamemon, Datamon, Bulbmon, Thundermon, Maildramon, HiAndromon | Confirmed 2026-08-09 batch |
-| `0x600` | 1536 | `mammal` | Tapirmon, Mammothmon, Betamon, Apemon | |
+| `0x600` | 1536 | `beast` | Tapirmon, Mammothmon, Betamon, Apemon | |
 | `0x700` | 1792 | `bird` | Kiwimon (`kabuterimon-3`) | |
 | `0x800` | 2048 | `insect` | Kunemon, Kuwagamon, Yanmamon; ally Kabuterimon | |
 | `0x900` | 2304 | `plant` | Vegiemon (`kabuterimon-2`), Woodmon | |

@@ -2,7 +2,7 @@ export type DigimonSpecies =
   | "insect"
   | "dino"
   | "machine"
-  | "mammal"
+  | "beast"
   | "fish"
   | "evil"
   | "plant"

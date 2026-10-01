@@ -114,9 +114,16 @@ const onClick = () => {
 
     <div class="flex items-center justify-between mb-1 relative z-10">
       <span class="font-bold truncate transition-colors" :class="[titleSizeClass, titleClass]">
-        {{ $t(`${quest.id}.title`) }}
-        <template v-if="quest.currentChapter && !quest.isDone">
-          - {{ $t("journal.chapter", { number: quest.currentChapter.number }) }}
+        <template v-if="isMainDisplayMode">
+          <template v-if="quest.currentChapter && !quest.isDone">
+            {{ $t("journal.chapter", { number: quest.currentChapter.number }) }}
+          </template>
+        </template>
+        <template v-else>
+          {{ $t(`${quest.id}.title`) }}
+          <template v-if="quest.currentChapter && !quest.isDone">
+            - {{ $t("journal.chapter", { number: quest.currentChapter.number }) }}
+          </template>
         </template>
       </span>
 
