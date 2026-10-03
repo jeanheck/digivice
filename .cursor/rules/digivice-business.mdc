@@ -72,7 +72,7 @@ graph TD
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
 - Técnicas no campo `techniques` de cada entrada do `digievolution.json`; assinatura = maior `learnAt`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
 - Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
-- **Tabelas de EXP** (`experience` em `digimon.json`): EXP **acumulado** para atingir cada level (RAM: `MemoryBlockAddress + 0x18`, Int32). Origem: estimativas de fontes externas (GameFAQs etc.), em verificação manual no jogo level a level. **Verificadas:** Guilmon e Renamon (tabelas idênticas). **Pendentes:** Kotemon, Kumamon, Monmon, Agumon, Veemon, Patamon — tratar como estimativas até verificação.
+- **Tabelas de EXP** (`experience` em `digimon.json`): EXP **acumulado** para atingir cada level (RAM: `MemoryBlockAddress + 0x18`, Int32). Origem: estimativas de fontes externas (GameFAQs etc.), em verificação manual no jogo level a level. **Verificadas:** Guilmon e Renamon (tabelas idênticas); Agumon e Patamon (tabelas idênticas). **Pendentes:** Kotemon, Kumamon, Monmon, Veemon — tratar como estimativas até verificação.
 - Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE (`BlastAddress` em `DigimonsAddresses.json`).
 
 ## Batalhas
