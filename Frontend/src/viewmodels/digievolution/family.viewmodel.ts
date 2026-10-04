@@ -4,4 +4,5 @@ export interface FamilyViewModel {
   key: string;
   nodesBeforeFork: NodeViewModel[];
   branchs: NodeViewModel[][];
+  isPinned: boolean;
 }

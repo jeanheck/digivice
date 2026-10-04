@@ -12,6 +12,7 @@ Componentes consomem o estado do jogo via `useGameState()` e **apenas o presente
 
 - `useGameState()` (`composables/use-game-state.ts`) devolve o `State` não anulável: `gameState.value.player.mapId`, sem `?.` nem fallback (`?? null`, `?? 0`, `?? []`, `{ slots: [] }`).
 - `useGameStore` direto só para status de conexão/health (ex.: `isConnected` no `Footer.vue`).
+- Preferências persistidas do usuário via `usePreferencesStore` (ex.: família fixada em `digievolutions-modal/tree/Tree.vue`).
 - `App.vue` só renderiza o `main` com estado: `useAppHealthyScreen` retorna `loading` quando `currentState === null`. Perda de estado desmonta a árvore; novo `InitialState` remonta do zero.
 - `useGameState` lança erro explícito se usado fora dessa árvore.
 
@@ -33,6 +34,7 @@ Priorize `Frontend/src/style.css` e componentes similares do mesmo contexto (apa
 | `bg-grid-pattern` | Fallback de grid (Location sem imagem) |
 
 - Tokens de cor já usados: `#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`.
+- Ícones de UI são emoji/Unicode (ex.: `📌`, `📜`, `⭐`, `✔`, `▼`, `◆`); não usar biblioteca de ícones nem SVG para ícones. Exceção: bandeiras de idioma.
 - Evite `<style scoped>` para padrões compartilháveis — extraia para `style.css`.
 
 **Proibido:** inventar paleta/tipografia/moldura sem checar referência; duplicar blocos longos que já têm utilitário global (ex.: refazer borda chanfrada fora de `dw3-panel`); scoped copiado de outro componente.

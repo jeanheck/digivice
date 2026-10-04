@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { computed, watch, nextTick, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import type { Digimon } from "@/models";
 import { TreePresenter } from "@/presenters/tree/tree.presenter";
 import type { FamilyViewModel } from "@/viewmodels/digievolution/family.viewmodel";
+import { usePreferencesStore } from "@/stores/use-preferences-store";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
 import SimpleFamily from "./SimpleFamily.vue";
 import ForkFamily from "./ForkFamily.vue";
 
@@ -19,7 +23,46 @@ const emit = defineEmits<{
 
 const familyTreeContainer = ref<HTMLElement | null>(null);
 
-const treeViewModel = TreePresenter.getDigievolutionsTree(props.digimonId);
+const { t } = useI18n();
+const preferencesStore = usePreferencesStore();
+
+const treeViewModel = computed(() => {
+  return TreePresenter.getDigievolutionsTree(
+    props.digimonId,
+    preferencesStore.getPinnedFamilyKey(props.digimonId),
+  );
+});
+
+const pinTooltipPlacement = "below" as const;
+const pinTooltipMaxWidth = 260;
+const {
+  show: pinTooltipShow,
+  x: pinTooltipX,
+  y: pinTooltipY,
+  maxWidth: pinTooltipMaxWidthValue,
+  showAt: showPinTooltipAt,
+  move: movePinTooltipTo,
+  hide: hidePinTooltip,
+} = useTooltipPosition(pinTooltipMaxWidth);
+const pinTooltipTitle = ref("");
+
+const getPinTooltipKey = (family: FamilyViewModel): string => {
+  return family.isPinned ? "digievolution.unpinFamily" : "digievolution.pinFamily";
+};
+
+const showPinTooltip = (event: MouseEvent, family: FamilyViewModel) => {
+  pinTooltipTitle.value = t(getPinTooltipKey(family));
+  showPinTooltipAt(event, { maxWidth: pinTooltipMaxWidth, placement: pinTooltipPlacement });
+};
+
+const movePinTooltip = (event: MouseEvent) => {
+  movePinTooltipTo(event, pinTooltipPlacement);
+};
+
+const togglePinnedFamily = (family: FamilyViewModel) => {
+  hidePinTooltip();
+  preferencesStore.togglePinnedFamily(props.digimonId, family.key);
+};
 
 const scrollSelectedNodeIntoView = (digievolutionId: number) => {
   const container = familyTreeContainer.value;
@@ -55,7 +98,7 @@ const scrollSelectedNodeIntoView = (digievolutionId: number) => {
     targetScrollTop = nodeBottom - container.clientHeight;
   }
 
-  const familyRow = nodeElement.closest(".family-row");
+  const familyRow = nodeElement.closest(".family-block");
   if (familyRow) {
     const nextSibling = familyRow.nextElementSibling;
     const familySeparator =
@@ -102,31 +145,47 @@ const hasBranching = (family: FamilyViewModel): boolean => {
 };
 
 const families = computed(() => {
-  return treeViewModel.families;
+  return treeViewModel.value.families;
 });
 </script>
 
 <template>
   <div ref="familyTreeContainer" class="family-tree-container custom-scroll">
     <template v-for="(family, familyIndex) in families" :key="family.key">
-      <SimpleFamily
-        v-if="!hasBranching(family)"
-        :branchs="family.branchs"
-        :digimon="digimon"
-        :digimon-name="digimonName"
-        :selected-digievolution-id="selectedDigievolutionId"
-        @select-digievolution-id="emit('select-digievolution-id', $event)"
-      />
+      <div class="family-block flex items-center gap-2">
+        <button
+          type="button"
+          class="pin-icon shrink-0 mb-2 text-sm leading-none cursor-pointer"
+          :class="{ 'pin-icon-active': family.isPinned }"
+          @click="togglePinnedFamily(family)"
+          @mouseenter="showPinTooltip($event, family)"
+          @mousemove="movePinTooltip"
+          @mouseleave="hidePinTooltip"
+        >
+          📌
+        </button>
 
-      <ForkFamily
-        v-else
-        :nodes-before-fork="family.nodesBeforeFork"
-        :branchs="family.branchs"
-        :digimon="digimon"
-        :digimon-name="digimonName"
-        :selected-digievolution-id="selectedDigievolutionId"
-        @select-digievolution-id="emit('select-digievolution-id', $event)"
-      />
+        <div class="flex-1 min-w-0">
+          <SimpleFamily
+            v-if="!hasBranching(family)"
+            :branchs="family.branchs"
+            :digimon="digimon"
+            :digimon-name="digimonName"
+            :selected-digievolution-id="selectedDigievolutionId"
+            @select-digievolution-id="emit('select-digievolution-id', $event)"
+          />
+
+          <ForkFamily
+            v-else
+            :nodes-before-fork="family.nodesBeforeFork"
+            :branchs="family.branchs"
+            :digimon="digimon"
+            :digimon-name="digimonName"
+            :selected-digievolution-id="selectedDigievolutionId"
+            @select-digievolution-id="emit('select-digievolution-id', $event)"
+          />
+        </div>
+      </div>
 
       <div v-if="familyIndex < families.length - 1" class="family-separator"></div>
     </template>
@@ -134,5 +193,14 @@ const families = computed(() => {
     <div v-if="families.length === 0" class="empty-state">
       {{ $t("digievolution.noEvolutionData") }}
     </div>
+
+    <Tooltip
+      :show="pinTooltipShow"
+      :x="pinTooltipX"
+      :y="pinTooltipY"
+      :title="pinTooltipTitle"
+      :max-width="pinTooltipMaxWidthValue"
+      placement="below"
+    />
   </div>
 </template>

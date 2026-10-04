@@ -8,6 +8,8 @@
     "signature": "SIG",
     "neutral": "Neutro",
     "noEvolutionData": "Nenhum dado de evolução disponível",
+    "pinFamily": "Fixar ao topo",
+    "unpinFamily": "Desafixar",
     "unknownParam": "Parâmetro Desconhecido",
     "lv": "Nv",
     "techniques": "Técnicas",

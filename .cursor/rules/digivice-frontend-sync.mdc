@@ -20,6 +20,7 @@ alwaysApply: false
 | Syncer | `stores/syncers/` | Estático `sync(previous, dto)`; muta o model existente |
 | Store | `stores/use-game-store.ts` | Uma action `sync{Entity}` por evento, via `getStateOrWarn("{Entity}Changed")` (evento antes do `InitialState` é descartado com `storeLogger.warn`); `setInitialState` repassa direto a todos os converters |
 | Selector | `stores/selectors/` | Classe `{Assunto}Selector` em `{assunto}.selector.ts`; métodos estáticos e puros; recebe model(s) ou `State`, devolve informação nova |
+| Preferências | `stores/use-preferences-store.ts` | Preferências do usuário persistidas em `localStorage` (ex.: família fixada na árvore de digievoluções), separadas de `useGameStore` |
 
 ## Regras
 

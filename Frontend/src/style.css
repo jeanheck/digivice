@@ -198,6 +198,27 @@ body {
   overflow-x: auto;
 }
 
+/* Filter order matters: sepia must precede hue-rotate to produce a tintable base color */
+.pin-icon {
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition:
+    filter 0.2s,
+    opacity 0.2s;
+}
+
+.pin-icon:hover {
+  filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4);
+  opacity: 1;
+}
+
+.pin-icon-active,
+.pin-icon-active:hover {
+  filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4)
+    drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  opacity: 1;
+}
+
 .branch-row {
   display: flex;
   align-items: center;

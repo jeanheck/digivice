@@ -8,6 +8,8 @@
     "signature": "SIG",
     "neutral": "Neutral",
     "noEvolutionData": "No evolution data available",
+    "pinFamily": "Pin to top",
+    "unpinFamily": "Unpin",
     "unknownParam": "Unknown Parameter",
     "lv": "Lv",
     "techniques": "Techniques",

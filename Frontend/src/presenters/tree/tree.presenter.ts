@@ -6,9 +6,16 @@ import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { DigievolutionsTreeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
 
 export class TreePresenter {
-  public static getDigievolutionsTree(digimonId: number): DigievolutionsTreeViewModel {
+  public static getDigievolutionsTree(
+    digimonId: number,
+    pinnedFamilyKey: string | null,
+  ): DigievolutionsTreeViewModel {
     const digievolutionTreeTable = DigievolutionRepository.getDigievolutionTree();
-    const sortedFamilyKeys = this.sortFamilyKeys(Object.keys(digievolutionTreeTable), digimonId);
+    const sortedFamilyKeys = this.sortFamilyKeys(
+      Object.keys(digievolutionTreeTable),
+      digimonId,
+      pinnedFamilyKey,
+    );
 
     const digievolutionTreeFamiliesViewModel = sortedFamilyKeys.map((key) => {
       const digievolutionTreeRaws = digievolutionTreeTable[key]!;
@@ -16,22 +23,38 @@ export class TreePresenter {
         return this.buildDigievolutionTreeNode(digimonId, node);
       });
 
-      return this.buildDigievolutionTreeFamily(key, digievolutionTreeFamilyNodes);
+      return this.buildDigievolutionTreeFamily(
+        key,
+        digievolutionTreeFamilyNodes,
+        key === pinnedFamilyKey,
+      );
     });
 
     return { families: digievolutionTreeFamiliesViewModel };
   }
 
-  private static sortFamilyKeys(familyKeys: string[], digimonId: number): string[] {
+  private static sortFamilyKeys(
+    familyKeys: string[],
+    digimonId: number,
+    pinnedFamilyKey: string | null,
+  ): string[] {
     const currentFamilyKey = String(digimonId);
+    const hasValidPinnedFamily =
+      pinnedFamilyKey !== null &&
+      pinnedFamilyKey !== currentFamilyKey &&
+      familyKeys.includes(pinnedFamilyKey);
 
     const otherFamilyKeys = familyKeys.filter((familyKey) => {
-      return familyKey !== currentFamilyKey;
+      return familyKey !== currentFamilyKey && familyKey !== pinnedFamilyKey;
     });
 
     otherFamilyKeys.sort((firstFamilyKey, secondFamilyKey) => {
       return Number(firstFamilyKey) - Number(secondFamilyKey);
     });
+
+    if (hasValidPinnedFamily) {
+      return [pinnedFamilyKey, currentFamilyKey, ...otherFamilyKeys];
+    }
 
     return [currentFamilyKey, ...otherFamilyKeys];
   }
@@ -39,12 +62,14 @@ export class TreePresenter {
   private static buildDigievolutionTreeFamily(
     familyKey: string,
     familyNodes: NodeViewModel[],
+    isPinned: boolean,
   ): FamilyViewModel {
     if (!this.familyHasFork(familyNodes)) {
       return {
         key: familyKey,
         nodesBeforeFork: [],
         branchs: [familyNodes],
+        isPinned,
       };
     }
 
@@ -59,6 +84,7 @@ export class TreePresenter {
       key: familyKey,
       nodesBeforeFork: familyNodes.slice(0, forkNodeIndex + 1),
       branchs,
+      isPinned,
     };
   }
 
