@@ -46,6 +46,18 @@ const showBaseBits = computed(() => {
   return props.showRewards && props.enemy.bits !== undefined;
 });
 
+const showDvexp = computed(() => {
+  return props.showRewards && props.enemy.dvexp !== undefined;
+});
+
+const partyDvexps = computed(() => {
+  if (props.enemy.dvexp === undefined) {
+    return [];
+  }
+
+  return WikiEnemyResumePresenter.getPartyDvexp(gameState.value.party, props.enemy.dvexp);
+});
+
 const handleOpenLocation = (locationId: string): void => {
   emit("open-locations", locationId);
 };
@@ -94,6 +106,31 @@ const handleOpenLocation = (locationId: string): void => {
         >{{ $t("enemy.bits") }}:</span
       >
       <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
+    </div>
+
+    <div
+      v-if="showDvexp"
+      class="border-t border-blue-900/50 pt-2.5 flex flex-col gap-1.5 text-xs shrink-0"
+    >
+      <span class="text-center font-bold text-blue-500 tracking-wider uppercase">
+        {{ $t("enemy.baseDvexp") }}
+      </span>
+
+      <div class="flex items-center justify-center gap-6">
+        <span
+          v-for="partyDvexp in partyDvexps"
+          :key="partyDvexp.digimonId"
+          class="flex items-center gap-1"
+        >
+          <img
+            v-if="partyDvexp.imageUrl"
+            :src="partyDvexp.imageUrl"
+            :alt="partyDvexp.digimonName"
+            class="w-7.5 h-7.5 object-cover rendering-pixelated"
+          />
+          <span class="font-bold text-gray-300">{{ partyDvexp.dvexp }}</span>
+        </span>
+      </div>
     </div>
 
     <div
