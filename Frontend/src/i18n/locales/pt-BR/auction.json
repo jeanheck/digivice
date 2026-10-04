@@ -14,6 +14,7 @@
     "resalePriceLabel": "Revenda:",
     "bitsLabel": "bits",
     "closesWhenLabel": "TERMINA QUANDO:",
+    "notEnoughBitsWarning": "Se você for até a Torre de Carga sem ter os Bits necessários para dar o lance no Leilão, ele não começará. Atualmente você tem {bits} Bits.",
     "historySubtitle": "Histórico",
     "historyTiming": {
       "alreadyEnded": "Esse Leilão já terminou",

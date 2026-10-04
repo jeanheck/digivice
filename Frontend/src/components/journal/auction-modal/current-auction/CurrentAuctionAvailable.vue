@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useGameState } from "@/composables/use-game-state";
+import { CurrentAuctionPresenter } from "@/presenters/auction/current-auction.presenter";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 const props = defineProps<{
@@ -8,6 +10,15 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+const gameState = useGameState();
+
+const playerBits = computed(() => {
+  return gameState.value.player.bits;
+});
+
+const showNotEnoughBitsWarning = computed(() => {
+  return CurrentAuctionPresenter.hasNotEnoughBits(props.auction, playerBits.value);
+});
 
 const equipmentName = computed(() => {
   return t(`equipments.${props.auction.equipmentId}.name`);
@@ -56,6 +67,12 @@ const closesWhenText = computed(() => {
         <p class="text-[10px] leading-relaxed">
           <span class="text-white">{{ $t("auction.closesWhenLabel") }}</span>
           <span class="text-cyan-200/80">&nbsp;{{ closesWhenText }}</span>
+        </p>
+      </div>
+
+      <div v-if="showNotEnoughBitsWarning" class="pt-2 border-t border-cyan-400/20">
+        <p class="text-[10px] leading-relaxed text-red-400">
+          {{ $t("auction.notEnoughBitsWarning", { bits: playerBits }) }}
         </p>
       </div>
     </div>

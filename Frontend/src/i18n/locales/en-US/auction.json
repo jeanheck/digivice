@@ -14,6 +14,7 @@
     "resalePriceLabel": "Resale:",
     "bitsLabel": "bits",
     "closesWhenLabel": "CLOSES WHEN:",
+    "notEnoughBitsWarning": "If you go to Cargo Tower without enough Bits to place the bid, the Auction will not start. You currently have {bits} Bits.",
     "historySubtitle": "History",
     "historyTiming": {
       "alreadyEnded": "This auction has already ended",
