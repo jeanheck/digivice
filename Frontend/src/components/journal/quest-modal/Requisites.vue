@@ -62,7 +62,7 @@ withDefaults(
 
       <p
         v-if="variant === 'quest'"
-        class="flex-1 text-sm leading-snug transition-colors"
+        class="flex-1 text-xs transition-colors"
         :class="
           requisiteViewModel.isDone
             ? 'text-gray-400 line-through decoration-green-900'

@@ -58,7 +58,7 @@ const onSelectStep = (step: StepViewModel) => {
 
       <div class="flex-1">
         <p
-          class="relative top-px text-sm leading-5 transition-colors"
+          class="relative top-px text-xs transition-colors"
           :class="
             stepViewModel.isDone
               ? 'text-gray-400 line-through decoration-green-900'
