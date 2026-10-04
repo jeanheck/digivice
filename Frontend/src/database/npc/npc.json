@@ -137,5 +137,31 @@
     "exp": 291,
     "dvexp": 29,
     "bit": 600
+  },
+  "gameMaster": {
+    "type": "npc",
+    "locationId": "",
+    "imageName": "Game Master",
+    "mainQuestAvailabilityWindow": {
+      "starts": null,
+      "ends": null
+    },
+    "party": [
+      {
+        "enemyId": null,
+        "groupId": 10
+      },
+      {
+        "enemyId": null,
+        "groupId": 10
+      },
+      {
+        "enemyId": null,
+        "groupId": 10
+      }
+    ],
+    "exp": 35,
+    "dvexp": 718,
+    "bit": 1490
   }
 }

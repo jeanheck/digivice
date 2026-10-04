@@ -179,6 +179,12 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Nanimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Nanimon?file=Nanimon_b.jpg)
 - **Cardmon(A)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cardmon_C1?file=Cardmon_C1_%28World_3%29.jpg)
 - **Cardmon(B)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cardmon_C2?file=Cardmon_C2_%28World_3%29.jpg)
+- **Guardromon(Blue)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Guardromon/Galeria?file=Guardromon_b.jpg)
+- **Tankmon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Tankmon/Galeria?file=Tankmon_b.jpg)
+- **Vemmon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Bemmon/Galeria?file=Bemmon_b.jpg)
+- **Minotarumon(Blue)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexminotaru.shtml)
+- **Gargoylemon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Gargoylemon?file=Gargoylemon_b.jpg)
+- **Persiamon** *by ERROR101USERNOTFOUND* [Digivolutions Wiki](https://static.wikia.nocookie.net/digivolutions-digimon/images/f/f1/Persiamon.jpg/revision/latest?cb=20210504011749)
 
 ### Digievolutions
 
