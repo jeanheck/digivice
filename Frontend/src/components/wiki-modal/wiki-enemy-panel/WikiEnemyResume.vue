@@ -109,15 +109,12 @@ const handleOpenLocation = (locationId: string): void => {
       <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
     </div>
 
-    <div
-      v-if="showDvexp"
-      class="border-t border-blue-900/50 pt-2.5 flex flex-col gap-1.5 text-xs shrink-0"
-    >
-      <span class="text-center font-bold text-blue-500 tracking-wider uppercase">
-        {{ $t("enemy.baseDvexp") }}
+    <div v-if="showDvexp" class="flex items-center justify-between text-xs shrink-0">
+      <span class="font-bold text-blue-500 tracking-wider uppercase">
+        {{ $t("enemy.baseDvexp") }}:
       </span>
 
-      <WikiPartyDvexp class="justify-center" :party-dvexps="partyDvexps" />
+      <WikiPartyDvexp :party-dvexps="partyDvexps" />
     </div>
 
     <div
