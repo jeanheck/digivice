@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import WikiPartyDvexp from "@/components/wiki-modal/wiki-party-dvexp/WikiPartyDvexp.vue";
+import type { PartyDvexpViewModel } from "@/viewmodels/dvexp/party-dvexp.viewmodel";
 
 const props = defineProps<{
   exp: number;
-  dvexp: number;
+  partyDvexps: PartyDvexpViewModel[];
   bits: number;
   memberCount: number;
   modelValue: number;
@@ -54,15 +56,15 @@ const selectMember = (memberIndex: number) => {
         <span class="font-bold text-blue-500 tracking-wider uppercase">
           {{ $t("enemy.baseDvexp") }}:
         </span>
-        <span class="font-bold text-gray-300">{{ dvexp }}</span>
+        <WikiPartyDvexp :party-dvexps="partyDvexps" />
       </div>
+    </div>
 
-      <div class="flex items-center gap-2">
-        <span class="font-bold text-blue-500 tracking-wider uppercase">
-          {{ $t("enemy.bits") }}:
-        </span>
-        <span class="font-bold text-gray-300">{{ bits }}</span>
-      </div>
+    <div class="z-10 ml-auto flex items-center gap-2 text-xs">
+      <span class="font-bold text-blue-500 tracking-wider uppercase">
+        {{ $t("enemy.bits") }}:
+      </span>
+      <span class="font-bold text-gray-300">{{ bits }}</span>
     </div>
 
     <div

@@ -8,6 +8,7 @@ import WikiEnemyElements from "@/components/wiki-modal/wiki-enemy-panel/WikiEnem
 import WikiEnemyConditions from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyConditions.vue";
 import WikiEnemyTechniques from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyTechniques.vue";
 import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
+import { useGameState } from "@/composables/use-game-state";
 import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 
 const props = defineProps<{
@@ -25,6 +26,19 @@ const emit = defineEmits<{
 
 const battleViewModel = computed(() => {
   return WikiNpcDigimonBattlePresenter.getBattleViewModel(props.npcId, props.battleId);
+});
+
+const gameState = useGameState();
+
+const partyDvexps = computed(() => {
+  if (battleViewModel.value === null) {
+    return [];
+  }
+
+  return WikiNpcDigimonBattlePresenter.getPartyDvexp(
+    gameState.value.party,
+    battleViewModel.value.dvexp,
+  );
 });
 
 const currentMemberIndex = ref(0);
@@ -54,7 +68,7 @@ const activeMember = computed(() => {
     <WikiNpcDigimonBattleRewards
       v-model="currentMemberIndex"
       :exp="battleViewModel.exp"
-      :dvexp="battleViewModel.dvexp"
+      :party-dvexps="partyDvexps"
       :bits="battleViewModel.bits"
       :member-count="battleViewModel.partyMemberCount"
     />

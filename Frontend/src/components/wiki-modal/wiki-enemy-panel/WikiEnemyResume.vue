@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import WikiEnemyLocations from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyLocations.vue";
+import WikiPartyDvexp from "@/components/wiki-modal/wiki-party-dvexp/WikiPartyDvexp.vue";
 import { WikiEnemyResumePresenter } from "@/presenters/map/wiki-modal/wiki-enemy-resume.presenter";
 import { useGameState } from "@/composables/use-game-state";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
@@ -116,21 +117,7 @@ const handleOpenLocation = (locationId: string): void => {
         {{ $t("enemy.baseDvexp") }}
       </span>
 
-      <div class="flex items-center justify-center gap-6">
-        <span
-          v-for="partyDvexp in partyDvexps"
-          :key="partyDvexp.digimonId"
-          class="flex items-center gap-1"
-        >
-          <img
-            v-if="partyDvexp.imageUrl"
-            :src="partyDvexp.imageUrl"
-            :alt="partyDvexp.digimonName"
-            class="w-7.5 h-7.5 object-cover rendering-pixelated"
-          />
-          <span class="font-bold text-gray-300">{{ partyDvexp.dvexp }}</span>
-        </span>
-      </div>
+      <WikiPartyDvexp class="justify-center" :party-dvexps="partyDvexps" />
     </div>
 
     <div

@@ -1,11 +1,22 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import type { Party } from "@/models";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
+import { PartyDvexpConverter } from "@/presenters/converter/party-dvexp.converter";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
+import { DigimonRepository } from "@/repositories";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import type { NpcPartyMemberRaw } from "@/repositories/tables/raws/npc/npc-party-member.raw";
+import { DvexpService } from "@/services/dvexp.service";
+import type { PartyDvexpViewModel } from "@/viewmodels/dvexp/party-dvexp.viewmodel";
 import type { WikiNpcDigimonBattleViewModel } from "@/viewmodels/wiki-modal/wiki-npc-digimon-battle.viewmodel";
 
 export class WikiNpcDigimonBattlePresenter {
+  public static getPartyDvexp(party: Party, battleBaseDvexp: number): PartyDvexpViewModel[] {
+    return DvexpService.getPartyBattleGains(party, battleBaseDvexp).map((gain) => {
+      return PartyDvexpConverter.convert(gain, DigimonRepository.getNameById(gain.digimonId));
+    });
+  }
+
   private static buildMembers(party: NpcPartyMemberRaw[]) {
     return party.flatMap((partyMember) => {
       const enemyRaw = EnemyRepository.getEnemyByMemoryIdAndGroupId(
