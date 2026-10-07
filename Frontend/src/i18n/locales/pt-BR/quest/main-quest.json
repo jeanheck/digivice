@@ -269,107 +269,107 @@
         "locationTarget": "Datamon"
       },
       "63": {
-        "description": "Investigue a Sala Secreta nos Esgotos",
-        "locationTarget": "Sala Secreta"
+        "description": "Retorne para a Sala Secreta e pergunte a seus amigos sobre o Passe Pessoal",
+        "locationTarget": "Kail"
       },
       "64": {
-        "description": "Encontre Nicky e Keith no Lago Subterrâneo Suzaku",
-        "locationTarget": "Nicky e Keith"
+        "description": "Procure por Keith e Nicky no Setor Sul",
+        "locationTarget": "Keith & Nicky"
       },
       "65": {
-        "description": "Encontre o Passe Pessoal",
-        "locationTarget": "Passe Pessoal"
+        "description": "Com a ajuda de todos, procure pelo Passe Pessoal dentro da Sala Secreta",
+        "locationTarget": "Lisa"
       },
       "66": {
-        "description": "Volte até Datamon para que ele abra o portão",
+        "description": "Use o Passe Pessoal e peça para o Datamon abrir o portão",
         "locationTarget": "Datamon"
       },
       "67": {
-        "description": "Derrote os domadores do Centro Admin Subsolo (1/3)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro que te impede de entrar no Centro Admin Subsolo: Andar 1",
+        "locationTarget": "Patrulheiro"
       },
       "68": {
-        "description": "Derrote os domadores do Centro Admin Subsolo (2/3)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro que te impede de continuar pelo Centro Admin Subsolo: Andar 1",
+        "locationTarget": "Patrulheiro"
       },
       "69": {
-        "description": "Derrote os domadores do Centro Admin Subsolo (3/3)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro que te impede de sair do Centro Admin Subsolo: Andar 1",
+        "locationTarget": "Patrulheiro"
       },
       "70": {
-        "description": "Derrote os domadores das Escadas do Subsolo (1/3)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro na entrada das Escadas do Subsolo",
+        "locationTarget": "Patrulheiro"
       },
       "71": {
-        "description": "Derrote os domadores das Escadas do Subsolo (2/3)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro ao fim das Escadas do Subsolo",
+        "locationTarget": "Patrulheiro"
       },
       "72": {
-        "description": "Derrote os domadores das Escadas do Subsolo (3/3)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro para sair das Escadas do Subsolo",
+        "locationTarget": "Patrulheiro"
       },
       "73": {
-        "description": "Derrote os domadores do Centro Administrativo: Andar 1 (1/2)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro na entrada do Centro Administrativo: Andar 1",
+        "locationTarget": "Patrulheiro"
       },
       "74": {
-        "description": "Derrote os domadores do Centro Administrativo: Andar 1 (2/2)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro antes de subir as escadas do Centro Administrativo: Andar 1",
+        "locationTarget": "Patrulheiro"
       },
       "75": {
-        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (1/4)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro para andar pelo Centro Administrativo: Andar 2",
+        "locationTarget": "Patrulheiro"
       },
       "76": {
-        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (2/4)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Patrulheiro após subir as escadas do Centro Administrativo: Andar 2",
+        "locationTarget": "Patrulheiro"
       },
       "77": {
-        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (3/4)",
-        "locationTarget": "Domador"
+        "description": "Derrote o Soldado no corredor de acesso a Sala Mestre",
+        "locationTarget": "Soldado"
       },
       "78": {
-        "description": "Derrote os domadores do Centro Administrativo: Andar 2 (4/4)",
-        "locationTarget": "Domador"
+        "description": "Derrote o General que te impede de entrar na Sala Mestre",
+        "locationTarget": "General"
       },
       "79": {
-        "description": "Derrote Vennmon",
-        "locationTarget": "Vennmon"
+        "description": "\"GUBI!?\" Defenda-se do Digimon estranho que saiu da sala",
+        "locationTarget": "Vemmon"
       },
       "80": {
-        "description": "Encontre a letra M na Sala Mestre",
-        "locationTarget": "Letra M"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"M\"",
+        "locationTarget": "Letra \"M\""
       },
       "81": {
-        "description": "Encontre a letra O na Sala Mestre",
-        "locationTarget": "Letra O"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"O\"",
+        "locationTarget": "Letra \"O\""
       },
       "82": {
-        "description": "Encontre a letra N na Sala Mestre",
-        "locationTarget": "Letra N"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"N\"",
+        "locationTarget": "Letra \"N\""
       },
       "83": {
-        "description": "Encontre a letra S na Sala Mestre",
-        "locationTarget": "Letra S"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"S\"",
+        "locationTarget": "Letra \"S\""
       },
       "84": {
-        "description": "Encontre a letra T na Sala Mestre",
-        "locationTarget": "Letra T"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"T\"",
+        "locationTarget": "Letra \"T\""
       },
       "85": {
-        "description": "Encontre a letra E na Sala Mestre",
-        "locationTarget": "Letra E"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"R\"",
+        "locationTarget": "Letra \"R\""
       },
       "86": {
-        "description": "Encontre a letra R na Sala Mestre",
-        "locationTarget": "Letra R"
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"O\"",
+        "locationTarget": "Letra \"O\""
       },
       "87": {
-        "description": "Derrote o segurança na entrada do A.o.A Headquarters",
-        "locationTarget": "Segurança"
+        "description": "Derrote os Guardas na entrada Quartel General",
+        "locationTarget": "Guardas"
       },
       "88": {
-        "description": "Derrote o Game Master no A.o.A Headquarters",
+        "description": "Confronte a Game Master dentro do Quartel General",
         "locationTarget": "Game Master"
       }
     }

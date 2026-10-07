@@ -1774,6 +1774,47 @@
   },
   "0255": {
     "imageName": "Secret Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 78,
+          "y": 20
+        }
+      },
+      {
+        "location": "0252",
+        "coordinates": {
+          "x": 14,
+          "y": 70
+        }
+      },
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 8,
+          "y": 46
+        }
+      },
+      {
+        "location": "0253",
+        "coordinates": {
+          "x": 18,
+          "y": 73
+        }
+      },
+      {
+        "location": "0254",
+        "coordinates": {
+          "x": 61,
+          "y": 19
+        }
+      }
+    ],
     "npcs": [
       {
         "id": "aoaAttacker",

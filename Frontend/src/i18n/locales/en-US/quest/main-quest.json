@@ -270,15 +270,15 @@
       },
       "63": {
         "description": "Investigate the Secret Room in the Sewers",
-        "locationTarget": "Secret Room"
+        "locationTarget": "Kail"
       },
       "64": {
-        "description": "Meet Nicky and Keith at Suzaku UG Lake",
-        "locationTarget": "Nicky and Keith"
+        "description": "Meet Keith and Nicky at Suzaku UG Lake",
+        "locationTarget": "Keith & Nicky"
       },
       "65": {
         "description": "Find the Personal Pass",
-        "locationTarget": "Personal Pass"
+        "locationTarget": "Lisa"
       },
       "66": {
         "description": "Go back to Datamon so he opens the gate",

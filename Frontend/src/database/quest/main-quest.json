@@ -600,24 +600,24 @@
     "63": {
       "location": "0255",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 63,
+        "y": 74.5
       },
       "requisites": []
     },
     "64": {
       "location": "0241",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 15,
+        "y": 62
       },
       "requisites": []
     },
     "65": {
-      "location": "0254",
+      "location": "0255",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 56.5,
+        "y": 50.5
       },
       "requisites": []
     },
@@ -632,176 +632,176 @@
     "67": {
       "location": "021A",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 22.5,
+        "y": 79
       },
       "requisites": []
     },
     "68": {
       "location": "021A",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 41.5,
+        "y": 74.5
       },
       "requisites": []
     },
     "69": {
       "location": "021A",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 72,
+        "y": 25
       },
       "requisites": []
     },
     "70": {
       "location": "0215",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 24,
+        "y": 54
       },
       "requisites": []
     },
     "71": {
       "location": "0215",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 60.5,
+        "y": 38
       },
       "requisites": []
     },
     "72": {
       "location": "0215",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 47,
+        "y": 39
       },
       "requisites": []
     },
     "73": {
       "location": "0214",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 81,
+        "y": 91
       },
       "requisites": []
     },
     "74": {
       "location": "0214",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 36.5,
+        "y": 65
       },
       "requisites": []
     },
     "75": {
       "location": "0217",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 66,
+        "y": 74
       },
       "requisites": []
     },
     "76": {
       "location": "0217",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 79,
+        "y": 44
       },
       "requisites": []
     },
     "77": {
       "location": "0217",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 71,
+        "y": 44
       },
       "requisites": []
     },
     "78": {
       "location": "0217",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 65,
+        "y": 32
       },
       "requisites": []
     },
     "79": {
       "location": "0217",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 65,
+        "y": 32
       },
       "requisites": []
     },
     "80": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 20,
+        "y": 46
       },
       "requisites": []
     },
     "81": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 30.5,
+        "y": 39.5
       },
       "requisites": []
     },
     "82": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 40.5,
+        "y": 33
       },
       "requisites": []
     },
     "83": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 55,
+        "y": 31
       },
       "requisites": []
     },
     "84": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 55,
+        "y": 73
       },
       "requisites": []
     },
     "85": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 65,
+        "y": 67
       },
       "requisites": []
     },
     "86": {
       "location": "0218",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 75,
+        "y": 61
       },
       "requisites": []
     },
     "87": {
       "location": "0219",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 26,
+        "y": 73
       },
       "requisites": []
     },
     "88": {
       "location": "0219",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 74.5,
+        "y": 36
       },
       "requisites": []
     }
