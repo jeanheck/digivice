@@ -17,6 +17,30 @@
     },
     "aoaAttacker": {
       "name": "A.o.A Attacker"
+    },
+    "adminBasementPatrol": {
+      "name": "Patroller"
+    },
+    "adminFloor1Patrol": {
+      "name": "Patroller"
+    },
+    "adminFloor2Patrol": {
+      "name": "Patroller"
+    },
+    "basementStairsPatrol": {
+      "name": "Patroller"
+    },
+    "adminGeneral": {
+      "name": "General"
+    },
+    "adminSoldier": {
+      "name": "Soldier"
+    },
+    "headquartersGuards": {
+      "name": "Guards"
+    },
+    "gameMaster": {
+      "name": "Game Master"
     }
   }
 }

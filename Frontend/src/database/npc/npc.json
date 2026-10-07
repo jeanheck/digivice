@@ -140,28 +140,147 @@
   },
   "gameMaster": {
     "type": "npc",
-    "locationId": "",
+    "locationId": "0219",
     "imageName": "Game Master",
-    "mainQuestAvailabilityWindow": {
-      "starts": null,
-      "ends": null
-    },
     "party": [
       {
-        "enemyId": null,
+        "enemyId": 582,
         "groupId": 10
       },
       {
-        "enemyId": null,
+        "enemyId": 583,
         "groupId": 10
       },
       {
-        "enemyId": null,
+        "enemyId": 584,
         "groupId": 10
       }
     ],
     "exp": 35,
     "dvexp": 718,
     "bit": 1490
+  },
+  "adminBasementPatrol": {
+    "type": "npc",
+    "locationId": "021A",
+    "party": [
+      {
+        "enemyId": 586,
+        "groupId": 192
+      },
+      {
+        "enemyId": 587,
+        "groupId": 192
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "adminFloor1Patrol": {
+    "type": "npc",
+    "locationId": "0214",
+    "party": [
+      {
+        "enemyId": 589,
+        "groupId": 189
+      },
+      {
+        "enemyId": 590,
+        "groupId": 189
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "adminFloor2Patrol": {
+    "type": "npc",
+    "locationId": "0217",
+    "party": [
+      {
+        "enemyId": 589,
+        "groupId": 189
+      },
+      {
+        "enemyId": 590,
+        "groupId": 189
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "basementStairsPatrol": {
+    "type": "npc",
+    "locationId": "0215",
+    "party": [
+      {
+        "enemyId": 589,
+        "groupId": 189
+      },
+      {
+        "enemyId": 590,
+        "groupId": 189
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "adminGeneral": {
+    "type": "npc",
+    "locationId": "0217",
+    "party": [
+      {
+        "enemyId": 591,
+        "groupId": 190
+      },
+      {
+        "enemyId": 592,
+        "groupId": 190
+      },
+      {
+        "enemyId": 592,
+        "groupId": 190
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "adminSoldier": {
+    "type": "npc",
+    "locationId": "0217",
+    "party": [
+      {
+        "enemyId": 591,
+        "groupId": 190
+      },
+      {
+        "enemyId": 592,
+        "groupId": 190
+      },
+      {
+        "enemyId": 592,
+        "groupId": 190
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "headquartersGuards": {
+    "type": "npc",
+    "locationId": "0219",
+    "party": [
+      {
+        "enemyId": 588,
+        "groupId": 191
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
   }
 }

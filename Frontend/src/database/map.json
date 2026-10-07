@@ -289,14 +289,34 @@
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "id": "adminFloor1Patrol",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0215": {
     "imageName": "Basement Stairs",
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "id": "basementStairsPatrol",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0216": {
     "imageName": "Torre Prisão",
@@ -319,6 +339,32 @@
           "y": 18
         }
       }
+    ],
+    "npcs": [
+      {
+        "id": "adminFloor2Patrol",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "adminGeneral",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "adminSoldier",
+        "coordinates": {
+          "x": 70,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "0218": {
@@ -333,14 +379,42 @@
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "id": "headquartersGuards",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "gameMaster",
+        "coordinates": {
+          "x": 60,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "021A": {
     "imageName": "Admin Center B1F",
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "id": "adminBasementPatrol",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "021C": {
     "imageName": "Control Room",
