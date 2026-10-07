@@ -43,7 +43,7 @@
       },
       "7": {
         "description": "Defeat the Mystery Player stopping you on the Asuka Bridge",
-        "locationTarget": "Mistery Player"
+        "locationTarget": "Mystery Player"
       },
       "8": {
         "description": "Talk with the Guilmon on Asuka Inn 2F, on Asuka City",
@@ -123,7 +123,7 @@
       },
       "27": {
         "description": "Challenge Leader Suzaku in the Suzaku Hall",
-        "locationTarget": "Suzaku Hall"
+        "locationTarget": "Suzaku Leader"
       },
       "28": {
         "description": "Return to Suzaku Inn after defeating Leader Suzaku",
@@ -131,11 +131,11 @@
       },
       "29": {
         "description": "Search for information on Lamb Chop",
-        "locationTarget": "Barman"
+        "locationTarget": "Master John"
       },
       "30": {
-        "description": "Look for the trainers couple near El Dorado",
-        "locationTarget": "Trainers couple"
+        "description": "Look for the tamer couple near El Dorado",
+        "locationTarget": "Tamer couple"
       },
       "31": {
         "description": "Go to the place where you last saw Etemon",
@@ -147,7 +147,7 @@
       },
       "33": {
         "description": "Confront the Mischievous Mat at Asuka Sewers",
-        "locationTarget": "Pernicious Mat"
+        "locationTarget": "Mischievous Mat"
       },
       "34": {
         "description": "Return to the Underground Path and find Kail",
@@ -265,111 +265,111 @@
         "locationTarget": "Numemon"
       },
       "62": {
-        "description": "Talk to Datamon in the Control Room",
+        "description": "Look for a way to enter Asuka City",
         "locationTarget": "Datamon"
       },
       "63": {
-        "description": "Investigate the Secret Room in the Sewers",
+        "description": "Return to the Secret Room and ask your friends about the Personal Pass",
         "locationTarget": "Kail"
       },
       "64": {
-        "description": "Meet Keith and Nicky at Suzaku UG Lake",
+        "description": "Look for Keith and Nicky in the South Sector",
         "locationTarget": "Keith & Nicky"
       },
       "65": {
-        "description": "Find the Personal Pass",
+        "description": "With everyone's help, look for the Personal Pass inside the Secret Room",
         "locationTarget": "Lisa"
       },
       "66": {
-        "description": "Go back to Datamon so he opens the gate",
+        "description": "Use the Personal Pass and ask Datamon to open the gate",
         "locationTarget": "Datamon"
       },
       "67": {
-        "description": "Defeat the tamers in Admin Center B1F (1/3)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller blocking you from entering Admin Center B1F",
+        "locationTarget": "Patroller"
       },
       "68": {
-        "description": "Defeat the tamers in Admin Center B1F (2/3)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller blocking your way through Admin Center B1F",
+        "locationTarget": "Patroller"
       },
       "69": {
-        "description": "Defeat the tamers in Admin Center B1F (3/3)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller blocking you from leaving Admin Center B1F",
+        "locationTarget": "Patroller"
       },
       "70": {
-        "description": "Defeat the tamers on the Basement Stairs (1/3)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller at the entrance of the Basement Stairs",
+        "locationTarget": "Patroller"
       },
       "71": {
-        "description": "Defeat the tamers on the Basement Stairs (2/3)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller at the end of the Basement Stairs",
+        "locationTarget": "Patroller"
       },
       "72": {
-        "description": "Defeat the tamers on the Basement Stairs (3/3)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller to get out of the Basement Stairs",
+        "locationTarget": "Patroller"
       },
       "73": {
-        "description": "Defeat the tamers in Admin Center 1F (1/2)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller at the entrance of Admin Center 1F",
+        "locationTarget": "Patroller"
       },
       "74": {
-        "description": "Defeat the tamers in Admin Center 1F (2/2)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller before going up the stairs of Admin Center 1F",
+        "locationTarget": "Patroller"
       },
       "75": {
-        "description": "Defeat the tamers in Admin Center 2F (1/4)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller to walk through Admin Center 2F",
+        "locationTarget": "Patroller"
       },
       "76": {
-        "description": "Defeat the tamers in Admin Center 2F (2/4)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Patroller after going up the stairs of Admin Center 2F",
+        "locationTarget": "Patroller"
       },
       "77": {
-        "description": "Defeat the tamers in Admin Center 2F (3/4)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the Soldier in the hallway leading to the Master Room",
+        "locationTarget": "Soldier"
       },
       "78": {
-        "description": "Defeat the tamers in Admin Center 2F (4/4)",
-        "locationTarget": "Tamer"
+        "description": "Defeat the General blocking you from entering the Master Room",
+        "locationTarget": "General"
       },
       "79": {
-        "description": "Defeat Vennmon",
-        "locationTarget": "Vennmon"
+        "description": "\"GUBI!?\" Defend yourself from the strange Digimon that came out of the room",
+        "locationTarget": "Vemmon"
       },
       "80": {
-        "description": "Find the letter M in the Master Room",
-        "locationTarget": "Letter M"
+        "description": "Inside the Master Room, touch the panel representing the letter \"M\"",
+        "locationTarget": "Letter \"M\""
       },
       "81": {
-        "description": "Find the letter O in the Master Room",
-        "locationTarget": "Letter O"
+        "description": "Inside the Master Room, touch the panel representing the letter \"O\"",
+        "locationTarget": "Letter \"O\""
       },
       "82": {
-        "description": "Find the letter N in the Master Room",
-        "locationTarget": "Letter N"
+        "description": "Inside the Master Room, touch the panel representing the letter \"N\"",
+        "locationTarget": "Letter \"N\""
       },
       "83": {
-        "description": "Find the letter S in the Master Room",
-        "locationTarget": "Letter S"
+        "description": "Inside the Master Room, touch the panel representing the letter \"S\"",
+        "locationTarget": "Letter \"S\""
       },
       "84": {
-        "description": "Find the letter T in the Master Room",
-        "locationTarget": "Letter T"
+        "description": "Inside the Master Room, touch the panel representing the letter \"T\"",
+        "locationTarget": "Letter \"T\""
       },
       "85": {
-        "description": "Find the letter E in the Master Room",
-        "locationTarget": "Letter E"
+        "description": "Inside the Master Room, touch the panel representing the letter \"E\"",
+        "locationTarget": "Letter \"E\""
       },
       "86": {
-        "description": "Find the letter R in the Master Room",
-        "locationTarget": "Letter R"
+        "description": "Inside the Master Room, touch the panel representing the letter \"R\"",
+        "locationTarget": "Letter \"R\""
       },
       "87": {
-        "description": "Defeat the security guard at the A.o.A Headquarters entrance",
-        "locationTarget": "Security"
+        "description": "Defeat the Guards at the Headquarters entrance",
+        "locationTarget": "Guards"
       },
       "88": {
-        "description": "Defeat the Game Master at the A.o.A Headquarters",
+        "description": "Confront the Game Master inside the Headquarters",
         "locationTarget": "Game Master"
       }
     }
