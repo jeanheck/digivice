@@ -1,4 +1,5 @@
 import { MapRepository } from "@/repositories/map.repository";
+import { NpcRepository } from "@/repositories/npc.repository";
 import type { MapNpcRaw } from "@/repositories/tables/raws/map/map-npc.raw";
 import { QuestService } from "@/services/quest.service";
 
@@ -15,7 +16,7 @@ export class MapNpcRepository {
       if (
         !QuestService.isOnMainQuestRange(
           lastCompletedMainQuestStep,
-          mapNpcRaw.mainQuestAvailabilityWindow,
+          NpcRepository.getNpcById(mapNpcRaw.id)?.mainQuestAvailabilityWindow,
         )
       ) {
         return [];

@@ -118,10 +118,6 @@
     "npcs": [
       {
         "id": "keith",
-        "mainQuestAvailabilityWindow": {
-          "starts": 6,
-          "ends": 7
-        },
         "coordinates": {
           "x": 56,
           "y": 33
@@ -1156,9 +1152,6 @@
     "npcs": [
       {
         "id": "seiryuLeader",
-        "mainQuestAvailabilityWindow": {
-          "starts": 3
-        },
         "coordinates": {
           "x": 29,
           "y": 29
@@ -2030,10 +2023,6 @@
     "npcs": [
       {
         "id": "fakeByakkoLeader",
-        "mainQuestAvailabilityWindow": {
-          "starts": 44,
-          "ends": 45
-        },
         "coordinates": {
           "x": 40,
           "y": 26

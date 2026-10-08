@@ -67,7 +67,7 @@ Also: names in `i18n/locales/{pt-BR,en-US}/npcs.json` (including `gameMaster`) a
 ## Pending (future iteration)
 
 - NPCs `exp` / `dvexp` / `bit` set to `0` (not captured).
-- No `mainQuestAvailabilityWindow` on the new NPCs nor on `gameMaster` (the former
+- No `mainQuestAvailabilityWindow` (in `npc/npc.json`) on the new NPCs nor on `gameMaster` (the former
   `starts: null` broke `MainQuestAvailabilityWindowRaw`).
 - `map.json` coordinates are placeholders (`y: 50`, `x` 30–70).
 - Variants `586`–`592` copy `rate`, `dvexp`/`exp`/`bits`, attacks and `drops` from the

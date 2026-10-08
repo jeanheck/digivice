@@ -7,6 +7,7 @@ import { EnemyRepository } from "@/repositories/enemy.repository";
 import { MapBossRepository } from "@/repositories/map-boss.repository";
 import { MapRepository } from "@/repositories/map.repository";
 import { MapCardShopRepository } from "@/repositories/map-card-shop.repository";
+import { NpcRepository } from "@/repositories/npc.repository";
 import { CardShopRepository } from "@/repositories/card-shop.repository";
 import type { MapBossRaw } from "@/repositories/tables/raws/map/map-boss.raw";
 import type { MapDuelIslandRaw } from "@/repositories/tables/raws/map/map-duel-island.raw";
@@ -78,7 +79,7 @@ export class WikiLocationsPanelPresenter {
       if (
         !QuestService.isOnMainQuestRange(
           lastCompletedMainQuestStep,
-          locationNpc.mainQuestAvailabilityWindow,
+          NpcRepository.getNpcById(locationNpc.id)?.mainQuestAvailabilityWindow,
         )
       ) {
         continue;
