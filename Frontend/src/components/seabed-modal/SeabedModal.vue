@@ -61,7 +61,7 @@ const dockSlides = computed((): MapFrameSlideViewModel[] => {
       pins: [
         {
           coordinates: viewModel.coordinates,
-          label: t("map.dock"),
+          label: t("seabed.dock"),
         },
       ],
     },
@@ -83,7 +83,7 @@ const closeModal = () => {
   >
     <template #header>
       <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
-        {{ $t("map.seabed") }}
+        {{ $t("seabed.title") }}
       </h2>
     </template>
 
@@ -97,10 +97,10 @@ const closeModal = () => {
           :style="{ width: `${MapFrameWidthPx}px` }"
         >
           <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
-            {{ $t("map.noDock") }}
+            {{ $t("seabed.noDock") }}
           </span>
           <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
-            {{ $t("map.noDockHint") }}
+            {{ $t("seabed.noDockHint") }}
           </span>
         </div>
       </div>

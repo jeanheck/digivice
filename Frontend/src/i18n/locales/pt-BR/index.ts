@@ -1,4 +1,5 @@
-import map from "./map.json";
+import seabed from "./seabed.json";
+import mobiusDesert from "./mobius-desert.json";
 import enemy from "./enemy/enemy.json";
 import species from "./enemy/specie.json";
 import conditions from "./enemy/condition.json";
@@ -51,7 +52,8 @@ import duelIsland from "./duel-island.json";
 import npcs from "./npcs.json";
 
 export default {
-  ...map,
+  ...seabed,
+  ...mobiusDesert,
   ...enemy,
   ...species,
   ...conditions,

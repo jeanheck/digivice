@@ -1,0 +1,8 @@
+{
+  "seabed": {
+    "title": "Solo Oceânico",
+    "dock": "Doca",
+    "noDock": "ESSE MAPA NÃO POSSUI DOCA",
+    "noDockHint": "USE O MAPA À ESQUERDA PARA VER ROTAS COMPLETAS OU PROCURAR DOCAS PELO MAPA"
+  }
+}

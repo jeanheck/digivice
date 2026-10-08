@@ -50,7 +50,7 @@ function closeModal(): void {
   >
     <template #header>
       <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
-        {{ $t("map.mobiusDesert") }}
+        {{ $t("mobiusDesert.title") }}
       </h2>
     </template>
 

@@ -62,7 +62,7 @@ const areaSlides = computed((): MapFrameSlideViewModel[] => {
       :style="{ width: `${MapFrameWidthPx}px` }"
     >
       <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
-        {{ $t("map.mobiusDesertHint") }}
+        {{ $t("mobiusDesert.hint") }}
       </span>
     </div>
   </div>

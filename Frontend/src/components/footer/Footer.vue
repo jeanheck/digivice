@@ -29,7 +29,7 @@ const isTitleOnlyTooltip = ref(false);
 
 const showSeabedTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
-  tooltipTitle.value = t("map.seabed");
+  tooltipTitle.value = t("seabed.title");
   tooltipText.value = "";
   showAt(event, { maxWidth: 300, placement: "above", align: "left" });
 };
@@ -45,7 +45,7 @@ const hideSeabedTooltip = () => {
 
 const showMobiusDesertTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
-  tooltipTitle.value = t("map.mobiusDesert");
+  tooltipTitle.value = t("mobiusDesert.title");
   tooltipText.value = "";
   showAt(event, { maxWidth: 300, placement: "above", align: "left" });
 };
