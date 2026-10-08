@@ -115,7 +115,10 @@ const onClick = () => {
     <div class="flex items-center justify-between mb-1 relative z-10">
       <span class="font-bold truncate transition-colors" :class="[titleSizeClass, titleClass]">
         <template v-if="isMainDisplayMode">
-          <template v-if="quest.currentChapter && !quest.isDone">
+          <template v-if="quest.isDone">
+            {{ $t(`${quest.id}.title`) }}
+          </template>
+          <template v-else-if="quest.currentChapter">
             {{ $t("journal.chapter", { number: quest.currentChapter.number }) }}
           </template>
         </template>
