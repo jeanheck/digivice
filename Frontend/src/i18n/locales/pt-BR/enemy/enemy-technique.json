@@ -19,7 +19,7 @@
     "twinMissile": "Míssel Gêmeo (Mágica, Máquina)",
     "lovelyCharm": "Lovely Charm (Decreases Enemy Strength)",
     "confuseNebula": "Confuse Nebula (Chance of Confusion)",
-    "darkMatter": "Dark Matter (Mágica, Trevas)",
+    "darkMatter": "Matéria Sombria (Mágica, Trevas)",
     "darkFear": "Dark Fear (Mágica, Trevas)",
     "hardRain": "Hard Rain (Mágica, Água)",
     "flameBall": "Flame Ball (Mágica, Fogo)",
@@ -36,6 +36,7 @@
     "flameSphere": "Flame Sphere (Mágica, Fogo)",
     "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
     "heartBreakAttack": "Ataque da Paixão (Mágica, Diminui a força)",
-    "autoRecover": "Auto Recuperação (Recupera uma pequena quantidade de HP a cada turno)"
+    "autoRecover": "Auto Recuperação (Recupera uma pequena quantidade de HP a cada turno)",
+    "helterSkelter": "Skelter herói (Força o Digimon a voltar a forma base)"
   }
 }

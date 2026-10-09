@@ -11875,7 +11875,7 @@
     "spdDown": "No",
     "canEscape": false,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "darkMatter",
     "memoryId": 302,
     "groupId": 10,
     "drops": [
@@ -11920,7 +11920,7 @@
     "spdDown": "No",
     "canEscape": false,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "helterSkelter",
     "memoryId": 437,
     "groupId": 10,
     "drops": [
