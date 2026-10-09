@@ -288,10 +288,18 @@
     },
     "npcs": [
       {
-        "id": "adminFloor1Patrol",
+        "id": "trooper1AdminFloor1",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 81,
+          "y": 91
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2AdminFloor1",
+        "coordinates": {
+          "x": 36.5,
+          "y": 65
         },
         "labelPlacement": "below"
       }
@@ -305,10 +313,26 @@
     },
     "npcs": [
       {
-        "id": "basementStairsPatrol",
+        "id": "trooper1BasementStairs",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 24,
+          "y": 54
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2BasementStairs",
+        "coordinates": {
+          "x": 60.5,
+          "y": 38
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper3BasementStairs",
+        "coordinates": {
+          "x": 47,
+          "y": 39
         },
         "labelPlacement": "below"
       }
@@ -338,26 +362,34 @@
     ],
     "npcs": [
       {
-        "id": "adminFloor2Patrol",
+        "id": "trooper1AdminFloor2",
         "coordinates": {
-          "x": 30,
-          "y": 50
+          "x": 66,
+          "y": 74
         },
         "labelPlacement": "below"
       },
       {
-        "id": "adminGeneral",
+        "id": "trooper2AdminFloor2",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 79,
+          "y": 44
         },
         "labelPlacement": "below"
       },
       {
-        "id": "adminSoldier",
+        "id": "soldierAdminFloor2",
         "coordinates": {
-          "x": 70,
-          "y": 50
+          "x": 71,
+          "y": 44
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "generalAdminFloor2",
+        "coordinates": {
+          "x": 65,
+          "y": 32
         },
         "labelPlacement": "below"
       }
@@ -378,18 +410,18 @@
     },
     "npcs": [
       {
-        "id": "headquartersGuards",
+        "id": "guardsHeadquarters",
         "coordinates": {
-          "x": 40,
-          "y": 50
+          "x": 26,
+          "y": 73
         },
         "labelPlacement": "below"
       },
       {
-        "id": "gameMaster",
+        "id": "gameMasterHeadquarters",
         "coordinates": {
-          "x": 60,
-          "y": 50
+          "x": 74.5,
+          "y": 36
         },
         "labelPlacement": "below"
       }

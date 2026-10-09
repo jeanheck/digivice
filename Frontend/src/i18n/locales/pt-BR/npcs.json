@@ -36,9 +36,6 @@
     "adminSoldier": {
       "name": "Soldado"
     },
-    "headquartersGuards": {
-      "name": "Guardas"
-    },
     "gameMaster": {
       "name": "Game Master"
     },
@@ -50,6 +47,39 @@
     },
     "trooper3AdminCenterB1F": {
       "name": "Patrulheiro"
+    },
+    "trooper1BasementStairs": {
+      "name": "Patrulheiro"
+    },
+    "trooper2BasementStairs": {
+      "name": "Patrulheiro"
+    },
+    "trooper3BasementStairs": {
+      "name": "Patrulheiro"
+    },
+    "trooper1AdminFloor1": {
+      "name": "Patrulheiro"
+    },
+    "trooper2AdminFloor1": {
+      "name": "Patrulheiro"
+    },
+    "trooper1AdminFloor2": {
+      "name": "Patrulheiro"
+    },
+    "trooper2AdminFloor2": {
+      "name": "Patrulheiro"
+    },
+    "soldierAdminFloor2": {
+      "name": "Soldado"
+    },
+    "generalAdminFloor2": {
+      "name": "General"
+    },
+    "guardsHeadquarters": {
+      "name": "Guardas"
+    },
+    "gameMasterHeadquarters": {
+      "name": "Game Master"
     }
   }
 }

@@ -204,43 +204,14 @@
     "dvexp": 29,
     "bit": 580
   },
-  "adminFloor1Patrol": {
-    "type": "npc",
-    "locationId": "0214",
-    "party": [
-      {
-        "enemyId": 435,
-        "groupId": 189
-      },
-      {
-        "enemyId": 76,
-        "groupId": 189
-      }
-    ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
-  },
-  "adminFloor2Patrol": {
-    "type": "npc",
-    "locationId": "0217",
-    "party": [
-      {
-        "enemyId": 435,
-        "groupId": 189
-      },
-      {
-        "enemyId": 76,
-        "groupId": 189
-      }
-    ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
-  },
-  "basementStairsPatrol": {
+  "trooper1BasementStairs": {
     "type": "npc",
     "locationId": "0215",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 69,
+      "ends": 70
+    },
     "party": [
       {
         "enemyId": 435,
@@ -251,13 +222,150 @@
         "groupId": 189
       }
     ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
   },
-  "adminGeneral": {
+  "trooper2BasementStairs": {
+    "type": "npc",
+    "locationId": "0215",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 70,
+      "ends": 71
+    },
+    "party": [
+      {
+        "enemyId": 435,
+        "groupId": 189
+      },
+      {
+        "enemyId": 76,
+        "groupId": 189
+      }
+    ],
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
+  },
+  "trooper3BasementStairs": {
+    "type": "npc",
+    "locationId": "0215",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 71,
+      "ends": 72
+    },
+    "party": [
+      {
+        "enemyId": 435,
+        "groupId": 189
+      },
+      {
+        "enemyId": 76,
+        "groupId": 189
+      }
+    ],
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
+  },
+  "trooper1AdminFloor1": {
+    "type": "npc",
+    "locationId": "0214",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 72,
+      "ends": 73
+    },
+    "party": [
+      {
+        "enemyId": 435,
+        "groupId": 189
+      },
+      {
+        "enemyId": 76,
+        "groupId": 189
+      }
+    ],
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
+  },
+  "trooper2AdminFloor1": {
+    "type": "npc",
+    "locationId": "0214",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 73,
+      "ends": 74
+    },
+    "party": [
+      {
+        "enemyId": 435,
+        "groupId": 189
+      },
+      {
+        "enemyId": 76,
+        "groupId": 189
+      }
+    ],
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
+  },
+  "trooper1AdminFloor2": {
     "type": "npc",
     "locationId": "0217",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 74,
+      "ends": 75
+    },
+    "party": [
+      {
+        "enemyId": 435,
+        "groupId": 190
+      },
+      {
+        "enemyId": 76,
+        "groupId": 190
+      }
+    ],
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
+  },
+  "trooper2AdminFloor2": {
+    "type": "npc",
+    "locationId": "0217",
+    "imageName": "Trooper",
+    "mainQuestAvailabilityWindow": {
+      "starts": 75,
+      "ends": 76
+    },
+    "party": [
+      {
+        "enemyId": 435,
+        "groupId": 190
+      },
+      {
+        "enemyId": 76,
+        "groupId": 190
+      }
+    ],
+    "exp": 299,
+    "dvexp": 29,
+    "bit": 590
+  },
+  "soldierAdminFloor2": {
+    "type": "npc",
+    "locationId": "0217",
+    "imageName": "Soldier",
+    "mainQuestAvailabilityWindow": {
+      "starts": 76,
+      "ends": 77
+    },
     "party": [
       {
         "enemyId": 435,
@@ -272,13 +380,18 @@
         "groupId": 190
       }
     ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
+    "exp": 451,
+    "dvexp": 29,
+    "bit": 890
   },
-  "adminSoldier": {
+  "generalAdminFloor2": {
     "type": "npc",
     "locationId": "0217",
+    "imageName": "Soldier",
+    "mainQuestAvailabilityWindow": {
+      "starts": 77,
+      "ends": 78
+    },
     "party": [
       {
         "enemyId": 435,
@@ -293,30 +406,35 @@
         "groupId": 190
       }
     ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
+    "exp": 451,
+    "dvexp": 29,
+    "bit": 890
   },
-  "headquartersGuards": {
+  "guardsHeadquarters": {
     "type": "npc",
     "locationId": "0219",
+    "imageName": "Guard",
+    "mainQuestAvailabilityWindow": {
+      "starts": 86,
+      "ends": 87
+    },
     "party": [
       {
         "enemyId": 334,
         "groupId": 191
       }
     ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
+    "exp": 160,
+    "dvexp": 32,
+    "bit": 325
   },
-  "gameMaster": {
+  "gameMasterHeadquarters": {
     "type": "npc",
     "locationId": "0219",
     "imageName": "Game Master",
     "mainQuestAvailabilityWindow": {
-      "starts": 88,
-      "ends": 89
+      "starts": 87,
+      "ends": 88
     },
     "party": [
       {
