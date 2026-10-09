@@ -40,14 +40,10 @@ export class WikiModalPresenter {
   }
 
   public static getEnemySearchItems(
-    translateTamerName: (tamerId: string) => string,
-    translateNpcName: (npcId: string) => string,
+    translateLabelKey: (labelKey: string) => string,
   ): SearchItemViewModel[] {
     return Object.entries(EnemyRepository.getEnemyTable()).map(([enemyId, enemyRaw]) => {
-      return SearchItemConverter.convertEnemy(enemyId, enemyRaw, {
-        translateTamerName,
-        translateNpcName,
-      });
+      return SearchItemConverter.convertEnemy(enemyId, enemyRaw, translateLabelKey);
     });
   }
 
@@ -137,7 +133,7 @@ export class WikiModalPresenter {
     translateNpcName: (npcId: string) => string,
   ): SearchItemViewModel[] {
     return [
-      ...this.getEnemySearchItems(translateTamerName, translateNpcName),
+      ...this.getEnemySearchItems(translateLabelKey),
       ...this.getDropSearchItems(translateLabelKey),
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),

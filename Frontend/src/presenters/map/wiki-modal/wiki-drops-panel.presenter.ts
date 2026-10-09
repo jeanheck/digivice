@@ -1,5 +1,7 @@
 import { WikiDroppedBySourceConverter } from "@/presenters/converter/wiki-dropped-by-source.converter";
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
+import { EnemyOwnerRepository } from "@/repositories/enemy-owner.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
 import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
@@ -72,13 +74,15 @@ export class WikiDropsPanelPresenter {
   private static toDropSource(droppedBy: DroppedByRaw): DropSourceViewModel {
     if (droppedBy.kind === "enemy") {
       const enemyRaw = EnemyRepository.getEnemyById(droppedBy.id);
+      const ownerId = EnemyOwnerRepository.getOwnerId(enemyRaw.memoryId, enemyRaw.groupId);
+      const ownerNameKey = ownerId !== null ? NpcBattleOpponentHelper.getNameKey(ownerId) : null;
 
       return {
         kind: "enemy",
         sourceId: droppedBy.id,
         label: enemyRaw.name,
         locationId: droppedBy.locationOnly,
-        tamerId: enemyRaw.tamerId,
+        ownerNameKey: ownerNameKey ?? undefined,
       };
     }
 

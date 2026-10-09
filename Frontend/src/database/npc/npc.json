@@ -138,21 +138,84 @@
     "dvexp": 29,
     "bit": 600
   },
+  "trooper1AdminCenterB1F": {
+    "type": "npc",
+    "locationId": "021A",
+    "mainQuestAvailabilityWindow": {
+      "starts": 66,
+      "ends": 67
+    },
+    "party": [
+      {
+        "enemyId": 139,
+        "groupId": 192
+      },
+      {
+        "enemyId": 134,
+        "groupId": 192
+      }
+    ],
+    "exp": 289,
+    "dvexp": 29,
+    "bit": 580
+  },
+  "trooper2AdminCenterB1F": {
+    "type": "npc",
+    "locationId": "021A",
+    "mainQuestAvailabilityWindow": {
+      "starts": 67,
+      "ends": 68
+    },
+    "party": [
+      {
+        "enemyId": 139,
+        "groupId": 192
+      },
+      {
+        "enemyId": 134,
+        "groupId": 192
+      }
+    ],
+    "exp": 289,
+    "dvexp": 29,
+    "bit": 580
+  },
+  "trooper3AdminCenterB1F": {
+    "type": "npc",
+    "locationId": "021A",
+    "mainQuestAvailabilityWindow": {
+      "starts": 68,
+      "ends": 69
+    },
+    "party": [
+      {
+        "enemyId": 139,
+        "groupId": 192
+      },
+      {
+        "enemyId": 134,
+        "groupId": 192
+      }
+    ],
+    "exp": 289,
+    "dvexp": 29,
+    "bit": 580
+  },
   "gameMaster": {
     "type": "npc",
     "locationId": "0219",
     "imageName": "Game Master",
     "party": [
       {
-        "enemyId": 582,
+        "enemyId": 399,
         "groupId": 10
       },
       {
-        "enemyId": 583,
+        "enemyId": 302,
         "groupId": 10
       },
       {
-        "enemyId": 584,
+        "enemyId": 437,
         "groupId": 10
       }
     ],
@@ -160,33 +223,16 @@
     "dvexp": 718,
     "bit": 1490
   },
-  "adminBasementPatrol": {
-    "type": "npc",
-    "locationId": "021A",
-    "party": [
-      {
-        "enemyId": 586,
-        "groupId": 192
-      },
-      {
-        "enemyId": 587,
-        "groupId": 192
-      }
-    ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
-  },
   "adminFloor1Patrol": {
     "type": "npc",
     "locationId": "0214",
     "party": [
       {
-        "enemyId": 589,
+        "enemyId": 435,
         "groupId": 189
       },
       {
-        "enemyId": 590,
+        "enemyId": 76,
         "groupId": 189
       }
     ],
@@ -199,11 +245,11 @@
     "locationId": "0217",
     "party": [
       {
-        "enemyId": 589,
+        "enemyId": 435,
         "groupId": 189
       },
       {
-        "enemyId": 590,
+        "enemyId": 76,
         "groupId": 189
       }
     ],
@@ -216,11 +262,11 @@
     "locationId": "0215",
     "party": [
       {
-        "enemyId": 589,
+        "enemyId": 435,
         "groupId": 189
       },
       {
-        "enemyId": 590,
+        "enemyId": 76,
         "groupId": 189
       }
     ],
@@ -233,15 +279,15 @@
     "locationId": "0217",
     "party": [
       {
-        "enemyId": 591,
+        "enemyId": 435,
         "groupId": 190
       },
       {
-        "enemyId": 592,
+        "enemyId": 76,
         "groupId": 190
       },
       {
-        "enemyId": 592,
+        "enemyId": 76,
         "groupId": 190
       }
     ],
@@ -254,15 +300,15 @@
     "locationId": "0217",
     "party": [
       {
-        "enemyId": 591,
+        "enemyId": 435,
         "groupId": 190
       },
       {
-        "enemyId": 592,
+        "enemyId": 76,
         "groupId": 190
       },
       {
-        "enemyId": 592,
+        "enemyId": 76,
         "groupId": 190
       }
     ],
@@ -275,7 +321,7 @@
     "locationId": "0219",
     "party": [
       {
-        "enemyId": 588,
+        "enemyId": 334,
         "groupId": 191
       }
     ],

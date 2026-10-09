@@ -38,27 +38,27 @@ General and Soldier 1 share group 190.
 - `enemy.json` `585` Vemmon: `memoryId` 10 → 465, `groupId` → 322.
 - `enemy.json` `113` Guardromon(Blue): `memoryId` 0 → 435 (`groupId` left `null` — see pending).
 - `enemy.json` `126` Tankmon: `memoryId` 0 → 76 (`groupId` left `null` — see pending).
-- `npc/npc.json` `gameMaster`: `party.enemyId` → 582 / 583 / 584, `locationId` → `0219`.
+- `npc/npc.json` `gameMaster`: `party.enemyId` (memoryId) → 399 / 302 / 437, `locationId` → `0219`.
 - Datamon (`16`): already correct (141 / 9).
 
 ## Created entries (second pass)
 
-`npc/npc.json` (party `enemyId` / `groupId`):
+`npc/npc.json` (party `enemyId` = memoryId / `groupId`):
 
 | NPC | Map | Party |
 |-----|-----|-------|
-| `adminBasementPatrol` | `021A` | 586/192, 587/192 |
-| `adminFloor1Patrol` | `0214` | 589/189, 590/189 |
-| `adminFloor2Patrol` | `0217` | 589/189, 590/189 |
-| `basementStairsPatrol` | `0215` | 589/189, 590/189 |
-| `adminGeneral` | `0217` | 591/190, 592/190, 592/190 |
-| `adminSoldier` | `0217` | 591/190, 592/190, 592/190 |
-| `headquartersGuards` | `0219` | 588/191 |
+| `trooper1AdminCenterB1F` / `trooper2AdminCenterB1F` / `trooper3AdminCenterB1F` | `021A` | 139/192, 134/192 |
+| `adminFloor1Patrol` | `0214` | 435/189, 76/189 |
+| `adminFloor2Patrol` | `0217` | 435/189, 76/189 |
+| `basementStairsPatrol` | `0215` | 435/189, 76/189 |
+| `adminGeneral` | `0217` | 435/190, 76/190, 76/190 |
+| `adminSoldier` | `0217` | 435/190, 76/190, 76/190 |
+| `headquartersGuards` | `0219` | 334/191 |
 
-`enemy.json` NPC-only entries (`can*: false` → `0`, `npcId` set):
+`enemy.json` NPC-only entries (`can*: false` → `0`; owner derived from the party via
+memoryId + groupId, first owner wins):
 `586` Raremon lv29, `587` Cyclonemon lv29, `588` Maildramon lv32,
-`589`/`590` Guardromon(Blue)/Tankmon group 189 (`npcId` `adminFloor1Patrol`),
-`591`/`592` Guardromon(Blue)/Tankmon group 190 (`npcId` `adminGeneral`).
+`589`/`590` Guardromon(Blue)/Tankmon group 189, `591`/`592` Guardromon(Blue)/Tankmon group 190.
 `113` / `126` remain the generic entries (`groupId: null`).
 
 Also: names in `i18n/locales/{pt-BR,en-US}/npcs.json` (including `gameMaster`) and
@@ -72,9 +72,6 @@ Also: names in `i18n/locales/{pt-BR,en-US}/npcs.json` (including `gameMaster`) a
 - `map.json` coordinates are placeholders (`y: 50`, `x` 30–70).
 - Variants `586`–`592` copy `rate`, `dvexp`/`exp`/`bits`, attacks and `drops` from the
   base entry — to review.
-- Group 189 copies point (`npcId`) only to `adminFloor1Patrol`; the other two patrols
-  reach them only through their `party`.
-
 ### Combat-block stats used for the new variants
 
 Same `memoryId` as the wild version, different level. Resists listed as RAM values.

@@ -44,8 +44,6 @@ export interface EnemyRaw {
   regularAttackId: string | null;
   techniqueId: string | null;
   boss?: boolean;
-  tamerId?: string;
-  npcId?: string;
   memoryId: number;
   groupId: number | null;
 }

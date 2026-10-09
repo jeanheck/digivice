@@ -1,16 +1,13 @@
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
+import { EnemyOwnerRepository } from "@/repositories/enemy-owner.repository";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
-
-export interface EnemySearchItemLabels {
-  translateTamerName: (tamerId: string) => string;
-  translateNpcName: (npcId: string) => string;
-}
 
 export class SearchItemConverter {
   public static convertEnemy(
     id: string,
     enemyRaw: EnemyRaw,
-    labels: EnemySearchItemLabels,
+    translate: (key: string) => string,
   ): SearchItemViewModel {
     const searchItem: SearchItemViewModel = {
       id,
@@ -25,19 +22,13 @@ export class SearchItemConverter {
       return searchItem;
     }
 
-    if (enemyRaw.tamerId !== undefined) {
-      searchItem.kindLabelKey = "enemy.searchContext.tamer";
+    const ownerId = EnemyOwnerRepository.getOwnerId(enemyRaw.memoryId, enemyRaw.groupId);
+    const ownerNameKey = ownerId !== null ? NpcBattleOpponentHelper.getNameKey(ownerId) : null;
+    if (ownerId !== null && ownerNameKey !== null) {
+      const isTamer = NpcBattleOpponentHelper.getSearchKind(ownerId) === "tamer";
+      searchItem.kindLabelKey = isTamer ? "enemy.searchContext.tamer" : "enemy.searchContext.npc";
       searchItem.kindLabelParams = {
-        name: labels.translateTamerName(enemyRaw.tamerId),
-        level: levelLabel,
-      };
-      return searchItem;
-    }
-
-    if (enemyRaw.npcId !== undefined) {
-      searchItem.kindLabelKey = "enemy.searchContext.npc";
-      searchItem.kindLabelParams = {
-        name: labels.translateNpcName(enemyRaw.npcId),
+        name: translate(ownerNameKey),
         level: levelLabel,
       };
       return searchItem;

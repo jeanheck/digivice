@@ -1,5 +1,6 @@
 import { StoryNpcDigimonBattleId } from "@/constants/npc-battle.constant";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
+import { EnemyOwnerRepository } from "@/repositories/enemy-owner.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import type { NpcPartyMemberRaw } from "@/repositories/tables/raws/npc/npc-party-member.raw";
 import type { TamerDigimonBattlePartyMemberRaw } from "@/repositories/tables/raws/tamer/tamer-digimon-battle-party-member.raw";
@@ -42,8 +43,8 @@ export class NpcBattleFromEnemyHelper {
 
   public static resolve(enemyId: string): NpcBattleFromEnemyContext | null {
     const enemyRaw = EnemyRepository.getEnemyById(enemyId);
-    const opponentId = enemyRaw.tamerId ?? enemyRaw.npcId;
-    if (opponentId === undefined) {
+    const opponentId = EnemyOwnerRepository.getOwnerId(enemyRaw.memoryId, enemyRaw.groupId);
+    if (opponentId === null || enemyRaw.groupId === null) {
       return null;
     }
 
@@ -56,13 +57,6 @@ export class NpcBattleFromEnemyHelper {
       return {
         npcId: opponentId,
         battleOptionId: `digimon-${StoryNpcDigimonBattleId}`,
-      };
-    }
-
-    if (enemyRaw.groupId === null) {
-      return {
-        npcId: opponentId,
-        battleOptionId: null,
       };
     }
 

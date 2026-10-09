@@ -105,12 +105,6 @@ export class EnemyConverter {
         };
       });
     }
-    if (enemyRaw.tamerId !== undefined) {
-      enemyViewModel.tamerId = enemyRaw.tamerId;
-    }
-    if (enemyRaw.npcId !== undefined) {
-      enemyViewModel.npcId = enemyRaw.npcId;
-    }
 
     return enemyViewModel;
   }
