@@ -322,11 +322,11 @@
         },
         "party": [
           {
-            "enemyId": 32,
+            "enemyId": 80,
             "groupId": 204
           },
           {
-            "enemyId": 32,
+            "enemyId": 34,
             "groupId": 204
           }
         ],
