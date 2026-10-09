@@ -141,6 +141,7 @@
   "trooper1AdminCenterB1F": {
     "type": "npc",
     "locationId": "021A",
+    "imageName": "Trooper",
     "mainQuestAvailabilityWindow": {
       "starts": 66,
       "ends": 67
@@ -162,6 +163,7 @@
   "trooper2AdminCenterB1F": {
     "type": "npc",
     "locationId": "021A",
+    "imageName": "Trooper",
     "mainQuestAvailabilityWindow": {
       "starts": 67,
       "ends": 68
@@ -183,6 +185,7 @@
   "trooper3AdminCenterB1F": {
     "type": "npc",
     "locationId": "021A",
+    "imageName": "Trooper",
     "mainQuestAvailabilityWindow": {
       "starts": 68,
       "ends": 69
@@ -200,28 +203,6 @@
     "exp": 289,
     "dvexp": 29,
     "bit": 580
-  },
-  "gameMaster": {
-    "type": "npc",
-    "locationId": "0219",
-    "imageName": "Game Master",
-    "party": [
-      {
-        "enemyId": 399,
-        "groupId": 10
-      },
-      {
-        "enemyId": 302,
-        "groupId": 10
-      },
-      {
-        "enemyId": 437,
-        "groupId": 10
-      }
-    ],
-    "exp": 35,
-    "dvexp": 718,
-    "bit": 1490
   },
   "adminFloor1Patrol": {
     "type": "npc",
@@ -328,5 +309,31 @@
     "exp": 0,
     "dvexp": 0,
     "bit": 0
+  },
+  "gameMaster": {
+    "type": "npc",
+    "locationId": "0219",
+    "imageName": "Game Master",
+    "mainQuestAvailabilityWindow": {
+      "starts": 88,
+      "ends": 89
+    },
+    "party": [
+      {
+        "enemyId": 399,
+        "groupId": 10
+      },
+      {
+        "enemyId": 302,
+        "groupId": 10
+      },
+      {
+        "enemyId": 437,
+        "groupId": 10
+      }
+    ],
+    "exp": 35,
+    "dvexp": 718,
+    "bit": 1490
   }
 }
