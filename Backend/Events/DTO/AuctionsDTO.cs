@@ -20,4 +20,7 @@ public record class AuctionsDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<bool> YinYangWand { get; init; } = Optional<bool>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<bool> HazardFang { get; init; } = Optional<bool>.Empty;
 }

@@ -48,5 +48,15 @@
     },
     "bid": 2700,
     "resale": 30000
+  },
+  {
+    "id": "hazardFang",
+    "equipmentId": "149",
+    "mainQuestAvailabilityWindow": {
+      "starts": 73,
+      "ends": 88
+    },
+    "bid": 2700,
+    "resale": 30000
   }
 ]

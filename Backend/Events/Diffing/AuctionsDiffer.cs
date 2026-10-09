@@ -40,6 +40,10 @@ public static class AuctionsDiffer
         {
             dto = dto with { YinYangWand = newAuctions.YinYangWand };
         }
+        if (newAuctions.HazardFang != previousAuctions.HazardFang)
+        {
+            dto = dto with { HazardFang = newAuctions.HazardFang };
+        }
 
         return dto;
     }

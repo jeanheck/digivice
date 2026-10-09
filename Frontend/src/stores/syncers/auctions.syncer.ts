@@ -18,5 +18,8 @@ export class AuctionsSyncer {
     if (newAuctionsDto.yinYangWand !== undefined) {
       previousAuctions.yinYangWand = newAuctionsDto.yinYangWand;
     }
+    if (newAuctionsDto.hazardFang !== undefined) {
+      previousAuctions.hazardFang = newAuctionsDto.hazardFang;
+    }
   }
 }

@@ -13,7 +13,8 @@ namespace Backend.Domain.Assemblers
                 HazardShield = resource.HazardShield != 0,
                 SniperShield = resource.SniperShield != 0,
                 DramonShield = resource.DramonShield != 0,
-                YinYangWand = resource.YinYangWand != 0
+                YinYangWand = resource.YinYangWand != 0,
+                HazardFang = resource.HazardFang != 0
             };
         }
     }

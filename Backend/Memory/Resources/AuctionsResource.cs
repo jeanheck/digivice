@@ -7,5 +7,6 @@ namespace Backend.Memory.Resources
         public byte SniperShield { get; set; }
         public byte DramonShield { get; set; }
         public byte YinYangWand { get; set; }
+        public byte HazardFang { get; set; }
     }
 }

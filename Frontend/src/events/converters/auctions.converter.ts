@@ -10,6 +10,7 @@ export class AuctionsConverter {
       sniperShield: auctionsDto.sniperShield,
       dramonShield: auctionsDto.dramonShield,
       yinYangWand: auctionsDto.yinYangWand,
+      hazardFang: auctionsDto.hazardFang,
     };
   }
 }

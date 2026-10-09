@@ -12,7 +12,7 @@ public class AuctionsReaderTests
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = new Mock<IMemoryReader>();
-        SetupMaskedByte(memoryReaderMock, 0x0004B38A, 0x05);
+        SetupMaskedByte(memoryReaderMock, 0x0004B38A, 0x25);
 
         var reader = new AuctionsReader(memoryReaderMock.Object);
         var result = reader.Read(addresses);
@@ -22,6 +22,7 @@ public class AuctionsReaderTests
         Assert.Equal((byte)0x04, result.SniperShield);
         Assert.Equal((byte)0x00, result.DramonShield);
         Assert.Equal((byte)0x00, result.YinYangWand);
+        Assert.Equal((byte)0x20, result.HazardFang);
     }
 
     [Fact]
@@ -39,6 +40,7 @@ public class AuctionsReaderTests
         Assert.Equal((byte)0x00, result.SniperShield);
         Assert.Equal((byte)0x00, result.DramonShield);
         Assert.Equal((byte)0x00, result.YinYangWand);
+        Assert.Equal((byte)0x00, result.HazardFang);
     }
 
     private static void SetupMaskedByte(Mock<IMemoryReader> memoryReaderMock, long address, byte rawValue)
@@ -57,6 +59,7 @@ public class AuctionsReaderTests
             SniperShield = new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x04 },
             DramonShield = new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x08 },
             YinYangWand = new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x10 },
+            HazardFang = new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x20 },
         };
     }
 }

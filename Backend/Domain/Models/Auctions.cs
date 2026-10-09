@@ -7,5 +7,6 @@ namespace Backend.Domain.Models
         public bool SniperShield { get; set; }
         public bool DramonShield { get; set; }
         public bool YinYangWand { get; set; }
+        public bool HazardFang { get; set; }
     }
 }

@@ -18,6 +18,7 @@ public class AuctionsDifferTests
         Assert.False(result.SniperShield.HasValue);
         Assert.False(result.DramonShield.HasValue);
         Assert.False(result.YinYangWand.HasValue);
+        Assert.False(result.HazardFang.HasValue);
     }
 
     [Fact]
@@ -48,6 +49,21 @@ public class AuctionsDifferTests
         Assert.False(result.HazardShield.HasValue);
     }
 
+    [Fact]
+    public void Diff_ShouldReturnHazardFangDelta_WhenOnlyHazardFangChanged()
+    {
+        var previous = CreateBaseAuctions();
+        var current = CreateBaseAuctions();
+        current.HazardFang = true;
+
+        var result = AuctionsDiffer.Diff(previous, current);
+
+        Assert.True(result.HazardFang.HasValue);
+        Assert.True(result.HazardFang.Value);
+        Assert.False(result.YinYangWand.HasValue);
+        Assert.False(result.DivineBarrier.HasValue);
+    }
+
     private static Auctions CreateBaseAuctions()
     {
         return new Auctions
@@ -57,6 +73,7 @@ public class AuctionsDifferTests
             SniperShield = false,
             DramonShield = false,
             YinYangWand = false,
+            HazardFang = false,
         };
     }
 }
