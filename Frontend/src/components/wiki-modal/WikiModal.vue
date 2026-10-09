@@ -87,7 +87,7 @@ const allSearchItems = computed(() => {
       return t(`card.${cardId}.name`);
     },
     (locationId) => {
-      return t(`location.${locationId}`);
+      return t(`map.${locationId}`);
     },
     (cardShopId) => {
       return t(`cardShop.${cardShopId}.name`);

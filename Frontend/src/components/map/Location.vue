@@ -26,7 +26,7 @@ const locationName = computed(() => {
     return props.titleOverride;
   }
 
-  return t(`location.${props.locationId}`);
+  return t(`map.${props.locationId}`);
 });
 
 const isClickable = computed(() => {

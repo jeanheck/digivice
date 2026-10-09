@@ -33,7 +33,7 @@ function getLabelPlacementClasses(labelPlacement: LabelPlacement): string {
       class="absolute w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5"
       :class="getLabelPlacementClasses(dock.labelPlacement)"
     >
-      {{ $t(`location.${dock.location}`) }}
+      {{ $t(`map.${dock.location}`) }}
     </div>
   </div>
 </template>

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex items-center gap-6">
+  <div class="flex items-center gap-3">
     <span
       v-for="partyDvexp in partyDvexps"
       :key="partyDvexp.digimonId"

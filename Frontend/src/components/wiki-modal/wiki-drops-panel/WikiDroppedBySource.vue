@@ -22,7 +22,7 @@ const displayName = computed(() => {
 });
 
 const locationLabel = (locationId: string): string => {
-  return t("enemy.locationOnly", { location: t(`location.${locationId}`) });
+  return t("enemy.locationOnly", { location: t(`map.${locationId}`) });
 };
 
 const ownerLabel = (ownerNameKey: string): string => {

@@ -41,6 +41,15 @@
     },
     "gameMaster": {
       "name": "Game Master"
+    },
+    "trooper1AdminCenterB1F": {
+      "name": "Patrulheiro"
+    },
+    "trooper2AdminCenterB1F": {
+      "name": "Patrulheiro"
+    },
+    "trooper3AdminCenterB1F": {
+      "name": "Patrulheiro"
     }
   }
 }

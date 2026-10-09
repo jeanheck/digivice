@@ -2,8 +2,8 @@ import type { DesertNeighborNameViewModel } from "@/viewmodels/desert/desert-nei
 
 export class DesertNeighborHelper {
   private static readonly translationKeyByNeighbor: Record<string, string> = {
-    noiseDesertS: "location.0257",
-    mirageTower: "location.025A",
+    noiseDesertS: "map.0257",
+    mirageTower: "map.025A",
   };
 
   public static resolveNeighborName(neighbor: string): DesertNeighborNameViewModel {

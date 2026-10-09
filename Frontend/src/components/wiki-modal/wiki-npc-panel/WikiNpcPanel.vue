@@ -209,7 +209,7 @@ const openLocation = () => {
         class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
         @click="openLocation"
       >
-        {{ $t(`location.${panelViewModel.locationId}`) }}
+        {{ $t(`map.${panelViewModel.locationId}`) }}
       </button>
 
       <div class="flex flex-col gap-2 pt-2 border-t border-[#0055ff]/30">

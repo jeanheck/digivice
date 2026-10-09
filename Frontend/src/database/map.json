@@ -403,10 +403,26 @@
     },
     "npcs": [
       {
-        "id": "adminBasementPatrol",
+        "id": "trooper1AdminCenterB1F",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 22.5,
+          "y": 79
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2AdminCenterB1F",
+        "coordinates": {
+          "x": 41.5,
+          "y": 74.5
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper3AdminCenterB1F",
+        "coordinates": {
+          "x": 72,
+          "y": 25
         },
         "labelPlacement": "below"
       }

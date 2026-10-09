@@ -42,7 +42,7 @@ export class WikiLocationsPanelPresenter {
         worldLocation,
       ),
       localSlides: WikiLocationsPanelPresenter.getSlides(localImageUrl, null),
-      selectedLocationLabelKey: `location.${locationId}`,
+      selectedLocationLabelKey: `map.${locationId}`,
       encounterLines: WikiLocationsPanelPresenter.getEncounterLines(
         locationId,
         mainQuest,

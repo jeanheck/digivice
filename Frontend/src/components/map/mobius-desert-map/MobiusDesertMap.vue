@@ -44,7 +44,7 @@ const locationTitleOverride = computed(() => {
     return null;
   }
 
-  return `${t(`location.${locationId.value}`)} (${mobiusDesertArea.value.label})`;
+  return `${t(`map.${locationId.value}`)} (${mobiusDesertArea.value.label})`;
 });
 
 function resolveNeighborDisplayName(neighbor: string): string {

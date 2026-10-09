@@ -38,7 +38,7 @@ function getEmergeEmoji(on: SeabedDirection): string {
 }
 
 function getLocationName(locationId: string): string {
-  return t(`location.${locationId}`);
+  return t(`map.${locationId}`);
 }
 </script>
 

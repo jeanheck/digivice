@@ -19,7 +19,7 @@ import stat from "./stat.json";
 import equipments from "./equipment/equipment.json";
 import equipmentType from "./equipment/equipment-type.json";
 import consumableItems from "./consumable-item/consumable-item.json";
-import location from "./location.json";
+import map from "./map.json";
 import technique from "./digievolution/technique.json";
 import digivolution from "./digievolution/digievolution.json";
 import journal from "./journal.json";
@@ -73,7 +73,7 @@ export default {
   ...equipments,
   ...equipmentType,
   ...consumableItems,
-  ...location,
+  ...map,
   ...technique,
   ...digivolution,
   ...journal,

@@ -103,7 +103,7 @@ export class QuestModalPresenter {
       MapFrameSlideConverter.convert(
         asukaMapUrl,
         worldLocation,
-        `location.${selectedStep.location}`,
+        `map.${selectedStep.location}`,
       ),
     ];
   }
@@ -128,7 +128,7 @@ export class QuestModalPresenter {
       const nextLocation = composedLocations[locationIndex + 1];
       let labelKey = `${questId}.steps.${selectedStep.number}.locationTarget`;
       if (nextLocation !== undefined) {
-        labelKey = `location.${nextLocation.location}`;
+        labelKey = `map.${nextLocation.location}`;
       }
 
       return MapFrameSlideConverter.convert(

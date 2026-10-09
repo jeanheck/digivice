@@ -29,7 +29,7 @@ const hasDrops = computed(() => {
 });
 
 const locationOnlyLabel = (locationOnly: string): string => {
-  return t("enemy.locationOnly", { location: t(`location.${locationOnly}`) });
+  return t("enemy.locationOnly", { location: t(`map.${locationOnly}`) });
 };
 
 const handleDropClick = (drop: WikiEnemyDropViewModel): void => {
