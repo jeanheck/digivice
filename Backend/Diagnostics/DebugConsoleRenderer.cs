@@ -146,7 +146,7 @@ namespace Backend.Diagnostics
             {
                 var evolution = digimon.Digievolutions.FirstOrDefault(e => e.Index == (i + 1));
                 string evolutionStr = evolution != null && evolution.DigievolutionId != null && evolution.Digievolution != null
-                    ? $"{Yellow}[{evolution.DigievolutionId}Lv{evolution.Digievolution.Level}]{Reset}"
+                    ? $"{Yellow}[{evolution.DigievolutionId}Lv{evolution.Digievolution.Level} DVEXP:{evolution.Digievolution.Dvexp}]{Reset}"
                     : $"{Gray}[Empty]{Reset}";
                 sb.Append($"S{i + 1}:{evolutionStr} ");
             }
