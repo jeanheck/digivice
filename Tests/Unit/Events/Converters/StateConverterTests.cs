@@ -27,7 +27,8 @@ public class StateConverterTests
             CardBattle = new CardBattle { Id = null },
             Auctions = new Auctions { DivineBarrier = true },
             Npcs = new Npcs(),
-            Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
+            Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] },
+            CardInventory = new CardInventory { Cards = new Dictionary<int, int> { [1009] = 1 } }
         };
 
         var dto = StateConverter.ToDTO(state);
@@ -71,5 +72,9 @@ public class StateConverterTests
         Assert.NotNull(dto.Journal);
         Assert.True(dto.Journal.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.Journal.MainQuest.Value!.Id);
+
+        Assert.NotNull(dto.CardInventory);
+        Assert.True(dto.CardInventory.Cards.HasValue);
+        Assert.Equal(1, dto.CardInventory.Cards.Value![1009]);
     }
 }

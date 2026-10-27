@@ -10,5 +10,6 @@ namespace Backend.Domain.Models
         public Auctions Auctions { get; set; } = new();
         public Npcs Npcs { get; set; } = new();
         public Journal Journal { get; set; } = new();
+        public CardInventory CardInventory { get; set; } = new();
     }
 }

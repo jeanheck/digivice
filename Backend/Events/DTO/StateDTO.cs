@@ -12,4 +12,5 @@ public record StateDTO : IDTO
     public required AuctionsDTO Auctions { get; init; }
     public required NpcsDTO Npcs { get; init; }
     public required JournalDTO Journal { get; init; }
+    public required CardInventoryDTO CardInventory { get; init; }
 }

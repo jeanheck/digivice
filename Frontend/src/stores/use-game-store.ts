@@ -11,6 +11,7 @@ import type { CardBattleDTO } from "@/events/dto/card-battle.dto";
 import type { AuctionsDTO } from "@/events/dto/auctions.dto";
 import type { NpcsDTO } from "@/events/dto/npcs.dto";
 import type { JournalDTO } from "@/events/dto/journal.dto";
+import type { CardInventoryDTO } from "@/events/dto/card-inventory.dto";
 import { storeLogger } from "@/events/logger";
 import { PlayerConverter } from "@/events/converters/player.converter";
 import { ImportantItemsConverter } from "@/events/converters/important-items.converter";
@@ -20,6 +21,7 @@ import { CardBattleConverter } from "@/events/converters/card-battle.converter";
 import { AuctionsConverter } from "@/events/converters/auctions.converter";
 import { NpcsConverter } from "@/events/converters/npcs.converter";
 import { JournalConverter } from "@/events/converters/journal.converter";
+import { CardInventoryConverter } from "@/events/converters/card-inventory.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
 import { ImportantItemsSyncer } from "./syncers/important-items.syncer";
 import { JournalSyncer } from "./syncers/journal.syncer";
@@ -28,6 +30,7 @@ import { DigimonBattleSyncer } from "./syncers/digimon-battle.syncer";
 import { CardBattleSyncer } from "./syncers/card-battle.syncer";
 import { AuctionsSyncer } from "./syncers/auctions.syncer";
 import { NpcsSyncer } from "./syncers/npcs.syncer";
+import { CardInventorySyncer } from "./syncers/card-inventory.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
@@ -101,6 +104,7 @@ export const useGameStore = defineStore("game", () => {
       auctions: AuctionsConverter.convert(state.auctions),
       npcs: NpcsConverter.convert(state.npcs),
       journal: JournalConverter.convert(state.journal),
+      cardInventory: CardInventoryConverter.convert(state.cardInventory),
     };
   }
 
@@ -186,6 +190,15 @@ export const useGameStore = defineStore("game", () => {
     NpcsSyncer.sync(state.npcs, newNpcsDto);
   }
 
+  function syncCardInventory(newCardInventoryDto: CardInventoryDTO): void {
+    const state = getStateOrWarn("CardInventoryChanged");
+    if (!state) {
+      return;
+    }
+
+    CardInventorySyncer.sync(state.cardInventory, newCardInventoryDto);
+  }
+
   return {
     isConnectedWithBackend,
     healthStatus,
@@ -206,5 +219,6 @@ export const useGameStore = defineStore("game", () => {
     syncAuctions,
     syncNpcs,
     syncJournal,
+    syncCardInventory,
   };
 });

@@ -4,9 +4,15 @@ import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { CardViewModel } from "@/viewmodels/card/card.viewmodel";
 
-const props = defineProps<{
-  card: CardViewModel;
-}>();
+const props = withDefaults(
+  defineProps<{
+    card: CardViewModel;
+    quantityOwned?: number;
+  }>(),
+  {
+    quantityOwned: 0,
+  },
+);
 
 const { t, te } = useI18n();
 
@@ -38,14 +44,34 @@ const cardNote = computed(() => {
 
 <template>
   <section
-    class="flex-1 w-full min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col items-center text-center gap-4 overflow-y-auto custom-scroll"
+    class="flex-1 w-full min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col items-center text-center gap-3 overflow-y-auto custom-scroll"
   >
-    <img
-      v-if="cardImageUrl"
-      :src="cardImageUrl"
-      :alt="cardName"
-      class="h-40 object-contain rendering-pixelated"
-    />
+    <div class="relative">
+      <img
+        v-if="cardImageUrl"
+        :src="cardImageUrl"
+        :alt="cardName"
+        class="h-40 object-contain rendering-pixelated"
+      />
+    </div>
+
+    <div class="flex flex-col items-center gap-1">
+      <h3 class="text-sm font-bold text-blue-200">
+        {{ cardName }}
+      </h3>
+      <div
+        v-if="quantityOwned > 0"
+        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-extrabold bg-emerald-950/60 text-emerald-400 border border-emerald-500/50"
+      >
+        <span>x{{ quantityOwned }}</span>
+      </div>
+      <div
+        v-else
+        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs font-medium bg-gray-900/60 text-gray-500 border border-gray-800"
+      >
+        <span>x0</span>
+      </div>
+    </div>
 
     <template v-if="isActionCard">
       <p

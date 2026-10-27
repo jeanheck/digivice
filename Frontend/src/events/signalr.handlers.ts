@@ -52,5 +52,9 @@ export function initializeSignalRHandlers(): void {
     store.syncJournal(data);
   });
 
+  signalRService.on("CardInventoryChanged", (data) => {
+    store.syncCardInventory(data);
+  });
+
   signalRLogger.debug("SignalR Handlers successfully initialized.");
 }

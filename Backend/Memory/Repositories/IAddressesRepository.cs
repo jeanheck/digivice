@@ -23,5 +23,6 @@ namespace Backend.Memory.Repositories
         AuctionsAddresses GetAuctionsAddresses();
         NpcsAddresses GetNpcsAddresses();
         CardBattleAddresses GetCardBattleAddresses();
+        CardInventoryAddresses GetCardInventoryAddresses();
     }
 }

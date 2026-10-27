@@ -6,6 +6,7 @@ import type { Auctions } from "./auctions";
 import type { Npcs } from "./npcs";
 import type { Journal } from "./journal/journal";
 import type { Player } from "./player";
+import type { CardInventory } from "./card-inventory";
 
 export interface State {
   player: Player;
@@ -16,4 +17,5 @@ export interface State {
   auctions: Auctions;
   npcs: Npcs;
   journal: Journal;
+  cardInventory: CardInventory;
 }

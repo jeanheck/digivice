@@ -1,14 +1,16 @@
-import type { Quest } from "@/models";
+import type { CardInventory, Quest } from "@/models";
 import { CardShopRepository } from "@/repositories/card-shop.repository";
-import type {
-  CardShopInventoryItemRaw,
-  CardShopPhaseRaw,
-} from "@/repositories/tables/raws/tcg/card-shop.raw";
+import type { CardShopPhaseRaw } from "@/repositories/tables/raws/tcg/card-shop.raw";
 import { QuestService } from "@/services/quest.service";
+import type { WikiCardShopInventoryCardViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop-inventory-card.viewmodel";
 import type { WikiCardShopViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop.viewmodel";
 
 export class WikiCardShopPanelPresenter {
-  public static getViewModel(cardShopId: string, mainQuest: Quest): WikiCardShopViewModel {
+  public static getViewModel(
+    cardShopId: string,
+    mainQuest: Quest,
+    cardInventory?: CardInventory,
+  ): WikiCardShopViewModel {
     const cardShopRaw = CardShopRepository.getById(cardShopId);
     if (cardShopRaw === undefined) {
       return {
@@ -20,7 +22,11 @@ export class WikiCardShopPanelPresenter {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
 
     return {
-      cards: this.getActiveInventory(cardShopRaw.phases, lastCompletedMainQuestStep),
+      cards: this.getActiveInventory(
+        cardShopRaw.phases,
+        lastCompletedMainQuestStep,
+        cardInventory,
+      ),
       locationId: cardShopRaw.locationId,
     };
   }
@@ -28,8 +34,9 @@ export class WikiCardShopPanelPresenter {
   private static getActiveInventory(
     phases: CardShopPhaseRaw[],
     lastCompletedMainQuestStep: number,
-  ): CardShopInventoryItemRaw[] {
-    const inventory: CardShopInventoryItemRaw[] = [];
+    cardInventory?: CardInventory,
+  ): WikiCardShopInventoryCardViewModel[] {
+    const inventory: WikiCardShopInventoryCardViewModel[] = [];
 
     for (const phase of phases) {
       const isInRange = QuestService.isOnMainQuestRange(
@@ -40,7 +47,13 @@ export class WikiCardShopPanelPresenter {
         continue;
       }
 
-      inventory.push(...phase.inventory);
+      for (const item of phase.inventory) {
+        inventory.push({
+          cardId: item.cardId,
+          price: item.price,
+          quantityOwned: cardInventory?.cards[item.cardId] ?? 0,
+        });
+      }
     }
 
     return inventory;

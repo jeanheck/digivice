@@ -58,6 +58,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IStepReader>());
         Assert.NotNull(provider.GetRequiredService<IPlayerReader>());
         Assert.NotNull(provider.GetRequiredService<ICardBattleReader>());
+        Assert.NotNull(provider.GetRequiredService<ICardInventoryReader>());
         Assert.NotNull(provider.GetRequiredService<IImportantItemsReader>());
         Assert.NotNull(provider.GetRequiredService<IAuctionsReader>());
         Assert.NotNull(provider.GetRequiredService<IQuestReader>());
@@ -72,6 +73,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IDigimonLoader>());
         Assert.NotNull(provider.GetRequiredService<IDigimonBattleLoader>());
         Assert.NotNull(provider.GetRequiredService<ICardBattleLoader>());
+        Assert.NotNull(provider.GetRequiredService<ICardInventoryLoader>());
         Assert.NotNull(provider.GetRequiredService<INpcsLoader>());
 
         Assert.NotNull(provider.GetRequiredService<IPlayerProvider>());
@@ -79,6 +81,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IPartyProvider>());
         Assert.NotNull(provider.GetRequiredService<IDigimonBattleProvider>());
         Assert.NotNull(provider.GetRequiredService<ICardBattleProvider>());
+        Assert.NotNull(provider.GetRequiredService<ICardInventoryProvider>());
         Assert.NotNull(provider.GetRequiredService<IAuctionsProvider>());
         Assert.NotNull(provider.GetRequiredService<IJournalProvider>());
         Assert.NotNull(provider.GetRequiredService<INpcsProvider>());

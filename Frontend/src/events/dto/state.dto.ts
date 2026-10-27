@@ -7,6 +7,7 @@ import type { CardBattleDTO } from "./card-battle.dto";
 import type { AuctionsDTO } from "./auctions.dto";
 import type { NpcsDTO } from "./npcs.dto";
 import type { JournalDTO } from "./journal.dto";
+import type { CardInventoryDTO } from "./card-inventory.dto";
 
 export interface StateDTO {
   player: DeepRequired<PlayerDTO>;
@@ -17,4 +18,5 @@ export interface StateDTO {
   auctions: DeepRequired<AuctionsDTO>;
   npcs: DeepRequired<NpcsDTO>;
   journal: DeepRequired<JournalDTO>;
+  cardInventory: DeepRequired<CardInventoryDTO>;
 }

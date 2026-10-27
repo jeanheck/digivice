@@ -26,6 +26,10 @@ const viewModel = computed(() => {
   return WikiCardPanelPresenter.getViewModel(props.cardId);
 });
 
+const quantityOwned = computed(() => {
+  return gameState.value.cardInventory?.cards[props.cardId] ?? 0;
+});
+
 const handleOpenDrop = (dropKey: string): void => {
   emit("open-drop", { dropId: dropKey, dropType: "booster" });
 };
@@ -40,6 +44,7 @@ const handleOpenCardShop = (cardShopId: string): void => {
     <WikiCardDetails
       v-if="viewModel !== null"
       :card="viewModel.card"
+      :quantity-owned="quantityOwned"
     />
     <div
       v-if="viewModel !== null"

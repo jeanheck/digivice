@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import LanguageSelector from "@/components/footer/LanguageSelector.vue";
+import CardAlbumButton from "@/components/footer/CardAlbumButton.vue";
 import SeabedButton from "@/components/footer/SeabedButton.vue";
 import MobiusDesertButton from "@/components/footer/MobiusDesertButton.vue";
 import KoFiButton from "@/components/footer/KoFiButton.vue";
@@ -23,6 +24,22 @@ const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tool
 const tooltipTitle = ref("");
 const tooltipText = ref("");
 const isTitleOnlyTooltip = ref(false);
+
+const showCardAlbumTooltip = (event: MouseEvent) => {
+  isTitleOnlyTooltip.value = true;
+  tooltipTitle.value = t("cardAlbum.title");
+  tooltipText.value = "";
+  showAt(event, { maxWidth: 300, placement: "above", align: "left" });
+};
+
+const moveCardAlbumTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideCardAlbumTooltip = () => {
+  hide();
+  isTitleOnlyTooltip.value = false;
+};
 
 const showSeabedTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
@@ -149,6 +166,13 @@ const groupPartyLevel = computed(() => {
     <div
       class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80"
     >
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
+      <CardAlbumButton
+            @show-tooltip="showCardAlbumTooltip"
+            @move-tooltip="moveCardAlbumTooltip"
+            @hide-tooltip="hideCardAlbumTooltip"
+          />
+      </div>
       <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
         <SeabedButton
           @show-tooltip="showSeabedTooltip"

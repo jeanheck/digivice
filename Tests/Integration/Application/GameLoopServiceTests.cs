@@ -1,4 +1,4 @@
-﻿namespace Tests.Integration.Application;
+namespace Tests.Integration.Application;
 
 using Backend.Application;
 using Backend.Application.Providers.Interfaces;
@@ -40,6 +40,7 @@ public class GameLoopServiceTests
         var auctionsProviderMock = new Mock<IAuctionsProvider>();
         var npcsProviderMock = new Mock<INpcsProvider>();
         var journalProviderMock = new Mock<IJournalProvider>();
+        var cardInventoryProviderMock = new Mock<ICardInventoryProvider>();
 
         playerProviderMock.Setup(provider => provider.Get()).Returns(new Player { Bits = 123, MapId = "0001" });
         importantItemsProviderMock.Setup(provider => provider.Get()).Returns(new ImportantItems());
@@ -50,6 +51,7 @@ public class GameLoopServiceTests
         npcsProviderMock.Setup(provider => provider.Get()).Returns(new Npcs());
         journalProviderMock.Setup(provider => provider.Get())
             .Returns(new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] });
+        cardInventoryProviderMock.Setup(provider => provider.Get()).Returns(new CardInventory());
 
         stateComposer = new StateComposer(
             playerProviderMock.Object,
@@ -59,7 +61,8 @@ public class GameLoopServiceTests
             cardBattleProviderMock.Object,
             auctionsProviderMock.Object,
             npcsProviderMock.Object,
-            journalProviderMock.Object);
+            journalProviderMock.Object,
+            cardInventoryProviderMock.Object);
 
         var inMemorySettings = new Dictionary<string, string?>
         {

@@ -13,6 +13,8 @@ public class AddressesRepositoryDefinitionsTests : LoaderIntegrationTestBase
         Assert.Equal(0x00048DA0, repository.GetPlayerAddresses().Bits);
         Assert.NotEqual(0, repository.GetImportantItemsAddresses().TreeBoots);
         Assert.NotEqual(0, repository.GetCardBattleAddresses().Id);
+        Assert.NotEqual(0, repository.GetCardInventoryAddresses().Start);
+        Assert.Equal(314, repository.GetCardInventoryAddresses().TotalCards);
         Assert.NotEqual(0, repository.GetDigimonBattleAddresses().Field);
         Assert.NotEqual(0, repository.GetEnemyAddresses().EnemySlotBase);
         Assert.Equal(3, repository.GetEnemyAddresses().SlotCount);

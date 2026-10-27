@@ -1,5 +1,6 @@
 import seabed from "./seabed.json";
 import mobiusDesert from "./mobius-desert.json";
+import cardAlbum from "./card-album.json";
 import koFi from "./buy-me-a-coffee.json";
 import enemy from "./enemy/enemy.json";
 import species from "./enemy/specie.json";
@@ -55,6 +56,7 @@ import npcs from "./npcs.json";
 export default {
   ...seabed,
   ...mobiusDesert,
+  ...cardAlbum,
   ...koFi,
   ...enemy,
   ...species,

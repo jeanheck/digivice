@@ -2,7 +2,7 @@ import { CardRepository } from "@/repositories/card.repository";
 import type { WikiDropBoosterCardViewModel } from "@/viewmodels/wiki-modal/wiki-drop-booster-card.viewmodel";
 
 export class WikiDropBoosterCardConverter {
-  public static convert(cardId: number): WikiDropBoosterCardViewModel {
+  public static convert(cardId: number, quantityOwned: number = 0): WikiDropBoosterCardViewModel {
     const cardIdString = String(cardId);
     const cardRaw = CardRepository.getCardById(cardIdString);
 
@@ -10,6 +10,7 @@ export class WikiDropBoosterCardConverter {
       cardId: cardIdString,
       imageName: cardRaw?.imageName ?? "",
       nameKey: `card.${cardId}.name`,
+      quantityOwned,
     };
   }
 }

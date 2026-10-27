@@ -17,6 +17,7 @@ public static class StateConverter
             Auctions = AuctionsConverter.ToDTO(state.Auctions),
             Npcs = NpcsConverter.ToDTO(state.Npcs),
             Journal = JournalConverter.ToDTO(state.Journal),
+            CardInventory = CardInventoryConverter.ToDTO(state.CardInventory),
         };
     }
 }

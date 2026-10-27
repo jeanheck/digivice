@@ -1,0 +1,28 @@
+{
+  "cardAlbum": {
+    "title": "Card Album",
+    "page": "Page",
+    "of": "of",
+    "collection": "Collection",
+    "totalCopies": "Total in Trunk",
+    "firstPage": "First Page",
+    "previousPage": "Previous Page",
+    "nextPage": "Next Page",
+    "lastPage": "Last Page",
+    "previousCard": "Previous Card",
+    "nextCard": "Next Card",
+    "emptySlot": "Empty",
+    "cardDetails": "Card Details",
+    "boosters": "Boosters",
+    "cards": "Cards",
+    "complete": "Complete",
+    "incomplete": "Incomplete",
+    "completedBoosters": "Completed Boosters",
+    "allBoosters": "All Boosters",
+    "seriesA": "Series A",
+    "seriesB": "Series B",
+    "seriesR": "Series R",
+    "cardsObtained": "cards obtained",
+    "close": "Close"
+  }
+}

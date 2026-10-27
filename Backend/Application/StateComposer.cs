@@ -11,7 +11,8 @@ namespace Backend.Application
         ICardBattleProvider cardBattleProvider,
         IAuctionsProvider auctionsProvider,
         INpcsProvider npcsProvider,
-        IJournalProvider journalProvider)
+        IJournalProvider journalProvider,
+        ICardInventoryProvider cardInventoryProvider)
     {
         public State Compose()
         {
@@ -25,6 +26,7 @@ namespace Backend.Application
                 Auctions = auctionsProvider.Get(),
                 Npcs = npcsProvider.Get(),
                 Journal = journalProvider.Get(),
+                CardInventory = cardInventoryProvider.Get(),
             };
         }
     }

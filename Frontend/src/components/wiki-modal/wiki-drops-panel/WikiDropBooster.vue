@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import WikiDropBoosterCard from "@/components/wiki-modal/wiki-drops-panel/WikiDropBoosterCard.vue";
 import { WikiDropBoosterPresenter } from "@/presenters/map/wiki-modal/wiki-drop-booster.presenter";
+import { useGameState } from "@/composables/use-game-state";
 
 const props = defineProps<{
   boosterId: number;
@@ -11,8 +12,10 @@ const emit = defineEmits<{
   (e: "open-card", cardId: string): void;
 }>();
 
+const gameState = useGameState();
+
 const cards = computed(() => {
-  return WikiDropBoosterPresenter.getViewModel(props.boosterId);
+  return WikiDropBoosterPresenter.getViewModel(props.boosterId, gameState.value.cardInventory);
 });
 
 const handleSelect = (cardId: string): void => {

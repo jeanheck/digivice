@@ -33,12 +33,24 @@ const handleSelect = (): void => {
     class="flex flex-col items-center gap-1.5 w-36 px-1.5 py-2 rounded transition-colors cursor-pointer bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/60"
     @click="handleSelect"
   >
-    <img
-      v-if="cardImageUrl"
-      :src="cardImageUrl"
-      :alt="cardName"
-      class="w-12 h-16 object-contain rendering-pixelated"
-    />
+    <div class="relative">
+      <img
+        v-if="cardImageUrl"
+        :src="cardImageUrl"
+        :alt="cardName"
+        class="w-12 h-16 object-contain rendering-pixelated"
+      />
+      <span
+        class="absolute -top-1 -right-2 px-1 py-0.5 text-[8px] font-black rounded-full shadow whitespace-nowrap border"
+        :class="
+          card.quantityOwned > 0
+            ? 'bg-emerald-950/90 text-emerald-400 border-emerald-500/70'
+            : 'bg-red-950/90 text-red-400 border-red-500/70'
+        "
+      >
+        x{{ card.quantityOwned || 0 }}
+      </span>
+    </div>
     <span class="w-full text-[8px] font-bold text-blue-200 leading-tight text-center line-clamp-2">
       {{ cardName }}
     </span>

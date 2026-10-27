@@ -1,0 +1,28 @@
+{
+  "cardAlbum": {
+    "title": "Álbum de Cartas",
+    "page": "Página",
+    "of": "de",
+    "collection": "Coleção",
+    "totalCopies": "Total no Baú",
+    "firstPage": "Primeira Página",
+    "previousPage": "Página Anterior",
+    "nextPage": "Próxima Página",
+    "lastPage": "Última Página",
+    "previousCard": "Carta Anterior",
+    "nextCard": "Próxima Carta",
+    "emptySlot": "Vazio",
+    "cardDetails": "Detalhes da Carta",
+    "boosters": "Pacotes",
+    "cards": "Cartas",
+    "complete": "Completo",
+    "incomplete": "Incompleto",
+    "completedBoosters": "Pacotes Completos",
+    "allBoosters": "Todos os Pacotes",
+    "seriesA": "Série A",
+    "seriesB": "Série B",
+    "seriesR": "Série R",
+    "cardsObtained": "cartas obtidas",
+    "close": "Fechar"
+  }
+}

@@ -8,6 +8,7 @@ import type { CardBattleDTO } from "./dto/card-battle.dto";
 import type { AuctionsDTO } from "./dto/auctions.dto";
 import type { NpcsDTO } from "./dto/npcs.dto";
 import type { JournalDTO } from "./dto/journal.dto";
+import type { CardInventoryDTO } from "./dto/card-inventory.dto";
 
 // Strict mapping of SignalR and client events
 export interface EventsMap {
@@ -21,6 +22,7 @@ export interface EventsMap {
   AuctionsChanged: AuctionsDTO;
   NpcsChanged: NpcsDTO;
   JournalChanged: JournalDTO;
+  CardInventoryChanged: CardInventoryDTO;
   HubConnectionStatusChanged: {
     isConnected: boolean;
     errorMessage?: string;

@@ -29,6 +29,7 @@ public static class StateEventFactory
         events.AddRange(AuctionsEventFactory.Create(previousState, newState));
         events.AddRange(NpcsEventFactory.Create(previousState, newState));
         events.AddRange(JournalEventFactory.Create(previousState, newState));
+        events.AddRange(CardInventoryEventFactory.Create(previousState, newState));
 
         return events;
     }

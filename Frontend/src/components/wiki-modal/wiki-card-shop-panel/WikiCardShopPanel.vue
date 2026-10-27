@@ -21,7 +21,11 @@ const mainQuest = computed(() => {
 });
 
 const cardShopViewModel = computed(() => {
-  return WikiCardShopPanelPresenter.getViewModel(props.cardShopId, mainQuest.value);
+  return WikiCardShopPanelPresenter.getViewModel(
+    props.cardShopId,
+    mainQuest.value,
+    gameState.value.cardInventory,
+  );
 });
 
 const handleOpenCard = (cardId: string): void => {

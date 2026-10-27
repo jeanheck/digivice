@@ -41,6 +41,7 @@ namespace Backend.Infrastructure
             services.AddSingleton<IStepReader, StepReader>();
             services.AddSingleton<IPlayerReader, PlayerReader>();
             services.AddSingleton<ICardBattleReader, CardBattleReader>();
+            services.AddSingleton<ICardInventoryReader, CardInventoryReader>();
             services.AddSingleton<IImportantItemsReader, ImportantItemsReader>();
             services.AddSingleton<IAuctionsReader, AuctionsReader>();
             services.AddSingleton<IQuestReader, QuestReader>();
@@ -56,12 +57,14 @@ namespace Backend.Infrastructure
             services.AddSingleton<IDigimonLoader, DigimonLoader>();
             services.AddSingleton<IDigimonBattleLoader, DigimonBattleLoader>();
             services.AddSingleton<ICardBattleLoader, CardBattleLoader>();
+            services.AddSingleton<ICardInventoryLoader, CardInventoryLoader>();
 
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
             services.AddSingleton<IImportantItemsProvider, ImportantItemsProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();
             services.AddSingleton<IDigimonBattleProvider, DigimonBattleProvider>();
             services.AddSingleton<ICardBattleProvider, CardBattleProvider>();
+            services.AddSingleton<ICardInventoryProvider, CardInventoryProvider>();
             services.AddSingleton<IAuctionsProvider, AuctionsProvider>();
             services.AddSingleton<INpcsProvider, NpcsProvider>();
             services.AddSingleton<IJournalProvider, JournalProvider>();

@@ -11,5 +11,6 @@ public enum EventType
     CardBattleChanged,
     AuctionsChanged,
     NpcsChanged,
-    JournalChanged
+    JournalChanged,
+    CardInventoryChanged
 }

@@ -31,6 +31,7 @@ public class StateEventFactoryTests
         Assert.NotNull(dto.Auctions);
         Assert.NotNull(dto.Npcs);
         Assert.NotNull(dto.Journal);
+        Assert.NotNull(dto.CardInventory);
     }
 
     [Fact]
@@ -234,8 +235,25 @@ public class StateEventFactoryTests
                     Requisites = []
                 },
                 SideQuests = [],
-            }
+            },
+            CardInventory = new CardInventory()
         };
+    }
+
+    [Fact]
+    public void Create_ShouldReturnCardInventoryChangedEvent_WhenCardInventoryChanges()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.CardInventory = new CardInventory { Cards = new Dictionary<int, int> { [1009] = 1 } };
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.CardInventoryChanged, ev.Type);
+        var dto = Assert.IsType<CardInventoryDTO>(ev.Payload);
+        Assert.True(dto.Cards.HasValue);
+        Assert.Equal(1, dto.Cards.Value![1009]);
     }
 
     private static Digimon CreateBaseDigimon()

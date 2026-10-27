@@ -19,6 +19,7 @@ public class StateComposerTests
         var auctions = new Auctions { DivineBarrier = true };
         var npcs = new Npcs { Genji = new Npc() };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
+        var cardInventory = new CardInventory { Cards = new Dictionary<int, int> { [1009] = 1 } };
 
         var playerProviderMock = new Mock<IPlayerProvider>();
         var importantItemsProviderMock = new Mock<IImportantItemsProvider>();
@@ -28,6 +29,7 @@ public class StateComposerTests
         var auctionsProviderMock = new Mock<IAuctionsProvider>();
         var npcsProviderMock = new Mock<INpcsProvider>();
         var journalProviderMock = new Mock<IJournalProvider>();
+        var cardInventoryProviderMock = new Mock<ICardInventoryProvider>();
 
         playerProviderMock.Setup(p => p.Get()).Returns(player);
         importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
@@ -37,6 +39,7 @@ public class StateComposerTests
         auctionsProviderMock.Setup(p => p.Get()).Returns(auctions);
         npcsProviderMock.Setup(p => p.Get()).Returns(npcs);
         journalProviderMock.Setup(p => p.Get()).Returns(journal);
+        cardInventoryProviderMock.Setup(p => p.Get()).Returns(cardInventory);
 
         var composer = new StateComposer(
             playerProviderMock.Object,
@@ -46,7 +49,8 @@ public class StateComposerTests
             cardBattleProviderMock.Object,
             auctionsProviderMock.Object,
             npcsProviderMock.Object,
-            journalProviderMock.Object);
+            journalProviderMock.Object,
+            cardInventoryProviderMock.Object);
 
         var state = composer.Compose();
 
@@ -58,6 +62,7 @@ public class StateComposerTests
         Assert.Same(auctions, state.Auctions);
         Assert.Same(npcs, state.Npcs);
         Assert.Same(journal, state.Journal);
+        Assert.Same(cardInventory, state.CardInventory);
         playerProviderMock.Verify(p => p.Get(), Times.Once);
         importantItemsProviderMock.Verify(p => p.Get(), Times.Once);
         partyProviderMock.Verify(p => p.Get(), Times.Once);

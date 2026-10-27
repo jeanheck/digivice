@@ -23,6 +23,7 @@ namespace Backend.Memory.Repositories
         private AuctionsAddresses? auctionsAddresses;
         private NpcsAddresses? npcsAddresses;
         private CardBattleAddresses? cardBattleAddresses;
+        private CardInventoryAddresses? cardInventoryAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
         {
@@ -121,5 +122,8 @@ namespace Backend.Memory.Repositories
 
         public CardBattleAddresses GetCardBattleAddresses() =>
             LoadAndCache(ref cardBattleAddresses, "CardBattleAddresses.json");
+
+        public CardInventoryAddresses GetCardInventoryAddresses() =>
+            LoadAndCache(ref cardInventoryAddresses, "CardInventoryAddresses.json");
     }
 }
