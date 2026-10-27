@@ -6,7 +6,7 @@ const {
   barColorClass,
   transitionDurationClass,
   label,
-  borderColorClass = "border-frame-dark",
+  borderColorClass = "border-progress-frame",
   heightClass = "h-6",
   textSizeClass = "text-[12px]",
   fillExtraClass = "",

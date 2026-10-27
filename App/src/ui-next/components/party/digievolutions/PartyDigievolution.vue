@@ -45,8 +45,8 @@ const tier = computed(() => {
 
 <template>
   <div class="relative h-14 text-white dw3-beveled">
-    <div class="absolute inset-0 bg-frame-dark dw3-beveled pointer-events-none"></div>
-    <div class="absolute inset-[1.5px] bg-track dw3-beveled pointer-events-none">
+    <div class="absolute inset-0 bg-card-frame dw3-beveled pointer-events-none"></div>
+    <div class="absolute inset-[1.5px] bg-surface dw3-beveled pointer-events-none">
       <div
         v-if="digievolution?.isDnaActive"
         class="absolute inset-y-0 left-0 w-1 bg-red-500"

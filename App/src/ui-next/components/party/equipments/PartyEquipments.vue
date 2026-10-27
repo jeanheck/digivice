@@ -32,8 +32,8 @@ const EquipmentSlotIcons = {
 
 <template>
   <div class="relative w-10 shrink-0 dw3-beveled">
-    <div class="absolute inset-0 bg-frame-dark dw3-beveled pointer-events-none"></div>
-    <div class="absolute inset-[1.5px] bg-track dw3-beveled pointer-events-none"></div>
+    <div class="absolute inset-0 bg-card-frame dw3-beveled pointer-events-none"></div>
+    <div class="absolute inset-[1.5px] bg-surface dw3-beveled pointer-events-none"></div>
 
     <div class="relative z-10 h-full py-1.5 flex flex-col items-center justify-center gap-1.5">
       <PartyEquipment

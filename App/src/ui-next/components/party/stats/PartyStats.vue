@@ -32,8 +32,8 @@ const StatIcons = {
 
 <template>
   <div class="relative text-white dw3-beveled">
-    <div class="absolute inset-0 bg-frame-dark dw3-beveled pointer-events-none"></div>
-    <div class="absolute inset-[1.5px] bg-track dw3-beveled pointer-events-none"></div>
+    <div class="absolute inset-0 bg-card-frame dw3-beveled pointer-events-none"></div>
+    <div class="absolute inset-[1.5px] bg-surface dw3-beveled pointer-events-none"></div>
 
     <div class="relative z-10 px-2 py-1.5 grid grid-cols-2 gap-x-2">
       <div class="flex flex-col gap-1">

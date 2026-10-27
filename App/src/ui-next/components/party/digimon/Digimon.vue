@@ -16,7 +16,7 @@ const { digimon } = defineProps<{
 </script>
 
 <template>
-  <div class="flex-1 px-2 pt-2 pb-2 flex flex-col gap-1">
+  <div class="flex-1 px-2 pt-2 pb-2 flex flex-col gap-1 bg-surface-active">
     <ExperienceProgressBar
       :digimon-id="digimon.digimonId"
       :level="digimon.level"

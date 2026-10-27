@@ -14,8 +14,6 @@ useServerThemeRoot();
       <Footer class="shrink-0" />
     </div>
 
-    <div class="w-0.5 h-[calc(100%-3rem+2px)] shrink-0 bg-frame-dark" />
-
     <MainPanel class="flex-1 min-w-0" />
   </main>
 </template>

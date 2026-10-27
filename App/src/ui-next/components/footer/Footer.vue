@@ -14,7 +14,7 @@ const fitLabel = computed(() => {
 </script>
 
 <template>
-  <footer class="w-full h-12 px-4 flex items-center bg-surface border-t-2 border-frame-dark">
+  <footer class="w-full h-12 px-4 flex items-center bg-surface border-t-2 border-frame">
     <div class="ml-auto flex items-center gap-3">
       <FooterIconButton
         icon="⛶"

@@ -15,11 +15,13 @@ const sectionLabel = computed(() => {
 </script>
 
 <template>
-  <aside class="h-full flex flex-col bg-surface">
+  <aside class="h-full flex flex-col bg-surface border-l-2 border-frame">
     <MainPanelMenu :label="sectionLabel" @previous="showPrevious" @next="showNext" />
     <section class="min-h-0 overflow-y-auto">
       <Party v-if="activeSection === 'party'" />
     </section>
-    <MapPanel class="flex-1 mx-2 mb-4" />
+    <div class="flex-1 flex flex-col px-2 pb-4 bg-surface-active">
+      <MapPanel class="flex-1" />
+    </div>
   </aside>
 </template>

@@ -13,7 +13,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex items-end border-b-2 border-frame-dark">
+  <div class="flex items-end border-b-2 border-frame">
     <PartyTab
       v-for="slot in slots"
       :key="slot.digimonId"

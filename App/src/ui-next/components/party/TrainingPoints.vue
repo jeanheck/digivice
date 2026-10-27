@@ -6,7 +6,7 @@ const { tp } = defineProps<{
 
 <template>
   <div
-    class="h-6 bg-track border-2 border-frame-dark rounded flex items-center justify-center gap-1.5 cursor-help"
+    class="h-6 bg-track border-2 border-progress-frame rounded flex items-center justify-center gap-1.5 cursor-help"
     :title="$t('digimon.tp')"
   >
     <span class="leading-none text-[16px] font-emoji text-white">&#x1F94A;</span>

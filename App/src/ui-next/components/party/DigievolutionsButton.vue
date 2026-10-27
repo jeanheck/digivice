@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    class="h-6 bg-track border-2 border-frame-dark rounded flex items-center justify-center cursor-pointer hover:bg-frame/40 transition-colors"
+    class="h-6 bg-track border-2 border-progress-frame rounded flex items-center justify-center cursor-pointer hover:bg-track-hover transition-colors"
     :title="$t('digimon.digievolutions')"
     :aria-label="$t('digimon.digievolutions')"
   >
