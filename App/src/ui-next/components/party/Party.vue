@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import PartyTabs from "@/ui-next/components/party/PartyTabs.vue";
-import PartyProgressBars from "@/ui-next/components/party/PartyProgressBars.vue";
+import Digimon from "@/ui-next/components/party/digimon/Digimon.vue";
 import { PartySlotsMock, type PartyDigimonMock } from "@/ui-next/mocks/party.mock";
 
 const occupiedSlots = computed<PartyDigimonMock[]>(() => {
@@ -30,6 +30,6 @@ function select(digimonId: number): void {
       :selected-digimon-id="selectedDigimonId"
       @select="select"
     />
-    <PartyProgressBars v-if="selectedDigimon" :digimon="selectedDigimon" />
+    <Digimon v-if="selectedDigimon" :digimon="selectedDigimon" />
   </div>
 </template>

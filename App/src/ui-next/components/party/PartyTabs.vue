@@ -13,14 +13,13 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex items-end gap-1 border-b-2 border-frame">
+  <div class="flex items-end border-b-2 border-frame-dark">
     <PartyTab
       v-for="slot in slots"
       :key="slot.digimonId"
       :name="slot.name"
       :level="slot.level"
-      :is-active="slot.digimonId === selectedDigimonId"
-      @click="emit('select', slot.digimonId)"
+      :is-active="slot.digimonId === selectedDigimonId"      @click="emit('select', slot.digimonId)"
     />
   </div>
 </template>

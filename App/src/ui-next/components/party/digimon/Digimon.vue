@@ -8,7 +8,6 @@ import TrainingPoints from "@/ui-next/components/party/TrainingPoints.vue";
 import PartyDigievolutions from "@/ui-next/components/party/digievolutions/PartyDigievolutions.vue";
 import PartyStats from "@/ui-next/components/party/stats/PartyStats.vue";
 import PartyEquipments from "@/ui-next/components/party/equipments/PartyEquipments.vue";
-import MapPanel from "@/ui-next/components/map/MapPanel.vue";
 import type { PartyDigimonMock } from "@/ui-next/mocks/party.mock";
 
 const { digimon } = defineProps<{
@@ -17,7 +16,7 @@ const { digimon } = defineProps<{
 </script>
 
 <template>
-  <div class="flex-1 px-2 pt-2 pb-4 flex flex-col gap-1">
+  <div class="flex-1 px-2 pt-2 pb-2 flex flex-col gap-1">
     <ExperienceProgressBar
       :digimon-id="digimon.digimonId"
       :level="digimon.level"
@@ -39,6 +38,5 @@ const { digimon } = defineProps<{
       <PartyStats class="flex-1 min-w-0" :stats="digimon.stats" />
       <PartyEquipments :equipments="digimon.equipments" />
     </div>
-    <MapPanel class="mt-2 flex-1" />
   </div>
 </template>

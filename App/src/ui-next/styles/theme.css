@@ -1,6 +1,6 @@
 /* Server theme tokens for ui-next; Asuka is the default, data-server on <html> switches them. */
 @theme {
-  --color-surface: #000a2b;
+  --color-surface: #000021;
   --color-frame: #0033aa;
   --color-frame-dark: #001a55;
   --color-highlight: oklch(97.7% 0.013 236.62);
