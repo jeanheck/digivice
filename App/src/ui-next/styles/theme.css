@@ -3,7 +3,6 @@
   --color-surface: #000021;
   --color-surface-active: #000036;
   --color-frame: #0033aa;
-  --color-card-frame: #0077ff;
   --color-progress-frame: #00154a;
   --color-highlight: oklch(97.7% 0.013 236.62);
   --color-track: #000e3f;
@@ -14,7 +13,6 @@
   --color-surface: #2b0018;
   --color-surface-active: #400022;
   --color-frame: #aa0055;
-  --color-card-frame: #ff0077;
   --color-progress-frame: #55002b;
   --color-highlight: oklch(97.1% 0.014 343.198);
   --color-track: #3f0022;

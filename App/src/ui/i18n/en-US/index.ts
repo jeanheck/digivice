@@ -54,6 +54,7 @@ import npcs from "./npcs.json";
 import emulatorSlot from "./emulator-slot.json";
 import mainPanel from "./main-panel.json";
 import serverTheme from "./server-theme.json";
+import mapPreview from "./map-preview.json";
 export default {
   ...seabed,
   ...mobiusDesert,
@@ -111,4 +112,5 @@ export default {
   ...emulatorSlot,
   ...mainPanel,
   ...serverTheme,
+  ...mapPreview,
 };

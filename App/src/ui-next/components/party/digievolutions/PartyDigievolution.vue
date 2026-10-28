@@ -45,7 +45,7 @@ const tier = computed(() => {
 
 <template>
   <div class="relative h-14 text-white dw3-beveled">
-    <div class="absolute inset-0 bg-card-frame dw3-beveled pointer-events-none"></div>
+    <div class="absolute inset-0 bg-progress-frame dw3-beveled pointer-events-none"></div>
     <div class="absolute inset-[1.5px] bg-surface dw3-beveled pointer-events-none">
       <div
         v-if="digievolution?.isDnaActive"
@@ -89,7 +89,6 @@ const tier = computed(() => {
           bar-color-class="bg-blue-400"
           transition-duration-class="duration-500"
           height-class="h-5"
-          text-size-class="text-[10px]"
           :label="t('digimon.dvexp')"
         />
       </template>

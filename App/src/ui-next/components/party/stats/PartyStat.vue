@@ -33,14 +33,14 @@ const valueColorClass = computed(() => {
       {{ icon }}
     </span>
     <span
-      class="min-w-[3ch] text-right tabular-nums text-[12px] font-bold font-chakra-petch shadow-text"
+      class="min-w-[3ch] text-right tabular-nums text-[12px] font-bold shadow-text"
       :class="valueColorClass"
     >
       {{ displayValue }}
     </span>
     <span
       v-if="stat.digievolutionBonus > 0"
-      class="text-[12px] font-bold font-chakra-petch text-dw3-gold shadow-text-dark"
+      class="text-[12px] font-bold text-dw3-gold shadow-text-dark"
     >
       +{{ stat.digievolutionBonus }}
     </span>

@@ -1,0 +1,9 @@
+{
+  "mapPreview": {
+    "location": "Map: location",
+    "seabed": "Map: Seabed",
+    "mobiusDesert": "Map: Mobius Desert",
+    "cardBattle": "Map: card battle",
+    "digimonBattle": "Map: Digimon battle"
+  }
+}

@@ -3,10 +3,21 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useEmulatorToggle } from "@/ui-next/composables/use-emulator-fit";
 import { useServerThemeToggle } from "@/ui-next/composables/use-server-theme";
+import { useMapPreview } from "@/ui-next/composables/use-map-preview";
+import { MapPreviews, type MapPreview } from "@/ui-next/constants/map-preview.constant";
 import FooterIconButton from "@/ui-next/components/footer/FooterIconButton.vue";
 const { t } = useI18n();
 const { isFitted, isFitting, toggle } = useEmulatorToggle();
 const { isAmaterasu, toggle: toggleServerTheme } = useServerThemeToggle();
+const { activeMap, show: showMap } = useMapPreview();
+
+const MapPreviewIcons = {
+  location: "🗺️",
+  seabed: "🌊",
+  mobiusDesert: "🏜️",
+  cardBattle: "🎴",
+  digimonBattle: "⚔️",
+} as const satisfies Record<MapPreview, string>;
 
 const fitLabel = computed(() => {
   return isFitted.value ? t("emulatorSlot.releaseButton") : t("emulatorSlot.fitButton");
@@ -15,6 +26,16 @@ const fitLabel = computed(() => {
 
 <template>
   <footer class="w-full h-12 px-4 flex items-center bg-surface border-t-2 border-frame">
+    <div class="flex items-center gap-3">
+      <FooterIconButton
+        v-for="map in MapPreviews"
+        :key="map"
+        :icon="MapPreviewIcons[map]"
+        :label="t(`mapPreview.${map}`)"
+        :is-active="activeMap === map"
+        @click="showMap(map)"
+      />
+    </div>
     <div class="ml-auto flex items-center gap-3">
       <FooterIconButton
         icon="⛶"

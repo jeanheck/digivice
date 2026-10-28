@@ -62,7 +62,7 @@ export const PartySlotsMock: PartySlotMock[] = [
     hp: { current: 180, max: 240 },
     mp: { current: 30, max: 120 },
     tp: 12,
-    blast: 850,
+    blast: 0,
     digievolutions: DigievolutionsMock,
     activeDigievolutionId: 381,
     stats: {
@@ -101,7 +101,7 @@ export const PartySlotsMock: PartySlotMock[] = [
     hp: { current: 50, max: 200 },
     mp: { current: 140, max: 160 },
     tp: 5,
-    blast: 600,
+    blast: 0,
     digievolutions: DigievolutionsMock,
     activeDigievolutionId: 381,
     stats: {
@@ -140,7 +140,7 @@ export const PartySlotsMock: PartySlotMock[] = [
     hp: { current: 260, max: 260 },
     mp: { current: 90, max: 110 },
     tp: 0,
-    blast: 200,
+    blast: 0,
     digievolutions: DigievolutionsMock,
     activeDigievolutionId: 381,
     stats: {
