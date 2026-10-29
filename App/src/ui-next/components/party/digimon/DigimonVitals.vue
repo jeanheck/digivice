@@ -18,11 +18,20 @@ const { digimon } = defineProps<{
     <div class="absolute inset-[1.5px] bg-surface dw3-beveled pointer-events-none"></div>
 
     <div class="relative z-10 px-2 py-1.5 flex flex-col gap-1">
-      <ExperienceProgressBar
-        :digimon-id="digimon.digimonId"
-        :level="digimon.level"
-        :experience="digimon.experience"
-      />
+      <div class="flex items-center gap-2">
+        <ExperienceProgressBar
+          class="flex-1 min-w-0"
+          :digimon-id="digimon.digimonId"
+          :level="digimon.level"
+          :experience="digimon.experience"
+        />
+        <div
+          class="h-6 px-2 shrink-0 bg-track border-2 border-progress-frame rounded flex items-center gap-1 font-bold font-chakra-petch text-white leading-none"
+        >
+          <span class="text-[10px] text-gray-300">{{ $t("digimon.lv") }}</span>
+          <span class="text-[14px]">{{ digimon.level }}</span>
+        </div>
+      </div>
       <HpProgressBar :hp="digimon.hp" />
       <MpProgressBar :mp="digimon.mp" />
       <div class="grid grid-cols-4 gap-2">

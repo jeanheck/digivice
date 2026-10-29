@@ -2,8 +2,14 @@
 import { computed } from "vue";
 import type { PartyStatMock } from "@/ui-next/mocks/party.mock";
 
-const { icon, label, stat } = defineProps<{
+const {
+  icon,
+  iconClass = "text-white",
+  label,
+  stat,
+} = defineProps<{
   icon: string;
+  iconClass?: string;
   label: string;
   stat: PartyStatMock;
 }>();
@@ -27,10 +33,8 @@ const valueColorClass = computed(() => {
 
 <template>
   <div class="flex items-center gap-1.5 min-w-0 cursor-help" :title="label">
-    <span
-      class="w-5 shrink-0 flex justify-center text-[14px] leading-none font-emoji text-white"
-    >
-      {{ icon }}
+    <span class="w-5 shrink-0 flex justify-center text-[15px] leading-none font-emoji">
+      <span :class="iconClass">{{ icon }}</span>
     </span>
     <span
       class="min-w-[3ch] text-right tabular-nums text-[12px] font-bold shadow-text"

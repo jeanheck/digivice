@@ -22,7 +22,7 @@ const sectionLabel = computed(() => {
 
 <template>
   <aside class="h-full flex flex-col bg-surface border-l-2 border-frame">
-    <MainPanelMenu :label="sectionLabel" @previous="showPrevious" @next="showNext" />
+    <MainPanelMenu v-show="false" :label="sectionLabel" @previous="showPrevious" @next="showNext" />
     <section class="min-h-0 overflow-y-auto">
       <Party v-if="activeSection === 'party'" />
     </section>

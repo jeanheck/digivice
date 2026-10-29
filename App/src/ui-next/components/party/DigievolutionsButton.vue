@@ -5,6 +5,9 @@
     :title="$t('digimon.digievolutions')"
     :aria-label="$t('digimon.digievolutions')"
   >
-    <span class="leading-none text-[16px] font-emoji text-white">&#x1F9EC;</span>
+    <span
+      class="leading-none text-[16px] font-emoji bg-linear-to-br from-pink-400 to-green-400 bg-clip-text text-transparent"
+      >&#x1F9EC;</span
+    >
   </button>
 </template>
