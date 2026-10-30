@@ -9,7 +9,7 @@ const { icon, label, isEquipped } = defineProps<{
 <template>
   <span
     class="text-[20px] leading-none font-emoji cursor-help"
-    :class="isEquipped ? 'text-white' : 'text-white/25'"
+    :class="isEquipped ? 'text-foreground' : 'text-foreground/25'"
     :title="label"
   >
     {{ icon }}

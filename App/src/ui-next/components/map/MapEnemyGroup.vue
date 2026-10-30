@@ -16,7 +16,7 @@ const {
   <div class="max-w-full flex items-center gap-1.5">
     <span
       v-show="false"
-      class="w-5 shrink-0 flex justify-center text-[14px] leading-none font-emoji text-white"
+      class="w-5 shrink-0 flex justify-center text-[14px] leading-none font-emoji text-foreground"
     >
       {{ icon }}
     </span>

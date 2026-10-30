@@ -29,6 +29,6 @@ const icon = computed(() => {
     :aria-label="label"
     @click="emit('click')"
   >
-    <span class="inline-flex leading-none text-[25px] -translate-y-0.5 font-emoji text-white">{{ icon }}</span>
+    <span class="inline-flex leading-none text-[25px] -translate-y-0.5 font-emoji text-foreground">{{ icon }}</span>
   </button>
 </template>

@@ -1,20 +1,26 @@
 /* Server theme tokens for ui-next; Asuka is the default, data-server on <html> switches them. */
+/* Asuka values sampled from the in-game menus; Amaterasu rotates their hue from 240° to 330°. */
 @theme {
-  --color-surface: #000021;
-  --color-surface-active: #000036;
-  --color-frame: #0033aa;
-  --color-progress-frame: #00154a;
-  --color-highlight: oklch(97.7% 0.013 236.62);
-  --color-track: #000e3f;
-  --color-track-hover: #002a77;
+  --color-surface: #000120;
+  --color-surface-active: #00004a;
+  --color-surface-card: #000030;
+  --color-frame: #6c6cc8;
+  --color-progress-frame: #4e4daa;
+  --color-highlight: #4cb4f0;
+  --color-track: #01184a;
+  --color-track-hover: #082163;
+  --color-track-border: #202054;
+  --color-foreground: #ececf4;
 }
 
 [data-server="amaterasu"] {
-  --color-surface: #2b0018;
-  --color-surface-active: #400022;
-  --color-frame: #aa0055;
-  --color-progress-frame: #55002b;
-  --color-highlight: oklch(97.1% 0.014 343.198);
-  --color-track: #3f0022;
-  --color-track-hover: #77002a;
+  --color-surface: #200011;
+  --color-surface-active: #4a0025;
+  --color-surface-card: #300018;
+  --color-frame: #c86c9a;
+  --color-progress-frame: #aa4d7a;
+  --color-highlight: #da4cf0;
+  --color-track: #4a013c;
+  --color-track-hover: #63084e;
+  --color-track-border: #54203a;
 }

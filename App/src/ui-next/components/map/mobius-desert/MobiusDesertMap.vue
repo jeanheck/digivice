@@ -18,7 +18,7 @@ const NorthIcon = "\u{2197}";
 const EastIcon = "\u{2198}";
 const SouthIcon = "\u{2199}";
 
-const SafeZoneToneClass = "text-sky-300 drop-shadow-[0_0_5px_rgba(0,170,255,0.8)]";
+const SafeZoneToneClass = "text-sky-300 drop-shadow-[0_0_5px_rgba(0,224,248,0.8)]";
 
 const { t } = useI18n();
 

@@ -78,11 +78,11 @@ const affinities = computed(() => {
           :style="{ backgroundColor: StatusColors[status] }"
           :title="statusLabel"
         ></div>
-        <span class="text-[8px] font-bold text-gray-300">
+        <span class="text-[8px] font-bold text-dw3-gold shadow-text-dark">
           {{ t("digimon.lv") }}.{{ digimonBattleViewModel.level }}
         </span>
         <span
-          class="text-[16px] leading-none font-emoji text-white cursor-help"
+          class="text-[16px] leading-none font-emoji text-foreground cursor-help"
           :title="speciesLabel"
         >
           {{ digimonBattleViewModel.speciesEmoji }}
@@ -129,7 +129,7 @@ const affinities = computed(() => {
         <div
           class="absolute bottom-2 left-2 z-5 flex flex-col gap-1 text-[8px] font-bold leading-tight text-outline-black-glow pointer-events-none"
         >
-          <span class="text-white">{{ t(`field.${fieldViewModel.name}`) }}</span>
+          <span class="text-foreground">{{ t(`field.${fieldViewModel.name}`) }}</span>
           <span v-if="fieldViewModel.strengthen" class="text-green-400">
             {{ t("field.strengthen", { element: t(`stat.${fieldViewModel.strengthen}`) }) }}
           </span>

@@ -19,7 +19,7 @@ const imageUrl = computed(() => {
 <template>
   <button
     type="button"
-    class="flex items-center gap-2 px-2 py-1 border-t-2 border-l-2 last:border-r-2 border-frame text-[12px] text-white"
+    class="flex items-center gap-2 px-2 py-1 border-t-2 border-l-2 last:border-r-2 border-frame text-[12px] text-foreground"
     :class="
       isActive
         ? 'flex-1 min-w-0 bg-surface-active -mb-0.5 pb-1.5 cursor-default'

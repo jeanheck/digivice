@@ -7,7 +7,7 @@ const { digievolutions, activeDigievolutionId } = defineProps<{
   activeDigievolutionId: number | null;
 }>();
 
-const TierIndicators = ["stars", "stars", "none"] as const;
+const TierIndicators = ["none", "none", "none"] as const;
 </script>
 
 <template>

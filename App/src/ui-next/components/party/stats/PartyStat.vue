@@ -4,7 +4,7 @@ import type { PartyStatMock } from "@/ui-next/mocks/party.mock";
 
 const {
   icon,
-  iconClass = "text-white",
+  iconClass = "text-foreground",
   label,
   stat,
 } = defineProps<{
@@ -27,7 +27,7 @@ const valueColorClass = computed(() => {
     return "text-red-400";
   }
 
-  return "text-white";
+  return "text-foreground";
 });
 </script>
 

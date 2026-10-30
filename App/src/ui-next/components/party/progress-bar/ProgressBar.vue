@@ -6,7 +6,7 @@ const {
   barColorClass,
   transitionDurationClass,
   label,
-  borderColorClass = "border-progress-frame",
+  borderColorClass = "border-track-border",
   heightClass = "h-6",
   textSizeClass = "text-[12px]",
   fillExtraClass = "",
@@ -39,7 +39,7 @@ const {
     ></div>
 
     <span
-      class="relative z-10 font-bold text-white text-outline-black px-1 tracking-wider"
+      class="relative z-10 font-bold text-foreground text-outline-black px-1 tracking-wider"
       :class="textSizeClass"
     >
       {{ `${currentValue} / ${maxValue}` }}

@@ -55,7 +55,7 @@ const enemyNames = computed(() => {
 </script>
 
 <template>
-  <div class="relative flex flex-col text-white dw3-beveled">
+  <div class="relative flex flex-col text-foreground dw3-beveled">
     <div class="absolute inset-0 bg-progress-frame dw3-beveled pointer-events-none"></div>
     <div class="absolute inset-[1.5px] bg-black dw3-beveled overflow-hidden pointer-events-none">
       <div
@@ -67,7 +67,7 @@ const enemyNames = computed(() => {
 
     <div class="relative z-10 flex-1 px-2 py-2 flex flex-col gap-2">
       <h4
-        class="self-center text-[14px] leading-none uppercase tracking-widest text-white text-outline-black-glow"
+        class="self-center text-[14px] leading-none uppercase tracking-widest text-foreground text-outline-black-glow"
       >
         {{ mapName }}
       </h4>
@@ -88,9 +88,9 @@ const enemyNames = computed(() => {
           <span
             v-for="tamerId in MapMock.tamers"
             :key="tamerId"
-            class="flex items-center gap-1 text-white text-outline-black-glow"
+            class="flex items-center gap-1 text-foreground text-outline-black-glow"
           >
-            <span class="text-[14px] leading-none font-emoji text-white">{{ TamerIcon }}</span>
+            <span class="text-[14px] leading-none font-emoji text-foreground">{{ TamerIcon }}</span>
             {{ t(`tamers.${tamerId}.name`) }}
           </span>
         </div>

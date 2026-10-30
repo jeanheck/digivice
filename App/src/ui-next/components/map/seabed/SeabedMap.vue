@@ -79,7 +79,7 @@ function getLocationName(locationId: string): string {
             :key="`${point.location}-${index}`"
             class="flex flex-col items-center gap-1 min-w-0"
           >
-            <span class="text-[16px] leading-none font-emoji text-white">
+            <span class="text-[16px] leading-none font-emoji text-foreground">
               {{ EmergeIcons[point.on] }}
             </span>
             <span class="text-center text-cyan-100 shadow-text">
@@ -90,7 +90,7 @@ function getLocationName(locationId: string): string {
 
         <div class="flex items-center gap-2">
           <div v-if="leftLocations.length > 0" class="flex items-center gap-1.5 min-w-0">
-            <span class="shrink-0 text-[16px] leading-none font-emoji text-white">
+            <span class="shrink-0 text-[16px] leading-none font-emoji text-foreground">
               {{ LeftIcon }}
             </span>
             <div class="flex flex-col gap-1 text-cyan-200 shadow-text">
@@ -106,7 +106,7 @@ function getLocationName(locationId: string): string {
                 {{ getLocationName(locationId) }}
               </span>
             </div>
-            <span class="shrink-0 text-[16px] leading-none font-emoji text-white">
+            <span class="shrink-0 text-[16px] leading-none font-emoji text-foreground">
               {{ RightIcon }}
             </span>
           </div>
