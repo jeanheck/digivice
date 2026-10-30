@@ -2,6 +2,7 @@
   "mapPreview": {
     "location": "Mapa: local",
     "seabed": "Mapa: Solo Oceânico",
+    "seabedLongestNames": "Mapa: Solo Oceânico (nomes longos)",
     "mobiusDesert": "Mapa: Deserto Mobius",
     "cardBattle": "Mapa: card battle",
     "digimonBattle": "Mapa: batalha Digimon"

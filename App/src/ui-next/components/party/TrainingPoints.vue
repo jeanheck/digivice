@@ -10,6 +10,6 @@ const { tp } = defineProps<{
     :title="$t('digimon.tp')"
   >
     <span class="leading-none text-[16px] font-emoji text-red-500">&#x1F94A;</span>
-    <span class="leading-none text-[14px] font-bold text-foreground">{{ tp }}</span>
+    <span class="leading-none text-[12px] font-bold font-chakra-petch text-foreground">{{ tp }}</span>
   </div>
 </template>

@@ -2,16 +2,20 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import MapFrame from "@/ui-next/components/map/MapFrame.vue";
-import MapEnemyGroup from "@/ui-next/components/map/MapEnemyGroup.vue";
+import MapLocationTitle from "@/ui-next/components/map/MapLocationTitle.vue";
+import MapEncounters from "@/ui-next/components/map/MapEncounters.vue";
 import { MapPresenter } from "@/presentation/presenters/map/map.presenter";
 import { MapEnemiesPresenter } from "@/presentation/presenters/map/map-enemies.presenter";
 import { SeabedMapPresenter } from "@/presentation/presenters/map/seabed-map.presenter";
 import { SeabedPresenter } from "@/presentation/presenters/map/seabed.presenter";
 import type { SeabedDirection } from "@/shared/types/seabed-direction.type";
-import { SeabedMapMock } from "@/ui-next/mocks/map.mock";
+import type { SeabedMapMock } from "@/ui-next/mocks/map.mock";
+
+const { mock } = defineProps<{
+  mock: SeabedMapMock;
+}>();
 
 // Code points without U+FE0F, otherwise WebView2 falls back to the colored Segoe UI Emoji.
-const WalkingIcon = "\u{1F3C3}";
 const LeftIcon = "\u{2B05}";
 const RightIcon = "\u{27A1}";
 const EmergeIcons = {
@@ -22,16 +26,20 @@ const EmergeIcons = {
 
 const { t } = useI18n();
 
+const mapName = computed(() => {
+  return t(`map.${mock.mapId}`);
+});
+
 const backgroundImageUrl = computed(() => {
-  return MapPresenter.getByLocationId(SeabedMapMock.mapId).locationImageUrl;
+  return MapPresenter.getByLocationId(mock.mapId).locationImageUrl;
 });
 
 const routeLocation = computed(() => {
-  return SeabedPresenter.getRouteLocation(
-    SeabedMapMock.seabedRoute,
-    SeabedMapMock.mapId,
-    SeabedMapMock.mapVariant,
-  );
+  if (mock.directions) {
+    return mock.directions;
+  }
+
+  return SeabedPresenter.getRouteLocation(mock.seabedRoute, mock.mapId, mock.mapVariant);
 });
 
 const emerge = computed(() => {
@@ -48,7 +56,7 @@ const rightLocations = computed(() => {
 
 const enemies = computed(() => {
   return MapEnemiesPresenter.getResumedEnemiesByIds(
-    SeabedMapPresenter.getEnemyIds(SeabedMapMock.seabedRoute),
+    SeabedMapPresenter.getEnemyIds(mock.seabedRoute),
   );
 });
 
@@ -71,50 +79,51 @@ function getLocationName(locationId: string): string {
       ></div>
     </template>
 
-    <div class="flex-1 px-2 py-2 flex flex-col gap-2">
-      <div class="flex-1 flex flex-col justify-center gap-4 text-[8px] leading-tight">
-        <div v-if="emerge.length > 0" class="flex items-start justify-center gap-3">
-          <div
-            v-for="(point, index) in emerge"
-            :key="`${point.location}-${index}`"
-            class="flex flex-col items-center gap-1 min-w-0"
-          >
-            <span class="text-[16px] leading-none font-emoji text-foreground">
-              {{ EmergeIcons[point.on] }}
-            </span>
-            <span class="text-center text-cyan-100 shadow-text">
-              {{ getLocationName(point.location) }}
-            </span>
-          </div>
-        </div>
+    <div class="flex-1 px-2 py-2 flex flex-col items-center gap-2">
+      <MapLocationTitle :title="mapName" />
+      <MapEncounters :enemies="enemies" />
 
-        <div class="flex items-center gap-2">
-          <div v-if="leftLocations.length > 0" class="flex items-center gap-1.5 min-w-0">
-            <span class="shrink-0 text-[16px] leading-none font-emoji text-foreground">
-              {{ LeftIcon }}
-            </span>
-            <div class="flex flex-col gap-1 text-cyan-200 shadow-text">
-              <span v-for="locationId in leftLocations" :key="locationId">
-                {{ getLocationName(locationId) }}
+      <div class="w-full flex-1 flex items-center justify-center">
+        <div class="map-info-panel border-progress-frame! flex flex-col gap-4 text-[12px] font-bold leading-tight">
+          <div v-if="emerge.length > 0" class="flex items-start justify-center gap-3">
+            <div
+              v-for="(point, index) in emerge"
+              :key="`${point.location}-${index}`"
+              class="flex flex-col items-center gap-1 min-w-0"
+            >
+              <span class="text-[16px] leading-none font-emoji text-foreground">
+                {{ EmergeIcons[point.on] }}
+              </span>
+              <span class="text-center text-highlight shadow-text">
+                {{ getLocationName(point.location) }}
               </span>
             </div>
           </div>
 
-          <div v-if="rightLocations.length > 0" class="ml-auto flex items-center gap-1.5 min-w-0">
-            <div class="flex flex-col gap-1 text-right text-cyan-300 shadow-text">
-              <span v-for="locationId in rightLocations" :key="locationId">
-                {{ getLocationName(locationId) }}
+          <div class="flex items-center gap-2">
+            <div v-if="leftLocations.length > 0" class="flex items-center gap-1.5 min-w-0">
+              <span class="shrink-0 text-[16px] leading-none font-emoji text-foreground">
+                {{ LeftIcon }}
+              </span>
+              <div class="flex flex-col gap-1 text-highlight shadow-text">
+                <span v-for="locationId in leftLocations" :key="locationId">
+                  {{ getLocationName(locationId) }}
+                </span>
+              </div>
+            </div>
+
+            <div v-if="rightLocations.length > 0" class="ml-auto flex items-center gap-1.5 min-w-0">
+              <div class="flex flex-col gap-1 text-right text-highlight shadow-text">
+                <span v-for="locationId in rightLocations" :key="locationId">
+                  {{ getLocationName(locationId) }}
+                </span>
+              </div>
+              <span class="shrink-0 text-[16px] leading-none font-emoji text-foreground">
+                {{ RightIcon }}
               </span>
             </div>
-            <span class="shrink-0 text-[16px] leading-none font-emoji text-foreground">
-              {{ RightIcon }}
-            </span>
           </div>
         </div>
-      </div>
-
-      <div v-if="enemies.length > 0" class="flex flex-col items-start gap-1.5">
-        <MapEnemyGroup :icon="WalkingIcon" :enemies="enemies" />
       </div>
     </div>
   </MapFrame>

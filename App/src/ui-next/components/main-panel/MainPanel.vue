@@ -10,6 +10,7 @@ import CardBattleMap from "@/ui-next/components/map/card-battle/CardBattleMap.vu
 import DigimonBattleMap from "@/ui-next/components/map/digimon-battle/DigimonBattleMap.vue";
 import { useMainPanelSection } from "@/ui-next/composables/use-main-panel-section";
 import { useMapPreview } from "@/ui-next/composables/use-map-preview";
+import { SeabedLongestNamesMapMock, SeabedMapMock } from "@/ui-next/mocks/map.mock";
 
 const { t } = useI18n();
 const { activeSection, showPrevious, showNext } = useMainPanelSection();
@@ -26,9 +27,14 @@ const sectionLabel = computed(() => {
     <section class="min-h-0 overflow-y-auto">
       <Party v-if="activeSection === 'party'" />
     </section>
-    <div class="flex-1 flex flex-col px-2 pb-4 bg-surface-active">
+    <div class="flex-1 flex flex-col px-2 pb-2 bg-surface-active">
       <MapPanel v-if="activeMap === 'location'" class="flex-1" />
-      <SeabedMap v-else-if="activeMap === 'seabed'" class="flex-1" />
+      <SeabedMap v-else-if="activeMap === 'seabed'" class="flex-1" :mock="SeabedMapMock" />
+      <SeabedMap
+        v-else-if="activeMap === 'seabedLongestNames'"
+        class="flex-1"
+        :mock="SeabedLongestNamesMapMock"
+      />
       <MobiusDesertMap v-else-if="activeMap === 'mobiusDesert'" class="flex-1" />
       <CardBattleMap v-else-if="activeMap === 'cardBattle'" class="flex-1" />
       <DigimonBattleMap v-else class="flex-1" />

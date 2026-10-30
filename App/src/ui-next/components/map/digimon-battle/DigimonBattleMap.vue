@@ -78,8 +78,8 @@ const affinities = computed(() => {
           :style="{ backgroundColor: StatusColors[status] }"
           :title="statusLabel"
         ></div>
-        <span class="text-[8px] font-bold text-dw3-gold shadow-text-dark">
-          {{ t("digimon.lv") }}.{{ digimonBattleViewModel.level }}
+        <span class="text-[14px] font-bold text-foreground shadow-text-dark">
+          {{ digimonBattleViewModel.level }}
         </span>
         <span
           class="text-[16px] leading-none font-emoji text-foreground cursor-help"
@@ -94,22 +94,22 @@ const affinities = computed(() => {
           v-if="digimonBattleViewModel.enemyImageUrl"
           :src="digimonBattleViewModel.enemyImageUrl"
           :alt="digimonBattleViewModel.enemyName"
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-1 w-[70%] max-h-[90%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,1)] pointer-events-none"
+          class="absolute left-2 top-2 z-1 h-3/4 w-auto max-w-[70%] object-contain object-left-top drop-shadow-[0_6px_14px_rgba(0,0,0,1)] pointer-events-none"
         />
 
         <div
           v-if="affinities.effectiveIcons.length > 0 || affinities.notEffectiveIcons.length > 0"
-          class="absolute bottom-2 right-2 z-5 flex flex-col items-end gap-1.5 pointer-events-none"
+          class="absolute top-2 right-2 z-5 flex flex-col items-end gap-1.5 pointer-events-none"
         >
           <div v-if="affinities.effectiveIcons.length > 0" class="flex items-center gap-1">
             <span class="text-[14px] leading-none">{{ affinities.effectiveIcons.join("") }}</span>
-            <span class="text-[8px] font-bold text-green-400 text-outline-black-glow">
+            <span class="text-[14px] font-bold text-green-400 text-outline-black-glow">
               {{ t("digimonBattle.effective") }}
             </span>
           </div>
           <div v-if="affinities.notEffectiveIcons.length > 0" class="flex items-center gap-1">
             <span class="text-[14px] leading-none">{{ affinities.notEffectiveIcons.join("") }}</span>
-            <span class="text-[8px] font-bold text-red-400 text-outline-black-glow">
+            <span class="text-[14px] font-bold text-red-400 text-outline-black-glow">
               {{ t("digimonBattle.notEffective") }}
             </span>
           </div>
@@ -127,7 +127,7 @@ const affinities = computed(() => {
         </div>
 
         <div
-          class="absolute bottom-2 left-2 z-5 flex flex-col gap-1 text-[8px] font-bold leading-tight text-outline-black-glow pointer-events-none"
+          class="absolute bottom-2 left-2 z-5 flex flex-col gap-1 text-[12px] font-bold leading-tight text-outline-black-glow pointer-events-none"
         >
           <span class="text-foreground">{{ t(`field.${fieldViewModel.name}`) }}</span>
           <span v-if="fieldViewModel.strengthen" class="text-green-400">

@@ -65,6 +65,11 @@ const StoreAssetConfig = {
   extension: "png",
 } as const;
 
+const StatAssetConfig = {
+  pathSuffix: "/stats/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   query: "?url",
@@ -132,6 +137,12 @@ const bossModules = import.meta.glob<string>("@/assets/bosses/*.png", {
 });
 
 const storeModules = import.meta.glob<string>("@/assets/stores/*.png", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const statModules = import.meta.glob<string>("@/assets/stats/*.png", {
   eager: true,
   query: "?url",
   import: "default",
@@ -257,6 +268,10 @@ export class ImageCatalog {
       StoreAssetConfig.extension,
       imageName,
     );
+  }
+
+  public static getStatImageUrl(imageName: string | null | undefined): string | null {
+    return getImageUrl(statModules, StatAssetConfig.pathSuffix, StatAssetConfig.extension, imageName);
   }
 
   public static getFlagIconUrls(flagCode: string | null): { src: string; src2x: string } | null {

@@ -14,6 +14,7 @@ const { activeMap, show: showMap } = useMapPreview();
 const MapPreviewIcons = {
   location: "🗺️",
   seabed: "🌊",
+  seabedLongestNames: "🔤",
   mobiusDesert: "🏜️",
   cardBattle: "🎴",
   digimonBattle: "⚔️",

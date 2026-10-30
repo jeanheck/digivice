@@ -68,7 +68,7 @@ const tier = computed(() => {
 
     <div class="relative z-10 h-full px-2 py-0.5 flex flex-col justify-center gap-[5px]">
       <template v-if="digievolution">
-        <div class="px-0.5 flex items-center gap-1.5 text-[12px] leading-none">
+        <div class="px-0.5 flex items-center gap-1.5 text-[14px] font-bold leading-none">
           <span class="flex-1 min-w-0 truncate shadow-text" :class="textColorClass">
             {{ name }}
           </span>

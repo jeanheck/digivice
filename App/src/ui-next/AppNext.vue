@@ -8,7 +8,7 @@ useServerThemeRoot();
 </script>
 
 <template>
-  <main class="h-screen overflow-hidden flex text-foreground">
+  <main class="h-screen overflow-hidden flex text-foreground font-chakra-petch">
     <div class="h-full shrink-0 flex flex-col">
       <EmulatorSlot class="h-[calc(100%-3rem)] aspect-4/3" />
       <Footer class="shrink-0" />

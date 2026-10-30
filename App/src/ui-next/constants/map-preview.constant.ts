@@ -1,6 +1,7 @@
 export const MapPreviews = [
   "location",
   "seabed",
+  "seabedLongestNames",
   "mobiusDesert",
   "cardBattle",
   "digimonBattle",

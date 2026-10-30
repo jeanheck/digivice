@@ -8,10 +8,10 @@ const { icon, name, isRightAligned = false } = defineProps<{
 
 <template>
   <div
-    class="flex items-center gap-1 min-w-0 text-[8px] leading-tight text-yellow-300"
+    class="flex items-center gap-1 min-w-0 text-[12px] font-bold leading-tight text-yellow-300"
     :class="isRightAligned ? 'flex-row-reverse text-right' : 'text-left'"
   >
-    <span class="shrink-0 text-[16px] leading-none font-emoji text-yellow-300">{{ icon }}</span>
-    <span class="min-w-0 shadow-text">{{ name }}</span>
+    <span class="shrink-0 text-[16px] leading-none font-emoji text-yellow-300 text-outline-black">{{ icon }}</span>
+    <span class="min-w-0 text-outline-black">{{ name }}</span>
   </div>
 </template>

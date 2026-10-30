@@ -25,6 +25,7 @@ const { showPrevious, showNext } = useMainPanelSection();
         v-for="slot in slots"
         :key="slot.digimonId"
         :name="slot.name"
+        :level="slot.level"
         :is-active="slot.digimonId === selectedDigimonId"
         @click="emit('select', slot.digimonId)"
       />

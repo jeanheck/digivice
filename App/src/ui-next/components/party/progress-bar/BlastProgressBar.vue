@@ -30,7 +30,6 @@ const trackExtraClass = computed(() => {
     :progress-percentage="progressPercentage"
     bar-color-class="bg-yellow-200"
     transition-duration-class="duration-300"
-    border-color-class="border-black"
     :fill-extra-class="fillExtraClass"
     :track-extra-class="trackExtraClass"
     :label="t('digimon.blast')"
