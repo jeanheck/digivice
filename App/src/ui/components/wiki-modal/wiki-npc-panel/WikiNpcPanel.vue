@@ -195,7 +195,7 @@ const openLocation = () => {
 
       <button
         type="button"
-        class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
+        class="w-full text-center px-2.5 py-2 rounded text-[10px] fhdscaled:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
         @click="openLocation"
       >
         {{ $t(`map.${panelViewModel.locationId}`) }}
@@ -228,7 +228,7 @@ const openLocation = () => {
 
       <p
         v-if="showFolderBagRequirementHint"
-        class="text-[10px] 2xl:text-[10px] text-red-400 leading-tight"
+        class="text-[10px] text-red-400 leading-tight"
       >
         {{ $t("npc.folderBagRequirementHint") }}
       </p>

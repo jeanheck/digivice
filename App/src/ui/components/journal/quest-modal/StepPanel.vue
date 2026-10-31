@@ -57,7 +57,7 @@ const localMapSlides = computed(() => {
 
 <template>
   <div
-    class="flex min-h-0 shrink-0 flex-col items-center gap-4 overflow-x-hidden overflow-y-auto custom-scroll [scrollbar-gutter:stable] lg:flex-[0.6] lg:border-l lg:border-[#0055ff]/30 lg:pl-6"
+    class="flex min-h-0 flex-[0.6] flex-col items-center gap-4 overflow-x-hidden overflow-y-auto custom-scroll [scrollbar-gutter:stable] border-l border-[#0055ff]/30 pl-6"
     :style="{ minWidth: `${MapPanelMinWidthPx}px` }"
   >
     <div

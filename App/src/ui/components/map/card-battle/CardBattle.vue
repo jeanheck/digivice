@@ -16,7 +16,7 @@ const cardBattleViewModel = computed(() => {
 });
 
 const titleClass =
-  "text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight";
+  "text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight";
 
 function openNpcWiki(): void {
   const npcId = cardBattleViewModel.value.npcId;

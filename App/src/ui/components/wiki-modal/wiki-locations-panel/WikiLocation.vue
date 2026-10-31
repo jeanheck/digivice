@@ -72,7 +72,7 @@ defineExpose({
         <span
           v-for="source in location.sources"
           :key="source"
-          class="text-[12px] 2xl:text-[14px] leading-none"
+          class="text-[12px] fhdscaled:text-[14px] leading-none"
         >
           <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{
             getSourceIcon(source)
@@ -89,7 +89,7 @@ defineExpose({
       <span
         v-for="source in location.sources"
         :key="source"
-        class="text-[12px] 2xl:text-[14px] leading-none"
+        class="text-[12px] fhdscaled:text-[14px] leading-none"
       >
         <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{
           getSourceIcon(source)

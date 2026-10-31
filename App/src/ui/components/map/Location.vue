@@ -35,7 +35,7 @@ const isClickable = computed(() => {
 
 const titleClass = computed(() => {
   const colorClass = props.isSafeZone ? "text-sky-300" : "text-gray-200";
-  return `text-xs sm:text-sm font-bold ${colorClass} tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight`;
+  return `text-sm font-bold ${colorClass} tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight`;
 });
 
 const clickableHoverClass = computed(() => {

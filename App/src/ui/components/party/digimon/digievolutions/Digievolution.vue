@@ -56,7 +56,7 @@ function openTechniques(): void {
     <template v-if="isEmpty">
       <div class="dw3-panel-content flex flex-1 flex-col w-full py-1">
         <div
-          class="flex flex-1 items-center w-full min-h-0 px-4 font-bold text-[10px] 2xl:text-sm tracking-wider text-white/80 shadow-text cursor-default"
+          class="flex flex-1 items-center w-full min-h-0 px-4 font-bold text-[10px] fhdscaled:text-sm tracking-wider text-white/80 shadow-text cursor-default"
         >
           {{ $t("digimon.states.empty") }}
         </div>
@@ -72,13 +72,13 @@ function openTechniques(): void {
     >
       <div class="flex flex-1 items-center w-full min-h-0">
         <div
-          class="flex-1 min-w-0 px-4 font-bold text-[10px] 2xl:text-sm tracking-wider truncate leading-none"
+          class="flex-1 min-w-0 px-4 font-bold text-[10px] fhdscaled:text-sm tracking-wider truncate leading-none"
           :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'"
         >
           {{ digievolutionName }}
         </div>
         <div
-          class="w-11.25 shrink-0 flex items-center justify-end pl-2 pr-0.5 font-bold text-[10px] 2xl:text-sm mr-2"
+          class="w-11.25 shrink-0 flex items-center justify-end pl-2 pr-0.5 font-bold text-[10px] fhdscaled:text-sm mr-2"
         >
           <span :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'">
             {{ digievolutionLevel }}

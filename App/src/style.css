@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 @theme {
+  /* Resolution profiles; unprefixed classes target 1280x720 */
+  --breakpoint-*: initial;
+  --breakpoint-hd: 1366px;
+  --breakpoint-fhdscaled: 1536px;
+  --breakpoint-hdplus: 1600px;
+  --breakpoint-fhd: 1920px;
+  --breakpoint-qhd: 2560px;
+
   --font-emoji: "Noto Emoji", sans-serif;
   --font-emoji-color: "Noto Color Emoji", sans-serif;
   --font-chakra-petch: "Chakra Petch", sans-serif;

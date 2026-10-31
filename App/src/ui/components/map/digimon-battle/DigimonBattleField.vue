@@ -17,19 +17,19 @@ const fieldViewModel = computed(() => {
 <template>
   <div class="absolute bottom-2 left-2 z-5 flex flex-col gap-0.5 pointer-events-none">
     <span
-      class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
+      class="text-[10px] fhdscaled:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
     >
       {{ t(`field.${fieldViewModel.name}`) }}
     </span>
     <span
       v-if="fieldViewModel.strengthen"
-      class="text-[10px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
+      class="text-[10px] fhdscaled:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
     >
       {{ t("field.strengthen", { element: t(`stat.${fieldViewModel.strengthen}`) }) }}
     </span>
     <span
       v-if="fieldViewModel.weaken"
-      class="text-[10px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
+      class="text-[10px] fhdscaled:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
     >
       {{ t("field.weaken", { element: t(`stat.${fieldViewModel.weaken}`) }) }}
     </span>

@@ -127,7 +127,7 @@ const digimonStatusTooltip = computed(() => {
             {{ digimonName }}
           </h2>
           <span
-            class="text-xs 2xl:text-sm font-bold text-dw3-gold shadow-text-dark shrink-0 leading-none cursor-default"
+            class="text-xs fhdscaled:text-sm font-bold text-dw3-gold shadow-text-dark shrink-0 leading-none cursor-default"
           >
             {{ digimon.level }}
           </span>

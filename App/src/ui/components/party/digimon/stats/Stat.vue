@@ -70,12 +70,12 @@ const buffOrDebuffClass = computed(() => {
       @mouseleave="emit('hideTooltip')"
     >
       <span
-        class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
+        class="text-sm fhdscaled:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
         >{{ icon }}</span
       >
     </div>
 
-    <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-[10px] 2xl:text-base">
+    <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-[10px] fhdscaled:text-base">
       <span
         class="min-w-[3ch] text-right tabular-nums shadow-text cursor-help"
         :class="buffOrDebuffClass"

@@ -22,6 +22,7 @@ Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparênc
 
 - Fonte única: **Press Start 2P** (global no `body`). Fontes são offline, via pacotes `@fontsource/*` importados no `main.ts` (nunca link para Google Fonts). Fundo, cor padrão e `image-rendering: pixelated` também vêm do global.
 - Antes de estilizar: checar utilitários em `style.css` → componente similar → só então Tailwind/CSS novo.
+- **Perfis de resolução** (breakpoints do `@theme` no `style.css`; os padrões do Tailwind estão desligados): sem prefixo = **1280x720** (menor resolução suportada); `hd:` 1366, `fhdscaled:` 1536 (1920x1080 com escala de 125%), `hdplus:` 1600, `fhd:` 1920, `qhd:` 2560. Escrever o valor de 1280 sem prefixo e só sobrescrever nos perfis maiores. Usar apenas esses prefixos (nunca `min-[...px]:`, `sm:`, `lg:`, `2xl:`). Os cortes medem a largura da área útil da janela, não do monitor. Press Start 2P fica mais nítida em múltiplos de 8px.
 
 | Classe | Uso |
 |--------|-----|

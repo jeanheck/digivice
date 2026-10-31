@@ -46,7 +46,7 @@ const evolutionAvatarUrl = computed(() => {
         />
 
         <h2
-          class="absolute top-3 left-4 text-lg sm:text-xl font-bold text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10"
+          class="absolute top-3 left-4 text-xl font-bold text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10"
         >
           {{ viewModel.evolutionName }}
         </h2>

@@ -69,11 +69,11 @@ function onValueMouseLeave(): void {
       @mouseleave="emit('hideTooltip')"
     >
       <span
-        class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
+        class="text-sm fhdscaled:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
         >{{ stat.icon }}</span
       >
     </div>
-    <div class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base">
+    <div class="font-bold tracking-wide flex items-center min-w-0 text-[10px] fhdscaled:text-base">
       <span
         class="shadow-text tabular-nums"
         :class="[valueColorClass, hasBattleDelta ? 'cursor-help' : 'cursor-default']"

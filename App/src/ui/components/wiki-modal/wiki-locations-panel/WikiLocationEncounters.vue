@@ -39,12 +39,12 @@ const handleOpenEnemy = (enemyId: string): void => {
           v-for="enemy in line.enemies"
           :key="`${line.source}-${enemy.id}`"
           type="button"
-          class="font-bold text-[10px] 2xl:text-[13px] tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
+          class="font-bold text-[10px] fhdscaled:text-[13px] tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
           :class="getEnemyButtonClass()"
           @click="handleOpenEnemy(enemy.id)"
         >
           <span>{{ enemy.name }}</span>
-          <span class="ml-0.5 text-[12px] 2xl:text-[16px]">
+          <span class="ml-0.5 text-[12px] fhdscaled:text-[16px]">
             <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">{{
               getSourceIcon(line.source)
             }}</span>

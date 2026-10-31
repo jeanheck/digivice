@@ -125,7 +125,7 @@ const handleOpenLocation = (locationId: string): void => {
 
       <p
         v-else
-        class="text-[12px] 2xl:text-[12px] text-red-400 leading-tight text-center flex-1 flex items-center justify-center"
+        class="text-[12px] text-red-400 leading-tight text-center flex-1 flex items-center justify-center"
       >
         {{ $t("enemy.unavailableAtMoment") }}
       </p>

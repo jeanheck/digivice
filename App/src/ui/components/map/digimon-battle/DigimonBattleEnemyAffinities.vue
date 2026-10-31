@@ -21,24 +21,24 @@ const hasAffinities = computed(() => {
   >
     <div v-if="effectiveIcons.length > 0" class="flex items-center gap-1 leading-tight">
       <span
-        class="leading-none inline-flex -translate-y-0.5 text-[13px] 2xl:text-base drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
+        class="leading-none inline-flex -translate-y-0.5 text-[13px] fhdscaled:text-base drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
       >
         {{ effectiveIcons.join("") }}
       </span>
       <span
-        class="text-[9px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow"
+        class="text-[9px] fhdscaled:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow"
       >
         {{ t("digimonBattle.effective") }}
       </span>
     </div>
     <div v-if="notEffectiveIcons.length > 0" class="flex items-center gap-1 leading-tight">
       <span
-        class="leading-none inline-flex -translate-y-0.5 text-[13px] 2xl:text-base drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
+        class="leading-none inline-flex -translate-y-0.5 text-[13px] fhdscaled:text-base drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
       >
         {{ notEffectiveIcons.join("") }}
       </span>
       <span
-        class="text-[9px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow"
+        class="text-[9px] fhdscaled:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow"
       >
         {{ t("digimonBattle.notEffective") }}
       </span>

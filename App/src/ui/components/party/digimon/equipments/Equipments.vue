@@ -40,7 +40,7 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="dw3-panel-content w-full flex flex-col p-2 min-[1366px]:p-3 text-white text-xs">
+    <div class="dw3-panel-content w-full flex flex-col p-2 hd:p-3 text-white text-xs">
       <Equipment
         v-for="equipmentSlot in equipmentsSlotViewModel"
         :key="equipmentSlot.slotKey"
