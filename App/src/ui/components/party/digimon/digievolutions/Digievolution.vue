@@ -72,13 +72,13 @@ function openTechniques(): void {
     >
       <div class="flex flex-1 items-center w-full min-h-0">
         <div
-          class="flex-1 min-w-0 px-4 font-bold text-[10px] fhdscaled:text-sm tracking-wider truncate leading-none"
+          class="flex-1 min-w-0 px-4 font-bold text-[10px] hd:text-[12px] fhdscaled:text-sm tracking-wider truncate leading-none"
           :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'"
         >
           {{ digievolutionName }}
         </div>
         <div
-          class="w-11.25 shrink-0 flex items-center justify-end pl-2 pr-0.5 font-bold text-[10px] fhdscaled:text-sm mr-2"
+          class="w-11.25 shrink-0 flex items-center justify-end pl-2 pr-0.5 font-bold text-[10px] hd:text-[12px] fhdscaled:text-sm mr-2"
         >
           <span :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'">
             {{ digievolutionLevel }}

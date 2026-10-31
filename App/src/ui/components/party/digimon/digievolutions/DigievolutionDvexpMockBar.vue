@@ -24,7 +24,7 @@ const progressPercentage = computed(() => {
 
 <template>
   <div
-    class="relative w-full h-[15px] rounded overflow-hidden shadow-inner flex items-center justify-center border-2 border-[#00154a]"
+    class="relative w-full h-[15px] hd:h-[20px] rounded overflow-hidden shadow-inner flex items-center justify-center border-2 border-[#00154a]"
     :class="isActiveDigievolution ? 'bg-orange-600/35' : 'bg-blue-800/35'"
   >
     <div
@@ -34,7 +34,7 @@ const progressPercentage = computed(() => {
     ></div>
 
     <span
-      class="relative z-10 text-[10px] font-bold font-chakra-petch text-white text-outline-black px-1 tracking-wider"
+      class="relative z-10 text-[10px] hd:text-[12px] font-bold font-chakra-petch text-white text-outline-black px-1 tracking-wider"
     >
       {{ `${dvexpMock.current} / ${dvexpMock.max}` }}
     </span>
