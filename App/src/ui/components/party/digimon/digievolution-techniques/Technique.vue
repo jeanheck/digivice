@@ -4,7 +4,8 @@ import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
 import type { TechniqueViewModel } from "@/presentation/viewmodels/digievolution/technique.viewmodel";
-import { TechniqueTypeIcon } from "@/shared/constants/icon.constant";
+import type { TechniqueType } from "@/shared/types/technique-type.type";
+import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 
 const props = defineProps<{
   technique: TechniqueViewModel;
@@ -40,9 +41,8 @@ const showTooltip = (event: MouseEvent, title: string, maxWidth: number) => {
   showAt(event, { maxWidth, placement: tooltipPlacement });
 };
 
-const showTypeTooltip = (event: MouseEvent, type: string) => {
-  const normalizedType = (type || "physical").toLowerCase();
-  showTooltip(event, t(`techniqueTypes.${normalizedType}`), typeTooltipMaxWidth);
+const showTypeTooltip = (event: MouseEvent, type: TechniqueType) => {
+  showTooltip(event, t(`techniqueTypes.${type}`), typeTooltipMaxWidth);
 };
 
 const showBadgeTooltip = (event: MouseEvent, i18nKey: string) => {
@@ -57,8 +57,8 @@ const moveTooltip = (event: MouseEvent) => {
   move(event, tooltipPlacement);
 };
 
-const icon = computed(() => {
-  return TechniqueTypeIcon[props.technique.type];
+const iconUrl = computed(() => {
+  return ImageCatalog.getTechniqueTypeImageUrl(props.technique.type);
 });
 
 const TechniqueElementColorClass: Record<string, string> = {
@@ -142,12 +142,17 @@ function getTechniqueElementColorClass(element: string): string {
     </div>
 
     <span
-      class="text-base leading-none mt-px shrink-0 cursor-help tooltip-anchor"
+      class="leading-none mt-px shrink-0 cursor-help tooltip-anchor"
       @mouseenter="showTypeTooltip($event, technique.type)"
       @mousemove="moveTooltip"
       @mouseleave="hideTooltip"
     >
-      {{ icon }}
+      <img
+        v-if="iconUrl"
+        :src="iconUrl"
+        :alt="t(`techniqueTypes.${technique.type}`)"
+        class="w-[25px] h-[27px] object-contain rendering-pixelated"
+      />
     </span>
 
     <div class="flex-1 min-w-0">

@@ -1,1 +1,1 @@
-export type TechniqueType = "physical" | "magical" | "heal" | "support" | "field";
+export type TechniqueType = "physical" | "magical" | "heal" | "support";

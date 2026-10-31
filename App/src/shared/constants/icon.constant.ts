@@ -6,7 +6,6 @@ import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 import type { EnemySource } from "@/shared/types/enemy-source.type";
 import type { NpcBattleKind } from "@/shared/types/npc-battle-kind.type";
 import type { SeabedDirection } from "@/shared/types/seabed-direction.type";
-import type { TechniqueType } from "@/shared/types/technique-type.type";
 
 export const DigimonAttributeIcon = {
   strength: "👊",
@@ -56,14 +55,6 @@ export const DigimonSpeciesIcon = {
   ghoul: "👻",
   rare: "✨",
 } as const satisfies Record<DigimonSpecies, string>;
-
-export const TechniqueTypeIcon = {
-  physical: "👊",
-  magical: "🧙‍♂️",
-  heal: "💚",
-  support: "🟡",
-  field: "🔵",
-} as const satisfies Record<TechniqueType, string>;
 
 export const EnemySourceIcon = {
   walking: "🏃‍➡️",

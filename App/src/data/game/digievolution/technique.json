@@ -476,7 +476,7 @@
     "power": 250
   },
   "thunderField": {
-    "type": "field",
+    "type": "magical",
     "element": "thunder",
     "elementStrength": 0,
     "mp": 100,
@@ -742,7 +742,7 @@
     "power": 300
   },
   "iceField": {
-    "type": "field",
+    "type": "magical",
     "element": "ice",
     "elementStrength": 0,
     "mp": 100,
@@ -763,7 +763,7 @@
     "power": 32
   },
   "windField": {
-    "type": "field",
+    "type": "magical",
     "element": "wind",
     "elementStrength": 0,
     "mp": 100,
@@ -784,7 +784,7 @@
     "power": 500
   },
   "metalField": {
-    "type": "field",
+    "type": "magical",
     "element": "machine",
     "elementStrength": 0,
     "mp": 100,
@@ -819,7 +819,7 @@
     "power": 0
   },
   "waterField": {
-    "type": "field",
+    "type": "magical",
     "element": "water",
     "elementStrength": 0,
     "mp": 100,
@@ -847,7 +847,7 @@
     "power": 420
   },
   "fireField": {
-    "type": "field",
+    "type": "magical",
     "element": "fire",
     "elementStrength": 0,
     "mp": 100,
@@ -896,7 +896,7 @@
     "power": 300
   },
   "darkField": {
-    "type": "field",
+    "type": "magical",
     "element": "dark",
     "elementStrength": 0,
     "mp": 100,

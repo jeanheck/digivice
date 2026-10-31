@@ -1,5 +1,6 @@
 import { resolveFieldAssetName } from "@/shared/constants/field.constant";
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
+import type { TechniqueType } from "@/shared/types/technique-type.type";
 
 const MapAssetConfig = {
   pathSuffix: "/maps/",
@@ -63,6 +64,11 @@ const StoreAssetConfig = {
 
 const StatAssetConfig = {
   pathSuffix: "/stats/",
+  extension: "webp",
+} as const;
+
+const TechniqueTypeAssetConfig = {
+  pathSuffix: "/techniques/",
   extension: "webp",
 } as const;
 
@@ -133,6 +139,12 @@ const storeModules = import.meta.glob<string>("@/assets/stores/*.webp", {
 });
 
 const statModules = import.meta.glob<string>("@/assets/stats/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const techniqueTypeModules = import.meta.glob<string>("@/assets/techniques/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -263,5 +275,15 @@ export class ImageCatalog {
   public static getStatImageUrl(stat: DigimonStat): string | null {
     const assetName = stat.charAt(0).toUpperCase() + stat.slice(1);
     return getImageUrl(statModules, StatAssetConfig.pathSuffix, StatAssetConfig.extension, assetName);
+  }
+
+  public static getTechniqueTypeImageUrl(type: TechniqueType): string | null {
+    const assetName = type.charAt(0).toUpperCase() + type.slice(1);
+    return getImageUrl(
+      techniqueTypeModules,
+      TechniqueTypeAssetConfig.pathSuffix,
+      TechniqueTypeAssetConfig.extension,
+      assetName,
+    );
   }
 }
