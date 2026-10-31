@@ -56,7 +56,7 @@ function calculateTooltip(condition: EnemyConditionViewModel): string {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col items-center gap-1.5 border-l border-blue-900/10 pl-3">
+  <div class="flex-1 flex flex-col items-center gap-1 border-l border-blue-900/10 pl-3">
     <h4
       class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center"
     >
@@ -73,7 +73,13 @@ function calculateTooltip(condition: EnemyConditionViewModel): string {
         @mousemove="emit('move-stat-tooltip', $event)"
         @mouseleave="emit('hide-stat-tooltip')"
       >
-        <span class="text-[16px] font-emoji-color leading-none">{{ condition.icon }}</span>
+        <img
+          v-if="condition.iconUrl"
+          :src="condition.iconUrl"
+          :alt="condition.conditionKey"
+          class="w-[25.5px] h-[27px] object-contain rendering-pixelated"
+        />
+        <span v-else class="text-[16px] font-emoji-color leading-none">{{ condition.icon }}</span>
       </div>
       <div
         class="font-bold tracking-widest text-shadow text-sm w-12 text-center"

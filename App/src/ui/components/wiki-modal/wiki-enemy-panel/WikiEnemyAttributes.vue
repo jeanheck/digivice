@@ -19,7 +19,7 @@ const stats = computed(() => {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col items-center gap-1.5">
+  <div class="flex-1 flex flex-col items-center gap-1">
     <h4
       class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center"
     >
@@ -40,7 +40,7 @@ const stats = computed(() => {
           v-if="stat.iconUrl"
           :src="stat.iconUrl"
           :alt="stat.statKey"
-          class="w-[25px] h-[25px] object-contain rendering-pixelated"
+          class="w-[25.5px] h-[27px] object-contain rendering-pixelated"
         />
       </div>
       <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">

@@ -5,6 +5,7 @@ import {
 import { DigimonConditionIcon } from "@/shared/constants/icon.constant";
 import type { EnemyConditionViewModel } from "@/presentation/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyViewModel } from "@/presentation/viewmodels/enemy/enemy.viewmodel";
+import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 
 export class EnemyConditionConverter {
   public static convertConditions(
@@ -26,6 +27,7 @@ export class EnemyConditionConverter {
         conditionKey,
         can: condition.can,
         icon: DigimonConditionIcon[conditionKey],
+        iconUrl: ImageCatalog.getConditionImageUrl(conditionKey),
         value: condition.can ? condition.value.toString() : "",
       };
     }
@@ -34,6 +36,7 @@ export class EnemyConditionConverter {
       conditionKey,
       can: condition.can,
       icon: DigimonConditionIcon[conditionKey],
+      iconUrl: ImageCatalog.getConditionImageUrl(conditionKey),
     };
   }
 }

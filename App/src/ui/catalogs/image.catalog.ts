@@ -1,3 +1,4 @@
+import type { DigimonCondition } from "@/shared/constants/digimon-condition.constant";
 import { resolveFieldAssetName } from "@/shared/constants/field.constant";
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 import type { TechniqueType } from "@/shared/types/technique-type.type";
@@ -66,6 +67,17 @@ const StatAssetConfig = {
   pathSuffix: "/stats/",
   extension: "webp",
 } as const;
+
+const ConditionAssetName = {
+  poison: "Poison",
+  paralyze: "Paralyze",
+  confuse: "Confuse",
+  sleep: "Sleep",
+  ko: "KO",
+  drain: "Drain",
+  steal: "Steal",
+  escape: "Escape",
+} as const satisfies Record<DigimonCondition, string>;
 
 const TechniqueTypeAssetConfig = {
   pathSuffix: "/techniques/",
@@ -275,6 +287,15 @@ export class ImageCatalog {
   public static getStatImageUrl(stat: DigimonStat): string | null {
     const assetName = stat.charAt(0).toUpperCase() + stat.slice(1);
     return getImageUrl(statModules, StatAssetConfig.pathSuffix, StatAssetConfig.extension, assetName);
+  }
+
+  public static getConditionImageUrl(condition: DigimonCondition): string | null {
+    return getImageUrl(
+      statModules,
+      StatAssetConfig.pathSuffix,
+      StatAssetConfig.extension,
+      ConditionAssetName[condition],
+    );
   }
 
   public static getTechniqueTypeImageUrl(type: TechniqueType): string | null {

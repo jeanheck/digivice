@@ -3,4 +3,5 @@ export interface EnemyConditionViewModel {
   can: boolean;
   value?: string;
   icon: string;
+  iconUrl: string | null;
 }
