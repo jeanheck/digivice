@@ -19,10 +19,10 @@
     "windows": [
       {
         "title": "Digivice",
-        "width": 1366,
-        "height": 768,
-        "minWidth": 1366,
-        "minHeight": 768,
+        "width": 1280,
+        "height": 720,
+        "minWidth": 1280,
+        "minHeight": 720,
         "resizable": true,
         "maximized": true,
         "backgroundColor": "#000030"
