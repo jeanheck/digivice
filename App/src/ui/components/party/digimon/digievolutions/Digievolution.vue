@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import DigievolutionDvexp from "@/ui/components/party/digimon/digievolutions/DigievolutionDvexp.vue";
+import DigievolutionDvexpMockBar from "@/ui/components/party/digimon/digievolutions/DigievolutionDvexpMockBar.vue";
 import { DigievolutionPresenter } from "@/presentation/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 const props = defineProps<{
+  slotIndex: number;
   digievolutionId: number | null;
   digievolutionLevel: number | null;
   digievolutionDvexp: number | null;
@@ -47,7 +49,9 @@ function openTechniques(): void {
 <template>
   <div class="dw3-panel evo-row flex min-h-9 text-white dw3-beveled">
     <div class="dw3-panel-border dw3-beveled"></div>
-    <div class="dw3-panel-inner dw3-beveled"></div>
+    <div class="dw3-panel-inner dw3-beveled">
+      <div v-if="!isEmpty" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div>
+    </div>
 
     <template v-if="isEmpty">
       <div class="dw3-panel-content flex flex-1 flex-col w-full py-1">
@@ -74,7 +78,7 @@ function openTechniques(): void {
           {{ digievolutionName }}
         </div>
         <div
-          class="w-11.25 shrink-0 flex items-center justify-center pl-2 font-bold text-[10px] 2xl:text-sm mr-2"
+          class="w-11.25 shrink-0 flex items-center justify-end pl-2 pr-0.5 font-bold text-[10px] 2xl:text-sm mr-2"
         >
           <span :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'">
             {{ digievolutionLevel }}
@@ -82,8 +86,13 @@ function openTechniques(): void {
         </div>
       </div>
 
-      <div class="w-full shrink-0 px-4 pt-0.5">
+      <div class="w-full shrink-0 pl-3.5 pr-2 pt-0.5">
+        <DigievolutionDvexpMockBar
+          :slot-index="slotIndex"
+          :is-active-digievolution="isActiveDigievolution"
+        />
         <DigievolutionDvexp
+          v-if="false"
           :is-active-digievolution="isActiveDigievolution"
           :digievolution-id="digievolutionId!"
           :level="digievolutionLevel!"
