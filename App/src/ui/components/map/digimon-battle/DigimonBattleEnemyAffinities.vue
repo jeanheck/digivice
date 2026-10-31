@@ -1,47 +1,40 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import type { EnemyAffinityViewModel } from "@/presentation/viewmodels/enemy/enemy-affinities.viewmodel";
 
-const props = defineProps<{
-  effectiveIcons: string[];
-  notEffectiveIcons: string[];
+defineProps<{
+  effective: EnemyAffinityViewModel[];
+  notEffective: EnemyAffinityViewModel[];
 }>();
 
 const { t } = useI18n();
-
-const hasAffinities = computed(() => {
-  return props.effectiveIcons.length > 0 || props.notEffectiveIcons.length > 0;
-});
 </script>
 
 <template>
   <div
-    v-if="hasAffinities"
-    class="absolute top-2 right-2 z-5 flex flex-col items-end gap-1.25 pointer-events-none"
+    class="flex items-center gap-4 h-4 fhdscaled:h-5 text-[10px] fhdscaled:text-xs font-bold tracking-wide text-outline-black-glow"
   >
-    <div v-if="effectiveIcons.length > 0" class="flex items-center gap-1 leading-tight">
-      <span
-        class="leading-none inline-flex -translate-y-0.5 text-[13px] fhdscaled:text-base drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
-      >
-        {{ effectiveIcons.join("") }}
-      </span>
-      <span
-        class="text-[9px] fhdscaled:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow"
-      >
-        {{ t("digimonBattle.effective") }}
-      </span>
+    <div v-if="effective.length > 0" class="flex items-center gap-1">
+      <span class="text-green-400">{{ t("digimonBattle.effective") }}</span>
+      <template v-for="affinity in effective" :key="affinity.element">
+        <img
+          v-if="affinity.iconUrl"
+          :src="affinity.iconUrl"
+          :alt="t(`stat.${affinity.element}`)"
+          class="w-4 h-4 fhdscaled:w-5 fhdscaled:h-5 object-contain rendering-pixelated"
+        />
+      </template>
     </div>
-    <div v-if="notEffectiveIcons.length > 0" class="flex items-center gap-1 leading-tight">
-      <span
-        class="leading-none inline-flex -translate-y-0.5 text-[13px] fhdscaled:text-base drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
-      >
-        {{ notEffectiveIcons.join("") }}
-      </span>
-      <span
-        class="text-[9px] fhdscaled:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow"
-      >
-        {{ t("digimonBattle.notEffective") }}
-      </span>
+    <div v-if="notEffective.length > 0" class="flex items-center gap-1 ml-auto">
+      <span class="text-red-400">{{ t("digimonBattle.notEffective") }}</span>
+      <template v-for="affinity in notEffective" :key="affinity.element">
+        <img
+          v-if="affinity.iconUrl"
+          :src="affinity.iconUrl"
+          :alt="t(`stat.${affinity.element}`)"
+          class="w-4 h-4 fhdscaled:w-5 fhdscaled:h-5 object-contain rendering-pixelated"
+        />
+      </template>
     </div>
   </div>
 </template>

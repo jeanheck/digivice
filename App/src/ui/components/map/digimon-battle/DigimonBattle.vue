@@ -74,14 +74,6 @@ const canOpenWiki = computed(() => {
   return digimonBattleViewModel.value.enemyId !== null;
 });
 
-const titleClass = computed(() => {
-  if (digimonBattleViewModel.value.isBoss) {
-    return "text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]";
-  }
-
-  return "text-red-400 drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]";
-});
-
 function openEnemyWiki(): void {
   const enemyId = digimonBattleViewModel.value.enemyId;
   if (enemyId === null) {
@@ -151,16 +143,14 @@ function onHideTooltip(): void {
     <div
       class="relative z-1 -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
     >
-      <h4
-        class="col-span-4 text-[11px] font-bold tracking-widest leading-tight text-center min-w-0 truncate"
-        :class="[titleClass, canOpenWiki ? 'cursor-pointer' : '']"
-        @click="openEnemyWiki"
-      >
-        {{ digimonBattleViewModel.enemyName }}
-      </h4>
+      <DigimonBattleEnemyAffinities
+        class="col-span-4"
+        :effective="digimonBattleViewModel.affinities.effective"
+        :not-effective="digimonBattleViewModel.affinities.notEffective"
+      />
 
       <HpProgressBar
-        class="min-w-0 w-full justify-self-start"
+        class="min-w-0 w-[calc(100%+2px)] -ml-0.5 justify-self-start"
         :hp="digimonBattleViewModel.hp"
         @show-tooltip="onShowTooltip($event, t('digimon.hp'))"
         @move-tooltip="onMoveTooltip"
@@ -190,11 +180,6 @@ function onHideTooltip(): void {
         :image-url="digimonBattleViewModel.enemyImageUrl"
         :clickable="canOpenWiki"
         @click="openEnemyWiki"
-      />
-
-      <DigimonBattleEnemyAffinities
-        :effective-icons="digimonBattleViewModel.affinities.effectiveIcons"
-        :not-effective-icons="digimonBattleViewModel.affinities.notEffectiveIcons"
       />
 
       <DigimonBattleJunior />

@@ -1,9 +1,6 @@
 import { ImageCatalog } from "@/ui/catalogs/image.catalog";
-import {
-  DigimonElementIcon,
-  DigimonSpeciesIcon,
-  EnemySourceIcon,
-} from "@/shared/constants/icon.constant";
+import { DigimonSpeciesIcon, EnemySourceIcon } from "@/shared/constants/icon.constant";
+import type { DigimonElement } from "@/shared/constants/digimon-element.constant";
 import type { Vital } from "@/state/models";
 import { EnemyConditionConverter } from "@/presentation/presenters/converter/enemy-condition.converter";
 import { EnemyStatConverter } from "@/presentation/presenters/converter/enemy-stat.converter";
@@ -13,6 +10,7 @@ import type { DigimonSpecies } from "@/shared/types/digimon-species.type";
 import type { EnemyViewModel } from "@/presentation/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyStatViewModel } from "@/presentation/viewmodels/enemy/enemy-stat.viewmodel";
 import type { DigimonBattleViewModel } from "@/presentation/viewmodels/map/digimon-battle.viewmodel";
+import type { EnemyAffinityViewModel } from "@/presentation/viewmodels/enemy/enemy-affinities.viewmodel";
 
 export interface BattleEnemyDeltas {
   strength: number;
@@ -41,7 +39,7 @@ export class DigimonBattleConverter {
         attributes: [],
         elements: [],
         conditions: [],
-        affinities: { effectiveIcons: [], notEffectiveIcons: [] },
+        affinities: { effective: [], notEffective: [] },
         enemyImageUrl: null,
       };
     }
@@ -78,8 +76,8 @@ export class DigimonBattleConverter {
       }),
       conditions: EnemyConditionConverter.convertConditions(conditions),
       affinities: {
-        effectiveIcons: affinities.effective.map((element) => DigimonElementIcon[element]),
-        notEffectiveIcons: affinities.notEffective.map((element) => DigimonElementIcon[element]),
+        effective: DigimonBattleConverter.toAffinities(affinities.effective),
+        notEffective: DigimonBattleConverter.toAffinities(affinities.notEffective),
       },
       enemyImageUrl: ImageCatalog.getEnemyImageUrl(enemyRaw.name),
     };
@@ -112,6 +110,15 @@ export class DigimonBattleConverter {
         baseValue,
         delta,
         value: baseValue + delta,
+      };
+    });
+  }
+
+  private static toAffinities(elements: DigimonElement[]): EnemyAffinityViewModel[] {
+    return elements.map((element) => {
+      return {
+        element,
+        iconUrl: ImageCatalog.getStatImageUrl(element),
       };
     });
   }
