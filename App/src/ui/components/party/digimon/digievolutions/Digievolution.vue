@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import DigievolutionDvexp from "@/ui/components/party/digimon/digievolutions/DigievolutionDvexp.vue";
-import DigievolutionDvexpMockBar from "@/ui/components/party/digimon/digievolutions/DigievolutionDvexpMockBar.vue";
 import { DigievolutionPresenter } from "@/presentation/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 const props = defineProps<{
-  slotIndex: number;
   digievolutionId: number | null;
   digievolutionLevel: number | null;
   digievolutionDvexp: number | null;
@@ -50,24 +48,26 @@ function openTechniques(): void {
   <div class="dw3-panel evo-row flex min-h-9 text-white dw3-beveled">
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled">
-      <div v-if="!isEmpty" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div>
+      <!-- <div v-if="!isEmpty" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div> -->
     </div>
 
     <template v-if="isEmpty">
-      <div class="dw3-panel-content flex flex-1 flex-col w-full py-1">
+      <div class="dw3-panel-content flex flex-1 flex-col w-full py-1 hd:py-2">
         <div
           class="flex flex-1 items-center w-full min-h-0 px-4 font-bold text-[10px] fhdscaled:text-sm tracking-wider text-white/80 shadow-text cursor-default"
         >
           {{ $t("digimon.states.empty") }}
         </div>
 
-        <div class="w-full shrink-0 px-4 pt-0.5 h-1"></div>
+        <div class="w-full shrink-0 px-4 pt-0.5">
+          <div class="h-[15px] hd:h-[20px]"></div>
+        </div>
       </div>
     </template>
 
     <div
       v-else
-      class="dw3-panel-content flex flex-1 flex-col w-full py-1 cursor-pointer hover:brightness-125 transition-[filter]"
+      class="dw3-panel-content flex flex-1 flex-col w-full py-1 hd:py-2 cursor-pointer hover:brightness-125 transition-[filter]"
       @click="openTechniques"
     >
       <div class="flex flex-1 items-center w-full min-h-0">
@@ -87,12 +87,7 @@ function openTechniques(): void {
       </div>
 
       <div class="w-full shrink-0 pl-3.5 pr-2 pt-0.5">
-        <DigievolutionDvexpMockBar
-          :slot-index="slotIndex"
-          :is-active-digievolution="isActiveDigievolution"
-        />
         <DigievolutionDvexp
-          v-if="false"
           :is-active-digievolution="isActiveDigievolution"
           :digievolution-id="digievolutionId!"
           :level="digievolutionLevel!"

@@ -29,7 +29,6 @@ function closeTechniques(): void {
     <Digievolution
       v-for="slot in slots"
       :key="slot.index"
-      :slot-index="slot.index"
       :digievolution-id="slot.digievolutionId"
       :digievolution-level="slot.digievolution?.level ?? null"
       :digievolution-dvexp="slot.digievolution?.dvexp ?? null"

@@ -1,6 +1,5 @@
 import type { DigievolutionTier } from "@/shared/types/digievolution-tier.type";
 
-export const DvexpBarSegments = 10;
 export const RegularDvexpPerLevel = 10;
 export const ThresholdDvexpPerLevel = 50;
 export const MaxDigievolutionLevel = 99;
