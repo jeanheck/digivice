@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import type { Vital } from "@/state/models";
 import { DigimonBattleEnemyStatusPresenter } from "@/presentation/presenters/map/digimon-battle-enemy-status.presenter";
-import type { DigimonStatus } from "@/shared/types/digimon-status.type";
+import { DigimonStatusColor } from "@/shared/constants/digimon-status-color.constant";
 
 const props = defineProps<{
   condition: number;
@@ -15,16 +15,9 @@ const emit = defineEmits<{
   hideTooltip: [];
 }>();
 
-const statusColorByState: Record<DigimonStatus, string> = {
-  healthy: "#00B6BF",
-  injured: "#A3D956",
-  debuffed: "#CB9200",
-  ko: "#760F08",
-};
-
 const backgroundColor = computed(() => {
   const status = DigimonBattleEnemyStatusPresenter.getStatus(props.condition, props.hp);
-  return statusColorByState[status];
+  return DigimonStatusColor[status];
 });
 </script>
 
