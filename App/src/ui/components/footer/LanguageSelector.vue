@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 
 const { locale } = useI18n();
-
-const usFlag = ImageCatalog.getFlagIconUrls("us")!;
-const brFlag = ImageCatalog.getFlagIconUrls("br")!;
 
 const setLocale = (newLocale: string) => {
   locale.value = newLocale;
@@ -24,7 +20,7 @@ const setLocale = (newLocale: string) => {
       }"
       title="English"
     >
-      <img :src="usFlag.src" :srcset="`${usFlag.src2x} 2x`" width="20" alt="US" class="block" />
+      <span class="font-emoji-color text-lg leading-none">🇺🇸</span>
     </button>
     <button
       @click="setLocale('pt-BR')"
@@ -35,7 +31,7 @@ const setLocale = (newLocale: string) => {
       }"
       title="Português"
     >
-      <img :src="brFlag.src" :srcset="`${brFlag.src2x} 2x`" width="20" alt="BR" class="block" />
+      <span class="font-emoji-color text-lg leading-none">🇧🇷</span>
     </button>
   </div>
 </template>

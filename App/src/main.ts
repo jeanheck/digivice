@@ -9,7 +9,7 @@ import "@fontsource/exo-2/latin-700.css";
 import "@fontsource/chakra-petch/latin-400.css";
 import "@fontsource/chakra-petch/latin-700.css";
 import "@fontsource/noto-emoji/400.css";
-import "@fontsource/noto-color-emoji/400.css";
+import "@/assets/fonts/noto-color-emoji/noto-color-emoji.css";
 import "./style.css";
 
 import i18n from "@/ui/i18n";

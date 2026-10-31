@@ -21,11 +21,6 @@ const DigievolutionIconAssetConfig = {
   extension: "webp",
 } as const;
 
-const FlagAssetConfig = {
-  pathSuffix: "/flags/",
-  extension: "webp",
-} as const;
-
 const CardAssetConfig = {
   pathSuffix: "/cards/",
   extension: "webp",
@@ -90,12 +85,6 @@ const enemyIconModules = import.meta.glob<string>("@/assets/enemies/*.webp", {
 });
 
 const digievolutionIconModules = import.meta.glob<string>("@/assets/digievolutions/*.webp", {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
-
-const flagModules = import.meta.glob<string>("@/assets/flags/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -274,24 +263,5 @@ export class ImageCatalog {
   public static getStatImageUrl(stat: DigimonStat): string | null {
     const assetName = stat.charAt(0).toUpperCase() + stat.slice(1);
     return getImageUrl(statModules, StatAssetConfig.pathSuffix, StatAssetConfig.extension, assetName);
-  }
-
-  public static getFlagIconUrls(flagCode: string | null): { src: string; src2x: string } | null {
-    const src = getImageUrl(
-      flagModules,
-      FlagAssetConfig.pathSuffix,
-      FlagAssetConfig.extension,
-      flagCode,
-    );
-    const src2x = getImageUrl(
-      flagModules,
-      FlagAssetConfig.pathSuffix,
-      FlagAssetConfig.extension,
-      flagCode ? `${flagCode}@2x` : null,
-    );
-    if (!src || !src2x) {
-      return null;
-    }
-    return { src, src2x };
   }
 }

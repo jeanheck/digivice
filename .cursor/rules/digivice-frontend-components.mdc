@@ -37,7 +37,7 @@ Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparênc
 
 - Tokens de cor já usados: `#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`.
 - Ícones de UI são emoji/Unicode (ex.: `📌`, `📜`, `⭐`, `✔`, `▼`, `◆`); não usar biblioteca de ícones nem SVG para ícones. Exceção: bandeiras de idioma.
-- Fontes de emoji (`@theme` do `style.css`, desenho igual em qualquer PC): `font-emoji` (**Noto Emoji**, monocromática; cor via `color`, ex.: `text-white`) e `font-emoji-color` (**Noto Color Emoji**, colorida). Escrever o emoji como entidade HTML do code point, **sem** o seletor `U+FE0F` (ex.: `&#x2B05;`): com ele o WebView2 pode trocar a fonte pelo Segoe UI Emoji do sistema.
+- Fontes de emoji (`@theme` do `style.css`, desenho igual em qualquer PC): `font-emoji` (**Noto Emoji**, monocromática; cor via `color`, ex.: `text-white`) e `font-emoji-color` (**Noto Color Emoji**, colorida; versão **COLRv1** servida de `src/assets/fonts/noto-color-emoji/`, porque o pacote do Fontsource usa OpenType-SVG, que o WebView2 não desenha). Escrever o emoji como entidade HTML do code point, **sem** o seletor `U+FE0F` (ex.: `&#x2B05;`): com ele o WebView2 pode trocar a fonte pelo Segoe UI Emoji do sistema.
 - Evite `<style scoped>` para padrões compartilháveis — extraia para `style.css`.
 
 **Proibido:** inventar paleta/tipografia/moldura sem checar referência; duplicar blocos longos que já têm utilitário global (ex.: refazer borda chanfrada fora de `dw3-panel`); scoped copiado de outro componente.
