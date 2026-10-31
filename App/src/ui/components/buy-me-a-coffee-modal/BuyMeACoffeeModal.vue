@@ -2,8 +2,8 @@
 import Modal from "@/ui/components/modal/Modal.vue";
 import SupportOption from "@/ui/components/buy-me-a-coffee-modal/SupportOption.vue";
 import { ExternalLink } from "@/shared/constants/external-link.constant";
-import livePixQrCode from "@/assets/buy-me-a-coffee/LivePixQrCode.png";
-import koFiQrCode from "@/assets/buy-me-a-coffee/KoFiQrCode.png";
+import livePixQrCode from "@/assets/buy-me-a-coffee/LivePixQrCode.webp";
+import koFiQrCode from "@/assets/buy-me-a-coffee/KoFiQrCode.webp";
 
 defineProps<{
   isOpen: boolean;

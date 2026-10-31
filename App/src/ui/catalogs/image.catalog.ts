@@ -22,12 +22,12 @@ const DigievolutionIconAssetConfig = {
 
 const FlagAssetConfig = {
   pathSuffix: "/flags/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const CardAssetConfig = {
   pathSuffix: "/cards/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const BattleFieldAssetConfig = {
@@ -42,27 +42,27 @@ const BattleJuniorAssetConfig = {
 
 const NpcAssetConfig = {
   pathSuffix: "/npcs/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const TamerAssetConfig = {
   pathSuffix: "/tamers/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const DuelIslandAssetConfig = {
   pathSuffix: "/duel-island/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const BossAssetConfig = {
   pathSuffix: "/bosses/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const StoreAssetConfig = {
   pathSuffix: "/stores/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
@@ -89,13 +89,13 @@ const digievolutionIconModules = import.meta.glob<string>("@/assets/digievolutio
   import: "default",
 });
 
-const flagModules = import.meta.glob<string>("@/assets/flags/*.png", {
+const flagModules = import.meta.glob<string>("@/assets/flags/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const cardModules = import.meta.glob<string>("@/assets/cards/*.png", {
+const cardModules = import.meta.glob<string>("@/assets/cards/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -107,31 +107,31 @@ const battleModules = import.meta.glob<string>("@/assets/battle/*.{jpg,png}", {
   import: "default",
 });
 
-const npcModules = import.meta.glob<string>("@/assets/npcs/*.png", {
+const npcModules = import.meta.glob<string>("@/assets/npcs/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const tamerModules = import.meta.glob<string>("@/assets/tamers/*.png", {
+const tamerModules = import.meta.glob<string>("@/assets/tamers/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const duelIslandModules = import.meta.glob<string>("@/assets/duel-island/*.png", {
+const duelIslandModules = import.meta.glob<string>("@/assets/duel-island/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const bossModules = import.meta.glob<string>("@/assets/bosses/*.png", {
+const bossModules = import.meta.glob<string>("@/assets/bosses/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const storeModules = import.meta.glob<string>("@/assets/stores/*.png", {
+const storeModules = import.meta.glob<string>("@/assets/stores/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
