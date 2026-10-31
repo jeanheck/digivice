@@ -7,7 +7,6 @@
   ],
   "permissions": [
     "core:default",
-    "core:window:allow-set-decorations",
     "shell:allow-open"
   ]
 }

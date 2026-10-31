@@ -23,7 +23,6 @@ Agrupada por responsabilidade; as camadas e sufixos de arquivo valem dentro de c
 | `state/` | `models/`, `stores/` (com `selectors/`) | Contrato do `State` e Pinia. |
 | `presentation/` | `repositories/` (com `tables/`), `services/`, `presenters/`, `viewmodels/` | O que alimenta a UI sem ser a tela: leitura dos JSON de `data/game/` (repositories), regras de domínio reutilizáveis (services), presenters e ViewModels. |
 | `ui/` | `components/`, `composables/`, `catalogs/`, `i18n/` | A tela em si: componentes e composables, incluindo o catálogo de imagens de `assets/` (`catalogs/`) e as traduções (`i18n/`: setup e JSON por idioma). |
-| `ui-next/` | `AppNext.vue`, `UiSwitcher.vue`, `composables/` | Tela nova em reconstrução, só em dev (troca por F3, ver `digivice-frontend-components.mdc`). Mesmas convenções de `ui/`; substituirá `App.vue` + `ui/` ao final. |
 | `shared/` | `constants/`, `types/` | Consts e unions usadas em mais de uma área. |
 `tests/` espelha `src/` (ex.: `tests/memory/`, `tests/state/stores/`).
 

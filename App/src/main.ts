@@ -1,4 +1,4 @@
-import { createApp, defineAsyncComponent } from "vue";
+import { createApp } from "vue";
 import { createPinia } from "pinia";
 
 import App from "./App.vue";
@@ -9,17 +9,13 @@ import "@fontsource/exo-2/latin-700.css";
 import "@fontsource/chakra-petch/latin-400.css";
 import "@fontsource/chakra-petch/latin-700.css";
 import "@fontsource/noto-emoji/400.css";
+import "@fontsource/noto-color-emoji/400.css";
 import "./style.css";
 
 import i18n from "@/ui/i18n";
 import { initializeMemoryLoop } from "@/memory/loop/memory-loop.initializer";
 
-// Checked inline so the production build drops the ui-next chunk entirely.
-const rootComponent = import.meta.env.DEV
-  ? defineAsyncComponent(() => import("@/ui-next/UiSwitcher.vue"))
-  : App;
-
-const app = createApp(rootComponent);
+const app = createApp(App);
 
 app.use(createPinia());
 app.use(i18n);

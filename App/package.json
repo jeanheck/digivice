@@ -20,6 +20,7 @@
   "dependencies": {
     "@fontsource/chakra-petch": "^5.3.0",
     "@fontsource/exo-2": "^5.3.0",
+    "@fontsource/noto-color-emoji": "^5.3.2",
     "@fontsource/noto-emoji": "^5.3.2",
     "@fontsource/press-start-2p": "^5.3.0",
     "@tauri-apps/api": "^2.12.4",

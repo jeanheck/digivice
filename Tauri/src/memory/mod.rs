@@ -5,7 +5,6 @@ mod process;
 mod session;
 
 pub use error::MemoryError;
-pub use process::find_process_id;
 pub use session::{MemorySession, MemoryState};
 
 pub const EMULATOR_PROCESS_NAME: &str = "duckstation-qt-x64-ReleaseLTCG";

@@ -65,4 +65,3 @@ const createLogger = (context: string, color?: string) => new Logger(context, co
 // Default loggers
 export const storeLogger = createLogger("Store", "#42b883"); // Green
 export const memoryLogger = createLogger("Memory", "#e67e22"); // Orange
-export const emulatorWindowLogger = createLogger("EmulatorWindow", "#3498db"); // Blue
