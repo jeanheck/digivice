@@ -1,6 +1,7 @@
 import { EnemyAttributes } from "@/shared/constants/digimon-attribute.constant";
 import { DigimonElements } from "@/shared/constants/digimon-element.constant";
 import { DigimonStatIcon } from "@/shared/constants/icon.constant";
+import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 import type { EnemyViewModel } from "@/presentation/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyStatViewModel } from "@/presentation/viewmodels/enemy/enemy-stat.viewmodel";
@@ -23,6 +24,7 @@ export class EnemyStatConverter {
       statKey,
       value: numericValue,
       icon: DigimonStatIcon[statKey],
+      iconUrl: ImageCatalog.getStatImageUrl(statKey),
     };
   }
 }

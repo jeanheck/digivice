@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { DigimonStatIcon } from "@/shared/constants/icon.constant";
+import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 import { useI18n } from "vue-i18n";
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 import type { StatViewModel } from "@/presentation/viewmodels/digimon/stat.viewmodel";
@@ -36,8 +36,8 @@ const label = computed(() => {
   return t(`stat.${props.stat}`);
 });
 
-const icon = computed(() => {
-  return DigimonStatIcon[props.stat];
+const iconUrl = computed(() => {
+  return ImageCatalog.getStatImageUrl(props.stat);
 });
 
 const battleDelta = computed(() => {
@@ -69,10 +69,12 @@ const buffOrDebuffClass = computed(() => {
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
     >
-      <span
-        class="text-sm fhdscaled:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-        >{{ icon }}</span
-      >
+      <img
+        v-if="iconUrl"
+        :src="iconUrl"
+        :alt="label"
+        class="w-5 h-5 fhdscaled:w-[25px] fhdscaled:h-[25px] object-contain rendering-pixelated"
+      />
     </div>
 
     <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-[12px] fhdscaled:text-base">

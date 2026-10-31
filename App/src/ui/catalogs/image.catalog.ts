@@ -1,4 +1,5 @@
 import { resolveFieldAssetName } from "@/shared/constants/field.constant";
+import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 
 const MapAssetConfig = {
   pathSuffix: "/maps/",
@@ -62,6 +63,11 @@ const BossAssetConfig = {
 
 const StoreAssetConfig = {
   pathSuffix: "/stores/",
+  extension: "webp",
+} as const;
+
+const StatAssetConfig = {
+  pathSuffix: "/stats/",
   extension: "webp",
 } as const;
 
@@ -132,6 +138,12 @@ const bossModules = import.meta.glob<string>("@/assets/bosses/*.webp", {
 });
 
 const storeModules = import.meta.glob<string>("@/assets/stores/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const statModules = import.meta.glob<string>("@/assets/stats/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -257,6 +269,11 @@ export class ImageCatalog {
       StoreAssetConfig.extension,
       imageName,
     );
+  }
+
+  public static getStatImageUrl(stat: DigimonStat): string | null {
+    const assetName = stat.charAt(0).toUpperCase() + stat.slice(1);
+    return getImageUrl(statModules, StatAssetConfig.pathSuffix, StatAssetConfig.extension, assetName);
   }
 
   public static getFlagIconUrls(flagCode: string | null): { src: string; src2x: string } | null {

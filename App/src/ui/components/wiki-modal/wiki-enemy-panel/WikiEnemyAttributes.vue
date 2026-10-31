@@ -36,10 +36,12 @@ const stats = computed(() => {
         @mousemove="emit('move-stat-tooltip', $event)"
         @mouseleave="emit('hide-stat-tooltip')"
       >
-        <span
-          class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]"
-          >{{ stat.icon }}</span
-        >
+        <img
+          v-if="stat.iconUrl"
+          :src="stat.iconUrl"
+          :alt="stat.statKey"
+          class="w-[25px] h-[25px] object-contain rendering-pixelated"
+        />
       </div>
       <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">
         {{ stat.value }}
