@@ -12,12 +12,12 @@ const DigimonIconAssetConfig = {
 
 const EnemyIconAssetConfig = {
   pathSuffix: "/enemies/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const DigievolutionIconAssetConfig = {
   pathSuffix: "/digievolutions/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const FlagAssetConfig = {
@@ -32,12 +32,12 @@ const CardAssetConfig = {
 
 const BattleFieldAssetConfig = {
   pathSuffix: "/battle/",
-  extension: "jpg",
+  extension: "webp",
 } as const;
 
 const BattleJuniorAssetConfig = {
   pathSuffix: "/battle/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const NpcAssetConfig = {
@@ -77,13 +77,13 @@ const digimonIconModules = import.meta.glob<string>("@/assets/digimons/*.png", {
   import: "default",
 });
 
-const enemyIconModules = import.meta.glob<string>("@/assets/enemies/*.png", {
+const enemyIconModules = import.meta.glob<string>("@/assets/enemies/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const digievolutionIconModules = import.meta.glob<string>("@/assets/digievolutions/*.png", {
+const digievolutionIconModules = import.meta.glob<string>("@/assets/digievolutions/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -101,7 +101,7 @@ const cardModules = import.meta.glob<string>("@/assets/cards/*.webp", {
   import: "default",
 });
 
-const battleModules = import.meta.glob<string>("@/assets/battle/*.{jpg,png}", {
+const battleModules = import.meta.glob<string>("@/assets/battle/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
