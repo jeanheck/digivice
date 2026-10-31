@@ -14,8 +14,6 @@ defineProps<{
       <span class="font-bold text-xs truncate text-gray-500">
         {{ $t(`equipments.${auction.equipmentId}.name`) }}
       </span>
-
-      <span class="text-xs shrink-0 ml-2">🔒</span>
     </div>
 
     <p class="text-[10px] leading-tight relative z-10 text-gray-400">

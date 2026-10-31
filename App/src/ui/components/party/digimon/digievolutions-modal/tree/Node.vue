@@ -60,15 +60,13 @@ const nodeAvatarUrl = computed(() => {
         class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent opacity-50 z-0 pointer-events-none"
       ></div>
 
-      <!-- Header: Name & Lock -->
+      <!-- Header: Name -->
       <div class="absolute top-1.5 left-2 right-2 z-10 flex justify-between items-center">
         <span
           class="text-[11px] font-bold select-none text-white drop-shadow-[0_2px_2px_black] truncate pr-1"
         >
           {{ node.name }}
         </span>
-        <span v-if="!isUnlocked" class="text-[10px] opacity-70 grayscale">🔒</span>
-        <span v-else class="text-[10px] opacity-90">🔓</span>
       </div>
 
       <!-- Bottom: Requirements (Compact) -->

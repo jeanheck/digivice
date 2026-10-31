@@ -75,22 +75,22 @@ const openNpcWikiModal = (npcId: string) => {
           @click="openWikiModal(enemy.id)"
         >
           <span>{{ enemy.name }}</span>
-          <span v-if="enemy.boss" class="ml-0.5 text-[12px] fhdscaled:text-[16px] -translate-y-0.5">{{
+          <span v-if="enemy.boss" class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]">{{
             EnemySourceIcon.boss
           }}</span>
           <span
             v-if="enemy.walking && !enemy.boss"
-            class="ml-0.5 text-[12px] fhdscaled:text-[16px] -translate-y-0.5"
+            class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]"
             >{{ EnemySourceIcon.walking }}</span
           >
           <span
             v-if="enemy.fishing && !enemy.boss"
-            class="ml-0.5 text-[12px] fhdscaled:text-[16px] -translate-y-0.5"
+            class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]"
             >{{ EnemySourceIcon.fishing }}</span
           >
           <span
             v-if="enemy.kickingTree && !enemy.boss"
-            class="ml-0.5 text-[12px] fhdscaled:text-[16px] -translate-y-0.5"
+            class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]"
             >{{ EnemySourceIcon.kickingTree }}</span
           >
         </button>
@@ -111,12 +111,12 @@ const openNpcWikiModal = (npcId: string) => {
           <span>{{ $t(npc.nameKey) }}</span>
           <span
             v-if="npc.availableBattleKind === 'card'"
-            class="ml-0.5 text-[12px] fhdscaled:text-[16px] -translate-y-0.5 font-emoji filter-[sepia(1)_saturate(5)_hue-rotate(165deg)_brightness(1.05)] drop-shadow-[0_0_3px_rgba(34,211,238,0.7)]"
+            class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px] drop-shadow-[0_0_3px_rgba(34,211,238,0.7)]"
             >{{ NpcBattleKindIcon.card }}</span
           >
           <span
             v-if="npc.availableBattleKind === 'digimon'"
-            class="ml-0.5 text-[12px] fhdscaled:text-[16px] -translate-y-0.5 font-emoji"
+            class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]"
             >{{ NpcBattleKindIcon.digimon }}</span
           >
         </button>

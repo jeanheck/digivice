@@ -7,8 +7,6 @@
         <h3 class="font-bold text-sm leading-snug text-gray-500">
           {{ $t("auction.currentIdleTitle") }}
         </h3>
-
-        <span class="text-xs shrink-0">🔒</span>
       </div>
 
       <p class="text-[11px] leading-relaxed text-gray-400">

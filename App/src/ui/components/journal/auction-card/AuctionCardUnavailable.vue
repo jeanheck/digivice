@@ -12,8 +12,6 @@ const { t } = useI18n();
       <span class="font-bold truncate transition-colors text-xs text-gray-500">
         {{ t("auction.cardIdleTitle") }}
       </span>
-
-      <span class="text-xs shrink-0 ml-2">🔒</span>
     </div>
 
     <p class="text-gray-400 text-[10px] leading-tight line-clamp-2 relative z-10 opacity-50">
