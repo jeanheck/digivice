@@ -82,11 +82,6 @@ const closeWikiModal = () => {
       :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
     />
 
-    <div class="dw3-scan-corner top-left" />
-    <div class="dw3-scan-corner top-right" />
-    <div class="dw3-scan-corner bottom-left" />
-    <div class="dw3-scan-corner bottom-right" />
-
     <DigimonBattle v-if="isInBattle" @open-enemy-modal="openWikiModal" />
     <CardBattle v-else-if="isInCardBattle" @open-npc-modal="openWikiModalForNpc" />
     <SeabedMap

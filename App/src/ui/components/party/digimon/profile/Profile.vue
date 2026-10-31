@@ -127,9 +127,9 @@ const digimonStatusTooltip = computed(() => {
             {{ digimonName }}
           </h2>
           <span
-            class="text-[0.6rem] font-medium text-yellow-400 shrink-0 leading-none cursor-default"
+            class="text-xs 2xl:text-sm font-bold text-dw3-gold shadow-text-dark shrink-0 leading-none cursor-default"
           >
-            {{ t("digimon.lv") }} {{ digimon.level }}
+            {{ digimon.level }}
           </span>
         </div>
 

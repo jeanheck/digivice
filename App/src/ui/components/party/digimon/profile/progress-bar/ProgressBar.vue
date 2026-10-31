@@ -31,7 +31,7 @@ const emit = defineEmits<{
     ></div>
 
     <span
-      class="relative z-10 text-[0.6rem] font-bold text-white text-outline-black px-1 tracking-wider"
+      class="relative z-10 text-[12px] font-bold font-chakra-petch text-white text-outline-black px-1 tracking-wider"
     >
       {{ `${currentValue} / ${maxValue}` }}
     </span>
