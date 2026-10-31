@@ -51,8 +51,8 @@ function onMouseEnter(event: MouseEvent): void {
       class="w-full truncate shadow-text font-bold text-center"
       :class="
         isEquipped
-          ? 'text-[8px] tracking-widest text-[#0077ff]'
-          : 'text-gray-400 text-[8px]'
+          ? 'text-[10px] tracking-widest text-[#0077ff]'
+          : 'text-gray-400 text-[10px]'
       "
     >
       {{ displayText }}
