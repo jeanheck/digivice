@@ -155,7 +155,7 @@ const families = computed(() => {
       <div class="family-block flex items-center gap-2">
         <button
           type="button"
-          class="pin-icon shrink-0 mb-2 text-sm leading-none cursor-pointer"
+          class="pin-icon font-emoji-color shrink-0 mb-2 text-sm leading-none cursor-pointer"
           :class="{ 'pin-icon-active': family.isPinned }"
           @click="togglePinnedFamily(family)"
           @mouseenter="showPinTooltip($event, family)"

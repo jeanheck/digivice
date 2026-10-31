@@ -115,7 +115,7 @@ function getTechniqueElementColorClass(element: string): string {
         <span class="text-orange-200 leading-none inline-flex text-[10px] translate-y-px">{{
           technique.learnAt
         }}</span>
-        <span class="leading-none inline-flex text-[15px] -translate-y-0.5">📜</span>
+        <span class="font-emoji-color leading-none inline-flex text-[14px]">📜</span>
       </span>
 
       <span
@@ -128,12 +128,12 @@ function getTechniqueElementColorClass(element: string): string {
         <span class="text-amber-300 leading-none inline-flex text-[10px] translate-y-px">{{
           technique.loadAt
         }}</span>
-        <span class="leading-none inline-flex text-[15px] -translate-y-0.5">🫴</span>
+        <span class="font-emoji-color leading-none inline-flex text-[14px]">⏳</span>
       </span>
 
       <span
         v-else-if="technique.isSignature"
-        class="cursor-help text-base leading-none"
+        class="cursor-help font-emoji-color text-[14px] leading-none"
         @mouseenter="showBadgeTooltip($event, 'digievolution.signatureTechnique')"
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"

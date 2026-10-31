@@ -131,10 +131,16 @@ const onClick = () => {
       </span>
 
       <span v-if="quest.isDone" :class="doneIconClass">✔</span>
-      <span v-else-if="!isMainDisplayMode && quest.isUnavailable" class="text-xs shrink-0 ml-2"
+      <span
+        v-else-if="!isMainDisplayMode && quest.isUnavailable"
+        class="font-emoji-color text-xs shrink-0 ml-2"
         >🚫</span
       >
-      <span v-else-if="!isMainDisplayMode && quest.isLocked" class="text-xs shrink-0 ml-2">🔒</span>
+      <span
+        v-else-if="!isMainDisplayMode && quest.isLocked"
+        class="font-emoji-color text-xs shrink-0 ml-2"
+        >🔒</span
+      >
       <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-xs shrink-0 ml-2">❕</span>
     </div>
 
