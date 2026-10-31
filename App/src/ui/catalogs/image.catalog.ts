@@ -7,7 +7,7 @@ const MapAssetConfig = {
 
 const DigimonIconAssetConfig = {
   pathSuffix: "/digimons/",
-  extension: "png",
+  extension: "webp",
 } as const;
 
 const EnemyIconAssetConfig = {
@@ -71,7 +71,7 @@ const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   import: "default",
 });
 
-const digimonIconModules = import.meta.glob<string>("@/assets/digimons/*.png", {
+const digimonIconModules = import.meta.glob<string>("@/assets/digimons/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
