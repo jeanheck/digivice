@@ -75,7 +75,7 @@ const buffOrDebuffClass = computed(() => {
       >
     </div>
 
-    <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-xs 2xl:text-base">
+    <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-[10px] 2xl:text-base">
       <span
         class="min-w-[3ch] text-right tabular-nums shadow-text cursor-help"
         :class="buffOrDebuffClass"
