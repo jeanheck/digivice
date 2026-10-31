@@ -217,7 +217,7 @@ const openLocation = () => {
             <span> {{ $t(battleKindLabelKey(option.kind)) }} {{ option.charismaRangeText }} </span>
             <span
               v-if="option.showTrophyEmoji"
-              class="inline-flex leading-none text-[1.2rem] -translate-y-1"
+              class="inline-flex font-emoji-color leading-none text-[1.2rem]"
               :class="{ grayscale: !option.trophyOwned }"
             >
               🏆

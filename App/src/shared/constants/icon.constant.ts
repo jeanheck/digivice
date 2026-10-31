@@ -34,7 +34,7 @@ export const DigimonStatIcon = {
 
 export const DigimonConditionIcon = {
   poison: "☠️",
-  paralyze: "🗲",
+  paralyze: "⚡",
   confuse: "😵",
   sleep: "💤",
   ko: "💀",

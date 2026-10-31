@@ -48,7 +48,7 @@ function toggleStatsPanel(): void {
 <template>
   <button
     type="button"
-    class="absolute bottom-2 right-2 z-20 cursor-pointer rounded bg-black/80 border border-blue-800 px-2 py-1 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-500 hover:text-blue-400 transition-all font-bold text-[9px] tracking-wide shadow-[0_0_10px_rgba(0,170,255,0.2)]"
+    class="absolute bottom-2 right-2 z-20 cursor-pointer rounded bg-black/80 border border-gray-300 px-2 py-1 flex items-center justify-center text-gray-300 hover:bg-white/10 hover:border-white hover:text-white transition-all font-bold text-[9px] tracking-wide shadow-[0_0_10px_rgba(0,170,255,0.2)]"
     @click="toggleStatsPanel"
   >
     {{ isStatsOpen ? t("digimonBattle.hideDetails") : t("digimonBattle.showDetails") }}

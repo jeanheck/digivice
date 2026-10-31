@@ -44,10 +44,8 @@ const handleOpenEnemy = (enemyId: string): void => {
           @click="handleOpenEnemy(enemy.id)"
         >
           <span>{{ enemy.name }}</span>
-          <span class="ml-0.5 text-[12px] fhdscaled:text-[16px]">
-            <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">{{
-              getSourceIcon(line.source)
-            }}</span>
+          <span class="ml-0.5 inline-flex font-emoji-color text-[1.2rem] leading-none">
+            {{ getSourceIcon(line.source) }}
           </span>
         </button>
       </div>

@@ -63,15 +63,17 @@ function onValueMouseLeave(): void {
 <template>
   <div class="flex items-center gap-1.5 min-w-0">
     <div
-      class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+      class="flex items-center w-5 fhdscaled:w-[25px] shrink-0 justify-center select-none cursor-help"
       @mouseenter="emit('showTooltip', $event)"
       @mousemove="emit('moveTooltip', $event)"
       @mouseleave="emit('hideTooltip')"
     >
-      <span
-        class="text-sm fhdscaled:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-        >{{ stat.icon }}</span
-      >
+      <img
+        v-if="stat.iconUrl"
+        :src="stat.iconUrl"
+        :alt="stat.statKey"
+        class="w-5 h-5 fhdscaled:w-[25px] fhdscaled:h-[25px] object-contain rendering-pixelated"
+      />
     </div>
     <div class="font-bold tracking-wide flex items-center min-w-0 text-[10px] fhdscaled:text-base">
       <span

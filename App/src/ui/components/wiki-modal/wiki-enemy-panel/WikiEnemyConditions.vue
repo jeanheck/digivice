@@ -73,10 +73,7 @@ function calculateTooltip(condition: EnemyConditionViewModel): string {
         @mousemove="emit('move-stat-tooltip', $event)"
         @mouseleave="emit('hide-stat-tooltip')"
       >
-        <span
-          class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]"
-          >{{ condition.icon }}</span
-        >
+        <span class="text-[16px] font-emoji-color leading-none">{{ condition.icon }}</span>
       </div>
       <div
         class="font-bold tracking-widest text-shadow text-sm w-12 text-center"
