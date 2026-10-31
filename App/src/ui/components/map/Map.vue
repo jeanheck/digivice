@@ -70,15 +70,15 @@ const closeWikiModal = () => {
 </script>
 
 <template>
-  <aside class="dw3-aside flex-1 min-h-0 pt-1.5! pb-1.5! relative overflow-hidden">
+  <aside class="dw3-aside dw3-frame flex-1 min-h-0 pt-1.5! pb-1.5! overflow-hidden">
     <div
-      class="absolute inset-0 bg-black bg-opacity-60"
+      class="absolute inset-0 dw3-beveled bg-black bg-opacity-60"
       :class="{ 'bg-grid-pattern': !backgroundImageUrl && !isInBattle && !isInCardBattle }"
     />
 
     <div
       v-if="backgroundImageUrl"
-      class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-lighten pointer-events-none"
+      class="absolute inset-0 dw3-beveled bg-cover bg-center opacity-60 mix-blend-lighten pointer-events-none"
       :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
     />
 

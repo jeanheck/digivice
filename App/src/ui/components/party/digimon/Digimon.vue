@@ -31,20 +31,22 @@ function closeDigievolutionGrid(): void {
 </script>
 
 <template>
-  <div
-    class="flex flex-col h-full min-h-0 w-full overflow-y-auto custom-scroll bg-[#000e3f] p-2 gap-2 min-[1600px]:p-3 min-[1600px]:gap-3 min-[1920px]:p-4 min-[1920px]:gap-4 rounded-md shadow-lg border-2 border-[#0033aa]"
-  >
-    <Profile
-      :digimon="digimon"
-      :digimon-id="digimonId"
-      @open-digievolutions="openDigievolutionGrid"
-    />
-    <Digievolutions
-      :slots="digimon.digievolutions"
-      :active-digievolution-id="digimon.activeDigievolutionId"
-    />
-    <Stats :digimon="digimon" />
-    <Equipments :equipments="digimon.equipments" />
+  <div class="dw3-frame flex flex-col h-full min-h-0 w-full">
+    <div
+      class="flex flex-col flex-1 min-h-0 overflow-y-auto custom-scroll p-2 gap-2 min-[1600px]:p-3 min-[1600px]:gap-3 min-[1920px]:p-4 min-[1920px]:gap-4"
+    >
+      <Profile
+        :digimon="digimon"
+        :digimon-id="digimonId"
+        @open-digievolutions="openDigievolutionGrid"
+      />
+      <Digievolutions
+        :slots="digimon.digievolutions"
+        :active-digievolution-id="digimon.activeDigievolutionId"
+      />
+      <Stats :digimon="digimon" />
+      <Equipments :equipments="digimon.equipments" />
+    </div>
 
     <DigievolutionsModal
       :is-open="isGridModalOpen"

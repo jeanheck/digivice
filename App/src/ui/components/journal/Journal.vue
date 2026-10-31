@@ -30,7 +30,7 @@ const closeQuestModal = () => {
 </script>
 
 <template>
-  <aside class="dw3-aside flex-1 min-h-0">
+  <aside class="dw3-aside dw3-frame flex-1 min-h-0">
     <div class="flex-1 min-h-0 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       <section>
         <JournalQuestCard

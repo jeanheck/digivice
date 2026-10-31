@@ -27,7 +27,8 @@ Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparênc
 |--------|-----|
 | `dw3-beveled` | Chanfro nos cantos |
 | `dw3-panel` + `dw3-panel-border` + `dw3-panel-inner` + `dw3-panel-content` | Painéis com borda azul chanfrada (Profile, Stats, Equipments, Digievolutions) |
-| `dw3-aside` + `dw3-aside-header` + `dw3-aside-title` | Sidebars (Map, Journal) |
+| `dw3-frame` | Moldura chanfrada dos componentes grandes (Digimon, Journal, Map, Footer): borda 2px `#0033aa`, fundo `#000e3f` (outro fundo via `[--dw3-frame-fill-color:...]`, ex.: Footer `#000a2b`). Rolagem em `div` interna, nunca no próprio elemento (o fundo é um `::before` absoluto) |
+| `dw3-aside` + `dw3-aside-header` + `dw3-aside-title` | Layout das sidebars (Map, Journal), usado junto com `dw3-frame` |
 | `shadow-text` / `shadow-text-dark` | Sombra em textos pixel |
 | `text-dw3-gold` | Destaque dourado (use com `shadow-text-dark`) |
 | `custom-scroll` | Barras de rolagem |

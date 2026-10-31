@@ -113,7 +113,7 @@ const groupPartyLevel = computed(() => {
 
 <template>
   <footer
-    class="w-full bg-[#000a2b] text-white p-2 rounded-md shadow-lg border-2 border-[#0033aa] flex items-center gap-12 px-6 relative"
+    class="dw3-frame [--dw3-frame-fill-color:#000a2b] w-full text-white p-2 flex items-center gap-12 px-6"
   >
     <div class="font-bold text-ms flex items-baseline">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
