@@ -54,7 +54,7 @@ function onMouseLeave(): void {
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
-    🌵
+    <span class="font-emoji-color leading-none">&#x1F335;</span>
   </button>
 
   <MobiusDesertModal

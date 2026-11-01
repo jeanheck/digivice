@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import LanguageSelector from "@/ui/components/footer/LanguageSelector.vue";
+import DnaDigievolutionsButton from "@/ui/components/footer/DnaDigievolutionsButton.vue";
 import SeabedButton from "@/ui/components/footer/SeabedButton.vue";
 import MobiusDesertButton from "@/ui/components/footer/MobiusDesertButton.vue";
 import BuyMeACoffeeButton from "@/ui/components/footer/BuyMeACoffeeButton.vue";
@@ -19,10 +20,34 @@ const playerBits = computed(() => {
 });
 
 const tooltipPosition = useTooltipPosition(300);
-const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const {
+  show: tooltipShow,
+  x: tooltipX,
+  y: tooltipY,
+  maxWidth: tooltipMaxWidth,
+  showAt,
+  move,
+  hide,
+} = tooltipPosition;
 const tooltipTitle = ref("");
 const tooltipText = ref("");
 const isTitleOnlyTooltip = ref(false);
+
+const showDnaDigievolutionsTooltip = (event: MouseEvent) => {
+  isTitleOnlyTooltip.value = true;
+  tooltipTitle.value = t("dnaDigievolution.title");
+  tooltipText.value = "";
+  showAt(event, { maxWidth: 360, placement: "above", align: "left" });
+};
+
+const moveDnaDigievolutionsTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideDnaDigievolutionsTooltip = () => {
+  hide();
+  isTitleOnlyTooltip.value = false;
+};
 
 const showSeabedTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
@@ -150,6 +175,14 @@ const groupPartyLevel = computed(() => {
       class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80"
     >
       <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
+        <DnaDigievolutionsButton
+          @show-tooltip="showDnaDigievolutionsTooltip"
+          @move-tooltip="moveDnaDigievolutionsTooltip"
+          @hide-tooltip="hideDnaDigievolutionsTooltip"
+        />
+      </div>
+
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
         <SeabedButton
           @show-tooltip="showSeabedTooltip"
           @move-tooltip="moveSeabedTooltip"
@@ -181,7 +214,7 @@ const groupPartyLevel = computed(() => {
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
-    :max-width="300"
+    :max-width="tooltipMaxWidth"
     placement="above"
     horizontal-align="left"
   />

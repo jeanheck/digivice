@@ -40,7 +40,7 @@ function onMouseLeave(): void {
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
-    ⚓
+    <span class="font-emoji-color leading-none">&#x2693;</span>
   </button>
 
   <SeabedModal :is-open="isSeabedModalOpen" @close="closeSeabedModal" />

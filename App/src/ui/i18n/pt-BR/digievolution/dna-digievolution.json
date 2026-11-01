@@ -1,5 +1,6 @@
 {
   "dnaDigievolution": {
+    "title": "Digievoluções de DNA",
     "effect": {
       "reviveAndFullHealAll": "Revive e cura totalmente todos os Digimons",
       "strengthDown": "Reduz a força do alvo"
