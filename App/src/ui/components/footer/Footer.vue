@@ -172,17 +172,9 @@ const groupPartyLevel = computed(() => {
     </div>
 
     <div
-      class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80"
+      class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3 text-sm opacity-80"
     >
-      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
-        <DnaDigievolutionsButton
-          @show-tooltip="showDnaDigievolutionsTooltip"
-          @move-tooltip="moveDnaDigievolutionsTooltip"
-          @hide-tooltip="hideDnaDigievolutionsTooltip"
-        />
-      </div>
-
-      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
         <SeabedButton
           @show-tooltip="showSeabedTooltip"
           @move-tooltip="moveSeabedTooltip"
@@ -195,7 +187,15 @@ const groupPartyLevel = computed(() => {
         />
       </div>
 
-      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
+        <DnaDigievolutionsButton
+          @show-tooltip="showDnaDigievolutionsTooltip"
+          @move-tooltip="moveDnaDigievolutionsTooltip"
+          @hide-tooltip="hideDnaDigievolutionsTooltip"
+        />
+      </div>
+
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
         <LanguageSelector />
       </div>
 
