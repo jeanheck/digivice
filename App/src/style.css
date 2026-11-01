@@ -110,14 +110,7 @@ body {
 }
 
 .text-dw3-metallic {
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #e3e8ef 40%,
-    #8d97a6 52%,
-    #dfe4ea 70%,
-    #b4bcc8 100%
-  );
+  background: linear-gradient(to bottom, #cbd5e1, #64748b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

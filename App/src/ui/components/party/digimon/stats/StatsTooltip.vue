@@ -64,7 +64,7 @@ const modifierColorClass = computed(() => {
           (<span class="text-white">{{ base }}</span> +
           <span class="text-[#0077ff] font-bold">{{ equip }}</span>
           <template v-if="hasEquipmentSet">
-            + <span class="text-dw3-metallic shadow-text-dark font-bold">{{ equipmentSet }}</span>
+            + <span class="text-[#64748b] font-bold">{{ equipmentSet }}</span>
           </template>
           <template v-if="hasBattleDelta">
             <template v-if="isBuff"> + </template>
@@ -84,9 +84,7 @@ const modifierColorClass = computed(() => {
           <span class="text-[#0077ff] font-bold">{{ t("digimon.equipments") }}</span>
         </div>
         <div v-if="hasEquipmentSet" class="flex justify-between text-xs items-center">
-          <span class="text-dw3-metallic shadow-text-dark font-bold">{{
-            t("digimon.equipmentSet")
-          }}</span>
+          <span class="text-[#64748b] font-bold">{{ t("digimon.equipmentSet") }}</span>
         </div>
         <div v-if="hasBattleDelta" class="flex justify-between text-xs items-center">
           <span class="font-bold" :class="modifierColorClass">{{ t("enemy.techniques") }}</span>
