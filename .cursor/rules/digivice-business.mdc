@@ -77,6 +77,21 @@ graph TD
 - **Fusão disponível** (`DnaDigievolutionService.hasAvailableFusion`): a digievolução de um slot participa de alguma combinação e a outra digievolução da combinação está em um **slot de digievolução** (`digimon.digievolutions`) de **outro** Digimon da party. `storedDigievolutions` não contam; um único Digimon com as duas digievoluções não ativa a fusão. Quando disponível, o componente de digievolução mostra a marca vermelha à esquerda (nos dois lados da fusão) e um tooltip (`DnaFusionTooltip`, dados de `DnaDigievolutionService.getAvailableFusions`) com a DNA DV, os parceiros (Digimon e digievolução), tipo, elemento e efeito. No mesmo hover, o slot em foco e os slots parceiros pulsam com o degradê rosa/verde (`useDnaFusionHighlight`, estado compartilhado entre os Digimons). Sem fusão disponível, não há tooltip nem destaque.
 - O modal de DNA DV (footer) é só informativo: lista todas as DNA DVs e não usa estado de memória.
 
+## Conjuntos de armadura
+
+- Cada um dos 8 Digimons tem um conjunto especial de 4 peças: capacete, armadura, mão direita e mão esquerda. Com todas equipadas, o conjunto dá um bônus extra, somado aos bônus normais de cada peça.
+- Dados em `equipment-set.json`: chave = `digimonId`; peças em `equipments` (ids de `equipment.json`); bônus em `attributes` (mesmo formato dos equipamentos). Leitura via `EquipmentSetRepository.getByDigimonId` (`undefined` = conjunto não cadastrado).
+- Bônus variam por conjunto (não há padrão), nunca em elementos. Todos confirmados no jogo:
+  - Ronin (Kotemon): +4 em força, defesa, espírito, sabedoria e velocidade, +20 em carisma.
+  - Selvagem (Kumamon): +10 em força e defesa, +20 em carisma.
+  - Sniper (Monmon): +10 em força e velocidade, +20 em carisma.
+  - Coragem (Agumon): +10 em defesa e espírito, +20 em carisma.
+  - Dramon (Veemon): +10 em força e sabedoria, +20 em carisma.
+  - Hazard (Guilmon): +10 em sabedoria e velocidade, +20 em carisma.
+  - Yin Yang (Renamon): +10 em força e espírito, +20 em carisma.
+  - Divino (Patamon): +10 em defesa e sabedoria, +20 em carisma.
+- O bônus do conjunto entra no total de carisma da party (`PartyService`) e respeita o teto de 999 do `StatService` (teto provisório, a confirmar no jogo).
+
 ## Batalhas
 
 - **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null grava `enemy: null`; o patch atribui o objeto completo quando um novo aparece.

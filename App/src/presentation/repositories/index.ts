@@ -2,6 +2,7 @@ export { AuctionRepository } from "./auction.repository";
 export { CardRepository } from "./card.repository";
 export { ConsumableItemRepository } from "./consumable-item.repository";
 export { EquipmentRepository } from "./equipment.repository";
+export { EquipmentSetRepository } from "./equipment-set.repository";
 export { DigimonRepository } from "./digimon.repository";
 export { EnemyRepository } from "./enemy.repository";
 export { DigievolutionRepository } from "./digievolution.repository";

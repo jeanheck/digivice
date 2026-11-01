@@ -1,0 +1,217 @@
+{
+  "0": {
+    "equipments": [
+      243,
+      269,
+      98,
+      284
+    ],
+    "attributes": [
+      {
+        "attribute": "strength",
+        "type": "+",
+        "value": 4
+      },
+      {
+        "attribute": "defense",
+        "type": "+",
+        "value": 4
+      },
+      {
+        "attribute": "spirit",
+        "type": "+",
+        "value": 4
+      },
+      {
+        "attribute": "wisdom",
+        "type": "+",
+        "value": 4
+      },
+      {
+        "attribute": "speed",
+        "type": "+",
+        "value": 4
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "1": {
+    "equipments": [
+      242,
+      258,
+      112,
+      285
+    ],
+    "attributes": [
+      {
+        "attribute": "strength",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "defense",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "2": {
+    "equipments": [
+      222,
+      256,
+      124,
+      282
+    ],
+    "attributes": [
+      {
+        "attribute": "strength",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "speed",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "3": {
+    "equipments": [
+      244,
+      271,
+      163,
+      286
+    ],
+    "attributes": [
+      {
+        "attribute": "defense",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "spirit",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "4": {
+    "equipments": [
+      211,
+      268,
+      203,
+      288
+    ],
+    "attributes": [
+      {
+        "attribute": "strength",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "wisdom",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "5": {
+    "equipments": [
+      245,
+      270,
+      149,
+      287
+    ],
+    "attributes": [
+      {
+        "attribute": "wisdom",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "speed",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "6": {
+    "equipments": [
+      221,
+      257,
+      137,
+      283
+    ],
+    "attributes": [
+      {
+        "attribute": "strength",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "spirit",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  },
+  "7": {
+    "equipments": [
+      232,
+      255,
+      136,
+      281
+    ],
+    "attributes": [
+      {
+        "attribute": "defense",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "wisdom",
+        "type": "+",
+        "value": 10
+      },
+      {
+        "attribute": "charisma",
+        "type": "+",
+        "value": 20
+      }
+    ]
+  }
+}
