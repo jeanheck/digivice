@@ -54,7 +54,7 @@ Nomes de Digimons/Digievoluções são nomes próprios: literais, nunca via i18n
 ## Services (`src/presentation/services/`)
 
 - Classe `{AlgumaCoisa}Service`; arquivo `{alguma-coisa}.service.ts`; métodos estáticos.
-- Existentes: `AuctionService`, `DigimonService`, `DropService`, `DvexpService`, `EquipmentService`, `MapService`, `MobiusDesertService`, `NpcService`, `PartyService`, `QuestService`, `StatService`. Reutilize antes de criar.
+- Existentes: `AuctionService`, `DigimonService`, `DnaDigievolutionService`, `DropService`, `DvexpService`, `EquipmentService`, `MapService`, `MobiusDesertService`, `NpcService`, `PartyService`, `QuestService`, `StatService`. Reutilize antes de criar.
 
 ## Helpers legados
 

@@ -71,6 +71,12 @@ graph TD
 - **Tabelas de EXP** (`experience` em `digimon.json`): EXP **acumulado** para atingir cada level (RAM: `MemoryBlockAddress + 0x18`, Int32). Origem: estimativas de fontes externas (GameFAQs etc.), em verificação manual no jogo level a level. 5 tabelas: 3 compartilhadas por pares (Guilmon = Renamon, Agumon = Patamon, Kotemon = Veemon) e 2 individuais — Monmon (a mais rápida, menos EXP por level) e Kumamon (a mais lenta). **Todas verificadas.** Fórmula: `EXP(n) ≈ fator × (n³ + 5n − 5) + bônus` (level 1 = 0); fator Monmon 0.6, Guilmon/Renamon 0.7, Kotemon/Veemon 0.8, Agumon/Patamon 0.9, Kumamon 1.0 (exato, sem arredondamento; nos demais ±1 por arredondamento). Bônus cumulativo, igual para todos: +50 a partir do level 5, +750 a partir do 20, +2200 a partir do 40 (total 50 / 800 / 3000). A tabela original do Kumamon (fonte externa) estava errada a partir do level 8 e foi regerada pela fórmula.
 - Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE (`blastAddress` em `digimons-addresses.json`).
 
+## DNA Digievolutions
+
+- Dados estáticos em `dna-digievolution.json`: cada DNA DV tem uma ou mais combinações de duas digievoluções (`digievolutions`, ids de `digievolution.json`; Agunimon tem duas) e `order`, que define a ordem de exibição (ordem de liberação no jogo).
+- **Fusão disponível** (`DnaDigievolutionService.hasAvailableFusion`): a digievolução de um slot participa de alguma combinação e a outra digievolução da combinação está em um **slot de digievolução** (`digimon.digievolutions`) de **outro** Digimon da party. `storedDigievolutions` não contam; um único Digimon com as duas digievoluções não ativa a fusão. Quando disponível, o componente de digievolução mostra a marca vermelha à esquerda (nos dois lados da fusão).
+- O modal de DNA DV (footer) é só informativo: lista todas as DNA DVs e não usa estado de memória.
+
 ## Batalhas
 
 - **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null grava `enemy: null`; o patch atribui o objeto completo quando um novo aparece.

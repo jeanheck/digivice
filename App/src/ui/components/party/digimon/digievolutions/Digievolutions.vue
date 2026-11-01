@@ -9,6 +9,7 @@ import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/di
 defineProps<{
   slots: DigievolutionSlot[];
   activeDigievolutionId: number | null;
+  digimonSlotIndex: number;
 }>();
 
 const isTechniquesModalOpen = ref(false);
@@ -33,6 +34,7 @@ function closeTechniques(): void {
       :digievolution-level="slot.digievolution?.level ?? null"
       :digievolution-dvexp="slot.digievolution?.dvexp ?? null"
       :active-digievolution-id="activeDigievolutionId"
+      :digimon-slot-index="digimonSlotIndex"
       @open-techniques="openTechniques"
     />
 

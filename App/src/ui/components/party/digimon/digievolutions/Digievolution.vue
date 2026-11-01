@@ -3,13 +3,17 @@ import { computed } from "vue";
 import DigievolutionDvexp from "@/ui/components/party/digimon/digievolutions/DigievolutionDvexp.vue";
 import { DigievolutionPresenter } from "@/presentation/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/digievolution/digievolution-resumed.viewmodel";
+import { useGameState } from "@/ui/composables/use-game-state";
 
 const props = defineProps<{
   digievolutionId: number | null;
   digievolutionLevel: number | null;
   digievolutionDvexp: number | null;
   activeDigievolutionId: number | null;
+  digimonSlotIndex: number;
 }>();
+
+const gameState = useGameState();
 
 const emit = defineEmits<{
   (e: "open-techniques", digievolutionResumedViewModel: DigievolutionResumedViewModel): void;
@@ -35,6 +39,18 @@ const isActiveDigievolution = computed(() => {
   return props.digievolutionId === props.activeDigievolutionId;
 });
 
+const hasAvailableDnaFusion = computed(() => {
+  if (isEmpty.value) {
+    return false;
+  }
+
+  return DigievolutionPresenter.hasAvailableDnaFusion(
+    gameState.value.party,
+    props.digimonSlotIndex,
+    props.digievolutionId!,
+  );
+});
+
 function openTechniques(): void {
   emit("open-techniques", {
     id: props.digievolutionId!,
@@ -48,7 +64,7 @@ function openTechniques(): void {
   <div class="dw3-panel evo-row flex min-h-9 text-white dw3-beveled">
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled">
-      <!-- <div v-if="!isEmpty" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div> -->
+      <div v-if="hasAvailableDnaFusion" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div>
     </div>
 
     <template v-if="isEmpty">
