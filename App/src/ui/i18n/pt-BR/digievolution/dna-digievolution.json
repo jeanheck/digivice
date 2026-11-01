@@ -1,7 +1,7 @@
 {
   "dnaDigievolution": {
     "title": "Digievoluções de DNA",
-    "description": "A lista abaixo exibe todas as Digievoluções de DNA que existem no jogo. Quando alguma delas estiver disponível para ser ativa, uma indicação será exibida nas Digievoluções dos seus Digimons.",
+    "description": "A lista abaixo exibe todas as Digievoluções de DNA que existem no jogo. Quando alguma delas estiver disponível para ser usada, uma indicação será exibida nas Digievoluções dos seus Digimons.",
     "availableTitle": "Digievolução de DNA Disponível",
     "tagWith": "Faça uma Tag com a evolução {digievolution} do {digimon}",
     "or": "ou",
