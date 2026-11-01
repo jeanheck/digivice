@@ -1,6 +1,12 @@
 {
   "id": "asukaTrophy",
-  "requisites": [],
+  "requisites": [
+    {
+      "id": "submarimon",
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    }
+  ],
   "steps": [
     {
       "number": 1,

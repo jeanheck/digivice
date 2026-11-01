@@ -2,6 +2,9 @@
   "asukaTrophy": {
     "title": "Asuka (Troféu)",
     "description": "Derrote todos os Divermons na Ilha de Duelos e ganhe o Troféu Asuka",
+    "requisites": {
+      "submarimon": "Encontre o Digi-Ovo da Sinceridade"
+    },
     "steps": {
       "1": {
         "description": "Derrote o primeiro Divermon",

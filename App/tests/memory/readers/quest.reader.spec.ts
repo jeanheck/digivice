@@ -347,6 +347,7 @@ describe("QuestReader", () => {
         [0x0004b3b2, 0xcf],
         [0x0004b3b3, 0x0f],
         [0x00048dc2, 0x01],
+        [0x00048dc0, 0x03],
       ]);
 
       const duelIsland = AddressesRepository.getAllDuelIsland().map((addresses) =>
@@ -356,7 +357,7 @@ describe("QuestReader", () => {
       expect(duelIsland).toHaveLength(2);
 
       const asukaTrophy = findQuest(duelIsland, "asukaTrophy");
-      expect(asukaTrophy.requisites).toEqual([]);
+      expect(asukaTrophy.requisites).toEqual([{ id: "submarimon", value: 0x01 }]);
       expect(stepValues(asukaTrophy)).toEqual([0x80, 0x01, 0x02, 0x04, 0x08, 1]);
 
       const asukaRematch = findQuest(duelIsland, "asukaRematch");

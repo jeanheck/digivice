@@ -252,6 +252,9 @@ export const FieldCentralParkExpected: State = {
       questIn(DriAgents, "driAgentRenamon", { doneSteps: [3], doneRequisites: ["submarimon"] }),
       questIn(DriAgents, "driAgentVeemon", { doneRequisites: ["byakkoLeader"] }),
     ],
-    duelIsland: [questIn(DuelIsland, "asukaRematch"), questIn(DuelIsland, "asukaTrophy")],
+    duelIsland: [
+      questIn(DuelIsland, "asukaRematch"),
+      questIn(DuelIsland, "asukaTrophy", { doneRequisites: ["submarimon"] }),
+    ],
   },
 };
