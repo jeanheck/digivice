@@ -1,0 +1,28 @@
+{
+  "fishingPole": {
+    "title": "La Caña de Pescar",
+    "description": "¡Consigue la Caña de Pescar para desafiar a los Cardmon y a otros Digimon acuáticos!",
+    "requisites": {
+      "folderBag": "Tener la Bolsa de Carpetas"
+    },
+    "steps": {
+      "1": {
+        "description": "Habla con Tai Kong Wong en la Playa Concha",
+        "locationTarget": "Tai Kong Wong"
+      },
+      "2": {
+        "description": "Ayuda al Divermon del Lago de Divermon",
+        "locationTarget": "Divermon"
+      },
+      "3": {
+        "description": "Lleva los objetos a Tai Kong Wong en la Playa Concha para recibir la Caña de Pescar",
+        "requisites": {
+          "bambooSpear": "Lanza de Bambú",
+          "spiderWeb": "Telaraña",
+          "redSnapper": "Pargo Rojo"
+        },
+        "locationTarget": "Tai Kong Wong"
+      }
+    }
+  }
+}

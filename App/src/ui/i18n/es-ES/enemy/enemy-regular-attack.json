@@ -1,0 +1,21 @@
+{
+  "regularAttacks": {
+    "noElement": "Físico, sin elemento",
+    "machineElement": "Elemento Máquina",
+    "waterElement": "Elemento Agua",
+    "thunderElemental": "Elemental Trueno",
+    "noElementChanceOfPoison": "Sin elemento (probabilidad de veneno)",
+    "darkElemental": "Elemental Oscuridad",
+    "fireElement": "Elemento Fuego",
+    "darkElement": "Elemento Oscuridad",
+    "thunderElementChanceOfSleep": "Elemento Trueno (probabilidad de sueño)",
+    "machineElementChanceOfFreeze": "Elemento Máquina (probabilidad de parálisis)",
+    "thunderElement": "Elemento Trueno",
+    "thunderElementalChanceOfFreeze": "Elemental Trueno (probabilidad de parálisis)",
+    "waterElementHitsTwice": "Elemento Agua (golpea dos veces)",
+    "iceElement": "Elemento Hielo",
+    "machineElementCounterPhysical": "Elemento Máquina; contraataque (físico)",
+    "thunderElementCounterPhysical": "Elemento Trueno; contraataque (físico)",
+    "machineElementHitsTwice": "Elemento Máquina (golpea dos veces)"
+  }
+}

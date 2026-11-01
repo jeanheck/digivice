@@ -1,0 +1,27 @@
+{
+  "driAgentGuilmon": {
+    "title": "Guilmon (DRI Jimmy)",
+    "description": "Añade a Guilmon a tu grupo de Digimon",
+    "requisites": {
+      "partyLevel": "Tener un nivel de grupo entre 30 y 45",
+      "seiryuLeader": "Tener la Insignia de Seiryu"
+    },
+    "steps": {
+      "1": {
+        "description": "Busca a DRI Jimmy en la Ciudad Seiryu",
+        "locationTarget": "DRI Jimmy"
+      },
+      "2": {
+        "description": "Derrota a WarGrowlmon en combate para recibir el DDNA de Guilmon",
+        "locationTarget": "WarGrowlmon"
+      },
+      "3": {
+        "description": "Entrega el DNA de Guilmon a DRI Jimmy",
+        "requisites": {
+          "guilmonDDNA": "DDNA de Guilmon"
+        },
+        "locationTarget": "DRI Jimmy"
+      }
+    }
+  }
+}

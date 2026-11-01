@@ -1,0 +1,27 @@
+{
+  "driAgentVeemon": {
+    "title": "Veemon (DRI Bob)",
+    "description": "Añade a Veemon a tu grupo de Digimon",
+    "requisites": {
+      "partyLevel": "Tener un nivel de grupo entre 1 y 30",
+      "byakkoLeader": "Tener la Insignia de Byakko"
+    },
+    "steps": {
+      "1": {
+        "description": "Busca a DRI Bob en las Ruinas Protocolo",
+        "locationTarget": "DRI Bob"
+      },
+      "2": {
+        "description": "Derrota a Paildramon en combate para recibir el DDNA de Veemon",
+        "locationTarget": "Paildramon"
+      },
+      "3": {
+        "description": "Entrega el DNA de Veemon a DRI Bob",
+        "requisites": {
+          "veemonDDNA": "DDNA de Veemon"
+        },
+        "locationTarget": "DRI Bob"
+      }
+    }
+  }
+}

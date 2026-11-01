@@ -1,0 +1,1076 @@
+{
+  "equipments": {
+    "92": {
+      "name": "Espada Corta",
+      "note": "Katana corta."
+    },
+    "93": {
+      "name": "Espada Zanden",
+      "note": "Acumula energía y corta."
+    },
+    "94": {
+      "name": "Hoja Carmesí",
+      "note": "Drena el HP del oponente."
+    },
+    "95": {
+      "name": "Hoja Poderosa",
+      "note": "Espada afilada de un solo filo."
+    },
+    "96": {
+      "name": "Shiratorimaru",
+      "note": "La espada de Mushamon."
+    },
+    "97": {
+      "name": "Hoja Brillante",
+      "note": "Espada con una hoja reluciente."
+    },
+    "98": {
+      "name": "Hoja Ronin",
+      "note": "Legendaria espada samurái."
+    },
+    "99": {
+      "name": "Onimaru",
+      "note": "Se dice que cortó el brazo de un ogro."
+    },
+    "100": {
+      "name": "Tenjinmaru",
+      "note": "La katana de mayor rango."
+    },
+    "101": {
+      "name": "Hoja Fuujin",
+      "note": "Espada fantasma de un solo filo."
+    },
+    "102": {
+      "name": "Katana Oxidada",
+      "note": "Oxidada, pero con un brillo misterioso."
+    },
+    "103": {
+      "name": "Kotetsu",
+      "note": "Katana forjada por un maestro."
+    },
+    "104": {
+      "name": "Masamune",
+      "note": "Katana legendaria."
+    },
+    "105": {
+      "name": "Muramasa",
+      "note": "Mítica espada fantasma revivida."
+    },
+    "106": {
+      "name": "Guante de Cuero",
+      "note": "Un guante de cuero."
+    },
+    "107": {
+      "name": "Guante Felino",
+      "note": "Golpea como un gato."
+    },
+    "108": {
+      "name": "Guante de Hierro",
+      "note": "Vendaje reforzado con metal."
+    },
+    "109": {
+      "name": "Guante de Agujas",
+      "note": "Guantes reforzados con espinas."
+    },
+    "110": {
+      "name": "Brazo de Poder",
+      "note": "Guanteletes que causan daño."
+    },
+    "111": {
+      "name": "Guante de Tigre",
+      "note": "Ataca como un tigre de caza."
+    },
+    "112": {
+      "name": "Guante Salvaje",
+      "note": "Legendaria arma de combate."
+    },
+    "113": {
+      "name": "Puño Káiser",
+      "note": "Guantes de mayor rango."
+    },
+    "114": {
+      "name": "Brazo Tempestad",
+      "note": "Golpea a la velocidad del rayo."
+    },
+    "115": {
+      "name": "Puño Raijin",
+      "note": "Guantes míticos."
+    },
+    "116": {
+      "name": "Guante Oxidado",
+      "note": "Oxidado y poco eficaz."
+    },
+    "117": {
+      "name": "Zodiaco",
+      "note": "Cargado con el poder de las bestias."
+    },
+    "118": {
+      "name": "Prominencia",
+      "note": "Guantes que eligen a su portador."
+    },
+    "119": {
+      "name": "Supernova",
+      "note": "Guantes fantasma que brillan."
+    },
+    "120": {
+      "name": "Pistola",
+      "note": "Un arma pequeña y fácil de usar."
+    },
+    "121": {
+      "name": "Ametralladora",
+      "note": "Arma automática de una mano."
+    },
+    "122": {
+      "name": "Escopeta",
+      "note": "Un solo disparo causa mucho daño."
+    },
+    "123": {
+      "name": "Psico Blaster",
+      "note": "Lanza bombas de energía."
+    },
+    "124": {
+      "name": "Cañón Francotirador",
+      "note": "Legendaria arma de francotirador."
+    },
+    "125": {
+      "name": "Cañón de Racimo",
+      "note": "Lanza un racimo de bombas."
+    },
+    "126": {
+      "name": "Cañón Láser",
+      "note": "Dispara rayos de calor."
+    },
+    "127": {
+      "name": "Cañón Suijin",
+      "note": "Cañón mítico."
+    },
+    "128": {
+      "name": "Rifle Oxidado",
+      "note": "No tiene precio, pero no se puede usar."
+    },
+    "129": {
+      "name": "Justicia",
+      "note": "Rifle personalizado revivido."
+    },
+    "130": {
+      "name": "Juicio",
+      "note": "Rifle personalizado de gran calidad."
+    },
+    "131": {
+      "name": "Castigo",
+      "note": "El rifle totalmente personalizado definitivo."
+    },
+    "132": {
+      "name": "Vara de Madera",
+      "note": "Vara hecha de roble."
+    },
+    "133": {
+      "name": "Vara de Mago",
+      "note": "La vara de un mago."
+    },
+    "134": {
+      "name": "Vara de Hueso",
+      "note": "Una vara única hecha de hueso."
+    },
+    "135": {
+      "name": "Vara Brumosa",
+      "note": "La vara de un ermitaño."
+    },
+    "136": {
+      "name": "Vara Divina",
+      "note": "Vara con una luz divina."
+    },
+    "137": {
+      "name": "Varita Yin Yang",
+      "note": "Varita de adivino de tiempos antiguos."
+    },
+    "138": {
+      "name": "Khakkhara",
+      "note": "Se dice que se usaba para ahuyentar el mal."
+    },
+    "139": {
+      "name": "Vara de Cristal",
+      "note": "Vara de cristal con poderes mágicos."
+    },
+    "140": {
+      "name": "Milenio",
+      "note": "Poder para gobernar un país."
+    },
+    "141": {
+      "name": "Vara Antigua",
+      "note": "Aún guarda magia dormida."
+    },
+    "142": {
+      "name": "Centelleo",
+      "note": "Vara que emite luces misteriosas."
+    },
+    "143": {
+      "name": "Inmaculada",
+      "note": "Vara purificada con poderes divinos."
+    },
+    "144": {
+      "name": "Eterna",
+      "note": "Vara mítica con poderes infinitos."
+    },
+    "145": {
+      "name": "Colmillo de Lobo",
+      "note": "Arma hecha con el colmillo de una bestia."
+    },
+    "146": {
+      "name": "Colmillo Fantasma",
+      "note": "Arma hecha con el colmillo de un ogro."
+    },
+    "147": {
+      "name": "Colmillo de Cerbero",
+      "note": "Drena HP a través de la herida."
+    },
+    "148": {
+      "name": "Colmillo Maligno",
+      "note": "El brazo equipado ataca como un tigre."
+    },
+    "149": {
+      "name": "Colmillo Hazard",
+      "note": "Legendario colmillo de lo salvaje."
+    },
+    "150": {
+      "name": "Colmillo Sable",
+      "note": "El brazo equipado apunta al punto débil."
+    },
+    "151": {
+      "name": "Colmillo Venenoso",
+      "note": "Envenena la herida."
+    },
+    "152": {
+      "name": "Colmillo de Belial",
+      "note": "Colmillo místico que dejó caer un demonio."
+    },
+    "153": {
+      "name": "Garra Antigua",
+      "note": "Garra con el ADN de bestias antiguas."
+    },
+    "154": {
+      "name": "Conquista",
+      "note": "Garra que deja fuera de combate al oponente."
+    },
+    "155": {
+      "name": "Destrucción",
+      "note": "Un solo golpe despedaza al enemigo."
+    },
+    "156": {
+      "name": "Invencible",
+      "note": "Mítica garra del Rey de las Bestias."
+    },
+    "157": {
+      "name": "Daga",
+      "note": "Cuchillo corto para principiantes."
+    },
+    "158": {
+      "name": "Shishioumaru",
+      "note": "La espada de Leomon."
+    },
+    "159": {
+      "name": "Espada Larga",
+      "note": "Espada ligera y larga."
+    },
+    "160": {
+      "name": "Shamshir",
+      "note": "Cimitarra persa."
+    },
+    "161": {
+      "name": "Espada Alada",
+      "note": "Fácil de manejar para ataques rápidos."
+    },
+    "162": {
+      "name": "Espada Kulon",
+      "note": "Hecha de una aleación y poderosa."
+    },
+    "163": {
+      "name": "Espada Valiente",
+      "note": "Grabada con el emblema del valor."
+    },
+    "164": {
+      "name": "Excalibur",
+      "note": "Espada divina que destruye el mal."
+    },
+    "165": {
+      "name": "Espada Gris",
+      "note": "Parte de un Digimon digievolucionado por DNA."
+    },
+    "166": {
+      "name": "Espada Fenrir",
+      "note": "Espada demoníaca que congela al enemigo."
+    },
+    "167": {
+      "name": "Lanza de Bambú",
+      "note": "Lanza de bambú parecida a una pértiga."
+    },
+    "168": {
+      "name": "Lanza",
+      "note": "Fácil de usar y bastante poderosa."
+    },
+    "169": {
+      "name": "Cuento de Hadas",
+      "note": "Lanza pequeña, pero poderosa."
+    },
+    "170": {
+      "name": "Partesana",
+      "note": "Punta de lanza grande que causa mucho daño."
+    },
+    "171": {
+      "name": "Lanza Divina",
+      "note": "Lanza dura hecha de hueso fosilizado."
+    },
+    "172": {
+      "name": "Tridente",
+      "note": "Daño enorme contra enemigos acuáticos."
+    },
+    "173": {
+      "name": "Lanza Vampiro",
+      "note": "Drena el HP del oponente."
+    },
+    "175": {
+      "name": "Lanza Orochi",
+      "note": "Lanza que destruyó a Orochi."
+    },
+    "176": {
+      "name": "Claymore",
+      "note": "Espada ancha a dos manos."
+    },
+    "174": {
+      "name": "Lanza Real",
+      "note": "Lanza divina de los Royal Knights."
+    },
+    "177": {
+      "name": "Motosierra",
+      "note": "Se maneja a dos manos para despedazar."
+    },
+    "178": {
+      "name": "Zweihänder",
+      "note": "Gran espada alemana a dos manos."
+    },
+    "179": {
+      "name": "Flamberge",
+      "note": "Hermosa espada a dos manos."
+    },
+    "180": {
+      "name": "Rompe Rocas",
+      "note": "La espada a dos manos de mayor rango."
+    },
+    "181": {
+      "name": "Destructor Atlas",
+      "note": "Mató al gigante legendario."
+    },
+    "182": {
+      "name": "Espada del Golfo",
+      "note": "Gran cimitarra de Persia."
+    },
+    "183": {
+      "name": "Alabarda",
+      "note": "Mango largo para atacar con eficacia."
+    },
+    "184": {
+      "name": "Naginata",
+      "note": "Arma común a dos manos."
+    },
+    "185": {
+      "name": "Berdiche",
+      "note": "Hacha pesada de mango largo."
+    },
+    "186": {
+      "name": "Cortador de Almas",
+      "note": "Hoz que destruye el alma."
+    },
+    "187": {
+      "name": "Ryuuzanmaru",
+      "note": "Destruye la armadura del enemigo y todo lo demás."
+    },
+    "188": {
+      "name": "Alabarda Gaia",
+      "note": "Permite defender y atacar a la vez."
+    },
+    "189": {
+      "name": "Alabarda Omega",
+      "note": "La alabarda mítica más poderosa."
+    },
+    "190": {
+      "name": "Arco Largo",
+      "note": "Arco tensado a mano."
+    },
+    "191": {
+      "name": "Shuriken",
+      "note": "Arma arrojadiza de los asesinos."
+    },
+    "192": {
+      "name": "Ballesta",
+      "note": "Poderosa gracias a su mecanismo de disparo."
+    },
+    "193": {
+      "name": "Arco Angelical",
+      "note": "Arco angelical contra Digimon malignos."
+    },
+    "194": {
+      "name": "Arco del Cuervo",
+      "note": "La maldición del cuervo confunde al enemigo."
+    },
+    "195": {
+      "name": "Arco Relámpago",
+      "note": "Arco de gran potencia y disparo rápido."
+    },
+    "196": {
+      "name": "Arco Seráfico",
+      "note": "El arco divino del ángel más elevado."
+    },
+    "197": {
+      "name": "Cañón Garuru",
+      "note": "Parte de un Digimon digievolucionado por DNA."
+    },
+    "198": {
+      "name": "Cañón de Positrones",
+      "note": "Arma prohibida."
+    },
+    "199": {
+      "name": "Mini Guardia",
+      "note": "Pequeña arma defensiva para atacar."
+    },
+    "200": {
+      "name": "Guardia de Pulso",
+      "note": "Arma defensiva para atacar."
+    },
+    "201": {
+      "name": "Guardia Metálica",
+      "note": "Arma defensiva metálica para atacar."
+    },
+    "202": {
+      "name": "Guardia Poderosa",
+      "note": "Eficiente y hábil para atacar."
+    },
+    "203": {
+      "name": "Guardia Dramon",
+      "note": "Legendaria carga de poder Dramon."
+    },
+    "204": {
+      "name": "Guardia Mach",
+      "note": "Gira rápido para atacar."
+    },
+    "205": {
+      "name": "Mega Guardia",
+      "note": "Una poderosa \"guardia\" que es un arma."
+    },
+    "206": {
+      "name": "Guardia Deus",
+      "note": "Carga divina que destruye al enemigo."
+    },
+    "207": {
+      "name": "Cuerno Metálico",
+      "note": "Cuerno para dar cabezazos."
+    },
+    "208": {
+      "name": "Cuerno Taladro",
+      "note": "Reforzado con forma de taladro."
+    },
+    "209": {
+      "name": "Cuerno Kabuteri",
+      "note": "Cuerno para dejar fuera de combate al enemigo."
+    },
+    "210": {
+      "name": "Cuerno de Choque",
+      "note": "Cuerno que paraliza el cuerpo."
+    },
+    "211": {
+      "name": "Cuerno Dramon",
+      "note": "Cuerno legendario con poder Dramon."
+    },
+    "212": {
+      "name": "Cuerno Tijera",
+      "note": "Cuerno brutal que corta la carne."
+    },
+    "213": {
+      "name": "Tricuerno",
+      "note": "Tres cuernos de la cabeza a la nariz."
+    },
+    "214": {
+      "name": "Cuerno Glorioso",
+      "note": "Cuerno mítico de una bestia sagrada."
+    },
+    "215": {
+      "name": "Bandana",
+      "note": "Se coloca en la cabeza para defenderse."
+    },
+    "216": {
+      "name": "Visera",
+      "note": "Protege la cabeza con la visera."
+    },
+    "217": {
+      "name": "Gorra de Béisbol",
+      "note": "Casco que permite moverse con facilidad."
+    },
+    "218": {
+      "name": "Gorra Escolar",
+      "note": "Pareces más listo al llevarla."
+    },
+    "219": {
+      "name": "Gorro de Lana",
+      "note": "Protege la cabeza del frío."
+    },
+    "220": {
+      "name": "Gorro de Kung Fu",
+      "note": "Gorro para el combate."
+    },
+    "221": {
+      "name": "Sombrero Yin Yang",
+      "note": "Sombrero de adivino de tiempos antiguos."
+    },
+    "222": {
+      "name": "Gafas de Francotirador",
+      "note": "Legendarias gafas de francotirador."
+    },
+    "223": {
+      "name": "Visión Nocturna",
+      "note": "Permite ver bien en la oscuridad."
+    },
+    "224": {
+      "name": "Boina",
+      "note": "Sombrero que te hace más listo."
+    },
+    "225": {
+      "name": "Gorro Rojo",
+      "note": "Aumenta tu magia natural."
+    },
+    "226": {
+      "name": "Lazo",
+      "note": "Se coloca en la cabeza para defenderse."
+    },
+    "227": {
+      "name": "Orejas de Gato",
+      "note": "Adorables orejas de gato."
+    },
+    "228": {
+      "name": "Cinta",
+      "note": "Esquiva los ataques enemigos con agallas."
+    },
+    "229": {
+      "name": "Corona de Mithril",
+      "note": "Corona hecha de metal mágico."
+    },
+    "230": {
+      "name": "Corona Mágica",
+      "note": "Usada por magos para proteger la cabeza."
+    },
+    "231": {
+      "name": "Máscara de Chamán",
+      "note": "Máscara usada en un ritual maldito."
+    },
+    "232": {
+      "name": "Corona Divina",
+      "note": "Corona con una luz divina."
+    },
+    "233": {
+      "name": "Aureola",
+      "note": "Anillo que flota sobre la cabeza."
+    },
+    "234": {
+      "name": "Corona Real",
+      "note": "Una corona real histórica."
+    },
+    "235": {
+      "name": "Corona de Diosa",
+      "note": "Corona mítica que llevaba una diosa."
+    },
+    "236": {
+      "name": "Casco de Piel",
+      "note": "Casco hecho de cuero."
+    },
+    "237": {
+      "name": "Casco de Hojalata",
+      "note": "Casco hecho de metal ligero."
+    },
+    "238": {
+      "name": "Casco de Hierro",
+      "note": "Casco resistente hecho de hierro."
+    },
+    "239": {
+      "name": "Casco de Caballero",
+      "note": "Casco eficaz para caballeros."
+    },
+    "240": {
+      "name": "Casco Alado",
+      "note": "Ligero y facilita esquivar ataques."
+    },
+    "241": {
+      "name": "Casco Kulon",
+      "note": "Casco de aleación resistente y ligero."
+    },
+    "242": {
+      "name": "Casco Salvaje",
+      "note": "Legendario casco de combate."
+    },
+    "243": {
+      "name": "Casco Ronin",
+      "note": "Legendario casco ronin."
+    },
+    "244": {
+      "name": "Casco Valiente",
+      "note": "Grabado con el emblema del valor."
+    },
+    "245": {
+      "name": "Casco Hazard",
+      "note": "Legendario casco de lo salvaje."
+    },
+    "246": {
+      "name": "Casco D-Tama",
+      "note": "Hecho con cáscara de Digitama."
+    },
+    "247": {
+      "name": "Casco Matrix",
+      "note": "Analiza los ataques enemigos y los esquiva."
+    },
+    "248": {
+      "name": "Casco Mugen",
+      "note": "Hecho con la cabeza de Machinedramon."
+    },
+    "249": {
+      "name": "Abrigo de Cuero",
+      "note": "Chaqueta hecha de cuero."
+    },
+    "250": {
+      "name": "Chándal",
+      "note": "Traje de combate que permite moverse con facilidad."
+    },
+    "251": {
+      "name": "Túnica de Sacerdote",
+      "note": "Túnica que visten los sacerdotes."
+    },
+    "252": {
+      "name": "Traje de Goma",
+      "note": "Traje resistente al trueno."
+    },
+    "253": {
+      "name": "Capa Oscura",
+      "note": "Extraña capa que absorbe la oscuridad."
+    },
+    "254": {
+      "name": "Plumífero",
+      "note": "Chaqueta para climas árticos."
+    },
+    "255": {
+      "name": "Túnica Divina",
+      "note": "Túnica con una luz divina."
+    },
+    "256": {
+      "name": "Traje de Francotirador",
+      "note": "Legendario traje de francotirador."
+    },
+    "257": {
+      "name": "Traje Yin Yang",
+      "note": "Traje de adivino de tiempos antiguos."
+    },
+    "258": {
+      "name": "Traje Salvaje",
+      "note": "Legendario traje de combate."
+    },
+    "259": {
+      "name": "Armadura Corporal",
+      "note": "Resiste ataques de máquina."
+    },
+    "260": {
+      "name": "Túnica Espejismo",
+      "note": "Hechiza a los enemigos y esquiva ataques."
+    },
+    "261": {
+      "name": "Manto del Rey",
+      "note": "Llevarlo otorga la dignidad de un rey."
+    },
+    "262": {
+      "name": "Cota de Cuero",
+      "note": "Armadura hecha de cuero."
+    },
+    "263": {
+      "name": "Cota de Hojalata",
+      "note": "Armadura hecha de metal ligero."
+    },
+    "264": {
+      "name": "Armadura de Hierro",
+      "note": "Armadura resistente hecha de hierro."
+    },
+    "265": {
+      "name": "Cota Digitama",
+      "note": "Recubierta de cáscaras de Digitama."
+    },
+    "266": {
+      "name": "Armadura Oscura",
+      "note": "Armadura inquietante con poderes oscuros."
+    },
+    "267": {
+      "name": "Armadura Kulon",
+      "note": "Armadura de aleación ligera y resistente."
+    },
+    "268": {
+      "name": "Armadura Dramon",
+      "note": "Armadura legendaria con poder Dramon."
+    },
+    "269": {
+      "name": "Armadura Ronin",
+      "note": "Legendaria armadura ronin."
+    },
+    "270": {
+      "name": "Armadura Hazard",
+      "note": "Legendaria armadura de lo salvaje."
+    },
+    "271": {
+      "name": "Armadura Valiente",
+      "note": "Grabada con el emblema del valor."
+    },
+    "272": {
+      "name": "Armadura de Rayos",
+      "note": "Armadura decorativa y reluciente."
+    },
+    "273": {
+      "name": "Armadura Brumosa",
+      "note": "Hace que su portador sea más difícil de detectar."
+    },
+    "274": {
+      "name": "Cota Carmesí",
+      "note": "Armadura rojo fuego."
+    },
+    "275": {
+      "name": "Rodela",
+      "note": "Escudo ligero y pequeño."
+    },
+    "276": {
+      "name": "Escudo de Hojalata",
+      "note": "Escudo ligero y fácil de usar."
+    },
+    "277": {
+      "name": "Escudo de Hierro",
+      "note": "Escudo resistente hecho de hierro."
+    },
+    "278": {
+      "name": "Escudo de Caballero",
+      "note": "El eficaz escudo de un caballero."
+    },
+    "279": {
+      "name": "Barrera de Guardia",
+      "note": "Una barrera de gran alcance."
+    },
+    "280": {
+      "name": "Escudo Kulon",
+      "note": "Escudo de aleación resistente y ligero."
+    },
+    "281": {
+      "name": "Barrera Divina",
+      "note": "Barrera con una luz divina."
+    },
+    "282": {
+      "name": "Escudo de Francotirador",
+      "note": "Legendaria barricada de francotirador."
+    },
+    "283": {
+      "name": "Amuleto Yin Yang",
+      "note": "Amuleto de adivino de tiempos antiguos."
+    },
+    "284": {
+      "name": "Escudo Ronin",
+      "note": "El legendario escudo del ronin."
+    },
+    "285": {
+      "name": "Escudo Salvaje",
+      "note": "Legendaria hombrera de combate."
+    },
+    "286": {
+      "name": "Escudo Valiente",
+      "note": "Grabado con el emblema del valor."
+    },
+    "287": {
+      "name": "Escudo Hazard",
+      "note": "Legendario escudo de lo salvaje."
+    },
+    "288": {
+      "name": "Escudo Dramon",
+      "note": "Legendario escudo con poder Dramon."
+    },
+    "289": {
+      "name": "Escudo de Rayos",
+      "note": "Escudo decorativo y reluciente."
+    },
+    "290": {
+      "name": "Alta Seguridad",
+      "note": "Escudo que protege la vida."
+    },
+    "291": {
+      "name": "Apocalipsis",
+      "note": "Legendario escudo divino."
+    },
+    "292": {
+      "name": "Gema de Poder",
+      "note": "Aumenta el poder de ataque."
+    },
+    "293": {
+      "name": "Anillo de Poder",
+      "note": "Aumenta mucho el poder de ataque."
+    },
+    "294": {
+      "name": "Gema de Guardia",
+      "note": "Aumenta la defensa."
+    },
+    "295": {
+      "name": "Anillo de Guardia",
+      "note": "Aumenta mucho la defensa."
+    },
+    "296": {
+      "name": "Gema de Espíritu",
+      "note": "Aumenta el espíritu."
+    },
+    "297": {
+      "name": "Anillo de Espíritu",
+      "note": "Aumenta mucho el espíritu."
+    },
+    "298": {
+      "name": "Gema de Sabiduría",
+      "note": "Aumenta la sabiduría."
+    },
+    "299": {
+      "name": "Anillo de Sabiduría",
+      "note": "Aumenta mucho la sabiduría."
+    },
+    "300": {
+      "name": "Gema de Velocidad",
+      "note": "Aumenta la velocidad."
+    },
+    "301": {
+      "name": "Anillo de Velocidad",
+      "note": "Aumenta mucho la velocidad."
+    },
+    "302": {
+      "name": "Gema de Carisma",
+      "note": "Anillo a la moda."
+    },
+    "303": {
+      "name": "Anillo de Carisma",
+      "note": "Anillo muy a la moda."
+    },
+    "304": {
+      "name": "Anillo de Llamas",
+      "note": "Resistente al fuego."
+    },
+    "305": {
+      "name": "Anillo de Agua",
+      "note": "Resistente al agua."
+    },
+    "306": {
+      "name": "Anillo de Hielo",
+      "note": "Resistente al hielo."
+    },
+    "307": {
+      "name": "Anillo de Viento",
+      "note": "Resistente al viento."
+    },
+    "308": {
+      "name": "Anillo de Trueno",
+      "note": "Resistente al trueno."
+    },
+    "309": {
+      "name": "Anillo de Máquina",
+      "note": "Resistente a máquina."
+    },
+    "310": {
+      "name": "Anillo Oscuro",
+      "note": "Resistente a la oscuridad."
+    },
+    "311": {
+      "name": "Anillo Antídoto",
+      "note": "Más resistencia al veneno."
+    },
+    "312": {
+      "name": "Anillo Revitalizante",
+      "note": "Más resistencia a la parálisis."
+    },
+    "313": {
+      "name": "Anillo del Despertar",
+      "note": "Más resistencia al sueño."
+    },
+    "314": {
+      "name": "Anillo de Lucidez",
+      "note": "Más resistencia a la confusión."
+    },
+    "315": {
+      "name": "Anillo de Oración",
+      "note": "Más resistencia al KO."
+    },
+    "316": {
+      "name": "Emblema Múltiple",
+      "note": "Permite atacar dos veces."
+    },
+    "317": {
+      "name": "Emblema de Búsqueda",
+      "note": "Aumenta los ataques críticos."
+    },
+    "318": {
+      "name": "Emblema de Contraataque",
+      "note": "Contraataca automáticamente."
+    },
+    "319": {
+      "name": "Emblema Atadura",
+      "note": "Los enemigos huyen con menos frecuencia."
+    },
+    "320": {
+      "name": "Emblema de Recuperación",
+      "note": "El HP se recupera poco a poco."
+    },
+    "321": {
+      "name": "Adaptador de EXP",
+      "note": "Obtén más EXP en los combates."
+    },
+    "322": {
+      "name": "Adaptador de BIT",
+      "note": "Obtén más BIT en los combates."
+    },
+    "323": {
+      "name": "Proxy MP",
+      "note": "Las técnicas gastan un poco menos de MP."
+    },
+    "324": {
+      "name": "Mega Proxy MP",
+      "note": "Las técnicas gastan menos MP."
+    },
+    "325": {
+      "name": "Proxy HP",
+      "note": "Reduce un poco el daño."
+    },
+    "326": {
+      "name": "Mega Proxy HP",
+      "note": "Reduce el daño."
+    },
+    "327": {
+      "name": "Pegatina Hack",
+      "note": "Robar es un poco más fácil."
+    },
+    "328": {
+      "name": "Sistema Hack",
+      "note": "Robar es más fácil."
+    },
+    "329": {
+      "name": "Overclock",
+      "note": "La barra de Blast sube un poco más fácilmente."
+    },
+    "330": {
+      "name": "Sobrecarga",
+      "note": "La barra de Blast sube más fácilmente."
+    },
+    "331": {
+      "name": "Gafas",
+      "note": "La puntería mejora un poco."
+    },
+    "332": {
+      "name": "Gafas Protectoras",
+      "note": "La puntería mejora."
+    },
+    "333": {
+      "name": "Pluma de Danza",
+      "note": "Esquiva un poco mejor."
+    },
+    "334": {
+      "name": "Ala de Danza",
+      "note": "Esquiva mejor."
+    },
+    "335": {
+      "name": "Sandalias de Corredor",
+      "note": "Huir es un poco más fácil."
+    },
+    "336": {
+      "name": "Zapatillas de Corredor",
+      "note": "Huir es más fácil."
+    },
+    "337": {
+      "name": "Libro de Entrenamiento",
+      "note": "Entrenar es un poco más fácil."
+    },
+    "338": {
+      "name": "Brazalete de Poder",
+      "note": "Entrenar es mucho más fácil."
+    },
+    "339": {
+      "name": "Poder de Fuego 1",
+      "note": "Añade fuego débil a los ataques."
+    },
+    "340": {
+      "name": "Poder de Fuego 2",
+      "note": "Añade fuego a los ataques."
+    },
+    "341": {
+      "name": "Poder de Fuego S",
+      "note": "Añade fuego fuerte a los ataques."
+    },
+    "342": {
+      "name": "Poder de Agua 1",
+      "note": "Añade agua débil a los ataques."
+    },
+    "343": {
+      "name": "Poder de Agua 2",
+      "note": "Añade agua a los ataques."
+    },
+    "344": {
+      "name": "Poder de Agua S",
+      "note": "Añade agua fuerte a los ataques."
+    },
+    "345": {
+      "name": "Poder de Hielo 1",
+      "note": "Añade hielo débil a los ataques."
+    },
+    "346": {
+      "name": "Poder de Hielo 2",
+      "note": "Añade hielo a los ataques."
+    },
+    "347": {
+      "name": "Poder de Hielo S",
+      "note": "Añade hielo fuerte a los ataques."
+    },
+    "348": {
+      "name": "Poder de Viento 1",
+      "note": "Añade viento débil a los ataques."
+    },
+    "349": {
+      "name": "Poder de Viento 2",
+      "note": "Añade viento a los ataques."
+    },
+    "350": {
+      "name": "Poder de Viento S",
+      "note": "Añade viento fuerte a los ataques."
+    },
+    "351": {
+      "name": "Poder de Trueno 1",
+      "note": "Añade trueno débil a los ataques."
+    },
+    "352": {
+      "name": "Poder de Trueno 2",
+      "note": "Añade trueno a los ataques."
+    },
+    "353": {
+      "name": "Poder de Trueno S",
+      "note": "Añade trueno fuerte a los ataques."
+    },
+    "354": {
+      "name": "Poder Metálico 1",
+      "note": "Añade máquina débil a los ataques."
+    },
+    "355": {
+      "name": "Poder Metálico 2",
+      "note": "Añade máquina a los ataques."
+    },
+    "356": {
+      "name": "Poder Metálico S",
+      "note": "Añade máquina fuerte a los ataques."
+    },
+    "357": {
+      "name": "Poder Oscuro 1",
+      "note": "Añade oscuridad débil a los ataques."
+    },
+    "358": {
+      "name": "Poder Oscuro 2",
+      "note": "Añade oscuridad a los ataques."
+    },
+    "359": {
+      "name": "Poder Oscuro S",
+      "note": "Añade oscuridad fuerte a los ataques."
+    }
+  }
+}

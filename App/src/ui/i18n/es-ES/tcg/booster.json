@@ -1,0 +1,109 @@
+{
+  "boosters": {
+    "501": {
+      "name": "Sobre 1B"
+    },
+    "502": {
+      "name": "Sobre 2B"
+    },
+    "503": {
+      "name": "Sobre 3B"
+    },
+    "504": {
+      "name": "Sobre 4B"
+    },
+    "505": {
+      "name": "Sobre 5B"
+    },
+    "506": {
+      "name": "Sobre 6B"
+    },
+    "507": {
+      "name": "Sobre 7B"
+    },
+    "508": {
+      "name": "Sobre 8B"
+    },
+    "509": {
+      "name": "Sobre 9B"
+    },
+    "510": {
+      "name": "Sobre 10B"
+    },
+    "511": {
+      "name": "Sobre 11B"
+    },
+    "512": {
+      "name": "Sobre 12B"
+    },
+    "513": {
+      "name": "Sobre 13B"
+    },
+    "514": {
+      "name": "Sobre 14B"
+    },
+    "515": {
+      "name": "Sobre 15B"
+    },
+    "516": {
+      "name": "Sobre R-01"
+    },
+    "517": {
+      "name": "Sobre R-02"
+    },
+    "518": {
+      "name": "Sobre R-03"
+    },
+    "519": {
+      "name": "Sobre R-04"
+    },
+    "520": {
+      "name": "Sobre R-05"
+    },
+    "521": {
+      "name": "Sobre 1A"
+    },
+    "522": {
+      "name": "Sobre 2A"
+    },
+    "523": {
+      "name": "Sobre 3A"
+    },
+    "524": {
+      "name": "Sobre 4A"
+    },
+    "525": {
+      "name": "Sobre 5A"
+    },
+    "526": {
+      "name": "Sobre 6A"
+    },
+    "527": {
+      "name": "Sobre 7A"
+    },
+    "528": {
+      "name": "Sobre 8A"
+    },
+    "529": {
+      "name": "Sobre 9A"
+    },
+    "530": {
+      "name": "Sobre 10A"
+    },
+    "531": {
+      "name": "Sobre 11A"
+    },
+    "532": {
+      "name": "Sobre 12A"
+    },
+    "533": {
+      "name": "Sobre 13A"
+    },
+    "534": {
+      "name": "Sobre 14A"
+    },
+    "535": {
+      "name": "Sobre 15A"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "equipmentType": {
+    "oneHandedWeapon": "Arma (una mano)",
+    "bodyArmor": "Armadura",
+    "twoHandedWeapon": "Arma (dos manos)",
+    "shield": "Escudo",
+    "headArmor": "Casco",
+    "accessory": "Accesorio"
+  }
+}

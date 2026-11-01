@@ -1,0 +1,13 @@
+{
+  "cardShop": {
+    "asYellowCruiser": {
+      "name": "AS Crucero Amarillo"
+    },
+    "seiryuCardShop": {
+      "name": "Tienda de cartas de Seiryu"
+    },
+    "suzakuCardShop": {
+      "name": "Tienda de cartas de Suzaku"
+    }
+  }
+}

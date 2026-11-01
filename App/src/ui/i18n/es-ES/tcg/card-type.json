@@ -1,0 +1,10 @@
+{
+  "cardType": {
+    "white": "Blanca",
+    "blue": "Azul",
+    "green": "Verde",
+    "red": "Roja",
+    "black": "Negra",
+    "brown": "Marrón"
+  }
+}

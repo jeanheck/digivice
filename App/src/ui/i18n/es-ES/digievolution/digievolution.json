@@ -1,0 +1,22 @@
+{
+  "digievolution": {
+    "title": "Digievoluciones de {name}",
+    "selectNode": "SELECCIONA UNA DIGIEVOLUCIÓN PARA VER MÁS DETALLES.",
+    "requirementDigievolutions": "Digievoluciones requeridas",
+    "nextDigievolutions": "Siguientes digievoluciones",
+    "noTechData": "No hay datos de técnicas disponibles.",
+    "neutral": "Neutral",
+    "noEvolutionData": "No hay datos de evolución disponibles",
+    "pinFamily": "Fijar arriba",
+    "unpinFamily": "Desfijar",
+    "unknownParam": "Parámetro desconocido",
+    "lv": "Nv",
+    "techniques": "Técnicas",
+    "searchDigimon": "Escribe el nombre de una digievolución...",
+    "searchNoResults": "No se encontró ninguna digievolución",
+    "mpCost": "Coste de MP",
+    "levelToLearn": "Nivel para aprender",
+    "levelToLoad": "Nivel para cargar",
+    "signatureTechnique": "Técnica característica"
+  }
+}

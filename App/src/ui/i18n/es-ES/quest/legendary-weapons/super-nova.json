@@ -1,0 +1,15 @@
+{
+  "superNova": {
+    "title": "Supernova",
+    "description": "Consigue el Arma Legendaria Supernova",
+    "requisites": {
+      "submarimon": "Encuentra el Digihuevo de la Sinceridad"
+    },
+    "steps": {
+      "1": {
+        "description": "Derrota a Datamon para recibir el Guante Oxidado",
+        "locationTarget": "Datamon"
+      }
+    }
+  }
+}

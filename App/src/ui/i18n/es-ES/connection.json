@@ -1,0 +1,34 @@
+{
+  "errors": {
+    "emulator": {
+      "title": "¡Ups! Algo salió mal durante la lectura de la memoria...",
+      "hint": "Sería muy amable de tu parte enviar una captura de pantalla de este fallo al desarrollador :)",
+      "codes": {
+        "process_not_found": {
+          "title": "¿Tienes DuckStation abierto?",
+          "hint": "Digivice no encontró ningún emulador en ejecución. Asegúrate de que DuckStation esté abierto y, en Depuración, activa la exportación de memoria compartida."
+        },
+        "mapping_not_found": {
+          "title": "Exportación de memoria no disponible",
+          "hint": "En DuckStation, abre Depuración, activa la exportación de memoria compartida y vuelve a cargar el juego."
+        },
+        "connection_failed": {
+          "title": "No se pudo conectar a la memoria de DuckStation",
+          "hint": "La aplicación encontró DuckStation, pero no pudo abrir el mapeo de memoria compartida. Consulta el detalle técnico a continuación."
+        },
+        "memory_read_failed": {
+          "title": "Error al leer la memoria del emulador",
+          "hint": "Se perdió la conexión mientras se leían los datos del juego. Consulta el detalle técnico a continuación."
+        },
+        "state_compose_failed": {
+          "title": "Error al procesar el estado del juego",
+          "hint": "La aplicación se conectó a DuckStation, pero no pudo construir el estado actual del juego. Consulta el detalle técnico a continuación."
+        },
+        "save_not_loaded": {
+          "title": "No hay ninguna partida cargada",
+          "hint": "Abre Digimon World 2003 en DuckStation y carga una partida (o elige a tus compañeros en una partida nueva)."
+        }
+      }
+    }
+  }
+}

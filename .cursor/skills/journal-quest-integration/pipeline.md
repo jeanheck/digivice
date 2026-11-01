@@ -44,8 +44,8 @@ Paths under `App/src/`.
 | ViewModels | `presentation/viewmodels/quest/` |
 | Journal UI | `ui/components/journal/` |
 | Section palette | `ui/components/journal/journal-section-palette.ts` |
-| i18n journal | `ui/i18n/{en-US,pt-BR}/journal.json` |
-| i18n quests | `ui/i18n/{en-US,pt-BR}/quest/` |
+| i18n journal | `ui/i18n/{en-US,pt-BR,es-ES}/journal.json` |
+| i18n quests | `ui/i18n/{en-US,pt-BR,es-ES}/quest/` |
 
 ## Two converter contexts (do not mix)
 

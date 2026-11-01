@@ -112,7 +112,7 @@ A section **only exists when it has at least one quest**. No empty-state UI.
 ## Naming and i18n
 
 - Static files kebab-case (`dri-agent-patamon.json`); definitions kebab-case with the `-addresses` suffix (`dri-agent-patamon-addresses.json`).
-- `ui/i18n/{en-US,pt-BR}/quest/{category}/{id-kebab}.json`, registered in each locale `index.ts`. Section titles in `journal.json`.
+- `ui/i18n/{en-US,pt-BR,es-ES}/quest/{category}/{id-kebab}.json`, registered in each locale `index.ts`. Section titles in `journal.json`.
 - Quest texts use i18n; **Digimon/digievolution names stay literal** (proper names).
 
 ---
@@ -140,7 +140,8 @@ Conventions: skill `frontend-memory-tests`.
 - [ ] `presentation/repositories/tables/quest/{category}/{id-kebab}.table.ts` → `export type {Name}Table = QuestRaw`
 - [ ] `ui/i18n/en-US/quest/{category}/{id-kebab}.json`
 - [ ] `ui/i18n/pt-BR/quest/{category}/{id-kebab}.json`
-- [ ] Import + spread in `ui/i18n/{en-US,pt-BR}/index.ts`
+- [ ] `ui/i18n/es-ES/quest/{category}/{id-kebab}.json`
+- [ ] Import + spread in `ui/i18n/{en-US,pt-BR,es-ES}/index.ts`
 
 ### 4. Repository
 

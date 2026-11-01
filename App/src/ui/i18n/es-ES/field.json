@@ -1,0 +1,14 @@
+{
+  "field": {
+    "neutral": "Campo neutral",
+    "fire": "Campo de fuego",
+    "water": "Campo de agua",
+    "ice": "Campo de hielo",
+    "wind": "Campo de viento",
+    "thunder": "Campo de trueno",
+    "machine": "Campo metálico",
+    "dark": "Campo oscuro",
+    "strengthen": "{element} +50%",
+    "weaken": "{element} -25%"
+  }
+}

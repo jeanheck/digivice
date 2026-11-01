@@ -1,0 +1,12 @@
+{
+  "folderBag": {
+    "title": "La Bolsa de Carpetas",
+    "description": "¡Consigue la Bolsa de Carpetas para desafiar a otros tamers en combates de cartas y combates Digimon!",
+    "steps": {
+      "1": {
+        "description": "Habla con Divermon en el Crucero Amarillo de la Ciudad Asuka",
+        "locationTarget": "Divermon"
+      }
+    }
+  }
+}

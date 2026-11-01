@@ -1,0 +1,10 @@
+{
+  "buyMeACoffee": {
+    "title": "¡Invítame a un café!",
+    "introFree": "¡Digivice es GRATIS para todos y siempre lo será!",
+    "introSupport": "Si te gustan mis vídeos de YouTube explicando el proceso de desarrollo de la aplicación y cómo funciona el juego \"por dentro\", puedes apoyar el proyecto con una de las opciones a continuación:",
+    "livePixDescription": "Si VIVES EN BRASIL, usa LivePix:",
+    "koFiDescription": "Si NO VIVES EN BRASIL, usa Ko-fi:",
+    "orClickLink": "O haz clic en el enlace:"
+  }
+}

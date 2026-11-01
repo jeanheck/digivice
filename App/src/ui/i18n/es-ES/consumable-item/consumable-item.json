@@ -1,0 +1,138 @@
+{
+  "consumableItems": {
+    "400": {
+      "name": "Chip Armadura",
+      "note": "Aumenta la defensa.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "401": {
+      "name": "Chip Velocidad",
+      "note": "Aumenta la velocidad.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "402": {
+      "name": "Chip Carisma",
+      "note": "Aumenta el carisma.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "403": {
+      "name": "Chip Diablo",
+      "note": "Aumenta la resistencia a la oscuridad.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "404": {
+      "name": "Chip Fuego",
+      "note": "Aumenta la resistencia al fuego.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "405": {
+      "name": "Chip HP",
+      "note": "Aumenta el HP máximo.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 30."
+    },
+    "406": {
+      "name": "Chip Hielo",
+      "note": "Aumenta la resistencia al hielo.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "407": {
+      "name": "Carga Máxima",
+      "note": "Recupera todo el HP."
+    },
+    "408": {
+      "name": "Chip Metal",
+      "note": "Aumenta la resistencia a máquina.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "409": {
+      "name": "Chip Mente",
+      "note": "Aumenta el espíritu.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "410": {
+      "name": "Chip MP",
+      "note": "Aumenta el MP máximo.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 30."
+    },
+    "411": {
+      "name": "Carga de Poder",
+      "note": "Recupera 500 de HP."
+    },
+    "412": {
+      "name": "Chip Poder",
+      "note": "Aumenta la fuerza.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "413": {
+      "name": "Telaraña",
+      "note": "Dificulta los movimientos con una telaraña.",
+      "additionalInformation": ""
+    },
+    "414": {
+      "name": "Supercarga",
+      "note": "Recupera 2000 de HP."
+    },
+    "415": {
+      "name": "Chip Trueno",
+      "note": "Aumenta la resistencia al trueno.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "416": {
+      "name": "Bola TNT",
+      "note": "Explosión causada por un bloque de pólvora.",
+      "additionalInformation": ""
+    },
+    "417": {
+      "name": "Chip de Entrenamiento 1",
+      "note": "Aumenta los PE en 1."
+    },
+    "418": {
+      "name": "Chip de Entrenamiento 2",
+      "note": "Aumenta los PE en 2."
+    },
+    "419": {
+      "name": "Chip de Entrenamiento 3",
+      "note": "Aumenta los PE en 3."
+    },
+    "420": {
+      "name": "Chip de Entrenamiento V",
+      "note": "Aumenta los PE en 5."
+    },
+    "421": {
+      "name": "Ultracarga",
+      "note": "Recupera 5000 de HP."
+    },
+    "422": {
+      "name": "Chip Agua",
+      "note": "Aumenta la resistencia al agua.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "423": {
+      "name": "Chip Viento",
+      "note": "Aumenta la resistencia al viento.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "424": {
+      "name": "Chip Sabiduría",
+      "note": "Aumenta la sabiduría.",
+      "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 10."
+    },
+    "425": {
+      "name": "Onda Caótica",
+      "note": "A veces confunde a un aliado.",
+      "additionalInformation": ""
+    },
+    "426": {
+      "name": "Gas Hechizante",
+      "note": "Reduce la defensa del enemigo."
+    },
+    "427": {
+      "name": "Cable Carmesí",
+      "note": "Absorbe el HP del enemigo."
+    },
+    "428": {
+      "name": "Marioneta Maldita",
+      "note": "Reduce el poder de ataque y la defensa del enemigo."
+    }
+  }
+}

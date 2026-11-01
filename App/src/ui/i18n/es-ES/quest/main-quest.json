@@ -1,0 +1,377 @@
+{
+  "mainQuest": {
+    "title": "Misión principal",
+    "description": "¡Conviértete en el mejor tamer del Mundo Digital!",
+    "chapters": {
+      "1": {
+        "name": "¡El Sector Este!"
+      },
+      "2": {
+        "name": "¡El Sector Sur!"
+      },
+      "3": {
+        "name": "¡El Sector Oeste!"
+      },
+      "4": {
+        "name": "¡La batalla contra A.o.A!"
+      }
+    },
+    "steps": {
+      "1": {
+        "description": "Busca al Líder de Seiryu en la Ciudad Seiryu",
+        "locationTarget": "Tom el repetidor"
+      },
+      "2": {
+        "description": "Habla con el Líder de Seiryu en las Ruinas Protocolo",
+        "locationTarget": "Líder de Seiryu"
+      },
+      "3": {
+        "description": "Derrota a MasterTyrannomon en el Valle Tyranno",
+        "locationTarget": "MasterTyrannomon"
+      },
+      "4": {
+        "description": "Desafía al Líder de Seiryu en la Ciudad Seiryu",
+        "locationTarget": "Líder de Seiryu"
+      },
+      "5": {
+        "description": "Sal de la Ciudad Seiryu",
+        "locationTarget": "Salida"
+      },
+      "6": {
+        "description": "Ve a la Estación Este e interactúa con la Góndola para llegar al siguiente sector",
+        "locationTarget": "Góndola"
+      },
+      "7": {
+        "description": "Derrota al Jugador Misterioso que te detiene en el Puente Asuka",
+        "locationTarget": "Jugador Misterioso"
+      },
+      "8": {
+        "description": "Habla con el Guilmon en la Posada Asuka 2P, en la Ciudad Asuka",
+        "locationTarget": "Guilmon"
+      },
+      "9": {
+        "description": "Habla con el Guilmon en la Posada del Bosque",
+        "locationTarget": "Guilmon"
+      },
+      "10": {
+        "description": "Habla con el Guilmon Tramposo en la Torre Céfiro, en la Ciudad Seiryu",
+        "locationTarget": "Guilmon"
+      },
+      "11": {
+        "description": "Vuelve a la Estación Este con la Tarjeta Azul",
+        "locationTarget": "Góndola"
+      },
+      "12": {
+        "description": "Enfréntate al Guilmon de la Ciudad Seiryu por la tarjeta falsa",
+        "locationTarget": "Guilmon"
+      },
+      "13": {
+        "description": "Habla con el Guilmon Tramposo en el sótano de la Posada del Bosque",
+        "locationTarget": "Guilmon Tramposo"
+      },
+      "14": {
+        "description": "Vuelve a la Estación Este con la Tarjeta Azul verdadera",
+        "locationTarget": "Góndola"
+      },
+      "15": {
+        "description": "Avanza por la Tumba de la Jungla",
+        "locationTarget": "Zanbamon"
+      },
+      "16": {
+        "description": "Habla con Gatomon, que está entrenando en la Posada Tranquila",
+        "locationTarget": "Gatomon"
+      },
+      "17": {
+        "description": "Descubre quién es el ser misterioso de la Casa del Chamán",
+        "locationTarget": "Sepkimon"
+      },
+      "18": {
+        "description": "Encuentra a Baronmon",
+        "locationTarget": "Baronmon"
+      },
+      "19": {
+        "description": "Busca a Sepkimon en la Ciudad Asuka o sus alrededores",
+        "locationTarget": "Sepkimon"
+      },
+      "20": {
+        "description": "Habla con Etemon cerca de El Dorado",
+        "locationTarget": "Etemon"
+      },
+      "21": {
+        "description": "Busca a Sepkimon en el Lago de Divermon",
+        "locationTarget": "Sepkimon"
+      },
+      "22": {
+        "description": "Vuelve a hablar con Etemon cerca de El Dorado",
+        "locationTarget": "Etemon"
+      },
+      "23": {
+        "description": "Persigue a Etemon por las Alcantarillas de Asuka",
+        "locationTarget": "Etemon"
+      },
+      "24": {
+        "description": "Devuelve la máscara a Sepkimon en la Casa del Chamán",
+        "locationTarget": "Sepkimon"
+      },
+      "25": {
+        "description": "Usa la Hierba Olorosa para atraer a Zanbamon fuera de la Tumba de la Jungla",
+        "locationTarget": "Zanbamon"
+      },
+      "26": {
+        "description": "Entra en la Ciudad Suzaku y busca una posada para descansar",
+        "locationTarget": "Lisa"
+      },
+      "27": {
+        "description": "Desafía a la Líder de Suzaku en el Salón Suzaku",
+        "locationTarget": "Líder de Suzaku"
+      },
+      "28": {
+        "description": "Vuelve a la Posada Suzaku después de derrotar a la Líder de Suzaku",
+        "locationTarget": "Kail"
+      },
+      "29": {
+        "description": "Busca información en el Lamb Chop",
+        "locationTarget": "Maestro John"
+      },
+      "30": {
+        "description": "Busca a la pareja de tamers cerca de El Dorado",
+        "locationTarget": "Pareja de tamers"
+      },
+      "31": {
+        "description": "Ve al lugar donde viste a Etemon por última vez",
+        "locationTarget": "Etemon"
+      },
+      "32": {
+        "description": "Informa de tus descubrimientos a Kail en el Vestíbulo principal",
+        "locationTarget": "Kail"
+      },
+      "33": {
+        "description": "Enfréntate al Travieso Mat en las Alcantarillas de Asuka",
+        "locationTarget": "Travieso Mat"
+      },
+      "34": {
+        "description": "Vuelve al Pasaje Subterráneo y encuentra a Kail",
+        "locationTarget": "Kail"
+      },
+      "35": {
+        "description": "Entra en el Centro Administrativo disfrazado de Agumon",
+        "locationTarget": "Centro Administrativo 1P"
+      },
+      "36": {
+        "description": "Encuentra a Kail en el Centro Administrativo 2P",
+        "locationTarget": "Kail"
+      },
+      "37": {
+        "description": "Busca pistas sobre cómo continuar en la Bahía Fénix",
+        "locationTarget": "Nami"
+      },
+      "38": {
+        "description": "Busca al gato de Nami en el Pantano Bios",
+        "locationTarget": "Gato perdido"
+      },
+      "39": {
+        "description": "Pide ayuda a Sepkimon para derribar el muro",
+        "locationTarget": "Sepkimon"
+      },
+      "40": {
+        "description": "Busca a Baronmon para que te ayude con bombas",
+        "locationTarget": "Baronmon"
+      },
+      "41": {
+        "description": "Consigue una Bola TNT de un Triceramon y entrégasela a Baronmon",
+        "locationTarget": "Baronmon"
+      },
+      "42": {
+        "description": "Usa el Chip TNT para abrir el muro del Pantano Bios",
+        "requisites": {
+          "tntBall": "Bola TNT"
+        },
+        "locationTarget": "Muro"
+      },
+      "43": {
+        "description": "Encuentra el Digihuevo de la Sinceridad",
+        "locationTarget": "Digihuevo de la Sinceridad"
+      },
+      "44": {
+        "description": "Dirígete a la Ciudad Byakko",
+        "locationTarget": "Numemon"
+      },
+      "45": {
+        "description": "Desafía al Líder de Byakko en la Ciudad Byakko",
+        "locationTarget": "Líder de Byakko"
+      },
+      "46": {
+        "description": "Encuentra a alguien que te ayude a salir de la Cueva Subterránea",
+        "locationTarget": "Ciudadano de Byakko"
+      },
+      "47": {
+        "description": "Encuentra una salida de la Cueva Subterránea",
+        "locationTarget": "Salida"
+      },
+      "48": {
+        "description": "Desafía al verdadero Líder de Byakko en la Torre Espejismo",
+        "locationTarget": "Líder de Byakko"
+      },
+      "49": {
+        "description": "Entra en la Fábrica Dum Dum",
+        "locationTarget": "Entra en la fábrica"
+      },
+      "50": {
+        "description": "Persigue a Numemon",
+        "locationTarget": "Numemon"
+      },
+      "51": {
+        "description": "Entra en la Sala de Conductos 01",
+        "locationTarget": "Sala de Conductos 1"
+      },
+      "52": {
+        "description": "Abre la caja de la Sala de Conductos 1",
+        "locationTarget": "Caja"
+      },
+      "53": {
+        "description": "Sigue persiguiendo a Numemon",
+        "locationTarget": "Numemon"
+      },
+      "54": {
+        "description": "Abre la caja de la Sala de Conductos 4",
+        "locationTarget": "Caja"
+      },
+      "55": {
+        "description": "¡No te rindas! ¡Ve tras Numemon!",
+        "locationTarget": "Numemon"
+      },
+      "56": {
+        "description": "Abre la caja de la Sala de Conductos 2",
+        "locationTarget": "Caja"
+      },
+      "57": {
+        "description": "¿Es que nunca se cansa? Sigue a Numemon",
+        "locationTarget": "Numemon"
+      },
+      "58": {
+        "description": "Abre la caja de la Sala de Conductos 3",
+        "locationTarget": "Caja"
+      },
+      "59": {
+        "description": "Ve al centro de la fábrica para buscar a Numemon",
+        "locationTarget": "Numemon"
+      },
+      "60": {
+        "description": "Pide información sobre Numemon a HiAndromon en la Sala de Operaciones",
+        "locationTarget": "HiAndromon"
+      },
+      "61": {
+        "description": "Dirígete a las Alcantarillas para encontrar a Numemon",
+        "locationTarget": "Numemon"
+      },
+      "62": {
+        "description": "Busca una forma de entrar en la Ciudad Asuka",
+        "locationTarget": "Datamon"
+      },
+      "63": {
+        "description": "Vuelve a la Sala Secreta y pregunta a tus amigos por el Pase de Personal",
+        "locationTarget": "Kail"
+      },
+      "64": {
+        "description": "Busca a Keith y Nicky en el Sector Sur",
+        "locationTarget": "Keith y Nicky"
+      },
+      "65": {
+        "description": "Con la ayuda de todos, busca el Pase de Personal en la Sala Secreta",
+        "locationTarget": "Lisa"
+      },
+      "66": {
+        "description": "Usa el Pase de Personal y pide a Datamon que abra la puerta",
+        "locationTarget": "Datamon"
+      },
+      "67": {
+        "description": "Derrota al Soldado raso que te impide entrar en el Centro Administrativo S1",
+        "locationTarget": "Soldado raso"
+      },
+      "68": {
+        "description": "Derrota al Soldado raso que te bloquea el paso en el Centro Administrativo S1",
+        "locationTarget": "Soldado raso"
+      },
+      "69": {
+        "description": "Derrota al Soldado raso que te impide salir del Centro Administrativo S1",
+        "locationTarget": "Soldado raso"
+      },
+      "70": {
+        "description": "Derrota al Soldado raso de la entrada de las Escaleras al sótano",
+        "locationTarget": "Soldado raso"
+      },
+      "71": {
+        "description": "Derrota al Soldado raso del final de las Escaleras al sótano",
+        "locationTarget": "Soldado raso"
+      },
+      "72": {
+        "description": "Derrota al Soldado raso para salir de las Escaleras al sótano",
+        "locationTarget": "Soldado raso"
+      },
+      "73": {
+        "description": "Derrota al Soldado raso de la entrada del Centro Administrativo 1P",
+        "locationTarget": "Soldado raso"
+      },
+      "74": {
+        "description": "Derrota al Soldado raso antes de subir las escaleras del Centro Administrativo 1P",
+        "locationTarget": "Soldado raso"
+      },
+      "75": {
+        "description": "Derrota al Soldado raso para atravesar el Centro Administrativo 2P",
+        "locationTarget": "Soldado raso"
+      },
+      "76": {
+        "description": "Derrota al Soldado raso después de subir las escaleras del Centro Administrativo 2P",
+        "locationTarget": "Soldado raso"
+      },
+      "77": {
+        "description": "Derrota al Soldado del pasillo que lleva a la Sala Maestra",
+        "locationTarget": "Soldado"
+      },
+      "78": {
+        "description": "Derrota al Soldado que te impide entrar en la Sala Maestra",
+        "locationTarget": "Soldado"
+      },
+      "79": {
+        "description": "\"¡¿GUBI?!\" Defiéndete del extraño Digimon que salió de la sala",
+        "locationTarget": "Vemmon"
+      },
+      "80": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"M\"",
+        "locationTarget": "Letra \"M\""
+      },
+      "81": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"O\"",
+        "locationTarget": "Letra \"O\""
+      },
+      "82": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"N\"",
+        "locationTarget": "Letra \"N\""
+      },
+      "83": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"S\"",
+        "locationTarget": "Letra \"S\""
+      },
+      "84": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"T\"",
+        "locationTarget": "Letra \"T\""
+      },
+      "85": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"E\"",
+        "locationTarget": "Letra \"E\""
+      },
+      "86": {
+        "description": "Dentro de la Sala Maestra, toca el panel que representa la letra \"R\"",
+        "locationTarget": "Letra \"R\""
+      },
+      "87": {
+        "description": "Derrota a los Guardias de la entrada del Cuartel General",
+        "locationTarget": "Guardias"
+      },
+      "88": {
+        "description": "Enfréntate al Game Master dentro del Cuartel General",
+        "locationTarget": "Game Master"
+      }
+    }
+  }
+}

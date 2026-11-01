@@ -5,6 +5,7 @@ import { useI18n } from "vue-i18n";
 const LanguageOptions = [
   { locale: "en-US", flag: "\u{1F1FA}\u{1F1F8}", label: "English" },
   { locale: "pt-BR", flag: "\u{1F1E7}\u{1F1F7}", label: "Português" },
+  { locale: "es-ES", flag: "\u{1F1EA}\u{1F1F8}", label: "Español" },
 ] as const;
 
 const MenuGapPx = 8;

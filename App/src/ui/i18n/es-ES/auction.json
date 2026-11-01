@@ -1,0 +1,39 @@
+{
+  "auction": {
+    "cardIdleTitle": "No hay subasta ahora",
+    "cardIdleSubtitle": "Quizás más tarde...",
+    "cardActiveTitle": "¡Subasta disponible!",
+    "cardActiveSubtitle": "¡Haz clic para más detalles!",
+    "modalTitle": "Subastas",
+    "currentIdleTitle": "No hay ninguna subasta activa",
+    "currentIdleSubtitle": "Sigue avanzando en la misión principal",
+    "currentActiveTitle": "¡Ahora! ¡Subasta en la Torre de Carga!",
+    "currentActiveAcquirePrefix": "Consigue",
+    "bidLabel": "Puja:",
+    "resalePriceLabel": "Reventa:",
+    "bitsLabel": "bits",
+    "closesWhenLabel": "TERMINA CUANDO:",
+    "notEnoughBitsWarning": "Si vas a la Torre de Carga sin Bits suficientes para pujar, la subasta no empezará. Ahora tienes {bits} Bits.",
+    "historySubtitle": "Historial",
+    "historyTiming": {
+      "alreadyEnded": "Esta subasta ya terminó",
+      "upcoming": "Esta subasta ocurrirá en el futuro"
+    },
+    "historyParticipation": {
+      "participated": "Participaste en esta subasta",
+      "missed": "Por desgracia, te perdiste esta subasta"
+    },
+    "historyActive": {
+      "timing": "¡Subasta en curso ahora!",
+      "participation": "¡Ve a la Torre de Carga para participar!"
+    },
+    "closesWhen": {
+      "divineBarrier": "interactúes con la Góndola por primera vez (paso 6) o participes en la subasta",
+      "hazardShield": "recuperes la máscara de Sepkimon (paso 23) o participes en la subasta",
+      "sniperShield": "hables con Kail en el Pasaje Subterráneo (paso 34) o participes en la subasta",
+      "dramonShield": "vuelvas al Pantano Bios con el Chip TNT (paso 42) o participes en la subasta",
+      "yinYangWand": "desafíes al verdadero Líder de Byakko (paso 48) o participes en la subasta",
+      "hazardFang": "toques el cuadro con la letra \"R\" en la Sala Maestra (paso 86) o participes en la subasta"
+    }
+  }
+}

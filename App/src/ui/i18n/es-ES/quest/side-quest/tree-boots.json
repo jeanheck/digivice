@@ -1,0 +1,39 @@
+{
+  "treeBoots": {
+    "title": "Las Botas de Árbol",
+    "description": "¡Consigue las Botas de Árbol para desafiar a los Cardmon y a otros Digimon!",
+    "requisites": {
+      "folderBag": "Tener la Bolsa de Carpetas"
+    },
+    "steps": {
+      "1": {
+        "description": "Habla con Hide, el chico futbolista, en el Cabo Enchufe",
+        "locationTarget": "Hide, el chico futbolista"
+      },
+      "2": {
+        "description": "Encuentra la carta perdida de Gabumon",
+        "locationTarget": "Carta de Gabumon"
+      },
+      "3": {
+        "description": "Entrega la carta de Gabumon a Hide, el chico futbolista",
+        "locationTarget": "Hide, el chico futbolista"
+      },
+      "4": {
+        "description": "Habla con la camarera Debbie en el Lamb Chop de la Ciudad Asuka",
+        "locationTarget": "Camarera Debbie"
+      },
+      "5": {
+        "description": "Encuentra a Veemon en la Pradera del Viento",
+        "locationTarget": "Veemon"
+      },
+      "6": {
+        "description": "Juega al escondite y encuentra a Veemon en el Bosque de las Patadas",
+        "locationTarget": "Veemon"
+      },
+      "7": {
+        "description": "Recibe las Botas de Árbol de Veemon después de encontrarlo",
+        "locationTarget": "Veemon"
+      }
+    }
+  }
+}

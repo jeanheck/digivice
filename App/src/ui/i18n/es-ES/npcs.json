@@ -1,0 +1,82 @@
+{
+  "npcs": {
+    "seiryuLeader": {
+      "name": "Líder de Seiryu"
+    },
+    "keith": {
+      "name": "Keith"
+    },
+    "suzakuLeader": {
+      "name": "Líder de Suzaku"
+    },
+    "fakeByakkoLeader": {
+      "name": "Líder de Byakko"
+    },
+    "byakkoLeader": {
+      "name": "Líder de Byakko"
+    },
+    "aoaAttacker": {
+      "name": "Atacante de A.o.A"
+    },
+    "trooper1AdminCenterB1F": {
+      "name": "1.er Soldado raso"
+    },
+    "trooper2AdminCenterB1F": {
+      "name": "2.º Soldado raso"
+    },
+    "trooper3AdminCenterB1F": {
+      "name": "3.er Soldado raso"
+    },
+    "optionalTrooper1AdminCenterB1F": {
+      "name": "4.º Soldado raso"
+    },
+    "optionalTrooper2AdminCenterB1F": {
+      "name": "5.º Soldado raso"
+    },
+    "trooper1BasementStairs": {
+      "name": "6.º Soldado raso"
+    },
+    "trooper2BasementStairs": {
+      "name": "7.º Soldado raso"
+    },
+    "trooper3BasementStairs": {
+      "name": "8.º Soldado raso"
+    },
+    "trooper1AdminFloor1": {
+      "name": "9.º Soldado raso"
+    },
+    "trooper2AdminFloor1": {
+      "name": "10.º Soldado raso"
+    },
+    "optionalTrooperAdminFloor1": {
+      "name": "11.º Soldado raso"
+    },
+    "trooper1AdminFloor2": {
+      "name": "12.º Soldado raso"
+    },
+    "trooper2AdminFloor2": {
+      "name": "13.º Soldado raso"
+    },
+    "soldierAdminFloor2": {
+      "name": "1.er Soldado"
+    },
+    "generalAdminFloor2": {
+      "name": "General"
+    },
+    "optionalTrooper1AdminFloor2": {
+      "name": "14.º Soldado raso"
+    },
+    "optionalSoldier1AdminFloor2": {
+      "name": "2.º Soldado"
+    },
+    "optionalTrooper2AdminFloor2": {
+      "name": "15.º Soldado raso"
+    },
+    "guardsHeadquarters": {
+      "name": "Guardias"
+    },
+    "gameMasterHeadquarters": {
+      "name": "Game Master"
+    }
+  }
+}

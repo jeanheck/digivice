@@ -1,0 +1,35 @@
+{
+  "asukaTrophy": {
+    "title": "Asuka (Trofeo)",
+    "description": "Derrota a todos los Divermon de la Isla del Duelo y gana el Trofeo Asuka",
+    "requisites": {
+      "submarimon": "Encuentra el Digihuevo de la Sinceridad"
+    },
+    "steps": {
+      "1": {
+        "description": "Derrota al primer Divermon",
+        "locationTarget": "Divermon"
+      },
+      "2": {
+        "description": "Derrota al segundo Divermon",
+        "locationTarget": "Divermon"
+      },
+      "3": {
+        "description": "Derrota al tercer Divermon",
+        "locationTarget": "Divermon"
+      },
+      "4": {
+        "description": "Derrota al cuarto Divermon",
+        "locationTarget": "Divermon"
+      },
+      "5": {
+        "description": "Derrota al quinto Divermon",
+        "locationTarget": "Divermon"
+      },
+      "6": {
+        "description": "Derrota a KingDivermon",
+        "locationTarget": "KingDivermon"
+      }
+    }
+  }
+}

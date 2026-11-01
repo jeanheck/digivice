@@ -1,0 +1,27 @@
+{
+  "driAgentMonmon": {
+    "title": "Monmon (DRI Yang)",
+    "description": "Añade a Monmon a tu grupo de Digimon",
+    "requisites": {
+      "partyLevel": "Tener un nivel de grupo entre 60 y 90",
+      "submarimon": "Tener el Digihuevo de la Sinceridad"
+    },
+    "steps": {
+      "1": {
+        "description": "Busca a DRI Yang en el Desierto Mobius",
+        "locationTarget": "DRI Yang"
+      },
+      "2": {
+        "description": "Derrota a Armormon en combate para recibir el DDNA de Monmon",
+        "locationTarget": "Armormon"
+      },
+      "3": {
+        "description": "Entrega el DNA de Monmon a DRI Yang",
+        "requisites": {
+          "monmonDDNA": "DDNA de Monmon"
+        },
+        "locationTarget": "DRI Yang"
+      }
+    }
+  }
+}

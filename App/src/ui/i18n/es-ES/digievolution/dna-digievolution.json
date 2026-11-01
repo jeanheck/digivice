@@ -1,0 +1,13 @@
+{
+  "dnaDigievolution": {
+    "title": "Digievoluciones DNA",
+    "description": "La siguiente lista muestra todas las Digievoluciones DNA del juego. Cuando una de ellas esté disponible, aparecerá un indicador en las digievoluciones de tus Digimon.",
+    "availableTitle": "Digievolución DNA disponible",
+    "tagWith": "Haz un Tag con la digievolución {digievolution} de {digimon}",
+    "or": "o",
+    "effect": {
+      "reviveAndFullHealAll": "Revive y cura por completo a todos los Digimon",
+      "strengthDown": "Reduce la fuerza del objetivo"
+    }
+  }
+}

@@ -2,11 +2,22 @@ import { watch } from "vue";
 import { createI18n } from "vue-i18n";
 import enUS from "./en-US";
 import ptBR from "./pt-BR";
+import esES from "./es-ES";
+
+function getSystemLocale(): string {
+  const browserLocale = navigator.language;
+  if (browserLocale.startsWith("pt")) {
+    return "pt-BR";
+  }
+  if (browserLocale.startsWith("es")) {
+    return "es-ES";
+  }
+  return "en-US";
+}
 
 // Saved choice first, then the system language.
 const savedLocale = localStorage.getItem("user-locale");
-const browserLocale = navigator.language;
-const defaultLocale = savedLocale || (browserLocale.startsWith("pt") ? "pt-BR" : "en-US");
+const defaultLocale = savedLocale || getSystemLocale();
 
 const i18n = createI18n({
   legacy: false,
@@ -15,6 +26,7 @@ const i18n = createI18n({
   messages: {
     "en-US": enUS,
     "pt-BR": ptBR,
+    "es-ES": esES,
   },
 });
 

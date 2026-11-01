@@ -1,0 +1,8 @@
+{
+  "seabed": {
+    "title": "Fondo Marino",
+    "dock": "Muelle",
+    "noDock": "ESTE MAPA NO TIENE MUELLE",
+    "noDockHint": "USA EL MAPA DE LA IZQUIERDA PARA VER LAS RUTAS COMPLETAS O BUSCA LOS MUELLES EN EL MAPA"
+  }
+}

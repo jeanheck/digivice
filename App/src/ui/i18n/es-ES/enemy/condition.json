@@ -1,0 +1,43 @@
+{
+  "conditions": {
+    "poison": {
+      "name": "Veneno",
+      "canSuffer": "Puede ser envenenado",
+      "vunerable": "Resistencia al veneno"
+    },
+    "paralyze": {
+      "name": "Parálisis",
+      "canSuffer": "Puede ser paralizado",
+      "vunerable": "Resistencia a la parálisis"
+    },
+    "confuse": {
+      "name": "Confusión",
+      "canSuffer": "Puede ser confundido",
+      "vunerable": "Resistencia a la confusión"
+    },
+    "sleep": {
+      "name": "Sueño",
+      "canSuffer": "Puede ser dormido",
+      "vunerable": "Resistencia al sueño"
+    },
+    "ko": {
+      "name": "KO",
+      "canSuffer": "Puede quedar fuera de combate",
+      "vunerable": "Resistencia al KO"
+    },
+    "drain": {
+      "name": "Drenaje",
+      "canSuffer": "Puede ser drenado"
+    },
+    "steal": {
+      "name": "Robo",
+      "canSuffer": "Se le puede robar"
+    },
+    "escape": {
+      "name": "Huida",
+      "canSuffer": "El jugador puede huir"
+    },
+    "yes": "Sí",
+    "no": "No"
+  }
+}
