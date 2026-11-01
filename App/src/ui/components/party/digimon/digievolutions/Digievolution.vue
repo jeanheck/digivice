@@ -17,6 +17,9 @@ const gameState = useGameState();
 
 const emit = defineEmits<{
   (e: "open-techniques", digievolutionResumedViewModel: DigievolutionResumedViewModel): void;
+  (e: "show-tooltip", event: MouseEvent): void;
+  (e: "move-tooltip", event: MouseEvent): void;
+  (e: "hide-tooltip"): void;
 }>();
 
 const isEmpty = computed(() => {
@@ -51,6 +54,26 @@ const hasAvailableDnaFusion = computed(() => {
   );
 });
 
+function onMouseEnter(event: MouseEvent): void {
+  if (!hasAvailableDnaFusion.value) {
+    return;
+  }
+
+  emit("show-tooltip", event);
+}
+
+function onMouseMove(event: MouseEvent): void {
+  if (!hasAvailableDnaFusion.value) {
+    return;
+  }
+
+  emit("move-tooltip", event);
+}
+
+function onMouseLeave(): void {
+  emit("hide-tooltip");
+}
+
 function openTechniques(): void {
   emit("open-techniques", {
     id: props.digievolutionId!,
@@ -61,7 +84,12 @@ function openTechniques(): void {
 </script>
 
 <template>
-  <div class="dw3-panel evo-row flex min-h-9 text-white dw3-beveled">
+  <div
+    class="dw3-panel evo-row flex min-h-9 text-white dw3-beveled"
+    @mouseenter="onMouseEnter"
+    @mousemove="onMouseMove"
+    @mouseleave="onMouseLeave"
+  >
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled">
       <div v-if="hasAvailableDnaFusion" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div>

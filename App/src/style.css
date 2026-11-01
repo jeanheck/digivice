@@ -109,6 +109,13 @@ body {
   color: transparent;
 }
 
+.text-dw3-dna {
+  background: linear-gradient(to bottom, #ff5cf4, #1de9b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .dw3-aside {
   width: 100%;
   height: 100%;

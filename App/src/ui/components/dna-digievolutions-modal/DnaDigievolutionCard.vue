@@ -27,7 +27,7 @@ defineProps<{
 
       <div class="flex flex-1 min-w-0 flex-col gap-2">
         <div class="flex items-baseline justify-between gap-3">
-          <span class="text-dw3-gold shadow-text-dark font-bold tracking-wider truncate">
+          <span class="text-dw3-dna shadow-text-dark font-bold tracking-wider truncate">
             {{ dnaDigievolution.name }}
           </span>
           <span class="text-[10px] text-blue-300 tracking-wider whitespace-nowrap">

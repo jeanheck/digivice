@@ -74,7 +74,7 @@ graph TD
 ## DNA Digievolutions
 
 - Dados estáticos em `dna-digievolution.json`: cada DNA DV tem uma ou mais combinações de duas digievoluções (`digievolutions`, ids de `digievolution.json`; Agunimon tem duas) e `order`, que define a ordem de exibição (ordem de liberação no jogo).
-- **Fusão disponível** (`DnaDigievolutionService.hasAvailableFusion`): a digievolução de um slot participa de alguma combinação e a outra digievolução da combinação está em um **slot de digievolução** (`digimon.digievolutions`) de **outro** Digimon da party. `storedDigievolutions` não contam; um único Digimon com as duas digievoluções não ativa a fusão. Quando disponível, o componente de digievolução mostra a marca vermelha à esquerda (nos dois lados da fusão).
+- **Fusão disponível** (`DnaDigievolutionService.hasAvailableFusion`): a digievolução de um slot participa de alguma combinação e a outra digievolução da combinação está em um **slot de digievolução** (`digimon.digievolutions`) de **outro** Digimon da party. `storedDigievolutions` não contam; um único Digimon com as duas digievoluções não ativa a fusão. Quando disponível, o componente de digievolução mostra a marca vermelha à esquerda (nos dois lados da fusão) e um tooltip (`DnaFusionTooltip`, dados de `DnaDigievolutionService.getAvailableFusions`) com a DNA DV, os parceiros (Digimon e digievolução), tipo, elemento e efeito. Sem fusão disponível, não há tooltip.
 - O modal de DNA DV (footer) é só informativo: lista todas as DNA DVs e não usa estado de memória.
 
 ## Batalhas

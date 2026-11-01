@@ -1,6 +1,8 @@
 {
   "dnaDigievolution": {
     "title": "Digievoluções de DNA",
+    "availableTitle": "Digievolução de DNA Disponível",
+    "tagWith": "Faça uma Tag com a evolução {digievolution} do {digimon}",
     "or": "ou",
     "effect": {
       "reviveAndFullHealAll": "Revive e cura totalmente todos os Digimons",

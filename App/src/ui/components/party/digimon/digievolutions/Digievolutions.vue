@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import Modal from "@/ui/components/modal/Modal.vue";
 import DigievolutionTechniques from "@/ui/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
 import type { DigievolutionSlot } from "@/state/models";
 import Digievolution from "./Digievolution.vue";
+import DnaFusionTooltip from "./DnaFusionTooltip.vue";
 import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/digievolution/digievolution-resumed.viewmodel";
+import { DigievolutionPresenter } from "@/presentation/presenters/digievolution/digievolution.presenter";
+import { useGameState } from "@/ui/composables/use-game-state";
+import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
 
-defineProps<{
+const props = defineProps<{
   slots: DigievolutionSlot[];
   activeDigievolutionId: number | null;
   digimonSlotIndex: number;
 }>();
+
+const gameState = useGameState();
 
 const isTechniquesModalOpen = ref(false);
 const selectedDigievolution = ref<DigievolutionResumedViewModel | null>(null);
@@ -22,6 +28,38 @@ function openTechniques(digievolutionResumedViewModel: DigievolutionResumedViewM
 
 function closeTechniques(): void {
   isTechniquesModalOpen.value = false;
+}
+
+const tooltipPlacement = "below" as const;
+const tooltipMaxWidth = 460;
+const tooltipPosition = useTooltipPosition(tooltipMaxWidth);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const hoveredDigievolutionId = ref<number | null>(null);
+
+const availableDnaFusions = computed(() => {
+  if (hoveredDigievolutionId.value === null) {
+    return [];
+  }
+
+  return DigievolutionPresenter.getAvailableDnaFusions(
+    gameState.value.party,
+    props.digimonSlotIndex,
+    hoveredDigievolutionId.value,
+  );
+});
+
+function showTooltip(event: MouseEvent, digievolutionId: number | null): void {
+  hoveredDigievolutionId.value = digievolutionId;
+  showAt(event, { maxWidth: tooltipMaxWidth, placement: tooltipPlacement });
+}
+
+function moveTooltip(event: MouseEvent): void {
+  move(event, tooltipPlacement);
+}
+
+function hideTooltip(): void {
+  hide();
+  hoveredDigievolutionId.value = null;
 }
 </script>
 
@@ -36,6 +74,18 @@ function closeTechniques(): void {
       :active-digievolution-id="activeDigievolutionId"
       :digimon-slot-index="digimonSlotIndex"
       @open-techniques="openTechniques"
+      @show-tooltip="showTooltip($event, slot.digievolutionId)"
+      @move-tooltip="moveTooltip"
+      @hide-tooltip="hideTooltip"
+    />
+
+    <DnaFusionTooltip
+      :show="tooltipShow"
+      :x="tooltipX"
+      :y="tooltipY"
+      :fusions="availableDnaFusions"
+      :max-width="tooltipMaxWidth"
+      :placement="tooltipPlacement"
     />
 
     <Modal

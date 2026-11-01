@@ -49,7 +49,7 @@ Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparênc
 | Posição | `ui/composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`), flip horizontal. Sem conteúdo. |
 | Casca | `ui/components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`maxWidth`/`placement`. Sem mouse. |
 | Casca compacta | `ui/components/tooltip/TinyTooltip.vue` | Variante pequena (batalha); mesmas regras da casca. |
-| Conteúdo | `DefaultTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
+| Conteúdo | `DefaultTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `party/digimon/digievolutions/DnaFusionTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
 
 Fluxo no **pai** (referências: `party/digimon/equipments/Equipments.vue`, `party/digimon/stats/Stats.vue`):
 1. Um `useTooltipPosition(maxWidthOpcional)`; desestruturar `show`, `x`, `y`, `showAt`, `move`, `hide`.
