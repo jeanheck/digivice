@@ -63,6 +63,11 @@ const BossAssetConfig = {
   extension: "webp",
 } as const;
 
+const DriAgentBossAssetConfig = {
+  pathSuffix: "/dri-agents/",
+  extension: "webp",
+} as const;
+
 const StoreAssetConfig = {
   pathSuffix: "/stores/",
   extension: "webp",
@@ -150,6 +155,12 @@ const duelIslandModules = import.meta.glob<string>("@/assets/duel-island/*.webp"
 });
 
 const bossModules = import.meta.glob<string>("@/assets/bosses/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const driAgentBossModules = import.meta.glob<string>("@/assets/dri-agents/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -287,11 +298,14 @@ export class ImageCatalog {
   }
 
   public static getBossImageUrl(imageName: string | null | undefined): string | null {
-    return getImageUrl(
-      bossModules,
-      BossAssetConfig.pathSuffix,
-      BossAssetConfig.extension,
-      imageName,
+    return (
+      getImageUrl(bossModules, BossAssetConfig.pathSuffix, BossAssetConfig.extension, imageName) ??
+      getImageUrl(
+        driAgentBossModules,
+        DriAgentBossAssetConfig.pathSuffix,
+        DriAgentBossAssetConfig.extension,
+        imageName,
+      )
     );
   }
 

@@ -1,16 +1,16 @@
-import type { Quest } from "@/state/models";
+import type { Journal } from "@/state/models";
 import { MapService } from "@/presentation/services/map.service";
 import { MobiusDesertService } from "@/presentation/services/mobius-desert.service";
 import { QuestService } from "@/presentation/services/quest.service";
 import type { DesertAreaMapCellViewModel } from "@/presentation/viewmodels/desert/desert-area-map-cell.viewmodel";
 
 export class MobiusDesertMapPresenter {
-  public static getEnemyIds(locationId: string, mainQuest: Quest): string[] {
+  public static getEnemyIds(locationId: string, journal: Journal): string[] {
     const walkingIds = MapService.getWalkingEnemies(
       locationId,
-      QuestService.getLastCompletedMainQuestStep(mainQuest),
+      QuestService.getLastCompletedMainQuestStep(journal.mainQuest),
     );
-    const bossIds = MapService.getBoss(locationId);
+    const bossIds = MapService.getBoss(locationId, journal);
 
     return [...bossIds, ...walkingIds];
   }

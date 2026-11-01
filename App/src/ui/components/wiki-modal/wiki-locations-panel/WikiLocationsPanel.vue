@@ -21,12 +21,8 @@ const emit = defineEmits<{
 
 const gameState = useGameState();
 
-const mainQuest = computed(() => {
-  return gameState.value.journal.mainQuest;
-});
-
-const sideQuests = computed(() => {
-  return gameState.value.journal.sideQuests;
+const journal = computed(() => {
+  return gameState.value.journal;
 });
 
 const previousMapId = computed(() => {
@@ -36,8 +32,7 @@ const previousMapId = computed(() => {
 const locationsViewModel = computed(() => {
   return WikiLocationsPanelPresenter.getLocationPanelViewModel(
     props.locationId,
-    mainQuest.value,
-    sideQuests.value,
+    journal.value,
     previousMapId.value,
   );
 });

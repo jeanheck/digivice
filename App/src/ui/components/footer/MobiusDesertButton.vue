@@ -16,7 +16,7 @@ const isMobiusDesertModalOpen = ref(false);
 const locationViewModel = computed(() => {
   return MobiusDesertButtonPresenter.getLocation(
     gameState.value.player.mapId,
-    gameState.value.journal.mainQuest,
+    gameState.value.journal,
   );
 });
 

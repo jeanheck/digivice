@@ -28,7 +28,7 @@ const mapVariant = computed(() => {
 });
 
 const enemyIds = computed(() => {
-  return MobiusDesertMapPresenter.getEnemyIds(locationId.value, gameState.value.journal.mainQuest);
+  return MobiusDesertMapPresenter.getEnemyIds(locationId.value, gameState.value.journal);
 });
 
 const isSafeZone = computed(() => {

@@ -107,12 +107,20 @@ graph TD
 - **Auctions** (`AuctionsAssembler`): cada leilão é `bool` = instância consumida (bit em `0x4B38A`). Disponibilidade/janela é calculada no frontend a partir da main quest.
 - **Npcs** (`NpcsAssembler`): cada NPC tem lista fixa de `Battles` (`Id` + `Won`); `Won = Value != 0`. NPCs e batalhas vêm todos no primeiro estado; nunca add/remove em runtime.
 
+## Moments
+
+- Um moment é um intervalo na timeline do jogo: missão de qualquer categoria do Journal (`quest` = id da missão) + `starts` + `ends` opcional (`MomentRaw`).
+- **Ativo** (`MomentService.isActive`): step `starts` feito **e** step `ends` (se houver) não feito. Lê o `isDone` de cada step, sem depender de cascade; missão inexistente = inativo; sem moment = sempre ativo.
+- Uso atual: bosses do `map.json` (`enemies.boss[].moment`), filtrados em `MapService.getBoss` e nos marcadores do mapa da Wiki. Boss sem moment é sempre visível.
+- Generaliza o `MainQuestAvailabilityWindow` (restrito à main quest), que pode migrar para moment no futuro.
+
 ## Journal
 
 - Estrutura das missões em JSON estático; a camada de memória lê o byte na RAM (com `bitMasks`) e expõe `isDone` (bool) no modelo.
 - Categorias: `mainQuest`, `sideQuests`, `legendaryWeapons`, `driAgents`, `duelIsland`.
 - **Cascade Main Quest apenas** (`MainQuestAssembler`): step posterior `IsDone` força anteriores não feitos → `IsDone = true`. Side quests / legendary / DRI = pass-through via `QuestAssembler`.
 - **DRI agents da party inicial:** os Digimons escolhidos no início do jogo ficam só com o step 3 feito na RAM (steps 1–2 e o DDNA do step não marcados). Estado normal do jogo, não inconsistência; vale para qualquer DRI agent cujo Digimon seja inicial. Sem cascade (pass-through).
+- **Bosses de DRI agents** (enemies 403–410): aparecem no mapa (Wiki e AsukaMap) entre os steps 1 e 2 do DRI agent (moment `starts: 1, ends: 2`) e continuam pesquisáveis na Wiki. `regularAttackId`, `techniqueId` e `memoryId` são **provisórios** (copiados do Kunemon); sem o `memoryId` real, o boss não é reconhecido em batalha.
 - **Duel Island** (`DuelIslandAssembler`): requisite não metido → todos steps `IsDone = false`; troféu (último step) `IsDone` → steps anteriores `IsDone = true`.
 - Não aplicar normalizações de uma categoria em outra sem decisão explícita de produto.
 - Todas as missões vêm no primeiro estado; **nunca** add/remove em runtime. Conclusão é calculada no frontend (todos steps/requisitos satisfeitos); não há flag de “missão concluída” na RAM.

@@ -1,5 +1,5 @@
 import { ImageCatalog } from "@/ui/catalogs/image.catalog";
-import type { Quest } from "@/state/models";
+import type { Journal, Quest } from "@/state/models";
 import { MapFrameSlideConverter } from "@/presentation/presenters/converter/map-frame-slide.converter";
 import { LocationEncounterHelper } from "@/presentation/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presentation/presenters/helper/npc-battle-opponent.helper";
@@ -15,6 +15,7 @@ import type { MapNpcRaw } from "@/presentation/repositories/tables/raws/map/map-
 import type { MapCardShopRaw } from "@/presentation/repositories/tables/raws/map/map-card-shop.raw";
 import type { MapTamerRaw } from "@/presentation/repositories/tables/raws/map/map-tamer.raw";
 import type { CoordinatesRaw } from "@/presentation/repositories/tables/raws/quest/coordinates.raw";
+import { MomentService } from "@/presentation/services/moment.service";
 import { QuestService } from "@/presentation/services/quest.service";
 import type { EnemySource } from "@/shared/types/enemy-source.type";
 import type { MapFrameSlideViewModel } from "@/presentation/viewmodels/map-frame/map-frame-slide.viewmodel";
@@ -28,8 +29,7 @@ import type { WikiLocationsPanelViewModel } from "@/presentation/viewmodels/wiki
 export class WikiLocationsPanelPresenter {
   public static getLocationPanelViewModel(
     locationId: string,
-    mainQuest: Quest,
-    sideQuests: Quest[],
+    journal: Journal,
     previousMapId: string,
   ): WikiLocationsPanelViewModel {
     const locationRaw = MapRepository.getMapById(locationId);
@@ -45,20 +45,22 @@ export class WikiLocationsPanelPresenter {
       selectedLocationLabelKey: `map.${locationId}`,
       encounterLines: WikiLocationsPanelPresenter.getEncounterLines(
         locationId,
-        mainQuest,
-        sideQuests,
+        journal.mainQuest,
+        journal.sideQuests,
         previousMapId,
       ),
-      mapMarkers: WikiLocationsPanelPresenter.getMapMarkers(locationId, mainQuest),
+      mapMarkers: WikiLocationsPanelPresenter.getMapMarkers(locationId, journal),
     };
   }
 
   public static getMapMarkers(
     locationId: string,
-    mainQuest: Quest,
+    journal: Journal,
   ): WikiLocationMapMarkerViewModel[] {
     const locationRaw = MapRepository.getMapById(locationId);
-    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
+    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(
+      journal.mainQuest,
+    );
     const markers: WikiLocationMapMarkerViewModel[] = [];
 
     for (const tamer of locationRaw.tamers ?? []) {
@@ -92,6 +94,10 @@ export class WikiLocationsPanelPresenter {
     }
 
     for (const locationBoss of MapBossRepository.getByMapId(locationId)) {
+      if (!MomentService.isActive(locationBoss.moment, journal)) {
+        continue;
+      }
+
       const marker = WikiLocationsPanelPresenter.toBossMapMarker(locationBoss);
       if (marker !== null) {
         markers.push(marker);

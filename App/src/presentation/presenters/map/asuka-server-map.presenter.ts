@@ -1,4 +1,4 @@
-import type { DigimonSlot, ImportantItems, Npc, Npcs, Quest } from "@/state/models";
+import type { DigimonSlot, ImportantItems, Journal, Npc, Npcs } from "@/state/models";
 import { AsukaServerMapConverter } from "@/presentation/presenters/converter/asuka-server-map.converter";
 import { LocationEncounterHelper } from "@/presentation/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presentation/presenters/helper/npc-battle-opponent.helper";
@@ -53,17 +53,21 @@ export class AsukaServerMapPresenter {
 
   public static getViewModel(
     locationId: string,
-    mainQuest: Quest,
-    sideQuests: Quest[],
+    journal: Journal,
     digimonSlots: DigimonSlot[],
     previousMapId: string,
     npcs: Npcs,
     importantItems: ImportantItems,
   ): AsukaServerMapViewModel {
-    const fishingIds = LocationEncounterHelper.resolveFishingIds(locationId, sideQuests);
-    const kickingTreeIds = LocationEncounterHelper.resolveKickingTreeIds(locationId, sideQuests);
-    const bossIds = MapService.getBoss(locationId);
-    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
+    const fishingIds = LocationEncounterHelper.resolveFishingIds(locationId, journal.sideQuests);
+    const kickingTreeIds = LocationEncounterHelper.resolveKickingTreeIds(
+      locationId,
+      journal.sideQuests,
+    );
+    const bossIds = MapService.getBoss(locationId, journal);
+    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(
+      journal.mainQuest,
+    );
     const mapNpcs = this.resolveNpcs(
       locationId,
       lastCompletedMainQuestStep,
@@ -73,7 +77,7 @@ export class AsukaServerMapPresenter {
     );
     const enemyIds = LocationEncounterHelper.resolveWalkingIds(
       locationId,
-      mainQuest,
+      journal.mainQuest,
       previousMapId,
     );
 

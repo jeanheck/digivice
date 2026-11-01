@@ -1,4 +1,6 @@
+import type { Journal } from "@/state/models";
 import type { MapRegion } from "@/shared/types/map-region.type";
+import { MomentService } from "@/presentation/services/moment.service";
 import { MapBossRepository } from "@/presentation/repositories/map-boss.repository";
 import { MapDuelIslandRepository } from "@/presentation/repositories/map-duel-island.repository";
 import { MapNpcRepository } from "@/presentation/repositories/map-npc.repository";
@@ -24,8 +26,10 @@ export class MapService {
     return this.resolvePhasedIds(mapRaw.enemies?.walking ?? [], lastCompletedMainQuestStep);
   }
 
-  public static getBoss(mapId: string): string[] {
-    return MapBossRepository.getIdsByMapId(mapId);
+  public static getBoss(mapId: string, journal: Journal): string[] {
+    return MapBossRepository.getByMapId(mapId)
+      .filter((mapBossRaw) => MomentService.isActive(mapBossRaw.moment, journal))
+      .map((mapBossRaw) => mapBossRaw.id);
   }
 
   public static getFishingEnemies(mapId: string): string[] {

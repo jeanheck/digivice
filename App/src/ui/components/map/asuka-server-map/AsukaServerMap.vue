@@ -18,8 +18,7 @@ const asukaServerMapViewModel = computed(() => {
 
   return AsukaServerMapPresenter.getViewModel(
     state.player.mapId,
-    state.journal.mainQuest,
-    state.journal.sideQuests,
+    state.journal,
     state.party.slots,
     state.player.previousMapId,
     state.npcs,

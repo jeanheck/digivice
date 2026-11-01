@@ -1036,6 +1036,23 @@
       "x": 76.5,
       "y": 24
     },
+    "enemies": {
+      "boss": [
+        {
+          "id": "409",
+          "coordinates": {
+            "x": 14,
+            "y": 90
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentMonmon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    },
     "duelIsland": [
       {
         "id": "divermon1",
@@ -1324,6 +1341,21 @@
       "kickingTree": [
         "184",
         "517"
+      ],
+      "boss": [
+        {
+          "id": "403",
+          "coordinates": {
+            "x": 34,
+            "y": 47
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentAgumon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
       ]
     },
     "tamers": [
@@ -1352,6 +1384,21 @@
       "fishing": [
         "103",
         "516"
+      ],
+      "boss": [
+        {
+          "id": "410",
+          "coordinates": {
+            "x": 17,
+            "y": 26
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentVeemon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
       ]
     },
     "tamers": [
@@ -1522,6 +1569,34 @@
       "kickingTree": [
         "189",
         "517"
+      ],
+      "boss": [
+        {
+          "id": "404",
+          "coordinates": {
+            "x": 79,
+            "y": 31.5
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentGuilmon",
+            "starts": 1,
+            "ends": 2
+          }
+        },
+        {
+          "id": "408",
+          "coordinates": {
+            "x": 21,
+            "y": 60
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentKumamon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
       ]
     }
   },
@@ -1645,6 +1720,21 @@
     "enemies": {
       "walking": [
         "102"
+      ],
+      "boss": [
+        {
+          "id": "407",
+          "coordinates": {
+            "x": 17,
+            "y": 15
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentKotemon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
       ]
     }
   },
@@ -1712,6 +1802,21 @@
       "fishing": [
         "98",
         "518"
+      ],
+      "boss": [
+        {
+          "id": "405",
+          "coordinates": {
+            "x": 91,
+            "y": 74
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentPatamon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
       ]
     },
     "dock": true
@@ -1761,6 +1866,21 @@
       "kickingTree": [
         "193",
         "517"
+      ],
+      "boss": [
+        {
+          "id": "406",
+          "coordinates": {
+            "x": 63,
+            "y": 83
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentRenamon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
       ]
     }
   },
