@@ -5,6 +5,7 @@ export { EquipmentRepository } from "./equipment.repository";
 export { DigimonRepository } from "./digimon.repository";
 export { EnemyRepository } from "./enemy.repository";
 export { DigievolutionRepository } from "./digievolution.repository";
+export { DnaDigievolutionRepository } from "./dna-digievolution.repository";
 export { QuestRepository } from "./quest.repository";
 export { MapRepository } from "./map.repository";
 export { MapNpcRepository } from "./map-npc.repository";

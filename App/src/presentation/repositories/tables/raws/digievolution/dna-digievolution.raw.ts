@@ -4,6 +4,7 @@ export type DnaDigievolutionEffect = "reviveAndFullHealAll" | "strengthDown";
 
 export interface DnaDigievolutionRaw {
   name: string;
+  order: number;
   digievolutions: [number, number][];
   type: TechniqueType;
   element: string;

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import Modal from "@/ui/components/modal/Modal.vue";
+import DnaDigievolutionCard from "@/ui/components/dna-digievolutions-modal/DnaDigievolutionCard.vue";
+import { DnaDigievolutionsModalPresenter } from "@/presentation/presenters/dna-digievolutions-modal/dna-digievolutions-modal.presenter";
 
 defineProps<{
   isOpen: boolean;
@@ -8,6 +11,10 @@ defineProps<{
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
+
+const dnaDigievolutions = computed(() => {
+  return DnaDigievolutionsModalPresenter.getViewModels();
+});
 
 const closeModal = () => {
   emit("close");
@@ -27,5 +34,15 @@ const closeModal = () => {
         {{ $t("dnaDigievolution.title") }}
       </h2>
     </template>
+
+    <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4">
+      <div class="grid grid-cols-2 gap-4">
+        <DnaDigievolutionCard
+          v-for="dnaDigievolution in dnaDigievolutions"
+          :key="dnaDigievolution.id"
+          :dna-digievolution="dnaDigievolution"
+        />
+      </div>
+    </div>
   </Modal>
 </template>

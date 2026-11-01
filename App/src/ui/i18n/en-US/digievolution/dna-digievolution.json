@@ -1,6 +1,8 @@
 {
   "dnaDigievolution": {
     "title": "DNA Digievolutions",
+    "noElement": "No element",
+    "or": "or",
     "effect": {
       "reviveAndFullHealAll": "Revive and fully heal all Digimons",
       "strengthDown": "Lowers the target's strength"

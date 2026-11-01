@@ -1,6 +1,7 @@
 {
   "paildramon": {
     "name": "Paildramon",
+    "order": 3,
     "digievolutions": [[259, 260]],
     "type": "physical",
     "element": "none",
@@ -11,6 +12,7 @@
   },
   "phoenixmon": {
     "name": "Phoenixmon",
+    "order": 5,
     "digievolutions": [[375, 211]],
     "type": "heal",
     "element": "none",
@@ -21,6 +23,7 @@
   },
   "megaGargomon": {
     "name": "MegaGargomon",
+    "order": 4,
     "digievolutions": [[368, 56]],
     "type": "physical",
     "element": "machine",
@@ -31,6 +34,7 @@
   },
   "omnimon": {
     "name": "Omnimon",
+    "order": 6,
     "digievolutions": [[213, 196]],
     "type": "physical",
     "element": "none",
@@ -41,6 +45,7 @@
   },
   "imperialdramonP": {
     "name": "Imperialdramon-P",
+    "order": 7,
     "digievolutions": [[359, 214]],
     "type": "physical",
     "element": "none",
@@ -51,6 +56,7 @@
   },
   "beelzemon": {
     "name": "Beelzemon",
+    "order": 8,
     "digievolutions": [[369, 378]],
     "type": "magical",
     "element": "fire",
@@ -61,6 +67,7 @@
   },
   "diaboromon": {
     "name": "Diaboromon",
+    "order": 9,
     "digievolutions": [[267, 230]],
     "type": "physical",
     "element": "none",
@@ -71,6 +78,7 @@
   },
   "agunimon": {
     "name": "Agunimon",
+    "order": 1,
     "digievolutions": [
       [386, 374],
       [387, 5]
@@ -84,6 +92,7 @@
   },
   "bladeGarurumon": {
     "name": "BladeGarurumon",
+    "order": 2,
     "digievolutions": [[388, 367]],
     "type": "magical",
     "element": "machine",
@@ -94,6 +103,7 @@
   },
   "ancientGreymon": {
     "name": "AncientGreymon",
+    "order": 10,
     "digievolutions": [[381, 151]],
     "type": "magical",
     "element": "fire",
