@@ -43,7 +43,9 @@ export class DigievolutionPresenter {
           ),
           partners: partners.map((partner) => {
             return {
+              digimonId: partner.digimonId,
               digimonName: DigimonRepository.getNameById(partner.digimonId),
+              digievolutionId: partner.digievolutionId,
               digievolutionName: DigievolutionRepository.getNameById(partner.digievolutionId),
             };
           }),

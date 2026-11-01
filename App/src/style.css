@@ -386,6 +386,31 @@ body {
   animation: auction-icon-pulse 1.6s ease-in-out infinite;
 }
 
+@keyframes dna-fusion-pulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.dna-fusion-highlight-border {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #ff5cf4, #1de9b6);
+  animation: dna-fusion-pulse 2.8s ease-in-out infinite;
+}
+
+.dna-fusion-highlight-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 92, 244, 0.18), rgba(29, 233, 182, 0.18));
+  animation: dna-fusion-pulse 2.8s ease-in-out infinite;
+}
+
 @keyframes blast-pulse {
   0%,
   100% {

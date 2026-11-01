@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onBeforeUnmount, ref } from "vue";
 import Modal from "@/ui/components/modal/Modal.vue";
 import DigievolutionTechniques from "@/ui/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
 import type { DigievolutionSlot } from "@/state/models";
@@ -9,14 +9,17 @@ import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/di
 import { DigievolutionPresenter } from "@/presentation/presenters/digievolution/digievolution.presenter";
 import { useGameState } from "@/ui/composables/use-game-state";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
+import { useDnaFusionHighlight } from "@/ui/composables/use-dna-fusion-highlight";
 
 const props = defineProps<{
   slots: DigievolutionSlot[];
   activeDigievolutionId: number | null;
   digimonSlotIndex: number;
+  digimonId: number;
 }>();
 
 const gameState = useGameState();
+const dnaFusionHighlight = useDnaFusionHighlight();
 
 const isTechniquesModalOpen = ref(false);
 const selectedDigievolution = ref<DigievolutionResumedViewModel | null>(null);
@@ -51,6 +54,7 @@ const availableDnaFusions = computed(() => {
 function showTooltip(event: MouseEvent, digievolutionId: number | null): void {
   hoveredDigievolutionId.value = digievolutionId;
   showAt(event, { maxWidth: tooltipMaxWidth, placement: tooltipPlacement });
+  highlightDnaFusion(digievolutionId);
 }
 
 function moveTooltip(event: MouseEvent): void {
@@ -60,7 +64,28 @@ function moveTooltip(event: MouseEvent): void {
 function hideTooltip(): void {
   hide();
   hoveredDigievolutionId.value = null;
+  dnaFusionHighlight.clear();
 }
+
+function highlightDnaFusion(digievolutionId: number | null): void {
+  if (digievolutionId === null) {
+    return;
+  }
+
+  const partners = availableDnaFusions.value.flatMap((fusion) => {
+    return fusion.partners.map((partner) => {
+      return { digimonId: partner.digimonId, digievolutionId: partner.digievolutionId };
+    });
+  });
+
+  dnaFusionHighlight.highlight([{ digimonId: props.digimonId, digievolutionId }, ...partners]);
+}
+
+onBeforeUnmount(() => {
+  if (hoveredDigievolutionId.value !== null) {
+    dnaFusionHighlight.clear();
+  }
+});
 </script>
 
 <template>
@@ -73,6 +98,7 @@ function hideTooltip(): void {
       :digievolution-dvexp="slot.digievolution?.dvexp ?? null"
       :active-digievolution-id="activeDigievolutionId"
       :digimon-slot-index="digimonSlotIndex"
+      :digimon-id="digimonId"
       @open-techniques="openTechniques"
       @show-tooltip="showTooltip($event, slot.digievolutionId)"
       @move-tooltip="moveTooltip"

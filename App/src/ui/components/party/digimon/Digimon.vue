@@ -44,6 +44,7 @@ function closeDigievolutionGrid(): void {
         :slots="digimon.digievolutions"
         :active-digievolution-id="digimon.activeDigievolutionId"
         :digimon-slot-index="slot.index"
+        :digimon-id="digimonId"
       />
       <Stats :digimon="digimon" />
       <Equipments :equipments="digimon.equipments" />

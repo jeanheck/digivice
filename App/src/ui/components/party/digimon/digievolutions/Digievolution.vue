@@ -4,6 +4,11 @@ import DigievolutionDvexp from "@/ui/components/party/digimon/digievolutions/Dig
 import { DigievolutionPresenter } from "@/presentation/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/presentation/viewmodels/digievolution/digievolution-resumed.viewmodel";
 import { useGameState } from "@/ui/composables/use-game-state";
+import { useDnaFusionHighlight } from "@/ui/composables/use-dna-fusion-highlight";
+
+type DnaFusionHighlightMode = "border" | "background" | "both";
+
+const dnaFusionHighlightMode = "both" as DnaFusionHighlightMode;
 
 const props = defineProps<{
   digievolutionId: number | null;
@@ -11,9 +16,11 @@ const props = defineProps<{
   digievolutionDvexp: number | null;
   activeDigievolutionId: number | null;
   digimonSlotIndex: number;
+  digimonId: number;
 }>();
 
 const gameState = useGameState();
+const dnaFusionHighlight = useDnaFusionHighlight();
 
 const emit = defineEmits<{
   (e: "open-techniques", digievolutionResumedViewModel: DigievolutionResumedViewModel): void;
@@ -54,6 +61,22 @@ const hasAvailableDnaFusion = computed(() => {
   );
 });
 
+const isDnaFusionHighlighted = computed(() => {
+  if (isEmpty.value) {
+    return false;
+  }
+
+  return dnaFusionHighlight.isHighlighted(props.digimonId, props.digievolutionId!);
+});
+
+const showsDnaFusionHighlightBorder = computed(() => {
+  return isDnaFusionHighlighted.value && dnaFusionHighlightMode !== "background";
+});
+
+const showsDnaFusionHighlightBackground = computed(() => {
+  return isDnaFusionHighlighted.value && dnaFusionHighlightMode !== "border";
+});
+
 function onMouseEnter(event: MouseEvent): void {
   if (!hasAvailableDnaFusion.value) {
     return;
@@ -90,8 +113,11 @@ function openTechniques(): void {
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
-    <div class="dw3-panel-border dw3-beveled"></div>
+    <div class="dw3-panel-border dw3-beveled">
+      <div v-if="showsDnaFusionHighlightBorder" class="dna-fusion-highlight-border"></div>
+    </div>
     <div class="dw3-panel-inner dw3-beveled">
+      <div v-if="showsDnaFusionHighlightBackground" class="dna-fusion-highlight-background"></div>
       <div v-if="hasAvailableDnaFusion" class="absolute inset-y-0 left-0 w-1 bg-red-400"></div>
     </div>
 
