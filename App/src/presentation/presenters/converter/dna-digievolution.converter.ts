@@ -22,7 +22,7 @@ export class DnaDigievolutionConverter {
       typeImageUrl: imageUrls.typeImageUrl,
       typeKey: `techniqueTypes.${dnaDigievolutionRaw.type}`,
       elementImageUrl: imageUrls.elementImageUrl,
-      elementKey: DnaDigievolutionConverter.getElementKey(dnaDigievolutionRaw),
+      elementKey: DnaDigievolutionConverter.getElementKey(dnaDigievolutionRaw.element),
       mp: dnaDigievolutionRaw.mp,
       effectKey:
         dnaDigievolutionRaw.effect === null
@@ -31,15 +31,11 @@ export class DnaDigievolutionConverter {
     };
   }
 
-  private static getElementKey(dnaDigievolutionRaw: DnaDigievolutionRaw): string | null {
-    if (dnaDigievolutionRaw.type === "heal") {
+  private static getElementKey(element: string): string | null {
+    if (element === "none") {
       return null;
     }
 
-    if (dnaDigievolutionRaw.element === "none") {
-      return "dnaDigievolution.noElement";
-    }
-
-    return `stat.${dnaDigievolutionRaw.element}`;
+    return `stat.${element}`;
   }
 }

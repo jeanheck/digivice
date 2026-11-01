@@ -48,7 +48,7 @@ defineProps<{
         </div>
 
         <div
-          class="flex items-center gap-4 pt-2 border-t border-[#0066cc]/40 text-[10px] uppercase tracking-wider"
+          class="flex items-center gap-4 pt-2 border-t border-[#0066cc]/40 text-[12px] uppercase tracking-wider"
         >
           <span class="flex items-center gap-1.5">
             <img

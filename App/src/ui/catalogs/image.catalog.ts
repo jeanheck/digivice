@@ -23,6 +23,11 @@ const DigievolutionIconAssetConfig = {
   extension: "webp",
 } as const;
 
+const DnaDigievolutionAssetConfig = {
+  pathSuffix: "/dna-digievolutions/",
+  extension: "webp",
+} as const;
+
 const CardAssetConfig = {
   pathSuffix: "/cards/",
   extension: "webp",
@@ -103,6 +108,12 @@ const enemyIconModules = import.meta.glob<string>("@/assets/enemies/*.webp", {
 });
 
 const digievolutionIconModules = import.meta.glob<string>("@/assets/digievolutions/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const dnaDigievolutionModules = import.meta.glob<string>("@/assets/dna-digievolutions/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -213,6 +224,15 @@ export class ImageCatalog {
       DigievolutionIconAssetConfig.pathSuffix,
       DigievolutionIconAssetConfig.extension,
       digievolutionName,
+    );
+  }
+
+  public static getDnaDigievolutionImageUrl(dnaDigievolutionName: string | null): string | null {
+    return getImageUrl(
+      dnaDigievolutionModules,
+      DnaDigievolutionAssetConfig.pathSuffix,
+      DnaDigievolutionAssetConfig.extension,
+      dnaDigievolutionName,
     );
   }
 

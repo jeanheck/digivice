@@ -28,7 +28,7 @@ export class DnaDigievolutionsModalPresenter {
         id,
         dnaDigievolution,
         {
-          imageUrl: ImageCatalog.getDigievolutionImageUrl(dnaDigievolution.name),
+          imageUrl: ImageCatalog.getDnaDigievolutionImageUrl(dnaDigievolution.name),
           typeImageUrl: ImageCatalog.getTechniqueTypeImageUrl(dnaDigievolution.type),
           elementImageUrl:
             dnaDigievolution.element === "none"
