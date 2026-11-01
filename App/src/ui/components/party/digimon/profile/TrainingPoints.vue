@@ -17,7 +17,7 @@ const emit = defineEmits<{
     @mousemove="emit('moveTooltip', $event)"
     @mouseleave="emit('hideTooltip')"
   >
-    <span class="font-emoji-color leading-none text-sm">💪</span>
+    <span class="text-[0.8rem] font-bold text-white leading-none">TP</span>
     <span class="text-[0.8rem] font-bold text-white leading-none">{{ tp }}</span>
   </div>
 </template>

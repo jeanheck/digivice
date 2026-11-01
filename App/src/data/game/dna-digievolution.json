@@ -1,0 +1,105 @@
+{
+  "paildramon": {
+    "name": "Paildramon",
+    "digievolutions": [[259, 260]],
+    "type": "physical",
+    "element": "none",
+    "elementStrength": 0,
+    "mp": 100,
+    "power": 500,
+    "effect": null
+  },
+  "phoenixmon": {
+    "name": "Phoenixmon",
+    "digievolutions": [[375, 211]],
+    "type": "heal",
+    "element": "none",
+    "elementStrength": 0,
+    "mp": 200,
+    "power": 0,
+    "effect": "reviveAndFullHealAll"
+  },
+  "megaGargomon": {
+    "name": "MegaGargomon",
+    "digievolutions": [[368, 56]],
+    "type": "physical",
+    "element": "machine",
+    "elementStrength": 48,
+    "mp": 160,
+    "power": 360,
+    "effect": null
+  },
+  "omnimon": {
+    "name": "Omnimon",
+    "digievolutions": [[213, 196]],
+    "type": "physical",
+    "element": "none",
+    "elementStrength": 0,
+    "mp": 240,
+    "power": 850,
+    "effect": null
+  },
+  "imperialdramonP": {
+    "name": "Imperialdramon-P",
+    "digievolutions": [[359, 214]],
+    "type": "physical",
+    "element": "none",
+    "elementStrength": 0,
+    "mp": 250,
+    "power": 580,
+    "effect": null
+  },
+  "beelzemon": {
+    "name": "Beelzemon",
+    "digievolutions": [[369, 378]],
+    "type": "magical",
+    "element": "fire",
+    "elementStrength": 72,
+    "mp": 320,
+    "power": 600,
+    "effect": null
+  },
+  "diaboromon": {
+    "name": "Diaboromon",
+    "digievolutions": [[267, 230]],
+    "type": "physical",
+    "element": "none",
+    "elementStrength": 0,
+    "mp": 260,
+    "power": 999,
+    "effect": null
+  },
+  "agunimon": {
+    "name": "Agunimon",
+    "digievolutions": [
+      [386, 374],
+      [387, 5]
+    ],
+    "type": "magical",
+    "element": "fire",
+    "elementStrength": 64,
+    "mp": 80,
+    "power": 160,
+    "effect": null
+  },
+  "bladeGarurumon": {
+    "name": "BladeGarurumon",
+    "digievolutions": [[388, 367]],
+    "type": "magical",
+    "element": "machine",
+    "elementStrength": 64,
+    "mp": 80,
+    "power": 160,
+    "effect": null
+  },
+  "ancientGreymon": {
+    "name": "AncientGreymon",
+    "digievolutions": [[381, 151]],
+    "type": "magical",
+    "element": "fire",
+    "elementStrength": 127,
+    "mp": 480,
+    "power": 800,
+    "effect": "strengthDown"
+  }
+}

@@ -22,6 +22,7 @@ import equipmentType from "./equipment/equipment-type.json";
 import consumableItems from "./consumable-item/consumable-item.json";
 import map from "./map.json";
 import technique from "./digievolution/technique.json";
+import dnaDigievolution from "./digievolution/dna-digievolution.json";
 import digivolution from "./digievolution/digievolution.json";
 import journal from "./journal.json";
 import mainQuest from "./quest/main-quest.json";
@@ -77,6 +78,7 @@ export default {
   ...consumableItems,
   ...map,
   ...technique,
+  ...dnaDigievolution,
   ...digivolution,
   ...journal,
   ...mainQuest,
