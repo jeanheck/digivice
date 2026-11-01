@@ -36,6 +36,10 @@ const closeModal = () => {
     </template>
 
     <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4">
+      <p class="text-sm text-white/90 leading-relaxed mb-4">
+        {{ $t("dnaDigievolution.description") }}
+      </p>
+
       <div class="grid grid-cols-2 gap-4">
         <DnaDigievolutionCard
           v-for="dnaDigievolution in dnaDigievolutions"

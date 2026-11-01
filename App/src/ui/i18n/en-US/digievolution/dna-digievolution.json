@@ -1,6 +1,7 @@
 {
   "dnaDigievolution": {
     "title": "DNA Digievolutions",
+    "description": "The list below shows every DNA Digievolution in the game. When one of them becomes available, an indicator will be shown on your Digimons' Digievolutions.",
     "availableTitle": "DNA Digievolution Available",
     "tagWith": "Make a Tag with {digimon}'s {digievolution} digievolution",
     "or": "or",
