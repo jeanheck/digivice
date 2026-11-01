@@ -15,13 +15,17 @@ export class PartyService {
   }
 
   public static getCharisma(party: Party): number {
-    const digimons = party.slots.map((slot) => slot.digimon).filter((digimon) => digimon !== null);
+    const occupiedSlots = party.slots.filter((slot) => slot.digimon !== null);
 
     return Math.sum(
-      digimons.map((digimon) => {
+      occupiedSlots.map((slot) => {
+        const digimon = slot.digimon!;
         const equipmentIds = EquipmentService.getEquipmentIds(digimon.equipments);
         const equipmentsRaws = EquipmentRepository.getEquipmentsByIds(equipmentIds);
-        const charismaBonus = EquipmentService.calculateBonus("charisma", equipmentsRaws);
+        const equipmentSet = EquipmentService.getCompletedSet(slot.digimonId!, equipmentIds);
+        const charismaBonus =
+          EquipmentService.calculateBonus("charisma", equipmentsRaws) +
+          EquipmentService.calculateSetBonus("charisma", equipmentSet);
 
         return StatService.calculateStat(digimon.attributes.charisma, charismaBonus);
       }),

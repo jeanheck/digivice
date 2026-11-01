@@ -5,13 +5,18 @@ export class StatConverter {
   public static convert(
     fromDigimon: number,
     fromEquipaments: number,
+    fromEquipmentSet: number,
     fromDigievolution: number,
   ): StatViewModel {
     return {
       fromDigimon,
       fromEquipaments,
+      fromEquipmentSet,
       fromDigievolution,
-      sumBetweenDigimonAndEquipaments: StatService.calculateStat(fromDigimon, fromEquipaments),
+      sumBetweenDigimonAndEquipaments: StatService.calculateStat(
+        fromDigimon,
+        fromEquipaments + fromEquipmentSet,
+      ),
     };
   }
 }

@@ -109,6 +109,20 @@ body {
   color: transparent;
 }
 
+.text-dw3-metallic {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #e3e8ef 40%,
+    #8d97a6 52%,
+    #dfe4ea 70%,
+    #b4bcc8 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .text-dw3-dna {
   background: linear-gradient(to bottom, #ff5cf4, #1de9b6);
   -webkit-background-clip: text;

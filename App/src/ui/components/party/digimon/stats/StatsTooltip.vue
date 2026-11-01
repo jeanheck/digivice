@@ -12,12 +12,14 @@ const props = withDefaults(
     title: string;
     base: number;
     equip: number;
+    equipmentSet?: number;
     total: number;
     battleDelta?: number;
     maxWidth?: number;
     placement?: TooltipPlacement;
   }>(),
   {
+    equipmentSet: 0,
     battleDelta: 0,
     maxWidth: 280,
     placement: "below",
@@ -25,6 +27,10 @@ const props = withDefaults(
 );
 
 const { t } = useI18n();
+
+const hasEquipmentSet = computed(() => {
+  return props.equipmentSet > 0;
+});
 
 const hasBattleDelta = computed(() => {
   return props.battleDelta !== 0;
@@ -57,6 +63,9 @@ const modifierColorClass = computed(() => {
         <span class="text-[10px] text-gray-400 tracking-normal ml-1">
           (<span class="text-white">{{ base }}</span> +
           <span class="text-[#0077ff] font-bold">{{ equip }}</span>
+          <template v-if="hasEquipmentSet">
+            + <span class="text-dw3-metallic shadow-text-dark font-bold">{{ equipmentSet }}</span>
+          </template>
           <template v-if="hasBattleDelta">
             <template v-if="isBuff"> + </template>
             <template v-else> − </template>
@@ -73,6 +82,11 @@ const modifierColorClass = computed(() => {
         </div>
         <div class="flex justify-between text-xs items-center">
           <span class="text-[#0077ff] font-bold">{{ t("digimon.equipments") }}</span>
+        </div>
+        <div v-if="hasEquipmentSet" class="flex justify-between text-xs items-center">
+          <span class="text-dw3-metallic shadow-text-dark font-bold">{{
+            t("digimon.equipmentSet")
+          }}</span>
         </div>
         <div v-if="hasBattleDelta" class="flex justify-between text-xs items-center">
           <span class="font-bold" :class="modifierColorClass">{{ t("enemy.techniques") }}</span>

@@ -2,6 +2,7 @@ import type { Digimon } from "@/state/models";
 import {
   AttributesConverter,
   type AttributesEquipmentBonuses,
+  type AttributesEquipmentSetBonuses,
 } from "@/presentation/presenters/converter/attributes.converter";
 import {
   ElementsConverter,
@@ -12,12 +13,17 @@ import { DigimonBattleSelector } from "@/state/stores/selectors/digimon-battle.s
 import { DigievolutionRepository } from "@/presentation/repositories/digievolution.repository";
 import { EquipmentRepository } from "@/presentation/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/presentation/repositories/tables/raws/equipment/equipment.raw";
+import type { EquipmentSetRaw } from "@/presentation/repositories/tables/raws/equipment/equipment-set.raw";
 import type { AttributesViewModel } from "@/presentation/viewmodels/digimon/attributes.viewmodel";
 import type { DigimonStatsViewModel } from "@/presentation/viewmodels/digimon/digimon-stats.viewmodel";
 import type { DigievolutionViewModel } from "@/presentation/viewmodels/digievolution/digievolution.viewmodel";
 
 export class StatsPresenter {
-  public static getStatsViewModel(digimon: Digimon, location: string): DigimonStatsViewModel {
+  public static getStatsViewModel(
+    digimon: Digimon,
+    digimonId: number,
+    location: string,
+  ): DigimonStatsViewModel {
     const isInBattle = DigimonBattleSelector.isInBattle(location, digimon.inBattle);
     const activeDigievolution =
       digimon.activeDigievolutionId !== null
@@ -25,10 +31,12 @@ export class StatsPresenter {
         : null;
     const equipmentIds = EquipmentService.getEquipmentIds(digimon.equipments);
     const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
+    const equipmentSet = EquipmentService.getCompletedSet(digimonId, equipmentIds);
     const attributes = AttributesConverter.convert(
       digimon.attributes,
       activeDigievolution?.attributes ?? null,
       this.getAttributesEquipmentBonuses(rawEquipments),
+      this.getAttributesEquipmentSetBonuses(equipmentSet),
     );
 
     return {
@@ -64,6 +72,19 @@ export class StatsPresenter {
       wisdom: EquipmentService.calculateBonus("wisdom", rawEquipments),
       speed: EquipmentService.calculateBonus("speed", rawEquipments),
       charisma: EquipmentService.calculateBonus("charisma", rawEquipments),
+    };
+  }
+
+  private static getAttributesEquipmentSetBonuses(
+    equipmentSet: EquipmentSetRaw | null,
+  ): AttributesEquipmentSetBonuses {
+    return {
+      strength: EquipmentService.calculateSetBonus("strength", equipmentSet),
+      defense: EquipmentService.calculateSetBonus("defense", equipmentSet),
+      spirit: EquipmentService.calculateSetBonus("spirit", equipmentSet),
+      wisdom: EquipmentService.calculateSetBonus("wisdom", equipmentSet),
+      speed: EquipmentService.calculateSetBonus("speed", equipmentSet),
+      charisma: EquipmentService.calculateSetBonus("charisma", equipmentSet),
     };
   }
 

@@ -1,6 +1,9 @@
 import type { Equipments } from "@/state/models";
 import { EquipmentRepository } from "@/presentation/repositories/equipment.repository";
+import { EquipmentSetRepository } from "@/presentation/repositories/equipment-set.repository";
 import type { EquipmentRaw } from "@/presentation/repositories/tables/raws/equipment/equipment.raw";
+import type { EquipmentAttributeRaw } from "@/presentation/repositories/tables/raws/equipment/equipment-attribute.raw";
+import type { EquipmentSetRaw } from "@/presentation/repositories/tables/raws/equipment/equipment-set.raw";
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 
 const TwoHandedWeaponType = "twoHandedWeapon";
@@ -34,14 +37,49 @@ export class EquipmentService {
   }
 
   public static calculateBonus(stat: DigimonStat, equipmentsRaws: EquipmentRaw[]): number {
-    const equipmentAttributeRaws = equipmentsRaws
-      .flatMap((equipmentRaw) => equipmentRaw.attributes)
-      .filter((equipmentAttributeRaw) => equipmentAttributeRaw.attribute === stat);
+    return EquipmentService.sumAttributes(
+      stat,
+      equipmentsRaws.flatMap((equipmentRaw) => equipmentRaw.attributes),
+    );
+  }
 
+  public static getCompletedSet(
+    digimonId: number,
+    equipmentIds: number[],
+  ): EquipmentSetRaw | null {
+    const equipmentSet = EquipmentSetRepository.getByDigimonId(digimonId);
+    if (!equipmentSet) {
+      return null;
+    }
+
+    const isCompleted = equipmentSet.equipments.every((equipmentId) =>
+      equipmentIds.includes(equipmentId),
+    );
+
+    return isCompleted ? equipmentSet : null;
+  }
+
+  public static calculateSetBonus(
+    stat: DigimonStat,
+    equipmentSet: EquipmentSetRaw | null,
+  ): number {
+    if (equipmentSet === null) {
+      return 0;
+    }
+
+    return EquipmentService.sumAttributes(stat, equipmentSet.attributes);
+  }
+
+  private static sumAttributes(
+    stat: DigimonStat,
+    equipmentAttributeRaws: EquipmentAttributeRaw[],
+  ): number {
     return Math.sum(
-      equipmentAttributeRaws.map((equipmentAttributeRaw) => {
-        return Number(`${equipmentAttributeRaw.type}${equipmentAttributeRaw.value}`);
-      }),
+      equipmentAttributeRaws
+        .filter((equipmentAttributeRaw) => equipmentAttributeRaw.attribute === stat)
+        .map((equipmentAttributeRaw) => {
+          return Number(`${equipmentAttributeRaw.type}${equipmentAttributeRaw.value}`);
+        }),
     );
   }
 }

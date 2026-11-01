@@ -13,6 +13,7 @@ import { useGameState } from "@/ui/composables/use-game-state";
 
 const props = defineProps<{
   digimon: Digimon;
+  digimonId: number;
 }>();
 
 const gameState = useGameState();
@@ -26,14 +27,21 @@ const activeVariant = ref<TooltipVariant>("none");
 
 const defaultTooltipContent = ref({ title: "", text: "" });
 const titleTooltipContent = ref("");
-const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0, battleDelta: 0 });
+const mathTooltipContent = ref({
+  title: "",
+  base: 0,
+  equip: 0,
+  equipmentSet: 0,
+  total: 0,
+  battleDelta: 0,
+});
 
 const location = computed(() => {
   return gameState.value.player.mapId;
 });
 
 const statsViewModel = computed(() => {
-  return StatsPresenter.getStatsViewModel(props.digimon, location.value);
+  return StatsPresenter.getStatsViewModel(props.digimon, props.digimonId, location.value);
 });
 
 const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
@@ -61,10 +69,11 @@ const showMathTooltip = (
   title: string,
   base: number,
   equip: number,
+  equipmentSet: number,
   total: number,
   battleDelta: number,
 ) => {
-  mathTooltipContent.value = { title, base, equip, total, battleDelta };
+  mathTooltipContent.value = { title, base, equip, equipmentSet, total, battleDelta };
   activeVariant.value = "math";
   showAt(event, { placement: tooltipPlacement });
 };
@@ -143,6 +152,7 @@ const moveTooltip = (event: MouseEvent) => {
       :title="mathTooltipContent.title"
       :base="mathTooltipContent.base"
       :equip="mathTooltipContent.equip"
+      :equipment-set="mathTooltipContent.equipmentSet"
       :total="mathTooltipContent.total"
       :battle-delta="mathTooltipContent.battleDelta"
       placement="below"

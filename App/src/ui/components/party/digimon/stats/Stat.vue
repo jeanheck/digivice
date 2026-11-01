@@ -18,6 +18,7 @@ const emit = defineEmits<{
     title: string,
     base: number,
     equip: number,
+    equipmentSet: number,
     total: number,
     battleDelta: number,
   ): void;
@@ -48,16 +49,20 @@ const displayValue = computed(() => {
   return props.statViewModel.sumBetweenDigimonAndEquipaments + battleDelta.value;
 });
 
-const buffOrDebuffClass = computed(() => {
+const valueClass = computed(() => {
   if (battleDelta.value > 0) {
-    return "text-green-400";
+    return "text-green-400 shadow-text";
   }
 
   if (battleDelta.value < 0) {
-    return "text-red-400";
+    return "text-red-400 shadow-text";
   }
 
-  return "";
+  if (props.statViewModel.fromEquipmentSet > 0) {
+    return "text-dw3-metallic shadow-text-dark";
+  }
+
+  return "shadow-text";
 });
 </script>
 
@@ -79,8 +84,8 @@ const buffOrDebuffClass = computed(() => {
 
     <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-[12px] fhdscaled:text-base">
       <span
-        class="min-w-[3ch] text-right tabular-nums shadow-text cursor-help"
-        :class="buffOrDebuffClass"
+        class="min-w-[3ch] text-right tabular-nums cursor-help"
+        :class="valueClass"
         @mouseenter="
           (event) =>
             emit(
@@ -89,6 +94,7 @@ const buffOrDebuffClass = computed(() => {
               label,
               statViewModel.fromDigimon,
               statViewModel.fromEquipaments,
+              statViewModel.fromEquipmentSet,
               displayValue,
               battleDelta,
             )

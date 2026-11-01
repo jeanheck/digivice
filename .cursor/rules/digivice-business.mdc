@@ -90,7 +90,8 @@ graph TD
   - Hazard (Guilmon): +10 em sabedoria e velocidade, +20 em carisma.
   - Yin Yang (Renamon): +10 em força e espírito, +20 em carisma.
   - Divino (Patamon): +10 em defesa e sabedoria, +20 em carisma.
-- O bônus do conjunto entra no total de carisma da party (`PartyService`) e respeita o teto de 999 do `StatService` (teto provisório, a confirmar no jogo).
+- Conjunto completo (`EquipmentService.getCompletedSet`): todas as peças estão em `EquipmentService.getEquipmentIds`. O bônus (`calculateSetBonus`) é somado ao total do stat junto com os equipamentos, respeitando o teto de 999 do `StatService` (teto provisório, a confirmar no jogo), e entra no total de carisma da party (`PartyService.getCharisma`).
+- UI (`Stat.vue`): valor com bônus de conjunto em prata metálico (`text-dw3-metallic`); em batalha, o verde/vermelho de buff/debuff tem prioridade. O `StatsTooltip` mostra a parcela do conjunto na fórmula e na legenda.
 
 ## Batalhas
 
