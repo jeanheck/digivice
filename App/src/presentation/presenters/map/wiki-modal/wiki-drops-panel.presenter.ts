@@ -4,6 +4,7 @@ import { DuelIslandRepository } from "@/presentation/repositories/duel-island.re
 import { EnemyOwnerRepository } from "@/presentation/repositories/enemy-owner.repository";
 import { EnemyRepository } from "@/presentation/repositories/enemy.repository";
 import { TamerRepository } from "@/presentation/repositories/tamer.repository";
+import { WeaponShopRepository } from "@/presentation/repositories/weapon-shop.repository";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/shared/types/drop-source-kind.type";
 import type { DropSourceViewModel } from "@/presentation/viewmodels/drop/drop-source.viewmodel";
@@ -39,6 +40,8 @@ export class WikiDropsPanelPresenter {
       sources,
       sourcesSectionLabelKey: "enemy.droppedBy",
       sourcesEmptyLabelKey: isBooster ? "enemy.dropSourcesNone" : "enemy.droppedByNone",
+      weaponShopIds:
+        dropType === "equipment" ? WeaponShopRepository.getWeaponShopIdsByEquipmentId(dropId) : [],
     };
   }
 

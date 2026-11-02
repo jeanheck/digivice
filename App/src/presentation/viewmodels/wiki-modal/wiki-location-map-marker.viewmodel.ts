@@ -1,7 +1,7 @@
 import type { LabelPlacement } from "@/shared/types/label-placement.type";
 import type { CoordinatesViewModel } from "@/presentation/viewmodels/quest/coordinates.viewmodel";
 
-export type WikiLocationMapMarkerKindViewModel = "npc" | "boss" | "cardShop";
+export type WikiLocationMapMarkerKindViewModel = "npc" | "boss" | "cardShop" | "weaponShop";
 
 export interface WikiLocationMapMarkerViewModel {
   id: string;

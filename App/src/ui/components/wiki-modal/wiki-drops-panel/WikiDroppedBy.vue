@@ -22,7 +22,7 @@ const handleSelect = (source: WikiDroppedBySourceViewModel): void => {
 </script>
 
 <template>
-  <section class="shrink-0 w-full bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner">
+  <section class="shrink-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner">
     <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-3">
       {{ $t(sectionLabelKey) }}
     </h4>

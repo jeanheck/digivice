@@ -5,5 +5,6 @@ export interface WeaponShopInventoryItemRaw {
 
 export interface WeaponShopRaw {
   locationId: string;
+  imageName?: string;
   inventory: WeaponShopInventoryItemRaw[];
 }

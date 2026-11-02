@@ -7,4 +7,5 @@ export interface WikiDropsPanelViewModel {
   sources: WikiDroppedBySourceViewModel[];
   sourcesSectionLabelKey: string;
   sourcesEmptyLabelKey: string;
+  weaponShopIds: string[];
 }

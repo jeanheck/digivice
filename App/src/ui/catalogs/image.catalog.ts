@@ -320,7 +320,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getCardShopImageUrl(imageName: string | null | undefined): string | null {
+  public static getShopImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       shopModules,
       ShopAssetConfig.pathSuffix,

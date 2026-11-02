@@ -12,7 +12,8 @@ import { CardShopRepository } from "@/presentation/repositories/card-shop.reposi
 import type { MapBossRaw } from "@/presentation/repositories/tables/raws/map/map-boss.raw";
 import type { MapDuelIslandRaw } from "@/presentation/repositories/tables/raws/map/map-duel-island.raw";
 import type { MapNpcRaw } from "@/presentation/repositories/tables/raws/map/map-npc.raw";
-import type { MapCardShopRaw } from "@/presentation/repositories/tables/raws/map/map-card-shop.raw";
+import type { MapShopRaw } from "@/presentation/repositories/tables/raws/map/map-shop.raw";
+import { WeaponShopRepository } from "@/presentation/repositories/weapon-shop.repository";
 import type { MapTamerRaw } from "@/presentation/repositories/tables/raws/map/map-tamer.raw";
 import type { CoordinatesRaw } from "@/presentation/repositories/tables/raws/quest/coordinates.raw";
 import { MomentService } from "@/presentation/services/moment.service";
@@ -111,6 +112,13 @@ export class WikiLocationsPanelPresenter {
       }
     }
 
+    for (const locationWeaponShop of locationRaw.weaponShops ?? []) {
+      const marker = WikiLocationsPanelPresenter.toWeaponShopMapMarker(locationWeaponShop);
+      if (marker !== null) {
+        markers.push(marker);
+      }
+    }
+
     return markers.sort((first, second) => {
       return first.id.localeCompare(second.id);
     });
@@ -155,7 +163,7 @@ export class WikiLocationsPanelPresenter {
     };
   }
 
-  private static toCardShopMapMarker(entry: MapCardShopRaw): WikiLocationMapMarkerViewModel | null {
+  private static toCardShopMapMarker(entry: MapShopRaw): WikiLocationMapMarkerViewModel | null {
     if (entry.coordinates === undefined) {
       return null;
     }
@@ -169,7 +177,27 @@ export class WikiLocationsPanelPresenter {
       id: entry.id,
       kind: "cardShop",
       nameKey: `cardShop.${entry.id}.name`,
-      imageUrl: ImageCatalog.getCardShopImageUrl(cardShopRaw.imageName),
+      imageUrl: ImageCatalog.getShopImageUrl(cardShopRaw.imageName),
+      coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
+      labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
+    };
+  }
+
+  private static toWeaponShopMapMarker(entry: MapShopRaw): WikiLocationMapMarkerViewModel | null {
+    if (entry.coordinates === undefined) {
+      return null;
+    }
+
+    const weaponShopRaw = WeaponShopRepository.getById(entry.id);
+    if (weaponShopRaw === undefined) {
+      return null;
+    }
+
+    return {
+      id: entry.id,
+      kind: "weaponShop",
+      nameKey: `weaponShop.${entry.id}.name`,
+      imageUrl: ImageCatalog.getShopImageUrl(weaponShopRaw.imageName),
       coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
       labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
     };

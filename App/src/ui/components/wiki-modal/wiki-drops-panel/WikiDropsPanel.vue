@@ -4,6 +4,7 @@ import WikiDropBooster from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDro
 import WikiDropConsumableItem from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDropConsumableItem.vue";
 import WikiDropEquipment from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDropEquipment.vue";
 import WikiDroppedBy from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDroppedBy.vue";
+import WikiEquipmentShops from "@/ui/components/wiki-modal/wiki-drops-panel/WikiEquipmentShops.vue";
 import { WikiDropsPanelPresenter } from "@/presentation/presenters/map/wiki-modal/wiki-drops-panel.presenter";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/shared/types/drop-source-kind.type";
@@ -16,6 +17,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-source", payload: { kind: DropSourceKind; sourceId: string }): void;
   (e: "open-card", cardId: string): void;
+  (e: "open-weapon-shop", weaponShopId: string): void;
 }>();
 
 const dropsViewModel = computed(() => {
@@ -28,6 +30,10 @@ const handleOpenSource = (payload: { kind: DropSourceKind; sourceId: string }): 
 
 const handleOpenCard = (cardId: string): void => {
   emit("open-card", cardId);
+};
+
+const handleOpenWeaponShop = (weaponShopId: string): void => {
+  emit("open-weapon-shop", weaponShopId);
 };
 </script>
 
@@ -51,7 +57,22 @@ const handleOpenCard = (cardId: string): void => {
       />
     </section>
 
+    <div v-if="dropsViewModel.dropType === 'equipment'" class="flex gap-4 shrink-0 w-full">
+      <WikiDroppedBy
+        class="w-1/2"
+        :sources="dropsViewModel.sources"
+        :section-label-key="dropsViewModel.sourcesSectionLabelKey"
+        :empty-label-key="dropsViewModel.sourcesEmptyLabelKey"
+        @open-source="handleOpenSource"
+      />
+      <WikiEquipmentShops
+        :weapon-shop-ids="dropsViewModel.weaponShopIds"
+        @open-weapon-shop="handleOpenWeaponShop"
+      />
+    </div>
     <WikiDroppedBy
+      v-else
+      class="w-full"
       :sources="dropsViewModel.sources"
       :section-label-key="dropsViewModel.sourcesSectionLabelKey"
       :empty-label-key="dropsViewModel.sourcesEmptyLabelKey"

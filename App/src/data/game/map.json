@@ -599,7 +599,17 @@
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "weaponShops": [
+      {
+        "id": "asukaArsenal",
+        "coordinates": {
+          "x": 49,
+          "y": 72
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "020E": {
     "imageName": "Junk Shop",

@@ -296,6 +296,10 @@ const openCardShopsView = (cardShopId: string) => {
   navigateTo("cardShops", cardShopId);
 };
 
+const openWeaponShopsView = (weaponShopId: string) => {
+  navigateTo("weaponShops", weaponShopId);
+};
+
 const openEnemyFromDropSource = (enemyId: string) => {
   const npcContext = WikiModalPresenter.resolveNpcBattleFromEnemyId(enemyId);
   if (npcContext !== null) {
@@ -435,6 +439,7 @@ const enemyImageUrl = computed(() => {
       :drop-type="selectedDropType"
       @open-source="openDropSource"
       @open-card="openCardFromBooster"
+      @open-weapon-shop="openWeaponShopsView"
     />
     <WikiCardPanel
       v-else-if="view === 'cards' && selectedCardId !== null"
@@ -460,6 +465,7 @@ const enemyImageUrl = computed(() => {
       @open-enemy="openEnemyFromDropSource"
       @open-npc="openNpcView"
       @open-card-shop="openCardShopsView"
+      @open-weapon-shop="openWeaponShopsView"
     />
     <WikiNpcPanel
       v-else-if="view === 'npc' && selectedNpcId !== null"

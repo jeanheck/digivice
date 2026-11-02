@@ -1,8 +1,8 @@
 import { MapRepository } from "@/presentation/repositories/map.repository";
-import type { MapCardShopRaw } from "@/presentation/repositories/tables/raws/map/map-card-shop.raw";
+import type { MapShopRaw } from "@/presentation/repositories/tables/raws/map/map-shop.raw";
 
 export class MapCardShopRepository {
-  public static getByMapId(mapId: string): MapCardShopRaw[] {
+  public static getByMapId(mapId: string): MapShopRaw[] {
     return MapRepository.getMapById(mapId).cardShops ?? [];
   }
 
