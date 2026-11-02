@@ -4,6 +4,7 @@ import type { WikiWeaponShopItemAttributeViewModel } from "@/presentation/viewmo
 export interface WikiWeaponShopItemViewModel {
   equipmentId: string;
   price: number;
+  imageUrl: string | null;
   equipment: EquipmentViewModel;
   attributes: WikiWeaponShopItemAttributeViewModel[];
 }

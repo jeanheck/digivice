@@ -20,7 +20,12 @@ const handleSelect = (): void => {
     class="flex items-start gap-3 w-full px-3 py-2 rounded text-left transition-colors cursor-pointer bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/60"
     @click="handleSelect"
   >
-    <span class="font-emoji-color text-2xl leading-none shrink-0">&#x2694;</span>
+    <img
+      v-if="item.imageUrl"
+      :src="item.imageUrl"
+      :alt="$t(`equipments.${item.equipmentId}.name`)"
+      class="w-[25px] h-[27px] shrink-0 object-contain rendering-pixelated"
+    />
     <span class="flex flex-col gap-1 flex-1 min-w-0">
       <span class="flex items-start justify-between gap-2">
         <span class="flex items-baseline gap-2 min-w-0">

@@ -68,8 +68,13 @@ const DriAgentBossAssetConfig = {
   extension: "webp",
 } as const;
 
-const StoreAssetConfig = {
-  pathSuffix: "/stores/",
+const ShopAssetConfig = {
+  pathSuffix: "/shops/",
+  extension: "webp",
+} as const;
+
+const WeaponAssetConfig = {
+  pathSuffix: "/weapons/",
   extension: "webp",
 } as const;
 
@@ -166,7 +171,13 @@ const driAgentBossModules = import.meta.glob<string>("@/assets/dri-agents/*.webp
   import: "default",
 });
 
-const storeModules = import.meta.glob<string>("@/assets/stores/*.webp", {
+const shopModules = import.meta.glob<string>("@/assets/shops/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const weaponModules = import.meta.glob<string>("@/assets/weapons/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -311,9 +322,18 @@ export class ImageCatalog {
 
   public static getCardShopImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
-      storeModules,
-      StoreAssetConfig.pathSuffix,
-      StoreAssetConfig.extension,
+      shopModules,
+      ShopAssetConfig.pathSuffix,
+      ShopAssetConfig.extension,
+      imageName,
+    );
+  }
+
+  public static getWeaponImageUrl(imageName: string | null | undefined): string | null {
+    return getImageUrl(
+      weaponModules,
+      WeaponAssetConfig.pathSuffix,
+      WeaponAssetConfig.extension,
       imageName,
     );
   }

@@ -37,6 +37,7 @@ export class WikiWeaponShopPanelPresenter {
     return {
       equipmentId: inventoryItem.equipmentId,
       price: inventoryItem.price,
+      imageUrl: ImageCatalog.getWeaponImageUrl(equipmentRaw.imageName),
       equipment,
       attributes: equipment.attributes.map((equipmentAttribute) => {
         return {
