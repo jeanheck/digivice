@@ -37,7 +37,8 @@
       },
       {
         "mainQuestAvailabilityWindow": {
-          "starts": 27
+          "starts": 27,
+          "ends": 88
         },
         "inventory": [
           {
@@ -65,6 +66,37 @@
             "price": 1000
           }
         ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 88
+        },
+        "inventory": [
+          {
+            "cardId": "1208",
+            "price": 4400
+          },
+          {
+            "cardId": "1166",
+            "price": 3300
+          },
+          {
+            "cardId": "1081",
+            "price": 3000
+          },
+          {
+            "cardId": "1127",
+            "price": 3000
+          },
+          {
+            "cardId": "1029",
+            "price": 4000
+          },
+          {
+            "cardId": "1058",
+            "price": 1000
+          }
+        ]
       }
     ]
   },
@@ -74,7 +106,8 @@
     "phases": [
       {
         "mainQuestAvailabilityWindow": {
-          "starts": 0
+          "starts": 0,
+          "ends": 88
         },
         "inventory": [
           {
@@ -102,6 +135,37 @@
             "price": 1000
           }
         ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 88
+        },
+        "inventory": [
+          {
+            "cardId": "1208",
+            "price": 4400
+          },
+          {
+            "cardId": "1166",
+            "price": 3300
+          },
+          {
+            "cardId": "1251",
+            "price": 4400
+          },
+          {
+            "cardId": "1081",
+            "price": 3000
+          },
+          {
+            "cardId": "1127",
+            "price": 3000
+          },
+          {
+            "cardId": "1258",
+            "price": 1000
+          }
+        ]
       }
     ]
   },
@@ -111,7 +175,8 @@
     "phases": [
       {
         "mainQuestAvailabilityWindow": {
-          "starts": 0
+          "starts": 0,
+          "ends": 88
         },
         "inventory": [
           {
@@ -137,6 +202,37 @@
           {
             "cardId": "1029",
             "price": 4000
+          }
+        ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 88
+        },
+        "inventory": [
+          {
+            "cardId": "1208",
+            "price": 4400
+          },
+          {
+            "cardId": "1166",
+            "price": 3300
+          },
+          {
+            "cardId": "1251",
+            "price": 4400
+          },
+          {
+            "cardId": "1081",
+            "price": 3000
+          },
+          {
+            "cardId": "1127",
+            "price": 3000
+          },
+          {
+            "cardId": "1258",
+            "price": 1000
           }
         ]
       }
