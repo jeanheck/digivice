@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import WikiCardShopInventory from "@/ui/components/wiki-modal/wiki-card-shop-panel/WikiCardShopInventory.vue";
-import WikiCardShopLocatedIn from "@/ui/components/wiki-modal/wiki-card-shop-panel/WikiCardShopLocatedIn.vue";
+import WikiLocatedIn from "@/ui/components/wiki-modal/WikiLocatedIn.vue";
 import { WikiCardShopPanelPresenter } from "@/presentation/presenters/map/wiki-modal/wiki-card-shop-panel.presenter";
 import { useGameState } from "@/ui/composables/use-game-state";
 
@@ -41,7 +41,7 @@ const handleOpenLocation = (locationId: string): void => {
       <WikiCardShopInventory :cards="cardShopViewModel.cards" @open-card="handleOpenCard" />
     </section>
 
-    <WikiCardShopLocatedIn
+    <WikiLocatedIn
       v-if="cardShopViewModel.locationId !== null"
       :location-id="cardShopViewModel.locationId"
       @open-location="handleOpenLocation"

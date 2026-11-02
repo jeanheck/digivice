@@ -1,0 +1,51 @@
+{
+  "asukaArsenal": {
+    "locationId": "020D",
+    "inventory": [
+      {
+        "equipmentId": "92",
+        "price": 200
+      },
+      {
+        "equipmentId": "157",
+        "price": 200
+      },
+      {
+        "equipmentId": "190",
+        "price": 150
+      },
+      {
+        "equipmentId": "226",
+        "price": 60
+      },
+      {
+        "equipmentId": "249",
+        "price": 70
+      },
+      {
+        "equipmentId": "275",
+        "price": 80
+      },
+      {
+        "equipmentId": "106",
+        "price": 200
+      },
+      {
+        "equipmentId": "167",
+        "price": 150
+      },
+      {
+        "equipmentId": "215",
+        "price": 40
+      },
+      {
+        "equipmentId": "236",
+        "price": 80
+      },
+      {
+        "equipmentId": "262",
+        "price": 150
+      }
+    ]
+  }
+}

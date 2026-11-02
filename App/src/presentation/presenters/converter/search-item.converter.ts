@@ -87,6 +87,14 @@ export class SearchItemConverter {
     };
   }
 
+  public static convertWeaponShop(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "weaponShop",
+    };
+  }
+
   public static convertTamer(id: string, translatedName: string): SearchItemViewModel {
     return {
       id,

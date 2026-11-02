@@ -52,16 +52,20 @@ export class SearchItemSortHelper {
       return 4;
     }
 
-    if (kind === "tamer") {
+    if (kind === "weaponShop") {
       return 5;
     }
 
-    if (kind === "leader") {
+    if (kind === "tamer") {
       return 6;
     }
 
-    if (kind === "npc") {
+    if (kind === "leader") {
       return 7;
+    }
+
+    if (kind === "npc") {
+      return 8;
     }
 
     return 99;

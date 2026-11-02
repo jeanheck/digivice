@@ -11,6 +11,7 @@
       "card": "Carta",
       "location": "Lugar",
       "cardShop": "Tienda",
+      "weaponShop": "Tienda de armas",
       "tamer": "Tamer",
       "leader": "Líder",
       "npc": "NPC"
@@ -29,7 +30,6 @@
     "soldInStoreNo": "No",
     "type": "Tipo",
     "boosterCardsLabel": "Cartas que se pueden obtener en este sobre",
-    "storeCardsLabel": "Cartas que se pueden comprar en esta tienda",
     "locatedIn": "Ubicado en",
     "obtainedFromNone": "Ningún sobre conocido",
     "dropSourcesNone": "Ninguna fuente conocida",

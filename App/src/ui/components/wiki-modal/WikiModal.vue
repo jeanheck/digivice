@@ -8,6 +8,7 @@ import WikiCardPanel from "@/ui/components/wiki-modal/wiki-card-panel/WikiCardPa
 import WikiLocationsPanel from "@/ui/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
 import WikiNpcPanel from "@/ui/components/wiki-modal/wiki-npc-panel/WikiNpcPanel.vue";
 import WikiCardShopPanel from "@/ui/components/wiki-modal/wiki-card-shop-panel/WikiCardShopPanel.vue";
+import WikiWeaponShopPanel from "@/ui/components/wiki-modal/wiki-weapon-shop-panel/WikiWeaponShopPanel.vue";
 import SearchBar from "@/ui/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
@@ -30,7 +31,7 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type WikiView = "enemy" | "drops" | "cards" | "locations" | "npc" | "cardShops";
+type WikiView = "enemy" | "drops" | "cards" | "locations" | "npc" | "cardShops" | "weaponShops";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
@@ -40,6 +41,7 @@ const selectedLocationId = ref<string | null>(null);
 const selectedNpcId = ref<string | null>(null);
 const initialNpcBattleOptionId = ref<string | null>(null);
 const selectedCardShopId = ref<string | null>(null);
+const selectedWeaponShopId = ref<string | null>(null);
 const view = ref<WikiView>("enemy");
 
 const isModalOpen = computed(() => {
@@ -50,7 +52,8 @@ const isModalOpen = computed(() => {
       selectedCardId.value !== null ||
       selectedLocationId.value !== null ||
       selectedNpcId.value !== null ||
-      selectedCardShopId.value !== null)
+      selectedCardShopId.value !== null ||
+      selectedWeaponShopId.value !== null)
   );
 });
 
@@ -74,6 +77,10 @@ const isCardShopsView = computed(() => {
   return view.value === "cardShops";
 });
 
+const isWeaponShopsView = computed(() => {
+  return view.value === "weaponShops";
+});
+
 const handleClose = () => {
   emit("close");
 };
@@ -91,6 +98,9 @@ const allSearchItems = computed(() => {
     },
     (cardShopId) => {
       return t(`cardShop.${cardShopId}.name`);
+    },
+    (weaponShopId) => {
+      return t(`weaponShop.${weaponShopId}.name`);
     },
     (tamerId) => {
       return t(`tamers.${tamerId}.name`);
@@ -125,6 +135,10 @@ const selectedSearchId = computed(() => {
     return selectedCardShopId.value;
   }
 
+  if (isWeaponShopsView.value && selectedWeaponShopId.value !== null) {
+    return selectedWeaponShopId.value;
+  }
+
   return selectedEnemyId.value ?? undefined;
 });
 
@@ -143,6 +157,10 @@ const selectedSearchKind = computed((): SearchItemKind | undefined => {
 
   if (isCardShopsView.value) {
     return "cardShop";
+  }
+
+  if (isWeaponShopsView.value) {
+    return "weaponShop";
   }
 
   if (isNpcView.value) {
@@ -168,6 +186,7 @@ function clearSelection(): void {
   selectedLocationId.value = null;
   selectedNpcId.value = null;
   selectedCardShopId.value = null;
+  selectedWeaponShopId.value = null;
   initialNpcBattleOptionId.value = null;
 }
 
@@ -203,6 +222,11 @@ function navigateTo(
 
   if (nextView === "cardShops") {
     selectedCardShopId.value = id;
+    return;
+  }
+
+  if (nextView === "weaponShops") {
+    selectedWeaponShopId.value = id;
     return;
   }
 
@@ -250,6 +274,11 @@ const handleSearchSelect = (payload: { id: string; kind?: SearchItemKind }) => {
     return;
   }
 
+  if (kind === "weaponShop") {
+    navigateTo("weaponShops", id);
+    return;
+  }
+
   if (WikiModalPresenter.isNpcSearchKind(kind)) {
     openNpcView(id);
   }
@@ -288,6 +317,10 @@ const openDropSource = (payload: { kind: DropSourceKind; sourceId: string }) => 
 
 const openCardFromBooster = (cardId: string) => {
   navigateTo("cards", cardId);
+};
+
+const openEquipmentFromWeaponShop = (equipmentId: string) => {
+  openDropsView({ dropId: equipmentId, dropType: "equipment" });
 };
 
 const enemy = computed(() => {
@@ -413,6 +446,12 @@ const enemyImageUrl = computed(() => {
       v-else-if="view === 'cardShops' && selectedCardShopId !== null"
       :card-shop-id="selectedCardShopId"
       @open-card="openCardFromBooster"
+      @open-location="openLocationsView"
+    />
+    <WikiWeaponShopPanel
+      v-else-if="view === 'weaponShops' && selectedWeaponShopId !== null"
+      :weapon-shop-id="selectedWeaponShopId"
+      @open-equipment="openEquipmentFromWeaponShop"
       @open-location="openLocationsView"
     />
     <WikiLocationsPanel
