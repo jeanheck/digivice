@@ -133,6 +133,78 @@
     "428": {
       "name": "Fantoche Maldito",
       "note": "Diminui o poder de ataque e defesa do inimigo."
+    },
+    "429": {
+      "name": "Disco Revive",
+      "note": "Cura paralisia durante a batalha."
+    },
+    "430": {
+      "name": "Disco Vida",
+      "note": "Revive todos seus Digimons derrotados."
+    },
+    "431": {
+      "name": "Plug Mach",
+      "note": "Aumenta a velocidade do Digimon temporariamente."
+    },
+    "432": {
+      "name": "Disco Antídoto",
+      "note": "Cura envenenamento durante a batalha."
+    },
+    "433": {
+      "name": "Disco Energia",
+      "note": "Cura todas as doenças durante a batalha."
+    },
+    "434": {
+      "name": "Plug Vida",
+      "note": "Cura HP e MP pela metade."
+    },
+    "435": {
+      "name": "Plug Poder",
+      "note": "Aumenta o ataque porém diminui a defesa temporariamente."
+    },
+    "436": {
+      "name": "Plug Guarda",
+      "note": "Aumenta a defesa porém diminui o ataque temporariamente."
+    },
+    "437": {
+      "name": "Plug DV",
+      "note": "Aumenta o medidor de explosão."
+    },
+    "438": {
+      "name": "Campo Aquático",
+      "note": "Gera um campo de água."
+    },
+    "439": {
+      "name": "Campo Vento",
+      "note": "Gera um campo de vento."
+    },
+    "440": {
+      "name": "Plug Aura",
+      "note": "Aumenta o ataque de efeito especial."
+    },
+    "441": {
+      "name": "Campo Chamas",
+      "note": "Gera um campo de fogo."
+    },
+    "442": {
+      "name": "Campo Gelo",
+      "note": "Gera um campo de gelo."
+    },
+    "443": {
+      "name": "Campo Elétrico",
+      "note": "Gera um campo de trovão."
+    },
+    "444": {
+      "name": "Campo Mecânico",
+      "note": "Gera um campo de metal."
+    },
+    "445": {
+      "name": "Campo Aleatório",
+      "note": "Gera um campo aleatório."
+    },
+    "446": {
+      "name": "Campo Sombrio",
+      "note": "Gera um campo de trevas."
     }
   }
 }

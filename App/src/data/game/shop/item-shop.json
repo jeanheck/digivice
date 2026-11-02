@@ -13,5 +13,88 @@
         "price": 120
       }
     ]
+  },
+  "asukaItemShop": {
+    "locationId": "020D",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      {
+        "consumableItemId": "411",
+        "price": 12
+      },
+      {
+        "consumableItemId": "429",
+        "price": 18
+      },
+      {
+        "consumableItemId": "430",
+        "price": 500
+      },
+      {
+        "consumableItemId": "431",
+        "price": 100
+      },
+      {
+        "consumableItemId": "432",
+        "price": 20
+      },
+      {
+        "consumableItemId": "433",
+        "price": 70
+      },
+      {
+        "consumableItemId": "434",
+        "price": 2400
+      },
+      {
+        "consumableItemId": "435",
+        "price": 45
+      },
+      {
+        "consumableItemId": "436",
+        "price": 40
+      },
+      {
+        "consumableItemId": "437",
+        "price": 1200
+      },
+      {
+        "consumableItemId": "438",
+        "price": 65
+      },
+      {
+        "consumableItemId": "439",
+        "price": 70
+      },
+      {
+        "consumableItemId": "440",
+        "price": 90
+      },
+      {
+        "consumableItemId": "441",
+        "price": 85
+      },
+      {
+        "consumableItemId": "442",
+        "price": 75
+      },
+      {
+        "consumableItemId": "443",
+        "price": 90
+      },
+      {
+        "consumableItemId": "444",
+        "price": 95
+      },
+      {
+        "consumableItemId": "445",
+        "price": 80
+      },
+      {
+        "consumableItemId": "446",
+        "price": 100
+      }
+    ]
   }
 }

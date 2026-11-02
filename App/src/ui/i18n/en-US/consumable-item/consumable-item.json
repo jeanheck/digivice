@@ -115,6 +115,78 @@
     "428": {
       "name": "Cursed Puppet",
       "note": ""
+    },
+    "429": {
+      "name": "Revive Disk",
+      "note": "Cures paralysis during battle."
+    },
+    "430": {
+      "name": "Life Disk",
+      "note": "Revives all your defeated Digimon."
+    },
+    "431": {
+      "name": "Mach Plug",
+      "note": "Temporarily increases the Digimon's speed."
+    },
+    "432": {
+      "name": "Antidote Disk",
+      "note": "Cures poison during battle."
+    },
+    "433": {
+      "name": "Energy Disk",
+      "note": "Cures all ailments during battle."
+    },
+    "434": {
+      "name": "Life Plug",
+      "note": "Restores half of HP and MP."
+    },
+    "435": {
+      "name": "Power Plug",
+      "note": "Temporarily increases attack but decreases defense."
+    },
+    "436": {
+      "name": "Guard Plug",
+      "note": "Temporarily increases defense but decreases attack."
+    },
+    "437": {
+      "name": "DV Plug",
+      "note": "Increases the blast gauge."
+    },
+    "438": {
+      "name": "Aqua Field",
+      "note": "Creates a water field."
+    },
+    "439": {
+      "name": "Wind Field",
+      "note": "Creates a wind field."
+    },
+    "440": {
+      "name": "Aura Plug",
+      "note": "Increases special effect attacks."
+    },
+    "441": {
+      "name": "Flame Field",
+      "note": "Creates a fire field."
+    },
+    "442": {
+      "name": "Ice Field",
+      "note": "Creates an ice field."
+    },
+    "443": {
+      "name": "Electric Field",
+      "note": "Creates a thunder field."
+    },
+    "444": {
+      "name": "Machine Field",
+      "note": "Creates a metal field."
+    },
+    "445": {
+      "name": "Random Field",
+      "note": "Creates a random field."
+    },
+    "446": {
+      "name": "Dark Field",
+      "note": "Creates a darkness field."
     }
   }
 }

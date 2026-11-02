@@ -133,6 +133,78 @@
     "428": {
       "name": "Marioneta Maldita",
       "note": "Reduce el poder de ataque y la defensa del enemigo."
+    },
+    "429": {
+      "name": "Disco Revivir",
+      "note": "Cura la parálisis durante la batalla."
+    },
+    "430": {
+      "name": "Disco Vida",
+      "note": "Revive a todos tus Digimon derrotados."
+    },
+    "431": {
+      "name": "Plug Mach",
+      "note": "Aumenta la velocidad del Digimon temporalmente."
+    },
+    "432": {
+      "name": "Disco Antídoto",
+      "note": "Cura el envenenamiento durante la batalla."
+    },
+    "433": {
+      "name": "Disco Energía",
+      "note": "Cura todas las alteraciones durante la batalla."
+    },
+    "434": {
+      "name": "Plug Vida",
+      "note": "Recupera la mitad del HP y MP."
+    },
+    "435": {
+      "name": "Plug Poder",
+      "note": "Aumenta el ataque pero reduce la defensa temporalmente."
+    },
+    "436": {
+      "name": "Plug Guardia",
+      "note": "Aumenta la defensa pero reduce el ataque temporalmente."
+    },
+    "437": {
+      "name": "Plug DV",
+      "note": "Aumenta el medidor de explosión."
+    },
+    "438": {
+      "name": "Campo Acuático",
+      "note": "Genera un campo de agua."
+    },
+    "439": {
+      "name": "Campo Viento",
+      "note": "Genera un campo de viento."
+    },
+    "440": {
+      "name": "Plug Aura",
+      "note": "Aumenta el ataque de efecto especial."
+    },
+    "441": {
+      "name": "Campo Llamas",
+      "note": "Genera un campo de fuego."
+    },
+    "442": {
+      "name": "Campo Hielo",
+      "note": "Genera un campo de hielo."
+    },
+    "443": {
+      "name": "Campo Eléctrico",
+      "note": "Genera un campo de trueno."
+    },
+    "444": {
+      "name": "Campo Mecánico",
+      "note": "Genera un campo de metal."
+    },
+    "445": {
+      "name": "Campo Aleatorio",
+      "note": "Genera un campo aleatorio."
+    },
+    "446": {
+      "name": "Campo Oscuro",
+      "note": "Genera un campo de oscuridad."
     }
   }
 }

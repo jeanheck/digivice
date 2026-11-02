@@ -85,5 +85,77 @@
   },
   "428": {
     "resaleValue": 15
+  },
+  "429": {
+    "resaleValue": 9,
+    "imageName": "Disk"
+  },
+  "430": {
+    "resaleValue": 250,
+    "imageName": "Disk"
+  },
+  "431": {
+    "resaleValue": 50,
+    "imageName": "Disk"
+  },
+  "432": {
+    "resaleValue": 10,
+    "imageName": "Disk"
+  },
+  "433": {
+    "resaleValue": 35,
+    "imageName": "Disk"
+  },
+  "434": {
+    "resaleValue": 1200,
+    "imageName": "Disk"
+  },
+  "435": {
+    "resaleValue": 22,
+    "imageName": "Disk"
+  },
+  "436": {
+    "resaleValue": 20,
+    "imageName": "Disk"
+  },
+  "437": {
+    "resaleValue": 600,
+    "imageName": "Disk"
+  },
+  "438": {
+    "resaleValue": 32,
+    "imageName": "Disk"
+  },
+  "439": {
+    "resaleValue": 35,
+    "imageName": "Disk"
+  },
+  "440": {
+    "resaleValue": 45,
+    "imageName": "Disk"
+  },
+  "441": {
+    "resaleValue": 42,
+    "imageName": "Disk"
+  },
+  "442": {
+    "resaleValue": 37,
+    "imageName": "Disk"
+  },
+  "443": {
+    "resaleValue": 45,
+    "imageName": "Disk"
+  },
+  "444": {
+    "resaleValue": 47,
+    "imageName": "Disk"
+  },
+  "445": {
+    "resaleValue": 40,
+    "imageName": "Disk"
+  },
+  "446": {
+    "resaleValue": 50,
+    "imageName": "Disk"
   }
 }

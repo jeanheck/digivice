@@ -13,17 +13,25 @@ const emit = defineEmits<{
 
 const { t, te } = useI18n();
 
+const translateOptional = (key: string): string => {
+  if (!te(key)) {
+    return "";
+  }
+
+  const translated = t(key);
+  if (translated === key) {
+    return "";
+  }
+
+  return translated;
+};
+
+const note = computed(() => {
+  return translateOptional(props.item.noteKey);
+});
+
 const additionalInformation = computed(() => {
-  if (!te(props.item.additionalInformationKey)) {
-    return "";
-  }
-
-  const translatedAdditionalInformation = t(props.item.additionalInformationKey);
-  if (translatedAdditionalInformation === props.item.additionalInformationKey) {
-    return "";
-  }
-
-  return translatedAdditionalInformation;
+  return translateOptional(props.item.additionalInformationKey);
 });
 
 const handleSelect = (): void => {
@@ -53,8 +61,8 @@ const handleSelect = (): void => {
           <span class="text-white">{{ $t("enemy.bits") }}</span>
         </span>
       </span>
-      <span class="text-[8px] text-blue-300/80 leading-tight line-clamp-2">
-        {{ $t(item.noteKey) }}
+      <span v-if="note !== ''" class="text-[8px] text-blue-300/80 leading-tight line-clamp-2">
+        {{ note }}
       </span>
       <span
         v-if="additionalInformation !== ''"

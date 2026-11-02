@@ -617,6 +617,16 @@
         },
         "labelPlacement": "below"
       }
+    ],
+    "itemShops": [
+      {
+        "id": "asukaItemShop",
+        "coordinates": {
+          "x": 70,
+          "y": 50
+        },
+        "labelPlacement": "above"
+      }
     ]
   },
   "020E": {

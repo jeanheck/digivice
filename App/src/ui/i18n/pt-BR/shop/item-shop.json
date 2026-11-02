@@ -2,6 +2,9 @@
   "itemShop": {
     "asukaBlackMarket": {
       "name": "Mercado Negro AS"
+    },
+    "asukaItemShop": {
+      "name": "Loja de Itens AS"
     }
   }
 }

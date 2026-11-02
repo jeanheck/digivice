@@ -2,6 +2,9 @@
   "itemShop": {
     "asukaBlackMarket": {
       "name": "AS Black Market"
+    },
+    "asukaItemShop": {
+      "name": "AS Item Shop"
     }
   }
 }
