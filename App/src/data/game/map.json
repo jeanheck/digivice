@@ -2268,7 +2268,17 @@
     "worldLocation": {
       "x": 18.5,
       "y": 59
-    }
+    },
+    "equipmentShops": [
+      {
+        "id": "byakkoArsenal",
+        "coordinates": {
+          "x": 44,
+          "y": 43
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "025E": {
     "imageName": "Byakko Dome",

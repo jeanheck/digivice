@@ -58,6 +58,7 @@
   },
   "95": {
     "type": "oneHandedWeapon",
+    "imageName": "OneHandSword1",
     "attributes": [
       {
         "attribute": "strength",
@@ -328,6 +329,7 @@
   },
   "109": {
     "type": "oneHandedWeapon",
+    "imageName": "Glove",
     "attributes": [
       {
         "attribute": "strength",
@@ -541,6 +543,7 @@
   },
   "120": {
     "type": "oneHandedWeapon",
+    "imageName": "Revolver",
     "attributes": [
       {
         "attribute": "strength",
@@ -762,6 +765,7 @@
   },
   "132": {
     "type": "oneHandedWeapon",
+    "imageName": "Staff",
     "attributes": [
       {
         "attribute": "strength",
@@ -1072,6 +1076,7 @@
   },
   "145": {
     "type": "oneHandedWeapon",
+    "imageName": "Claw",
     "attributes": [
       {
         "attribute": "strength",
@@ -1381,6 +1386,7 @@
   },
   "160": {
     "type": "oneHandedWeapon",
+    "imageName": "OneHandSword2",
     "attributes": [
       {
         "attribute": "strength",
@@ -1594,6 +1600,7 @@
   },
   "170": {
     "type": "oneHandedWeapon",
+    "imageName": "Spear",
     "attributes": [
       {
         "attribute": "strength",
@@ -1709,6 +1716,7 @@
   },
   "176": {
     "type": "twoHandedWeapon",
+    "imageName": "DualHandSword",
     "attributes": [
       {
         "attribute": "strength",
@@ -1891,6 +1899,7 @@
   },
   "183": {
     "type": "twoHandedWeapon",
+    "imageName": "Halberd",
     "attributes": [
       {
         "attribute": "strength",
@@ -2116,6 +2125,7 @@
   },
   "193": {
     "type": "twoHandedWeapon",
+    "imageName": "Bow",
     "attributes": [
       {
         "attribute": "strength",
@@ -2229,6 +2239,7 @@
   },
   "199": {
     "type": "oneHandedWeapon",
+    "imageName": "Shield2",
     "attributes": [
       {
         "attribute": "strength",
@@ -2433,6 +2444,7 @@
   },
   "207": {
     "type": "headArmor",
+    "imageName": "Head4",
     "attributes": [
       {
         "attribute": "strength",
@@ -2739,6 +2751,7 @@
   },
   "218": {
     "type": "headArmor",
+    "imageName": "Head3",
     "attributes": [
       {
         "attribute": "defense",
@@ -3020,6 +3033,7 @@
   },
   "229": {
     "type": "headArmor",
+    "imageName": "Head1",
     "attributes": [
       {
         "attribute": "defense",
@@ -3235,6 +3249,7 @@
   },
   "239": {
     "type": "headArmor",
+    "imageName": "Head2",
     "attributes": [
       {
         "attribute": "defense",
@@ -3521,6 +3536,7 @@
   },
   "252": {
     "type": "bodyArmor",
+    "imageName": "Armor1",
     "attributes": [
       {
         "attribute": "defense",
@@ -3821,6 +3837,7 @@
   },
   "265": {
     "type": "bodyArmor",
+    "imageName": "Armor2",
     "attributes": [
       {
         "attribute": "defense",
@@ -4115,6 +4132,7 @@
   },
   "278": {
     "type": "shield",
+    "imageName": "Shield1",
     "attributes": [
       {
         "attribute": "defense",

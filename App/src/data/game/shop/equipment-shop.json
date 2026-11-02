@@ -152,6 +152,85 @@
       }
     ]
   },
+  "byakkoArsenal": {
+    "locationId": "025D",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      {
+        "equipmentId": "95",
+        "price": 2500
+      },
+      {
+        "equipmentId": "120",
+        "price": 2500
+      },
+      {
+        "equipmentId": "145",
+        "price": 2500
+      },
+      {
+        "equipmentId": "170",
+        "price": 2000
+      },
+      {
+        "equipmentId": "183",
+        "price": 2000
+      },
+      {
+        "equipmentId": "199",
+        "price": 2500
+      },
+      {
+        "equipmentId": "218",
+        "price": 600
+      },
+      {
+        "equipmentId": "239",
+        "price": 1500
+      },
+      {
+        "equipmentId": "265",
+        "price": 1700
+      },
+      {
+        "equipmentId": "109",
+        "price": 2500
+      },
+      {
+        "equipmentId": "132",
+        "price": 2500
+      },
+      {
+        "equipmentId": "160",
+        "price": 2500
+      },
+      {
+        "equipmentId": "176",
+        "price": 2000
+      },
+      {
+        "equipmentId": "193",
+        "price": 2000
+      },
+      {
+        "equipmentId": "207",
+        "price": 2500
+      },
+      {
+        "equipmentId": "229",
+        "price": 1100
+      },
+      {
+        "equipmentId": "252",
+        "price": 1300
+      },
+      {
+        "equipmentId": "278",
+        "price": 1500
+      }
+    ]
+  },
   "asukaPawnshop": {
     "locationId": "020D",
     "imageName": "Gomamon",

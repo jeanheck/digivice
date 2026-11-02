@@ -51,7 +51,11 @@ Task Progress:
   (e.g. "Torre Zephyr" → `022F`). User spelling may differ slightly; confirm if ambiguous.
 - **Equipment ids**: search each item name in
   `App/src/ui/i18n/pt-BR/equipment/equipment.json` (case-insensitive). Key = id.
-  If a name is not found or matches more than one id, ask the user.
+  If a name is not found or matches more than one id, ask the user — unless the
+  id progression settles it: each arsenal sells the next tier of the previous
+  arsenal's line (Espada Pequena 92 → Zanden 93 → Crimson 94 → Mighty 95), so
+  duplicate names resolve to the id that continues the line (Arco Angelical =
+  193 after Besta 192, not 196). State such deductions in the summary.
 - **Shop id**: camelCase from the name, location first (e.g. "Arsenal Seiryu" →
   `seiryuArsenal`, "Penhores Asuka" → `asukaPawnshop`).
 
