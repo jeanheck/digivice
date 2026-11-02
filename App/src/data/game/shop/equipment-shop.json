@@ -50,6 +50,85 @@
       }
     ]
   },
+  "asukaHeavyArsenal": {
+    "locationId": "020E",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      {
+        "equipmentId": "96",
+        "price": 5000
+      },
+      {
+        "equipmentId": "122",
+        "price": 5000
+      },
+      {
+        "equipmentId": "147",
+        "price": 5000
+      },
+      {
+        "equipmentId": "171",
+        "price": 4500
+      },
+      {
+        "equipmentId": "185",
+        "price": 4500
+      },
+      {
+        "equipmentId": "201",
+        "price": 5000
+      },
+      {
+        "equipmentId": "219",
+        "price": 900
+      },
+      {
+        "equipmentId": "240",
+        "price": 1800
+      },
+      {
+        "equipmentId": "266",
+        "price": 3800
+      },
+      {
+        "equipmentId": "110",
+        "price": 5000
+      },
+      {
+        "equipmentId": "134",
+        "price": 5000
+      },
+      {
+        "equipmentId": "161",
+        "price": 5000
+      },
+      {
+        "equipmentId": "178",
+        "price": 4500
+      },
+      {
+        "equipmentId": "194",
+        "price": 4500
+      },
+      {
+        "equipmentId": "209",
+        "price": 5000
+      },
+      {
+        "equipmentId": "230",
+        "price": 2500
+      },
+      {
+        "equipmentId": "253",
+        "price": 2000
+      },
+      {
+        "equipmentId": "279",
+        "price": 1800
+      }
+    ]
+  },
   "seiryuArsenal": {
     "locationId": "022F",
     "imageName": "Gargomon",

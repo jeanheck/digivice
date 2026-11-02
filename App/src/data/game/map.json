@@ -624,7 +624,17 @@
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "equipmentShops": [
+      {
+        "id": "asukaHeavyArsenal",
+        "coordinates": {
+          "x": 58,
+          "y": 66
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "020F": {
     "imageName": "Lamb Chop",
