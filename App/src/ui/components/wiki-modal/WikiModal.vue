@@ -9,6 +9,7 @@ import WikiLocationsPanel from "@/ui/components/wiki-modal/wiki-locations-panel/
 import WikiNpcPanel from "@/ui/components/wiki-modal/wiki-npc-panel/WikiNpcPanel.vue";
 import WikiCardShopPanel from "@/ui/components/wiki-modal/wiki-card-shop-panel/WikiCardShopPanel.vue";
 import WikiEquipmentShopPanel from "@/ui/components/wiki-modal/wiki-equipment-shop-panel/WikiEquipmentShopPanel.vue";
+import WikiItemShopPanel from "@/ui/components/wiki-modal/wiki-item-shop-panel/WikiItemShopPanel.vue";
 import SearchBar from "@/ui/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
@@ -37,7 +38,8 @@ type WikiView =
   | "locations"
   | "npc"
   | "cardShops"
-  | "equipmentShops";
+  | "equipmentShops"
+  | "itemShops";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
@@ -48,6 +50,7 @@ const selectedNpcId = ref<string | null>(null);
 const initialNpcBattleOptionId = ref<string | null>(null);
 const selectedCardShopId = ref<string | null>(null);
 const selectedEquipmentShopId = ref<string | null>(null);
+const selectedItemShopId = ref<string | null>(null);
 const view = ref<WikiView>("enemy");
 
 const isModalOpen = computed(() => {
@@ -59,7 +62,8 @@ const isModalOpen = computed(() => {
       selectedLocationId.value !== null ||
       selectedNpcId.value !== null ||
       selectedCardShopId.value !== null ||
-      selectedEquipmentShopId.value !== null)
+      selectedEquipmentShopId.value !== null ||
+      selectedItemShopId.value !== null)
   );
 });
 
@@ -87,6 +91,10 @@ const isEquipmentShopsView = computed(() => {
   return view.value === "equipmentShops";
 });
 
+const isItemShopsView = computed(() => {
+  return view.value === "itemShops";
+});
+
 const handleClose = () => {
   emit("close");
 };
@@ -107,6 +115,9 @@ const allSearchItems = computed(() => {
     },
     (equipmentShopId) => {
       return t(`equipmentShop.${equipmentShopId}.name`);
+    },
+    (itemShopId) => {
+      return t(`itemShop.${itemShopId}.name`);
     },
     (tamerId) => {
       return t(`tamers.${tamerId}.name`);
@@ -145,6 +156,10 @@ const selectedSearchId = computed(() => {
     return selectedEquipmentShopId.value;
   }
 
+  if (isItemShopsView.value && selectedItemShopId.value !== null) {
+    return selectedItemShopId.value;
+  }
+
   return selectedEnemyId.value ?? undefined;
 });
 
@@ -167,6 +182,10 @@ const selectedSearchKind = computed((): SearchItemKind | undefined => {
 
   if (isEquipmentShopsView.value) {
     return "equipmentShop";
+  }
+
+  if (isItemShopsView.value) {
+    return "itemShop";
   }
 
   if (isNpcView.value) {
@@ -193,6 +212,7 @@ function clearSelection(): void {
   selectedNpcId.value = null;
   selectedCardShopId.value = null;
   selectedEquipmentShopId.value = null;
+  selectedItemShopId.value = null;
   initialNpcBattleOptionId.value = null;
 }
 
@@ -233,6 +253,11 @@ function navigateTo(
 
   if (nextView === "equipmentShops") {
     selectedEquipmentShopId.value = id;
+    return;
+  }
+
+  if (nextView === "itemShops") {
+    selectedItemShopId.value = id;
     return;
   }
 
@@ -285,6 +310,11 @@ const handleSearchSelect = (payload: { id: string; kind?: SearchItemKind }) => {
     return;
   }
 
+  if (kind === "itemShop") {
+    navigateTo("itemShops", id);
+    return;
+  }
+
   if (WikiModalPresenter.isNpcSearchKind(kind)) {
     openNpcView(id);
   }
@@ -304,6 +334,10 @@ const openCardShopsView = (cardShopId: string) => {
 
 const openEquipmentShopsView = (equipmentShopId: string) => {
   navigateTo("equipmentShops", equipmentShopId);
+};
+
+const openItemShopsView = (itemShopId: string) => {
+  navigateTo("itemShops", itemShopId);
 };
 
 const openEnemyFromDropSource = (enemyId: string) => {
@@ -331,6 +365,10 @@ const openCardFromBooster = (cardId: string) => {
 
 const openEquipmentFromShop = (equipmentId: string) => {
   openDropsView({ dropId: equipmentId, dropType: "equipment" });
+};
+
+const openConsumableItemFromShop = (consumableItemId: string) => {
+  openDropsView({ dropId: consumableItemId, dropType: "consumableItem" });
 };
 
 const enemy = computed(() => {
@@ -446,6 +484,7 @@ const enemyImageUrl = computed(() => {
       @open-source="openDropSource"
       @open-card="openCardFromBooster"
       @open-equipment-shop="openEquipmentShopsView"
+      @open-item-shop="openItemShopsView"
     />
     <WikiCardPanel
       v-else-if="view === 'cards' && selectedCardId !== null"
@@ -465,6 +504,12 @@ const enemyImageUrl = computed(() => {
       @open-equipment="openEquipmentFromShop"
       @open-location="openLocationsView"
     />
+    <WikiItemShopPanel
+      v-else-if="view === 'itemShops' && selectedItemShopId !== null"
+      :item-shop-id="selectedItemShopId"
+      @open-consumable-item="openConsumableItemFromShop"
+      @open-location="openLocationsView"
+    />
     <WikiLocationsPanel
       v-else-if="view === 'locations' && selectedLocationId !== null"
       :location-id="selectedLocationId"
@@ -472,6 +517,7 @@ const enemyImageUrl = computed(() => {
       @open-npc="openNpcView"
       @open-card-shop="openCardShopsView"
       @open-equipment-shop="openEquipmentShopsView"
+      @open-item-shop="openItemShopsView"
     />
     <WikiNpcPanel
       v-else-if="view === 'npc' && selectedNpcId !== null"

@@ -14,6 +14,7 @@ import type { MapDuelIslandRaw } from "@/presentation/repositories/tables/raws/m
 import type { MapNpcRaw } from "@/presentation/repositories/tables/raws/map/map-npc.raw";
 import type { MapShopRaw } from "@/presentation/repositories/tables/raws/map/map-shop.raw";
 import { EquipmentShopRepository } from "@/presentation/repositories/equipment-shop.repository";
+import { ItemShopRepository } from "@/presentation/repositories/item-shop.repository";
 import type { MapTamerRaw } from "@/presentation/repositories/tables/raws/map/map-tamer.raw";
 import type { CoordinatesRaw } from "@/presentation/repositories/tables/raws/quest/coordinates.raw";
 import { MomentService } from "@/presentation/services/moment.service";
@@ -119,6 +120,13 @@ export class WikiLocationsPanelPresenter {
       }
     }
 
+    for (const locationItemShop of locationRaw.itemShops ?? []) {
+      const marker = WikiLocationsPanelPresenter.toItemShopMapMarker(locationItemShop);
+      if (marker !== null) {
+        markers.push(marker);
+      }
+    }
+
     return markers.sort((first, second) => {
       return first.id.localeCompare(second.id);
     });
@@ -198,6 +206,26 @@ export class WikiLocationsPanelPresenter {
       kind: "equipmentShop",
       nameKey: `equipmentShop.${entry.id}.name`,
       imageUrl: ImageCatalog.getShopImageUrl(equipmentShopRaw.imageName),
+      coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
+      labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
+    };
+  }
+
+  private static toItemShopMapMarker(entry: MapShopRaw): WikiLocationMapMarkerViewModel | null {
+    if (entry.coordinates === undefined) {
+      return null;
+    }
+
+    const itemShopRaw = ItemShopRepository.getById(entry.id);
+    if (itemShopRaw === undefined) {
+      return null;
+    }
+
+    return {
+      id: entry.id,
+      kind: "itemShop",
+      nameKey: `itemShop.${entry.id}.name`,
+      imageUrl: ImageCatalog.getShopImageUrl(itemShopRaw.imageName),
       coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
       labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
     };

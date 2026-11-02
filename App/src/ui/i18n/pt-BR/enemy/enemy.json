@@ -12,6 +12,7 @@
       "location": "Localização",
       "cardShop": "Loja",
       "equipmentShop": "Loja",
+      "itemShop": "Loja",
       "tamer": "Domador(a)",
       "leader": "Líder",
       "npc": "NPC"
@@ -25,9 +26,6 @@
     "locationOnly": "Apenas {location}",
     "tamerOnly": "Digimon de {name}",
     "resaleValueLabel": "Valor de revenda",
-    "soldInStore": "Vendido por NPC",
-    "soldInStoreYes": "Sim",
-    "soldInStoreNo": "Não",
     "type": "Tipo",
     "boosterCardsLabel": "Cartas que podem ser obtidas nesse pacote",
     "locatedIn": "Localizado em",

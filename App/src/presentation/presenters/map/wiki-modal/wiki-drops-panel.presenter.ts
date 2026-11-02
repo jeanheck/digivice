@@ -5,10 +5,14 @@ import { EnemyOwnerRepository } from "@/presentation/repositories/enemy-owner.re
 import { EnemyRepository } from "@/presentation/repositories/enemy.repository";
 import { TamerRepository } from "@/presentation/repositories/tamer.repository";
 import { EquipmentShopRepository } from "@/presentation/repositories/equipment-shop.repository";
+import { ItemShopRepository } from "@/presentation/repositories/item-shop.repository";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/shared/types/drop-source-kind.type";
 import type { DropSourceViewModel } from "@/presentation/viewmodels/drop/drop-source.viewmodel";
-import type { WikiDropsPanelViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-drops-panel.viewmodel";
+import type {
+  PurchasableShopKind,
+  WikiDropsPanelViewModel,
+} from "@/presentation/viewmodels/wiki-modal/wiki-drops-panel.viewmodel";
 interface DroppedByRaw {
   kind: DropSourceKind;
   id: string;
@@ -39,9 +43,33 @@ export class WikiDropsPanelPresenter {
       sources,
       sourcesSectionLabelKey: "enemy.droppedBy",
       sourcesEmptyLabelKey: isBooster ? "enemy.dropSourcesNone" : "enemy.droppedByNone",
-      equipmentShopIds:
-        dropType === "equipment" ? EquipmentShopRepository.getEquipmentShopIdsByEquipmentId(dropId) : [],
+      purchasableShopKind: this.getPurchasableShopKind(dropType),
+      purchasableShopIds: this.getPurchasableShopIds(dropId, dropType),
     };
+  }
+
+  private static getPurchasableShopKind(dropType: DropType): PurchasableShopKind | null {
+    if (dropType === "equipment") {
+      return "equipmentShop";
+    }
+
+    if (dropType === "consumableItem") {
+      return "itemShop";
+    }
+
+    return null;
+  }
+
+  private static getPurchasableShopIds(dropId: string, dropType: DropType): string[] {
+    if (dropType === "equipment") {
+      return EquipmentShopRepository.getEquipmentShopIdsByEquipmentId(dropId);
+    }
+
+    if (dropType === "consumableItem") {
+      return ItemShopRepository.getItemShopIdsByConsumableItemId(dropId);
+    }
+
+    return [];
   }
 
   private static getDroppedByRaw(dropId: string, dropType: DropType): DroppedByRaw[] {

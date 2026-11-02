@@ -60,18 +60,6 @@ const additionalInformation = computed(() => {
       </p>
     </div>
 
-    <div class="flex flex-col gap-1">
-      <p class="bg-[#002266]/40 px-2 py-1 rounded-sm text-blue-500 uppercase font-bold">
-        {{ $t("enemy.soldInStore") }}
-      </p>
-      <p
-        class="uppercase font-bold"
-        :class="consumableItem.soldInStore ? 'text-green-400' : 'text-red-400'"
-      >
-        {{ consumableItem.soldInStore ? $t("enemy.soldInStoreYes") : $t("enemy.soldInStoreNo") }}
-      </p>
-    </div>
-
     <div v-if="note !== '' || additionalInformation !== ''" class="flex flex-col gap-4">
       <p v-if="note !== ''" class="text-violet-400 font-bold">
         {{ note }}

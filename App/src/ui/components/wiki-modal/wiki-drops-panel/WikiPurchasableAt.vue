@@ -1,14 +1,17 @@
 <script setup lang="ts">
+import type { PurchasableShopKind } from "@/presentation/viewmodels/wiki-modal/wiki-drops-panel.viewmodel";
+
 defineProps<{
-  equipmentShopIds: string[];
+  shopIds: string[];
+  shopKind: PurchasableShopKind;
 }>();
 
 const emit = defineEmits<{
-  (e: "open-equipment-shop", equipmentShopId: string): void;
+  (e: "open-shop", shopId: string): void;
 }>();
 
-const handleSelect = (equipmentShopId: string): void => {
-  emit("open-equipment-shop", equipmentShopId);
+const handleSelect = (shopId: string): void => {
+  emit("open-shop", shopId);
 };
 </script>
 
@@ -18,20 +21,20 @@ const handleSelect = (equipmentShopId: string): void => {
       {{ $t("enemy.purchasableAt") }}
     </h4>
 
-    <p v-if="equipmentShopIds.length === 0" class="text-xs text-gray-400 italic">
+    <p v-if="shopIds.length === 0" class="text-xs text-gray-400 italic">
       {{ $t("enemy.purchasableAtNone") }}
     </p>
     <div v-else class="flex flex-wrap gap-2">
       <button
-        v-for="equipmentShopId in equipmentShopIds"
-        :key="equipmentShopId"
+        v-for="shopId in shopIds"
+        :key="shopId"
         type="button"
         class="flex items-center gap-2 px-2.5 py-2 rounded text-left transition-colors cursor-pointer bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/60"
-        @click="handleSelect(equipmentShopId)"
+        @click="handleSelect(shopId)"
       >
         <span class="min-w-0">
           <span class="block text-xs font-bold text-blue-200 tracking-wide">
-            {{ $t(`equipmentShop.${equipmentShopId}.name`) }}
+            {{ $t(`${shopKind}.${shopId}.name`) }}
           </span>
         </span>
       </button>

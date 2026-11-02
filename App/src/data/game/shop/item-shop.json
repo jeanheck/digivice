@@ -1,0 +1,17 @@
+{
+  "asukaBlackMarket": {
+    "locationId": "020E",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      {
+        "consumableItemId": "411",
+        "price": 12
+      },
+      {
+        "consumableItemId": "414",
+        "price": 120
+      }
+    ]
+  }
+}

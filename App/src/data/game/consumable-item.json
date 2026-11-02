@@ -1,118 +1,89 @@
 {
   "400": {
-    "resaleValue": 1000,
-    "soldInStore": false
+    "resaleValue": 1000
   },
   "401": {
-    "resaleValue": 1950,
-    "soldInStore": false
+    "resaleValue": 1950
   },
   "402": {
-    "resaleValue": 250,
-    "soldInStore": false
+    "resaleValue": 250
   },
   "403": {
-    "resaleValue": 1400,
-    "soldInStore": false
+    "resaleValue": 1400
   },
   "404": {
-    "resaleValue": 1150,
-    "soldInStore": false
+    "resaleValue": 1150
   },
   "405": {
-    "resaleValue": 2400,
-    "soldInStore": false
+    "resaleValue": 2400
   },
   "406": {
-    "resaleValue": 1100,
-    "soldInStore": false
+    "resaleValue": 1100
   },
   "407": {
-    "resaleValue": 200,
-    "soldInStore": false
+    "resaleValue": 200
   },
   "408": {
-    "resaleValue": 1300,
-    "soldInStore": false
+    "resaleValue": 1300
   },
   "409": {
-    "resaleValue": 1200,
-    "soldInStore": false
+    "resaleValue": 1200
   },
   "410": {
-    "resaleValue": 3000,
-    "soldInStore": false
+    "resaleValue": 3000
   },
   "411": {
-    "resaleValue": 6,
-    "soldInStore": true
+    "resaleValue": 6
   },
   "412": {
-    "resaleValue": 1250,
-    "soldInStore": false
+    "resaleValue": 1250
   },
   "413": {
-    "resaleValue": 80,
-    "soldInStore": false
+    "resaleValue": 80
   },
   "414": {
-    "resaleValue": 60,
-    "soldInStore": true
+    "resaleValue": 60
   },
   "415": {
-    "resaleValue": 950,
-    "soldInStore": false
+    "resaleValue": 950
   },
   "416": {
-    "resaleValue": 20,
-    "soldInStore": false
+    "resaleValue": 20
   },
   "417": {
-    "resaleValue": 400,
-    "soldInStore": false
+    "resaleValue": 400
   },
   "418": {
-    "resaleValue": 700,
-    "soldInStore": false
+    "resaleValue": 700
   },
   "419": {
-    "resaleValue": 1000,
-    "soldInStore": false
+    "resaleValue": 1000
   },
   "420": {
-    "resaleValue": 1600,
-    "soldInStore": false
+    "resaleValue": 1600
   },
   "421": {
-    "resaleValue": 130,
-    "soldInStore": true
+    "resaleValue": 130
   },
   "422": {
-    "resaleValue": 1100,
-    "soldInStore": false
+    "resaleValue": 1100
   },
   "423": {
-    "resaleValue": 900,
-    "soldInStore": false
+    "resaleValue": 900
   },
   "424": {
-    "resaleValue": 1050,
-    "soldInStore": false
+    "resaleValue": 1050
   },
   "425": {
-    "resaleValue": 100,
-    "soldInStore": false
+    "resaleValue": 100
   },
   "426": {
-    "resaleValue": 10,
-    "soldInStore": false
+    "resaleValue": 10
   },
   "427": {
-    "resaleValue": 20,
-    "soldInStore": false
+    "resaleValue": 20
   },
   "428": {
-    "resaleValue": 15,
-    "soldInStore": false
+    "resaleValue": 15
   }
 }

@@ -83,6 +83,11 @@ const PawnAssetConfig = {
   extension: "webp",
 } as const;
 
+const ItemAssetConfig = {
+  pathSuffix: "/items/",
+  extension: "webp",
+} as const;
+
 const StatAssetConfig = {
   pathSuffix: "/stats/",
   extension: "webp",
@@ -189,6 +194,12 @@ const weaponModules = import.meta.glob<string>("@/assets/weapons/*.webp", {
 });
 
 const pawnModules = import.meta.glob<string>("@/assets/pawn/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const itemModules = import.meta.glob<string>("@/assets/items/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -350,6 +361,10 @@ export class ImageCatalog {
       ) ??
       getImageUrl(pawnModules, PawnAssetConfig.pathSuffix, PawnAssetConfig.extension, imageName)
     );
+  }
+
+  public static getConsumableItemImageUrl(imageName: string | null | undefined): string | null {
+    return getImageUrl(itemModules, ItemAssetConfig.pathSuffix, ItemAssetConfig.extension, imageName);
   }
 
   public static getStatImageUrl(stat: DigimonStat): string | null {

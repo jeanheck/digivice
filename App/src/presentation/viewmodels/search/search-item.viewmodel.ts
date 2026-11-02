@@ -7,6 +7,7 @@ export type SearchItemKind =
   | "location"
   | "cardShop"
   | "equipmentShop"
+  | "itemShop"
   | "tamer"
   | "leader"
   | "npc";

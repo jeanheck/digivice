@@ -634,6 +634,16 @@
         },
         "labelPlacement": "below"
       }
+    ],
+    "itemShops": [
+      {
+        "id": "asukaBlackMarket",
+        "coordinates": {
+          "x": 70,
+          "y": 34
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "020F": {

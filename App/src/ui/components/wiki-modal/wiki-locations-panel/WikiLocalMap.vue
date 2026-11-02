@@ -15,6 +15,7 @@ const emit = defineEmits<{
   (e: "open-enemy", enemyId: string): void;
   (e: "open-card-shop", cardShopId: string): void;
   (e: "open-equipment-shop", equipmentShopId: string): void;
+  (e: "open-item-shop", itemShopId: string): void;
 }>();
 
 const imageUrl = computed(() => {
@@ -46,6 +47,11 @@ const handleMarkerSelect = (marker: WikiLocationMapMarkerViewModel): void => {
 
   if (marker.kind === "equipmentShop") {
     emit("open-equipment-shop", marker.id);
+    return;
+  }
+
+  if (marker.kind === "itemShop") {
+    emit("open-item-shop", marker.id);
     return;
   }
 

@@ -8,6 +8,7 @@ import drops from "./enemy/drop.json";
 import boosters from "./tcg/booster.json";
 import cardShop from "./tcg/card-shop.json";
 import equipmentShop from "./shop/equipment-shop.json";
+import itemShop from "./shop/item-shop.json";
 import folder from "./tcg/folder.json";
 import card from "./tcg/card.json";
 import cardType from "./tcg/card-type.json";
@@ -65,6 +66,7 @@ export default {
   ...boosters,
   ...cardShop,
   ...equipmentShop,
+  ...itemShop,
   ...folder,
   ...card,
   ...cardType,

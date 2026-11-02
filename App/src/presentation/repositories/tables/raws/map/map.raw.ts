@@ -30,6 +30,7 @@ export interface MapRaw {
   tamers?: MapTamerRaw[];
   cardShops?: MapShopRaw[];
   equipmentShops?: MapShopRaw[];
+  itemShops?: MapShopRaw[];
   duelIsland?: MapDuelIslandRaw[];
   region?: MapRegion;
   dock?: boolean;

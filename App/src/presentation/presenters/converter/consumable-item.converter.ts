@@ -1,5 +1,8 @@
+import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 import type { ConsumableItemRaw } from "@/presentation/repositories/tables/raws/consumable-item/consumable-item.raw";
 import type { ConsumableItemViewModel } from "@/presentation/viewmodels/consumable-item/consumable-item.viewmodel";
+
+const DefaultConsumableItemImageName = "Consumable";
 
 export class ConsumableItemConverter {
   public static convert(
@@ -10,7 +13,9 @@ export class ConsumableItemConverter {
       id: consumableItemId,
       nameKey: `consumableItems.${consumableItemId}.name`,
       resaleValue: consumableItemRaw.resaleValue,
-      soldInStore: consumableItemRaw.soldInStore,
+      imageUrl: ImageCatalog.getConsumableItemImageUrl(
+        consumableItemRaw.imageName ?? DefaultConsumableItemImageName,
+      ),
       noteKey: `consumableItems.${consumableItemId}.note`,
       additionalInformationKey: `consumableItems.${consumableItemId}.additionalInformation`,
     };

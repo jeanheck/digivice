@@ -17,6 +17,7 @@ Shops are **data-only**: adding one never requires code changes. Two types:
 |------|-------|------|---------|---------|
 | Equipment shop | Equipment | `App/src/data/game/shop/equipment-shop.json` | `equipmentShops` | This file |
 | Card shop | Cards | `App/src/data/game/shop/card-shop.json` | `cardShops` | [card-shop.md](card-shop.md) |
+| Item shop | Consumable items | `App/src/data/game/shop/item-shop.json` | `itemShops` | [item-shop.md](item-shop.md) |
 
 Shared rules for both types:
 
@@ -24,9 +25,10 @@ Shared rules for both types:
   (e.g. "Torre Zephyr" → `022F`, "Cúpula Byakko" → `025E`). User spelling may
   differ slightly; confirm if ambiguous.
 - **Shop id**: camelCase, location first (`seiryuArsenal`, `asukaPawnshop`,
-  `byakkoCardShop`).
+  `byakkoCardShop`, `asukaBlackMarket`).
 - **Shop icon** (`imageName`, file in `App/src/assets/shops/`): every arsenal
-  uses `Gargomon`, every pawn shop `Gomamon`, every card shop `Divermon`.
+  uses `Gargomon`, every pawn shop `Gomamon`, every card shop `Divermon`,
+  every item shop `Wizardmon`.
   Use the user's icon when given.
 - **Map marker** in the location entry of `map.json` (add the key or append):
 

@@ -4,7 +4,7 @@ import WikiDropBooster from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDro
 import WikiDropConsumableItem from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDropConsumableItem.vue";
 import WikiDropEquipment from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDropEquipment.vue";
 import WikiDroppedBy from "@/ui/components/wiki-modal/wiki-drops-panel/WikiDroppedBy.vue";
-import WikiEquipmentShops from "@/ui/components/wiki-modal/wiki-drops-panel/WikiEquipmentShops.vue";
+import WikiPurchasableAt from "@/ui/components/wiki-modal/wiki-drops-panel/WikiPurchasableAt.vue";
 import { WikiDropsPanelPresenter } from "@/presentation/presenters/map/wiki-modal/wiki-drops-panel.presenter";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/shared/types/drop-source-kind.type";
@@ -17,6 +17,7 @@ const emit = defineEmits<{
   (e: "open-source", payload: { kind: DropSourceKind; sourceId: string }): void;
   (e: "open-card", cardId: string): void;
   (e: "open-equipment-shop", equipmentShopId: string): void;
+  (e: "open-item-shop", itemShopId: string): void;
 }>();
 
 const dropsViewModel = computed(() => {
@@ -31,8 +32,13 @@ const handleOpenCard = (cardId: string): void => {
   emit("open-card", cardId);
 };
 
-const handleOpenEquipmentShop = (equipmentShopId: string): void => {
-  emit("open-equipment-shop", equipmentShopId);
+const handleOpenShop = (shopId: string): void => {
+  if (dropsViewModel.value.purchasableShopKind === "itemShop") {
+    emit("open-item-shop", shopId);
+    return;
+  }
+
+  emit("open-equipment-shop", shopId);
 };
 </script>
 
@@ -56,7 +62,7 @@ const handleOpenEquipmentShop = (equipmentShopId: string): void => {
       />
     </section>
 
-    <div v-if="dropsViewModel.dropType === 'equipment'" class="flex gap-4 shrink-0 w-full">
+    <div v-if="dropsViewModel.purchasableShopKind !== null" class="flex gap-4 shrink-0 w-full">
       <WikiDroppedBy
         class="w-1/2"
         :sources="dropsViewModel.sources"
@@ -64,9 +70,10 @@ const handleOpenEquipmentShop = (equipmentShopId: string): void => {
         :empty-label-key="dropsViewModel.sourcesEmptyLabelKey"
         @open-source="handleOpenSource"
       />
-      <WikiEquipmentShops
-        :equipment-shop-ids="dropsViewModel.equipmentShopIds"
-        @open-equipment-shop="handleOpenEquipmentShop"
+      <WikiPurchasableAt
+        :shop-ids="dropsViewModel.purchasableShopIds"
+        :shop-kind="dropsViewModel.purchasableShopKind"
+        @open-shop="handleOpenShop"
       />
     </div>
     <WikiDroppedBy

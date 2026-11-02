@@ -18,6 +18,7 @@ const emit = defineEmits<{
   (e: "open-npc", npcId: string): void;
   (e: "open-card-shop", cardShopId: string): void;
   (e: "open-equipment-shop", equipmentShopId: string): void;
+  (e: "open-item-shop", itemShopId: string): void;
 }>();
 
 const gameState = useGameState();
@@ -157,6 +158,10 @@ const handleOpenCardShop = (cardShopId: string): void => {
 const handleOpenEquipmentShop = (equipmentShopId: string): void => {
   emit("open-equipment-shop", equipmentShopId);
 };
+
+const handleOpenItemShop = (itemShopId: string): void => {
+  emit("open-item-shop", itemShopId);
+};
 </script>
 
 <template>
@@ -206,6 +211,7 @@ const handleOpenEquipmentShop = (equipmentShopId: string): void => {
           @open-npc="handleOpenNpc"
           @open-card-shop="handleOpenCardShop"
           @open-equipment-shop="handleOpenEquipmentShop"
+          @open-item-shop="handleOpenItemShop"
         />
       </div>
       <div v-else class="flex items-center justify-center min-h-0 px-8">

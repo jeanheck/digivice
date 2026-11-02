@@ -106,6 +106,14 @@ export class SearchItemConverter {
     };
   }
 
+  public static convertItemShop(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "itemShop",
+    };
+  }
+
   public static convertTamer(id: string, translatedName: string): SearchItemViewModel {
     return {
       id,

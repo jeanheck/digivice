@@ -9,6 +9,7 @@ import { DuelIslandRepository } from "@/presentation/repositories/duel-island.re
 import { TamerRepository } from "@/presentation/repositories/tamer.repository";
 import { CardShopRepository } from "@/presentation/repositories/card-shop.repository";
 import { EquipmentShopRepository } from "@/presentation/repositories/equipment-shop.repository";
+import { ItemShopRepository } from "@/presentation/repositories/item-shop.repository";
 import { EnemyConverter } from "@/presentation/presenters/converter/enemy.converter";
 import {
   NpcBattleFromEnemyHelper,
@@ -121,6 +122,14 @@ export class WikiModalPresenter {
     });
   }
 
+  public static getItemShopSearchItems(
+    translateItemShopName: (itemShopId: string) => string,
+  ): SearchItemViewModel[] {
+    return ItemShopRepository.getIds().map((itemShopId) => {
+      return SearchItemConverter.convertItemShop(itemShopId, translateItemShopName(itemShopId));
+    });
+  }
+
   public static getTamerSearchItems(
     translateTamerName: (tamerId: string) => string,
   ): SearchItemViewModel[] {
@@ -154,6 +163,7 @@ export class WikiModalPresenter {
     translateLocationName: (locationId: string) => string,
     translateCardShopName: (cardShopId: string) => string,
     translateEquipmentShopName: (equipmentShopId: string) => string,
+    translateItemShopName: (itemShopId: string) => string,
     translateTamerName: (tamerId: string) => string,
     translateDuelIslandName: (duelIslandId: string) => string,
     translateNpcName: (npcId: string) => string,
@@ -165,6 +175,7 @@ export class WikiModalPresenter {
       ...this.getLocationSearchItems(translateLocationName),
       ...this.getCardShopSearchItems(translateCardShopName, translateLocationName),
       ...this.getEquipmentShopSearchItems(translateEquipmentShopName),
+      ...this.getItemShopSearchItems(translateItemShopName),
       ...this.getTamerSearchItems(translateTamerName),
       ...this.getDuelIslandSearchItems(translateDuelIslandName),
       ...this.getStoryNpcSearchItems(translateNpcName),

@@ -12,6 +12,7 @@
       "location": "Location",
       "cardShop": "Shop",
       "equipmentShop": "Shop",
+      "itemShop": "Shop",
       "tamer": "Tamer",
       "leader": "Leader",
       "npc": "NPC"
@@ -25,9 +26,6 @@
     "locationOnly": "Only {location}",
     "tamerOnly": "{name}'s Digimon",
     "resaleValueLabel": "Resale value",
-    "soldInStore": "Sold by NPC",
-    "soldInStoreYes": "Yes",
-    "soldInStoreNo": "No",
     "type": "Type",
     "boosterCardsLabel": "Cards that can be obtained from this booster",
     "locatedIn": "Located in",
