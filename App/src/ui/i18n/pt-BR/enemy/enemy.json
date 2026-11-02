@@ -48,7 +48,8 @@
       "wild": "(Digimon selvagem Lv {level})",
       "boss": "(Chefe Lv {level})",
       "tamer": "(Digimon de domador(a) {name} Lv {level})",
-      "npc": "(Digimon de {name} Lv {level})"
+      "npc": "(Digimon de {name} Lv {level})",
+      "shop": "Loja · {location}"
     },
     "unavailableAtMoment": "Inacessível ou não pode ser desafiado nesse momento da história",
     "noEnemiesOnMap": "Zona segura",

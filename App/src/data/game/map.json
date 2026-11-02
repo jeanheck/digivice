@@ -2304,6 +2304,16 @@
         },
         "labelPlacement": "below"
       }
+    ],
+    "cardShops": [
+      {
+        "id": "byakkoCardShop",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "025F": {

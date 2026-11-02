@@ -4,11 +4,13 @@
       "name": "Cruzeiro Amarelo AS"
     },
     "seiryuCardShop": {
-      "name": "Loja de Cartas Seiryu"
+      "name": "Loja de Cartas"
     },
     "suzakuCardShop": {
-      "name": "Loja de Cartas Suzaku",
-      "mapLabel": "Loja de Cartas\nSuzaku"
+      "name": "Loja de Cartas"
+    },
+    "byakkoCardShop": {
+      "name": "Loja de Cartas"
     }
   }
 }

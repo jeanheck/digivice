@@ -96,9 +96,17 @@ export class WikiModalPresenter {
 
   public static getCardShopSearchItems(
     translateCardShopName: (cardShopId: string) => string,
+    translateLocationName: (locationId: string) => string,
   ): SearchItemViewModel[] {
     return CardShopRepository.getIds().map((cardShopId) => {
-      return SearchItemConverter.convertCardShop(cardShopId, translateCardShopName(cardShopId));
+      const locationId = CardShopRepository.getById(cardShopId)?.locationId;
+      const locationName = locationId !== undefined ? translateLocationName(locationId) : null;
+
+      return SearchItemConverter.convertCardShop(
+        cardShopId,
+        translateCardShopName(cardShopId),
+        locationName,
+      );
     });
   }
 
@@ -155,7 +163,7 @@ export class WikiModalPresenter {
       ...this.getDropSearchItems(translateLabelKey),
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),
-      ...this.getCardShopSearchItems(translateCardShopName),
+      ...this.getCardShopSearchItems(translateCardShopName, translateLocationName),
       ...this.getEquipmentShopSearchItems(translateEquipmentShopName),
       ...this.getTamerSearchItems(translateTamerName),
       ...this.getDuelIslandSearchItems(translateDuelIslandName),

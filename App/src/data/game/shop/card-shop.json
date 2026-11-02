@@ -141,5 +141,42 @@
         ]
       }
     ]
+  },
+  "byakkoCardShop": {
+    "locationId": "025E",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0
+        },
+        "inventory": [
+          {
+            "cardId": "1208",
+            "price": 4400
+          },
+          {
+            "cardId": "1166",
+            "price": 3300
+          },
+          {
+            "cardId": "1251",
+            "price": 4400
+          },
+          {
+            "cardId": "1081",
+            "price": 3000
+          },
+          {
+            "cardId": "1127",
+            "price": 3000
+          },
+          {
+            "cardId": "1258",
+            "price": 1000
+          }
+        ]
+      }
+    ]
   }
 }

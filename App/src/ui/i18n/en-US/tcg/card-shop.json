@@ -4,11 +4,13 @@
       "name": "AS Yellow Cruiser"
     },
     "seiryuCardShop": {
-      "name": "Seiryu Card Shop"
+      "name": "Card Shop"
     },
     "suzakuCardShop": {
-      "name": "Suzaku Card Shop",
-      "mapLabel": "Suzaku\nCard Shop"
+      "name": "Card Shop"
+    },
+    "byakkoCardShop": {
+      "name": "Card Shop"
     }
   }
 }

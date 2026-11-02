@@ -48,7 +48,8 @@
       "wild": "(Digimon salvaje Nv {level})",
       "boss": "(Jefe Nv {level})",
       "tamer": "(Digimon del tamer {name} Nv {level})",
-      "npc": "(Digimon de {name} Nv {level})"
+      "npc": "(Digimon de {name} Nv {level})",
+      "shop": "Tienda · {location}"
     },
     "unavailableAtMoment": "No disponible o no se puede desafiar en este punto de la historia",
     "noEnemiesOnMap": "Zona segura",

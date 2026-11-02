@@ -79,12 +79,23 @@ export class SearchItemConverter {
     };
   }
 
-  public static convertCardShop(id: string, name: string): SearchItemViewModel {
-    return {
+  public static convertCardShop(
+    id: string,
+    name: string,
+    locationName: string | null,
+  ): SearchItemViewModel {
+    const searchItem: SearchItemViewModel = {
       id,
       name,
       kind: "cardShop",
     };
+
+    if (locationName !== null) {
+      searchItem.kindLabelKey = "enemy.searchContext.shop";
+      searchItem.kindLabelParams = { location: locationName };
+    }
+
+    return searchItem;
   }
 
   public static convertEquipmentShop(id: string, name: string): SearchItemViewModel {

@@ -4,11 +4,13 @@
       "name": "AS Crucero Amarillo"
     },
     "seiryuCardShop": {
-      "name": "Tienda de cartas de Seiryu"
+      "name": "Tienda de Cartas"
     },
     "suzakuCardShop": {
-      "name": "Tienda de cartas de Suzaku",
-      "mapLabel": "Tienda de cartas\nde Suzaku"
+      "name": "Tienda de Cartas"
+    },
+    "byakkoCardShop": {
+      "name": "Tienda de Cartas"
     }
   }
 }

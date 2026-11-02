@@ -48,7 +48,8 @@
       "wild": "(Wild Digimon Lv {level})",
       "boss": "(Boss Lv {level})",
       "tamer": "(Tamer Digimon {name} Lv {level})",
-      "npc": "({name}'s Digimon Lv {level})"
+      "npc": "({name}'s Digimon Lv {level})",
+      "shop": "Shop · {location}"
     },
     "unavailableAtMoment": "Unavailable or cannot be challenged at this point in the story",
     "noEnemiesOnMap": "Safe zone",
