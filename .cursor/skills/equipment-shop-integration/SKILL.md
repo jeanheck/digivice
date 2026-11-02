@@ -57,6 +57,10 @@ Task Progress:
 
 ### 2. Assets
 
+- Shop icon conventions: every arsenal (weapon shop) uses `Gargomon`; every
+  pawn shop uses `Gomamon`. Use the user's icon when given.
+- Pawn shops may share the exact inventory of another pawn shop (Penhores
+  Suzaku = Penhores Asuka). Copy the inventory as-is; items already have icons.
 - Shop icons live in `assets/shops/`; item icons in `assets/weapons/` (weapons
   and armor) and `assets/pawn/`. `ImageCatalog.getEquipmentImageUrl` looks in
   `weapons` first, then `pawn`.
@@ -126,6 +130,11 @@ later). Two shops on the same coordinates overlap — mention it.
 Add `equipmentShop.{id}.name` to the three `shop/equipment-shop.json` files.
 pt-BR uses the user's name; translate to en-US / es-ES following existing
 entries ("Arsenal Asuka" / "Asuka Arsenal" / "Arsenal Asuka").
+
+Only when the user asks for a line break on the map label, add an optional
+`mapLabel` next to `name` with `\n` at the break point, per locale (e.g.
+`"Loja de Cartas\nSuzaku"` / `"Suzaku\nCard Shop"`). Map markers use
+`mapLabel` when present; search and panels keep using `name`.
 
 ## Done criteria
 

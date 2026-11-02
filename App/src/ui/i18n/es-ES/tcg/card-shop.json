@@ -7,7 +7,8 @@
       "name": "Tienda de cartas de Seiryu"
     },
     "suzakuCardShop": {
-      "name": "Tienda de cartas de Suzaku"
+      "name": "Tienda de cartas de Suzaku",
+      "mapLabel": "Tienda de cartas\nde Suzaku"
     }
   }
 }

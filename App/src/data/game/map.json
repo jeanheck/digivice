@@ -1675,10 +1675,28 @@
       {
         "id": "suzakuCardShop",
         "coordinates": {
-          "x": 68,
-          "y": 86
+          "x": 87,
+          "y": 83
         },
-        "labelPlacement": "left"
+        "labelPlacement": "above"
+      }
+    ],
+    "equipmentShops": [
+      {
+        "id": "suzakuArsenal",
+        "coordinates": {
+          "x": 58,
+          "y": 51
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "suzakuPawnshop",
+        "coordinates": {
+          "x": 70,
+          "y": 71
+        },
+        "labelPlacement": "above"
       }
     ],
     "dock": true

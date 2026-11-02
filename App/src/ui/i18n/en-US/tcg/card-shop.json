@@ -7,7 +7,8 @@
       "name": "Seiryu Card Shop"
     },
     "suzakuCardShop": {
-      "name": "Suzaku Card Shop"
+      "name": "Suzaku Card Shop",
+      "mapLabel": "Suzaku\nCard Shop"
     }
   }
 }

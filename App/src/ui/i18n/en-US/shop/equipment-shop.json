@@ -8,6 +8,12 @@
     },
     "seiryuArsenal": {
       "name": "Seiryu Arsenal"
+    },
+    "suzakuArsenal": {
+      "name": "Suzaku Arsenal"
+    },
+    "suzakuPawnshop": {
+      "name": "Suzaku Pawnshop"
     }
   }
 }
