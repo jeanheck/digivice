@@ -1,0 +1,132 @@
+{
+  "asukaArsenal": {
+    "locationId": "020D",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      {
+        "equipmentId": "92",
+        "price": 200
+      },
+      {
+        "equipmentId": "157",
+        "price": 200
+      },
+      {
+        "equipmentId": "190",
+        "price": 150
+      },
+      {
+        "equipmentId": "226",
+        "price": 60
+      },
+      {
+        "equipmentId": "249",
+        "price": 70
+      },
+      {
+        "equipmentId": "275",
+        "price": 80
+      },
+      {
+        "equipmentId": "106",
+        "price": 200
+      },
+      {
+        "equipmentId": "167",
+        "price": 150
+      },
+      {
+        "equipmentId": "215",
+        "price": 40
+      },
+      {
+        "equipmentId": "236",
+        "price": 80
+      },
+      {
+        "equipmentId": "262",
+        "price": 150
+      }
+    ]
+  },
+  "asukaPawnshop": {
+    "locationId": "020D",
+    "imageName": "Gomamon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      {
+        "equipmentId": "292",
+        "price": 1000
+      },
+      {
+        "equipmentId": "296",
+        "price": 1200
+      },
+      {
+        "equipmentId": "300",
+        "price": 1500
+      },
+      {
+        "equipmentId": "304",
+        "price": 700
+      },
+      {
+        "equipmentId": "294",
+        "price": 900
+      },
+      {
+        "equipmentId": "298",
+        "price": 800
+      },
+      {
+        "equipmentId": "302",
+        "price": 1500
+      },
+      {
+        "equipmentId": "305",
+        "price": 400
+      },
+      {
+        "equipmentId": "306",
+        "price": 500
+      },
+      {
+        "equipmentId": "308",
+        "price": 600
+      },
+      {
+        "equipmentId": "310",
+        "price": 700
+      },
+      {
+        "equipmentId": "312",
+        "price": 500
+      },
+      {
+        "equipmentId": "307",
+        "price": 300
+      },
+      {
+        "equipmentId": "309",
+        "price": 700
+      },
+      {
+        "equipmentId": "311",
+        "price": 500
+      },
+      {
+        "equipmentId": "313",
+        "price": 500
+      },
+      {
+        "equipmentId": "314",
+        "price": 1000
+      },
+      {
+        "equipmentId": "315",
+        "price": 1200
+      }
+    ]
+  }
+}

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import WikiWeaponShopInventoryItem from "@/ui/components/wiki-modal/wiki-weapon-shop-panel/WikiWeaponShopInventoryItem.vue";
-import type { WikiWeaponShopItemViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-weapon-shop-item.viewmodel";
+import WikiEquipmentShopInventoryItem from "@/ui/components/wiki-modal/equipment-shop/WikiEquipmentShopInventoryItem.vue";
+import type { WikiEquipmentShopItemViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-equipment-shop-item.viewmodel";
 
 const props = defineProps<{
-  items: WikiWeaponShopItemViewModel[];
+  items: WikiEquipmentShopItemViewModel[];
 }>();
 
 const emit = defineEmits<{
@@ -33,7 +33,7 @@ const handleSelect = (equipmentId: string): void => {
     <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll">
       <div class="grid grid-cols-2 divide-x divide-blue-900/50 w-full">
         <div class="flex flex-col gap-2 pr-4">
-          <WikiWeaponShopInventoryItem
+          <WikiEquipmentShopInventoryItem
             v-for="item in leftColumnItems"
             :key="item.equipmentId"
             :item="item"
@@ -41,7 +41,7 @@ const handleSelect = (equipmentId: string): void => {
           />
         </div>
         <div class="flex flex-col gap-2 pl-4">
-          <WikiWeaponShopInventoryItem
+          <WikiEquipmentShopInventoryItem
             v-for="item in rightColumnItems"
             :key="item.equipmentId"
             :item="item"

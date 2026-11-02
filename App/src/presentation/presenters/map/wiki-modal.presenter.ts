@@ -8,7 +8,7 @@ import { NpcRepository } from "@/presentation/repositories/npc.repository";
 import { DuelIslandRepository } from "@/presentation/repositories/duel-island.repository";
 import { TamerRepository } from "@/presentation/repositories/tamer.repository";
 import { CardShopRepository } from "@/presentation/repositories/card-shop.repository";
-import { WeaponShopRepository } from "@/presentation/repositories/weapon-shop.repository";
+import { EquipmentShopRepository } from "@/presentation/repositories/equipment-shop.repository";
 import { EnemyConverter } from "@/presentation/presenters/converter/enemy.converter";
 import {
   NpcBattleFromEnemyHelper,
@@ -102,13 +102,13 @@ export class WikiModalPresenter {
     });
   }
 
-  public static getWeaponShopSearchItems(
-    translateWeaponShopName: (weaponShopId: string) => string,
+  public static getEquipmentShopSearchItems(
+    translateEquipmentShopName: (equipmentShopId: string) => string,
   ): SearchItemViewModel[] {
-    return WeaponShopRepository.getIds().map((weaponShopId) => {
-      return SearchItemConverter.convertWeaponShop(
-        weaponShopId,
-        translateWeaponShopName(weaponShopId),
+    return EquipmentShopRepository.getIds().map((equipmentShopId) => {
+      return SearchItemConverter.convertEquipmentShop(
+        equipmentShopId,
+        translateEquipmentShopName(equipmentShopId),
       );
     });
   }
@@ -145,7 +145,7 @@ export class WikiModalPresenter {
     translateCardName: (cardId: string) => string,
     translateLocationName: (locationId: string) => string,
     translateCardShopName: (cardShopId: string) => string,
-    translateWeaponShopName: (weaponShopId: string) => string,
+    translateEquipmentShopName: (equipmentShopId: string) => string,
     translateTamerName: (tamerId: string) => string,
     translateDuelIslandName: (duelIslandId: string) => string,
     translateNpcName: (npcId: string) => string,
@@ -156,7 +156,7 @@ export class WikiModalPresenter {
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),
       ...this.getCardShopSearchItems(translateCardShopName),
-      ...this.getWeaponShopSearchItems(translateWeaponShopName),
+      ...this.getEquipmentShopSearchItems(translateEquipmentShopName),
       ...this.getTamerSearchItems(translateTamerName),
       ...this.getDuelIslandSearchItems(translateDuelIslandName),
       ...this.getStoryNpcSearchItems(translateNpcName),

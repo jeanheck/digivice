@@ -29,7 +29,7 @@ export interface MapRaw {
   npcs?: MapNpcRaw[];
   tamers?: MapTamerRaw[];
   cardShops?: MapShopRaw[];
-  weaponShops?: MapShopRaw[];
+  equipmentShops?: MapShopRaw[];
   duelIsland?: MapDuelIslandRaw[];
   region?: MapRegion;
   dock?: boolean;

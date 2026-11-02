@@ -4387,6 +4387,7 @@
   },
   "292": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "strength",
@@ -4437,6 +4438,7 @@
   },
   "294": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "defense",
@@ -4487,6 +4489,7 @@
   },
   "296": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "spirit",
@@ -4537,6 +4540,7 @@
   },
   "298": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "wisdom",
@@ -4587,6 +4591,7 @@
   },
   "300": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "speed",
@@ -4637,6 +4642,7 @@
   },
   "302": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "charisma",
@@ -4677,6 +4683,7 @@
   },
   "304": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "fire",
@@ -4702,6 +4709,7 @@
   },
   "305": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "water",
@@ -4727,6 +4735,7 @@
   },
   "306": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "ice",
@@ -4752,6 +4761,7 @@
   },
   "307": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "wind",
@@ -4777,6 +4787,7 @@
   },
   "308": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "thunder",
@@ -4802,6 +4813,7 @@
   },
   "309": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "machine",
@@ -4827,6 +4839,7 @@
   },
   "310": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "dark",
@@ -4852,6 +4865,7 @@
   },
   "311": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "charisma",
@@ -4872,6 +4886,7 @@
   },
   "312": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "charisma",
@@ -4892,6 +4907,7 @@
   },
   "313": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "charisma",
@@ -4912,6 +4928,7 @@
   },
   "314": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "charisma",
@@ -4932,6 +4949,7 @@
   },
   "315": {
     "type": "accessory",
+    "imageName": "Pawn",
     "attributes": [
       {
         "attribute": "charisma",

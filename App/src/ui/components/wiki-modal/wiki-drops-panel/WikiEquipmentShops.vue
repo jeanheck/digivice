@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-  weaponShopIds: string[];
+  equipmentShopIds: string[];
 }>();
 
 const emit = defineEmits<{
-  (e: "open-weapon-shop", weaponShopId: string): void;
+  (e: "open-equipment-shop", equipmentShopId: string): void;
 }>();
 
-const handleSelect = (weaponShopId: string): void => {
-  emit("open-weapon-shop", weaponShopId);
+const handleSelect = (equipmentShopId: string): void => {
+  emit("open-equipment-shop", equipmentShopId);
 };
 </script>
 
@@ -18,20 +18,20 @@ const handleSelect = (weaponShopId: string): void => {
       {{ $t("enemy.purchasableAt") }}
     </h4>
 
-    <p v-if="weaponShopIds.length === 0" class="text-xs text-gray-400 italic">
+    <p v-if="equipmentShopIds.length === 0" class="text-xs text-gray-400 italic">
       {{ $t("enemy.purchasableAtNone") }}
     </p>
     <div v-else class="flex flex-wrap gap-2">
       <button
-        v-for="weaponShopId in weaponShopIds"
-        :key="weaponShopId"
+        v-for="equipmentShopId in equipmentShopIds"
+        :key="equipmentShopId"
         type="button"
         class="flex items-center gap-2 px-2.5 py-2 rounded text-left transition-colors cursor-pointer bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/60"
-        @click="handleSelect(weaponShopId)"
+        @click="handleSelect(equipmentShopId)"
       >
         <span class="min-w-0">
           <span class="block text-xs font-bold text-blue-200 tracking-wide">
-            {{ $t(`weaponShop.${weaponShopId}.name`) }}
+            {{ $t(`equipmentShop.${equipmentShopId}.name`) }}
           </span>
         </span>
       </button>

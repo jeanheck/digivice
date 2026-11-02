@@ -13,7 +13,7 @@ export { MapNpcRepository } from "./map-npc.repository";
 export { MapTamerRepository } from "./map-tamer.repository";
 export { MapCardShopRepository } from "./map-card-shop.repository";
 export { CardShopRepository } from "./card-shop.repository";
-export { WeaponShopRepository } from "./weapon-shop.repository";
+export { EquipmentShopRepository } from "./equipment-shop.repository";
 export { MapBossRepository } from "./map-boss.repository";
 export { MapDuelIslandRepository } from "./map-duel-island.repository";
 export { SeabedDockRepository } from "./seabed-dock.repository";

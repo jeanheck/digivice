@@ -78,6 +78,11 @@ const WeaponAssetConfig = {
   extension: "webp",
 } as const;
 
+const PawnAssetConfig = {
+  pathSuffix: "/pawn/",
+  extension: "webp",
+} as const;
+
 const StatAssetConfig = {
   pathSuffix: "/stats/",
   extension: "webp",
@@ -178,6 +183,12 @@ const shopModules = import.meta.glob<string>("@/assets/shops/*.webp", {
 });
 
 const weaponModules = import.meta.glob<string>("@/assets/weapons/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const pawnModules = import.meta.glob<string>("@/assets/pawn/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -329,12 +340,15 @@ export class ImageCatalog {
     );
   }
 
-  public static getWeaponImageUrl(imageName: string | null | undefined): string | null {
-    return getImageUrl(
-      weaponModules,
-      WeaponAssetConfig.pathSuffix,
-      WeaponAssetConfig.extension,
-      imageName,
+  public static getEquipmentImageUrl(imageName: string | null | undefined): string | null {
+    return (
+      getImageUrl(
+        weaponModules,
+        WeaponAssetConfig.pathSuffix,
+        WeaponAssetConfig.extension,
+        imageName,
+      ) ??
+      getImageUrl(pawnModules, PawnAssetConfig.pathSuffix, PawnAssetConfig.extension, imageName)
     );
   }
 

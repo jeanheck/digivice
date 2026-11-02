@@ -52,7 +52,7 @@ export class SearchItemSortHelper {
       return 4;
     }
 
-    if (kind === "weaponShop") {
+    if (kind === "equipmentShop") {
       return 5;
     }
 

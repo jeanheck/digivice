@@ -600,12 +600,20 @@
       "x": 50.5,
       "y": 43
     },
-    "weaponShops": [
+    "equipmentShops": [
       {
         "id": "asukaArsenal",
         "coordinates": {
           "x": 49,
           "y": 72
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "asukaPawnshop",
+        "coordinates": {
+          "x": 56,
+          "y": 60
         },
         "labelPlacement": "below"
       }

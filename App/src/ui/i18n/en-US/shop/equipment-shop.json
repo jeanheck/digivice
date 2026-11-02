@@ -1,0 +1,10 @@
+{
+  "equipmentShop": {
+    "asukaArsenal": {
+      "name": "Asuka Arsenal"
+    },
+    "asukaPawnshop": {
+      "name": "Asuka Pawnshop"
+    }
+  }
+}

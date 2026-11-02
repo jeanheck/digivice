@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { WikiWeaponShopItemViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-weapon-shop-item.viewmodel";
+import type { WikiEquipmentShopItemViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-equipment-shop-item.viewmodel";
 
 const props = defineProps<{
-  item: WikiWeaponShopItemViewModel;
+  item: WikiEquipmentShopItemViewModel;
 }>();
 
 const emit = defineEmits<{

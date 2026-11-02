@@ -1,6 +1,6 @@
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 
-export interface WikiWeaponShopItemAttributeViewModel {
+export interface WikiEquipmentShopItemAttributeViewModel {
   attribute: DigimonStat;
   type: string;
   value: number;

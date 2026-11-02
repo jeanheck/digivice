@@ -8,7 +8,6 @@ import WikiEquipmentShops from "@/ui/components/wiki-modal/wiki-drops-panel/Wiki
 import { WikiDropsPanelPresenter } from "@/presentation/presenters/map/wiki-modal/wiki-drops-panel.presenter";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/shared/types/drop-source-kind.type";
-
 const props = defineProps<{
   dropId: string;
   dropType: DropType;
@@ -17,7 +16,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-source", payload: { kind: DropSourceKind; sourceId: string }): void;
   (e: "open-card", cardId: string): void;
-  (e: "open-weapon-shop", weaponShopId: string): void;
+  (e: "open-equipment-shop", equipmentShopId: string): void;
 }>();
 
 const dropsViewModel = computed(() => {
@@ -32,8 +31,8 @@ const handleOpenCard = (cardId: string): void => {
   emit("open-card", cardId);
 };
 
-const handleOpenWeaponShop = (weaponShopId: string): void => {
-  emit("open-weapon-shop", weaponShopId);
+const handleOpenEquipmentShop = (equipmentShopId: string): void => {
+  emit("open-equipment-shop", equipmentShopId);
 };
 </script>
 
@@ -66,8 +65,8 @@ const handleOpenWeaponShop = (weaponShopId: string): void => {
         @open-source="handleOpenSource"
       />
       <WikiEquipmentShops
-        :weapon-shop-ids="dropsViewModel.weaponShopIds"
-        @open-weapon-shop="handleOpenWeaponShop"
+        :equipment-shop-ids="dropsViewModel.equipmentShopIds"
+        @open-equipment-shop="handleOpenEquipmentShop"
       />
     </div>
     <WikiDroppedBy
