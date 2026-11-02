@@ -5,6 +5,15 @@
     },
     "asukaItemShop": {
       "name": "Loja de Itens AS"
+    },
+    "seiryuItemShop": {
+      "name": "Itens Seiryu"
+    },
+    "suzakuItemShop": {
+      "name": "Itens Suzaku"
+    },
+    "byakkoItemShop": {
+      "name": "Itens Byakko"
     }
   }
 }

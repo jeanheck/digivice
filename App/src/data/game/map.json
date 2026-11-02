@@ -1365,6 +1365,16 @@
         },
         "labelPlacement": "below"
       }
+    ],
+    "itemShops": [
+      {
+        "id": "seiryuItemShop",
+        "coordinates": {
+          "x": 64,
+          "y": 66
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "0232": {
@@ -1727,6 +1737,16 @@
           "y": 71
         },
         "labelPlacement": "above"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "suzakuItemShop",
+        "coordinates": {
+          "x": 65,
+          "y": 87
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -2307,6 +2327,16 @@
           "y": 43
         },
         "labelPlacement": "below"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "byakkoItemShop",
+        "coordinates": {
+          "x": 54,
+          "y": 36
+        },
+        "labelPlacement": "above"
       }
     ]
   },

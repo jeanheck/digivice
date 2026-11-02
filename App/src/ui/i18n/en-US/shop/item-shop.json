@@ -5,6 +5,15 @@
     },
     "asukaItemShop": {
       "name": "AS Item Shop"
+    },
+    "seiryuItemShop": {
+      "name": "Seiryu Items"
+    },
+    "suzakuItemShop": {
+      "name": "Suzaku Items"
+    },
+    "byakkoItemShop": {
+      "name": "Byakko Items"
     }
   }
 }
