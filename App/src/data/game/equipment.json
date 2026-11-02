@@ -20,6 +20,7 @@
   },
   "93": {
     "type": "oneHandedWeapon",
+    "imageName": "OneHandSword1",
     "attributes": [
       {
         "attribute": "strength",
@@ -283,6 +284,7 @@
   },
   "107": {
     "type": "oneHandedWeapon",
+    "imageName": "Glove",
     "attributes": [
       {
         "attribute": "strength",
@@ -1332,6 +1334,7 @@
   },
   "158": {
     "type": "oneHandedWeapon",
+    "imageName": "OneHandSword2",
     "attributes": [
       {
         "attribute": "strength",
@@ -1548,6 +1551,7 @@
   },
   "168": {
     "type": "oneHandedWeapon",
+    "imageName": "Spear",
     "attributes": [
       {
         "attribute": "strength",
@@ -2070,6 +2074,7 @@
   },
   "191": {
     "type": "twoHandedWeapon",
+    "imageName": "Bow",
     "attributes": [
       {
         "attribute": "strength",
@@ -2677,6 +2682,7 @@
   },
   "216": {
     "type": "headArmor",
+    "imageName": "Head3",
     "attributes": [
       {
         "attribute": "defense",
@@ -2955,6 +2961,7 @@
   },
   "227": {
     "type": "headArmor",
+    "imageName": "Head1",
     "attributes": [
       {
         "attribute": "defense",
@@ -3168,6 +3175,7 @@
   },
   "237": {
     "type": "headArmor",
+    "imageName": "Head2",
     "attributes": [
       {
         "attribute": "defense",
@@ -3456,6 +3464,7 @@
   },
   "250": {
     "type": "bodyArmor",
+    "imageName": "Armor1",
     "attributes": [
       {
         "attribute": "defense",
@@ -3750,6 +3759,7 @@
   },
   "263": {
     "type": "bodyArmor",
+    "imageName": "Armor2",
     "attributes": [
       {
         "attribute": "defense",
@@ -4042,6 +4052,7 @@
   },
   "276": {
     "type": "shield",
+    "imageName": "Shield1",
     "attributes": [
       {
         "attribute": "defense",

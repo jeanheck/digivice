@@ -50,6 +50,57 @@
       }
     ]
   },
+  "seiryuArsenal": {
+    "locationId": "022F",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      {
+        "equipmentId": "93",
+        "price": 500
+      },
+      {
+        "equipmentId": "158",
+        "price": 500
+      },
+      {
+        "equipmentId": "191",
+        "price": 400
+      },
+      {
+        "equipmentId": "227",
+        "price": 130
+      },
+      {
+        "equipmentId": "250",
+        "price": 160
+      },
+      {
+        "equipmentId": "276",
+        "price": 150
+      },
+      {
+        "equipmentId": "107",
+        "price": 500
+      },
+      {
+        "equipmentId": "168",
+        "price": 400
+      },
+      {
+        "equipmentId": "216",
+        "price": 100
+      },
+      {
+        "equipmentId": "237",
+        "price": 150
+      },
+      {
+        "equipmentId": "263",
+        "price": 350
+      }
+    ]
+  },
   "asukaPawnshop": {
     "locationId": "020D",
     "imageName": "Gomamon",

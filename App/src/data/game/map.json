@@ -1325,6 +1325,16 @@
         },
         "labelPlacement": "below"
       }
+    ],
+    "equipmentShops": [
+      {
+        "id": "seiryuArsenal",
+        "coordinates": {
+          "x": 52,
+          "y": 74
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "0232": {
