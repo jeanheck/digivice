@@ -12,7 +12,7 @@ const { t } = useI18n();
 
 <template>
   <div
-    class="flex items-center gap-4 h-4 fhdscaled:h-5 text-[10px] fhdscaled:text-xs font-bold tracking-wide text-outline-black-glow"
+    class="absolute top-2 right-2 z-5 flex flex-col items-end gap-1.25 pointer-events-none text-[8px] hd:text-[10px] font-bold tracking-wide text-outline-black-glow"
   >
     <div v-if="effective.length > 0" class="flex items-center gap-1">
       <span class="text-green-400">{{ t("digimonBattle.effective") }}</span>
@@ -25,7 +25,7 @@ const { t } = useI18n();
         />
       </template>
     </div>
-    <div v-if="notEffective.length > 0" class="flex items-center gap-1 ml-auto">
+    <div v-if="notEffective.length > 0" class="flex items-center gap-1">
       <span class="text-red-400">{{ t("digimonBattle.notEffective") }}</span>
       <template v-for="affinity in notEffective" :key="affinity.element">
         <img
