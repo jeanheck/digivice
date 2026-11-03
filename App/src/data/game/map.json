@@ -1884,6 +1884,120 @@
       ]
     }
   },
+  "0244": {
+    "imageName": "Catacomb 2",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "128"
+      ],
+      "boss": [
+        {
+          "id": "20",
+          "coordinates": {
+            "x": 75,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0245": {
+    "imageName": "Bug Maze",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "128"
+      ],
+      "boss": [
+        {
+          "id": "20",
+          "coordinates": {
+            "x": 75,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0246": {
+    "imageName": "Bug Maze 2",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "128"
+      ],
+      "boss": [
+        {
+          "id": "20",
+          "coordinates": {
+            "x": 75,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
   "0247": {
     "imageName": "South Badland",
     "worldLocation": {
@@ -2426,5 +2540,165 @@
   "02E7": {
     "imageName": "Seabed 7",
     "region": "seabed"
+  },
+  "028C": {
+    "imageName": "Central Park Amaterasu",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 50.5
+    },
+    "dock": true
+  },
+  "028D": {
+    "imageName": "Wire Forest Entrance Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 46
+    }
+  },
+  "028E": {
+    "imageName": "Shell Beach Amaterasu",
+    "worldLocation": {
+      "x": 54,
+      "y": 59
+    },
+    "dock": true
+  },
+  "0290": {
+    "imageName": "West Wire Forest Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 46
+    }
+  },
+  "0291": {
+    "imageName": "East Wire Forest Amaterasu",
+    "worldLocation": {
+      "x": 67,
+      "y": 45.5
+    }
+  },
+  "0292": {
+    "imageName": "Forest Inn Amaterasu",
+    "worldLocation": {
+      "x": 67.25,
+      "y": 54
+    }
+  },
+  "0293": {
+    "imageName": "Forest Inn BF Amaterasu",
+    "worldLocation": {
+      "x": 67.25,
+      "y": 54
+    },
+    "innerLocation": [
+      {
+        "location": "0223",
+        "coordinates": {
+          "x": 58,
+          "y": 87
+        }
+      }
+    ]
+  },
+  "0296": {
+    "imageName": "Divermons Lake Amaterasu",
+    "worldLocation": {
+      "x": 74.5,
+      "y": 47
+    },
+    "dock": true
+  },
+  "0298": {
+    "imageName": "Wind Prairie Amaterasu",
+    "worldLocation": {
+      "x": 81,
+      "y": 50
+    }
+  },
+  "029C": {
+    "imageName": "Qing Long",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    }
+  },
+  "029E": {
+    "imageName": "Seiryu Tower Amaterasu",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "022E",
+        "coordinates": {
+          "x": 58,
+          "y": 29.5
+        }
+      }
+    ]
+  },
+  "02A8": {
+    "imageName": "Phoenix Bay Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 84
+    },
+    "dock": true
+  },
+  "02AB": {
+    "imageName": "Zhu Que City",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "dock": true
+  },
+  "02AD": {
+    "imageName": "Zhu Que Hall",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "innerLocation": [
+      {
+        "location": "023E",
+        "coordinates": {
+          "x": 42,
+          "y": 12
+        }
+      }
+    ]
+  },
+  "02AE": {
+    "imageName": "Suzaku UG Lake Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "innerLocation": [
+      {
+        "location": "023E",
+        "coordinates": {
+          "x": 75,
+          "y": 47.5
+        }
+      },
+      {
+        "location": "02E2",
+        "coordinates": {
+          "x": 87,
+          "y": 42
+        }
+      },
+      {
+        "location": "02E0",
+        "coordinates": {
+          "x": 75,
+          "y": 40
+        }
+      }
+    ]
   }
 }

@@ -88,6 +88,9 @@
     "0241": "Suzaku UG Lake",
     "0242": "Jungle Shrine",
     "0243": "Catacomb",
+    "0244": "Catacomb",
+    "0245": "Bug Maze",
+    "0246": "Bug Maze",
     "0247": "South Badland",
     "0248": "Noise Desert",
     "0249": "Pelche Oasis",
@@ -124,6 +127,21 @@
     "02E4": "Seabed",
     "02E5": "Seabed",
     "02E6": "Seabed",
-    "02E7": "Seabed"
+    "02E7": "Seabed",
+    "028C": "Central Park",
+    "028D": "Wire Forest Entrance",
+    "028E": "Shell Beach",
+    "0290": "West Wire Forest",
+    "0291": "East Wire Forest",
+    "0292": "Forest Inn",
+    "0293": "Forest Inn BF",
+    "0296": "Divermon's Lake",
+    "0298": "Wind Prairie",
+    "029C": "Qing Long",
+    "029E": "Qing Long Tower",
+    "02A8": "Phoenix Bay",
+    "02AB": "Zhu Que City",
+    "02AD": "Zhu Que Hall",
+    "02AE": "Suzaku UG Lake"
   }
 }

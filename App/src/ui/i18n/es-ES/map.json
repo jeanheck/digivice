@@ -88,6 +88,9 @@
     "0241": "Lago Subterráneo Suzaku",
     "0242": "Santuario de la Jungla",
     "0243": "Catacumba",
+    "0244": "Catacumba",
+    "0245": "Bug Maze",
+    "0246": "Bug Maze",
     "0247": "Tierras Baldías del Sur",
     "0248": "Desierto Ruido",
     "0249": "Oasis Pelche",
@@ -124,6 +127,21 @@
     "02E4": "Fondo Marino",
     "02E5": "Fondo Marino",
     "02E6": "Fondo Marino",
-    "02E7": "Fondo Marino"
+    "02E7": "Fondo Marino",
+    "028C": "Parque Central",
+    "028D": "Entrada del Bosque Alambre",
+    "028E": "Playa Concha",
+    "0290": "Bosque Alambre Oeste",
+    "0291": "Bosque Alambre Este",
+    "0292": "Posada del Bosque",
+    "0293": "Posada del Bosque (sótano)",
+    "0296": "Lago de Divermon",
+    "0298": "Pradera del Viento",
+    "029C": "Qing Long",
+    "029E": "Qing Long Tower",
+    "02A8": "Phoenix Bay",
+    "02AB": "Zhu Que City",
+    "02AD": "Zhu Que Hall",
+    "02AE": "Suzaku UG Lake"
   }
 }

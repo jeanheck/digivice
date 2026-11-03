@@ -88,6 +88,9 @@
     "0241": "Lago Subterrâneo Suzaku",
     "0242": "Santuário da Selva",
     "0243": "Catacumba",
+    "0244": "Catacumba",
+    "0245": "Labirinto do Bugs",
+    "0246": "Labirinto do Bugs (Fenda)",
     "0247": "Terreno Baldio (Sul)",
     "0248": "Deserto Barulhento",
     "0249": "Pelche Oásis",
@@ -124,6 +127,21 @@
     "02E4": "Solo Oceânico",
     "02E5": "Solo Oceânico",
     "02E6": "Solo Oceânico",
-    "02E7": "Solo Oceânico"
+    "02E7": "Solo Oceânico",
+    "028C": "Parque Central",
+    "028D": "Floresta Arame (Entrada)",
+    "028E": "Praia da Concha",
+    "0290": "Floresta Arame (Oeste)",
+    "0291": "Floresta Arame (Leste)",
+    "0292": "Pousada Florestal",
+    "0293": "Pousada Florestal (Subsolo)",
+    "0296": "Lago dos Divermons",
+    "0298": "Campina do Vento",
+    "029C": "Qing Long",
+    "029E": "Torre Qing Long",
+    "02A8": "Baía Fênix",
+    "02AB": "Cidade Zhu Que",
+    "02AD": "Salão Zhu Que",
+    "02AE": "Lago Subterrâneo Suzaku"
   }
 }
