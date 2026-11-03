@@ -89,8 +89,8 @@
     "0242": "Santuario de la Jungla",
     "0243": "Catacumba",
     "0244": "Catacumba",
-    "0245": "Bug Maze",
-    "0246": "Bug Maze",
+    "0245": "Laberinto Bug",
+    "0246": "Laberinto Bug",
     "0247": "Tierras Baldías del Sur",
     "0248": "Desierto Ruido",
     "0249": "Oasis Pelche",
@@ -138,10 +138,10 @@
     "0296": "Lago de Divermon",
     "0298": "Pradera del Viento",
     "029C": "Qing Long",
-    "029E": "Qing Long Tower",
-    "02A8": "Phoenix Bay",
-    "02AB": "Zhu Que City",
-    "02AD": "Zhu Que Hall",
-    "02AE": "Suzaku UG Lake"
+    "029E": "Torre Qing Long",
+    "02A8": "Bahía Fénix",
+    "02AB": "Ciudad Zhu Que",
+    "02AD": "Salón Zhu Que",
+    "02AE": "Lago Subterráneo Suzaku"
   }
 }

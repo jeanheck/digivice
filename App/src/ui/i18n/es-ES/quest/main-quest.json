@@ -14,6 +14,9 @@
       },
       "4": {
         "name": "¡La batalla contra A.o.A!"
+      },
+      "5": {
+        "name": "¡Un nuevo servidor: Amaterasu!"
       }
     },
     "steps": {
@@ -371,6 +374,50 @@
       "88": {
         "description": "Enfréntate al Game Master dentro del Cuartel General",
         "locationTarget": "Game Master"
+      },
+      "89": {
+        "description": "Habla con el Líder de Byakko en la Cúpula Byakko",
+        "locationTarget": "Líder de Byakko"
+      },
+      "90": {
+        "description": "Ve a la prisión de A.o.A en la Cueva Subterránea",
+        "locationTarget": "Prisión de A.o.A"
+      },
+      "91": {
+        "description": "Habla con el anciano en el Pantano Bulk",
+        "locationTarget": "Anciano"
+      },
+      "92": {
+        "description": "Ve a la sala del Líder en el Salón Suzaku",
+        "locationTarget": "Patamon"
+      },
+      "93": {
+        "description": "Derrota al Líder de Suzaku en la Catacumba",
+        "locationTarget": "Líder de Suzaku"
+      },
+      "94": {
+        "description": "Derrota a Bulbmon en el Laberinto Bug",
+        "locationTarget": "Bulbmon"
+      },
+      "95": {
+        "description": "Habla con Kenny en la Posada del Bosque (sótano) de Amaterasu",
+        "locationTarget": "Kenny"
+      },
+      "96": {
+        "description": "Derrota al Líder de Qing Long en Qing Long",
+        "locationTarget": "Líder de Qing Long"
+      },
+      "97": {
+        "description": "Habla con el Soldado en la Bahía Fénix de Amaterasu",
+        "locationTarget": "Soldado"
+      },
+      "98": {
+        "description": "Derrota al Líder de Zhu Que en el Salón Zhu Que",
+        "locationTarget": "Líder de Zhu Que"
+      },
+      "99": {
+        "description": "Toma el Digi-Huevo en el Lago Subterráneo Suzaku de Amaterasu",
+        "locationTarget": "Digi-Huevo"
       }
     }
   }

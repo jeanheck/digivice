@@ -61,6 +61,33 @@ Island round bytes `0x4B3B2`/`0x4B3B3` (those reset after the final).
 
 ---
 
+## Main quest 89–99 — Amaterasu arc (suspected, 2026-11-03)
+
+Snapshots: `Tools/MemoryScanner/Snapshots/{before,after}-*-{89..99}.bin`.
+Chosen bits are sticky (clear in every earlier snapshot, set in every later one,
+checked over the full 2 MiB).
+
+| Step | Event | MapId | Address | BitMask | Alternative lit in same compare |
+|------|-------|-------|---------|---------|---------------------------------|
+| 89 | Byakko Leader | `025E` | — | — | nothing in save RAM; provisional = step 93 bit |
+| 90 | A.o.A prison | `0260` | — | — | only `0x4B370` `0x18`→`0x19`; provisional = step 93 bit |
+| 91 | Old man | `0233` | — | — | nothing in save RAM; provisional = step 93 bit |
+| 92 | Patamon / Leader room | `0240` | — | — | only `0x4B370` `0x19`→`0x1A`; provisional = step 93 bit |
+| 93 | Suzaku Leader (battle) | `0244` | `0x4B3DF` | `0x08` | `0x48DE0` `0x01`→`0x02` |
+| 94 | Bulbmon (battle) | `0246` | `0x4B3E8` | `0x02` | — |
+| 95 | Kenny | `0293` | `0x4B3E1` | `0x20` | item-like `0x48F3C` `0→1` |
+| 96 | Qing Long Leader (battle) | `029C` | `0x4B3F2` | `0x08` + `0x80` | item-like `0x48DC6` `0→1`; `0x4B370` `0x1B`→`0x1C` |
+| 97 | Soldier at Phoenix Bay | `02A8` | `0x4B3B2` | `0x20` | `0x4B3F3` `0x01` (also sticky) |
+| 98 | Zhu Que Leader (battle) | `02AD` | `0x4B3E8` | `0x04` | item-like `0x48DC7` `0→1`; `0x4B370` `0x1C`→`0x1D` |
+| 99 | Digi-Egg | `02AE` | `0x48DC1` | raw `!= 0` | `0x4B370` `0x1D`→`0x1E` |
+
+`0x4B370` keeps counting in this arc (`0x18`→`0x1E`, also `0x1A`→`0x1B`
+between Bulbmon and Kenny): counter, not usable as bitmask. Between snapshots,
+`0x4B3D1`–`0x4B3D5` and `0x4B3DC` gain bits on entering Amaterasu maps (map
+visited flags, suspected).
+
+---
+
 ## Raw byte step (confirmed)
 
 Empty `bitMasks: []` → step complete when `byte != 0`.

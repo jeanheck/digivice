@@ -60,6 +60,10 @@ Definitions paths are relative to `App/src/data/memory-addresses/`.
 
 - `asukaRematch` — `quests/duel-island/asuka-rematch-addresses.json` (quest-level requisite `asukaTrophy`; step 6 provisional = step 5 bit `0x4B3B3` / `0x08`); provisional coords (`0228` / 50,50)
 
+### Main quest (2026-11-03)
+
+- Chapter 5 "Um novo servidor: Amaterasu!" — steps 89–99 in `quests/main-quest-addresses.json`; steps 89–92 provisional (reuse step 93 bit `0x4B3DF` `0x08`, no own flag found); provisional coords (50,50) on all chapter 5 steps
+
 ## Palette notes
 
 - `emerald` — side quests

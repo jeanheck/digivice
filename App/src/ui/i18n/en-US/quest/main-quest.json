@@ -14,6 +14,9 @@
       },
       "4": {
         "name": "The battle against the A.o.A!"
+      },
+      "5": {
+        "name": "A new server: Amaterasu!"
       }
     },
     "steps": {
@@ -371,6 +374,50 @@
       "88": {
         "description": "Confront the Game Master inside the Headquarters",
         "locationTarget": "Game Master"
+      },
+      "89": {
+        "description": "Talk to the Byakko Leader at the Byakko Dome",
+        "locationTarget": "Byakko Leader"
+      },
+      "90": {
+        "description": "Go to the A.o.A prison in the Underground Cave",
+        "locationTarget": "A.o.A Prison"
+      },
+      "91": {
+        "description": "Talk to the old man at the Bulk Swamp",
+        "locationTarget": "Old Man"
+      },
+      "92": {
+        "description": "Go to the Leader's room at the Suzaku Hall",
+        "locationTarget": "Patamon"
+      },
+      "93": {
+        "description": "Defeat the Suzaku Leader in the Catacomb",
+        "locationTarget": "Suzaku Leader"
+      },
+      "94": {
+        "description": "Defeat Bulbmon in the Bug Maze",
+        "locationTarget": "Bulbmon"
+      },
+      "95": {
+        "description": "Talk to Kenny at the Forest Inn BF in Amaterasu",
+        "locationTarget": "Kenny"
+      },
+      "96": {
+        "description": "Defeat the Qing Long Leader in Qing Long",
+        "locationTarget": "Qing Long Leader"
+      },
+      "97": {
+        "description": "Talk to the Soldier at Phoenix Bay in Amaterasu",
+        "locationTarget": "Soldier"
+      },
+      "98": {
+        "description": "Defeat the Zhu Que Leader at the Zhu Que Hall",
+        "locationTarget": "Zhu Que Leader"
+      },
+      "99": {
+        "description": "Take the Digi-Egg at the Suzaku UG Lake in Amaterasu",
+        "locationTarget": "Digi-Egg"
       }
     }
   }

@@ -446,6 +446,61 @@
       "number": 88,
       "address": "0x0004B3E7",
       "bitMasks": ["0x80"]
+    },
+    {
+      "number": 89,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 90,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 91,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 92,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 93,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 94,
+      "address": "0x0004B3E8",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 95,
+      "address": "0x0004B3E1",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 96,
+      "address": "0x0004B3F2",
+      "bitMasks": ["0x08", "0x80"]
+    },
+    {
+      "number": 97,
+      "address": "0x0004B3B2",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 98,
+      "address": "0x0004B3E8",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 99,
+      "address": "0x00048DC1",
+      "bitMasks": []
     }
   ]
 }

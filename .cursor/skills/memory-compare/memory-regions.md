@@ -75,6 +75,11 @@ Definitions root: `App/src/data/memory-addresses/quests/`
 | 0x0004B3E7 | A.o.A arc story flags (`0x04` tamer 13, `0x08`+`0x10` Vennmon, `0x20` before Master Room, `0x40` 1st security, `0x80` Game Master) | MQ 62–88 snapshots |
 | 0x0004B3C0 / 0x0004B3C2 / 0x0004B3C3 / 0x0004B3C8 | Door / map visited flags (suspected) — flip on entering areas, not quest steps | MQ 62–88 snapshots |
 | 0x00048F3x – 0x00048F4x | Side quest flags | `quests/side-quests/*.json` |
+| 0x0004B370 (value) | Story counter continues in Amaterasu arc (`0x18`→`0x1E` over MQ 90–99) | MQ 89–99 snapshots — counter, not a flag |
+| 0x0004B3E8 | Amaterasu arc battle flags (`0x02` Bulbmon, `0x04` Zhu Que Leader) | MQ 89–99 snapshots — steps 94, 98 |
+| 0x0004B3F2 / 0x0004B3F3 | Story flags (`0x4B3F2` `0x08`+`0x80` Qing Long Leader; `0x4B3F3` `0x01` Phoenix Bay soldier, alternative) | MQ 89–99 snapshots |
+| 0x0004B3D1 – 0x0004B3D5, 0x0004B3DC | Map visited flags (suspected) — gain bits on entering Amaterasu maps, between quest snapshots | MQ 89–99 snapshots |
+| 0x00048DC1 / 0x00048DC6 / 0x00048DC7 / 0x00048F3C | Important-item-like possession `0→1` (Digi-Egg; Qing Long Leader; Zhu Que Leader; Kenny) | MQ 89–99 snapshots — not in `important-items-addresses.json` |
 
 ## DRI agents
 

@@ -214,10 +214,10 @@ describe("QuestReader", () => {
 
       expect(mainQuest.id).toBe("mainQuest");
       expect(mainQuest.requisites).toEqual([]);
-      expect(mainQuest.steps).toHaveLength(88);
+      expect(mainQuest.steps).toHaveLength(99);
       expect(mainQuest.steps[0]).toMatchObject({ number: 1, value: 0x80 });
       expect(mainQuest.steps[1]).toMatchObject({ number: 2, value: 0x01 });
-      expect(mainQuest.steps.at(-1)?.number).toBe(88);
+      expect(mainQuest.steps.at(-1)?.number).toBe(99);
     });
 
     it("should read the side quests", () => {
