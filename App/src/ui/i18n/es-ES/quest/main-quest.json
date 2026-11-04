@@ -418,6 +418,10 @@
       "99": {
         "description": "Toma el Digi-Huevo en el Lago Subterráneo Suzaku de Amaterasu",
         "locationTarget": "Digi-Huevo"
+      },
+      "100": {
+        "description": "Derrota al Líder de Genbu en la Puerta de Batalla",
+        "locationTarget": "Líder de Genbu"
       }
     }
   }

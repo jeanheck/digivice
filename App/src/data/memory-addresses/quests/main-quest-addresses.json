@@ -501,6 +501,11 @@
       "number": 99,
       "address": "0x00048DC1",
       "bitMasks": []
+    },
+    {
+      "number": 100,
+      "address": "0x00048DBC",
+      "bitMasks": ["0x01"]
     }
   ]
 }

@@ -80,6 +80,9 @@ Definitions root: `App/src/data/memory-addresses/quests/`
 | 0x0004B3F2 / 0x0004B3F3 | Story flags (`0x4B3F2` `0x08`+`0x80` Qing Long Leader; `0x4B3F3` `0x01` Phoenix Bay soldier, alternative) | MQ 89–99 snapshots |
 | 0x0004B3D1 – 0x0004B3D5, 0x0004B3DC | Map visited flags (suspected) — gain bits on entering Amaterasu maps, between quest snapshots | MQ 89–99 snapshots |
 | 0x00048DC1 / 0x00048DC6 / 0x00048DC7 / 0x00048F3C | Important-item-like possession `0→1` (Digi-Egg; Qing Long Leader; Zhu Que Leader; Kenny) | MQ 89–99 snapshots — not in `important-items-addresses.json` |
+| 0x00048DBC | Genbu Leader battle won `0→1` (suspected) — next to leader flags `0x48DB9` Seiryu / `0x48DBA` Suzaku / `0x48DBB` Byakko (`npc-addresses.json`) | MQ 100 snapshots — only save-RAM change; no `0x4B3xx` bit. **Integrated** as main quest step 100; not yet in `npc-addresses.json` |
+| 0x00049528 / 0x0004952A | Kotemon block `+0x8C` / `+0x8E` (`0→0x1B`, `0→1`) after Genbu Leader battle — digimon field, not quest | MQ 100 snapshots — discard for quests |
+| 0x0004AFC0 (Int16) | `1206→1` after Genbu Leader battle — unknown counter, not a flag | MQ 100 snapshots — discard |
 
 ## DRI agents
 

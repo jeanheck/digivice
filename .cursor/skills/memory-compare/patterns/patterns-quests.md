@@ -80,6 +80,7 @@ checked over the full 2 MiB).
 | 97 | Soldier at Phoenix Bay | `02A8` | `0x4B3B2` | `0x20` | `0x4B3F3` `0x01` (also sticky) |
 | 98 | Zhu Que Leader (battle) | `02AD` | `0x4B3E8` | `0x04` | item-like `0x48DC7` `0→1`; `0x4B370` `0x1C`→`0x1D` |
 | 99 | Digi-Egg | `02AE` | `0x48DC1` | raw `!= 0` | `0x4B370` `0x1D`→`0x1E` |
+| 100 | Genbu Leader (battle) | `026E` | `0x48DBC` | `0x01` | `0x4B370` `0x1E`→`0x1F`; no `0x4B3xx` bit (2026-11-04, integrated) |
 
 `0x4B370` keeps counting in this arc (`0x18`→`0x1E`, also `0x1A`→`0x1B`
 between Bulbmon and Kenny): counter, not usable as bitmask. Between snapshots,

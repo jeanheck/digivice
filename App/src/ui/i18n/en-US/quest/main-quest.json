@@ -418,6 +418,10 @@
       "99": {
         "description": "Take the Digi-Egg at the Suzaku UG Lake in Amaterasu",
         "locationTarget": "Digi-Egg"
+      },
+      "100": {
+        "description": "Defeat the Genbu Leader at the Battle Gate",
+        "locationTarget": "Genbu Leader"
       }
     }
   }

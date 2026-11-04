@@ -63,6 +63,7 @@ Definitions paths are relative to `App/src/data/memory-addresses/`.
 ### Main quest (2026-11-03)
 
 - Chapter 5 "Um novo servidor: Amaterasu!" — steps 89–99 in `quests/main-quest-addresses.json`; steps 89–92 provisional (reuse step 93 bit `0x4B3DF` `0x08`, no own flag found); provisional coords (50,50) on all chapter 5 steps
+- Step 100 (2026-11-04) — Genbu Leader at Battle Gate (`026E`), `0x48DBC` / `0x01`; chapter 5 now ends at 100; provisional coords (50,50)
 
 ## Palette notes
 
