@@ -113,6 +113,7 @@ None of this would have been possible without the people who dug up and shared t
 - **Digimon World 3 – Opponent's Deck List** *by SSJ2__Gohan* [GameFAQs] (https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/47836)
 - **DW2003 - Booster Packs complete** *by BSkullX* [GameFAQs] (https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/76545344)
 - **DV Experience Table** *by bugz_lha* [GameFAQs] (https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/78509)
+- **Circuit Board Guide** *by Shalios* [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/76725/dw3-circuit-board-maps)
 
 ## Digimons images credits
 
