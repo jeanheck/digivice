@@ -2700,5 +2700,44 @@
         }
       }
     ]
+  },
+  "02E9": {
+    "imageName": "Circuit Board"
+  },
+  "02ED": {
+    "imageName": "Circuit Board"
+  },
+  "0261": {
+    "imageName": "Boot Mountain"
+  },
+  "0265": {
+    "imageName": "Kulon Mine"
+  },
+  "0268": {
+    "imageName": "Kulon Pit"
+  },
+  "0269": {
+    "imageName": "Kulon Armory"
+  },
+  "0266": {
+    "imageName": "Lake of Ice"
+  },
+  "0267": {
+    "imageName": "Legendary Gym"
+  },
+  "0262": {
+    "imageName": "Snow Mountain"
+  },
+  "0263": {
+    "imageName": "Mountain Inn"
+  },
+  "0264": {
+    "imageName": "Freeze Mountain"
+  },
+  "026E": {
+    "imageName": "Portao de Batalha"
+  },
+  "026F": {
+    "imageName": "Genbu City"
   }
 }
