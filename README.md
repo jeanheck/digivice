@@ -193,6 +193,24 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Yanmamon(Green)** *by me (using the Yanmamon image as base, only changing the colors to green tones)*
 - **Yanmamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Yanmamon?file=Yanmamon_b.jpg)
 - **Zanbamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Zanbamon?file=Zanbamon_b.jpg)
+- **Kurisarimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Chrysalimon?file=Chrysalimon_b.jpg)
+- **Snimon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Snimon/Galeria?file=Snimon_b.jpg)
+- **Blossomon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Blossomon?file=Blossomon_b.jpg)
+- **MarineDevimon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MarinDevimon?file=MarinDevimon_b.jpg)
+- **Ebidramon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Ebidramon?file=Ebidramon_b.jpg)
+- **Drimogemon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Drimogemon?file=Drimogemon_b.jpg)
+- **Flarerizamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/FlareLizamon?file=FlareLizamon_b.jpg)
+- **Meramon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Meramon?file=Meramon_b.jpg)
+- **Mojyamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Mojyamon?file=Mojyamon_b.jpg)
+- **Frigimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Frigimon?file=Frigimon_b.jpg)
+- **Icemon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Icemon?file=Icemon_b.jpg)
+- **Antylamon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Antylamon_(Good)?file=Antylamon_%28Good%29_b.jpg)
+- **Fugamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Fugamon?file=Fugamon_b.jpg)
+- **Kurisarimon(Pink)** *by Lhikan634* [Digimon Wiki](https://digimon.fandom.com/de/wiki/Kurisarimon?file=Kurisarimon_rot.png)
+- **Deltamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Deltamon?file=Deltamon_b.jpg)
+- **Vikemon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Vikemon?file=Vikemon_b.jpg)
+- **Chimeramon** *by Digi9346* [Digimon Wiki](https://digimon.fandom.com/wiki/Kimeramon?file=Kimeramon_b.jpg)
+- **Scorpiomon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Scorpiomon?file=Scorpiomon_b.jpg)
 
 ### Digievolutions
 

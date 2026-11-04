@@ -20,7 +20,7 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x0004B404 | Card battle config id (Int32) | **integrated** — [`card-battle-addresses.json`](../../../App/src/data/memory-addresses/card-battle-addresses.json) `id` → `CardBattle.Id`; maps to `cardBattles.*.id` in tamer/duel-island JSON; Genji `first=1` / `second=2` (confirmed); other NPCs provisional on `first` only; `0` outside card battle |
 | 0x0004B40C | Card battle id mirror (Int32, suspected) | genji first mid-battle mirrored `1`; second series `0`; not needed for Digivice |
 | 0x0004B41C | Card deck level (Int32, suspected) | genji mid-battle — `4` (matches RA deck-level note); not config id |
-| 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
+| 0x0004B410 | Field MapId (Int16) — mirrors MapId on field, keeps the field map during battle (`0600`) | seabed-routing investigation; server scan 2026-11-04 |
 | 0x0004B420 | Card battle context id (Int32) | card-battle-natsumi — `0x23` (35) in card battle vs `0x03` in digimon battle; Genji card battle `0` |
 | 0x00048D78 | SeabedRoute | player-addresses.json — seabed corridor / dock pair; **Mobius: constant `0x01`** (not cell id) |
 | 0x00048D7A | MapVariant | player-addresses.json — seabed: `0x01` underwater; **Mobius: cell-pair `0x01`–`0x08`** (with MapId `0258`/`0259`) |
@@ -34,7 +34,7 @@ See also **Map / location** for seabed routing fields (including investigation-o
 | 0x0004B3F8 | Current MapId | player-addresses.json — **`0x0700`** = card battle screen |
 | 0x0004B400 | PreviousMapId (rolling) | player-addresses.json — map just left on each transition; during card battle = world map before `0x0700` |
 | 0x0004B404 | Card battle config id (Int32) | **integrated** — see Player section; Genji first/second = `1`/`2`; others via `cardBattles.*.id` |
-| 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
+| 0x0004B410 | Field MapId (Int16) — mirrors MapId on field, keeps the field map during battle (`0600`) | seabed-routing investigation; server scan 2026-11-04 |
 | 0x0004B420 | Card battle context id (Int32) | card-battle snapshots — Natsumi `0x23` in card battle; role TBD |
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
 | 0x00048D78 | SeabedRoute (corridor / dock pair) | player-addresses.json — set on dive, persists underwater; same from either entry; Mobius always `0x01` |
