@@ -20,6 +20,8 @@ You can see more in the video below:
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R028MD8Y)
 
+Donations support my YouTube channel. Digivice is and will always be free (see [Donations](#donations)).
+
 ## The current state
 
 **Right now, Digivice only fully supports the game up to the West Sector of Asuka Server** (the Third part of the story, until you beat the Game Master). The main quest, map enemies, and related data are only complete through this sector.<br>
@@ -40,12 +42,39 @@ Main quest update up to the point where the player obtains the Digi-Egg of Knowl
 ## Before you continue
 
 **This only supports Digimon World 2003. It will not work on Digimon World 3.**<br>
-Game data here comes from public sources on the web (see Reference Data Credits below). You're free to reuse any of it in your own projects.<br>
-I don't own any rights to the game or to Digimon. Even the name "Digivice" comes from that universe. **All copyrights belong to their respective owners.** This is a study project — learning combined with a game that marked my childhood.
+Game data here comes from public sources on the web (see [Reference data credits](#reference-data-credits)). For copyright and reuse details, see [Legal notice](#legal-notice) and [License and reuse](#license-and-reuse).
 
-## License
+## Legal notice
 
-The source code of Digivice is licensed under the [MIT License](LICENSE). Digimon, Digimon World 2003 and all related names, images and game data are trademarks and copyrights of their respective owners (Bandai, Toei Animation). They are not covered by this license, and their use here does not imply any ownership or affiliation.
+Digivice is an unofficial, fan-made project. It is not affiliated with, endorsed, sponsored or approved by Bandai Namco, Toei Animation or any other rights holder.
+
+Digimon, Digimon World 2003 and all related names, characters, images, logos and other assets — including the name "Digivice" itself — are trademarks and/or copyrighted material of Bandai Namco, Toei Animation and their respective owners. **All rights belong to them.**
+
+Digivice is a study project, built for fun and for learning, with no commercial purpose.
+
+If you are a rights holder and would like any content removed, please [open an issue](https://github.com/jeanheck/digivice/issues) and I will take it down promptly.
+
+## Donations
+
+**Digivice is, and will always be, completely free.** Every feature is available to everyone.
+
+Donations through Ko-fi or LivePix support my YouTube channel, where I share Digivice's development progress. They are not a payment for the app: donating does not grant any privilege, early access or exclusive feature.
+
+## License and reuse
+
+### Code and game data: free to reuse
+
+The source code of Digivice is licensed under the [MIT License](LICENSE). You're free to use, modify and share it in any project, as long as you keep the copyright notice, giving credit to Digivice.
+
+You're also free to reuse the game data gathered here, such as EXP tables, digievolution requirements and enemy lists. Most of it already exists publicly on the web. All I ask is that you credit Digivice and, where applicable, the original authors listed in [Reference data credits](#reference-data-credits).
+
+### Images and other Bandai Namco assets: not covered
+
+I can't grant any rights over Digimon images, names or other Bandai Namco assets, because I don't own them either. They are **not** covered by the MIT License.
+
+If you decide to use them, I recommend making it clear that your project is non-commercial and fan-made, and crediting the sources you took them from, as I do in [Digimon images credits](#digimon-images-credits) at the end of this file.
+
+Note that although those sources show the name of the user who uploaded each image, many of them describe the images as official Bandai artwork. Those users most likely don't hold the rights either; they just shared the images publicly. Crediting them helps trace where an image came from, but it is not permission to use it.
 
 ## Requirements
 
@@ -115,9 +144,9 @@ None of this would have been possible without the people who dug up and shared t
 - **DV Experience Table** *by bugz_lha* [GameFAQs] (https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/78509)
 - **Circuit Board Guide** *by Shalios* [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/76725/dw3-circuit-board-maps)
 
-## Digimons images credits
+## Digimon images credits
 
-Below are the links to where the Digimon images were taken from, as well as the names of the users who posted the respective images (some of them ara Bandai Official Arts).
+Below are the links to where the Digimon images were taken from, as well as the names of the users who posted the respective images (some of them are Bandai Official Arts).
 
 ### Enemies
 
