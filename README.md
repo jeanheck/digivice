@@ -211,6 +211,7 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Vikemon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Vikemon?file=Vikemon_b.jpg)
 - **Chimeramon** *by Digi9346* [Digimon Wiki](https://digimon.fandom.com/wiki/Kimeramon?file=Kimeramon_b.jpg)
 - **Scorpiomon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Scorpiomon?file=Scorpiomon_b.jpg)
+- **MetalEtemon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalEtemon?file=MetalEtemon_b.jpg)
 
 ### Digievolutions
 
