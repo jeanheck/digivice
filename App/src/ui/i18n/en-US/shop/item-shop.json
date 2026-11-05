@@ -14,6 +14,9 @@
     },
     "byakkoItemShop": {
       "name": "Byakko Items"
+    },
+    "genbuItemShop": {
+      "name": "Genbu Items"
     }
   }
 }

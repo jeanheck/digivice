@@ -2794,6 +2794,36 @@
     "imageName": "Portao de Batalha"
   },
   "026F": {
-    "imageName": "Genbu City"
+    "imageName": "Genbu City",
+    "equipmentShops": [
+      {
+        "id": "genbuArsenal",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "genbuItemShop",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "genbuCardShop",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   }
 }

@@ -274,5 +274,42 @@
         ]
       }
     ]
+  },
+  "genbuCardShop": {
+    "locationId": "026F",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0
+        },
+        "inventory": [
+          {
+            "cardId": "1071",
+            "price": 7700
+          },
+          {
+            "cardId": "1200",
+            "price": 7700
+          },
+          {
+            "cardId": "1115",
+            "price": 7700
+          },
+          {
+            "cardId": "1156",
+            "price": 7700
+          },
+          {
+            "cardId": "1152",
+            "price": 8000
+          },
+          {
+            "cardId": "1283",
+            "price": 9000
+          }
+        ]
+      }
+    ]
   }
 }

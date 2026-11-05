@@ -310,6 +310,85 @@
       }
     ]
   },
+  "genbuArsenal": {
+    "locationId": "026F",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      {
+        "equipmentId": "97",
+        "price": 9500
+      },
+      {
+        "equipmentId": "123",
+        "price": 9500
+      },
+      {
+        "equipmentId": "148",
+        "price": 9500
+      },
+      {
+        "equipmentId": "172",
+        "price": 8500
+      },
+      {
+        "equipmentId": "186",
+        "price": 8500
+      },
+      {
+        "equipmentId": "202",
+        "price": 9500
+      },
+      {
+        "equipmentId": "220",
+        "price": 1400
+      },
+      {
+        "equipmentId": "241",
+        "price": 4200
+      },
+      {
+        "equipmentId": "267",
+        "price": 6500
+      },
+      {
+        "equipmentId": "111",
+        "price": 9500
+      },
+      {
+        "equipmentId": "135",
+        "price": 9500
+      },
+      {
+        "equipmentId": "162",
+        "price": 9500
+      },
+      {
+        "equipmentId": "179",
+        "price": 8500
+      },
+      {
+        "equipmentId": "195",
+        "price": 8500
+      },
+      {
+        "equipmentId": "210",
+        "price": 9500
+      },
+      {
+        "equipmentId": "231",
+        "price": 3500
+      },
+      {
+        "equipmentId": "254",
+        "price": 5000
+      },
+      {
+        "equipmentId": "280",
+        "price": 4200
+      }
+    ]
+  },
   "asukaPawnshop": {
     "locationId": "020D",
     "imageName": "Gomamon",
