@@ -2708,31 +2708,87 @@
     "imageName": "Circuit Board"
   },
   "0261": {
-    "imageName": "Boot Mountain"
+    "imageName": "Boot Mountain",
+    "enemies": {
+      "walking": [
+        "148",
+        "149",
+        "190"
+      ],
+      "kickingTree": [
+        "205",
+        "521"
+      ]
+    }
   },
   "0265": {
-    "imageName": "Kulon Mine"
+    "imageName": "Kulon Mine",
+    "enemies": {
+      "walking": [
+        "147",
+        "190",
+        "198"
+      ],
+      "kickingTree": [
+        "164",
+        "521"
+      ]
+    }
   },
   "0268": {
-    "imageName": "Kulon Pit"
+    "imageName": "Kulon Pit",
+    "enemies": {
+      "walking": [
+        "198"
+      ]
+    }
   },
   "0269": {
     "imageName": "Kulon Armory"
   },
   "0266": {
-    "imageName": "Lake of Ice"
+    "imageName": "Lake of Ice",
+    "enemies": {
+      "walking": [
+        "152"
+      ],
+      "fishing": [
+        "216",
+        "520"
+      ],
+      "kickingTree": [
+        "151",
+        "521"
+      ]
+    }
   },
   "0267": {
     "imageName": "Legendary Gym"
   },
   "0262": {
-    "imageName": "Snow Mountain"
+    "imageName": "Snow Mountain",
+    "enemies": {
+      "walking": [
+        "150",
+        "151"
+      ],
+      "kickingTree": [
+        "151",
+        "521"
+      ]
+    }
   },
   "0263": {
     "imageName": "Mountain Inn"
   },
   "0264": {
-    "imageName": "Freeze Mountain"
+    "imageName": "Freeze Mountain",
+    "enemies": {
+      "walking": [
+        "150",
+        "151"
+      ]
+    }
   },
   "026E": {
     "imageName": "Portao de Batalha"

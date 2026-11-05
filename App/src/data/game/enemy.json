@@ -4939,6 +4939,14 @@
         "dropId": 208,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "0265",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "148": {
@@ -4987,6 +4995,14 @@
         "dropId": 340,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "0261",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "149": {
@@ -5029,7 +5045,15 @@
     "regularAttackId": "fireElement",
     "techniqueId": "flameLance",
     "memoryId": 9,
-    "groupId": 112
+    "groupId": 112,
+    "locations": [
+      {
+        "id": "0261",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "150": {
     "name": "Mojyamon",
@@ -5071,7 +5095,21 @@
     "regularAttackId": "noElement",
     "techniqueId": "iceBlow",
     "memoryId": 52,
-    "groupId": 113
+    "groupId": 113,
+    "locations": [
+      {
+        "id": "0262",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "0264",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "151": {
     "name": "Frigimon",
@@ -5118,6 +5156,27 @@
       {
         "dropId": 406,
         "type": "consumableItem"
+      }
+    ],
+    "locations": [
+      {
+        "id": "0262",
+        "sources": [
+          "walking",
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "0264",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "0266",
+        "sources": [
+          "kickingTree"
+        ]
       }
     ]
   },
@@ -5166,6 +5225,14 @@
       {
         "dropId": 346,
         "type": "equipment"
+      }
+    ],
+    "locations": [
+      {
+        "id": "0266",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -5712,8 +5779,16 @@
     "bits": 610,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
-    "groupId": null
+    "memoryId": 60,
+    "groupId": 127,
+    "locations": [
+      {
+        "id": "0265",
+        "sources": [
+          "kickingTree"
+        ]
+      }
+    ]
   },
   "165": {
     "name": "Puppetmon",
@@ -7030,7 +7105,21 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 402,
-    "groupId": 153
+    "groupId": 153,
+    "locations": [
+      {
+        "id": "0261",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "0265",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "191": {
     "name": "Airdramon(Gold)",
@@ -7466,7 +7555,21 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 89,
-    "groupId": 161
+    "groupId": 161,
+    "locations": [
+      {
+        "id": "0265",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "0268",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "199": {
     "name": "Vademon(Red)",
@@ -7794,12 +7897,20 @@
     "bits": 990,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
-    "groupId": null,
+    "memoryId": 416,
+    "groupId": 168,
     "drops": [
       {
         "dropId": 330,
         "type": "equipment"
+      }
+    ],
+    "locations": [
+      {
+        "id": "0261",
+        "sources": [
+          "kickingTree"
+        ]
       }
     ]
   },
@@ -8304,12 +8415,20 @@
     "bits": 450,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
-    "groupId": null,
+    "memoryId": 427,
+    "groupId": 179,
     "drops": [
       {
         "dropId": 344,
         "type": "equipment"
+      }
+    ],
+    "locations": [
+      {
+        "id": "0266",
+        "sources": [
+          "fishing"
+        ]
       }
     ]
   },
@@ -9641,11 +9760,11 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 99,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 99,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 99,
     "canKO": true,
     "ko": 50,
     "canDrain": true,
@@ -9659,8 +9778,16 @@
     "bits": 420,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
-    "groupId": null
+    "memoryId": 462,
+    "groupId": 332,
+    "locations": [
+      {
+        "id": "0266",
+        "sources": [
+          "fishing"
+        ]
+      }
+    ]
   },
   "521": {
     "name": "Cardmon(G)",
@@ -9702,7 +9829,33 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 463,
-    "groupId": 333
+    "groupId": 333,
+    "locations": [
+      {
+        "id": "0261",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "0262",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "0265",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "0266",
+        "sources": [
+          "kickingTree"
+        ]
+      }
+    ]
   },
   "522": {
     "name": "Cardmon(H)",
