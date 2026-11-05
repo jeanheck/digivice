@@ -155,7 +155,7 @@ Conventions: skill `frontend-memory-tests`.
 - `requisites` at quest root and/or per step, ids matching the definitions (e.g. `asukaRematch` → `asukaTrophy`; DRI step 3 → `{rookie}DDNA`).
 - Locations: `location` = innermost target map id; `coordinates` = pin on that map.
 - The path to a map belongs to the map: omit `innerLocation` in the step to inherit it from `map.json`. A path valid for any quest goes into the map's `innerLocation` in `map.json`, not into the step.
-- Step `innerLocation` only when the route depends on the quest (desert cells, different doors into the same map — e.g. main quest steps 52/54/56/58 into `024E`): hops only, without the target pin. Never use `"innerLocation": []`.
+- Step `innerLocation` only when the route depends on the quest (desert cells, a hop that differs per quest — e.g. main quest step 4 into Seiryu City `022E` through Seiryu Tower): hops only, without the target pin. Never use `"innerLocation": []`.
 - Coordinates may be provisional `x`/`y` `50` until the user supplies markers — note it in [status.md](status.md).
 - i18n: `title`, `description`, `steps.{n}` texts, one `locationTarget` per step (marker label), `requisites.{id}` labels.
 

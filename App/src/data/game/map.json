@@ -2167,6 +2167,15 @@
       "x": 18,
       "y": 38
     },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 62.5,
+          "y": 75
+        }
+      }
+    ],
     "enemies": {
       "walking": [
         "112"
@@ -2175,6 +2184,19 @@
   },
   "024F": {
     "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 91,
+          "y": 60
+        }
+      }
+    ],
     "enemies": {
       "walking": [
         "112"
@@ -2183,6 +2205,19 @@
   },
   "0250": {
     "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 75,
+          "y": 35
+        }
+      }
+    ],
     "enemies": {
       "walking": [
         "112"
@@ -2191,6 +2226,19 @@
   },
   "0251": {
     "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 57,
+          "y": 19
+        }
+      }
+    ],
     "enemies": {
       "walking": [
         "112"
