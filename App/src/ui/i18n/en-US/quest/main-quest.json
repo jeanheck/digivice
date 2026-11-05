@@ -417,6 +417,26 @@
       "98": {
         "description": "Defeat the Genbu Leader at the Battle Gate",
         "locationTarget": "Genbu Leader"
+      },
+      "99": {
+        "description": "Defeat the Ice Witch at the Ice Dungeon",
+        "locationTarget": "Ice Witch"
+      },
+      "100": {
+        "description": "Defeat the Fire Knight at the Fire Dungeon",
+        "locationTarget": "Fire Knight"
+      },
+      "101": {
+        "description": "Defeat the Dark Knight at the Dark Dungeon",
+        "locationTarget": "Dark Knight"
+      },
+      "102": {
+        "description": "Talk to the Operator at the Emergency Room to reach Magasta",
+        "locationTarget": "Operator"
+      },
+      "103": {
+        "description": "Defeat the Robot at Magasta B2F",
+        "locationTarget": "Robot"
       }
     }
   }

@@ -101,6 +101,35 @@ between Bulbmon and Kenny). Between snapshots, `0x4B3D1`–`0x4B3D5` and
 
 ---
 
+## Main quest 99–103 — North Sector (suspected, 2026-11-05)
+
+Snapshots: 28 files in chronological order (`before/after-*-{99..103}.bin`
+plus mid-battle `ice-witch-*`, `fire-knight-*`, `dark-knight-*`, `robot-*` and
+wild encounters). Sticky = clear in every earlier snapshot, set in every later one.
+
+Tamer bosses set **two** bits: one on **battle start** (visible in the first
+mid-battle snapshot) and one on **win** (visible in `after-*`). Win bits for
+dark knight onward are sequential in **`0x4B3E6`** (chapter story byte).
+
+| Step | Event | MapId | Win bit | Battle-start bit | Other in same compare |
+|------|-------|-------|---------|------------------|-----------------------|
+| 99 | Ice Witch (battle, group 19) | `026A` | `0x4B3E1` `0x02` | `0x4B3DF` `0x40` | item-like `0x48E8D` `0→1` |
+| 100 | Fire Knight (battle, group 20) | `026B` | `0x4B3E6` `0x01` | `0x4B3E5` `0x80` | item-like `0x48E38` `0→1` |
+| 101 | Dark Knight (battle, group 21) | `026C` | `0x4B3E6` `0x04` | `0x4B3E6` `0x02` | item-like `0x48E53` `0→1` |
+| 102 | Operator (`026D` → `02DA`) | `026D` | `0x4B3B5` `0x04` | — | `0x4B370` `0x1F`→`0x20`; `0x4B3DB` `0x04` (map visited `02DA`) |
+| 103 | Robot (battle, group 193) | `02DB` | — (no win bit in `after-robot-103`) | `0x4B3E6` `0x10` | `0x4B3E6` `0x20` came later while exploring/opening chests (user), **not** the win |
+
+**Integrated (2026-11-05):** steps 99–102 use the win bits; step 103 uses the
+battle-start bit `0x4B3E6` `0x10` (behavior on a lost battle not validated).
+
+Between `after-operator-102` and `whamon` (entering `02DB`): `0x4B3E6` `0x08`
+and `0x4B3DB` `0x08` (map visited). Between `after-robot-103` and
+`metal-seadramon`: `0x4B3E6` `0x20` together with `0x4B380` `0x80`+`0x20`,
+`0x4B381` `0x01`, `0x48E7B` / `0x48E90` `0→1` (chest-like pairs, suspected).
+Group ids < 200 → not in the BattledTamer bitfield `0x4B39A+`.
+
+---
+
 ## Raw byte step (confirmed)
 
 Empty `bitMasks: []` → step complete when `byte != 0`.

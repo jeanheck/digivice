@@ -589,5 +589,109 @@
     "exp": 35,
     "dvexp": 718,
     "bit": 1490
+  },
+  "iceWitch": {
+    "type": "npc",
+    "locationId": "026A",
+    "imageName": "Ice Witch",
+    "mainQuestAvailabilityWindow": {
+      "starts": 98,
+      "ends": 99
+    },
+    "party": [
+      {
+        "enemyId": 23,
+        "groupId": 19
+      },
+      {
+        "enemyId": 427,
+        "groupId": 19
+      },
+      {
+        "enemyId": 409,
+        "groupId": 19
+      }
+    ],
+    "exp": 703,
+    "dvexp": 46,
+    "bit": 1410
+  },
+  "fireKnight": {
+    "type": "npc",
+    "locationId": "026B",
+    "imageName": "Fire Knight",
+    "mainQuestAvailabilityWindow": {
+      "starts": 99,
+      "ends": 100
+    },
+    "party": [
+      {
+        "enemyId": 9,
+        "groupId": 20
+      },
+      {
+        "enemyId": 189,
+        "groupId": 20
+      },
+      {
+        "enemyId": 104,
+        "groupId": 20
+      }
+    ],
+    "exp": 715,
+    "dvexp": 47,
+    "bit": 1420
+  },
+  "darkKnight": {
+    "type": "npc",
+    "locationId": "026C",
+    "imageName": "Dark Knight",
+    "mainQuestAvailabilityWindow": {
+      "starts": 100,
+      "ends": 101
+    },
+    "party": [
+      {
+        "enemyId": 244,
+        "groupId": 21
+      },
+      {
+        "enemyId": 135,
+        "groupId": 21
+      },
+      {
+        "enemyId": 429,
+        "groupId": 21
+      }
+    ],
+    "exp": 719,
+    "dvexp": 48,
+    "bit": 1395
+  },
+  "robot": {
+    "type": "npc",
+    "locationId": "02DB",
+    "imageName": "Robot",
+    "mainQuestAvailabilityWindow": {
+      "starts": 102,
+      "ends": 103
+    },
+    "party": [
+      {
+        "enemyId": 225,
+        "groupId": 193
+      },
+      {
+        "enemyId": 229,
+        "groupId": 193
+      },
+      {
+        "enemyId": 41,
+        "groupId": 193
+      }
+    ],
+    "exp": 672,
+    "dvexp": 44,
+    "bit": 1370
   }
 }

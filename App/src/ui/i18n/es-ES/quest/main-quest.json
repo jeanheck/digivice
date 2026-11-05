@@ -417,6 +417,26 @@
       "98": {
         "description": "Derrota al Líder de Genbu en la Puerta de Batalla",
         "locationTarget": "Líder de Genbu"
+      },
+      "99": {
+        "description": "Derrota a la Bruja del Hielo en la Ice Dungeon",
+        "locationTarget": "Bruja del Hielo"
+      },
+      "100": {
+        "description": "Derrota al Caballero de Fuego en la Fire Dungeon",
+        "locationTarget": "Caballero de Fuego"
+      },
+      "101": {
+        "description": "Derrota al Caballero Oscuro en la Dark Dungeon",
+        "locationTarget": "Caballero Oscuro"
+      },
+      "102": {
+        "description": "Habla con el Operador en la Emergency Room para llegar a Magasta",
+        "locationTarget": "Operador"
+      },
+      "103": {
+        "description": "Derrota al Robot en Magasta B2F",
+        "locationTarget": "Robot"
       }
     }
   }

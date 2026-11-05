@@ -2827,22 +2827,84 @@
     ]
   },
   "026A": {
-    "imageName": "Ice Dungeon"
+    "imageName": "Ice Dungeon",
+    "enemies": {
+      "walking": [
+        "204",
+        "154"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "iceWitch",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "026B": {
-    "imageName": "Fire Dungeon"
+    "imageName": "Fire Dungeon",
+    "enemies": {
+      "walking": [
+        "156"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "fireKnight",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "026C": {
-    "imageName": "Dark Dungeon"
+    "imageName": "Dark Dungeon",
+    "npcs": [
+      {
+        "id": "darkKnight",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "026D": {
     "imageName": "Emergency Room"
   },
   "02DA": {
-    "imageName": "Magasta B1F"
+    "imageName": "Magasta B1F",
+    "enemies": {
+      "walking": [
+        "161"
+      ]
+    }
   },
   "02DB": {
-    "imageName": "Magasta B2F"
+    "imageName": "Magasta B2F",
+    "enemies": {
+      "walking": [
+        "139",
+        "160"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "robot",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02DC": {
     "imageName": "Magasta"

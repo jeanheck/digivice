@@ -417,6 +417,26 @@
       "98": {
         "description": "Derrote o Líder Genbu no Portão de Batalha",
         "locationTarget": "Líder Genbu"
+      },
+      "99": {
+        "description": "Derrote a Bruxa do Gelo na Masmorra de Gelo",
+        "locationTarget": "Bruxa do Gelo"
+      },
+      "100": {
+        "description": "Derrote o Cavaleiro do Fogo na Masmorra de Fogo",
+        "locationTarget": "Cavaleiro do Fogo"
+      },
+      "101": {
+        "description": "Derrote o Cavaleiro das Trevas na Masmorra das Trevas",
+        "locationTarget": "Cavaleiro das Trevas"
+      },
+      "102": {
+        "description": "Fale com o Operador na Câmara para chegar a Magasta",
+        "locationTarget": "Operador"
+      },
+      "103": {
+        "description": "Derrote o Robô em Magasta Subsolo: Andar 2",
+        "locationTarget": "Robô"
       }
     }
   }

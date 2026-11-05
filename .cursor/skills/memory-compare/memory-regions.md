@@ -78,6 +78,9 @@ Definitions root: `App/src/data/memory-addresses/quests/`
 | 0x0004B370 (value) | Story counter continues in Amaterasu arc (`0x18`→`0x1F` over current MQ 89–98); exact values `0x19` / `0x1A` used as bitmasks for MQ 89 (prison) / 90 (Patamon) | Amaterasu arc snapshots (old numbering 89–100) — counter, not a flag |
 | 0x0004B3E8 | Amaterasu arc battle flags (`0x02` Bulbmon, `0x04` Zhu Que Leader) | Amaterasu arc snapshots — current MQ steps 92, 96 |
 | 0x0004B3F2 / 0x0004B3F3 | Story flags (`0x4B3F2` `0x08`+`0x80` Qing Long Leader; `0x4B3F3` `0x01` Phoenix Bay soldier, alternative) | MQ 89–99 snapshots |
+| 0x0004B3E6 | North Sector story byte — sequential bits: `0x01` Fire Knight win, `0x02` Dark Knight battle start, `0x04` Dark Knight win, `0x08` entering `02DB`, `0x10` Robot battle start, `0x20` set while exploring `02DB` after Robot (not the win) | MQ 99–103 snapshots 2026-11-05 — **integrated** as MQ steps 100 (`0x01`), 101 (`0x04`), 103 (`0x10`) |
+| 0x0004B3DB | Map visited flags (suspected) — `0x04` `02DA`, `0x08` `02DB` | MQ 99–103 snapshots 2026-11-05 |
+| 0x0004B380 / 0x0004B381 | Chest-like flags (suspected) — gain bits alongside item-like `0x48E7B` / `0x48E90` `0→1` on `02DB` | MQ 99–103 snapshots 2026-11-05 |
 | 0x0004B3D1 – 0x0004B3D5, 0x0004B3DC | Map visited flags (suspected) — gain bits on entering Amaterasu maps, between quest snapshots | MQ 89–99 snapshots |
 | 0x00048DC1 / 0x00048DC6 / 0x00048DC7 / 0x00048F3C | Important-item-like possession `0→1` (Digi-Egg; Qing Long Leader; Zhu Que Leader; Kenny) | MQ 89–99 snapshots — not in `important-items-addresses.json` |
 | 0x00048DBC | Genbu Leader battle won `0→1` (suspected) — next to leader flags `0x48DB9` Seiryu / `0x48DBA` Suzaku / `0x48DBB` Byakko (`npc-addresses.json`) | MQ 100 snapshots — only save-RAM change; no `0x4B3xx` bit. **Integrated** as main quest step 98 (was 100 before 2026-11-05 renumbering); not yet in `npc-addresses.json` |

@@ -66,6 +66,7 @@ Definitions paths are relative to `App/src/data/memory-addresses/`.
 - Step 100 (2026-11-04) — Genbu Leader at Battle Gate (`026E`), `0x48DBC` / `0x01`; chapter 5 now ends at 100; provisional coords (50,50)
 - 2026-11-05 — removed old steps 89 (Byakko Leader) and 91 (old man): walkthrough hints, not required by the game. Chapter 5 = steps 89–98; prison (89) and Patamon (90) use the `0x4B370` counter value as bitmasks (`0x19` = `0x01`+`0x08`+`0x10`, `0x1A` = `0x02`+`0x08`+`0x10`), relying on the main quest cascade; old 93–100 renumbered to 91–98
 - 2026-11-05 — chapter 5 renamed "O Digi-ovo do Conhecimento" (steps 89–97); new chapter 6 "O Setor Norte!" starts at step 98 (Genbu Leader); next chapter 6 steps pending snapshots
+- 2026-11-05 — chapter 6 completed with steps 99–103 (Ice Witch `0x4B3E1`/`0x02`, Fire Knight `0x4B3E6`/`0x01`, Dark Knight `0x4B3E6`/`0x04`, Operator `0x4B3B5`/`0x04`, Robot `0x4B3E6`/`0x10` = battle-start bit); provisional coords (50,50); NPC names drafted (Bruxa do Gelo, Cavaleiro do Fogo, Cavaleiro das Trevas, Operador, Robô)
 
 ## Palette notes
 

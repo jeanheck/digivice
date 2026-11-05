@@ -218,6 +218,31 @@ Growlmon fingerprint L99 / STR 659 / SPD 632:
 
 ---
 
+## Tamer enemies vs wild `enemy.json` entry (confirmed 2026-11-05)
+
+Snapshots: North Sector tamers (`ice-witch-*`, `fire-knight-*`,
+`dark-knight-*`, `robot-*`) vs wild `numemon-new`, `vikemon`, `skull-meramon`,
+`whamon`, `metal-seadramon`, `tylomon`.
+
+- Tamer enemies reuse the **same `memoryId`** as the wild species (Frigimon
+  `23`, Meramon `9`, SkullMeramon `189`, …); resists and species are
+  **identical** to the wild entry.
+- Level is set by the group; the 5 attrs are `floor(wild × (16 + k) / 16)` with
+  `k` per enemy: `0` (Robot Dragomon/Pukumon, same level), `1` (Ice Witch all,
+  Fire Knight Meramon/SkullMeramon, Dark Knight Vilemon(Purple)), `2`
+  (Devidramon), `3` (SkullSatamon). `k` correlates with the level gain but no
+  exact formula found.
+- Enemy HP Max = `24 × (level + 5)` for every enemy seen here except Whamon
+  (`1800` at lv45, wild and json agree).
+- The pair only holds actor/target: an enemy that never acted has **no** block
+  (Fire Knight BlueMeramon `104`, Robot Giromon `41`) — only slot HP/MP.
+- Wired as `enemy.json` `603`–`614` (groups 19/20/21/193). BlueMeramon `608`
+  (attrs = wild × 17/16, `k` assumed from Fire Knight's other enemies) and
+  Giromon `614` (= wild, same level as Robot's other enemies) are
+  **provisional** — no combatant block captured.
+- `0x42B6C` read `0x0182` in all 18 battle snaps (different enemies) — stale
+  here; not usable as drop without a fresh-load control.
+
 ## Enemy catalog attr copy (variable address; id → attrs +0x0E)
 
 Besides the swappable pair, enemy base attrs+resists also appear in a

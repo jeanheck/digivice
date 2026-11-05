@@ -30,7 +30,7 @@
     {
       "number": 6,
       "starts": 98,
-      "ends": 98
+      "ends": 103
     }
   ],
   "steps": {
@@ -889,6 +889,46 @@
     },
     "98": {
       "location": "026E",
+      "coordinates": {
+        "x": 50,
+        "y": 50
+      },
+      "requisites": []
+    },
+    "99": {
+      "location": "026A",
+      "coordinates": {
+        "x": 50,
+        "y": 50
+      },
+      "requisites": []
+    },
+    "100": {
+      "location": "026B",
+      "coordinates": {
+        "x": 50,
+        "y": 50
+      },
+      "requisites": []
+    },
+    "101": {
+      "location": "026C",
+      "coordinates": {
+        "x": 50,
+        "y": 50
+      },
+      "requisites": []
+    },
+    "102": {
+      "location": "026D",
+      "coordinates": {
+        "x": 50,
+        "y": 50
+      },
+      "requisites": []
+    },
+    "103": {
+      "location": "02DB",
       "coordinates": {
         "x": 50,
         "y": 50

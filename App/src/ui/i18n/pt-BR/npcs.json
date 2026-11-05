@@ -77,6 +77,18 @@
     },
     "gameMasterHeadquarters": {
       "name": "Game Master"
+    },
+    "iceWitch": {
+      "name": "Bruxa do Gelo"
+    },
+    "fireKnight": {
+      "name": "Cavaleiro do Fogo"
+    },
+    "darkKnight": {
+      "name": "Cavaleiro das Trevas"
+    },
+    "robot": {
+      "name": "Robô"
     }
   }
 }

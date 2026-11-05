@@ -496,6 +496,31 @@
       "number": 98,
       "address": "0x00048DBC",
       "bitMasks": ["0x01"]
+    },
+    {
+      "number": 99,
+      "address": "0x0004B3E1",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 100,
+      "address": "0x0004B3E6",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 101,
+      "address": "0x0004B3E6",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 102,
+      "address": "0x0004B3B5",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 103,
+      "address": "0x0004B3E6",
+      "bitMasks": ["0x10"]
     }
   ]
 }

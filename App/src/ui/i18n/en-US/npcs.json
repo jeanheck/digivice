@@ -77,6 +77,18 @@
     },
     "gameMasterHeadquarters": {
       "name": "Game Master"
+    },
+    "iceWitch": {
+      "name": "Ice Witch"
+    },
+    "fireKnight": {
+      "name": "Fire Knight"
+    },
+    "darkKnight": {
+      "name": "Dark Knight"
+    },
+    "robot": {
+      "name": "Robot"
     }
   }
 }

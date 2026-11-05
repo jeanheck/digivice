@@ -155,6 +155,22 @@ Not yet validated against a lose / reload.
 [`npc-addresses.json`](../../../../App/src/data/memory-addresses/npc-addresses.json)
 (battle id `first`) and through the Npcs pipeline / frontend sync.
 
+**North Sector main quest NPCs (suspected 2026-11-05):** `before/after-{ice-witch-99,fire-knight-100,dark-knight-101,robot-103}` + mid-battle snaps.
+Group ids < 200 (not BattledTamer). Each sets a bit on **battle start** and
+(except Robot) another on **win**; rewards measured with Kotemon fighting alone.
+
+| Digivice `npcId` | MapId | groupId | Win bit | Battle-start bit | EXP / Bits | DVEXP gained (Kotemon lv34–35) |
+|------------------|-------|---------|---------|------------------|------------|-------------------------------|
+| `iceWitch` | `026A` | 19 | `0x4B3E1` `0x02` | `0x4B3DF` `0x40` | 703 / 1410 | 13 |
+| `fireKnight` | `026B` | 20 | `0x4B3E6` `0x01` | `0x4B3E5` `0x80` | 715 / 1420 | 13 |
+| `darkKnight` | `026C` | 21 | `0x4B3E6` `0x04` | `0x4B3E6` `0x02` | 719 / 1395 | 13 |
+| `robot` | `02DB` | 193 | — | `0x4B3E6` `0x10` | 672 / 1370 | 12 |
+
+DVEXP gains fit `npc.json` `dvexp` = level of the **second** party enemy
+(= median: 46 / 47 / 48 / 44), same convention as the leaders. Wired as
+`type: "npc"` in `npc.json` (static only, like `gameMasterHeadquarters`; no
+`npc-addresses.json` entry — their win is a main quest step).
+
 **Natsumi card:** no duel flag in those snaps — only booster `0x48F19`.
 Map script does not SET a bit on `CardBattle#5`.
 
