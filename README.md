@@ -241,6 +241,8 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Chimeramon** *by Digi9346* [Digimon Wiki](https://digimon.fandom.com/wiki/Kimeramon?file=Kimeramon_b.jpg)
 - **Scorpiomon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Scorpiomon?file=Scorpiomon_b.jpg)
 - **MetalEtemon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalEtemon?file=MetalEtemon_b.jpg)
+- **Numemon(Red)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexnume.shtml)
+- **H-Kabuterimon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/HerakleKabuterimon?file=HerakleKabuterimon_b.jpg)
 
 ### Digievolutions
 
