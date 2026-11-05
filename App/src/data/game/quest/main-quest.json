@@ -48,7 +48,6 @@
         "x": 39,
         "y": 19
       },
-      "innerLocation": [],
       "requisites": []
     },
     "3": {
@@ -193,7 +192,6 @@
         "x": 7,
         "y": 19
       },
-      "innerLocation": [],
       "requisites": []
     },
     "19": {
@@ -322,22 +320,6 @@
         "x": 65,
         "y": 35
       },
-      "innerLocation": [
-        {
-          "location": "0200",
-          "coordinates": {
-            "x": 51,
-            "y": 39
-          }
-        },
-        {
-          "location": "020A",
-          "coordinates": {
-            "x": 50,
-            "y": 91
-          }
-        }
-      ],
       "requisites": []
     },
     "35": {
@@ -346,7 +328,6 @@
         "x": 40,
         "y": 26
       },
-      "innerLocation": [],
       "requisites": []
     },
     "36": {
@@ -387,7 +368,6 @@
         "x": 7,
         "y": 19
       },
-      "innerLocation": [],
       "requisites": []
     },
     "41": {
@@ -396,7 +376,6 @@
         "x": 7,
         "y": 19
       },
-      "innerLocation": [],
       "requisites": []
     },
     "42": {
@@ -460,10 +439,10 @@
       "requisites": []
     },
     "49": {
-      "location": "024D",
+      "location": "024C",
       "coordinates": {
-        "x": 7,
-        "y": 89
+        "x": 74,
+        "y": 11
       },
       "requisites": []
     },

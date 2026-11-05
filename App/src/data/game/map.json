@@ -569,7 +569,23 @@
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 51,
+          "y": 39
+        }
+      },
+      {
+        "location": "020A",
+        "coordinates": {
+          "x": 50,
+          "y": 91
+        }
+      }
+    ]
   },
   "020C": {
     "imageName": "Asuka City - Inn 2F",
@@ -2498,7 +2514,23 @@
     "worldLocation": {
       "x": 18.5,
       "y": 59
-    }
+    },
+    "innerLocation": [
+      {
+        "location": "025D",
+        "coordinates": {
+          "x": 75,
+          "y": 12
+        }
+      },
+      {
+        "location": "025E",
+        "coordinates": {
+          "x": 75,
+          "y": 73
+        }
+      }
+    ]
   },
   "02D7": {
     "imageName": "Corner Street"
