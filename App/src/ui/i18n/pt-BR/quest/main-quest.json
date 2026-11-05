@@ -376,50 +376,42 @@
         "locationTarget": "Game Master"
       },
       "89": {
-        "description": "Fale com o Líder Byakko na Cúpula Byakko",
-        "locationTarget": "Líder Byakko"
-      },
-      "90": {
         "description": "Vá até a prisão da A.o.A na Caverna Subterrânea",
         "locationTarget": "Prisão da A.o.A"
       },
-      "91": {
-        "description": "Fale com o velho no Pântano",
-        "locationTarget": "Velho"
-      },
-      "92": {
+      "90": {
         "description": "Vá até a sala do Líder no Salão Suzaku",
         "locationTarget": "Patamon"
       },
-      "93": {
+      "91": {
         "description": "Derrote o Líder Suzaku na Catacumba",
         "locationTarget": "Líder Suzaku"
       },
-      "94": {
+      "92": {
         "description": "Derrote Bulbmon no Labirinto do Bugs",
         "locationTarget": "Bulbmon"
       },
-      "95": {
+      "93": {
         "description": "Fale com Kenny na Pousada Florestal (Subsolo) em Amaterasu",
         "locationTarget": "Kenny"
       },
-      "96": {
+      "94": {
         "description": "Derrote o Líder Qing Long em Qing Long",
         "locationTarget": "Líder Qing Long"
       },
-      "97": {
+      "95": {
         "description": "Fale com o Soldado na Baía Fênix em Amaterasu",
         "locationTarget": "Soldado"
       },
-      "98": {
+      "96": {
         "description": "Derrote o Líder Zhu Que no Salão Zhu Que",
         "locationTarget": "Líder Zhu Que"
       },
-      "99": {
+      "97": {
         "description": "Pegue o Digi-Ovo no Lago Subterrâneo Suzaku em Amaterasu",
         "locationTarget": "Digi-Ovo"
       },
-      "100": {
+      "98": {
         "description": "Derrote o Líder Genbu no Portão de Batalha",
         "locationTarget": "Líder Genbu"
       }

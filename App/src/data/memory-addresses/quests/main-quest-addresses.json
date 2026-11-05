@@ -449,13 +449,13 @@
     },
     {
       "number": 89,
-      "address": "0x0004B3DF",
-      "bitMasks": ["0x08"]
+      "address": "0x0004B370",
+      "bitMasks": ["0x01", "0x08", "0x10"]
     },
     {
       "number": 90,
-      "address": "0x0004B3DF",
-      "bitMasks": ["0x08"]
+      "address": "0x0004B370",
+      "bitMasks": ["0x02", "0x08", "0x10"]
     },
     {
       "number": 91,
@@ -464,46 +464,36 @@
     },
     {
       "number": 92,
-      "address": "0x0004B3DF",
-      "bitMasks": ["0x08"]
-    },
-    {
-      "number": 93,
-      "address": "0x0004B3DF",
-      "bitMasks": ["0x08"]
-    },
-    {
-      "number": 94,
       "address": "0x0004B3E8",
       "bitMasks": ["0x02"]
     },
     {
-      "number": 95,
+      "number": 93,
       "address": "0x0004B3E1",
       "bitMasks": ["0x20"]
     },
     {
-      "number": 96,
+      "number": 94,
       "address": "0x0004B3F2",
       "bitMasks": ["0x08", "0x80"]
     },
     {
-      "number": 97,
+      "number": 95,
       "address": "0x0004B3B2",
       "bitMasks": ["0x20"]
     },
     {
-      "number": 98,
+      "number": 96,
       "address": "0x0004B3E8",
       "bitMasks": ["0x04"]
     },
     {
-      "number": 99,
+      "number": 97,
       "address": "0x00048DC1",
       "bitMasks": []
     },
     {
-      "number": 100,
+      "number": 98,
       "address": "0x00048DBC",
       "bitMasks": ["0x01"]
     }

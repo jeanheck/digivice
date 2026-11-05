@@ -25,7 +25,7 @@
     {
       "number": 5,
       "starts": 89,
-      "ends": 100
+      "ends": 98
     }
   ],
   "steps": {
@@ -811,14 +811,6 @@
       "requisites": []
     },
     "89": {
-      "location": "025E",
-      "coordinates": {
-        "x": 36,
-        "y": 24
-      },
-      "requisites": []
-    },
-    "90": {
       "location": "0260",
       "coordinates": {
         "x": 50,
@@ -826,15 +818,7 @@
       },
       "requisites": []
     },
-    "91": {
-      "location": "0233",
-      "coordinates": {
-        "x": 50,
-        "y": 50
-      },
-      "requisites": []
-    },
-    "92": {
+    "90": {
       "location": "0240",
       "coordinates": {
         "x": 50,
@@ -842,7 +826,7 @@
       },
       "requisites": []
     },
-    "93": {
+    "91": {
       "location": "0244",
       "coordinates": {
         "x": 50,
@@ -850,7 +834,7 @@
       },
       "requisites": []
     },
-    "94": {
+    "92": {
       "location": "0246",
       "coordinates": {
         "x": 50,
@@ -858,7 +842,7 @@
       },
       "requisites": []
     },
-    "95": {
+    "93": {
       "location": "0293",
       "coordinates": {
         "x": 50,
@@ -866,7 +850,7 @@
       },
       "requisites": []
     },
-    "96": {
+    "94": {
       "location": "029C",
       "coordinates": {
         "x": 50,
@@ -874,7 +858,7 @@
       },
       "requisites": []
     },
-    "97": {
+    "95": {
       "location": "02A8",
       "coordinates": {
         "x": 50,
@@ -882,7 +866,7 @@
       },
       "requisites": []
     },
-    "98": {
+    "96": {
       "location": "02AD",
       "coordinates": {
         "x": 50,
@@ -890,7 +874,7 @@
       },
       "requisites": []
     },
-    "99": {
+    "97": {
       "location": "02AE",
       "coordinates": {
         "x": 50,
@@ -898,7 +882,7 @@
       },
       "requisites": []
     },
-    "100": {
+    "98": {
       "location": "026E",
       "coordinates": {
         "x": 50,

@@ -64,6 +64,7 @@ Definitions paths are relative to `App/src/data/memory-addresses/`.
 
 - Chapter 5 "Um novo servidor: Amaterasu!" — steps 89–99 in `quests/main-quest-addresses.json`; steps 89–92 provisional (reuse step 93 bit `0x4B3DF` `0x08`, no own flag found); provisional coords (50,50) on all chapter 5 steps
 - Step 100 (2026-11-04) — Genbu Leader at Battle Gate (`026E`), `0x48DBC` / `0x01`; chapter 5 now ends at 100; provisional coords (50,50)
+- 2026-11-05 — removed old steps 89 (Byakko Leader) and 91 (old man): walkthrough hints, not required by the game. Chapter 5 = steps 89–98; prison (89) and Patamon (90) use the `0x4B370` counter value as bitmasks (`0x19` = `0x01`+`0x08`+`0x10`, `0x1A` = `0x02`+`0x08`+`0x10`), relying on the main quest cascade; old 93–100 renumbered to 91–98
 
 ## Palette notes
 

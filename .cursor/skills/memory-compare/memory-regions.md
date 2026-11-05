@@ -75,12 +75,12 @@ Definitions root: `App/src/data/memory-addresses/quests/`
 | 0x0004B3E7 | A.o.A arc story flags (`0x04` tamer 13, `0x08`+`0x10` Vennmon, `0x20` before Master Room, `0x40` 1st security, `0x80` Game Master) | MQ 62–88 snapshots |
 | 0x0004B3C0 / 0x0004B3C2 / 0x0004B3C3 / 0x0004B3C8 | Door / map visited flags (suspected) — flip on entering areas, not quest steps | MQ 62–88 snapshots |
 | 0x00048F3x – 0x00048F4x | Side quest flags | `quests/side-quests/*.json` |
-| 0x0004B370 (value) | Story counter continues in Amaterasu arc (`0x18`→`0x1E` over MQ 90–99) | MQ 89–99 snapshots — counter, not a flag |
-| 0x0004B3E8 | Amaterasu arc battle flags (`0x02` Bulbmon, `0x04` Zhu Que Leader) | MQ 89–99 snapshots — steps 94, 98 |
+| 0x0004B370 (value) | Story counter continues in Amaterasu arc (`0x18`→`0x1F` over current MQ 89–98); exact values `0x19` / `0x1A` used as bitmasks for MQ 89 (prison) / 90 (Patamon) | Amaterasu arc snapshots (old numbering 89–100) — counter, not a flag |
+| 0x0004B3E8 | Amaterasu arc battle flags (`0x02` Bulbmon, `0x04` Zhu Que Leader) | Amaterasu arc snapshots — current MQ steps 92, 96 |
 | 0x0004B3F2 / 0x0004B3F3 | Story flags (`0x4B3F2` `0x08`+`0x80` Qing Long Leader; `0x4B3F3` `0x01` Phoenix Bay soldier, alternative) | MQ 89–99 snapshots |
 | 0x0004B3D1 – 0x0004B3D5, 0x0004B3DC | Map visited flags (suspected) — gain bits on entering Amaterasu maps, between quest snapshots | MQ 89–99 snapshots |
 | 0x00048DC1 / 0x00048DC6 / 0x00048DC7 / 0x00048F3C | Important-item-like possession `0→1` (Digi-Egg; Qing Long Leader; Zhu Que Leader; Kenny) | MQ 89–99 snapshots — not in `important-items-addresses.json` |
-| 0x00048DBC | Genbu Leader battle won `0→1` (suspected) — next to leader flags `0x48DB9` Seiryu / `0x48DBA` Suzaku / `0x48DBB` Byakko (`npc-addresses.json`) | MQ 100 snapshots — only save-RAM change; no `0x4B3xx` bit. **Integrated** as main quest step 100; not yet in `npc-addresses.json` |
+| 0x00048DBC | Genbu Leader battle won `0→1` (suspected) — next to leader flags `0x48DB9` Seiryu / `0x48DBA` Suzaku / `0x48DBB` Byakko (`npc-addresses.json`) | MQ 100 snapshots — only save-RAM change; no `0x4B3xx` bit. **Integrated** as main quest step 98 (was 100 before 2026-11-05 renumbering); not yet in `npc-addresses.json` |
 | 0x00049528 / 0x0004952A | Kotemon block `+0x8C` / `+0x8E` (`0→0x1B`, `0→1`) after Genbu Leader battle — digimon field, not quest | MQ 100 snapshots — discard for quests |
 | 0x0004AFC0 (Int16) | `1206→1` after Genbu Leader battle — unknown counter, not a flag | MQ 100 snapshots — discard |
 
@@ -192,6 +192,8 @@ Offsets in `digimon-status-addresses.json` → `digievolutions` (`unlockedDigiev
 | Range | Purpose | Source |
 |-------|---------|--------|
 | 0x0004B824 – 0x0004BB00 | Encounter cache (session pointers) | Program.cs analyze-pair |
+| 0x0004BBAC – 0x0004BBAD | Running timer (changes every snapshot) | MQ 89–92 snapshots 2026-11-05 |
+| 0x0007FF40 – 0x000802FF | Map actor/NPC table (stride `0x60`), per-NPC script state (e.g. `0x8024D`/`0x802AD` `01→02` after old man talk) — volatile, not save data | MQ 89–92 snapshots 2026-11-05 |
 | 0x00044xxx | Coordinates / animations | MemoryScanner compare filter |
 | 0x00048D6C – 0x00048D84 | Player spawn / facing on map transition | seabed-routing investigation |
 | 0x0004B618 – 0x0004B653 | Entity pointer table (map load) | seabed-routing investigation |
