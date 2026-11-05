@@ -2825,5 +2825,26 @@
         "labelPlacement": "below"
       }
     ]
+  },
+  "026A": {
+    "imageName": "Ice Dungeon"
+  },
+  "026B": {
+    "imageName": "Fire Dungeon"
+  },
+  "026C": {
+    "imageName": "Dark Dungeon"
+  },
+  "026D": {
+    "imageName": "Emergency Room"
+  },
+  "02DA": {
+    "imageName": "Magasta B1F"
+  },
+  "02DB": {
+    "imageName": "Magasta B2F"
+  },
+  "02DC": {
+    "imageName": "Magasta"
   }
 }
