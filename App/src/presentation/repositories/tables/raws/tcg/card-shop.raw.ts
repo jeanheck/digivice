@@ -1,13 +1,8 @@
 import type { MainQuestAvailabilityWindowRaw } from "@/presentation/repositories/tables/raws/quest/main-quest-availability-window.raw";
 
-export interface CardShopInventoryItemRaw {
-  cardId: string;
-  price: number;
-}
-
 export interface CardShopPhaseRaw {
   mainQuestAvailabilityWindow: MainQuestAvailabilityWindowRaw;
-  inventory: CardShopInventoryItemRaw[];
+  inventory: string[];
 }
 
 export interface CardShopCatalogRaw {
@@ -19,5 +14,4 @@ export interface CardShopCatalogRaw {
 export interface CardShopCardRaw {
   cardShopId: string;
   mainQuestAvailabilityWindow: MainQuestAvailabilityWindowRaw;
-  price: number;
 }

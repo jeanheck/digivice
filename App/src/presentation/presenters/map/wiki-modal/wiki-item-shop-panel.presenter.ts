@@ -1,7 +1,6 @@
 import { WikiItemShopItemConverter } from "@/presentation/presenters/converter/wiki-item-shop-item.converter";
 import { ConsumableItemRepository } from "@/presentation/repositories/consumable-item.repository";
 import { ItemShopRepository } from "@/presentation/repositories/item-shop.repository";
-import type { ItemShopInventoryItemRaw } from "@/presentation/repositories/tables/raws/shop/item-shop.raw";
 import type { WikiItemShopItemViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-item-shop-item.viewmodel";
 import type { WikiItemShopViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-item-shop.viewmodel";
 
@@ -19,8 +18,8 @@ export class WikiItemShopPanelPresenter {
     }
 
     const items = itemShopRaw.inventory
-      .map((inventoryItem) => {
-        return this.getItem(inventoryItem);
+      .map((consumableItemId) => {
+        return this.getItem(consumableItemId);
       })
       .filter((item): item is WikiItemShopItemViewModel => {
         return item !== null;
@@ -40,16 +39,12 @@ export class WikiItemShopPanelPresenter {
     };
   }
 
-  private static getItem(inventoryItem: ItemShopInventoryItemRaw): WikiItemShopItemViewModel | null {
-    const consumableItemRaw = ConsumableItemRepository.getById(Number(inventoryItem.consumableItemId));
+  private static getItem(consumableItemId: string): WikiItemShopItemViewModel | null {
+    const consumableItemRaw = ConsumableItemRepository.getById(Number(consumableItemId));
     if (consumableItemRaw === undefined) {
       return null;
     }
 
-    return WikiItemShopItemConverter.convert(
-      inventoryItem.consumableItemId,
-      inventoryItem.price,
-      consumableItemRaw,
-    );
+    return WikiItemShopItemConverter.convert(consumableItemId, consumableItemRaw);
   }
 }

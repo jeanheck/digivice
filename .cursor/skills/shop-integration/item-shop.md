@@ -20,8 +20,15 @@ Ids are project ids, not RAM item ids. Missing item → register it (confirm the
 list with the user first):
 
 - Id: next number after the highest key, in the order given by the user.
-- `App/src/data/game/consumable-item.json`: `resaleValue` = `floor(price / 2)`,
-  plus `imageName` when not the default icon.
+- `App/src/data/game/consumable-item.json`: `price` (required) plus
+  `imageName` when not the default icon. Resale is derived
+  (`floor(price / 2)`), never stored.
+- Item known only by its resale (not sold in any shop, e.g. a drop): `price` =
+  `2 × resale`. The real price may be that value + 1, but it is never shown and
+  the derived resale stays exact.
+
+Item already registered: just confirm its `price` matches the user's (see the
+shared price rule in [SKILL.md](SKILL.md)).
 - `ui/i18n/{locale}/consumable-item/consumable-item.json`: `name` (translate
   en-US/es-ES, user confirms later) and `note: ""` until the user provides it.
 
@@ -36,15 +43,12 @@ texts; the user provides them.
   "locationId": "020E",
   "imageName": "Wizardmon",
   "inventoryOrder": "fixed",
-  "inventory": [
-    { "consumableItemId": "411", "price": 500 }
-  ]
+  "inventory": ["411", "414"]
 }
 ```
 
 `inventoryOrder` works as in equipment shops (`fixed`: column 1 items, then
-column 2; `alphabetical`: sorted by translated name). Ask the user for prices
-if missing — never guess.
+column 2; `alphabetical`: sorted by translated name).
 
 ## Item icons
 

@@ -2,7 +2,6 @@ import { WikiEquipmentShopItemConverter } from "@/presentation/presenters/conver
 import { DigimonRepository } from "@/presentation/repositories/digimon.repository";
 import { EquipmentRepository } from "@/presentation/repositories/equipment.repository";
 import { EquipmentShopRepository } from "@/presentation/repositories/equipment-shop.repository";
-import type { EquipmentShopInventoryItemRaw } from "@/presentation/repositories/tables/raws/shop/equipment-shop.raw";
 import type { WikiEquipmentShopItemViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-equipment-shop-item.viewmodel";
 import type { WikiEquipmentShopViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-equipment-shop.viewmodel";
 
@@ -19,9 +18,13 @@ export class WikiEquipmentShopPanelPresenter {
       };
     }
 
-    const items = equipmentShopRaw.inventory.map((inventoryItem) => {
-      return this.getItem(inventoryItem);
-    });
+    const items = equipmentShopRaw.inventory
+      .map((equipmentId) => {
+        return this.getItem(equipmentId);
+      })
+      .filter((item): item is WikiEquipmentShopItemViewModel => {
+        return item !== null;
+      });
 
     if (equipmentShopRaw.inventoryOrder === "alphabetical") {
       items.sort((firstItem, secondItem) => {
@@ -37,15 +40,19 @@ export class WikiEquipmentShopPanelPresenter {
     };
   }
 
-  private static getItem(inventoryItem: EquipmentShopInventoryItemRaw): WikiEquipmentShopItemViewModel {
-    const equipmentRaw = EquipmentRepository.getEquipmentById(Number(inventoryItem.equipmentId));
+  private static getItem(equipmentId: string): WikiEquipmentShopItemViewModel | null {
+    const equipmentRaw = EquipmentRepository.getEquipmentById(Number(equipmentId));
+    if (equipmentRaw.price === undefined) {
+      return null;
+    }
+
     const equipableDigimonNames = equipmentRaw.equipableDigimon.map((digimonId) => {
       return DigimonRepository.getNameById(Number(digimonId));
     });
 
     return WikiEquipmentShopItemConverter.convert(
-      inventoryItem.equipmentId,
-      inventoryItem.price,
+      equipmentId,
+      equipmentRaw.price,
       equipmentRaw,
       equipableDigimonNames,
     );

@@ -13,14 +13,13 @@ export class CardShopRepository {
     const cardShopsByCardId = new Map<string, CardShopCardRaw[]>();
     for (const [cardShopId, cardShopRaw] of Object.entries(this.cardShopTable)) {
       for (const phase of cardShopRaw.phases) {
-        for (const inventoryItem of phase.inventory) {
-          const cardShops = cardShopsByCardId.get(inventoryItem.cardId) ?? [];
+        for (const cardId of phase.inventory) {
+          const cardShops = cardShopsByCardId.get(cardId) ?? [];
           cardShops.push({
             cardShopId,
             mainQuestAvailabilityWindow: phase.mainQuestAvailabilityWindow,
-            price: inventoryItem.price,
           });
-          cardShopsByCardId.set(inventoryItem.cardId, cardShops);
+          cardShopsByCardId.set(cardId, cardShops);
         }
       }
     }

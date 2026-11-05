@@ -93,6 +93,14 @@ graph TD
 - Conjunto completo (`EquipmentService.getCompletedSet`): todas as peças estão em `EquipmentService.getEquipmentIds`. O bônus (`calculateSetBonus`) é somado ao total do stat junto com os equipamentos, respeitando o teto de 999 do `StatService` (teto provisório, a confirmar no jogo), e entra no total de carisma da party (`PartyService.getCharisma`).
 - UI (`Stat.vue`): valor com bônus de conjunto em prata metálico (`text-dw3-metallic`); em batalha, o verde/vermelho de buff/debuff tem prioridade. O `StatsTooltip` mostra a parcela do conjunto na fórmula e na legenda.
 
+## Preços e lojas
+
+- **Preço é do item**, não da loja: qualquer loja que venda o mesmo item (consumível, equipamento ou carta) cobra o mesmo valor. Vale também para as lojas de cartas, que mudam de estoque conforme a main quest.
+- Preço em `price` no catálogo do item: `consumable-item.json` (obrigatório), `equipment.json` e `tcg/card.json` (opcional, só itens vendidos). As lojas (`shop/*.json`) listam apenas ids em `inventory`; item de loja sem `price` não é exibido.
+- **Revenda** = `floor(price / 2)` (`PriceService.getResaleValue`), nunca gravada.
+- Consumíveis que não são vendidos em loja (conhecidos só pela revenda) têm `price = 2 × revenda`. O preço real pode ser esse valor + 1; não é exibido e a revenda derivada fica exata.
+- **Leilão** é caso à parte: `bid` e `resale` próprios em `auction.json`.
+
 ## Batalhas
 
 - **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null grava `enemy: null`; o patch atribui o objeto completo quando um novo aparece.

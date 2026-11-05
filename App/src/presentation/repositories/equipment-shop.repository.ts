@@ -9,10 +9,10 @@ export class EquipmentShopRepository {
   private static buildEquipmentShopIdsByEquipmentId(): Map<string, string[]> {
     const equipmentShopIdsByEquipmentId = new Map<string, string[]>();
     for (const [equipmentShopId, equipmentShopRaw] of Object.entries(this.equipmentShopTable)) {
-      for (const inventoryItem of equipmentShopRaw.inventory) {
-        const equipmentShopIds = equipmentShopIdsByEquipmentId.get(inventoryItem.equipmentId) ?? [];
+      for (const equipmentId of equipmentShopRaw.inventory) {
+        const equipmentShopIds = equipmentShopIdsByEquipmentId.get(equipmentId) ?? [];
         equipmentShopIds.push(equipmentShopId);
-        equipmentShopIdsByEquipmentId.set(inventoryItem.equipmentId, equipmentShopIds);
+        equipmentShopIdsByEquipmentId.set(equipmentId, equipmentShopIds);
       }
     }
 

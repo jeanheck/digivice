@@ -37,7 +37,8 @@
   },
   "1009": {
     "imageName": "Eclipse Undo",
-    "type": "action"
+    "type": "action",
+    "price": 2200
   },
   "1010": {
     "imageName": "Blue Power",
@@ -117,7 +118,8 @@
   },
   "1029": {
     "imageName": "Summon Devimon",
-    "type": "action"
+    "type": "action",
+    "price": 4000
   },
   "1030": {
     "imageName": "Delete Matrix",
@@ -233,7 +235,8 @@
   },
   "1058": {
     "imageName": "Protect Armor",
-    "type": "action"
+    "type": "action",
+    "price": 1000
   },
   "1059": {
     "imageName": "Assault Armor",
@@ -274,6 +277,7 @@
   "1064": {
     "imageName": "Seraphimon",
     "type": "white",
+    "price": 10000,
     "points": {
       "ap": 46,
       "hp": 50
@@ -330,6 +334,7 @@
   "1071": {
     "imageName": "Angewomon",
     "type": "white",
+    "price": 7700,
     "points": {
       "ap": 31,
       "hp": 33
@@ -394,6 +399,7 @@
   "1079": {
     "imageName": "Dinohumon",
     "type": "white",
+    "price": 2200,
     "points": {
       "ap": 15,
       "hp": 15
@@ -410,6 +416,7 @@
   "1081": {
     "imageName": "Stingmon",
     "type": "white",
+    "price": 3000,
     "points": {
       "ap": 14,
       "hp": 14
@@ -522,6 +529,7 @@
   "1095": {
     "imageName": "Kotemon",
     "type": "white",
+    "price": 500,
     "points": {
       "ap": 5,
       "hp": 5
@@ -682,6 +690,7 @@
   "1115": {
     "imageName": "Armormon",
     "type": "blue",
+    "price": 7700,
     "points": {
       "ap": 30,
       "hp": 30
@@ -778,6 +787,7 @@
   "1127": {
     "imageName": "Shellmon",
     "type": "blue",
+    "price": 3000,
     "points": {
       "ap": 13,
       "hp": 15
@@ -874,6 +884,7 @@
   "1139": {
     "imageName": "Renamon",
     "type": "blue",
+    "price": 500,
     "points": {
       "ap": 4,
       "hp": 4
@@ -978,6 +989,7 @@
   "1152": {
     "imageName": "KingEtemon",
     "type": "green",
+    "price": 8000,
     "points": {
       "ap": 38,
       "hp": 35
@@ -1010,6 +1022,7 @@
   "1156": {
     "imageName": "WereGarurumon",
     "type": "green",
+    "price": 7700,
     "points": {
       "ap": 32,
       "hp": 30
@@ -1090,6 +1103,7 @@
   "1166": {
     "imageName": "Grizzmon",
     "type": "green",
+    "price": 3300,
     "points": {
       "ap": 15,
       "hp": 15
@@ -1098,6 +1112,7 @@
   "1167": {
     "imageName": "Kabuterimon",
     "type": "green",
+    "price": 2200,
     "points": {
       "ap": 14,
       "hp": 16
@@ -1234,6 +1249,7 @@
   "1184": {
     "imageName": "Palmon",
     "type": "green",
+    "price": 500,
     "points": {
       "ap": 2,
       "hp": 2
@@ -1306,6 +1322,7 @@
   "1193": {
     "imageName": "MegaGargomon",
     "type": "red",
+    "price": 10000,
     "points": {
       "ap": 50,
       "hp": 50
@@ -1362,6 +1379,7 @@
   "1200": {
     "imageName": "WarGrowlmon",
     "type": "red",
+    "price": 7700,
     "points": {
       "ap": 33,
       "hp": 30
@@ -1386,6 +1404,7 @@
   "1203": {
     "imageName": "MasterTyrannomon",
     "type": "red",
+    "price": 5600,
     "points": {
       "ap": 29,
       "hp": 26
@@ -1426,6 +1445,7 @@
   "1208": {
     "imageName": "Greymon",
     "type": "red",
+    "price": 4400,
     "points": {
       "ap": 20,
       "hp": 20
@@ -1434,6 +1454,7 @@
   "1209": {
     "imageName": "Growlmon",
     "type": "red",
+    "price": 2200,
     "points": {
       "ap": 18,
       "hp": 20
@@ -1562,6 +1583,7 @@
   "1225": {
     "imageName": "Veemon",
     "type": "red",
+    "price": 500,
     "points": {
       "ap": 4,
       "hp": 4
@@ -1634,6 +1656,7 @@
   "1234": {
     "imageName": "Diaboromon",
     "type": "black",
+    "price": 13000,
     "points": {
       "ap": 58,
       "hp": 58
@@ -1770,6 +1793,7 @@
   "1251": {
     "imageName": "Devimon",
     "type": "black",
+    "price": 4400,
     "points": {
       "ap": 19,
       "hp": 18
@@ -1826,6 +1850,7 @@
   "1258": {
     "imageName": "Devidramon",
     "type": "black",
+    "price": 1000,
     "points": {
       "ap": 12,
       "hp": 12
@@ -1874,6 +1899,7 @@
   "1264": {
     "imageName": "Soulmon",
     "type": "black",
+    "price": 500,
     "points": {
       "ap": 10,
       "hp": 10
@@ -1970,6 +1996,7 @@
   "1276": {
     "imageName": "BK Imperialdramon",
     "type": "brown",
+    "price": 10000,
     "points": {
       "ap": 50,
       "hp": 40
@@ -2026,6 +2053,7 @@
   "1283": {
     "imageName": "Puppetmon",
     "type": "brown",
+    "price": 9000,
     "points": {
       "ap": 36,
       "hp": 30

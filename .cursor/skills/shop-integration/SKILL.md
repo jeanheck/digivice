@@ -3,8 +3,8 @@ name: shop-integration
 description: >-
   Registers a new shop in the Digivice Wiki — equipment shops (arsenal, pawn
   shop) in equipment-shop.json and card shops in card-shop.json — with map
-  marker in map.json, item icons (imageName) in equipment.json, WebP asset
-  conversion and i18n names. Use when the user asks to add a shop (arsenal,
+  marker in map.json, item prices and icons (price, imageName) in the item
+  catalogs, WebP asset conversion and i18n names. Use when the user asks to add a shop (arsenal,
   penhores, loja de cartas), gives a shop name with its items/cards and prices,
   or asks to add items or cards to an existing shop.
 ---
@@ -19,8 +19,15 @@ Shops are **data-only**: adding one never requires code changes. Two types:
 | Card shop | Cards | `App/src/data/game/shop/card-shop.json` | `cardShops` | [card-shop.md](card-shop.md) |
 | Item shop | Consumable items | `App/src/data/game/shop/item-shop.json` | `itemShops` | [item-shop.md](item-shop.md) |
 
-Shared rules for both types:
+Shared rules for all types:
 
+- **Price belongs to the item**, never to the shop: any shop selling the same
+  item sells it for the same price. Shops only list ids (`inventory: ["93"]`);
+  the price lives in the item catalog (`price` in `consumable-item.json`,
+  `equipment.json`, `tcg/card.json`). Resale is never stored: it is always
+  `floor(price / 2)` (`PriceService.getResaleValue`). Prices are in Bits,
+  integer. If the user's price differs from the `price` already in the catalog,
+  ask instead of overwriting — never guess a missing price.
 - **Location id**: search the map name in `App/src/ui/i18n/pt-BR/map.json`
   (e.g. "Torre Zephyr" → `022F`, "Cúpula Byakko" → `025E`). User spelling may
   differ slightly; confirm if ambiguous.
@@ -61,7 +68,7 @@ Task Progress:
 - [ ] 1. Resolve ids (location, equipment)
 - [ ] 2. Item icon assets (convert PNG to WebP if needed)
 - [ ] 3. equipment-shop.json entry
-- [ ] 4. imageName in equipment.json
+- [ ] 4. price and imageName in equipment.json
 - [ ] 5. map.json marker (equipmentShops)
 - [ ] 6. i18n: ui/i18n/{locale}/shop/equipment-shop.json
 ```
@@ -97,9 +104,7 @@ node -e "const sharp=require('sharp');const fs=require('fs');const path=require(
   "locationId": "022F",
   "imageName": "Gargomon",
   "inventoryOrder": "fixed",
-  "inventory": [
-    { "equipmentId": "93", "price": 500 }
-  ]
+  "inventory": ["93", "158"]
 }
 ```
 
@@ -110,23 +115,27 @@ node -e "const sharp=require('sharp');const fs=require('fs');const path=require(
 - Arsenals are `fixed`, pawn shops `alphabetical`. Ask for other kinds.
 - Pawn shops may share the exact inventory of another pawn shop (Penhores
   Suzaku = Penhores Asuka): copy it as-is; items already have icons.
-- Prices are in Bits, integer. Equipment shop stock never varies with the main quest.
+- Equipment shop stock never varies with the main quest.
 
-### 4. Item icons
+### 4. Price and icon in equipment.json
 
-For each item without `imageName`, add it right after `"type"` in `equipment.json`:
+For each item, add `price` (when missing) and `imageName` (when missing) in
+`equipment.json`, in this order, right after `"type"`:
 
 ```json
 "93": {
   "type": "oneHandedWeapon",
   "imageName": "OneHandSword1",
+  "price": 500,
 ```
 
-If the item already has a different `imageName`, ask before overwriting (the
-icon belongs to the equipment, so it shows the same in every shop).
+`price` is optional in `equipment.json` (only sold equipment has it); a shop
+item without `price` is not rendered. If the item already has a different
+`imageName` or `price`, ask before overwriting (both belong to the equipment,
+so they show the same in every shop).
 
 ### Done criteria
 
 Shop opens from search (label "Loja"), from the map marker and from
-"Comprável em" on each sold item. Summarize: shop id, location, items with ids
-and icons, coordinates used, assumptions on names.
+"Comprável em" on each sold item. Summarize: shop id, location, items with ids,
+prices and icons, coordinates used, assumptions on names.

@@ -4,50 +4,17 @@
     "imageName": "Gargomon",
     "inventoryOrder": "fixed",
     "inventory": [
-      {
-        "equipmentId": "92",
-        "price": 200
-      },
-      {
-        "equipmentId": "157",
-        "price": 200
-      },
-      {
-        "equipmentId": "190",
-        "price": 150
-      },
-      {
-        "equipmentId": "226",
-        "price": 60
-      },
-      {
-        "equipmentId": "249",
-        "price": 70
-      },
-      {
-        "equipmentId": "275",
-        "price": 80
-      },
-      {
-        "equipmentId": "106",
-        "price": 200
-      },
-      {
-        "equipmentId": "167",
-        "price": 150
-      },
-      {
-        "equipmentId": "215",
-        "price": 40
-      },
-      {
-        "equipmentId": "236",
-        "price": 80
-      },
-      {
-        "equipmentId": "262",
-        "price": 150
-      }
+      "92",
+      "157",
+      "190",
+      "226",
+      "249",
+      "275",
+      "106",
+      "167",
+      "215",
+      "236",
+      "262"
     ]
   },
   "asukaHeavyArsenal": {
@@ -55,78 +22,24 @@
     "imageName": "Gargomon",
     "inventoryOrder": "fixed",
     "inventory": [
-      {
-        "equipmentId": "96",
-        "price": 5000
-      },
-      {
-        "equipmentId": "122",
-        "price": 5000
-      },
-      {
-        "equipmentId": "147",
-        "price": 5000
-      },
-      {
-        "equipmentId": "171",
-        "price": 4500
-      },
-      {
-        "equipmentId": "185",
-        "price": 4500
-      },
-      {
-        "equipmentId": "201",
-        "price": 5000
-      },
-      {
-        "equipmentId": "219",
-        "price": 900
-      },
-      {
-        "equipmentId": "240",
-        "price": 1800
-      },
-      {
-        "equipmentId": "266",
-        "price": 3800
-      },
-      {
-        "equipmentId": "110",
-        "price": 5000
-      },
-      {
-        "equipmentId": "134",
-        "price": 5000
-      },
-      {
-        "equipmentId": "161",
-        "price": 5000
-      },
-      {
-        "equipmentId": "178",
-        "price": 4500
-      },
-      {
-        "equipmentId": "194",
-        "price": 4500
-      },
-      {
-        "equipmentId": "209",
-        "price": 5000
-      },
-      {
-        "equipmentId": "230",
-        "price": 2500
-      },
-      {
-        "equipmentId": "253",
-        "price": 2000
-      },
-      {
-        "equipmentId": "279",
-        "price": 1800
-      }
+      "96",
+      "122",
+      "147",
+      "171",
+      "185",
+      "201",
+      "219",
+      "240",
+      "266",
+      "110",
+      "134",
+      "161",
+      "178",
+      "194",
+      "209",
+      "230",
+      "253",
+      "279"
     ]
   },
   "seiryuArsenal": {
@@ -134,50 +47,17 @@
     "imageName": "Gargomon",
     "inventoryOrder": "fixed",
     "inventory": [
-      {
-        "equipmentId": "93",
-        "price": 500
-      },
-      {
-        "equipmentId": "158",
-        "price": 500
-      },
-      {
-        "equipmentId": "191",
-        "price": 400
-      },
-      {
-        "equipmentId": "227",
-        "price": 130
-      },
-      {
-        "equipmentId": "250",
-        "price": 160
-      },
-      {
-        "equipmentId": "276",
-        "price": 150
-      },
-      {
-        "equipmentId": "107",
-        "price": 500
-      },
-      {
-        "equipmentId": "168",
-        "price": 400
-      },
-      {
-        "equipmentId": "216",
-        "price": 100
-      },
-      {
-        "equipmentId": "237",
-        "price": 150
-      },
-      {
-        "equipmentId": "263",
-        "price": 350
-      }
+      "93",
+      "158",
+      "191",
+      "227",
+      "250",
+      "276",
+      "107",
+      "168",
+      "216",
+      "237",
+      "263"
     ]
   },
   "suzakuArsenal": {
@@ -185,50 +65,17 @@
     "imageName": "Gargomon",
     "inventoryOrder": "fixed",
     "inventory": [
-      {
-        "equipmentId": "94",
-        "price": 1000
-      },
-      {
-        "equipmentId": "159",
-        "price": 1000
-      },
-      {
-        "equipmentId": "192",
-        "price": 800
-      },
-      {
-        "equipmentId": "228",
-        "price": 300
-      },
-      {
-        "equipmentId": "251",
-        "price": 500
-      },
-      {
-        "equipmentId": "277",
-        "price": 550
-      },
-      {
-        "equipmentId": "108",
-        "price": 1000
-      },
-      {
-        "equipmentId": "169",
-        "price": 800
-      },
-      {
-        "equipmentId": "217",
-        "price": 250
-      },
-      {
-        "equipmentId": "238",
-        "price": 550
-      },
-      {
-        "equipmentId": "264",
-        "price": 750
-      }
+      "94",
+      "159",
+      "192",
+      "228",
+      "251",
+      "277",
+      "108",
+      "169",
+      "217",
+      "238",
+      "264"
     ]
   },
   "byakkoArsenal": {
@@ -236,78 +83,24 @@
     "imageName": "Gargomon",
     "inventoryOrder": "fixed",
     "inventory": [
-      {
-        "equipmentId": "95",
-        "price": 2500
-      },
-      {
-        "equipmentId": "120",
-        "price": 2500
-      },
-      {
-        "equipmentId": "145",
-        "price": 2500
-      },
-      {
-        "equipmentId": "170",
-        "price": 2000
-      },
-      {
-        "equipmentId": "183",
-        "price": 2000
-      },
-      {
-        "equipmentId": "199",
-        "price": 2500
-      },
-      {
-        "equipmentId": "218",
-        "price": 600
-      },
-      {
-        "equipmentId": "239",
-        "price": 1500
-      },
-      {
-        "equipmentId": "265",
-        "price": 1700
-      },
-      {
-        "equipmentId": "109",
-        "price": 2500
-      },
-      {
-        "equipmentId": "132",
-        "price": 2500
-      },
-      {
-        "equipmentId": "160",
-        "price": 2500
-      },
-      {
-        "equipmentId": "176",
-        "price": 2000
-      },
-      {
-        "equipmentId": "193",
-        "price": 2000
-      },
-      {
-        "equipmentId": "207",
-        "price": 2500
-      },
-      {
-        "equipmentId": "229",
-        "price": 1100
-      },
-      {
-        "equipmentId": "252",
-        "price": 1300
-      },
-      {
-        "equipmentId": "278",
-        "price": 1500
-      }
+      "95",
+      "120",
+      "145",
+      "170",
+      "183",
+      "199",
+      "218",
+      "239",
+      "265",
+      "109",
+      "132",
+      "160",
+      "176",
+      "193",
+      "207",
+      "229",
+      "252",
+      "278"
     ]
   },
   "genbuArsenal": {
@@ -315,78 +108,24 @@
     "imageName": "Gargomon",
     "inventoryOrder": "fixed",
     "inventory": [
-      {
-        "equipmentId": "97",
-        "price": 9500
-      },
-      {
-        "equipmentId": "123",
-        "price": 9500
-      },
-      {
-        "equipmentId": "148",
-        "price": 9500
-      },
-      {
-        "equipmentId": "172",
-        "price": 8500
-      },
-      {
-        "equipmentId": "186",
-        "price": 8500
-      },
-      {
-        "equipmentId": "202",
-        "price": 9500
-      },
-      {
-        "equipmentId": "220",
-        "price": 1400
-      },
-      {
-        "equipmentId": "241",
-        "price": 4200
-      },
-      {
-        "equipmentId": "267",
-        "price": 6500
-      },
-      {
-        "equipmentId": "111",
-        "price": 9500
-      },
-      {
-        "equipmentId": "135",
-        "price": 9500
-      },
-      {
-        "equipmentId": "162",
-        "price": 9500
-      },
-      {
-        "equipmentId": "179",
-        "price": 8500
-      },
-      {
-        "equipmentId": "195",
-        "price": 8500
-      },
-      {
-        "equipmentId": "210",
-        "price": 9500
-      },
-      {
-        "equipmentId": "231",
-        "price": 3500
-      },
-      {
-        "equipmentId": "254",
-        "price": 5000
-      },
-      {
-        "equipmentId": "280",
-        "price": 4200
-      }
+      "97",
+      "123",
+      "148",
+      "172",
+      "186",
+      "202",
+      "220",
+      "241",
+      "267",
+      "111",
+      "135",
+      "162",
+      "179",
+      "195",
+      "210",
+      "231",
+      "254",
+      "280"
     ]
   },
   "asukaPawnshop": {
@@ -394,78 +133,24 @@
     "imageName": "Gomamon",
     "inventoryOrder": "alphabetical",
     "inventory": [
-      {
-        "equipmentId": "292",
-        "price": 1000
-      },
-      {
-        "equipmentId": "296",
-        "price": 1200
-      },
-      {
-        "equipmentId": "300",
-        "price": 1500
-      },
-      {
-        "equipmentId": "304",
-        "price": 700
-      },
-      {
-        "equipmentId": "294",
-        "price": 900
-      },
-      {
-        "equipmentId": "298",
-        "price": 800
-      },
-      {
-        "equipmentId": "302",
-        "price": 1500
-      },
-      {
-        "equipmentId": "305",
-        "price": 400
-      },
-      {
-        "equipmentId": "306",
-        "price": 500
-      },
-      {
-        "equipmentId": "308",
-        "price": 600
-      },
-      {
-        "equipmentId": "310",
-        "price": 700
-      },
-      {
-        "equipmentId": "312",
-        "price": 500
-      },
-      {
-        "equipmentId": "307",
-        "price": 300
-      },
-      {
-        "equipmentId": "309",
-        "price": 700
-      },
-      {
-        "equipmentId": "311",
-        "price": 500
-      },
-      {
-        "equipmentId": "313",
-        "price": 500
-      },
-      {
-        "equipmentId": "314",
-        "price": 1000
-      },
-      {
-        "equipmentId": "315",
-        "price": 1200
-      }
+      "292",
+      "296",
+      "300",
+      "304",
+      "294",
+      "298",
+      "302",
+      "305",
+      "306",
+      "308",
+      "310",
+      "312",
+      "307",
+      "309",
+      "311",
+      "313",
+      "314",
+      "315"
     ]
   },
   "suzakuPawnshop": {
@@ -473,78 +158,24 @@
     "imageName": "Gomamon",
     "inventoryOrder": "alphabetical",
     "inventory": [
-      {
-        "equipmentId": "292",
-        "price": 1000
-      },
-      {
-        "equipmentId": "296",
-        "price": 1200
-      },
-      {
-        "equipmentId": "300",
-        "price": 1500
-      },
-      {
-        "equipmentId": "304",
-        "price": 700
-      },
-      {
-        "equipmentId": "294",
-        "price": 900
-      },
-      {
-        "equipmentId": "298",
-        "price": 800
-      },
-      {
-        "equipmentId": "302",
-        "price": 1500
-      },
-      {
-        "equipmentId": "305",
-        "price": 400
-      },
-      {
-        "equipmentId": "306",
-        "price": 500
-      },
-      {
-        "equipmentId": "308",
-        "price": 600
-      },
-      {
-        "equipmentId": "310",
-        "price": 700
-      },
-      {
-        "equipmentId": "312",
-        "price": 500
-      },
-      {
-        "equipmentId": "307",
-        "price": 300
-      },
-      {
-        "equipmentId": "309",
-        "price": 700
-      },
-      {
-        "equipmentId": "311",
-        "price": 500
-      },
-      {
-        "equipmentId": "313",
-        "price": 500
-      },
-      {
-        "equipmentId": "314",
-        "price": 1000
-      },
-      {
-        "equipmentId": "315",
-        "price": 1200
-      }
+      "292",
+      "296",
+      "300",
+      "304",
+      "294",
+      "298",
+      "302",
+      "305",
+      "306",
+      "308",
+      "310",
+      "312",
+      "307",
+      "309",
+      "311",
+      "313",
+      "314",
+      "315"
     ]
   }
 }

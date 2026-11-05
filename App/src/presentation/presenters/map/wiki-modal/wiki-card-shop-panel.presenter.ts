@@ -1,10 +1,9 @@
 import type { Quest } from "@/state/models";
+import { CardRepository } from "@/presentation/repositories/card.repository";
 import { CardShopRepository } from "@/presentation/repositories/card-shop.repository";
-import type {
-  CardShopInventoryItemRaw,
-  CardShopPhaseRaw,
-} from "@/presentation/repositories/tables/raws/tcg/card-shop.raw";
+import type { CardShopPhaseRaw } from "@/presentation/repositories/tables/raws/tcg/card-shop.raw";
 import { QuestService } from "@/presentation/services/quest.service";
+import type { WikiCardShopInventoryCardViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-card-shop-inventory-card.viewmodel";
 import type { WikiCardShopViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-card-shop.viewmodel";
 
 export class WikiCardShopPanelPresenter {
@@ -20,7 +19,13 @@ export class WikiCardShopPanelPresenter {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
 
     return {
-      cards: this.getActiveInventory(cardShopRaw.phases, lastCompletedMainQuestStep),
+      cards: this.getActiveInventory(cardShopRaw.phases, lastCompletedMainQuestStep)
+        .map((cardId) => {
+          return this.getCard(cardId);
+        })
+        .filter((card): card is WikiCardShopInventoryCardViewModel => {
+          return card !== null;
+        }),
       locationId: cardShopRaw.locationId,
     };
   }
@@ -28,8 +33,8 @@ export class WikiCardShopPanelPresenter {
   private static getActiveInventory(
     phases: CardShopPhaseRaw[],
     lastCompletedMainQuestStep: number,
-  ): CardShopInventoryItemRaw[] {
-    const inventory: CardShopInventoryItemRaw[] = [];
+  ): string[] {
+    const inventory: string[] = [];
 
     for (const phase of phases) {
       const isInRange = QuestService.isOnMainQuestRange(
@@ -44,5 +49,17 @@ export class WikiCardShopPanelPresenter {
     }
 
     return inventory;
+  }
+
+  private static getCard(cardId: string): WikiCardShopInventoryCardViewModel | null {
+    const cardRaw = CardRepository.getCardById(cardId);
+    if (cardRaw?.price === undefined) {
+      return null;
+    }
+
+    return {
+      cardId,
+      price: cardRaw.price,
+    };
   }
 }

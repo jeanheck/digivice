@@ -8,5 +8,6 @@ export interface CardPointsRaw {
 export interface CardRaw {
   imageName: string;
   type: CardType;
+  price?: number;
   points?: CardPointsRaw;
 }

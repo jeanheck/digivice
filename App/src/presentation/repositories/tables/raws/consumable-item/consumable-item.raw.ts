@@ -1,4 +1,4 @@
 export interface ConsumableItemRaw {
-  resaleValue: number;
+  price: number;
   imageName?: string;
 }

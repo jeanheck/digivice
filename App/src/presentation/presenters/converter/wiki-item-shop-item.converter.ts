@@ -5,14 +5,13 @@ import type { WikiItemShopItemViewModel } from "@/presentation/viewmodels/wiki-m
 export class WikiItemShopItemConverter {
   public static convert(
     consumableItemId: string,
-    price: number,
     consumableItemRaw: ConsumableItemRaw,
   ): WikiItemShopItemViewModel {
     const consumableItem = ConsumableItemConverter.convert(Number(consumableItemId), consumableItemRaw);
 
     return {
       consumableItemId,
-      price,
+      price: consumableItemRaw.price,
       imageUrl: consumableItem.imageUrl,
       nameKey: consumableItem.nameKey,
       noteKey: consumableItem.noteKey,
