@@ -7,7 +7,7 @@
     },
     "steps": {
       "1": {
-        "description": "Habla con Tai Kong Wong en la Playa Concha",
+        "description": "Habla con Tai Kong Wong en la Playa de Conchas",
         "locationTarget": "Tai Kong Wong"
       },
       "2": {
@@ -15,7 +15,7 @@
         "locationTarget": "Divermon"
       },
       "3": {
-        "description": "Lleva los objetos a Tai Kong Wong en la Playa Concha para recibir la Caña de Pescar",
+        "description": "Lleva los objetos a Tai Kong Wong en la Playa de Conchas para recibir la Caña de Pescar",
         "requisites": {
           "bambooSpear": "Lanza de Bambú",
           "spiderWeb": "Telaraña",

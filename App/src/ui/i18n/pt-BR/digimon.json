@@ -32,7 +32,8 @@
     },
     "mp": "MP",
     "blast": "Medidor de Explosão",
-    "tp": "Pontos de Treinamento",
+    "tp": "PT",
+    "trainingPoints": "Pontos de Treinamento",
     "equipmentSlot": {
       "head": "Cabeça",
       "body": "Corpo",

@@ -7,19 +7,19 @@
     },
     "steps": {
       "1": {
-        "description": "Habla con Hide, el chico futbolista, en el Cabo Enchufe",
-        "locationTarget": "Hide, el chico futbolista"
+        "description": "Habla con Chico Futbolista en el Capa de Conexión",
+        "locationTarget": "Chico Futbolista"
       },
       "2": {
         "description": "Encuentra la carta perdida de Gabumon",
         "locationTarget": "Carta de Gabumon"
       },
       "3": {
-        "description": "Entrega la carta de Gabumon a Hide, el chico futbolista",
-        "locationTarget": "Hide, el chico futbolista"
+        "description": "Entrega la carta de Gabumon a el Futbolista Hide",
+        "locationTarget": "Futbolista Hide"
       },
       "4": {
-        "description": "Habla con la camarera Debbie en el Lamb Chop de la Ciudad Asuka",
+        "description": "Habla con la Camarera Debbie en el Chuleta Cordero de la Ciudad Asuka",
         "locationTarget": "Camarera Debbie"
       },
       "5": {

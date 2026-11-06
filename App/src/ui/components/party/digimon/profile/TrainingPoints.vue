@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
 defineProps<{
   tp: number;
 }>();
@@ -17,7 +21,7 @@ const emit = defineEmits<{
     @mousemove="emit('moveTooltip', $event)"
     @mouseleave="emit('hideTooltip')"
   >
-    <span class="text-[0.8rem] font-bold text-white leading-none">TP</span>
+    <span class="text-[0.8rem] font-bold text-white leading-none">{{ t("digimon.tp") }}</span>
     <span class="text-[0.8rem] font-bold text-white leading-none">{{ tp }}</span>
   </div>
 </template>

@@ -115,7 +115,7 @@ const digimonStatusTooltip = computed(() => {
         <TrainingPoints
           class="col-start-1 row-start-5"
           :tp="digimon.tp"
-          @show-tooltip="onShowTooltip($event, t(`digimon.tp`))"
+          @show-tooltip="onShowTooltip($event, t(`digimon.trainingPoints`))"
           @move-tooltip="onMoveTooltip"
           @hide-tooltip="onHideTooltip"
         />

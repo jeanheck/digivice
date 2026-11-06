@@ -32,12 +32,13 @@
     },
     "mp": "PM",
     "blast": "Blast",
-    "tp": "Puntos de entrenamiento",
+    "tp": "PE",
+    "trainingPoints": "Puntos de Entrenamiento",
     "equipmentSlot": {
       "head": "Cabeza",
       "body": "Cuerpo",
       "right": "Derecha",
-      "left": "Izqu.",
+      "left": "Izquierda",
       "accessory1": "Accesorios 1",
       "accessory2": "Accesorios 2"
     },

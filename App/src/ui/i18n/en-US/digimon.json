@@ -32,7 +32,8 @@
     },
     "mp": "MP",
     "blast": "Blast",
-    "tp": "Training Points",
+    "tp": "TP",
+    "trainingPoints": "Training Points",
     "equipmentSlot": {
       "head": "Head",
       "body": "Body",
