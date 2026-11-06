@@ -9,7 +9,7 @@
     "allDigimon": "Todos los Digimon",
     "lv": "Nv",
     "experience": "Experiencia",
-    "hp": "HP",
+    "hp": "PV",
     "status": {
       "healthy": "Sano",
       "injured": "Herido",
@@ -30,16 +30,16 @@
         "affected": "Dormido"
       }
     },
-    "mp": "MP",
+    "mp": "PM",
     "blast": "Blast",
     "tp": "Puntos de entrenamiento",
     "equipmentSlot": {
       "head": "Cabeza",
       "body": "Cuerpo",
       "right": "Derecha",
-      "left": "Izquierda",
-      "accessory1": "Accesorio 1",
-      "accessory2": "Accesorio 2"
+      "left": "Izqu.",
+      "accessory1": "Accesorios 1",
+      "accessory2": "Accesorios 2"
     },
     "states": {
       "empty": "Vacío",

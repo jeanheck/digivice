@@ -1,13 +1,13 @@
 {
   "equipmentShop": {
     "asukaArsenal": {
-      "name": "Arsenal Asuka"
+      "name": "Armería Asuka"
     },
     "asukaHeavyArsenal": {
       "name": "Arsenal Pesado Asuka"
     },
     "asukaPawnshop": {
-      "name": "Casa de Empeños Asuka"
+      "name": "Casa de Empeño Asuka"
     },
     "seiryuArsenal": {
       "name": "Arsenal Seiryu"
@@ -22,7 +22,7 @@
       "name": "Arsenal Genbu"
     },
     "suzakuPawnshop": {
-      "name": "Casa de Empeños Suzaku"
+      "name": "Casa de Empeño Suzaku"
     }
   }
 }

@@ -761,32 +761,32 @@
     "89": {
       "location": "0260",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 49,
+        "y": 68
       },
       "requisites": []
     },
     "90": {
       "location": "0240",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 41,
+        "y": 36
       },
       "requisites": []
     },
     "91": {
       "location": "0244",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 77,
+        "y": 58
       },
       "requisites": []
     },
     "92": {
       "location": "0246",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 75,
+        "y": 55
       },
       "requisites": []
     },

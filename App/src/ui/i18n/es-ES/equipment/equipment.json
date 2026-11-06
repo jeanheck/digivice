@@ -57,7 +57,7 @@
       "note": "Mítica espada fantasma revivida."
     },
     "106": {
-      "name": "Guante de Cuero",
+      "name": "Guante Cuero",
       "note": "Un guante de cuero."
     },
     "107": {
@@ -262,7 +262,7 @@
     },
     "157": {
       "name": "Daga",
-      "note": "Cuchillo corto para principiantes."
+      "note": "Cuchicho corto para principiante."
     },
     "158": {
       "name": "Shishioumaru",
@@ -301,8 +301,8 @@
       "note": "Espada demoníaca que congela al enemigo."
     },
     "167": {
-      "name": "Lanza de Bambú",
-      "note": "Lanza de bambú parecida a una pértiga."
+      "name": "Javali. Bambú",
+      "note": "Javalina de bambú como bastón."
     },
     "168": {
       "name": "Lanza",
@@ -394,7 +394,7 @@
     },
     "190": {
       "name": "Arco Largo",
-      "note": "Arco tensado a mano."
+      "note": "Arco de mano."
     },
     "191": {
       "name": "Shuriken",
@@ -493,8 +493,8 @@
       "note": "Cuerno mítico de una bestia sagrada."
     },
     "215": {
-      "name": "Bandana",
-      "note": "Se coloca en la cabeza para defenderse."
+      "name": "Pañuelo",
+      "note": "Colocar en la cabeza para def."
     },
     "216": {
       "name": "Visera",
@@ -538,7 +538,7 @@
     },
     "226": {
       "name": "Lazo",
-      "note": "Se coloca en la cabeza para defenderse."
+      "note": "Poner en la cabeza para defensa."
     },
     "227": {
       "name": "Orejas de Gato",
@@ -577,8 +577,8 @@
       "note": "Corona mítica que llevaba una diosa."
     },
     "236": {
-      "name": "Casco de Piel",
-      "note": "Casco hecho de cuero."
+      "name": "Ocultar Casco",
+      "note": "Casco de cuero."
     },
     "237": {
       "name": "Casco de Hojalata",
@@ -629,8 +629,8 @@
       "note": "Hecho con la cabeza de Machinedramon."
     },
     "249": {
-      "name": "Abrigo de Cuero",
-      "note": "Chaqueta hecha de cuero."
+      "name": "Abrigo Cuero",
+      "note": "Chaqueta de cuero."
     },
     "250": {
       "name": "Chándal",
@@ -682,7 +682,7 @@
     },
     "262": {
       "name": "Cota de Cuero",
-      "note": "Armadura hecha de cuero."
+      "note": "Armadura de cuero."
     },
     "263": {
       "name": "Cota de Hojalata",
@@ -733,8 +733,8 @@
       "note": "Armadura rojo fuego."
     },
     "275": {
-      "name": "Rodela",
-      "note": "Escudo ligero y pequeño."
+      "name": "hebilla",
+      "note": "Escudo pequeño y ligero."
     },
     "276": {
       "name": "Escudo de Hojalata",
@@ -802,99 +802,99 @@
     },
     "292": {
       "name": "Gema de Poder",
-      "note": "Aumenta el poder de ataque."
+      "note": "Incrementa la potencia del ataque."
     },
     "293": {
       "name": "Anillo de Poder",
       "note": "Aumenta mucho el poder de ataque."
     },
     "294": {
-      "name": "Gema de Guardia",
-      "note": "Aumenta la defensa."
+      "name": "Gema Guardia",
+      "note": "Incrementa la defensa."
     },
     "295": {
       "name": "Anillo de Guardia",
       "note": "Aumenta mucho la defensa."
     },
     "296": {
-      "name": "Gema de Espíritu",
-      "note": "Aumenta el espíritu."
+      "name": "Gema Espíritu",
+      "note": "Incrementa el espíritu."
     },
     "297": {
       "name": "Anillo de Espíritu",
       "note": "Aumenta mucho el espíritu."
     },
     "298": {
-      "name": "Gema de Sabiduría",
-      "note": "Aumenta la sabiduría."
+      "name": "Gema Sab.",
+      "note": "Incrementa la sabiduría."
     },
     "299": {
       "name": "Anillo de Sabiduría",
       "note": "Aumenta mucho la sabiduría."
     },
     "300": {
-      "name": "Gema de Velocidad",
-      "note": "Aumenta la velocidad."
+      "name": "Gema Prop.",
+      "note": "Incrementa la velocidad."
     },
     "301": {
       "name": "Anillo de Velocidad",
       "note": "Aumenta mucho la velocidad."
     },
     "302": {
-      "name": "Gema de Carisma",
-      "note": "Anillo a la moda."
+      "name": "Gema Carisma",
+      "note": "Anillo moderno."
     },
     "303": {
       "name": "Anillo de Carisma",
       "note": "Anillo muy a la moda."
     },
     "304": {
-      "name": "Anillo de Llamas",
-      "note": "Resistente al fuego."
+      "name": "Anillo Llamas",
+      "note": "Fuerte contra al fuego."
     },
     "305": {
-      "name": "Anillo de Agua",
-      "note": "Resistente al agua."
+      "name": "Anillo Agua",
+      "note": "Fuerte contra al agua."
     },
     "306": {
-      "name": "Anillo de Hielo",
-      "note": "Resistente al hielo."
+      "name": "Anillo Hielo",
+      "note": "Fuerte contra al hielo."
     },
     "307": {
-      "name": "Anillo de Viento",
-      "note": "Resistente al viento."
+      "name": "Anillo Viento",
+      "note": "Fuerte contra al viento."
     },
     "308": {
-      "name": "Anillo de Trueno",
-      "note": "Resistente al trueno."
+      "name": "Anillo Rayo",
+      "note": "Fuerte contra el rayo."
     },
     "309": {
-      "name": "Anillo de Máquina",
-      "note": "Resistente a máquina."
+      "name": "Anillo Máqu.",
+      "note": "Fuerte contra la máquina."
     },
     "310": {
       "name": "Anillo Oscuro",
-      "note": "Resistente a la oscuridad."
+      "note": "Fuerte contra la oscuridad."
     },
     "311": {
-      "name": "Anillo Antídoto",
-      "note": "Más resistencia al veneno."
+      "name": "Anillo Antíd.",
+      "note": "Más resistente al veneno."
     },
     "312": {
-      "name": "Anillo Revitalizante",
-      "note": "Más resistencia a la parálisis."
+      "name": "Anillo Reviv.",
+      "note": "Más resistente a la parálisis."
     },
     "313": {
-      "name": "Anillo del Despertar",
-      "note": "Más resistencia al sueño."
+      "name": "Anillo Desp.",
+      "note": "Más resistente al sueño."
     },
     "314": {
-      "name": "Anillo de Lucidez",
-      "note": "Más resistencia a la confusión."
+      "name": "Anillo Tranq.",
+      "note": "Más resistente a la confusión."
     },
     "315": {
       "name": "Anillo de Oración",
-      "note": "Más resistencia al KO."
+      "note": "Más resistente al KO."
     },
     "316": {
       "name": "Emblema Múltiple",

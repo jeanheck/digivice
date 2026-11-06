@@ -124,10 +124,12 @@ function openTechniques(): void {
     <template v-if="isEmpty">
       <div class="dw3-panel-content flex flex-1 flex-col w-full py-1 hd:py-2">
         <div
-          class="flex flex-1 items-center w-full min-h-0 px-4 font-bold text-[10px] fhdscaled:text-sm tracking-wider text-white/80 shadow-text cursor-default"
+          class="absolute inset-0 flex items-center justify-center px-4 font-bold text-[10px] fhdscaled:text-sm tracking-wider text-white/80 shadow-text cursor-default"
         >
           {{ $t("digimon.states.empty") }}
         </div>
+
+        <div class="flex-1 min-h-0"></div>
 
         <div class="w-full shrink-0 px-4 pt-0.5">
           <div class="h-[15px] hd:h-[20px]"></div>

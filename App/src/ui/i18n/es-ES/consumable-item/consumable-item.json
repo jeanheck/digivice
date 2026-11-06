@@ -55,8 +55,8 @@
       "additionalInformation": "El aumento es aleatorio. Varía entre 1 y 30."
     },
     "411": {
-      "name": "Carga de Poder",
-      "note": "Recupera 500 de HP."
+      "name": "Carga Poten.",
+      "note": "Cura 500 PV"
     },
     "412": {
       "name": "Chip Poder",
@@ -136,42 +136,42 @@
     },
     "429": {
       "name": "Disco Revivir",
-      "note": "Cura la parálisis durante la batalla."
+      "note": "Cura parálisis en la batalla."
     },
     "430": {
       "name": "Disco Vida",
-      "note": "Revive a todos tus Digimon derrotados."
+      "note": "Revive a los aliados caídos."
     },
     "431": {
-      "name": "Plug Mach",
-      "note": "Aumenta la velocidad del Digimon temporalmente."
+      "name": "Conexión Mach",
+      "note": "Temp.: acelerar"
     },
     "432": {
       "name": "Disco Antídoto",
-      "note": "Cura el envenenamiento durante la batalla."
+      "note": "Cura veneno en la batalla."
     },
     "433": {
       "name": "Disco Energía",
-      "note": "Cura todas las alteraciones durante la batalla."
+      "note": "Cura todas las enferm. en la bat."
     },
     "434": {
-      "name": "Plug Vida",
-      "note": "Recupera la mitad del HP y MP."
+      "name": "Conexión Vida",
+      "note": "Cura la mitad de PV y PM."
     },
     "435": {
-      "name": "Plug Poder",
-      "note": "Aumenta el ataque pero reduce la defensa temporalmente."
+      "name": "Conexión Pot.",
+      "note": "Temp.: sube fuerza y baja def."
     },
     "436": {
-      "name": "Plug Guardia",
-      "note": "Aumenta la defensa pero reduce el ataque temporalmente."
+      "name": "Conexión Gua.",
+      "note": "Temp.: sube defensa y baja fza."
     },
     "437": {
-      "name": "Plug DV",
-      "note": "Aumenta el medidor de explosión."
+      "name": "Conexión DV",
+      "note": "Incrementa indicador de golpe."
     },
     "438": {
-      "name": "Campo Acuático",
+      "name": "Campo Agua",
       "note": "Genera un campo de agua."
     },
     "439": {
@@ -179,11 +179,11 @@
       "note": "Genera un campo de viento."
     },
     "440": {
-      "name": "Plug Aura",
-      "note": "Aumenta el ataque de efecto especial."
+      "name": "Conexión Aura",
+      "note": "Incrementa ataque de efec. esp."
     },
     "441": {
-      "name": "Campo Llamas",
+      "name": "Campo Fuego",
       "note": "Genera un campo de fuego."
     },
     "442": {
@@ -191,19 +191,19 @@
       "note": "Genera un campo de hielo."
     },
     "443": {
-      "name": "Campo Eléctrico",
+      "name": "Campo Rayo",
       "note": "Genera un campo de trueno."
     },
     "444": {
-      "name": "Campo Mecánico",
-      "note": "Genera un campo de metal."
+      "name": "Campo Máquina",
+      "note": "Genera un campo de máquina."
     },
     "445": {
-      "name": "Campo Aleatorio",
+      "name": "Campo Descon.",
       "note": "Genera un campo aleatorio."
     },
     "446": {
-      "name": "Campo Oscuro",
+      "name": "Campo Oscur.",
       "note": "Genera un campo de oscuridad."
     }
   }

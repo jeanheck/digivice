@@ -379,15 +379,15 @@
         "locationTarget": "Game Master"
       },
       "89": {
-        "description": "Vá até a prisão da A.o.A na Caverna Subterrânea",
-        "locationTarget": "Prisão da A.o.A"
+        "description": "Interrogue o General da A.o.A aprisionado na Caverna Subterrânea",
+        "locationTarget": "General"
       },
       "90": {
-        "description": "Vá até a sala do Líder no Salão Suzaku",
+        "description": "Busque por informações sobre o Bulbmon no Setor Sul",
         "locationTarget": "Patamon"
       },
       "91": {
-        "description": "Derrote o Líder Suzaku na Catacumba",
+        "description": "Procure pela Líder Suzaku dentro do Santuário da Selva",
         "locationTarget": "Líder Suzaku"
       },
       "92": {
