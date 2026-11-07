@@ -1937,7 +1937,7 @@
     "bits": 310,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 223,
     "groupId": null,
     "drops": [
       {
@@ -2363,7 +2363,7 @@
     "bits": 400,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 221,
     "groupId": null
   },
   "101": {
@@ -2906,7 +2906,7 @@
     "bits": 400,
     "regularAttackId": "noElement",
     "techniqueId": "doubleGuard",
-    "memoryId": 0,
+    "memoryId": 108,
     "groupId": null
   },
   "109": {
@@ -2948,7 +2948,7 @@
     "bits": 440,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 273,
     "groupId": null
   },
   "110": {
@@ -3653,7 +3653,7 @@
     "bits": 470,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 227,
     "groupId": null,
     "drops": [
       {
@@ -3701,7 +3701,7 @@
     "bits": 100,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 171,
     "groupId": null
   },
   "122": {
@@ -3861,7 +3861,7 @@
     "bits": 450,
     "regularAttackId": "machineElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 54,
     "groupId": null
   },
   "125": {
@@ -4230,7 +4230,7 @@
     "bits": 380,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 121,
     "groupId": null,
     "drops": [
       {
@@ -4278,7 +4278,7 @@
     "bits": 350,
     "regularAttackId": "noElement",
     "techniqueId": "darkMatter",
-    "memoryId": 0,
+    "memoryId": 302,
     "groupId": null,
     "drops": [
       {
@@ -4326,7 +4326,7 @@
     "bits": 400,
     "regularAttackId": "noElement",
     "techniqueId": "darkFear",
-    "memoryId": 0,
+    "memoryId": 364,
     "groupId": null,
     "drops": [
       {
@@ -4374,7 +4374,7 @@
     "bits": 450,
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 365,
     "groupId": null,
     "drops": [
       {
@@ -4422,7 +4422,7 @@
     "bits": 320,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 226,
     "groupId": null
   },
   "137": {
@@ -4464,7 +4464,7 @@
     "bits": 400,
     "regularAttackId": "machineElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 140,
     "groupId": null,
     "drops": [
       {
@@ -4703,7 +4703,7 @@
     "bits": 350,
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 61,
     "groupId": null,
     "drops": [
       {
@@ -4799,7 +4799,7 @@
     "bits": 360,
     "regularAttackId": "fireElement",
     "techniqueId": "darkFear",
-    "memoryId": 0,
+    "memoryId": 170,
     "groupId": null,
     "drops": [
       {
@@ -4895,7 +4895,7 @@
     "bits": 360,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 126,
     "groupId": null,
     "drops": [
       {
@@ -5381,7 +5381,7 @@
     "bits": 490,
     "regularAttackId": "fireElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 327,
     "groupId": null,
     "drops": [
       {
@@ -5884,7 +5884,7 @@
     "bits": 520,
     "regularAttackId": "machineElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 231,
     "groupId": null
   },
   "166": {
@@ -5926,7 +5926,7 @@
     "bits": 490,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 215,
     "groupId": null
   },
   "167": {
@@ -5968,7 +5968,7 @@
     "bits": 460,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 269,
     "groupId": null,
     "drops": [
       {
@@ -6016,7 +6016,7 @@
     "bits": 440,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 177,
     "groupId": null,
     "drops": [
       {
@@ -6112,7 +6112,7 @@
     "bits": 500,
     "regularAttackId": "noElement",
     "techniqueId": "fullHeal",
-    "memoryId": 0,
+    "memoryId": 250,
     "groupId": null,
     "drops": [
       {
@@ -6160,7 +6160,7 @@
     "bits": 440,
     "regularAttackId": "noElement",
     "techniqueId": "slyphStorm",
-    "memoryId": 0,
+    "memoryId": 193,
     "groupId": null,
     "drops": [
       {
@@ -6208,7 +6208,7 @@
     "bits": 530,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
-    "memoryId": 0,
+    "memoryId": 245,
     "groupId": null
   },
   "173": {
@@ -6250,7 +6250,7 @@
     "bits": 440,
     "regularAttackId": "fireElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 272,
     "groupId": null
   },
   "174": {
@@ -6292,7 +6292,7 @@
     "bits": 500,
     "regularAttackId": "thunderElementCounterPhysical",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 190,
     "groupId": null,
     "drops": [
       {
@@ -6340,7 +6340,7 @@
     "bits": 560,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 228,
     "groupId": null
   },
   "176": {
@@ -6382,7 +6382,7 @@
     "bits": 500,
     "regularAttackId": "machineElementHitsTwice",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 115,
     "groupId": null,
     "drops": [
       {
@@ -6430,7 +6430,7 @@
     "bits": 530,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
-    "memoryId": 0,
+    "memoryId": 236,
     "groupId": null
   },
   "178": {
@@ -6472,7 +6472,7 @@
     "bits": 550,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
-    "memoryId": 0,
+    "memoryId": 251,
     "groupId": null
   },
   "179": {
@@ -6514,7 +6514,7 @@
     "bits": 490,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
-    "memoryId": 0,
+    "memoryId": 312,
     "groupId": null,
     "drops": [
       {
@@ -6562,7 +6562,7 @@
     "bits": 540,
     "regularAttackId": "fireElement",
     "techniqueId": "darknessChaos",
-    "memoryId": 0,
+    "memoryId": 247,
     "groupId": null
   },
   "181": {
@@ -6604,7 +6604,7 @@
     "bits": 600,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 382,
     "groupId": null
   },
   "182": {
@@ -7105,7 +7105,7 @@
     "bits": 190,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 401,
     "groupId": 152,
     "locations": [
       {
@@ -7283,7 +7283,7 @@
     "bits": 370,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 404,
     "groupId": null,
     "drops": [
       {
@@ -7435,7 +7435,7 @@
     "bits": 360,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 406,
     "groupId": null
   },
   "195": {
@@ -7477,7 +7477,7 @@
     "bits": 370,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 407,
     "groupId": null,
     "drops": [
       {
@@ -7525,7 +7525,7 @@
     "bits": 350,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 408,
     "groupId": null
   },
   "197": {
@@ -7665,7 +7665,7 @@
     "bits": 460,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 410,
     "groupId": null,
     "drops": [
       {
@@ -7713,7 +7713,7 @@
     "bits": 480,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 411,
     "groupId": null,
     "drops": [
       {
@@ -7761,7 +7761,7 @@
     "bits": 460,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 412,
     "groupId": null
   },
   "202": {
@@ -7862,7 +7862,7 @@
     "bits": 770,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 414,
     "groupId": null,
     "drops": [
       {
@@ -8019,7 +8019,7 @@
     "bits": 1110,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 417,
     "groupId": null,
     "drops": [
       {
@@ -8067,7 +8067,7 @@
     "bits": 400,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 418,
     "groupId": null,
     "drops": [
       {
@@ -8115,7 +8115,7 @@
     "bits": 430,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 419,
     "groupId": null
   },
   "209": {
@@ -8157,7 +8157,7 @@
     "bits": 470,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 420,
     "groupId": null,
     "drops": [
       {
@@ -8295,7 +8295,7 @@
     "bits": 480,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 423,
     "groupId": null,
     "drops": [
       {
@@ -8343,7 +8343,7 @@
     "bits": 360,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 424,
     "groupId": null
   },
   "214": {
@@ -8433,7 +8433,7 @@
     "bits": 420,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 426,
     "groupId": null,
     "drops": [
       {
@@ -8537,7 +8537,7 @@
     "bits": 480,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 428,
     "groupId": null,
     "drops": [
       {
@@ -8633,7 +8633,7 @@
     "bits": 500,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 430,
     "groupId": null
   },
   "220": {
@@ -8723,7 +8723,7 @@
     "bits": 460,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 431,
     "groupId": null
   },
   "222": {
@@ -8765,7 +8765,7 @@
     "bits": 550,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 432,
     "groupId": null
   },
   "223": {
@@ -8807,7 +8807,7 @@
     "bits": 510,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 433,
     "groupId": null,
     "drops": [
       {
@@ -8855,7 +8855,7 @@
     "bits": 490,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 434,
     "groupId": null,
     "drops": [
       {
@@ -8885,13 +8885,13 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 50,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 50,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 50,
     "canKO": true,
-    "ko": 0,
+    "ko": 50,
     "canDrain": true,
     "canSteal": true,
     "strDown": "Yes",
@@ -8903,7 +8903,7 @@
     "bits": 1060,
     "regularAttackId": "noElement",
     "techniqueId": "berserkSword",
-    "memoryId": 0,
+    "memoryId": 178,
     "groupId": null
   },
   "403": {
@@ -12900,7 +12900,7 @@
     "defense": 600,
     "spirit": 460,
     "wisdom": 408,
-    "speed": 960,
+    "speed": 480,
     "fire": 111,
     "water": 370,
     "ice": 370,

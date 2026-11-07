@@ -261,3 +261,41 @@ later (no Level prefix — starts at Strength). Address is **not fixed**:
 when that catalog slot is bound (garbage in Kunemon/Tapirmon snaps). Prefer
 the swappable blocks for combat UI; catalog is a good **audit** / identity
 helper.
+
+### Enemy definition table (confirmed 2026-11-07)
+
+The catalog records above are entries of a contiguous **enemy definition
+table** loaded in battle. Record stride **`0x46`**, Int16 LE:
+
+| Offset | Field |
+|--------|-------|
+| +0x00 | Enemy id = `memoryId` (same value as enemy slot `0xA44D0 + 0x00`) |
+| +0x06 | Table index (sequential; the table is ordered by it, not by id) |
+| +0x0E…+0x16 | Strength, Defense, Spirit, Wisdom, Speed |
+| +0x18…+0x24 | Fire, Water, Ice, Wind, Thunder, Machine, Dark |
+| +0x26…+0x2E | Status resists: poison, paralyze, confuse, sleep, KO |
+| +0x30 | Species family (`N`, same table as `+0x24` of the pair ÷ `0x100`) |
+
+- No level, HP, name or `groupId` in the record.
+- Base address varies (`0xBB508` … `0xE51A4` in `cardmon-*.bin`,
+  `0xCFAE4` in `battle-against-natsumi.bin`); find it by walking `+0x06`.
+- Every battle snapshot so far holds the same chunk: indexes **58–250**
+  (193 records, ids 4–467). Indexes 0–57 not seen yet.
+- `memoryId` identification: match the 5 attrs + 7 elemental resists (+
+  species to split Cardmon(G) 463 / (H) 464) against `enemy.json`. Used on
+  2026-11-07 to fill all 56 `memoryId: 0` entries (incl. DRI agent bosses
+  449–456, Cardmons 457–464); validated in battle for MetalGreymon and six
+  Cardmons, the rest pending in-game confirmation.
+- Status resists do **not** encode `enemy.json` `can*`: 53 of 61 `can*: false`
+  fields have a non-zero value here. `enemy.json` zeroes the value when
+  `can*` is false (source shows `--`), so only compare status where `can*` is true.
+- **Hypothesis (open):** `--` (immune) and `Steal`/`STR⇓`/`DEF⇓`/`SPD⇓ = No` come
+  from the **battle/group**, not from this record. All 20 `enemy.json` entries
+  with any `can*: false` are bosses or special groups (Game Master F-010, groups
+  189–192, 322); none of the 74 wild entries has one. Same `memoryId` keeps
+  base resists here (Game Master Minotarumon(Blue) shares record 399 with the
+  wild one: 50/50/0/50/50 vs source all `--`). Boss status values in
+  `enemy.json` (e.g. HiAndromon, WaruMonzaemon `0` vs record `50`) follow the
+  source, not this record. To confirm: pair block status tail (`+0x1A…+0x22`)
+  and record tail (`+0x32…+0x44`) in a boss battle vs a wild control.
+- Ids **438–448, 466, 467** have no `enemy.json` entry (unidentified enemies).
