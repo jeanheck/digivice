@@ -24,20 +24,20 @@
     },
     "steps": {
       "1": {
-        "description": "Busca al Líder de Seiryu en la Ciudad Seiryu",
-        "locationTarget": "Tom el repetidor"
+        "description": "Busca al Líder Seiryu en la Ciudad Seiryu",
+        "locationTarget": "Tom Repetidor"
       },
       "2": {
-        "description": "Habla con el Líder de Seiryu en las Ruinas Protocolo",
-        "locationTarget": "Líder de Seiryu"
+        "description": "Habla con el Líder Seiryu en las Ruinas Protocolo",
+        "locationTarget": "Líder Seiryu"
       },
       "3": {
-        "description": "Derrota a MasterTyrannomon en el Valle Tyranno",
-        "locationTarget": "MasterTyrannomon"
+        "description": "Derrota a Master Tyranno en el Valle Tyranno",
+        "locationTarget": "Master Tyranno"
       },
       "4": {
-        "description": "Desafía al Líder de Seiryu en la Ciudad Seiryu",
-        "locationTarget": "Líder de Seiryu"
+        "description": "Desafía al Líder Seiryu en la Ciudad Seiryu",
+        "locationTarget": "Líder Seiryu"
       },
       "5": {
         "description": "Sal de la Ciudad Seiryu",
@@ -56,7 +56,7 @@
         "locationTarget": "Guilmon"
       },
       "9": {
-        "description": "Habla con el Guilmon en la Posada del Bosque",
+        "description": "Habla con el Guilmon en la Posada Bosque",
         "locationTarget": "Guilmon"
       },
       "10": {
@@ -72,7 +72,7 @@
         "locationTarget": "Guilmon"
       },
       "13": {
-        "description": "Habla con el Guilmon Tramposo en el sótano de la Posada del Bosque",
+        "description": "Habla con el Guilmon Tramposo en el sótano de la Posada Bosque",
         "locationTarget": "Guilmon Tramposo"
       },
       "14": {
@@ -395,7 +395,7 @@
         "locationTarget": "Bulbmon"
       },
       "93": {
-        "description": "Habla con Kenny en la Posada del Bosque (sótano) de Amaterasu",
+        "description": "Habla con Kenny en la Posada Bosque (sótano) de Amaterasu",
         "locationTarget": "Kenny"
       },
       "94": {

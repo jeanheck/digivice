@@ -70,7 +70,7 @@ Task Progress:
 - [ ] 3. equipment-shop.json entry
 - [ ] 4. price and imageName in equipment.json
 - [ ] 5. map.json marker (equipmentShops)
-- [ ] 6. i18n: ui/i18n/{locale}/shop/equipment-shop.json
+- [ ] 6. i18n: ui/i18n/{locale}/shop.json (equipmentShop)
 ```
 
 ### 1. Equipment ids

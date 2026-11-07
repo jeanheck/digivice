@@ -17,9 +17,9 @@
       "3": {
         "description": "Lleva los objetos a Tai Kong Wong en la Playa de Conchas para recibir la Caña de Pescar",
         "requisites": {
-          "bambooSpear": "Lanza de Bambú",
-          "spiderWeb": "Telaraña",
-          "redSnapper": "Pargo Rojo"
+          "bambooSpear": "Javali. Bambú",
+          "spiderWeb": "Tela de Araña",
+          "redSnapper": "Pez Rojo"
         },
         "locationTarget": "Tai Kong Wong"
       }

@@ -8,7 +8,7 @@ Task Progress:
 - [ ] 2. card-shop.json entry
 - [ ] 3. price in tcg/card.json
 - [ ] 4. map.json marker (cardShops)
-- [ ] 5. i18n: ui/i18n/{locale}/tcg/card-shop.json
+- [ ] 5. i18n: ui/i18n/{locale}/shop.json (cardShop)
 ```
 
 ## 1. Card ids

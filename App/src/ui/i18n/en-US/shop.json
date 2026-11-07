@@ -1,0 +1,65 @@
+{
+  "cardShop": {
+    "asYellowCruiser": {
+      "name": "AS Yellow Cruiser"
+    },
+    "seiryuCardShop": {
+      "name": "Card Shop"
+    },
+    "suzakuCardShop": {
+      "name": "Card Shop"
+    },
+    "byakkoCardShop": {
+      "name": "Card Shop"
+    },
+    "genbuCardShop": {
+      "name": "Card Shop"
+    }
+  },
+  "equipmentShop": {
+    "asukaArsenal": {
+      "name": "Asuka Arsenal"
+    },
+    "asukaHeavyArsenal": {
+      "name": "Asuka Heavy Arsenal"
+    },
+    "asukaPawnshop": {
+      "name": "Asuka Pawnshop"
+    },
+    "seiryuArsenal": {
+      "name": "Seiryu Arsenal"
+    },
+    "suzakuArsenal": {
+      "name": "Suzaku Arsenal"
+    },
+    "byakkoArsenal": {
+      "name": "Byakko Arsenal"
+    },
+    "genbuArsenal": {
+      "name": "Genbu Arsenal"
+    },
+    "suzakuPawnshop": {
+      "name": "Suzaku Pawnshop"
+    }
+  },
+  "itemShop": {
+    "asukaBlackMarket": {
+      "name": "AS Black Market"
+    },
+    "asukaItemShop": {
+      "name": "AS Item Shop"
+    },
+    "seiryuItemShop": {
+      "name": "Seiryu Items"
+    },
+    "suzakuItemShop": {
+      "name": "Suzaku Items"
+    },
+    "byakkoItemShop": {
+      "name": "Byakko Items"
+    },
+    "genbuItemShop": {
+      "name": "Genbu Items"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "cardShop": {
+    "asYellowCruiser": {
+      "name": "Crucero Amarillo AS"
+    },
+    "seiryuCardShop": {
+      "name": "Tienda de Cartas"
+    },
+    "suzakuCardShop": {
+      "name": "Tienda de Cartas"
+    },
+    "byakkoCardShop": {
+      "name": "Tienda de Cartas"
+    },
+    "genbuCardShop": {
+      "name": "Tienda de Cartas"
+    }
+  },
+  "equipmentShop": {
+    "asukaArsenal": {
+      "name": "Armería Asuka"
+    },
+    "asukaHeavyArsenal": {
+      "name": "Arsenal Pesado Asuka"
+    },
+    "asukaPawnshop": {
+      "name": "Casa de Empeño Asuka"
+    },
+    "seiryuArsenal": {
+      "name": "Armería Seiryu"
+    },
+    "suzakuArsenal": {
+      "name": "Armería Suzaku"
+    },
+    "byakkoArsenal": {
+      "name": "Armería Byakko"
+    },
+    "genbuArsenal": {
+      "name": "Armería Genbu"
+    },
+    "suzakuPawnshop": {
+      "name": "Casa de Empeño Suzaku"
+    }
+  },
+  "itemShop": {
+    "asukaBlackMarket": {
+      "name": "Armería Pesada Asuka"
+    },
+    "asukaItemShop": {
+      "name": "Tienda Asuka"
+    },
+    "seiryuItemShop": {
+      "name": "Tienda Seiryu"
+    },
+    "suzakuItemShop": {
+      "name": "Tienda Suzaku"
+    },
+    "byakkoItemShop": {
+      "name": "Tienda Byakko"
+    },
+    "genbuItemShop": {
+      "name": "Tienda Genbu"
+    }
+  }
+}

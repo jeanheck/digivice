@@ -75,9 +75,6 @@ const openNpcWikiModal = (npcId: string) => {
           @click="openWikiModal(enemy.id)"
         >
           <span>{{ enemy.name }}</span>
-          <span v-if="enemy.boss" class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]">{{
-            EnemySourceIcon.boss
-          }}</span>
           <span
             v-if="enemy.walking && !enemy.boss"
             class="ml-0.5 font-emoji-color text-[12px] fhdscaled:text-[16px]"

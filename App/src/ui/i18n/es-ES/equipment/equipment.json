@@ -6,7 +6,7 @@
     },
     "93": {
       "name": "Espada Zanden",
-      "note": "Acumula energía y corta."
+      "note": "Almacena energía y da mandobles."
     },
     "94": {
       "name": "Hoja Carmesí",
@@ -61,8 +61,8 @@
       "note": "Un guante de cuero."
     },
     "107": {
-      "name": "Guante Felino",
-      "note": "Golpea como un gato."
+      "name": "Guante Gato",
+      "note": "Golpea como gato."
     },
     "108": {
       "name": "Guante de Hierro",
@@ -197,8 +197,8 @@
       "note": "Poder para gobernar un país."
     },
     "141": {
-      "name": "Vara Antigua",
-      "note": "Aún guarda magia dormida."
+      "name": "Varita Vieja",
+      "note": "Aduerme la magia."
     },
     "142": {
       "name": "Centelleo",
@@ -246,7 +246,7 @@
     },
     "153": {
       "name": "Garra Antigua",
-      "note": "Garra con el ADN de bestias antiguas."
+      "note": "Garra con ADN de bestias antaño."
     },
     "154": {
       "name": "Conquista",
@@ -266,7 +266,7 @@
     },
     "158": {
       "name": "Shishioumaru",
-      "note": "La espada de Leomon."
+      "note": "Espada de Leomon."
     },
     "159": {
       "name": "Espada Larga",
@@ -305,7 +305,7 @@
       "note": "Javalina de bambú como bastón."
     },
     "168": {
-      "name": "Lanza",
+      "name": "Javalina",
       "note": "Fácil de usar y bastante poderosa."
     },
     "169": {
@@ -398,7 +398,7 @@
     },
     "191": {
       "name": "Shuriken",
-      "note": "Arma arrojadiza de los asesinos."
+      "note": "Arma arrojadiza para asesinos."
     },
     "192": {
       "name": "Ballesta",
@@ -497,8 +497,8 @@
       "note": "Colocar en la cabeza para def."
     },
     "216": {
-      "name": "Visera",
-      "note": "Protege la cabeza con la visera."
+      "name": "Visor Solar",
+      "note": "Protege la cabeza con el visor."
     },
     "217": {
       "name": "Gorra de Béisbol",
@@ -541,8 +541,8 @@
       "note": "Poner en la cabeza para defensa."
     },
     "227": {
-      "name": "Orejas de Gato",
-      "note": "Adorables orejas de gato."
+      "name": "Orejas Gato",
+      "note": "Bonitas orejas de gato."
     },
     "228": {
       "name": "Cinta",
@@ -581,8 +581,8 @@
       "note": "Casco de cuero."
     },
     "237": {
-      "name": "Casco de Hojalata",
-      "note": "Casco hecho de metal ligero."
+      "name": "Casco Hojala.",
+      "note": "Casco de metal ligero."
     },
     "238": {
       "name": "Casco de Hierro",
@@ -633,8 +633,8 @@
       "note": "Chaqueta de cuero."
     },
     "250": {
-      "name": "Chándal",
-      "note": "Traje de combate que permite moverse con facilidad."
+      "name": "Traje Gimnas.",
+      "note": "Traje de combate de mov. fácil."
     },
     "251": {
       "name": "Túnica de Sacerdote",
@@ -685,8 +685,8 @@
       "note": "Armadura de cuero."
     },
     "263": {
-      "name": "Cota de Hojalata",
-      "note": "Armadura hecha de metal ligero."
+      "name": "Cota de Hojala.",
+      "note": "Armadura de metal ligero."
     },
     "264": {
       "name": "Armadura de Hierro",
@@ -733,11 +733,11 @@
       "note": "Armadura rojo fuego."
     },
     "275": {
-      "name": "hebilla",
+      "name": "Hebilla",
       "note": "Escudo pequeño y ligero."
     },
     "276": {
-      "name": "Escudo de Hojalata",
+      "name": "Escudo de Hojal.",
       "note": "Escudo ligero y fácil de usar."
     },
     "277": {
@@ -757,7 +757,7 @@
       "note": "Escudo de aleación resistente y ligero."
     },
     "281": {
-      "name": "Barrera Divina",
+      "name": "Barrera Div.",
       "note": "Barrera con una luz divina."
     },
     "282": {

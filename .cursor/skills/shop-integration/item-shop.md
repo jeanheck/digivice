@@ -8,7 +8,7 @@ Task Progress:
 - [ ] 1. Resolve consumable item ids
 - [ ] 2. item-shop.json entry
 - [ ] 3. map.json marker (itemShops)
-- [ ] 4. i18n: ui/i18n/{locale}/shop/item-shop.json
+- [ ] 4. i18n: ui/i18n/{locale}/shop.json (itemShop)
 ```
 
 ## 1. Consumable item ids

@@ -1,8 +1,8 @@
 {
   "enemyTechniques": {
-    "necromist": "Necroniebla (físico, probabilidad de veneno)",
-    "madPump": "Bomba Loca (físico, agua)",
-    "masterFire": "Fuego Maestro (fuego)",
+    "necromist": "Necro Mist (Físico, Probabilidad de veneno)",
+    "madPump": "Bomba Loca (Físico, Agua)",
+    "masterFire": "Master Fire (Fuego)",
     "atomicRay": "Rayo Atómico (mágico-máquina, probabilidad de KO)",
     "none": "Ninguna",
     "energySuck": "Absorber Energía (mágico)",
