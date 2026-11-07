@@ -8997,7 +8997,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 451,
     "groupId": 265,
     "locations": [
       {
@@ -9048,7 +9048,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 452,
     "groupId": 266,
     "locations": [
       {
@@ -9099,7 +9099,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 453,
     "groupId": 267,
     "locations": [
       {
@@ -9150,7 +9150,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 454,
     "groupId": 268,
     "locations": [
       {
@@ -9201,7 +9201,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 456,
     "groupId": 269,
     "locations": [
       {
@@ -9252,7 +9252,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 455,
     "groupId": 270,
     "locations": [
       {
@@ -9303,7 +9303,7 @@
     "boss": true,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32,
+    "memoryId": 450,
     "groupId": 271,
     "locations": [
       {
@@ -9335,11 +9335,11 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 99,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 99,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 99,
     "canKO": true,
     "ko": 50,
     "canDrain": true,
@@ -9354,7 +9354,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 457,
-    "groupId": null,
+    "groupId": 327,
     "drops": [
       {
         "dropId": 501,
@@ -9448,11 +9448,11 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 99,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 99,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 99,
     "canKO": true,
     "ko": 50,
     "canDrain": true,
@@ -9467,7 +9467,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 458,
-    "groupId": null,
+    "groupId": 328,
     "drops": [
       {
         "dropId": 501,
@@ -9715,11 +9715,11 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 99,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 99,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 99,
     "canKO": true,
     "ko": 50,
     "canDrain": true,
@@ -9734,7 +9734,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 460,
-    "groupId": null,
+    "groupId": 330,
     "drops": [
       {
         "dropId": 505,
@@ -9784,11 +9784,11 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 99,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 99,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 99,
     "canKO": true,
     "ko": 50,
     "canDrain": true,
@@ -9802,7 +9802,7 @@
     "bits": 370,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 461,
     "groupId": null
   },
   "520": {
@@ -9944,11 +9944,11 @@
     "canPoison": true,
     "poison": 50,
     "canParalyze": true,
-    "paralyze": 0,
+    "paralyze": 99,
     "canConfuse": true,
-    "confuse": 0,
+    "confuse": 99,
     "canSleep": true,
-    "sleep": 0,
+    "sleep": 99,
     "canKO": true,
     "ko": 50,
     "canDrain": true,
@@ -9962,7 +9962,7 @@
     "bits": 470,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 464,
     "groupId": null
   },
   "523": {
