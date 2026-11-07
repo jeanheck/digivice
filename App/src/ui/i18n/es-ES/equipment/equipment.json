@@ -18,7 +18,7 @@
     },
     "96": {
       "name": "Shiratorimaru",
-      "note": "La espada de Mushamon."
+      "note": "Espada de Mushamon."
     },
     "97": {
       "name": "Hoja Brillante",
@@ -122,7 +122,7 @@
     },
     "122": {
       "name": "Escopeta",
-      "note": "Un solo disparo causa mucho daño."
+      "note": "Un disparo causa gran daño."
     },
     "123": {
       "name": "Psico Blaster",
@@ -170,7 +170,7 @@
     },
     "134": {
       "name": "Vara de Hueso",
-      "note": "Una vara única hecha de hueso."
+      "note": "Varita única de hueso."
     },
     "135": {
       "name": "Vara Brumosa",
@@ -221,8 +221,8 @@
       "note": "Arma hecha con el colmillo de un ogro."
     },
     "147": {
-      "name": "Colmillo de Cerbero",
-      "note": "Drena HP a través de la herida."
+      "name": "Colmi Cerb.",
+      "note": "Roba PV de la herida."
     },
     "148": {
       "name": "Colmillo Maligno",
@@ -278,7 +278,7 @@
     },
     "161": {
       "name": "Espada Alada",
-      "note": "Fácil de manejar para ataques rápidos."
+      "note": "Fácil de blandar para ataq. ráp."
     },
     "162": {
       "name": "Espada Kulon",
@@ -318,7 +318,7 @@
     },
     "171": {
       "name": "Lanza Divina",
-      "note": "Lanza dura hecha de hueso fosilizado."
+      "note": "Lanza dura de hueso fosilizado."
     },
     "172": {
       "name": "Tridente",
@@ -345,8 +345,8 @@
       "note": "Se maneja a dos manos para despedazar."
     },
     "178": {
-      "name": "Zweihänder",
-      "note": "Gran espada alemana a dos manos."
+      "name": "Mandoble",
+      "note": "Espada alemana a dos manos."
     },
     "179": {
       "name": "Flamberge",
@@ -373,8 +373,8 @@
       "note": "Arma común a dos manos."
     },
     "185": {
-      "name": "Berdiche",
-      "note": "Hacha pesada de mango largo."
+      "name": "Berdys",
+      "note": "Hacha pesada a dos manos."
     },
     "186": {
       "name": "Cortador de Almas",
@@ -409,8 +409,8 @@
       "note": "Arco angelical contra Digimon malignos."
     },
     "194": {
-      "name": "Arco del Cuervo",
-      "note": "La maldición del cuervo confunde al enemigo."
+      "name": "Arco Cuervo",
+      "note": "Mald. cvo. que confunde al enem."
     },
     "195": {
       "name": "Arco Relámpago",
@@ -437,8 +437,8 @@
       "note": "Arma defensiva para atacar."
     },
     "201": {
-      "name": "Guardia Metálica",
-      "note": "Arma defensiva metálica para atacar."
+      "name": "Guarda Metal",
+      "note": "Arma defensiva metal para atacar."
     },
     "202": {
       "name": "Guardia Poderosa",
@@ -469,8 +469,8 @@
       "note": "Reforzado con forma de taladro."
     },
     "209": {
-      "name": "Cuerno Kabuteri",
-      "note": "Cuerno para dejar fuera de combate al enemigo."
+      "name": "Cue. Kabuteri",
+      "note": "Cuerno para aturdir al enemigo."
     },
     "210": {
       "name": "Cuerno de Choque",
@@ -553,8 +553,8 @@
       "note": "Corona hecha de metal mágico."
     },
     "230": {
-      "name": "Corona Mágica",
-      "note": "Usada por magos para proteger la cabeza."
+      "name": "Coro. Mágica",
+      "note": "Utiliz. por magos para la cbz."
     },
     "231": {
       "name": "Máscara de Chamán",
@@ -594,7 +594,7 @@
     },
     "240": {
       "name": "Casco Alado",
-      "note": "Ligero y facilita esquivar ataques."
+      "note": "Ligero y facil de evadir ataques."
     },
     "241": {
       "name": "Casco Kulon",
@@ -646,7 +646,7 @@
     },
     "253": {
       "name": "Capa Oscura",
-      "note": "Extraña capa que absorbe la oscuridad."
+      "note": "Rara capa que absorbe oscuridad."
     },
     "254": {
       "name": "Plumífero",
@@ -697,8 +697,8 @@
       "note": "Recubierta de cáscaras de Digitama."
     },
     "266": {
-      "name": "Armadura Oscura",
-      "note": "Armadura inquietante con poderes oscuros."
+      "name": "Armad. Oscura",
+      "note": "Armadura de Erie con pod. oscur."
     },
     "267": {
       "name": "Armadura Kulon",
@@ -749,8 +749,8 @@
       "note": "El eficaz escudo de un caballero."
     },
     "279": {
-      "name": "Barrera de Guardia",
-      "note": "Una barrera de gran alcance."
+      "name": "Barrera Guar.",
+      "note": "Una barrera de amplio rango."
     },
     "280": {
       "name": "Escudo Kulon",

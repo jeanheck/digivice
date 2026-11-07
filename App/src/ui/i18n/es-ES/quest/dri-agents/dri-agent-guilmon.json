@@ -4,7 +4,7 @@
     "description": "Añade a Guilmon a tu grupo de Digimon",
     "requisites": {
       "partyLevel": "Tener un nivel de grupo entre 30 y 45",
-      "seiryuLeader": "Tener la Insignia de Seiryu"
+      "seiryuLeader": "Tener el Pin de Seiryu"
     },
     "steps": {
       "1": {

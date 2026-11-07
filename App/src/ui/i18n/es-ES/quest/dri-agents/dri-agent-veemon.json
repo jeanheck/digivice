@@ -4,7 +4,7 @@
     "description": "Añade a Veemon a tu grupo de Digimon",
     "requisites": {
       "partyLevel": "Tener un nivel de grupo entre 1 y 30",
-      "byakkoLeader": "Tener la Insignia de Byakko"
+      "byakkoLeader": "Tener el Pin de Byakko"
     },
     "steps": {
       "1": {

@@ -60,8 +60,8 @@
         "locationTarget": "Guilmon"
       },
       "10": {
-        "description": "Fale com Guilmon Trapaceiro na Torre Zephyr na Cidade Seiryu",
-        "locationTarget": "Guilmon"
+        "description": "Fale com Guilmon na Torre Zephyr na Cidade Seiryu",
+        "locationTarget": "Guilmon Trapaceiro"
       },
       "11": {
         "description": "Retorne à Estação Leste com o Cartão Azul",

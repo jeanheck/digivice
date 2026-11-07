@@ -21,7 +21,7 @@
       "name": "Armería Asuka"
     },
     "asukaHeavyArsenal": {
-      "name": "Arsenal Pesado Asuka"
+      "name": "Armería Pesada Asuka"
     },
     "asukaPawnshop": {
       "name": "Casa de Empeño Asuka"
@@ -44,7 +44,7 @@
   },
   "itemShop": {
     "asukaBlackMarket": {
-      "name": "Armería Pesada Asuka"
+      "name": "Mercado Negro AS"
     },
     "asukaItemShop": {
       "name": "Tienda Asuka"

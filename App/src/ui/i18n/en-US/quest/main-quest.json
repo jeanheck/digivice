@@ -60,8 +60,8 @@
         "locationTarget": "Guilmon"
       },
       "10": {
-        "description": "Talk with the Tricky Guilmon on Zephyr Tower, on Seiryu City",
-        "locationTarget": "Guilmon"
+        "description": "Talk with the Guilmon on Zephyr Tower, on Seiryu City",
+        "locationTarget": "Tricky Guilmon"
       },
       "11": {
         "description": "Return to the East Station with the Blue Card",

@@ -19,3 +19,4 @@ alwaysApply: true
 1. **Nomenclatura**: não abrevie variáveis; prefira nomes explícitos. Exceção: abreviações clássicas e culturalmente difundidas, que já têm valor próprio (ex.: `ko`, `hp`, `mp`).
 2. **Condicionais**: sempre use `{ }` em `if`, mesmo com uma linha.
 3. **Comentários**: evite quando o código é autoexplicativo; se necessário, em inglês.
+4. **Snapshots**: quando o usuário pedir para ler um snapshot (`.bin`), buscar sempre em `Tools/MemoryScanner/Snapshots/`, a não ser que ele indique explicitamente outra pasta.

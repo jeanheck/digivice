@@ -8945,8 +8945,8 @@
     "bits": 340,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
-    "memoryId": 32,
+    "techniqueId": "gigaDestroyer",
+    "memoryId": 449,
     "groupId": 264,
     "locations": [
       {

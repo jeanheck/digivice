@@ -1,7 +1,7 @@
 {
   "boosters": {
     "501": {
-      "name": "Sobre 1B"
+      "name": "Expansión 1b"
     },
     "502": {
       "name": "Sobre 2B"
@@ -61,13 +61,13 @@
       "name": "Sobre R-05"
     },
     "521": {
-      "name": "Sobre 1A"
+      "name": "Propulsor 01a"
     },
     "522": {
-      "name": "Sobre 2A"
+      "name": "Expansión 02a"
     },
     "523": {
-      "name": "Sobre 3A"
+      "name": "Expansión 03a"
     },
     "524": {
       "name": "Sobre 4A"
