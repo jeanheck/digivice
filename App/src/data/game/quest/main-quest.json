@@ -842,25 +842,41 @@
     "96": {
       "location": "02AD",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 55,
+        "y": 37
       },
       "requisites": []
     },
     "97": {
       "location": "02AE",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 16.5,
+        "y": 15
       },
       "requisites": []
     },
     "98": {
       "location": "026E",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 83,
+        "y": 15
       },
+      "innerLocation": [
+        {
+          "location": "026E",
+          "coordinates": {
+            "x": 64,
+            "y": 57
+          }
+        },
+        {
+          "location": "026F",
+          "coordinates": {
+            "x": 7,
+            "y": 54
+          }
+        }
+      ],
       "requisites": []
     },
     "99": {

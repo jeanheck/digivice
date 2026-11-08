@@ -399,7 +399,7 @@
         "locationTarget": "Garoto"
       },
       "94": {
-        "description": "Pregunte ao líder da cidade mais próxima onde está o Digi-ovo do Conhecimento",
+        "description": "Pregunte ao líder da cidade mais próxima onde está o Digi-Ovo do Conhecimento",
         "locationTarget": "Líder Qing Long"
       },
       "95": {
@@ -407,15 +407,15 @@
         "locationTarget": "Patrulheiro"
       },
       "96": {
-        "description": "Derrote o Líder Zhu Que no Salão Zhu Que",
+        "description": "Questione o Líder Zhu Que sobre onde está o Digi-Ovo do Conhecimento",
         "locationTarget": "Líder Zhu Que"
       },
       "97": {
-        "description": "Pegue o Digi-Ovo no Lago Subterrâneo Suzaku em Amaterasu",
-        "locationTarget": "Digi-Ovo"
+        "description": "Procure pelo Digi-Ovo do Conhecimento no Setor Sul de Amaterasu",
+        "locationTarget": "Digi-Ovo do Conhecimento"
       },
       "98": {
-        "description": "Derrote o Líder Genbu no Portão de Batalha",
+        "description": "Use o Digi-Ovo do Conhecimento para chegar a Cidade Genbu e derrotar o Líder",
         "locationTarget": "Líder Genbu"
       },
       "99": {

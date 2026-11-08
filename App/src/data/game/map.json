@@ -2764,7 +2764,7 @@
     },
     "innerLocation": [
       {
-        "location": "023E",
+        "location": "02AB",
         "coordinates": {
           "x": 42,
           "y": 12
@@ -2780,7 +2780,7 @@
     },
     "innerLocation": [
       {
-        "location": "023E",
+        "location": "02AB",
         "coordinates": {
           "x": 75,
           "y": 47.5
@@ -2810,6 +2810,10 @@
   },
   "0261": {
     "imageName": "Boot Mountain",
+    "worldLocation": {
+      "x": 41,
+      "y": 40
+    },
     "enemies": {
       "walking": [
         "148",
@@ -2824,6 +2828,10 @@
   },
   "0265": {
     "imageName": "Kulon Mine",
+    "worldLocation": {
+      "x": 35.5,
+      "y": 31
+    },
     "enemies": {
       "walking": [
         "147",
@@ -2838,6 +2846,10 @@
   },
   "0268": {
     "imageName": "Kulon Pit",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
     "enemies": {
       "walking": [
         "198"
@@ -2868,6 +2880,10 @@
   },
   "0262": {
     "imageName": "Snow Mountain",
+    "worldLocation": {
+      "x": 47.5,
+      "y": 32
+    },
     "enemies": {
       "walking": [
         "150",
@@ -2880,10 +2896,18 @@
     }
   },
   "0263": {
-    "imageName": "Mountain Inn"
+    "imageName": "Mountain Inn",
+    "worldLocation": {
+      "x": 55.5,
+      "y": 34.5
+    }
   },
   "0264": {
     "imageName": "Freeze Mountain",
+    "worldLocation": {
+      "x": 56,
+      "y": 27
+    },
     "enemies": {
       "walking": [
         "150",
@@ -2892,18 +2916,26 @@
     }
   },
   "026E": {
-    "imageName": "Portao de Batalha"
+    "imageName": "Battle Gate",
+    "worldLocation": {
+      "x": 56.5,
+      "y": 19.5
+    }
   },
   "026F": {
     "imageName": "Genbu City",
+    "worldLocation": {
+      "x": 56.5,
+      "y": 19.5
+    },
     "equipmentShops": [
       {
         "id": "genbuArsenal",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 45,
+          "y": 49
         },
-        "labelPlacement": "below"
+        "labelPlacement": "above"
       }
     ],
     "itemShops": [
@@ -2911,7 +2943,7 @@
         "id": "genbuItemShop",
         "coordinates": {
           "x": 50,
-          "y": 50
+          "y": 58
         },
         "labelPlacement": "below"
       }
@@ -2920,8 +2952,8 @@
       {
         "id": "genbuCardShop",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 73,
+          "y": 64
         },
         "labelPlacement": "below"
       }
