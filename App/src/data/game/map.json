@@ -2857,7 +2857,11 @@
     }
   },
   "0269": {
-    "imageName": "Kulon Armory"
+    "imageName": "Kulon Armory",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    }
   },
   "0266": {
     "imageName": "Lake of Ice",
@@ -2961,6 +2965,10 @@
   },
   "026A": {
     "imageName": "Ice Dungeon",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
     "enemies": {
       "walking": [
         "204",
@@ -2980,6 +2988,10 @@
   },
   "026B": {
     "imageName": "Fire Dungeon",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
     "enemies": {
       "walking": [
         "156"
@@ -2998,6 +3010,10 @@
   },
   "026C": {
     "imageName": "Dark Dungeon",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
     "npcs": [
       {
         "id": "darkKnight",

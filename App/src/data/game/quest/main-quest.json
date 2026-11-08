@@ -882,41 +882,86 @@
     "99": {
       "location": "026A",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 20.5,
+        "y": 66.5
       },
+      "innerLocation": [
+        {
+          "location": "0268",
+          "coordinates": {
+            "x": 11,
+            "y": 47
+          }
+        }
+      ],
       "requisites": []
     },
     "100": {
       "location": "026B",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 44.5,
+        "y": 75
       },
+      "innerLocation": [
+        {
+          "location": "026A",
+          "coordinates": {
+            "x": 7,
+            "y": 84
+          }
+        }
+      ],
       "requisites": []
     },
     "101": {
       "location": "026C",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 18.5,
+        "y": 23
       },
+      "innerLocation": [
+        {
+          "location": "026B",
+          "coordinates": {
+            "x": 17,
+            "y": 93
+          }
+        }
+      ],
       "requisites": []
     },
     "102": {
       "location": "026D",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 20,
+        "y": 44
       },
+      "innerLocation": [
+        {
+          "location": "026C",
+          "coordinates": {
+            "x": 13,
+            "y": 19
+          }
+        }
+      ],
       "requisites": []
     },
     "103": {
       "location": "02DB",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 88,
+        "y": 35
       },
+      "innerLocation": [
+        {
+          "location": "02DA",
+          "coordinates": {
+            "x": 89,
+            "y": 56
+          }
+        }
+      ],
       "requisites": []
     }
   }

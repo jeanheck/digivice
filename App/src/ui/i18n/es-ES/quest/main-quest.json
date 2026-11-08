@@ -32,8 +32,8 @@
         "locationTarget": "Líder Seiryu"
       },
       "3": {
-        "description": "Derrota a Master Tyranno en el Valle Tyranno",
-        "locationTarget": "Master Tyranno"
+        "description": "Derrota a MasterTyrannomon en el Valle Tyranno",
+        "locationTarget": "MasterTyrannomon"
       },
       "4": {
         "description": "Desafía al Líder Seiryu en la Ciudad Seiryu",
@@ -68,7 +68,7 @@
         "locationTarget": "Góndola"
       },
       "12": {
-        "description": "Enfréntate al Guilmon de la Ciudad Seiryu por la tarjeta falsa",
+        "description": "Enfréntate al Guilmon de la Ciudad Seiryu por la Tarjeta Azul falsa",
         "locationTarget": "Guilmon"
       },
       "13": {
@@ -100,7 +100,7 @@
         "locationTarget": "Sepkimon"
       },
       "20": {
-        "description": "Habla con Etemon cerca de El Dorado",
+        "description": "Habla con Etemon cerca de El Dorado ID",
         "locationTarget": "Etemon"
       },
       "21": {
@@ -108,7 +108,7 @@
         "locationTarget": "Sepkimon"
       },
       "22": {
-        "description": "Vuelve a hablar con Etemon cerca de El Dorado",
+        "description": "Vuelve a hablar con Etemon cerca de El Dorado ID",
         "locationTarget": "Etemon"
       },
       "23": {
@@ -195,8 +195,8 @@
         "locationTarget": "Muro"
       },
       "43": {
-        "description": "Encuentra el Digihuevo de la Sinceridad",
-        "locationTarget": "Digihuevo de la Sinceridad"
+        "description": "Encuentra el Digi-Huevo de la Sinceridad",
+        "locationTarget": "Digi-Huevo de la Sinceridad"
       },
       "44": {
         "description": "Dirígete a la Ciudad Byakko",
@@ -335,8 +335,8 @@
         "locationTarget": "Soldado"
       },
       "78": {
-        "description": "Derrota al Soldado que te impide entrar en la Sala Maestra",
-        "locationTarget": "Soldado"
+        "description": "Derrota al General que te impide entrar en la Sala Maestra",
+        "locationTarget": "General"
       },
       "79": {
         "description": "\"¡¿GUBI?!\" Defiéndete del extraño Digimon que salió de la sala",
@@ -371,51 +371,51 @@
         "locationTarget": "Letra \"R\""
       },
       "87": {
-        "description": "Derrota a los Guardias de la entrada del Cuartel General",
+        "description": "Derrota a los Guardias de la entrada del Cuartel General de A.o.A",
         "locationTarget": "Guardias"
       },
       "88": {
-        "description": "Enfréntate al Game Master dentro del Cuartel General",
+        "description": "Enfréntate al Game Master dentro del Cuartel General de A.o.A",
         "locationTarget": "Game Master"
       },
       "89": {
-        "description": "Ve a la prisión de A.o.A en la Cueva Subterránea",
-        "locationTarget": "Prisión de A.o.A"
+        "description": "Interroga al General de A.o.A encarcelado en la Cueva Subterránea",
+        "locationTarget": "General"
       },
       "90": {
-        "description": "Ve a la sala del Líder en el Salón Suzaku",
+        "description": "Busca información sobre Bulbmon en el Sector Sur",
         "locationTarget": "Patamon"
       },
       "91": {
-        "description": "Derrota al Líder de Suzaku en la Catacumba",
+        "description": "Busca a la Líder de Suzaku dentro del Santuario de la Jungla",
         "locationTarget": "Líder de Suzaku"
       },
       "92": {
-        "description": "Derrota a Bulbmon en el Laberinto Bug",
+        "description": "Atraviesa el Laberinto Bug para llegar al servidor de Amaterasu",
         "locationTarget": "Bulbmon"
       },
       "93": {
-        "description": "Habla con Kenny en la Posada Bosque (sótano) de Amaterasu",
-        "locationTarget": "Kenny"
+        "description": "Este lugar te resulta familiar... Busca información sobre tu situación",
+        "locationTarget": "Chico"
       },
       "94": {
-        "description": "Derrota al Líder de Qing Long en Qing Long",
+        "description": "Pregunta al líder de la ciudad más cercana dónde está el Digi-Huevo del Conocimiento",
         "locationTarget": "Líder de Qing Long"
       },
       "95": {
-        "description": "Habla con el Soldado en la Bahía Fénix de Amaterasu",
-        "locationTarget": "Soldado"
+        "description": "Habla con el Soldado raso haciéndote pasar por el Líder de Qing Long para entrar en la Ciudad Zhu Que",
+        "locationTarget": "Soldado raso"
       },
       "96": {
-        "description": "Derrota al Líder de Zhu Que en el Salón Zhu Que",
+        "description": "Pregunta al Líder de Zhu Que dónde está el Digi-Huevo del Conocimiento",
         "locationTarget": "Líder de Zhu Que"
       },
       "97": {
-        "description": "Toma el Digi-Huevo en el Lago Subterráneo Suzaku de Amaterasu",
-        "locationTarget": "Digi-Huevo"
+        "description": "Busca el Digi-Huevo del Conocimiento en el Sector Sur de Amaterasu",
+        "locationTarget": "Digi-Huevo del Conocimiento"
       },
       "98": {
-        "description": "Derrota al Líder de Genbu en la Puerta de Batalla",
+        "description": "Usa el Digi-Huevo del Conocimiento para llegar a Genbu City y derrotar al Líder",
         "locationTarget": "Líder de Genbu"
       },
       "99": {
@@ -431,11 +431,11 @@
         "locationTarget": "Caballero Oscuro"
       },
       "102": {
-        "description": "Habla con el Operador en la Emergency Room para llegar a Magasta",
+        "description": "Habla con el Operador en la Emergency Room para volver al mundo real",
         "locationTarget": "Operador"
       },
       "103": {
-        "description": "Derrota al Robot en Magasta B2F",
+        "description": "Dentro de la base Magasta, busca una forma de detener al Juggernaut",
         "locationTarget": "Robot"
       }
     }

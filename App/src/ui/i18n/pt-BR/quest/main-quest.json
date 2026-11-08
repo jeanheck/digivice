@@ -423,19 +423,19 @@
         "locationTarget": "Bruxa do Gelo"
       },
       "100": {
-        "description": "Derrote o Cavaleiro do Fogo na Masmorra de Fogo",
-        "locationTarget": "Cavaleiro do Fogo"
+        "description": "Derrote o Cavaleiro de Fogo na Masmorra de Fogo",
+        "locationTarget": "Cavaleiro de Fogo"
       },
       "101": {
         "description": "Derrote o Cavaleiro das Trevas na Masmorra das Trevas",
         "locationTarget": "Cavaleiro das Trevas"
       },
       "102": {
-        "description": "Fale com o Operador na Câmara para chegar a Magasta",
+        "description": "Fale com o Operador na Câmara para voltar ao mundo real",
         "locationTarget": "Operador"
       },
       "103": {
-        "description": "Derrote o Robô em Magasta Subsolo: Andar 2",
+        "description": "Dentro da base Magasta, procure por uma maneira de parar o Juggernaut",
         "locationTarget": "Robô"
       }
     }

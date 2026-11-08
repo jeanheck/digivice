@@ -68,7 +68,7 @@
         "locationTarget": "Gondola"
       },
       "12": {
-        "description": "Confront the Guilmon on Seiryu City about the fake card",
+        "description": "Confront the Guilmon on Seiryu City about the fake Blue Card",
         "locationTarget": "Guilmon"
       },
       "13": {
@@ -100,7 +100,7 @@
         "locationTarget": "Sepkimon"
       },
       "20": {
-        "description": "Speak to Etemon near El Dorado",
+        "description": "Speak to Etemon near El Dorado ID",
         "locationTarget": "Etemon"
       },
       "21": {
@@ -335,8 +335,8 @@
         "locationTarget": "Soldier"
       },
       "78": {
-        "description": "Defeat the Soldier blocking you from entering the Master Room",
-        "locationTarget": "Soldier"
+        "description": "Defeat the General blocking you from entering the Master Room",
+        "locationTarget": "General"
       },
       "79": {
         "description": "\"GUBI!?\" Defend yourself from the strange Digimon that came out of the room",
@@ -371,51 +371,51 @@
         "locationTarget": "Letter \"R\""
       },
       "87": {
-        "description": "Defeat the Guards at the Headquarters entrance",
+        "description": "Defeat the Guards at the A.o.A Headquarters entrance",
         "locationTarget": "Guards"
       },
       "88": {
-        "description": "Confront the Game Master inside the Headquarters",
+        "description": "Confront the Game Master inside the A.o.A Headquarters",
         "locationTarget": "Game Master"
       },
       "89": {
-        "description": "Go to the A.o.A prison in the Underground Cave",
-        "locationTarget": "A.o.A Prison"
+        "description": "Interrogate the A.o.A General imprisoned in the Underground Cave",
+        "locationTarget": "General"
       },
       "90": {
-        "description": "Go to the Leader's room at the Suzaku Hall",
+        "description": "Search for information about Bulbmon in the South Sector",
         "locationTarget": "Patamon"
       },
       "91": {
-        "description": "Defeat the Suzaku Leader in the Catacomb",
+        "description": "Look for the Suzaku Leader inside the Jungle Shrine",
         "locationTarget": "Suzaku Leader"
       },
       "92": {
-        "description": "Defeat Bulbmon in the Bug Maze",
+        "description": "Cross the Bug Maze to reach the Amaterasu server",
         "locationTarget": "Bulbmon"
       },
       "93": {
-        "description": "Talk to Kenny at the Forest Inn BF in Amaterasu",
-        "locationTarget": "Kenny"
+        "description": "This place looks familiar... Look for information about your situation",
+        "locationTarget": "Boy"
       },
       "94": {
-        "description": "Defeat the Qing Long Leader in Qing Long",
+        "description": "Ask the leader of the nearest city where the Digi-Egg of Knowledge is",
         "locationTarget": "Qing Long Leader"
       },
       "95": {
-        "description": "Talk to the Soldier at Phoenix Bay in Amaterasu",
-        "locationTarget": "Soldier"
+        "description": "Talk to the Trooper while posing as the Qing Long Leader to enter Zhu Que City",
+        "locationTarget": "Trooper"
       },
       "96": {
-        "description": "Defeat the Zhu Que Leader at the Zhu Que Hall",
+        "description": "Ask the Zhu Que Leader where the Digi-Egg of Knowledge is",
         "locationTarget": "Zhu Que Leader"
       },
       "97": {
-        "description": "Take the Digi-Egg at the Suzaku UG Lake in Amaterasu",
-        "locationTarget": "Digi-Egg"
+        "description": "Look for the Digi-Egg of Knowledge in Amaterasu's South Sector",
+        "locationTarget": "Digi-Egg of Knowledge"
       },
       "98": {
-        "description": "Defeat the Genbu Leader at the Battle Gate",
+        "description": "Use the Digi-Egg of Knowledge to reach Genbu City and defeat the Leader",
         "locationTarget": "Genbu Leader"
       },
       "99": {
@@ -431,11 +431,11 @@
         "locationTarget": "Dark Knight"
       },
       "102": {
-        "description": "Talk to the Operator at the Emergency Room to reach Magasta",
+        "description": "Talk to the Operator at the Emergency Room to return to the real world",
         "locationTarget": "Operator"
       },
       "103": {
-        "description": "Defeat the Robot at Magasta B2F",
+        "description": "Inside the Magasta base, look for a way to stop the Juggernaut",
         "locationTarget": "Robot"
       }
     }
