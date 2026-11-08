@@ -190,6 +190,7 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Maildramon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Maildramon?file=Maildramon_b.jpg)
 - **Mamemon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Mamemon/Galeria?file=Mamemon_b.jpg)
 - **Mammothmon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Mammothmon?file=Mammothmon_b.jpg)
+- **Mammothmon(Silver)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digimon.fandom.com/wiki/Mammothmon?file=Mammothmon_b.jpg)
 - **MasterTyranomon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MasterTyranomon?file=MasterTyranomon_b.jpg)
 - **Minotarumon(Blue)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexminotaru.shtml)
 - **Minotarumon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Lista_de_Esp%C3%A9cies?file=Minotaurmon_b.jpg)
@@ -197,6 +198,7 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Musyamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Musyamon/Galeria?file=Musyamon_b.jpg)
 - **Nanimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Nanimon?file=Nanimon_b.jpg)
 - **Numemon(Blue)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexnume.shtml)
+- **Numemon(Aqua)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexnume.shtml)
 - **Numemon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Numemon?file=Numemon_b.jpg)
 - **Ogremon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Orgemon/Galeria?file=Orgemon_b.jpg)
 - **Persiamon** *by ERROR101USERNOTFOUND* [Digivolutions Wiki](https://static.wikia.nocookie.net/digivolutions-digimon/images/f/f1/Persiamon.jpg/revision/latest?cb=20210504011749)
@@ -243,6 +245,14 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **MetalEtemon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalEtemon?file=MetalEtemon_b.jpg)
 - **Numemon(Red)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexnume.shtml)
 - **H-Kabuterimon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/HerakleKabuterimon?file=HerakleKabuterimon_b.jpg)
+- **BlueMeramon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/BlueMeramon?file=BlueMeramon_b.jpg)
+- **Giromon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Giromon?file=Giromon_b.jpg)
+- **SkullSatamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/SkullSatamon?file=SkullSatamon_b.jpg)
+- **Devidramon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Devidramon?file=Devidramon_b.jpg)
+- **Vilemon(Purple)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexvile2.shtml)
+- **MetalSeadramon** *by Digigamma* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalSeadramon?file=MetalSeadramon_b.jpg)
+- **Dragomon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Dagomon?file=Dagomon_b.jpg)
+- **Pukumon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Pukumon?file=Pukumon_b.jpg)
 
 ### Digievolutions
 
