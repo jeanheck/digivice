@@ -40,6 +40,24 @@ Layout per slot (Int16 LE) — **note: Max then Current** (inverted vs
 Wired: ally slots via `parties/in-battle-addresses.json` (`digimon.inBattle`);
 enemy slots via `battles/enemy-addresses.json` (`digimonBattle.enemy`, no MP).
 
+### Enemy MP (confirmed, 2026-11-08)
+
+Most enemies start with **MP Max = Current = 9999** (virtually infinite), but
+they **do spend** it: the pool just never runs out in practice. Some enemies have
+a "normal" MP pool that can matter in the fight.
+
+| Snapshot | Enemy | MP Current / Max |
+|----------|-------|------------------|
+| `flymon-pink.bin` | Flymon(Pink) lv33 (memoryId 400) | 9999 / 9999 |
+| `ebidramon.bin` | Ebidramon lv34 (165) | 9999 / 9999 |
+| `blossomon.bin` | Blossomon lv34 (200) | 9999 / 9999 |
+| `kimeramon.bin` → `kimeramon-6.bin` | Kimeramon lv44 (237), with Deltamon (138) and Triceramon(Red) (402) | `9999→9879→9759→9399` / 9999 (spends in steps of 120) |
+| `bulbmon-1..3.bin` | Bulbmon lv43 boss (436) | 144 / **960** |
+| Kunemon fight (`patterns-battle-combatants.md`) | Kunemon | `336→288` (−48 skill cost) |
+
+Product decision: no enemy MP bar in the UI for now (pointless for 9999 enemies,
+inconsistent if shown only for the others).
+
 **Slots are fixed by party position, not by who is front/active.**
 Switch snaps (`in-combat-kotemon` / `patamon` / `renamon`, same Kunemon fight):
 Kotemon HP stayed at slot0 (`0xA4478`), Patamon at slot1, Renamon at slot2

@@ -17,12 +17,10 @@ const regularAttackLabel = computed(() => {
   return t(`regularAttacks.${props.enemy.regularAttackId}`);
 });
 
-const techniqueLabel = computed(() => {
-  if (!props.enemy.techniqueId) {
-    return "";
-  }
-
-  return t(`enemyTechniques.${props.enemy.techniqueId}`);
+const techniqueLabels = computed(() => {
+  return props.enemy.techniqueIds.map((techniqueId) => {
+    return t(`enemyTechniques.${techniqueId}`);
+  });
 });
 </script>
 
@@ -44,9 +42,15 @@ const techniqueLabel = computed(() => {
         <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 w-full">
           {{ $t("enemy.technique") }}
         </h4>
-        <span class="text-gray-200 text-xs">
-          {{ techniqueLabel }}
-        </span>
+        <div class="flex flex-col gap-1">
+          <span
+            v-for="(techniqueLabel, index) in techniqueLabels"
+            :key="index"
+            class="text-gray-200 text-xs"
+          >
+            {{ techniqueLabel }}
+          </span>
+        </div>
       </div>
     </div>
   </div>

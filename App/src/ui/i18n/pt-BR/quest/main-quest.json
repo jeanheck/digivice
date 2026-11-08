@@ -391,20 +391,20 @@
         "locationTarget": "Líder Suzaku"
       },
       "92": {
-        "description": "Derrote Bulbmon no Labirinto do Bugs",
+        "description": "Atravesse o Labirinto dos Bugs para chegar ao servidor de Amaterasu",
         "locationTarget": "Bulbmon"
       },
       "93": {
-        "description": "Fale com Kenny na Pousada Florestal (Subsolo) em Amaterasu",
-        "locationTarget": "Kenny"
+        "description": "Esse lugar parece familiar... Busque informações sobre a sua situação",
+        "locationTarget": "Garoto"
       },
       "94": {
-        "description": "Derrote o Líder Qing Long em Qing Long",
+        "description": "Pregunte ao líder da cidade mais próxima onde está o Digi-ovo do Conhecimento",
         "locationTarget": "Líder Qing Long"
       },
       "95": {
-        "description": "Fale com o Soldado na Baía Fênix em Amaterasu",
-        "locationTarget": "Soldado"
+        "description": "Fale com o Patrulheiro se passando pelo Líder Qing Long para entrar na Cidade Zhu Que",
+        "locationTarget": "Patrulheiro"
       },
       "96": {
         "description": "Derrote o Líder Zhu Que no Salão Zhu Que",

@@ -1958,6 +1958,13 @@
           "x": 88,
           "y": 57
         }
+      },
+      {
+        "location": "0244",
+        "coordinates": {
+          "x": 92,
+          "y": 73
+        }
       }
     ],
     "enemies": {
@@ -1995,6 +2002,20 @@
         "coordinates": {
           "x": 88,
           "y": 57
+        }
+      },
+      {
+        "location": "0244",
+        "coordinates": {
+          "x": 92,
+          "y": 73
+        }
+      },
+      {
+        "location": "0245",
+        "coordinates": {
+          "x": 92,
+          "y": 51
         }
       }
     ],
@@ -2673,7 +2694,7 @@
     },
     "innerLocation": [
       {
-        "location": "0223",
+        "location": "0292",
         "coordinates": {
           "x": 58,
           "y": 87
@@ -2697,14 +2718,14 @@
     }
   },
   "029C": {
-    "imageName": "Qing Long",
+    "imageName": "Qing Long City",
     "worldLocation": {
       "x": 81,
       "y": 43
     }
   },
   "029E": {
-    "imageName": "Seiryu Tower Amaterasu",
+    "imageName": "Qing Long Tower",
     "worldLocation": {
       "x": 81,
       "y": 43

@@ -49,7 +49,6 @@
       "npc": "({name}'s Digimon Lv {level})",
       "shop": "Shop · {location}"
     },
-    "unavailableAtMoment": "Unavailable or cannot be challenged at this point in the story",
     "noEnemiesOnMap": "Safe zone",
     "techniques": "Techniques"
   }

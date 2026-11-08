@@ -64,6 +64,6 @@ export interface EnemyViewModel {
   drops?: EnemyDropViewModel[];
   locations?: EnemyLocationViewModel[];
   regularAttackId: string | null;
-  techniqueId: string | null;
+  techniqueIds: string[];
   boss: boolean;
 }

@@ -49,7 +49,6 @@
       "npc": "(Digimon de {name} Lv {level})",
       "shop": "Loja · {location}"
     },
-    "unavailableAtMoment": "Inacessível ou não pode ser desafiado nesse momento da história",
     "noEnemiesOnMap": "Zona segura",
     "techniques": "Técnicas"
   }

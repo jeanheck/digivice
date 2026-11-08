@@ -42,7 +42,7 @@ export interface EnemyRaw {
   drops?: EnemyDropRaw[];
   locations?: EnemyLocationRaw[];
   regularAttackId: string | null;
-  techniqueId: string | null;
+  techniqueId: string | string[] | null;
   boss?: boolean;
   memoryId: number;
   groupId: number | null;

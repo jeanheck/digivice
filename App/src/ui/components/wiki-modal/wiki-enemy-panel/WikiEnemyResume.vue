@@ -24,15 +24,8 @@ const emit = defineEmits<{
 
 const gameState = useGameState();
 
-const mainQuest = computed(() => {
-  return gameState.value.journal.mainQuest;
-});
-
 const locations = computed(() => {
-  return WikiEnemyResumePresenter.getAvailableEnemyLocations(
-    props.enemy.locations,
-    mainQuest.value,
-  );
+  return WikiEnemyResumePresenter.getEnemyLocations(props.enemy.locations);
 });
 
 const hasLocations = computed(() => {
@@ -122,13 +115,6 @@ const handleOpenLocation = (locationId: string): void => {
         :locations="locations"
         @open-location="handleOpenLocation"
       />
-
-      <p
-        v-else
-        class="text-[12px] text-red-400 leading-tight text-center flex-1 flex items-center justify-center"
-      >
-        {{ $t("enemy.unavailableAtMoment") }}
-      </p>
     </div>
   </div>
 </template>

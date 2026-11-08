@@ -104,6 +104,7 @@ graph TD
 ## Batalhas
 
 - **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null grava `enemy: null`; o patch atribui o objeto completo quando um novo aparece.
+- **MP do inimigo:** a maioria tem MP 9999 (virtualmente infinita, mesmo gastando nas técnicas); alguns têm MP "normal" (ex.: Bulbmon nível 43 = 960). Por isso a UI **não** exibe barra de MP de inimigo (decisão provisória). Evidências em `patterns-battle-slots.md`.
 - **Campo:** `Field = 0` é o campo **neutro** (valor válido, não "vazio").
 - **Digimon em batalha** (`DigimonBattleSelector.isInBattle`): `mapId === "0600"` **e** `inBattle.hp.max !== 0` daquele Digimon. O `hp.max` é trava de carregamento: na transição o `mapId` já é `0600` mas os dados de batalha ainda podem não estar carregados.
 - **Mapa em batalha** (`MapPresenter.isInBattle`): considera **apenas** `mapId === "0600"` — intencional.

@@ -785,32 +785,57 @@
     "92": {
       "location": "0246",
       "coordinates": {
-        "x": 75,
-        "y": 55
+        "x": 61,
+        "y": 28.5
       },
       "requisites": []
     },
     "93": {
       "location": "0293",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 38,
+        "y": 26
       },
+      "innerLocation": [
+        {
+          "location": "0245",
+          "coordinates": {
+            "x": 76,
+            "y": 14
+          }
+        }
+      ],
       "requisites": []
     },
     "94": {
       "location": "029C",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 29,
+        "y": 28.5
       },
+      "innerLocation": [
+        {
+          "location": "029C",
+          "coordinates": {
+            "x": 58,
+            "y": 29.5
+          }
+        },
+        {
+          "location": "029E",
+          "coordinates": {
+            "x": 28,
+            "y": 68
+          }
+        }
+      ],
       "requisites": []
     },
     "95": {
       "location": "02A8",
       "coordinates": {
-        "x": 50,
-        "y": 50
+        "x": 69,
+        "y": 27
       },
       "requisites": []
     },

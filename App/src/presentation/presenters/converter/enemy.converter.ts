@@ -60,7 +60,7 @@ export class EnemyConverter {
       defDown: enemyRaw.defDown,
       spdDown: enemyRaw.spdDown,
       regularAttackId: enemyRaw.regularAttackId,
-      techniqueId: enemyRaw.techniqueId,
+      techniqueIds: EnemyConverter.toTechniqueIds(enemyRaw.techniqueId),
       boss: enemyRaw.boss === true,
     };
 
@@ -107,5 +107,13 @@ export class EnemyConverter {
     }
 
     return enemyViewModel;
+  }
+
+  private static toTechniqueIds(techniqueId: string | string[] | null): string[] {
+    if (techniqueId === null) {
+      return [];
+    }
+
+    return Array.isArray(techniqueId) ? techniqueId : [techniqueId];
   }
 }

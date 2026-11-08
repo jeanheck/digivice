@@ -1,25 +1,15 @@
-import type { Party, Quest } from "@/state/models";
+import type { Party } from "@/state/models";
 import { PartyDvexpConverter } from "@/presentation/presenters/converter/party-dvexp.converter";
 import { DigimonRepository } from "@/presentation/repositories";
 import { DvexpService } from "@/presentation/services/dvexp.service";
-import { QuestService } from "@/presentation/services/quest.service";
 import type { PartyDvexpViewModel } from "@/presentation/viewmodels/dvexp/party-dvexp.viewmodel";
 import type { EnemyLocationViewModel } from "@/presentation/viewmodels/enemy/enemy-location.viewmodel";
 
 export class WikiEnemyResumePresenter {
-  public static getAvailableEnemyLocations(
+  public static getEnemyLocations(
     locations: EnemyLocationViewModel[] | undefined,
-    mainQuest: Quest,
   ): EnemyLocationViewModel[] {
-    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    const resolvedLocations = (locations ?? []).filter((location) => {
-      return QuestService.isOnMainQuestRange(
-        lastCompletedMainQuestStep,
-        location.mainQuestAvailabilityWindow,
-      );
-    });
-
-    return [...resolvedLocations].sort((first, second) => {
+    return [...(locations ?? [])].sort((first, second) => {
       return first.id.localeCompare(second.id);
     });
   }

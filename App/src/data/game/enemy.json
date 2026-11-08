@@ -5486,7 +5486,7 @@
     "groupId": null
   },
   "158": {
-    "name": "Chimeramon",
+    "name": "Kimeramon",
     "level": 44,
     "hp": 1176,
     "species": "rare",
@@ -12925,7 +12925,10 @@
     "spdDown": "No",
     "canEscape": false,
     "regularAttackId": "machineElement",
-    "techniqueId": "madPump",
+    "techniqueId": [
+      "speedUp",
+      "madPump"
+    ],
     "boss": true,
     "memoryId": 436,
     "groupId": 12
@@ -13009,7 +13012,7 @@
     "groupId": 14
   },
   "596": {
-    "name": "Chimeramon",
+    "name": "Kimeramon",
     "level": 44,
     "hp": 1764,
     "species": "rare",
