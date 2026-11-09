@@ -208,6 +208,7 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Seadramon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Seadramon?file=Seadramon_b.jpg)
 - **Shellmon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Shellmon/Galeria?file=Shellmon_b.jpg)
 - **ShogunGekomon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/ShogunGekomon?file=ShogunGekomon_b.jpg)
+- **ShogunGekomon(Blue)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digimon.fandom.com/wiki/ShogunGekomon?file=ShogunGekomon_b.jpg)
 - **Sukamon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Sukamon?file=Sukamon_b.jpg)
 - **Tankmon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Tankmon/Galeria?file=Tankmon_b.jpg)
 - **Tapirmon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Tapirmon?file=Tapirmon_b.jpg)
@@ -253,6 +254,12 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **MetalSeadramon** *by Digigamma* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalSeadramon?file=MetalSeadramon_b.jpg)
 - **Dragomon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Dagomon?file=Dagomon_b.jpg)
 - **Pukumon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Pukumon?file=Pukumon_b.jpg)
+- **Brachiomon** *by Chimera-gui* [Digimon Wiki](https://digimon.fandom.com/wiki/Brachiomon?file=Brachiomon_b.jpg)
+- **MetalTyrannomon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/MetalTyrannomon?file=MetalTyrannomon_b.jpg)
+- **Vilemon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Vilemon?file=Vilemon_b.jpg)
+- **Phantomon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Fantomon?file=Fantomon_b.jpg)
+- **Mummymon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Mummymon?file=Mummymon_b.jpg)
+- **Okuwamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Okuwamon?file=Okuwamon_b.jpg)
 
 ### Digievolutions
 
