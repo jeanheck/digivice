@@ -934,7 +934,7 @@
     "locationId": "0265",
     "cardBattles": {
       "first": {
-        "id": 55,
+        "id": 61,
         "charismaRequired": {
           "min": 630,
           "max": 989
@@ -943,7 +943,7 @@
         "boosterId": 532
       },
       "second": {
-        "id": 56,
+        "id": 62,
         "charismaRequired": {
           "min": 630
         },
@@ -982,7 +982,7 @@
     "locationId": "0265",
     "cardBattles": {
       "first": {
-        "id": 55,
+        "id": 63,
         "charismaRequired": {
           "min": 630,
           "max": 989
@@ -991,7 +991,7 @@
         "boosterId": 532
       },
       "second": {
-        "id": 56,
+        "id": 64,
         "charismaRequired": {
           "min": 630
         },
@@ -1030,7 +1030,7 @@
     "locationId": "0262",
     "cardBattles": {
       "first": {
-        "id": 55,
+        "id": 57,
         "charismaRequired": {
           "min": 630
         },
@@ -1038,7 +1038,7 @@
         "boosterId": 531
       },
       "second": {
-        "id": 56,
+        "id": 58,
         "charismaRequired": {
           "min": 1482
         },
@@ -1077,7 +1077,7 @@
     "locationId": "0267",
     "cardBattles": {
       "first": {
-        "id": 55,
+        "id": 65,
         "charismaRequired": {
           "min": 630
         },
@@ -1085,7 +1085,7 @@
         "boosterId": 533
       },
       "second": {
-        "id": 56,
+        "id": 66,
         "charismaRequired": {
           "min": 1482
         },
@@ -1125,7 +1125,7 @@
     "locationId": "0264",
     "cardBattles": {
       "first": {
-        "id": 55,
+        "id": 59,
         "charismaRequired": {
           "min": 630
         },
@@ -1133,7 +1133,7 @@
         "boosterId": 533
       },
       "second": {
-        "id": 56,
+        "id": 60,
         "charismaRequired": {
           "min": 1482
         },
@@ -1172,7 +1172,7 @@
     "locationId": "0268",
     "cardBattles": {
       "first": {
-        "id": 55,
+        "id": 67,
         "charismaRequired": {
           "min": 1482
         },
@@ -1180,7 +1180,7 @@
         "boosterId": 530
       },
       "second": {
-        "id": 56,
+        "id": 68,
         "charismaRequired": {
           "min": 2472
         },

@@ -2882,7 +2882,17 @@
       "walking": [
         "198"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "mitaka",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0269": {
     "imageName": "Kulon Armory",

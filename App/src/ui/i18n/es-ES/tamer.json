@@ -80,6 +80,9 @@
     },
     "shingo": {
       "name": "Shingo"
+    },
+    "mitaka": {
+      "name": "Mitaka"
     }
   }
 }
