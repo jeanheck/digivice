@@ -113,6 +113,24 @@ first stays isolated at `0x4B3DF` / `0x20` (`BattledTamer#0`). Snaps:
 | Alice | 215 | 15 | `0x4B39B` | `0x80` |
 | Nakano | 216 | 16 | `0x4B39C` | `0x01` |
 
+**Sun-region tamers (confirmed 2026-11-09):** `{tamer}-before/after-digimon-battle.bin`
+for makoto, brown, haruka, poemy, pierre, shingo (Kotemon solo). One new bit per win
+in `0x4B39C`, same `N` rule:
+
+| NPC | MapId | groupId (`0x42B2C`) | N | Address | BitMask | EXP / Bits |
+|-----|-------|---------------------|---|---------|---------|------------|
+| Haruka | `0261` | 217 | 17 | `0x4B39C` | `0x02` | 569 / 1195 |
+| Poemy | `0262` | 218 | 18 | `0x4B39C` | `0x04` | 565 / 1175 |
+| Shingo | `0264` | 219 | 19 | `0x4B39C` | `0x08` | 595 / 1110 |
+| Makoto | `0265` | 220 | 20 | `0x4B39C` | `0x10` | 607 / 1255 |
+| Brown | `0265` | **220** | 21 | `0x4B39C` | `0x20` | 607 / 1255 |
+| Pierre | `0267` | 222 | 22 | `0x4B39C` | `0x40` | 642 / 1265 |
+
+Brown reuses Makoto's encounter group 220 (same party, levels and stats) while his
+win bit is `N = 21` — `groupId − 200` does not hold for him. Wired in
+`npc-addresses.json` (battle id `first`); static data in `tamer.json`, enemies
+`enemy.json` 615–629.
+
 **Genji (2nd digimon):** `0x4B39A` / `0x01` (`0x02→0x03` in
 `genji-second` snaps; `0x4B3DF` unchanged). `groupId` 272 — does not
 follow `groupId − 200`; treat as special rematch bit until script index
@@ -269,6 +287,7 @@ Same MapId `0x0700` / Prev `0x0200` in both series. Other deltas first→second:
 | `50` | gordon | mid-battle |
 | `52` | alice | mid-battle |
 | `54` | nakano | mid-battle |
+| `55` | haruka | `haruka-card-battle-first.bin` (Prev `0x0261`, 2026-11-09) |
 
 Sources: early card-battle / Duel Island / tamer mid-battle snaps (2026-08/09).
 All non-Genji `cardBattles.second.id` are **`null`** until re-snap.

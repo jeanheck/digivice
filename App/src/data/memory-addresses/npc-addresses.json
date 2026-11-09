@@ -139,6 +139,54 @@
       }
     }
   },
+  "haruka": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39C",
+        "bitMask": "0x02"
+      }
+    }
+  },
+  "poemy": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39C",
+        "bitMask": "0x04"
+      }
+    }
+  },
+  "shingo": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39C",
+        "bitMask": "0x08"
+      }
+    }
+  },
+  "makoto": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39C",
+        "bitMask": "0x10"
+      }
+    }
+  },
+  "brown": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39C",
+        "bitMask": "0x20"
+      }
+    }
+  },
+  "pierre": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39C",
+        "bitMask": "0x40"
+      }
+    }
+  },
   "seiryuLeader": {
     "battles": {
       "first": {

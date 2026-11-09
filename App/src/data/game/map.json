@@ -2824,7 +2824,17 @@
         "205",
         "521"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "haruka",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0265": {
     "imageName": "Kulon Mine",
@@ -2842,7 +2852,25 @@
         "164",
         "521"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "makoto",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "brown",
+        "coordinates": {
+          "x": 60,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0268": {
     "imageName": "Kulon Pit",
@@ -2880,7 +2908,17 @@
     }
   },
   "0267": {
-    "imageName": "Legendary Gym"
+    "imageName": "Legendary Gym",
+    "tamers": [
+      {
+        "id": "pierre",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0262": {
     "imageName": "Snow Mountain",
@@ -2897,7 +2935,17 @@
         "151",
         "521"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "poemy",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0263": {
     "imageName": "Mountain Inn",
@@ -2917,7 +2965,17 @@
         "150",
         "151"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "shingo",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "026E": {
     "imageName": "Battle Gate",

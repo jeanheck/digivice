@@ -18,6 +18,12 @@ export interface Npcs {
   gordon: Npc;
   alice: Npc;
   nakano: Npc;
+  haruka: Npc;
+  poemy: Npc;
+  shingo: Npc;
+  makoto: Npc;
+  brown: Npc;
+  pierre: Npc;
   seiryuLeader: Npc;
   keith: Npc;
   suzakuLeader: Npc;

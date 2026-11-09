@@ -102,7 +102,7 @@ describe("NpcsReader", () => {
 
       const resource = NpcsReader.read(snapshot, AddressesRepository.getNpcsAddresses());
 
-      expect(Object.keys(resource)).toHaveLength(29);
+      expect(Object.keys(resource)).toHaveLength(35);
       expect(resource.genji.battles).toEqual([
         { id: "first", value: 0x20 },
         { id: "second", value: 0x01 },

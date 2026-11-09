@@ -240,6 +240,17 @@ Snapshots: North Sector tamers (`ice-witch-*`, `fire-knight-*`,
   (attrs = wild × 17/16, `k` assumed from Fire Knight's other enemies) and
   Giromon `614` (= wild, same level as Robot's other enemies) are
   **provisional** — no combatant block captured.
+- **Sun-region tamers (2026-11-09, groups 217–222):** multipliers in sixteenths
+  (`16 + k`): Brachiomon/Deltamon 36→40 `18`, MetalTyrannomon 36→41 `18`,
+  Vilemon 36→37 `16`, Phantomon 31→38 `19`, Dolphmon 20→37 `27`, Monzaemon
+  29→38 `20`, Kuwagamon(Green) 30→39 `20`, Crabmon 3→41 `105`, Gekomon 8→42
+  `58`, Kuwagamon 2→36 `109`. All mid-level ones fit
+  `round(16 × (level + 4) / (wildLevel + 4))`; low wild levels (≤ 8) come out a
+  few sixteenths higher. Not valid for older external entries. Uncaptured
+  (never acted) and **provisional** in `enemy.json`: Mummymon `620` (×18),
+  ShogunGekomon(Blue) `623` (×17), Gizamon `625` (×92, between Crabmon and
+  Gekomon of the same group), Okuwamon `629` (×19). HP Max = `24 × (level + 5)`
+  for all 15.
 - `0x42B6C` read `0x0182` in all 18 battle snaps (different enemies) — stale
   here; not usable as drop without a fresh-load control.
 

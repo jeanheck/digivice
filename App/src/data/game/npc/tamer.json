@@ -881,5 +881,198 @@
       }
     },
     "imageName": "Nakano"
+  },
+  "haruka": {
+    "locationId": "0261",
+    "cardBattles": {
+      "first": {
+        "id": 55,
+        "charismaRequired": {
+          "min": 630
+        },
+        "folderId": "badBoyFolder1",
+        "boosterId": 531
+      },
+      "second": {
+        "id": 0,
+        "charismaRequired": {
+          "min": 1482
+        },
+        "trophyRequired": "asukaTrophy",
+        "folderId": "badBoyFolder2",
+        "boosterId": 531
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 170,
+            "groupId": 217
+          },
+          {
+            "enemyId": 223,
+            "groupId": 217
+          },
+          {
+            "enemyId": 364,
+            "groupId": 217
+          }
+        ],
+        "exp": 569,
+        "dvexp": 38,
+        "bit": 1195
+      }
+    },
+    "imageName": "Haruka"
+  },
+  "makoto": {
+    "locationId": "0265",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 126,
+            "groupId": 220
+          },
+          {
+            "enemyId": 138,
+            "groupId": 220
+          },
+          {
+            "enemyId": 140,
+            "groupId": 220
+          }
+        ],
+        "exp": 607,
+        "dvexp": 40,
+        "bit": 1255
+      }
+    },
+    "imageName": "Makoto"
+  },
+  "brown": {
+    "locationId": "0265",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 126,
+            "groupId": 220
+          },
+          {
+            "enemyId": 138,
+            "groupId": 220
+          },
+          {
+            "enemyId": 140,
+            "groupId": 220
+          }
+        ],
+        "exp": 607,
+        "dvexp": 40,
+        "bit": 1255
+      }
+    },
+    "imageName": "Brown"
+  },
+  "poemy": {
+    "locationId": "0262",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 210,
+            "groupId": 218
+          },
+          {
+            "enemyId": 14,
+            "groupId": 218
+          },
+          {
+            "enemyId": 407,
+            "groupId": 218
+          }
+        ],
+        "exp": 565,
+        "dvexp": 38,
+        "bit": 1175
+      }
+    },
+    "imageName": "Poemy"
+  },
+  "pierre": {
+    "locationId": "0267",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 197,
+            "groupId": 222
+          },
+          {
+            "enemyId": 132,
+            "groupId": 222
+          },
+          {
+            "enemyId": 110,
+            "groupId": 222
+          }
+        ],
+        "exp": 642,
+        "dvexp": 41,
+        "bit": 1265
+      }
+    },
+    "imageName": "Pierre"
+  },
+  "shingo": {
+    "locationId": "0264",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 51,
+            "groupId": 219
+          },
+          {
+            "enemyId": 395,
+            "groupId": 219
+          },
+          {
+            "enemyId": 226,
+            "groupId": 219
+          }
+        ],
+        "exp": 595,
+        "dvexp": 38,
+        "bit": 1110
+      }
+    },
+    "imageName": "Shingo"
   }
 }
