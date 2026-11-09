@@ -260,6 +260,10 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Phantomon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Fantomon?file=Fantomon_b.jpg)
 - **Mummymon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Mummymon?file=Mummymon_b.jpg)
 - **Okuwamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Okuwamon?file=Okuwamon_b.jpg)
+- **Tortomon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Tortamon?file=Tortamon_b.jpg)
+- **SkullMeramon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/SkullMeramon?file=SkullMeramon_b.jpg)
+- **Cherrymon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Cherrymon?file=Cherrymon_b.jpg)
+- **Cherrymon(Red)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digimon.fandom.com/wiki/Cherrymon?file=Cherrymon_b.jpg)
 
 ### Digievolutions
 
