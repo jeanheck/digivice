@@ -78,6 +78,15 @@
     "gameMasterHeadquarters": {
       "name": "Game Master"
     },
+    "qingLongLeader": {
+      "name": "Líder de Qing Long"
+    },
+    "zhuQueLeader": {
+      "name": "Líder de Zhu Que"
+    },
+    "genbuLeader": {
+      "name": "Líder de Genbu"
+    },
     "iceWitch": {
       "name": "Bruja del Hielo"
     },

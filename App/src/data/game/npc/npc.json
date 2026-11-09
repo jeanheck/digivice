@@ -590,6 +590,84 @@
     "dvexp": 718,
     "bit": 1490
   },
+  "qingLongLeader": {
+    "type": "leader",
+    "locationId": "029E",
+    "imageName": "Qing Long Leader",
+    "mainQuestAvailabilityWindow": {
+      "starts": 93,
+      "ends": 94
+    },
+    "party": [
+      {
+        "enemyId": 138,
+        "groupId": 14
+      },
+      {
+        "enemyId": 402,
+        "groupId": 14
+      },
+      {
+        "enemyId": 237,
+        "groupId": 14
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "zhuQueLeader": {
+    "type": "leader",
+    "locationId": "02AD",
+    "imageName": "Zhu Que Leader",
+    "mainQuestAvailabilityWindow": {
+      "starts": 95,
+      "ends": 96
+    },
+    "party": [
+      {
+        "enemyId": 425,
+        "groupId": 16
+      },
+      {
+        "enemyId": 202,
+        "groupId": 16
+      },
+      {
+        "enemyId": 238,
+        "groupId": 16
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
+  "genbuLeader": {
+    "type": "leader",
+    "locationId": "026F",
+    "imageName": "Genbu Leader",
+    "mainQuestAvailabilityWindow": {
+      "starts": 97,
+      "ends": 98
+    },
+    "party": [
+      {
+        "enemyId": 270,
+        "groupId": 18
+      },
+      {
+        "enemyId": 65,
+        "groupId": 18
+      },
+      {
+        "enemyId": 360,
+        "groupId": 18
+      }
+    ],
+    "exp": 0,
+    "dvexp": 0,
+    "bit": 0
+  },
   "iceWitch": {
     "type": "npc",
     "locationId": "026A",

@@ -2738,6 +2738,16 @@
           "y": 29.5
         }
       }
+    ],
+    "npcs": [
+      {
+        "id": "qingLongLeader",
+        "coordinates": {
+          "x": 28,
+          "y": 68
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "02A8": {
@@ -2769,6 +2779,16 @@
           "x": 42,
           "y": 12
         }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "zhuQueLeader",
+        "coordinates": {
+          "x": 55,
+          "y": 37
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -3026,6 +3046,16 @@
         "coordinates": {
           "x": 73,
           "y": 64
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "genbuLeader",
+        "coordinates": {
+          "x": 7,
+          "y": 54
         },
         "labelPlacement": "below"
       }

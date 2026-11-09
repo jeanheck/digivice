@@ -78,6 +78,15 @@
     "gameMasterHeadquarters": {
       "name": "Game Master"
     },
+    "qingLongLeader": {
+      "name": "Qing Long Leader"
+    },
+    "zhuQueLeader": {
+      "name": "Zhu Que Leader"
+    },
+    "genbuLeader": {
+      "name": "Genbu Leader"
+    },
     "iceWitch": {
       "name": "Ice Witch"
     },
