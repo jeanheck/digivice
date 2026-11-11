@@ -1969,22 +1969,15 @@
     ],
     "enemies": {
       "walking": [
-        "128"
-      ],
-      "boss": [
-        {
-          "id": "20",
-          "coordinates": {
-            "x": 75,
-            "y": 23
-          },
-          "labelPlacement": "below"
-        }
+        "129",
+        "187",
+        "210",
+        "202"
       ]
     }
   },
   "0246": {
-    "imageName": "Bug Maze 2",
+    "imageName": "Bug Maze Pit",
     "worldLocation": {
       "x": 52,
       "y": 82.5
@@ -2021,14 +2014,17 @@
     ],
     "enemies": {
       "walking": [
-        "128"
+        "129",
+        "187",
+        "210",
+        "202"
       ],
       "boss": [
         {
-          "id": "20",
+          "id": "593",
           "coordinates": {
-            "x": 75,
-            "y": 23
+            "x": 61,
+            "y": 29
           },
           "labelPlacement": "below"
         }
@@ -2722,7 +2718,17 @@
     "worldLocation": {
       "x": 81,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "id": "qingLongLeader",
+        "coordinates": {
+          "x": 28,
+          "y": 68
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "029E": {
     "imageName": "Qing Long Tower",
@@ -2737,16 +2743,6 @@
           "x": 58,
           "y": 29.5
         }
-      }
-    ],
-    "npcs": [
-      {
-        "id": "qingLongLeader",
-        "coordinates": {
-          "x": 28,
-          "y": 68
-        },
-        "labelPlacement": "below"
       }
     ]
   },

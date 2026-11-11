@@ -593,7 +593,7 @@
   "qingLongLeader": {
     "type": "leader",
     "locationId": "029E",
-    "imageName": "Qing Long Leader",
+    "imageName": "AoA Leader",
     "mainQuestAvailabilityWindow": {
       "starts": 93,
       "ends": 94
@@ -612,14 +612,14 @@
         "groupId": 14
       }
     ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
+    "exp": 627,
+    "dvexp": 41,
+    "bit": 1220
   },
   "zhuQueLeader": {
     "type": "leader",
     "locationId": "02AD",
-    "imageName": "Zhu Que Leader",
+    "imageName": "AoA Leader",
     "mainQuestAvailabilityWindow": {
       "starts": 95,
       "ends": 96
@@ -638,9 +638,9 @@
         "groupId": 16
       }
     ],
-    "exp": 0,
-    "dvexp": 0,
-    "bit": 0
+    "exp": 649,
+    "dvexp": 43,
+    "bit": 1335
   },
   "genbuLeader": {
     "type": "leader",

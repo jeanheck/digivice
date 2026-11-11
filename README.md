@@ -264,6 +264,7 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **SkullMeramon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/SkullMeramon?file=SkullMeramon_b.jpg)
 - **Cherrymon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Cherrymon?file=Cherrymon_b.jpg)
 - **Cherrymon(Red)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digimon.fandom.com/wiki/Cherrymon?file=Cherrymon_b.jpg)
+- **Musyamon(Green)** *by VilmonDigibits* [Deviant Art](https://www.deviantart.com/vilmondigibits/art/Musyamon-(Green)-(World-3)-1203254714)
 
 ### Digievolutions
 
