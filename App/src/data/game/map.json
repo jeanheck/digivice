@@ -777,6 +777,13 @@
             "72",
             "85"
           ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "183",
+            "85"
+          ]
         }
       ],
       "fishing": [
@@ -896,6 +903,14 @@
             "78",
             "85"
           ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "76",
+            "78",
+            "183"
+          ]
         }
       ],
       "fishing": [
@@ -938,6 +953,14 @@
           "lastMainQuestStepDone": 27,
           "ids": [
             "78",
+            "94",
+            "82"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "183",
             "94",
             "82"
           ]
@@ -1080,6 +1103,13 @@
           "ids": [
             "73",
             "103"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "73",
+            "97"
           ]
         }
       ],
@@ -1418,9 +1448,22 @@
     },
     "enemies": {
       "walking": [
-        "90",
-        "91",
-        "184"
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "90",
+            "91",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "90",
+            "97",
+            "184"
+          ]
+        }
       ],
       "kickingTree": [
         "184",
@@ -1461,9 +1504,22 @@
     },
     "enemies": {
       "walking": [
-        "90",
-        "91",
-        "184"
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "90",
+            "91",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "90",
+            "97",
+            "184"
+          ]
+        }
       ],
       "fishing": [
         "103",
@@ -1594,6 +1650,16 @@
             "75",
             "90",
             "91",
+            "92",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "75",
+            "90",
+            "97",
             "92",
             "184"
           ]
