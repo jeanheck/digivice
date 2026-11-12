@@ -436,7 +436,7 @@
       },
       "103": {
         "description": "Inside the Magasta base, look for a way to stop the Juggernaut",
-        "locationTarget": "Robot"
+        "locationTarget": "Mech Soldier"
       }
     }
   }

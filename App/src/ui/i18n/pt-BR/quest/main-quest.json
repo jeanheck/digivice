@@ -436,7 +436,7 @@
       },
       "103": {
         "description": "Dentro da base Magasta, procure por uma maneira de parar o Juggernaut",
-        "locationTarget": "Robô"
+        "locationTarget": "Soldado Mech"
       }
     }
   }

@@ -96,8 +96,8 @@
     "darkKnight": {
       "name": "Dark Knight"
     },
-    "robot": {
-      "name": "Robot"
+    "mechSoldier": {
+      "name": "Mech Soldier"
     }
   }
 }

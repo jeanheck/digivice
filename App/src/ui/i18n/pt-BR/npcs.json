@@ -96,8 +96,8 @@
     "darkKnight": {
       "name": "Cavaleiro das Trevas"
     },
-    "robot": {
-      "name": "Robô"
+    "mechSoldier": {
+      "name": "Soldado Mech"
     }
   }
 }

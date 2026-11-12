@@ -746,10 +746,10 @@
     "dvexp": 48,
     "bit": 1395
   },
-  "robot": {
+  "mechSoldier": {
     "type": "npc",
     "locationId": "02DB",
-    "imageName": "Robot",
+    "imageName": "Mech Soldier",
     "mainQuestAvailabilityWindow": {
       "starts": 102,
       "ends": 103

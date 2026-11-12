@@ -3108,6 +3108,13 @@
       "x": 33,
       "y": 39
     },
+    "enemies": {
+      "walking": [
+        "208",
+        "158",
+        "157"
+      ]
+    },
     "npcs": [
       {
         "id": "darkKnight",
@@ -3140,7 +3147,7 @@
     },
     "npcs": [
       {
-        "id": "robot",
+        "id": "mechSoldier",
         "coordinates": {
           "x": 50,
           "y": 50
