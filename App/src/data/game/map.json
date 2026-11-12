@@ -3008,7 +3008,17 @@
     "worldLocation": {
       "x": 56.5,
       "y": 19.5
-    }
+    },
+    "npcs": [
+      {
+        "id": "genbuLeader",
+        "coordinates": {
+          "x": 7,
+          "y": 54
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "026F": {
     "imageName": "Genbu City",
@@ -3042,16 +3052,6 @@
         "coordinates": {
           "x": 73,
           "y": 64
-        },
-        "labelPlacement": "below"
-      }
-    ],
-    "npcs": [
-      {
-        "id": "genbuLeader",
-        "coordinates": {
-          "x": 7,
-          "y": 54
         },
         "labelPlacement": "below"
       }

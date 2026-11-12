@@ -3304,5 +3304,911 @@
         "quantity": 1
       }
     ]
+  },
+  "badBoyFolder1": {
+    "level": 43,
+    "cards": [
+      {
+        "id": "1007",
+        "quantity": 3
+      },
+      {
+        "id": "1008",
+        "quantity": 3
+      },
+      {
+        "id": "1025",
+        "quantity": 2
+      },
+      {
+        "id": "1026",
+        "quantity": 4
+      },
+      {
+        "id": "1027",
+        "quantity": 2
+      },
+      {
+        "id": "1028",
+        "quantity": 4
+      },
+      {
+        "id": "1048",
+        "quantity": 2
+      },
+      {
+        "id": "1246",
+        "quantity": 3
+      },
+      {
+        "id": "1247",
+        "quantity": 1
+      },
+      {
+        "id": "1250",
+        "quantity": 4
+      },
+      {
+        "id": "1254",
+        "quantity": 4
+      },
+      {
+        "id": "1259",
+        "quantity": 4
+      },
+      {
+        "id": "1267",
+        "quantity": 4
+      }
+    ]
+  },
+  "badBoyFolder2": {
+    "level": 43,
+    "cards": [
+      {
+        "id": "1007",
+        "quantity": 2
+      },
+      {
+        "id": "1008",
+        "quantity": 2
+      },
+      {
+        "id": "1026",
+        "quantity": 4
+      },
+      {
+        "id": "1027",
+        "quantity": 4
+      },
+      {
+        "id": "1028",
+        "quantity": 4
+      },
+      {
+        "id": "1238",
+        "quantity": 1
+      },
+      {
+        "id": "1239",
+        "quantity": 1
+      },
+      {
+        "id": "1241",
+        "quantity": 2
+      },
+      {
+        "id": "1244",
+        "quantity": 2
+      },
+      {
+        "id": "1245",
+        "quantity": 2
+      },
+      {
+        "id": "1247",
+        "quantity": 2
+      },
+      {
+        "id": "1250",
+        "quantity": 2
+      },
+      {
+        "id": "1251",
+        "quantity": 4
+      },
+      {
+        "id": "1259",
+        "quantity": 2
+      },
+      {
+        "id": "1261",
+        "quantity": 2
+      },
+      {
+        "id": "1267",
+        "quantity": 4
+      }
+    ]
+  },
+  "strangeFolder1": {
+    "level": 44,
+    "cards": [
+      {
+        "id": "1007",
+        "quantity": 1
+      },
+      {
+        "id": "1010",
+        "quantity": 3
+      },
+      {
+        "id": "1015",
+        "quantity": 1
+      },
+      {
+        "id": "1019",
+        "quantity": 1
+      },
+      {
+        "id": "1020",
+        "quantity": 1
+      },
+      {
+        "id": "1041",
+        "quantity": 1
+      },
+      {
+        "id": "1082",
+        "quantity": 1
+      },
+      {
+        "id": "1096",
+        "quantity": 1
+      },
+      {
+        "id": "1099",
+        "quantity": 1
+      },
+      {
+        "id": "1100",
+        "quantity": 1
+      },
+      {
+        "id": "1110",
+        "quantity": 1
+      },
+      {
+        "id": "1225",
+        "quantity": 1
+      },
+      {
+        "id": "1227",
+        "quantity": 1
+      },
+      {
+        "id": "1290",
+        "quantity": 3
+      },
+      {
+        "id": "1301",
+        "quantity": 2
+      },
+      {
+        "id": "1302",
+        "quantity": 4
+      },
+      {
+        "id": "1304",
+        "quantity": 4
+      },
+      {
+        "id": "1306",
+        "quantity": 4
+      },
+      {
+        "id": "1308",
+        "quantity": 4
+      },
+      {
+        "id": "1309",
+        "quantity": 4
+      }
+    ]
+  },
+  "strangeFolder2": {
+    "level": 44,
+    "cards": [
+      {
+        "id": "1010",
+        "quantity": 2
+      },
+      {
+        "id": "1014",
+        "quantity": 2
+      },
+      {
+        "id": "1019",
+        "quantity": 1
+      },
+      {
+        "id": "1020",
+        "quantity": 4
+      },
+      {
+        "id": "1021",
+        "quantity": 4
+      },
+      {
+        "id": "1025",
+        "quantity": 2
+      },
+      {
+        "id": "1110",
+        "quantity": 2
+      },
+      {
+        "id": "1117",
+        "quantity": 2
+      },
+      {
+        "id": "1153",
+        "quantity": 2
+      },
+      {
+        "id": "1160",
+        "quantity": 2
+      },
+      {
+        "id": "1280",
+        "quantity": 2
+      },
+      {
+        "id": "1289",
+        "quantity": 2
+      },
+      {
+        "id": "1291",
+        "quantity": 2
+      },
+      {
+        "id": "1302",
+        "quantity": 4
+      },
+      {
+        "id": "1306",
+        "quantity": 4
+      },
+      {
+        "id": "1309",
+        "quantity": 3
+      }
+    ]
+  },
+  "jungleFolder1": {
+    "level": 45,
+    "cards": [
+      {
+        "id": "1014",
+        "quantity": 2
+      },
+      {
+        "id": "1015",
+        "quantity": 4
+      },
+      {
+        "id": "1017",
+        "quantity": 4
+      },
+      {
+        "id": "1047",
+        "quantity": 4
+      },
+      {
+        "id": "1151",
+        "quantity": 2
+      },
+      {
+        "id": "1159",
+        "quantity": 2
+      },
+      {
+        "id": "1162",
+        "quantity": 4
+      },
+      {
+        "id": "1163",
+        "quantity": 4
+      },
+      {
+        "id": "1164",
+        "quantity": 2
+      },
+      {
+        "id": "1166",
+        "quantity": 2
+      },
+      {
+        "id": "1168",
+        "quantity": 2
+      },
+      {
+        "id": "1174",
+        "quantity": 2
+      },
+      {
+        "id": "1181",
+        "quantity": 2
+      },
+      {
+        "id": "1187",
+        "quantity": 2
+      },
+      {
+        "id": "1188",
+        "quantity": 2
+      }
+    ]
+  },
+  "jungleFolder2": {
+    "level": 45,
+    "cards": [
+      {
+        "id": "1014",
+        "quantity": 4
+      },
+      {
+        "id": "1015",
+        "quantity": 3
+      },
+      {
+        "id": "1047",
+        "quantity": 4
+      },
+      {
+        "id": "1151",
+        "quantity": 2
+      },
+      {
+        "id": "1158",
+        "quantity": 2
+      },
+      {
+        "id": "1159",
+        "quantity": 3
+      },
+      {
+        "id": "1160",
+        "quantity": 3
+      },
+      {
+        "id": "1162",
+        "quantity": 5
+      },
+      {
+        "id": "1163",
+        "quantity": 3
+      },
+      {
+        "id": "1164",
+        "quantity": 3
+      },
+      {
+        "id": "1165",
+        "quantity": 4
+      },
+      {
+        "id": "1179",
+        "quantity": 4
+      }
+    ]
+  },
+  "weirdFolder1": {
+    "level": 46,
+    "cards": [
+      {
+        "id": "1025",
+        "quantity": 4
+      },
+      {
+        "id": "1026",
+        "quantity": 4
+      },
+      {
+        "id": "1027",
+        "quantity": 4
+      },
+      {
+        "id": "1028",
+        "quantity": 4
+      },
+      {
+        "id": "1029",
+        "quantity": 4
+      },
+      {
+        "id": "1036",
+        "quantity": 2
+      },
+      {
+        "id": "1039",
+        "quantity": 1
+      },
+      {
+        "id": "1041",
+        "quantity": 3
+      },
+      {
+        "id": "1246",
+        "quantity": 1
+      },
+      {
+        "id": "1248",
+        "quantity": 2
+      },
+      {
+        "id": "1249",
+        "quantity": 1
+      },
+      {
+        "id": "1250",
+        "quantity": 4
+      },
+      {
+        "id": "1257",
+        "quantity": 2
+      },
+      {
+        "id": "1260",
+        "quantity": 2
+      },
+      {
+        "id": "1261",
+        "quantity": 2
+      }
+    ]
+  },
+  "weirdFolder2": {
+    "level": 46,
+    "cards": [
+      {
+        "id": "1000",
+        "quantity": 1
+      },
+      {
+        "id": "1001",
+        "quantity": 1
+      },
+      {
+        "id": "1008",
+        "quantity": 3
+      },
+      {
+        "id": "1025",
+        "quantity": 2
+      },
+      {
+        "id": "1026",
+        "quantity": 1
+      },
+      {
+        "id": "1027",
+        "quantity": 2
+      },
+      {
+        "id": "1028",
+        "quantity": 4
+      },
+      {
+        "id": "1029",
+        "quantity": 4
+      },
+      {
+        "id": "1033",
+        "quantity": 1
+      },
+      {
+        "id": "1037",
+        "quantity": 2
+      },
+      {
+        "id": "1039",
+        "quantity": 1
+      },
+      {
+        "id": "1041",
+        "quantity": 4
+      },
+      {
+        "id": "1079",
+        "quantity": 1
+      },
+      {
+        "id": "1232",
+        "quantity": 1
+      },
+      {
+        "id": "1233",
+        "quantity": 1
+      },
+      {
+        "id": "1234",
+        "quantity": 1
+      },
+      {
+        "id": "1240",
+        "quantity": 1
+      },
+      {
+        "id": "1248",
+        "quantity": 4
+      },
+      {
+        "id": "1251",
+        "quantity": 4
+      },
+      {
+        "id": "1252",
+        "quantity": 1
+      }
+    ]
+  },
+  "weakenFolder1": {
+    "level": 47,
+    "cards": [
+      {
+        "id": "1002",
+        "quantity": 4
+      },
+      {
+        "id": "1004",
+        "quantity": 4
+      },
+      {
+        "id": "1007",
+        "quantity": 2
+      },
+      {
+        "id": "1051",
+        "quantity": 2
+      },
+      {
+        "id": "1053",
+        "quantity": 2
+      },
+      {
+        "id": "1054",
+        "quantity": 2
+      },
+      {
+        "id": "1072",
+        "quantity": 2
+      },
+      {
+        "id": "1075",
+        "quantity": 2
+      },
+      {
+        "id": "1079",
+        "quantity": 4
+      },
+      {
+        "id": "1085",
+        "quantity": 4
+      },
+      {
+        "id": "1087",
+        "quantity": 4
+      },
+      {
+        "id": "1093",
+        "quantity": 4
+      },
+      {
+        "id": "1095",
+        "quantity": 4
+      }
+    ]
+  },
+  "weakenFolder2": {
+    "level": 47,
+    "cards": [
+      {
+        "id": "1004",
+        "quantity": 4
+      },
+      {
+        "id": "1007",
+        "quantity": 4
+      },
+      {
+        "id": "1026",
+        "quantity": 4
+      },
+      {
+        "id": "1027",
+        "quantity": 4
+      },
+      {
+        "id": "1062",
+        "quantity": 2
+      },
+      {
+        "id": "1063",
+        "quantity": 2
+      },
+      {
+        "id": "1067",
+        "quantity": 2
+      },
+      {
+        "id": "1069",
+        "quantity": 2
+      },
+      {
+        "id": "1072",
+        "quantity": 2
+      },
+      {
+        "id": "1075",
+        "quantity": 2
+      },
+      {
+        "id": "1079",
+        "quantity": 4
+      },
+      {
+        "id": "1095",
+        "quantity": 4
+      },
+      {
+        "id": "1098",
+        "quantity": 4
+      }
+    ]
+  },
+  "beetleFolder1": {
+    "level": 48,
+    "cards": [
+      {
+        "id": "1013",
+        "quantity": 4
+      },
+      {
+        "id": "1014",
+        "quantity": 2
+      },
+      {
+        "id": "1015",
+        "quantity": 4
+      },
+      {
+        "id": "1036",
+        "quantity": 2
+      },
+      {
+        "id": "1059",
+        "quantity": 4
+      },
+      {
+        "id": "1081",
+        "quantity": 2
+      },
+      {
+        "id": "1086",
+        "quantity": 2
+      },
+      {
+        "id": "1158",
+        "quantity": 4
+      },
+      {
+        "id": "1167",
+        "quantity": 4
+      },
+      {
+        "id": "1175",
+        "quantity": 4
+      },
+      {
+        "id": "1183",
+        "quantity": 4
+      },
+      {
+        "id": "1223",
+        "quantity": 2
+      },
+      {
+        "id": "1252",
+        "quantity": 2
+      }
+    ]
+  },
+  "beetleFolder2": {
+    "level": 48,
+    "cards": [
+      {
+        "id": "1014",
+        "quantity": 4
+      },
+      {
+        "id": "1015",
+        "quantity": 4
+      },
+      {
+        "id": "1016",
+        "quantity": 4
+      },
+      {
+        "id": "1036",
+        "quantity": 1
+      },
+      {
+        "id": "1059",
+        "quantity": 3
+      },
+      {
+        "id": "1149",
+        "quantity": 3
+      },
+      {
+        "id": "1150",
+        "quantity": 3
+      },
+      {
+        "id": "1155",
+        "quantity": 3
+      },
+      {
+        "id": "1158",
+        "quantity": 3
+      },
+      {
+        "id": "1167",
+        "quantity": 3
+      },
+      {
+        "id": "1172",
+        "quantity": 3
+      },
+      {
+        "id": "1183",
+        "quantity": 3
+      },
+      {
+        "id": "1186",
+        "quantity": 3
+      }
+    ]
+  },
+  "veteranProgramFolder1": {
+    "level": 49,
+    "cards": [
+      {
+        "id": "1001",
+        "quantity": 4
+      },
+      {
+        "id": "1002",
+        "quantity": 4
+      },
+      {
+        "id": "1003",
+        "quantity": 4
+      },
+      {
+        "id": "1021",
+        "quantity": 2
+      },
+      {
+        "id": "1025",
+        "quantity": 4
+      },
+      {
+        "id": "1026",
+        "quantity": 4
+      },
+      {
+        "id": "1027",
+        "quantity": 4
+      },
+      {
+        "id": "1037",
+        "quantity": 2
+      },
+      {
+        "id": "1058",
+        "quantity": 4
+      },
+      {
+        "id": "1071",
+        "quantity": 2
+      },
+      {
+        "id": "1082",
+        "quantity": 4
+      },
+      {
+        "id": "1248",
+        "quantity": 2
+      }
+    ]
+  },
+  "veteranProgramFolder2": {
+    "level": 49,
+    "cards": [
+      {
+        "id": "1024",
+        "quantity": 4
+      },
+      {
+        "id": "1025",
+        "quantity": 4
+      },
+      {
+        "id": "1026",
+        "quantity": 4
+      },
+      {
+        "id": "1027",
+        "quantity": 4
+      },
+      {
+        "id": "1028",
+        "quantity": 4
+      },
+      {
+        "id": "1029",
+        "quantity": 4
+      },
+      {
+        "id": "1041",
+        "quantity": 2
+      },
+      {
+        "id": "1054",
+        "quantity": 4
+      },
+      {
+        "id": "1234",
+        "quantity": 1
+      },
+      {
+        "id": "1235",
+        "quantity": 1
+      },
+      {
+        "id": "1236",
+        "quantity": 1
+      },
+      {
+        "id": "1252",
+        "quantity": 1
+      },
+      {
+        "id": "1254",
+        "quantity": 1
+      },
+      {
+        "id": "1258",
+        "quantity": 1
+      },
+      {
+        "id": "1267",
+        "quantity": 1
+      },
+      {
+        "id": "1268",
+        "quantity": 1
+      },
+      {
+        "id": "1270",
+        "quantity": 1
+      },
+      {
+        "id": "1273",
+        "quantity": 1
+      }
+    ]
   }
 }

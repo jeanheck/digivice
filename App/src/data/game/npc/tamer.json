@@ -55,7 +55,7 @@
         "bit": 115
       }
     },
-    "imageName": "Genji"
+    "imageName": "Man 3"
   },
   "natsumi": {
     "locationId": "021D",
@@ -103,7 +103,7 @@
         "bit": 145
       }
     },
-    "imageName": "Natsumi"
+    "imageName": "Woman 4"
   },
   "nacky": {
     "locationId": "0211",
@@ -126,7 +126,7 @@
         "boosterId": 521
       }
     },
-    "imageName": "Nacky"
+    "imageName": "Woman 2"
   },
   "wong": {
     "locationId": "0211",
@@ -195,7 +195,7 @@
         "boosterId": 522
       }
     },
-    "imageName": "Gloria"
+    "imageName": "Woman 1"
   },
   "mitch": {
     "locationId": "021E",
@@ -243,7 +243,7 @@
         "bit": 1250
       }
     },
-    "imageName": "Mitch"
+    "imageName": "Man 1"
   },
   "catherine": {
     "locationId": "0221",
@@ -291,7 +291,7 @@
         "bit": 145
       }
     },
-    "imageName": "Catherine"
+    "imageName": "Woman 3"
   },
   "lucia": {
     "locationId": "0222",
@@ -383,7 +383,7 @@
         "bit": 200
       }
     },
-    "imageName": "Robert"
+    "imageName": "Man 5"
   },
   "akiba": {
     "locationId": "0229",
@@ -423,7 +423,7 @@
         "bit": 180
       }
     },
-    "imageName": "Akiba"
+    "imageName": "Man 4"
   },
   "chris": {
     "locationId": "022E",
@@ -471,7 +471,7 @@
         "bit": 210
       }
     },
-    "imageName": "Chris"
+    "imageName": "Man 1"
   },
   "bob": {
     "locationId": "022A",
@@ -518,7 +518,7 @@
         "bit": 1475
       }
     },
-    "imageName": "Bob"
+    "imageName": "Man 3"
   },
   "tomomi": {
     "locationId": "022C",
@@ -566,7 +566,7 @@
         "bit": 225
       }
     },
-    "imageName": "Tomomi"
+    "imageName": "Woman 4"
   },
   "andy": {
     "locationId": "0232",
@@ -610,7 +610,7 @@
         "bit": 190
       }
     },
-    "imageName": "Andy"
+    "imageName": "Man 2"
   },
   "george": {
     "locationId": "0233",
@@ -698,7 +698,7 @@
         "bit": 200
       }
     },
-    "imageName": "Mei Lin"
+    "imageName": "Woman 1"
   },
   "alice": {
     "locationId": "023E",
@@ -746,7 +746,7 @@
         "bit": 290
       }
     },
-    "imageName": "Alice"
+    "imageName": "Woman 3"
   },
   "gordon": {
     "locationId": "023D",
@@ -794,7 +794,7 @@
         "bit": 530
       }
     },
-    "imageName": "Gordon"
+    "imageName": "Man 5"
   },
   "jessica": {
     "locationId": "0237",
@@ -880,7 +880,7 @@
         "bit": 820
       }
     },
-    "imageName": "Nakano"
+    "imageName": "Man 4"
   },
   "haruka": {
     "locationId": "0261",
@@ -928,7 +928,7 @@
         "bit": 1195
       }
     },
-    "imageName": "Haruka"
+    "imageName": "Woman 1"
   },
   "makoto": {
     "locationId": "0265",
@@ -976,7 +976,7 @@
         "bit": 1255
       }
     },
-    "imageName": "Makoto"
+    "imageName": "Man 2"
   },
   "brown": {
     "locationId": "0265",
@@ -1024,7 +1024,7 @@
         "bit": 1255
       }
     },
-    "imageName": "Brown"
+    "imageName": "Man 3"
   },
   "poemy": {
     "locationId": "0262",
@@ -1071,7 +1071,7 @@
         "bit": 1175
       }
     },
-    "imageName": "Poemy"
+    "imageName": "Woman 2"
   },
   "pierre": {
     "locationId": "0267",
@@ -1119,7 +1119,7 @@
         "bit": 1265
       }
     },
-    "imageName": "Pierre"
+    "imageName": "Man 5"
   },
   "shingo": {
     "locationId": "0264",
@@ -1166,7 +1166,7 @@
         "bit": 1110
       }
     },
-    "imageName": "Shingo"
+    "imageName": "Man 1"
   },
   "mitaka": {
     "locationId": "0268",
@@ -1189,6 +1189,6 @@
         "boosterId": 530
       }
     },
-    "imageName": "Mitaka"
+    "imageName": "Man 4"
   }
 }
