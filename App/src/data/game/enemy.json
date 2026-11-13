@@ -1938,7 +1938,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 223,
-    "groupId": null,
+    "groupId": 56,
     "drops": [
       {
         "dropId": 146,
@@ -3906,90 +3906,6 @@
     "memoryId": 14,
     "groupId": 88
   },
-  "126": {
-    "name": "Tankmon",
-    "level": 30,
-    "hp": 840,
-    "species": "machine",
-    "rate": 0,
-    "strength": 438,
-    "defense": 525,
-    "spirit": 330,
-    "wisdom": 350,
-    "speed": 196,
-    "fire": 104,
-    "water": 60,
-    "ice": 305,
-    "wind": 104,
-    "thunder": 60,
-    "machine": 305,
-    "dark": 104,
-    "canPoison": true,
-    "poison": 99,
-    "canParalyze": true,
-    "paralyze": 50,
-    "canConfuse": true,
-    "confuse": 50,
-    "canSleep": true,
-    "sleep": 50,
-    "canKO": true,
-    "ko": 99,
-    "canDrain": true,
-    "canSteal": true,
-    "strDown": "Yes",
-    "defDown": "Yes",
-    "spdDown": "Yes",
-    "canEscape": true,
-    "dvexp": 30,
-    "exp": 152,
-    "bits": 300,
-    "regularAttackId": "machineElement",
-    "techniqueId": "none",
-    "memoryId": 76,
-    "groupId": null
-  },
-  "127": {
-    "name": "Nanimon",
-    "level": 29,
-    "hp": 816,
-    "species": "rare",
-    "rate": 0,
-    "strength": 510,
-    "defense": 238,
-    "spirit": 480,
-    "wisdom": 510,
-    "speed": 340,
-    "fire": 104,
-    "water": 104,
-    "ice": 104,
-    "wind": 104,
-    "thunder": 104,
-    "machine": 104,
-    "dark": 104,
-    "canPoison": true,
-    "poison": 50,
-    "canParalyze": true,
-    "paralyze": 50,
-    "canConfuse": true,
-    "confuse": 50,
-    "canSleep": true,
-    "sleep": 50,
-    "canKO": true,
-    "ko": 0,
-    "canDrain": true,
-    "canSteal": true,
-    "strDown": "Yes",
-    "defDown": "Yes",
-    "spdDown": "Yes",
-    "canEscape": true,
-    "dvexp": 29,
-    "exp": 146,
-    "bits": 280,
-    "regularAttackId": "noElement",
-    "techniqueId": "none",
-    "memoryId": 53,
-    "groupId": null
-  },
   "128": {
     "name": "Musyamon",
     "level": 31,
@@ -4662,7 +4578,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 225,
-    "groupId": null
+    "groupId": 104
   },
   "142": {
     "name": "MegaSeadramon",
@@ -5483,7 +5399,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkElemental",
     "memoryId": 135,
-    "groupId": null
+    "groupId": 120
   },
   "158": {
     "name": "Kimeramon",
@@ -5525,7 +5441,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 237,
-    "groupId": null,
+    "groupId": 121,
     "drops": [
       {
         "dropId": 403,
@@ -5573,7 +5489,7 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 229,
-    "groupId": null,
+    "groupId": 122,
     "drops": [
       {
         "dropId": 427,
@@ -5739,7 +5655,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "grandWave",
     "memoryId": 202,
-    "groupId": null,
+    "groupId": 125,
     "drops": [
       {
         "dropId": 427,
@@ -6719,7 +6635,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 395,
-    "groupId": null,
+    "groupId": 146,
     "drops": [
       {
         "dropId": 177,
@@ -7478,7 +7394,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 407,
-    "groupId": null,
+    "groupId": 158,
     "drops": [
       {
         "dropId": 425,
@@ -8116,7 +8032,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 419,
-    "groupId": null
+    "groupId": 171
   },
   "209": {
     "name": "Tankmon(Blue)",
@@ -8252,7 +8168,7 @@
     "exp": 250,
     "bits": 800,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "confuseNebula",
     "memoryId": 422,
     "groupId": 174
   },
