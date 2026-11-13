@@ -13084,7 +13084,7 @@
     "defDown": "Yes",
     "spdDown": "Yes",
     "canEscape": false,
-    "regularAttackId": "noElement",
+    "regularAttackId": "noElementDrainsHp",
     "techniqueId": "none",
     "memoryId": 425,
     "groupId": 16
@@ -13747,7 +13747,7 @@
     "defDown": "Yes",
     "spdDown": "Yes",
     "canEscape": false,
-    "regularAttackId": "machineElementCounterPhysical",
+    "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 41,
     "groupId": 193

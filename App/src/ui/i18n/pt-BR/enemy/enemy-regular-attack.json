@@ -4,6 +4,7 @@
     "machineElement": "Elemento Máquina",
     "waterElement": "Elemento Água",
     "noElementChanceOfPoison": "Sem Elemento (Chance de Envenenamento)",
+    "noElementDrainsHp": "Sem Elemento (Drena HP)",
     "darkElement": "Elemento Trevas",
     "fireElement": "Elemento Fogo",
     "thunderElementChanceOfSleep": "Elemento Trovão (Chance de Adormecer)",
