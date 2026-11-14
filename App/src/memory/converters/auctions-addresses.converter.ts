@@ -22,6 +22,11 @@ export class AuctionsAddressesConverter {
       dramonShield: AuctionsAddressesConverter.convertAuction(raw.dramonShield),
       yinYangWand: AuctionsAddressesConverter.convertAuction(raw.yinYangWand),
       hazardFang: AuctionsAddressesConverter.convertAuction(raw.hazardFang),
+      sniperCannon: AuctionsAddressesConverter.convertAuction(raw.sniperCannon),
+      roninBlade: AuctionsAddressesConverter.convertAuction(raw.roninBlade),
+      sniperGoggle: AuctionsAddressesConverter.convertAuction(raw.sniperGoggle),
+      divineCrown: AuctionsAddressesConverter.convertAuction(raw.divineCrown),
+      braveHelmet: AuctionsAddressesConverter.convertAuction(raw.braveHelmet),
     };
   }
 }

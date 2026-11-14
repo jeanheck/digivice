@@ -33,7 +33,12 @@
       "sniperShield": "hables con Kail en el Pasaje Subterráneo (paso 34) o participes en la subasta",
       "dramonShield": "vuelvas al Pantano Bios con el Chip TNT (paso 42) o participes en la subasta",
       "yinYangWand": "desafíes al verdadero Líder de Byakko (paso 48) o participes en la subasta",
-      "hazardFang": "toques el cuadro con la letra \"R\" en la Sala Maestra (paso 86) o participes en la subasta"
+      "hazardFang": "toques el cuadro con la letra \"R\" en la Sala Maestra (paso 86) o participes en la subasta",
+      "sniperCannon": "interrogues al General de A.o.A encarcelado en la Cueva Subterránea (paso 89) o participes en la subasta",
+      "roninBlade": "atravieses el Laberinto Bug hasta el servidor de Amaterasu (paso 92) o participes en la subasta",
+      "sniperGoggle": "preguntes al Líder de Zhu Que por el Digi-Huevo del Conocimiento (paso 96) o participes en la subasta",
+      "divineCrown": "derrotes al Líder de Genbu en Genbu City (paso 98) o participes en la subasta",
+      "braveHelmet": "hables con el Operador en la Emergency Room para volver al mundo real (paso 102) o participes en la subasta"
     }
   }
 }

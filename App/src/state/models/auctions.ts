@@ -5,4 +5,9 @@ export interface Auctions {
   dramonShield: boolean;
   yinYangWand: boolean;
   hazardFang: boolean;
+  sniperCannon: boolean;
+  roninBlade: boolean;
+  sniperGoggle: boolean;
+  divineCrown: boolean;
+  braveHelmet: boolean;
 }

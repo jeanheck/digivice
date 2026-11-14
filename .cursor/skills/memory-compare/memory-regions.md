@@ -65,7 +65,8 @@ Definitions root: `App/src/data/memory-addresses/quests/`
 | Range / Address | Purpose | Source |
 |-----------------|---------|--------|
 | 0x0004B370 | Main quest + auction story window | `quests/main-quest-addresses.json`; Divine Barrier investigation |
-| 0x0004B38A | Auction instance consumed (bits `0x01`–`0x20`) | **integrated** — `auction-addresses.json` (DivineBarrier, HazardShield, SniperShield, DramonShield, YinYangWand, HazardFang) |
+| 0x0004B38A | Auction instance consumed (bits `0x01`–`0x80`) | **integrated** — `auction-addresses.json` (DivineBarrier, HazardShield, SniperShield, DramonShield, YinYangWand, HazardFang, SniperCannon, RoninBlade) |
+| 0x0004B38B | Auction instance consumed (bits `0x01`–`0x04`), continues `0x4B38A` | **integrated** — `auction-addresses.json` (SniperGoggle, DivineCrown, BraveHelmet); `before-buy-*` / `after-buy-*` snapshots |
 | 0x0004B38E | Legendary weapons | `quests/legendary-weapons/` — Eternally 0x01, Invincible 0x02, Muramasa 0x04, Super Nova 0x08, Punishment 0x10 |
 | 0x0004B3B6 – 0x0004B3FF | Main quest steps | `quests/main-quest-addresses.json` |
 | 0x0004B3DF bit `0x20` | Genji tutorial digimon battle done (suspected) | genji-before/after-first; MQ step 44 uses same byte `0x10` |
@@ -219,7 +220,7 @@ Offsets in `digimon-status-addresses.json` → `digievolutions` (`unlockedDigiev
 | Map subzones / encounters | 0x0E2E0, 0x4DE30, 0x48D82 + Makisha grids | Same MapId, different encounter pools; see map-subzones-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |
-| Auction | 0x4B370, 0x4B38A | Bit flags, story window |
+| Auction | 0x4B370, 0x4B38A, 0x4B38B | Bit flags, story window |
 | NPC digimon battle | `0x4B3DF` (`#0`), `0x4B39A+` (`#1+`) | **integrated** — [`npc-addresses.json`](../../../App/src/data/memory-addresses/npc-addresses.json); BattledTamer bitfield — see [patterns-card-battle.md](patterns/patterns-card-battle.md) |
 | NPC card battle | `0x48E0B`, `0x48F19` (shared counters) | Not per-NPC flags — win counters across tamer groups; see [patterns-card-battle.md](patterns/patterns-card-battle.md); discard transient `0x48ABC` |
 | Duel Island gauntlet (round progress) | `0x4B3B2` bit `0x80`, `0x4B3B3` bits `0x01`–`0x08` | NPC gates for current run; reset after final — duel-island snaps 2026-08-30 |

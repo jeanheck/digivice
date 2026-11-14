@@ -22,5 +22,25 @@
   "hazardFang": {
     "address": "0x0004B38A",
     "bitMask": "0x20"
+  },
+  "sniperCannon": {
+    "address": "0x0004B38A",
+    "bitMask": "0x40"
+  },
+  "roninBlade": {
+    "address": "0x0004B38A",
+    "bitMask": "0x80"
+  },
+  "sniperGoggle": {
+    "address": "0x0004B38B",
+    "bitMask": "0x01"
+  },
+  "divineCrown": {
+    "address": "0x0004B38B",
+    "bitMask": "0x02"
+  },
+  "braveHelmet": {
+    "address": "0x0004B38B",
+    "bitMask": "0x04"
   }
 }
