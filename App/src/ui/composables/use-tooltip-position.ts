@@ -3,15 +3,11 @@ import { ref } from "vue";
 export type TooltipPlacement = "above" | "below";
 export type TooltipHorizontalAlign = "right" | "left";
 
-const TooltipFlipWidthPx = 520;
-
-function getFlipWidthEstimate(): number {
-  return Math.min(window.innerWidth * 0.9, TooltipFlipWidthPx);
-}
-
 /**
  * Cursor-following tooltip position state. Use in the parent that handles mouseenter/move/leave;
  * pass show, x, y to Tooltip.vue or a content wrapper. Does not own title/body content.
+ *
+ * Edge flip is temporarily disabled for positioning tests: x always tracks the cursor offset.
  */
 export function useTooltipPosition() {
   const show = ref(false);
@@ -21,22 +17,15 @@ export function useTooltipPosition() {
 
   function updatePosition(
     event: MouseEvent,
-    width: number,
     placement: TooltipPlacement,
     align: TooltipHorizontalAlign,
   ): void {
-    let positionX: number;
-
     if (align === "left") {
-      positionX = event.clientX - 10;
+      x.value = event.clientX - 10;
     } else {
-      positionX = event.clientX + 10;
-      if (positionX + width > window.innerWidth) {
-        positionX = event.clientX - width - 10;
-      }
+      x.value = event.clientX + 10;
     }
 
-    x.value = positionX;
     y.value = placement === "above" ? event.clientY - 10 : event.clientY + 10;
   }
 
@@ -50,12 +39,7 @@ export function useTooltipPosition() {
     show.value = true;
     horizontalAlign.value = options?.align ?? "right";
 
-    updatePosition(
-      event,
-      getFlipWidthEstimate(),
-      options?.placement ?? "below",
-      horizontalAlign.value,
-    );
+    updatePosition(event, options?.placement ?? "below", horizontalAlign.value);
   }
 
   function move(event: MouseEvent, placement: TooltipPlacement = "below"): void {
@@ -63,7 +47,7 @@ export function useTooltipPosition() {
       return;
     }
 
-    updatePosition(event, getFlipWidthEstimate(), placement, horizontalAlign.value);
+    updatePosition(event, placement, horizontalAlign.value);
   }
 
   function hide(): void {

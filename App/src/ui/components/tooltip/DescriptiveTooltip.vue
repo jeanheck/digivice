@@ -5,6 +5,9 @@ import type {
   TooltipPlacement,
 } from "@/ui/composables/use-tooltip-position";
 
+/** Tighter wrap than title-only tooltips (test value). */
+const DescriptiveMaxWidthPx = 280;
+
 withDefaults(
   defineProps<{
     show: boolean;
@@ -28,6 +31,7 @@ withDefaults(
     :x="x"
     :y="y"
     :title="title"
+    :max-width-px="DescriptiveMaxWidthPx"
     :placement="placement"
     :horizontal-align="horizontalAlign"
   >

@@ -10,6 +10,7 @@ import { useGameState } from "@/ui/composables/use-game-state";
 import { useI18n } from "vue-i18n";
 import type { WikiNpcBattleOptionViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
+import type { TooltipHorizontalAlign } from "@/ui/composables/use-tooltip-position";
 
 const props = defineProps<{
   npcId: string;
@@ -21,7 +22,12 @@ const emit = defineEmits<{
   (e: "open-drops", payload: { dropId: string; dropType: DropType }): void;
   (e: "open-card", cardId: string): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
-  (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
+  (
+    e: "show-condition-tooltip",
+    event: MouseEvent,
+    tooltipKey: string,
+    align: TooltipHorizontalAlign,
+  ): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;
   (e: "hide-stat-tooltip"): void;
 }>();
@@ -129,7 +135,7 @@ const showBattleRequirementTooltip = (
     return;
   }
 
-  emit("show-condition-tooltip", event, option.battleTooltipKey);
+  emit("show-condition-tooltip", event, option.battleTooltipKey, "right");
 };
 
 const npcTypeLabelKey = computed(() => {
@@ -249,7 +255,7 @@ const openLocation = () => {
         @open-drops="emit('open-drops', $event)"
         @show-stat-key-tooltip="(event, statKey) => emit('show-stat-key-tooltip', event, statKey)"
         @show-condition-tooltip="
-          (event, tooltipKey) => emit('show-condition-tooltip', event, tooltipKey)
+          (event, tooltipKey, align) => emit('show-condition-tooltip', event, tooltipKey, align)
         "
         @move-stat-tooltip="emit('move-stat-tooltip', $event)"
         @hide-stat-tooltip="emit('hide-stat-tooltip')"

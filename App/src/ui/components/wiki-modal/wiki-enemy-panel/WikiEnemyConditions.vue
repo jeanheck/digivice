@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { WikiEnemyConditionsPresenter } from "@/presentation/presenters/map/wiki-modal/wiki-enemy-conditions.presenter";
 import type { EnemyViewModel } from "@/presentation/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyConditionViewModel } from "@/presentation/viewmodels/enemy/enemy-condition.viewmodel";
+import type { TooltipHorizontalAlign } from "@/ui/composables/use-tooltip-position";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
@@ -12,7 +13,12 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
+  (
+    e: "show-condition-tooltip",
+    event: MouseEvent,
+    tooltipKey: string,
+    align: TooltipHorizontalAlign,
+  ): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;
   (e: "hide-stat-tooltip"): void;
 }>();
@@ -69,7 +75,7 @@ function calculateTooltip(condition: EnemyConditionViewModel): string {
     >
       <div
         class="flex items-center w-5 justify-center cursor-help select-none z-20"
-        @mouseenter="emit('show-condition-tooltip', $event, calculateTooltip(condition))"
+        @mouseenter="emit('show-condition-tooltip', $event, calculateTooltip(condition), 'left')"
         @mousemove="emit('move-stat-tooltip', $event)"
         @mouseleave="emit('hide-stat-tooltip')"
       >

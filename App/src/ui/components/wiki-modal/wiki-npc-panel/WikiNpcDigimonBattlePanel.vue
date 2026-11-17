@@ -10,6 +10,7 @@ import WikiEnemyTechniques from "@/ui/components/wiki-modal/wiki-enemy-panel/Wik
 import WikiEnemyDrops from "@/ui/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
 import { useGameState } from "@/ui/composables/use-game-state";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
+import type { TooltipHorizontalAlign } from "@/ui/composables/use-tooltip-position";
 
 const props = defineProps<{
   npcId: string;
@@ -19,7 +20,12 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-drops", payload: { dropId: string; dropType: DropType }): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
-  (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
+  (
+    e: "show-condition-tooltip",
+    event: MouseEvent,
+    tooltipKey: string,
+    align: TooltipHorizontalAlign,
+  ): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;
   (e: "hide-stat-tooltip"): void;
 }>();
@@ -106,7 +112,8 @@ const activeMember = computed(() => {
           <WikiEnemyConditions
             :conditions="activeMember.enemy.conditions"
             @show-condition-tooltip="
-              (event, tooltipKey) => emit('show-condition-tooltip', event, tooltipKey)
+              (event, tooltipKey, align) =>
+                emit('show-condition-tooltip', event, tooltipKey, align)
             "
             @move-stat-tooltip="emit('move-stat-tooltip', $event)"
             @hide-stat-tooltip="emit('hide-stat-tooltip')"

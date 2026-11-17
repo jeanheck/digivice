@@ -46,8 +46,8 @@ Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparênc
 
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
-| Posição | `ui/composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`), flip horizontal (estimativa `min(90vw, 520)`). Sem conteúdo nem `maxWidth`. |
-| Casca | `ui/components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`size` (`default` \| `tiny`)/`placement`/`horizontalAlign`. Teto CSS `min(90vw, 520px)` (tiny: `200px`). Sem mouse. |
+| Posição | `ui/composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`). Sem conteúdo. Flip na borda direita está **desligado** (teste: só offset do cursor). |
+| Casca | `ui/components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`size` (`default` \| `tiny`)/`maxWidthPx?`/`placement`/`horizontalAlign`. Teto CSS `min(90vw, Npx)`: título/default **360**, tiny **200**; `DescriptiveTooltip` passa **280**. Sem mouse. |
 | Conteúdo | `DescriptiveTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `party/digimon/digievolutions/DnaFusionTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
 
 Fluxo no **pai** (referências: `party/digimon/equipments/Equipments.vue`, `party/digimon/stats/Stats.vue`):

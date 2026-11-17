@@ -7,6 +7,11 @@ import type {
 
 export type TooltipSize = "default" | "tiny";
 
+/** Title-only / default shell ceiling (test values). */
+const TitleMaxWidthPx = 360;
+/** Compact battle ceiling. */
+const TinyMaxWidthPx = 200;
+
 const props = withDefaults(
   defineProps<{
     show: boolean;
@@ -14,6 +19,8 @@ const props = withDefaults(
     y: number;
     title: string;
     size?: TooltipSize;
+    /** Override shell ceiling in px (e.g. DescriptiveTooltip uses a tighter wrap). */
+    maxWidthPx?: number;
     placement?: TooltipPlacement;
     horizontalAlign?: TooltipHorizontalAlign;
   }>(),
@@ -32,6 +39,12 @@ const hasSlotContent = computed(() => {
 
 const isTiny = computed(() => {
   return props.size === "tiny";
+});
+
+const maxWidthCss = computed(() => {
+  const ceilingPx = props.maxWidthPx ?? (isTiny.value ? TinyMaxWidthPx : TitleMaxWidthPx);
+
+  return `min(90vw, ${ceilingPx}px)`;
 });
 
 const tooltipTransform = computed(() => {
@@ -60,7 +73,7 @@ const tooltipTransform = computed(() => {
         :style="{
           top: `${y}px`,
           left: `${x}px`,
-          maxWidth: isTiny ? 'min(90vw, 200px)' : 'min(90vw, 520px)',
+          maxWidth: maxWidthCss,
           transform: tooltipTransform,
         }"
       >

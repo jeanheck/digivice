@@ -12,7 +12,10 @@ import WikiEquipmentShopPanel from "@/ui/components/wiki-modal/wiki-equipment-sh
 import WikiItemShopPanel from "@/ui/components/wiki-modal/wiki-item-shop-panel/WikiItemShopPanel.vue";
 import SearchBar from "@/ui/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
-import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
+import {
+  useTooltipPosition,
+  type TooltipHorizontalAlign,
+} from "@/ui/composables/use-tooltip-position";
 import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 import { WikiModalPresenter } from "@/presentation/presenters/map/wiki-modal.presenter";
 import type { DropType } from "@/presentation/repositories/tables/raws/drop/drop-type";
@@ -200,7 +203,15 @@ const selectedSearchKind = computed((): SearchItemKind | undefined => {
 });
 
 const tooltipPlacement = "below" as const;
-const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = useTooltipPosition();
+const {
+  show: tooltipShow,
+  x: tooltipX,
+  y: tooltipY,
+  horizontalAlign: tooltipHorizontalAlign,
+  showAt,
+  move,
+  hide,
+} = useTooltipPosition();
 const tooltipTitle = ref("");
 
 function clearSelection(): void {
@@ -384,9 +395,13 @@ const showEnemyStatKeyTooltip = (event: MouseEvent, statKey: string) => {
   showAt(event, { placement: tooltipPlacement });
 };
 
-const showEnemyConditionTooltip = (event: MouseEvent, tooltipKey: string) => {
+const showEnemyConditionTooltip = (
+  event: MouseEvent,
+  tooltipKey: string,
+  align: TooltipHorizontalAlign,
+) => {
   tooltipTitle.value = t(tooltipKey);
-  showAt(event, { placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement, align });
 };
 
 const hideEnemyStatTooltip = () => {
@@ -539,5 +554,6 @@ const enemyImageUrl = computed(() => {
     :y="tooltipY"
     :title="tooltipTitle"
     placement="below"
+    :horizontal-align="tooltipHorizontalAlign"
   />
 </template>
