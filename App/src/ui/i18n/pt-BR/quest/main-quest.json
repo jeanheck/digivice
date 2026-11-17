@@ -399,11 +399,11 @@
         "locationTarget": "Garoto"
       },
       "94": {
-        "description": "Pregunte ao líder da cidade mais próxima onde está o Digi-Ovo do Conhecimento",
+        "description": "Pergunte ao líder da cidade mais próxima onde está o Digi-Ovo do Conhecimento",
         "locationTarget": "Líder Qing Long"
       },
       "95": {
-        "description": "Fale com o Patrulheiro se passando pelo Líder Qing Long para entrar na Cidade Zhu Que",
+        "description": "Enquanto finge ser o Líder Qing Long, fale com o Patrulheiro para entrar na Cidade Zhu Que",
         "locationTarget": "Patrulheiro"
       },
       "96": {
