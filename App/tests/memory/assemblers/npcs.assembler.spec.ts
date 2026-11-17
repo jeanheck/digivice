@@ -47,7 +47,7 @@ describe("NpcsAssembler", () => {
 
       const npcs = NpcsAssembler.assemble(resource);
 
-      expect(Object.keys(npcs)).toHaveLength(29);
+      expect(Object.keys(npcs)).toHaveLength(35);
       for (const [name, npc] of Object.entries(npcs)) {
         expect(npc.battles).toEqual([{ id: name, won: true }]);
       }

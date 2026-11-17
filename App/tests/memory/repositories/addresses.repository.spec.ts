@@ -57,7 +57,7 @@ describe("AddressesRepository", () => {
     it("should load every NPC with battles", () => {
       const npcsAddresses = AddressesRepository.getNpcsAddresses();
 
-      expect(Object.keys(npcsAddresses)).toHaveLength(29);
+      expect(Object.keys(npcsAddresses)).toHaveLength(35);
       for (const [name, npcAddresses] of Object.entries(npcsAddresses)) {
         expect(Object.keys(npcAddresses.battles).length, `${name} has no battles`).toBeGreaterThan(
           0,
