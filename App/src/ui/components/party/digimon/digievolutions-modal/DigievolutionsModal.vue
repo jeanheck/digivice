@@ -117,6 +117,7 @@ const selectedSearchId = computed(() => {
             :digimon-id="digimonId"
             :digievolution-id="selectedDigievolutionId"
             show-tree-sections
+            tooltip-align="left"
             @select-digievolution-id="handleSelectDigievolutionById"
           />
         </div>

@@ -2,14 +2,23 @@
 import { computed, ref } from "vue";
 import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
-import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
+import {
+  useTooltipPosition,
+  type TooltipHorizontalAlign,
+} from "@/ui/composables/use-tooltip-position";
 import type { TechniqueViewModel } from "@/presentation/viewmodels/digievolution/technique.viewmodel";
 import type { TechniqueType } from "@/shared/types/technique-type.type";
 import { ImageCatalog } from "@/ui/catalogs/image.catalog";
 
-const props = defineProps<{
-  technique: TechniqueViewModel;
-}>();
+const props = withDefaults(
+  defineProps<{
+    technique: TechniqueViewModel;
+    tooltipAlign?: TooltipHorizontalAlign;
+  }>(),
+  {
+    tooltipAlign: "right",
+  },
+);
 
 const { t } = useI18n();
 
@@ -28,7 +37,7 @@ const tooltipTitle = ref("");
 
 const showTooltip = (event: MouseEvent, title: string) => {
   tooltipTitle.value = title;
-  showAt(event, { placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement, align: props.tooltipAlign });
 };
 
 const showTypeTooltip = (event: MouseEvent, type: TechniqueType) => {
@@ -186,6 +195,7 @@ function getTechniqueElementColorClass(element: string): string {
       :y="tooltipY"
       :title="tooltipTitle"
       placement="below"
+      :horizontal-align="tooltipAlign"
     />
   </div>
 </template>

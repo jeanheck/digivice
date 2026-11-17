@@ -55,7 +55,7 @@ defineProps<{
               v-if="dnaDigievolution.typeImageUrl"
               :src="dnaDigievolution.typeImageUrl"
               :alt="$t(dnaDigievolution.typeKey)"
-              class="w-[19px] h-5 object-contain rendering-pixelated"
+              class="w-4.75 h-5 object-contain rendering-pixelated"
             />
             {{ $t(dnaDigievolution.typeKey) }}
           </span>

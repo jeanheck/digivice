@@ -5,13 +5,20 @@ import Links from "@/ui/components/party/digimon/digievolution-techniques/Links.
 import SectionTitle from "@/ui/components/party/digimon/digievolution-techniques/SectionTitle.vue";
 import Technique from "@/ui/components/party/digimon/digievolution-techniques/Technique.vue";
 import { DigievolutionTechniquesPresenter } from "@/presentation/presenters/digievolution/digievolution-techniques.presenter";
+import type { TooltipHorizontalAlign } from "@/ui/composables/use-tooltip-position";
 
-const props = defineProps<{
-  digievolutionId: number;
-  digimonId?: number;
-  digievolutionLevel?: number;
-  showTreeSections?: boolean;
-}>();
+const props = withDefaults(
+  defineProps<{
+    digievolutionId: number;
+    digimonId?: number;
+    digievolutionLevel?: number;
+    showTreeSections?: boolean;
+    tooltipAlign?: TooltipHorizontalAlign;
+  }>(),
+  {
+    tooltipAlign: "right",
+  },
+);
 
 defineEmits<{
   (e: "select-digievolution-id", digievolutionId: number): void;
@@ -68,6 +75,7 @@ const evolutionAvatarUrl = computed(() => {
             v-for="techniqueViewModel in viewModel.techniques"
             :key="techniqueViewModel.id"
             :technique="techniqueViewModel"
+            :tooltip-align="tooltipAlign"
           />
 
           <p
