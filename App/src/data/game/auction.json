@@ -58,5 +58,55 @@
     },
     "bid": 2700,
     "resale": 30000
+  },
+  {
+    "id": "sniperCannon",
+    "equipmentId": "124",
+    "mainQuestAvailabilityWindow": {
+      "starts": 88,
+      "ends": 89
+    },
+    "bid": 4000,
+    "resale": 30000
+  },
+  {
+    "id": "roninBlade",
+    "equipmentId": "98",
+    "mainQuestAvailabilityWindow": {
+      "starts": 90,
+      "ends": 92
+    },
+    "bid": 4000,
+    "resale": 30000
+  },
+  {
+    "id": "sniperGoggle",
+    "equipmentId": "222",
+    "mainQuestAvailabilityWindow": {
+      "starts": 94,
+      "ends": 96
+    },
+    "bid": 6000,
+    "resale": 11000
+  },
+  {
+    "id": "divineCrown",
+    "equipmentId": "232",
+    "mainQuestAvailabilityWindow": {
+      "starts": 97,
+      "ends": 98
+    },
+    "bid": 6000,
+    "resale": 11000
+  },
+  {
+    "id": "braveHelmet",
+    "equipmentId": "244",
+    "mainQuestAvailabilityWindow": {
+      "starts": 98,
+      "ends": 102
+    },
+    "bid": 8700,
+    "resale": 11000
   }
 ]

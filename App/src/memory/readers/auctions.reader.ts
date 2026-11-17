@@ -15,6 +15,11 @@ export class AuctionsReader {
       dramonShield: AuctionsReader.readAuction(snapshot, addresses.dramonShield),
       yinYangWand: AuctionsReader.readAuction(snapshot, addresses.yinYangWand),
       hazardFang: AuctionsReader.readAuction(snapshot, addresses.hazardFang),
+      sniperCannon: AuctionsReader.readAuction(snapshot, addresses.sniperCannon),
+      roninBlade: AuctionsReader.readAuction(snapshot, addresses.roninBlade),
+      sniperGoggle: AuctionsReader.readAuction(snapshot, addresses.sniperGoggle),
+      divineCrown: AuctionsReader.readAuction(snapshot, addresses.divineCrown),
+      braveHelmet: AuctionsReader.readAuction(snapshot, addresses.braveHelmet),
     };
   }
 }

@@ -18,12 +18,17 @@ describe("AuctionsProvider", () => {
         dramonShield: true,
         yinYangWand: false,
         hazardFang: false,
+        sniperCannon: false,
+        roninBlade: false,
+        sniperGoggle: false,
+        divineCrown: false,
+        braveHelmet: false,
       });
     });
 
     it("should read the real auctions addresses when the snapshot is synthetic", () => {
       const snapshot = new MemorySnapshot(
-        new FakeSnapshotBuilder().writeByte(0x0004b38a, 0x3f).build(),
+        new FakeSnapshotBuilder().writeByte(0x0004b38a, 0xff).writeByte(0x0004b38b, 0x07).build(),
       );
 
       const auctions = AuctionsProvider.get(snapshot);

@@ -33,7 +33,12 @@
       "sniperShield": "talk to Kail in the Underground Path (step 34), or participate in the auction",
       "dramonShield": "return to Bios Swamp with the TNT Chip (step 42), or participate in the auction",
       "yinYangWand": "challenge the true Byakko Leader (step 48), or participate in the auction",
-      "hazardFang": "touch the paiting with letter \"R\" on the Master Room (step 86), or participate in the auction"
+      "hazardFang": "touch the paiting with letter \"R\" on the Master Room (step 86), or participate in the auction",
+      "sniperCannon": "interrogate the A.o.A General imprisoned in the Underground Cave (step 89), or participate in the auction",
+      "roninBlade": "cross the Bug Maze to reach the Amaterasu server (step 92), or participate in the auction",
+      "sniperGoggle": "ask the Zhu Que Leader about the Digi-Egg of Knowledge (step 96), or participate in the auction",
+      "divineCrown": "defeat the Genbu Leader in Genbu City (step 98), or participate in the auction",
+      "braveHelmet": "talk to the Operator at the Emergency Room to return to the real world (step 102), or participate in the auction"
     }
   }
 }

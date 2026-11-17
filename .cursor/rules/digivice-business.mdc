@@ -113,7 +113,7 @@ graph TD
 ## Important items, Auctions e NPCs
 
 - **ImportantItems** (`ImportantItemsAssembler`): cada item é `bool` (RAM `!= 0` → `true`). Posse permanente, não quantidade.
-- **Auctions** (`AuctionsAssembler`): cada leilão é `bool` = instância consumida (bit em `0x4B38A`). Disponibilidade/janela é calculada no frontend a partir da main quest.
+- **Auctions** (`AuctionsAssembler`): cada leilão é `bool` = instância consumida (bits em `0x4B38A` e `0x4B38B`). Disponibilidade/janela é calculada no frontend a partir da main quest.
 - **Npcs** (`NpcsAssembler`): cada NPC tem lista fixa de `Battles` (`Id` + `Won`); `Won = Value != 0`. NPCs e batalhas vêm todos no primeiro estado; nunca add/remove em runtime.
 
 ## Moments

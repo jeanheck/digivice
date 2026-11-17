@@ -5,4 +5,9 @@ export interface AuctionsResource {
   dramonShield: number;
   yinYangWand: number;
   hazardFang: number;
+  sniperCannon: number;
+  roninBlade: number;
+  sniperGoggle: number;
+  divineCrown: number;
+  braveHelmet: number;
 }

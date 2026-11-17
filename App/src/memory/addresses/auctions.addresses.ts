@@ -12,6 +12,11 @@ export interface AuctionsAddressesRaw {
   dramonShield: AuctionAddressesRaw;
   yinYangWand: AuctionAddressesRaw;
   hazardFang: AuctionAddressesRaw;
+  sniperCannon: AuctionAddressesRaw;
+  roninBlade: AuctionAddressesRaw;
+  sniperGoggle: AuctionAddressesRaw;
+  divineCrown: AuctionAddressesRaw;
+  braveHelmet: AuctionAddressesRaw;
 }
 
 export interface AuctionAddresses {
@@ -26,4 +31,9 @@ export interface AuctionsAddresses {
   dramonShield: AuctionAddresses;
   yinYangWand: AuctionAddresses;
   hazardFang: AuctionAddresses;
+  sniperCannon: AuctionAddresses;
+  roninBlade: AuctionAddresses;
+  sniperGoggle: AuctionAddresses;
+  divineCrown: AuctionAddresses;
+  braveHelmet: AuctionAddresses;
 }

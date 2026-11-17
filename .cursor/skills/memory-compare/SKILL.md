@@ -86,7 +86,7 @@ Natsumi card rematch + map scripts, DRI agent hunt, and the
 | Digimon battle | `battles/*.json`, `parties/in-battle-addresses.json` | skill `battle-memory-investigate` |
 | NPC digimon battles | `npc-addresses.json` | BattledTamer bits `0x4B3DF`, `0x4B39A+` |
 | Card battle | `card-battle-addresses.json` (`0x4B404`) | Config id on MapId `0x0700`; win counters `0x48E0B` / `0x48F19` |
-| Auctions | `auction-addresses.json` | Bits on `0x4B38A`; story window `0x4B370` |
+| Auctions | `auction-addresses.json` | Bits on `0x4B38A` / `0x4B38B`; story window `0x4B370` |
 | Common items | — | Quantity table `0x4858F+`; possession `~0x48ECx` may clear on sell |
 
 ## Output template

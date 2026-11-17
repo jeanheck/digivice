@@ -10,6 +10,11 @@ export class AuctionsAssembler {
       dramonShield: resource.dramonShield !== 0,
       yinYangWand: resource.yinYangWand !== 0,
       hazardFang: resource.hazardFang !== 0,
+      sniperCannon: resource.sniperCannon !== 0,
+      roninBlade: resource.roninBlade !== 0,
+      sniperGoggle: resource.sniperGoggle !== 0,
+      divineCrown: resource.divineCrown !== 0,
+      braveHelmet: resource.braveHelmet !== 0,
     };
   }
 }
