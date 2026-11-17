@@ -34,8 +34,7 @@ function closeTechniques(): void {
 }
 
 const tooltipPlacement = "below" as const;
-const tooltipMaxWidth = 460;
-const tooltipPosition = useTooltipPosition(tooltipMaxWidth);
+const tooltipPosition = useTooltipPosition();
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const hoveredDigievolutionId = ref<number | null>(null);
 
@@ -53,7 +52,7 @@ const availableDnaFusions = computed(() => {
 
 function showTooltip(event: MouseEvent, digievolutionId: number | null): void {
   hoveredDigievolutionId.value = digievolutionId;
-  showAt(event, { maxWidth: tooltipMaxWidth, placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement });
   highlightDnaFusion(digievolutionId);
 }
 
@@ -110,7 +109,6 @@ onBeforeUnmount(() => {
       :x="tooltipX"
       :y="tooltipY"
       :fusions="availableDnaFusions"
-      :max-width="tooltipMaxWidth"
       :placement="tooltipPlacement"
     />
 

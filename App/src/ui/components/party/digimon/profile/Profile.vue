@@ -25,7 +25,7 @@ const emit = defineEmits<{
 
 const gameState = useGameState();
 const { t } = useI18n();
-const { show, x, y, showAt, move, hide } = useTooltipPosition(350);
+const { show, x, y, showAt, move, hide } = useTooltipPosition();
 const tooltipTitle = ref("");
 
 function onShowTooltip(event: MouseEvent, value: string): void {
@@ -174,6 +174,6 @@ const digimonStatusTooltip = computed(() => {
       </div>
     </div>
 
-    <Tooltip :show="show" :x="x" :y="y" :title="tooltipTitle" :max-width="350" />
+    <Tooltip :show="show" :x="x" :y="y" :title="tooltipTitle" />
   </div>
 </template>

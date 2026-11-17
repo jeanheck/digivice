@@ -34,16 +34,14 @@ const treeViewModel = computed(() => {
 });
 
 const pinTooltipPlacement = "below" as const;
-const pinTooltipMaxWidth = 260;
 const {
   show: pinTooltipShow,
   x: pinTooltipX,
   y: pinTooltipY,
-  maxWidth: pinTooltipMaxWidthValue,
   showAt: showPinTooltipAt,
   move: movePinTooltipTo,
   hide: hidePinTooltip,
-} = useTooltipPosition(pinTooltipMaxWidth);
+} = useTooltipPosition();
 const pinTooltipTitle = ref("");
 
 const getPinTooltipKey = (family: FamilyViewModel): string => {
@@ -52,7 +50,7 @@ const getPinTooltipKey = (family: FamilyViewModel): string => {
 
 const showPinTooltip = (event: MouseEvent, family: FamilyViewModel) => {
   pinTooltipTitle.value = t(getPinTooltipKey(family));
-  showPinTooltipAt(event, { maxWidth: pinTooltipMaxWidth, placement: pinTooltipPlacement });
+  showPinTooltipAt(event, { placement: pinTooltipPlacement });
 };
 
 const movePinTooltip = (event: MouseEvent) => {
@@ -199,7 +197,6 @@ const families = computed(() => {
       :x="pinTooltipX"
       :y="pinTooltipY"
       :title="pinTooltipTitle"
-      :max-width="pinTooltipMaxWidthValue"
       placement="below"
     />
   </div>

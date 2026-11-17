@@ -200,7 +200,7 @@ const selectedSearchKind = computed((): SearchItemKind | undefined => {
 });
 
 const tooltipPlacement = "below" as const;
-const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = useTooltipPosition(250);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = useTooltipPosition();
 const tooltipTitle = ref("");
 
 function clearSelection(): void {
@@ -381,12 +381,12 @@ const enemy = computed(() => {
 
 const showEnemyStatKeyTooltip = (event: MouseEvent, statKey: string) => {
   tooltipTitle.value = t(`stat.${statKey}`);
-  showAt(event, { maxWidth: 250, placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement });
 };
 
 const showEnemyConditionTooltip = (event: MouseEvent, tooltipKey: string) => {
   tooltipTitle.value = t(tooltipKey);
-  showAt(event, { maxWidth: 250, placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement });
 };
 
 const hideEnemyStatTooltip = () => {
@@ -538,7 +538,6 @@ const enemyImageUrl = computed(() => {
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
-    :max-width="900"
     placement="below"
   />
 </template>

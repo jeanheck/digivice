@@ -10,11 +10,9 @@ withDefaults(
     x: number;
     y: number;
     fusions: AvailableDnaFusionViewModel[];
-    maxWidth?: number;
     placement?: TooltipPlacement;
   }>(),
   {
-    maxWidth: 460,
     placement: "below",
   },
 );
@@ -28,7 +26,6 @@ const { t } = useI18n();
     :x="x"
     :y="y"
     :title="t('dnaDigievolution.availableTitle')"
-    :max-width="maxWidth"
     :placement="placement"
   >
     <div class="flex flex-col w-full">

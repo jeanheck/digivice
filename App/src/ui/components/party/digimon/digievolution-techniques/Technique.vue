@@ -22,31 +22,21 @@ function getElementLabel(element: string): string {
 }
 
 const tooltipPlacement = "below" as const;
-const typeTooltipMaxWidth = 200;
-const badgeTooltipMaxWidth = 320;
-const tooltipPosition = useTooltipPosition(typeTooltipMaxWidth);
-const {
-  show: tooltipShow,
-  x: tooltipX,
-  y: tooltipY,
-  maxWidth: tooltipMaxWidth,
-  showAt,
-  move,
-  hide,
-} = tooltipPosition;
+const tooltipPosition = useTooltipPosition();
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const tooltipTitle = ref("");
 
-const showTooltip = (event: MouseEvent, title: string, maxWidth: number) => {
+const showTooltip = (event: MouseEvent, title: string) => {
   tooltipTitle.value = title;
-  showAt(event, { maxWidth, placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement });
 };
 
 const showTypeTooltip = (event: MouseEvent, type: TechniqueType) => {
-  showTooltip(event, t(`techniqueTypes.${type}`), typeTooltipMaxWidth);
+  showTooltip(event, t(`techniqueTypes.${type}`));
 };
 
 const showBadgeTooltip = (event: MouseEvent, i18nKey: string) => {
-  showTooltip(event, t(i18nKey), badgeTooltipMaxWidth);
+  showTooltip(event, t(i18nKey));
 };
 
 const hideTooltip = () => {
@@ -195,7 +185,6 @@ function getTechniqueElementColorClass(element: string): string {
       :x="tooltipX"
       :y="tooltipY"
       :title="tooltipTitle"
-      :max-width="tooltipMaxWidth"
       placement="below"
     />
   </div>

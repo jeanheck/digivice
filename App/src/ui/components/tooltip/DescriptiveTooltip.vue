@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
-import type { TooltipPlacement } from "@/ui/composables/use-tooltip-position";
+import type {
+  TooltipHorizontalAlign,
+  TooltipPlacement,
+} from "@/ui/composables/use-tooltip-position";
 
 withDefaults(
   defineProps<{
@@ -9,13 +12,12 @@ withDefaults(
     y: number;
     title: string;
     text: string;
-    maxWidth?: number;
-    minWidth?: number;
     placement?: TooltipPlacement;
+    horizontalAlign?: TooltipHorizontalAlign;
   }>(),
   {
-    maxWidth: 300,
     placement: "below",
+    horizontalAlign: "right",
   },
 );
 </script>
@@ -26,9 +28,8 @@ withDefaults(
     :x="x"
     :y="y"
     :title="title"
-    :max-width="maxWidth"
-    :min-width="minWidth"
     :placement="placement"
+    :horizontal-align="horizontalAlign"
   >
     <div v-if="text" class="text-gray-100 text-xs leading-relaxed shadow-black shadow-text">
       {{ text }}

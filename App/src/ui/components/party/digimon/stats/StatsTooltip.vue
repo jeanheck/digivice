@@ -15,13 +15,11 @@ const props = withDefaults(
     equipmentSet?: number;
     total: number;
     battleDelta?: number;
-    maxWidth?: number;
     placement?: TooltipPlacement;
   }>(),
   {
     equipmentSet: 0,
     battleDelta: 0,
-    maxWidth: 280,
     placement: "below",
   },
 );
@@ -54,7 +52,7 @@ const modifierColorClass = computed(() => {
 </script>
 
 <template>
-  <Tooltip :show="show" :x="x" :y="y" :title="title" :max-width="maxWidth" :placement="placement">
+  <Tooltip :show="show" :x="x" :y="y" :title="title" :placement="placement">
     <div class="flex flex-col w-full min-w-50">
       <div
         class="text-white text-base font-bold text-center mb-2 tracking-wider shadow-text whitespace-nowrap"

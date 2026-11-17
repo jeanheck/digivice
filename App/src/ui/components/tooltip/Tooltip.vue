@@ -5,19 +5,20 @@ import type {
   TooltipPlacement,
 } from "@/ui/composables/use-tooltip-position";
 
+export type TooltipSize = "default" | "tiny";
+
 const props = withDefaults(
   defineProps<{
     show: boolean;
     x: number;
     y: number;
     title: string;
-    maxWidth?: number;
-    minWidth?: number;
+    size?: TooltipSize;
     placement?: TooltipPlacement;
     horizontalAlign?: TooltipHorizontalAlign;
   }>(),
   {
-    maxWidth: 250,
+    size: "default",
     placement: "below",
     horizontalAlign: "right",
   },
@@ -27,6 +28,10 @@ const slots = useSlots();
 
 const hasSlotContent = computed(() => {
   return (slots.default?.() ?? []).length > 0;
+});
+
+const isTiny = computed(() => {
+  return props.size === "tiny";
 });
 
 const tooltipTransform = computed(() => {
@@ -46,19 +51,33 @@ const tooltipTransform = computed(() => {
     <Transition name="fade">
       <div
         v-if="show"
-        class="fixed z-9999 pointer-events-none p-3 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] flex flex-col gap-1 backdrop-blur-sm w-max"
+        class="fixed z-9999 pointer-events-none bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm w-max"
+        :class="
+          isTiny
+            ? ['p-1.5', { 'flex flex-col gap-0.5': hasSlotContent }]
+            : 'p-3 flex flex-col gap-1'
+        "
         :style="{
           top: `${y}px`,
           left: `${x}px`,
-          maxWidth: `${maxWidth}px`,
-          minWidth: minWidth ? `${minWidth}px` : undefined,
+          maxWidth: isTiny ? 'min(90vw, 200px)' : 'min(90vw, 520px)',
           transform: tooltipTransform,
         }"
       >
         <div
           v-if="title"
-          class="font-bold text-yellow-300 text-sm shadow-black shadow-text uppercase tracking-wider text-center whitespace-nowrap"
-          :class="{ 'border-b border-[#0066cc]/50 pb-1 mb-1': hasSlotContent }"
+          class="font-bold text-yellow-300 shadow-black shadow-text uppercase tracking-wider text-center"
+          :class="
+            isTiny
+              ? [
+                  'text-[10px]',
+                  { 'border-b border-[#0066cc]/50 pb-0.5 mb-0.5': hasSlotContent },
+                ]
+              : [
+                  'text-sm',
+                  { 'border-b border-[#0066cc]/50 pb-1 mb-1': hasSlotContent },
+                ]
+          "
         >
           {{ title }}
         </div>

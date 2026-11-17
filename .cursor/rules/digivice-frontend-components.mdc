@@ -46,24 +46,23 @@ Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparênc
 
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
-| Posição | `ui/composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`), flip horizontal. Sem conteúdo. |
-| Casca | `ui/components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`maxWidth`/`placement`. Sem mouse. |
-| Casca compacta | `ui/components/tooltip/TinyTooltip.vue` | Variante pequena (batalha); mesmas regras da casca. |
-| Conteúdo | `DefaultTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `party/digimon/digievolutions/DnaFusionTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
+| Posição | `ui/composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`), flip horizontal (estimativa `min(90vw, 520)`). Sem conteúdo nem `maxWidth`. |
+| Casca | `ui/components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`size` (`default` \| `tiny`)/`placement`/`horizontalAlign`. Teto CSS `min(90vw, 520px)` (tiny: `200px`). Sem mouse. |
+| Conteúdo | `DescriptiveTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `party/digimon/digievolutions/DnaFusionTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
 
 Fluxo no **pai** (referências: `party/digimon/equipments/Equipments.vue`, `party/digimon/stats/Stats.vue`):
-1. Um `useTooltipPosition(maxWidthOpcional)`; desestruturar `show`, `x`, `y`, `showAt`, `move`, `hide`.
+1. Um `useTooltipPosition()`; desestruturar `show`, `x`, `y`, `showAt`, `move`, `hide`.
 2. Refs de conteúdo no pai (ex.: `activeVariant` + conteúdos por variante em `Stats.vue`).
-3. `mouseenter` → conteúdo + `showAt(event, { maxWidth?, placement? })`; `mousemove` → `move(event)`; `mouseleave` → `hide()`.
+3. `mouseenter` → conteúdo + `showAt(event, { placement?, align? })`; `mousemove` → `move(event)`; `mouseleave` → `hide()`.
 4. Filhos que detectam hover emitem eventos com `MouseEvent` (`@show-tooltip`, `@move-tooltip`, `@hide-tooltip`).
 
 Escolha:
-- Só título → `Tooltip` direto com `title` e slot vazio (ex.: `digievolution-techniques/Technique.vue`).
-- Título + texto → `DefaultTooltip`.
+- Só título → `Tooltip` direto com `title` e slot vazio (ex.: `digievolution-techniques/Technique.vue`); batalha usa `size="tiny"`.
+- Título + texto → `DescriptiveTooltip`.
 - Equipamento → `EquipmentsTooltip`; breakdown base + equip + total → `StatsTooltip`.
 - Vários conteúdos na mesma posição → um composable no pai + wrappers com `:show` condicional (`Stats.vue`).
 
-**Proibido:** tooltip inline (Teleport + `clientX`/`clientY` manual); composable dentro do wrapper; API imperativa (`defineExpose({ show, hide, move })`); duplicar regras de posicionamento fora do composable.
+**Proibido:** tooltip inline (Teleport + `clientX`/`clientY` manual); composable dentro do wrapper; API imperativa (`defineExpose({ show, hide, move })`); duplicar regras de posicionamento fora do composable; passar `maxWidth` por call site.
 
 ## Modais
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import TinyTooltip from "@/ui/components/tooltip/TinyTooltip.vue";
+import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
 import type { TooltipPlacement } from "@/ui/composables/use-tooltip-position";
 import { useI18n } from "vue-i18n";
 
@@ -13,11 +13,9 @@ const props = withDefaults(
     base: number;
     delta: number;
     total: number;
-    maxWidth?: number;
     placement?: TooltipPlacement;
   }>(),
   {
-    maxWidth: 160,
     placement: "below",
   },
 );
@@ -42,14 +40,7 @@ const modifierColorClass = computed(() => {
 </script>
 
 <template>
-  <TinyTooltip
-    :show="show"
-    :x="x"
-    :y="y"
-    :title="title"
-    :max-width="maxWidth"
-    :placement="placement"
-  >
+  <Tooltip :show="show" :x="x" :y="y" :title="title" size="tiny" :placement="placement">
     <div class="flex flex-col w-full">
       <div
         class="text-white text-[10px] font-bold text-center mb-1 tracking-wider shadow-text whitespace-nowrap"
@@ -73,5 +64,5 @@ const modifierColorClass = computed(() => {
         </div>
       </div>
     </div>
-  </TinyTooltip>
+  </Tooltip>
 </template>

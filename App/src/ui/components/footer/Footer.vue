@@ -5,7 +5,7 @@ import DnaDigievolutionsButton from "@/ui/components/footer/DnaDigievolutionsBut
 import SeabedButton from "@/ui/components/footer/SeabedButton.vue";
 import MobiusDesertButton from "@/ui/components/footer/MobiusDesertButton.vue";
 import BuyMeACoffeeButton from "@/ui/components/footer/BuyMeACoffeeButton.vue";
-import DefaultTooltip from "@/ui/components/tooltip/DefaultTooltip.vue";
+import DescriptiveTooltip from "@/ui/components/tooltip/DescriptiveTooltip.vue";
 import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
@@ -19,16 +19,8 @@ const playerBits = computed(() => {
   return gameState.value.player.bits;
 });
 
-const tooltipPosition = useTooltipPosition(300);
-const {
-  show: tooltipShow,
-  x: tooltipX,
-  y: tooltipY,
-  maxWidth: tooltipMaxWidth,
-  showAt,
-  move,
-  hide,
-} = tooltipPosition;
+const tooltipPosition = useTooltipPosition();
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const tooltipTitle = ref("");
 const tooltipText = ref("");
 const isTitleOnlyTooltip = ref(false);
@@ -37,7 +29,7 @@ const showDnaDigievolutionsTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
   tooltipTitle.value = t("dnaDigievolution.title");
   tooltipText.value = "";
-  showAt(event, { maxWidth: 360, placement: "above", align: "left" });
+  showAt(event, { placement: "above", align: "left" });
 };
 
 const moveDnaDigievolutionsTooltip = (event: MouseEvent) => {
@@ -53,7 +45,7 @@ const showSeabedTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
   tooltipTitle.value = t("seabed.title");
   tooltipText.value = "";
-  showAt(event, { maxWidth: 300, placement: "above", align: "left" });
+  showAt(event, { placement: "above", align: "left" });
 };
 
 const moveSeabedTooltip = (event: MouseEvent) => {
@@ -69,7 +61,7 @@ const showMobiusDesertTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
   tooltipTitle.value = t("mobiusDesert.title");
   tooltipText.value = "";
-  showAt(event, { maxWidth: 300, placement: "above", align: "left" });
+  showAt(event, { placement: "above", align: "left" });
 };
 
 const moveMobiusDesertTooltip = (event: MouseEvent) => {
@@ -85,7 +77,7 @@ const showBuyMeACoffeeTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
   tooltipTitle.value = t("buyMeACoffee.title");
   tooltipText.value = "";
-  showAt(event, { maxWidth: 300, placement: "above", align: "left" });
+  showAt(event, { placement: "above", align: "left" });
 };
 
 const moveBuyMeACoffeeTooltip = (event: MouseEvent) => {
@@ -101,7 +93,7 @@ const showGroupCharismaTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = false;
   tooltipTitle.value = t("party.groupCharisma");
   tooltipText.value = t("party.groupCharismaWarning");
-  showAt(event, { maxWidth: 300, placement: "above" });
+  showAt(event, { placement: "above" });
 };
 
 const moveGroupCharismaTooltip = (event: MouseEvent) => {
@@ -116,7 +108,7 @@ const showGroupLevelTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = false;
   tooltipTitle.value = t("party.groupLevel");
   tooltipText.value = t("party.groupLevelExplanation");
-  showAt(event, { maxWidth: 300, placement: "above" });
+  showAt(event, { placement: "above" });
 };
 
 const moveGroupLevelTooltip = (event: MouseEvent) => {
@@ -214,12 +206,11 @@ const groupPartyLevel = computed(() => {
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
-    :max-width="tooltipMaxWidth"
     placement="above"
     horizontal-align="left"
   />
 
-  <DefaultTooltip
+  <DescriptiveTooltip
     :show="tooltipShow && !isTitleOnlyTooltip"
     :x="tooltipX"
     :y="tooltipY"

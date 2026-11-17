@@ -3,15 +3,20 @@ import { ref } from "vue";
 export type TooltipPlacement = "above" | "below";
 export type TooltipHorizontalAlign = "right" | "left";
 
+const TooltipFlipWidthPx = 520;
+
+function getFlipWidthEstimate(): number {
+  return Math.min(window.innerWidth * 0.9, TooltipFlipWidthPx);
+}
+
 /**
  * Cursor-following tooltip position state. Use in the parent that handles mouseenter/move/leave;
  * pass show, x, y to Tooltip.vue or a content wrapper. Does not own title/body content.
  */
-export function useTooltipPosition(defaultMaxWidth = 250) {
+export function useTooltipPosition() {
   const show = ref(false);
   const x = ref(0);
   const y = ref(0);
-  const maxWidth = ref(defaultMaxWidth);
   const horizontalAlign = ref<TooltipHorizontalAlign>("right");
 
   function updatePosition(
@@ -38,20 +43,19 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
   function showAt(
     event: MouseEvent,
     options?: {
-      maxWidth?: number;
       placement?: TooltipPlacement;
       align?: TooltipHorizontalAlign;
     },
   ): void {
     show.value = true;
-
-    if (options?.maxWidth !== undefined) {
-      maxWidth.value = options.maxWidth;
-    }
-
     horizontalAlign.value = options?.align ?? "right";
 
-    updatePosition(event, maxWidth.value, options?.placement ?? "below", horizontalAlign.value);
+    updatePosition(
+      event,
+      getFlipWidthEstimate(),
+      options?.placement ?? "below",
+      horizontalAlign.value,
+    );
   }
 
   function move(event: MouseEvent, placement: TooltipPlacement = "below"): void {
@@ -59,7 +63,7 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
       return;
     }
 
-    updatePosition(event, maxWidth.value, placement, horizontalAlign.value);
+    updatePosition(event, getFlipWidthEstimate(), placement, horizontalAlign.value);
   }
 
   function hide(): void {
@@ -71,7 +75,6 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
     show,
     x,
     y,
-    maxWidth,
     horizontalAlign,
     showAt,
     move,

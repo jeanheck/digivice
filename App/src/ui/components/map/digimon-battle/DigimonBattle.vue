@@ -12,7 +12,7 @@ import DigimonBattleJunior from "@/ui/components/map/digimon-battle/DigimonBattl
 import DigimonBattleStats from "@/ui/components/map/digimon-battle/DigimonBattleStats.vue";
 import EnemyBuffStatsTooltip from "@/ui/components/map/digimon-battle/EnemyBuffStatsTooltip.vue";
 import HpProgressBar from "@/ui/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
-import TinyTooltip from "@/ui/components/tooltip/TinyTooltip.vue";
+import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
 import {
   useTooltipPosition,
   type TooltipHorizontalAlign,
@@ -33,7 +33,7 @@ const gameState = useGameState();
 const { t } = useI18n();
 
 const activeVariant = ref<TooltipVariant>("none");
-const { x, y, showAt, move, hide } = useTooltipPosition(0);
+const { x, y, showAt, move, hide } = useTooltipPosition();
 const tooltipTitle = ref("");
 const buffTooltipContent = ref({ title: "", base: 0, delta: 0, total: 0 });
 const tooltipPlacement = ref<TooltipPlacement>("below");
@@ -215,12 +215,12 @@ function onHideTooltip(): void {
       />
     </div>
 
-    <TinyTooltip
+    <Tooltip
       :show="activeVariant === 'tiny'"
       :x="x"
       :y="y"
       :title="tooltipTitle"
-      :max-width="140"
+      size="tiny"
       :placement="tooltipPlacement"
       :horizontal-align="tooltipAlign"
     />

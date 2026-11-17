@@ -11,11 +11,9 @@ const props = withDefaults(
     x: number;
     y: number;
     equipment: EquipmentViewModel | null;
-    maxWidth?: number;
     placement?: TooltipPlacement;
   }>(),
   {
-    maxWidth: 300,
     placement: "below",
   },
 );
@@ -59,7 +57,6 @@ const equipmentNote = computed(() => {
     :x="x"
     :y="y"
     :title="equipmentName"
-    :max-width="maxWidth"
     :placement="placement"
   >
     <div v-if="equipment" class="flex flex-col gap-1 w-full min-w-42.5">

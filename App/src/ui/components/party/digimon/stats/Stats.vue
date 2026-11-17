@@ -4,7 +4,7 @@ import { useI18n } from "vue-i18n";
 import type { Digimon } from "@/state/models";
 import type { DigimonStat } from "@/shared/types/digimon-stat.type";
 import Stat from "./Stat.vue";
-import DefaultTooltip from "@/ui/components/tooltip/DefaultTooltip.vue";
+import DescriptiveTooltip from "@/ui/components/tooltip/DescriptiveTooltip.vue";
 import Tooltip from "@/ui/components/tooltip/Tooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
@@ -127,7 +127,7 @@ const moveTooltip = (event: MouseEvent) => {
       </div>
     </div>
 
-    <DefaultTooltip
+    <DescriptiveTooltip
       :show="activeVariant === 'default'"
       :x="tooltipX"
       :y="tooltipY"
@@ -140,7 +140,6 @@ const moveTooltip = (event: MouseEvent) => {
       :show="activeVariant === 'title'"
       :x="tooltipX"
       :y="tooltipY"
-      :max-width="400"
       :title="titleTooltipContent"
       placement="below"
     />

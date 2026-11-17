@@ -16,13 +16,13 @@ const equipmentsSlotViewModel = computed(() => {
 });
 
 const tooltipPlacement = "above" as const;
-const tooltipPosition = useTooltipPosition(300);
+const tooltipPosition = useTooltipPosition();
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const selectedEquipment = ref<EquipmentViewModel | null>(null);
 
 const showTooltip = (event: MouseEvent, equipment: EquipmentViewModel) => {
   selectedEquipment.value = equipment;
-  showAt(event, { maxWidth: 300, placement: tooltipPlacement });
+  showAt(event, { placement: tooltipPlacement });
 };
 
 const hideTooltip = () => {
