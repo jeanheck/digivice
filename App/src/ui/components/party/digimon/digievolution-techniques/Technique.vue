@@ -150,7 +150,7 @@ function getTechniqueElementColorClass(element: string): string {
         v-if="iconUrl"
         :src="iconUrl"
         :alt="t(`techniqueTypes.${technique.type}`)"
-        class="w-[25px] h-[27px] object-contain rendering-pixelated"
+        class="w-6.25 h-6.75 object-contain rendering-pixelated"
       />
     </span>
 
