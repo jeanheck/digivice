@@ -10,6 +10,12 @@ const LanguageOptions = [
 
 const MenuGapPx = 8;
 
+const emit = defineEmits<{
+  (e: "show-tooltip", event: MouseEvent, title: string): void;
+  (e: "move-tooltip", event: MouseEvent): void;
+  (e: "hide-tooltip"): void;
+}>();
+
 const { locale } = useI18n();
 
 const isMenuOpen = ref(false);
@@ -31,6 +37,8 @@ function toggleMenu(): void {
     return;
   }
 
+  emit("hide-tooltip");
+
   const triggerRect = triggerElement.value!.getBoundingClientRect();
   menuPosition.value = {
     x: triggerRect.left + triggerRect.width / 2,
@@ -43,6 +51,19 @@ function setLocale(newLocale: string): void {
   locale.value = newLocale;
   localStorage.setItem("user-locale", newLocale);
   isMenuOpen.value = false;
+  emit("hide-tooltip");
+}
+
+function onShowTooltip(event: MouseEvent, title: string): void {
+  emit("show-tooltip", event, title);
+}
+
+function onMoveTooltip(event: MouseEvent): void {
+  emit("move-tooltip", event);
+}
+
+function onHideTooltip(): void {
+  emit("hide-tooltip");
 }
 
 function onPointerDown(event: PointerEvent): void {
@@ -76,8 +97,10 @@ onBeforeUnmount(() => {
     ref="triggerElement"
     type="button"
     class="bg-transparent border-0 px-1 py-0.5 leading-none hover:scale-110 transition-transform cursor-pointer flex items-center justify-center rounded-sm"
-    :title="activeOption.label"
     @click="toggleMenu"
+    @mouseenter="onShowTooltip($event, activeOption.label)"
+    @mousemove="onMoveTooltip"
+    @mouseleave="onHideTooltip"
   >
     <span class="font-emoji-color text-lg leading-none">{{ activeOption.flag }}</span>
   </button>
@@ -95,8 +118,10 @@ onBeforeUnmount(() => {
           :key="option.locale"
           type="button"
           class="px-1 py-0.5 leading-none rounded-sm cursor-pointer hover:bg-[#0055ff]/30 transition-colors"
-          :title="option.label"
           @click="setLocale(option.locale)"
+          @mouseenter="onShowTooltip($event, option.label)"
+          @mousemove="onMoveTooltip"
+          @mouseleave="onHideTooltip"
         >
           <span class="font-emoji-color text-lg leading-none">{{ option.flag }}</span>
         </button>

@@ -89,6 +89,22 @@ const hideBuyMeACoffeeTooltip = () => {
   isTitleOnlyTooltip.value = false;
 };
 
+const showLanguageTooltip = (event: MouseEvent, title: string) => {
+  isTitleOnlyTooltip.value = true;
+  tooltipTitle.value = title;
+  tooltipText.value = "";
+  showAt(event, { placement: "above", align: "left" });
+};
+
+const moveLanguageTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideLanguageTooltip = () => {
+  hide();
+  isTitleOnlyTooltip.value = false;
+};
+
 const showGroupCharismaTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = false;
   tooltipTitle.value = t("party.groupCharisma");
@@ -132,7 +148,7 @@ const groupPartyLevel = computed(() => {
   <footer
     class="dw3-frame [--dw3-frame-fill-color:#000a2b] w-full text-white p-2 flex items-center gap-12 px-6"
   >
-    <div class="font-bold text-ms flex items-baseline">
+    <div class="font-bold text-ms flex items-baseline cursor-default">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
         >{{ $t("player.bits") }}:</span
       >
@@ -188,7 +204,11 @@ const groupPartyLevel = computed(() => {
       </div>
 
       <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
-        <LanguageSelector />
+        <LanguageSelector
+          @show-tooltip="showLanguageTooltip"
+          @move-tooltip="moveLanguageTooltip"
+          @hide-tooltip="hideLanguageTooltip"
+        />
       </div>
 
       <div class="flex items-center">

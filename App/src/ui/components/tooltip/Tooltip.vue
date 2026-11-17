@@ -51,7 +51,7 @@ const tooltipTransform = computed(() => {
     <Transition name="fade">
       <div
         v-if="show"
-        class="fixed z-9999 pointer-events-none bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm w-max"
+        class="fixed z-[10000] pointer-events-none bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm w-max"
         :class="
           isTiny
             ? ['p-1.5', { 'flex flex-col gap-0.5': hasSlotContent }]
