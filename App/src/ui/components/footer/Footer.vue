@@ -19,121 +19,32 @@ const playerBits = computed(() => {
   return gameState.value.player.bits;
 });
 
-const tooltipPosition = useTooltipPosition();
-const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const tooltipPlacement = "above" as const;
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = useTooltipPosition();
 const tooltipTitle = ref("");
 const tooltipText = ref("");
-const isTitleOnlyTooltip = ref(false);
 
-const showDnaDigievolutionsTooltip = (event: MouseEvent) => {
-  isTitleOnlyTooltip.value = true;
-  tooltipTitle.value = t("dnaDigievolution.title");
-  tooltipText.value = "";
-  showAt(event, { placement: "above", align: "left" });
-};
-
-const moveDnaDigievolutionsTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
-
-const hideDnaDigievolutionsTooltip = () => {
-  hide();
-  isTitleOnlyTooltip.value = false;
-};
-
-const showSeabedTooltip = (event: MouseEvent) => {
-  isTitleOnlyTooltip.value = true;
-  tooltipTitle.value = t("seabed.title");
-  tooltipText.value = "";
-  showAt(event, { placement: "above", align: "left" });
-};
-
-const moveSeabedTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
-
-const hideSeabedTooltip = () => {
-  hide();
-  isTitleOnlyTooltip.value = false;
-};
-
-const showMobiusDesertTooltip = (event: MouseEvent) => {
-  isTitleOnlyTooltip.value = true;
-  tooltipTitle.value = t("mobiusDesert.title");
-  tooltipText.value = "";
-  showAt(event, { placement: "above", align: "left" });
-};
-
-const moveMobiusDesertTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
-
-const hideMobiusDesertTooltip = () => {
-  hide();
-  isTitleOnlyTooltip.value = false;
-};
-
-const showBuyMeACoffeeTooltip = (event: MouseEvent) => {
-  isTitleOnlyTooltip.value = true;
-  tooltipTitle.value = t("buyMeACoffee.title");
-  tooltipText.value = "";
-  showAt(event, { placement: "above", align: "left" });
-};
-
-const moveBuyMeACoffeeTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
-
-const hideBuyMeACoffeeTooltip = () => {
-  hide();
-  isTitleOnlyTooltip.value = false;
-};
-
-const showLanguageTooltip = (event: MouseEvent, title: string) => {
-  isTitleOnlyTooltip.value = true;
+function showTitleTooltip(event: MouseEvent, title: string): void {
   tooltipTitle.value = title;
   tooltipText.value = "";
-  showAt(event, { placement: "above", align: "left" });
-};
+  showAt(event, { placement: tooltipPlacement, align: "left" });
+}
 
-const moveLanguageTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
+function showDescriptiveTooltip(event: MouseEvent, title: string, text: string): void {
+  tooltipTitle.value = title;
+  tooltipText.value = text;
+  showAt(event, { placement: tooltipPlacement });
+}
 
-const hideLanguageTooltip = () => {
+function moveTooltip(event: MouseEvent): void {
+  move(event, tooltipPlacement);
+}
+
+function hideTooltip(): void {
   hide();
-  isTitleOnlyTooltip.value = false;
-};
-
-const showGroupCharismaTooltip = (event: MouseEvent) => {
-  isTitleOnlyTooltip.value = false;
-  tooltipTitle.value = t("party.groupCharisma");
-  tooltipText.value = t("party.groupCharismaWarning");
-  showAt(event, { placement: "above" });
-};
-
-const moveGroupCharismaTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
-
-const hideGroupCharismaTooltip = () => {
-  hide();
-};
-
-const showGroupLevelTooltip = (event: MouseEvent) => {
-  isTitleOnlyTooltip.value = false;
-  tooltipTitle.value = t("party.groupLevel");
-  tooltipText.value = t("party.groupLevelExplanation");
-  showAt(event, { placement: "above" });
-};
-
-const moveGroupLevelTooltip = (event: MouseEvent) => {
-  move(event, "above");
-};
-
-const hideGroupLevelTooltip = () => {
-  hide();
-};
+  tooltipTitle.value = "";
+  tooltipText.value = "";
+}
 
 const groupCharisma = computed(() => {
   return FooterPresenter.getPartyCharisma(gameState.value.party);
@@ -157,9 +68,11 @@ const groupPartyLevel = computed(() => {
 
     <div
       class="font-bold text-ms flex items-baseline cursor-help"
-      @mouseenter="showGroupCharismaTooltip"
-      @mousemove="moveGroupCharismaTooltip"
-      @mouseleave="hideGroupCharismaTooltip"
+      @mouseenter="
+        showDescriptiveTooltip($event, t('party.groupCharisma'), t('party.groupCharismaWarning'))
+      "
+      @mousemove="moveTooltip"
+      @mouseleave="hideTooltip"
     >
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
         >{{ $t("party.groupCharisma") }}:</span
@@ -169,9 +82,11 @@ const groupPartyLevel = computed(() => {
 
     <div
       class="font-bold text-ms flex items-baseline cursor-help"
-      @mouseenter="showGroupLevelTooltip"
-      @mousemove="moveGroupLevelTooltip"
-      @mouseleave="hideGroupLevelTooltip"
+      @mouseenter="
+        showDescriptiveTooltip($event, t('party.groupLevel'), t('party.groupLevelExplanation'))
+      "
+      @mousemove="moveTooltip"
+      @mouseleave="hideTooltip"
     >
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
         >{{ $t("party.groupLevel") }}:</span
@@ -184,45 +99,45 @@ const groupPartyLevel = computed(() => {
     >
       <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
         <SeabedButton
-          @show-tooltip="showSeabedTooltip"
-          @move-tooltip="moveSeabedTooltip"
-          @hide-tooltip="hideSeabedTooltip"
+          @show-tooltip="(event) => showTitleTooltip(event, t('seabed.title'))"
+          @move-tooltip="moveTooltip"
+          @hide-tooltip="hideTooltip"
         />
         <MobiusDesertButton
-          @show-tooltip="showMobiusDesertTooltip"
-          @move-tooltip="moveMobiusDesertTooltip"
-          @hide-tooltip="hideMobiusDesertTooltip"
+          @show-tooltip="(event) => showTitleTooltip(event, t('mobiusDesert.title'))"
+          @move-tooltip="moveTooltip"
+          @hide-tooltip="hideTooltip"
         />
       </div>
 
       <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
         <DnaDigievolutionsButton
-          @show-tooltip="showDnaDigievolutionsTooltip"
-          @move-tooltip="moveDnaDigievolutionsTooltip"
-          @hide-tooltip="hideDnaDigievolutionsTooltip"
+          @show-tooltip="(event) => showTitleTooltip(event, t('dnaDigievolution.title'))"
+          @move-tooltip="moveTooltip"
+          @hide-tooltip="hideTooltip"
         />
       </div>
 
       <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
         <LanguageSelector
-          @show-tooltip="showLanguageTooltip"
-          @move-tooltip="moveLanguageTooltip"
-          @hide-tooltip="hideLanguageTooltip"
+          @show-tooltip="showTitleTooltip"
+          @move-tooltip="moveTooltip"
+          @hide-tooltip="hideTooltip"
         />
       </div>
 
       <div class="flex items-center">
         <BuyMeACoffeeButton
-          @show-tooltip="showBuyMeACoffeeTooltip"
-          @move-tooltip="moveBuyMeACoffeeTooltip"
-          @hide-tooltip="hideBuyMeACoffeeTooltip"
+          @show-tooltip="(event) => showTitleTooltip(event, t('buyMeACoffee.title'))"
+          @move-tooltip="moveTooltip"
+          @hide-tooltip="hideTooltip"
         />
       </div>
     </div>
   </footer>
 
   <Tooltip
-    :show="tooltipShow && isTitleOnlyTooltip"
+    :show="tooltipShow && tooltipText === ''"
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
@@ -231,7 +146,7 @@ const groupPartyLevel = computed(() => {
   />
 
   <DescriptiveTooltip
-    :show="tooltipShow && !isTitleOnlyTooltip"
+    :show="tooltipShow && tooltipText !== ''"
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
