@@ -1,7 +1,7 @@
 {
   "dnaDigievolution": {
     "title": "Digievoluciones DNA",
-    "description": "La siguiente lista muestra todas las Digievoluciones DNA del juego. Cuando una de ellas esté disponible, aparecerá un indicador en las digievoluciones de tus Digimon.",
+    "description": "Estas son todas las Digievoluciones DNA disponibles en el juego. Esta lista no refleja la disponibilidad inmediata y es solo informativa.\n\nUna Digievolución DNA ocurre cuando realizas un Tag entre tus Digimon en batalla seleccionando dos Digievoluciones compatibles.\n\nCuando alguna Digievolución DNA esté disponible para usarse, las Digievoluciones involucradas se resaltarán para ti.",
     "availableTitle": "Digievolución DNA disponible",
     "tagWith": "Haz un Tag con la digievolución {digievolution} de {digimon}",
     "or": "o",
