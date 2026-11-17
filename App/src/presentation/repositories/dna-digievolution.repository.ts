@@ -3,7 +3,8 @@ import type { DnaDigievolutionTable } from "@/presentation/repositories/tables/d
 import type { DnaDigievolutionRaw } from "@/presentation/repositories/tables/raws/digievolution/dna-digievolution.raw";
 
 export class DnaDigievolutionRepository {
-  private static readonly dnaDigievolutionTable = DnaDigievolutionJson as DnaDigievolutionTable;
+  private static readonly dnaDigievolutionTable =
+    DnaDigievolutionJson as unknown as DnaDigievolutionTable;
 
   public static getById(id: string): DnaDigievolutionRaw {
     return this.dnaDigievolutionTable[id]!;
