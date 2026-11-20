@@ -16,7 +16,7 @@ It's the companion you wished you had when you first walked through Asuka Server
 
 You can see more in the video below:
 
-[![Digivice 4.0.0 (Latest major release)](https://img.youtube.com/vi/UEHe4sAQ5pM/hqdefault.jpg)](https://www.youtube.com/watch?v=UEHe4sAQ5pM)
+[![Digivice 5.0.0 (Latest major release)](https://img.youtube.com/vi/h1-KS3wvZSc/hqdefault.jpg)](https://www.youtube.com/watch?v=h1-KS3wvZSc)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R028MD8Y)
 
@@ -31,13 +31,13 @@ Past that point, many features will still work, but others will be missing. I'll
 
 More Digivice is on the way. Here's a preview of what's planned next — details and timing may change as development continues.
 
-### 4.5 — Interface and memory reading engine update
+### 5.5 — Amaterasu
 
-Changes to the Digivice interface and improvements to the memory reading engine.
+This version will cover as much of the Amaterasu server as possible, including maps, enemies, NPCs, quests, etc.
 
-### 5.0 — The Digi-Egg of Knowledge
+### 6.0 — The battle agains Galactimon
 
-Main quest update up to the point where the player obtains the Digi-Egg of Knowledge, in Amaterasu Server.
+This version will continue to cover the main story and parallel developments, leading up to the final battle against Galactimon.
 
 ## Before you continue
 
