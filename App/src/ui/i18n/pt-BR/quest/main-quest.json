@@ -1,0 +1,443 @@
+{
+  "mainQuest": {
+    "title": "Missão Principal",
+    "description": "Torne-se o maior domador(a) do Mundo Digital!",
+    "chapters": {
+      "1": {
+        "name": "O Setor Leste!"
+      },
+      "2": {
+        "name": "O Setor Sul!"
+      },
+      "3": {
+        "name": "O Setor Oeste!"
+      },
+      "4": {
+        "name": "A batalha contra a A.o.A!"
+      },
+      "5": {
+        "name": "O Digi-ovo do Conhecimento"
+      },
+      "6": {
+        "name": "O Setor Norte!"
+      }
+    },
+    "steps": {
+      "1": {
+        "description": "Procure pelo Líder Seiryu na Cidade Seiryu",
+        "locationTarget": "Repetitivo Tom"
+      },
+      "2": {
+        "description": "Fale com Líder Seiryu nas Ruínas Protocolo",
+        "locationTarget": "Líder Seiryu"
+      },
+      "3": {
+        "description": "Derrote MasterTyrannomon no Vale Tyranno",
+        "locationTarget": "MasterTyrannomon"
+      },
+      "4": {
+        "description": "Desafie o Líder Seiryu na Cidade Seiryu",
+        "locationTarget": "Líder Seiryu"
+      },
+      "5": {
+        "description": "Saia andando da Cidade Seiryu",
+        "locationTarget": "Saída"
+      },
+      "6": {
+        "description": "Vá até a Estação Leste e interaja com a Gôndola para chegar ao próximo setor",
+        "locationTarget": "Gôndola"
+      },
+      "7": {
+        "description": "Derrote o jogador misterioso que está te impedindo na Ponte Asuka",
+        "locationTarget": "Jogador Misterioso"
+      },
+      "8": {
+        "description": "Fale com Guilmon na Pousada Asuka: Andar 2 na Cidade Asuka",
+        "locationTarget": "Guilmon"
+      },
+      "9": {
+        "description": "Fale com Guilmon na Pousada Florestal",
+        "locationTarget": "Guilmon"
+      },
+      "10": {
+        "description": "Fale com Guilmon na Torre Zephyr na Cidade Seiryu",
+        "locationTarget": "Guilmon Trapaceiro"
+      },
+      "11": {
+        "description": "Retorne à Estação Leste com o Cartão Azul",
+        "locationTarget": "Gôndola"
+      },
+      "12": {
+        "description": "Confronte o Guilmon na Cidade Seiryu sobre o Cartão Azul falso",
+        "locationTarget": "Guilmon"
+      },
+      "13": {
+        "description": "Fale com Guilmon Trapaceiro na Pousada Florestal (Subsolo)",
+        "locationTarget": "Guilmon Trapaceiro"
+      },
+      "14": {
+        "description": "Retorne a Estação Leste com o verdadeiro Cartão Azul",
+        "locationTarget": "Gôndola"
+      },
+      "15": {
+        "description": "Siga através da Selva Sepultura",
+        "locationTarget": "Zanbamon"
+      },
+      "16": {
+        "description": "Fale com a Gatomon em treinamento na Pousada Pantanal",
+        "locationTarget": "Gatomon"
+      },
+      "17": {
+        "description": "Descubra quem é o ser misterioso na Casa Xamã",
+        "locationTarget": "Sepkimon"
+      },
+      "18": {
+        "description": "Encontre Baronmon",
+        "locationTarget": "Baronmon"
+      },
+      "19": {
+        "description": "Procure por Sepkimon próximo a Cidade Asuka ou arredores",
+        "locationTarget": "Sepkimon"
+      },
+      "20": {
+        "description": "Fale com Etemon perto do El Dorado Id",
+        "locationTarget": "Etemon"
+      },
+      "21": {
+        "description": "Procure pelo Sepikmon no Lago dos Divermons",
+        "locationTarget": "Sepkimon"
+      },
+      "22": {
+        "description": "Fale com Etemon perto do El Dorado Id novamente",
+        "locationTarget": "Etemon"
+      },
+      "23": {
+        "description": "Persiga Etemon nos Esgotos Asuka",
+        "locationTarget": "Etemon"
+      },
+      "24": {
+        "description": "Retorne a máscara ao Sepkimon na Casa Xamã",
+        "locationTarget": "Sepkimon"
+      },
+      "25": {
+        "description": "Use a Erva Fedida para tirar Zanbamon da Selva Sepultura",
+        "locationTarget": "Zanbamon"
+      },
+      "26": {
+        "description": "Entre em Cidade Suzaku e procure uma pousada para descansar",
+        "locationTarget": "Lisa"
+      },
+      "27": {
+        "description": "Desafie a Líder Suzaku no Salão Suzaku",
+        "locationTarget": "Líder Suzaku"
+      },
+      "28": {
+        "description": "Retorne à Pousada Suzaku após derrotar a Líder Suzaku",
+        "locationTarget": "Kail"
+      },
+      "29": {
+        "description": "Busque por informações no Costeleta de Cordeiro",
+        "locationTarget": "Mestre John"
+      },
+      "30": {
+        "description": "Procure pelo casal de domadores perto do El Dorado",
+        "locationTarget": "Casal de domadores"
+      },
+      "31": {
+        "description": "Vá para onde você viu Etemon pela última vez",
+        "locationTarget": "Etemon"
+      },
+      "32": {
+        "description": "Relate suas descobertas a Kail no Salão Principal",
+        "locationTarget": "Kail"
+      },
+      "33": {
+        "description": "Confronte o Pernicioso Mat nos Esgotos Asuka",
+        "locationTarget": "Pernicioso Mat"
+      },
+      "34": {
+        "description": "Volte para o Caminho Subterrâneo e encontre Kail",
+        "locationTarget": "Kail"
+      },
+      "35": {
+        "description": "Entre no Centro Administrativo vestindo a roupa de Agumon",
+        "locationTarget": "Centro Administrativo - 1º Andar"
+      },
+      "36": {
+        "description": "Encontre a Kail no Centro Administrativo - 2º Andar",
+        "locationTarget": "Kail"
+      },
+      "37": {
+        "description": "Procure por pistas de como prosseguir em Baía Fênix",
+        "locationTarget": "Nami"
+      },
+      "38": {
+        "description": "Procure pelo gato da Nami em Pântano Bios",
+        "locationTarget": "Gato Perdido"
+      },
+      "39": {
+        "description": "Peça ajuda ao Sepkimon para quebrar a parede",
+        "locationTarget": "Sepkimon"
+      },
+      "40": {
+        "description": "Procure pelo Baronmon para que ele lhe ajude com bombas",
+        "locationTarget": "Baronmon"
+      },
+      "41": {
+        "description": "Consiga uma Bola TNT de um Triceramon e entregue para Baronmon",
+        "locationTarget": "Baronmon"
+      },
+      "42": {
+        "description": "Utilize o Chip TNT para abrir a parede em Pântano Bios",
+        "requisites": {
+          "tntBall": "Bola TNT"
+        },
+        "locationTarget": "Parede"
+      },
+      "43": {
+        "description": "Encontre o Digi-Ovo da Sinceridade",
+        "locationTarget": "Digi-Ovo da Sinceridade"
+      },
+      "44": {
+        "description": "Vá em direção à Cidade Byakko",
+        "locationTarget": "Numemon"
+      },
+      "45": {
+        "description": "Desafie o Líder Byakko na Cidade Byakko",
+        "locationTarget": "Líder Byakko"
+      },
+      "46": {
+        "description": "Procure alguém para te ajudar a sair da Caverna Subterrânea",
+        "locationTarget": "Cidadão Byakko"
+      },
+      "47": {
+        "description": "Busque uma maneira de sair da Caverna Subterrânea",
+        "locationTarget": "Saída"
+      },
+      "48": {
+        "description": "Desafie o verdadeiro Líder Byakko na Torre Miragem",
+        "locationTarget": "Líder Byakko"
+      },
+      "49": {
+        "description": "Entre na Fábrica Dum Dum",
+        "locationTarget": "Entre na fábrica"
+      },
+      "50": {
+        "description": "Persiga o Numemon",
+        "locationTarget": "Numemon"
+      },
+      "51": {
+        "description": "Entre na Sala de Tubulação 01",
+        "locationTarget": "Sala de Tubulação 01"
+      },
+      "52": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 01",
+        "locationTarget": "Caixa"
+      },
+      "53": {
+        "description": "Continue perseguindo o Numemon",
+        "locationTarget": "Numemon"
+      },
+      "54": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 04",
+        "locationTarget": "Caixa"
+      },
+      "55": {
+        "description": "Não desista! Vá atrás do Numemon",
+        "locationTarget": "Numemon"
+      },
+      "56": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 02",
+        "locationTarget": "Caixa"
+      },
+      "57": {
+        "description": "Ele não cansa nunca? Siga Numemon",
+        "locationTarget": "Numemon"
+      },
+      "58": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 03",
+        "locationTarget": "Caixa"
+      },
+      "59": {
+        "description": "Vá para o centro da fábrica para procurar pelo Numemon",
+        "locationTarget": "Numemon"
+      },
+      "60": {
+        "description": "Peça informações sobre o Numemon ao HiAndromon dentro da Sala de Operações",
+        "locationTarget": "HiAndromon"
+      },
+      "61": {
+        "description": "Siga para os Esgotos atrás de Numemon",
+        "locationTarget": "Numemon"
+      },
+      "62": {
+        "description": "Procure uma forma de entrar na Cidade Asuka",
+        "locationTarget": "Datamon"
+      },
+      "63": {
+        "description": "Retorne para a Sala Secreta e pergunte a seus amigos sobre o Passe Pessoal",
+        "locationTarget": "Kail"
+      },
+      "64": {
+        "description": "Procure por Keith e Nicky no Setor Sul",
+        "locationTarget": "Keith & Nicky"
+      },
+      "65": {
+        "description": "Com a ajuda de todos, procure pelo Passe Pessoal dentro da Sala Secreta",
+        "locationTarget": "Lisa"
+      },
+      "66": {
+        "description": "Use o Passe Pessoal e peça para o Datamon abrir o portão",
+        "locationTarget": "Datamon"
+      },
+      "67": {
+        "description": "Derrote o Patrulheiro que te impede de entrar no Centro Admin Subsolo: Andar 1",
+        "locationTarget": "Patrulheiro"
+      },
+      "68": {
+        "description": "Derrote o Patrulheiro que te impede de continuar pelo Centro Admin Subsolo: Andar 1",
+        "locationTarget": "Patrulheiro"
+      },
+      "69": {
+        "description": "Derrote o Patrulheiro que te impede de sair do Centro Admin Subsolo: Andar 1",
+        "locationTarget": "Patrulheiro"
+      },
+      "70": {
+        "description": "Derrote o Patrulheiro na entrada das Escadas do Subsolo",
+        "locationTarget": "Patrulheiro"
+      },
+      "71": {
+        "description": "Derrote o Patrulheiro ao fim das Escadas do Subsolo",
+        "locationTarget": "Patrulheiro"
+      },
+      "72": {
+        "description": "Derrote o Patrulheiro para sair das Escadas do Subsolo",
+        "locationTarget": "Patrulheiro"
+      },
+      "73": {
+        "description": "Derrote o Patrulheiro na entrada do Centro Administrativo: Andar 1",
+        "locationTarget": "Patrulheiro"
+      },
+      "74": {
+        "description": "Derrote o Patrulheiro antes de subir as escadas do Centro Administrativo: Andar 1",
+        "locationTarget": "Patrulheiro"
+      },
+      "75": {
+        "description": "Derrote o Patrulheiro para andar pelo Centro Administrativo: Andar 2",
+        "locationTarget": "Patrulheiro"
+      },
+      "76": {
+        "description": "Derrote o Patrulheiro após subir as escadas do Centro Administrativo: Andar 2",
+        "locationTarget": "Patrulheiro"
+      },
+      "77": {
+        "description": "Derrote o Soldado no corredor de acesso a Sala Mestre",
+        "locationTarget": "Soldado"
+      },
+      "78": {
+        "description": "Derrote o General que te impede de entrar na Sala Mestre",
+        "locationTarget": "General"
+      },
+      "79": {
+        "description": "\"GUBI!?\" Defenda-se do Digimon estranho que saiu da sala",
+        "locationTarget": "Vemmon"
+      },
+      "80": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"M\"",
+        "locationTarget": "Letra \"M\""
+      },
+      "81": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"O\"",
+        "locationTarget": "Letra \"O\""
+      },
+      "82": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"N\"",
+        "locationTarget": "Letra \"N\""
+      },
+      "83": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"S\"",
+        "locationTarget": "Letra \"S\""
+      },
+      "84": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"T\"",
+        "locationTarget": "Letra \"T\""
+      },
+      "85": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"R\"",
+        "locationTarget": "Letra \"R\""
+      },
+      "86": {
+        "description": "Dentro da Sala Mestre, toque no quadro que representa a letra \"O\"",
+        "locationTarget": "Letra \"O\""
+      },
+      "87": {
+        "description": "Derrote os Guardas na entrada Quartel General A.o.A",
+        "locationTarget": "Guardas"
+      },
+      "88": {
+        "description": "Confronte a Game Master dentro do Quartel General A.o.A",
+        "locationTarget": "Game Master"
+      },
+      "89": {
+        "description": "Interrogue o General da A.o.A aprisionado na Caverna Subterrânea",
+        "locationTarget": "General"
+      },
+      "90": {
+        "description": "Busque por informações sobre o Bulbmon no Setor Sul",
+        "locationTarget": "Patamon"
+      },
+      "91": {
+        "description": "Procure pela Líder Suzaku dentro do Santuário da Selva",
+        "locationTarget": "Líder Suzaku"
+      },
+      "92": {
+        "description": "Atravesse o Labirinto dos Bugs para chegar ao servidor de Amaterasu",
+        "locationTarget": "Bulbmon"
+      },
+      "93": {
+        "description": "Esse lugar parece familiar... Busque informações sobre a sua situação",
+        "locationTarget": "Garoto"
+      },
+      "94": {
+        "description": "Pergunte ao líder da cidade mais próxima onde está o Digi-Ovo do Conhecimento",
+        "locationTarget": "Líder Qing Long"
+      },
+      "95": {
+        "description": "Enquanto finge ser o Líder Qing Long, fale com o Patrulheiro para entrar na Cidade Zhu Que",
+        "locationTarget": "Patrulheiro"
+      },
+      "96": {
+        "description": "Questione o Líder Zhu Que sobre onde está o Digi-Ovo do Conhecimento",
+        "locationTarget": "Líder Zhu Que"
+      },
+      "97": {
+        "description": "Procure pelo Digi-Ovo do Conhecimento no Setor Sul de Amaterasu",
+        "locationTarget": "Digi-Ovo do Conhecimento"
+      },
+      "98": {
+        "description": "Use o Digi-Ovo do Conhecimento para chegar a Cidade Genbu e derrotar o Líder",
+        "locationTarget": "Líder Genbu"
+      },
+      "99": {
+        "description": "Derrote a Bruxa do Gelo na Masmorra de Gelo",
+        "locationTarget": "Bruxa do Gelo"
+      },
+      "100": {
+        "description": "Derrote o Cavaleiro de Fogo na Masmorra de Fogo",
+        "locationTarget": "Cavaleiro de Fogo"
+      },
+      "101": {
+        "description": "Derrote o Cavaleiro das Trevas na Masmorra das Trevas",
+        "locationTarget": "Cavaleiro das Trevas"
+      },
+      "102": {
+        "description": "Fale com o Operador na Câmara para voltar ao mundo real",
+        "locationTarget": "Operador"
+      },
+      "103": {
+        "description": "Dentro da base Magasta, procure por uma maneira de parar o Juggernaut",
+        "locationTarget": "Soldado Mech"
+      }
+    }
+  }
+}

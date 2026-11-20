@@ -61,7 +61,7 @@ memoryId + groupId, first owner wins):
 `589`/`590` Guardromon(Blue)/Tankmon group 189, `591`/`592` Guardromon(Blue)/Tankmon group 190.
 `113` / `126` remain the generic entries (`groupId: null`).
 
-Also: names in `i18n/locales/{pt-BR,en-US}/npcs.json` (including `gameMaster`) and
+Also: names in `ui/i18n/{pt-BR,en-US}/npcs.json` (including `gameMaster`) and
 `map.json` `npcs` on `0214`, `0215`, `0217`, `0219`, `021A`.
 
 ## Pending (future iteration)

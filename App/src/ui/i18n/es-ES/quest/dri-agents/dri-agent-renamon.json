@@ -1,0 +1,27 @@
+{
+  "driAgentRenamon": {
+    "title": "Renamon (DRI Michael)",
+    "description": "Añade a Renamon a tu grupo de Digimon",
+    "requisites": {
+      "partyLevel": "Tener un nivel de grupo entre 45 y 60",
+      "submarimon": "Tener el Digihuevo de la Sinceridad"
+    },
+    "steps": {
+      "1": {
+        "description": "Busca a DRI Michael en el Parque Central",
+        "locationTarget": "DRI Michael"
+      },
+      "2": {
+        "description": "Derrota a Taomon en combate para recibir el DDNA de Renamon",
+        "locationTarget": "Taomon"
+      },
+      "3": {
+        "description": "Entrega el DNA de Renamon a DRI Michael",
+        "requisites": {
+          "renamonDDNA": "DDNA de Renamon"
+        },
+        "locationTarget": "DRI Michael"
+      }
+    }
+  }
+}

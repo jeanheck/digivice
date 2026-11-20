@@ -1,0 +1,20 @@
+{
+  "npc": {
+    "battle": {
+      "card": "Cartas",
+      "digimon": "Digimon",
+      "requirement": {
+        "missingCharisma": "Carisma insuficiente o fuera del rango",
+        "missingAsukaTrophy": "Falta el Trofeo Asuka",
+        "missingSunTrophy": "Falta el Trofeo Sol",
+        "missingCharismaAndAsukaTrophy": "Carisma insuficiente o fuera del rango; Falta el Trofeo Asuka",
+        "missingCharismaAndSunTrophy": "Carisma insuficiente o fuera del rango; Falta el Trofeo Sol",
+        "unavailableAfterAsukaTrophy": "No disponible después del Trofeo Asuka",
+        "unavailableAfterSunTrophy": "No disponible después del Trofeo Sol",
+        "available": "Combate disponible",
+        "alreadyWon": "Ya ganaste este combate"
+      }
+    },
+    "folderBagRequirementHint": "* Tener la Bolsa de Carpetas es un requisito para los combates contra entrenadores."
+  }
+}

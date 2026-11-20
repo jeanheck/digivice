@@ -1,0 +1,27 @@
+{
+  "driAgentKumamon": {
+    "title": "Kumamon (DRI Yuji)",
+    "description": "Add Kumamon to your Digimon party",
+    "requisites": {
+      "partyLevel": "Have a party level between 60 and 90",
+      "submarimon": "Have the Digi-Egg of Sincerity"
+    },
+    "steps": {
+      "1": {
+        "description": "Look for Dri Yuji in Mobius Desert",
+        "locationTarget": "DRI Yuji"
+      },
+      "2": {
+        "description": "Defeat GrapLeomon in battle to receive Kumamon's DDNA",
+        "locationTarget": "GrapLeomon"
+      },
+      "3": {
+        "description": "Deliver Kumamon's DNA to DRI Yuji",
+        "requisites": {
+          "kumamonDDNA": "Kumamon's DDNA"
+        },
+        "locationTarget": "DRI Yuji"
+      }
+    }
+  }
+}

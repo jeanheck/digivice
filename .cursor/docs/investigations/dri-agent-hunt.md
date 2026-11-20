@@ -65,22 +65,22 @@ Unchanged known slots are expected when that agent is already complete on the sa
 
 ```json
 {
-    "Id": "driAgent{Rookie}",
-    "Steps": [
-        { "Number": 1, "Address": "0x0004B38C", "BitMasks": ["0x__"] },
-        { "Number": 2, "Address": "0x0004B3B7", "BitMasks": ["0x__"] },
+    "id": "driAgent{Rookie}",
+    "steps": [
+        { "number": 1, "address": "0x0004B38C", "bitMasks": ["0x__"] },
+        { "number": 2, "address": "0x0004B3B7", "bitMasks": ["0x__"] },
         {
-            "Number": 3,
-            "Address": "0x0004____",
-            "BitMasks": ["0x__"],
-            "Requisites": [
-                { "Id": "{rookie}DDNA", "Address": "0x00048___" }
+            "number": 3,
+            "address": "0x0004____",
+            "bitMasks": ["0x__"],
+            "requisites": [
+                { "id": "{rookie}DDNA", "address": "0x00048___" }
             ]
         }
     ]
 }
 ```
 
-Path: `Backend/Memory/Definitions/Quests/DriAgents/{Name}Addresses.json`.
+Path: `App/src/data/memory-addresses/quests/dri-agents/{name-kebab}-addresses.json`.
 
-After confirmation, integrate via skill `quest-pattern-backend` then `quest-pattern-frontend`.
+After confirmation, integrate via skill `journal-quest-integration`.

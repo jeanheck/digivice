@@ -1,0 +1,33 @@
+{
+  "id": "driAgentRenamon",
+  "requisites": [
+    {
+      "id": "submarimon",
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38C",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 3,
+      "address": "0x0004ABBC",
+      "bitMasks": ["0x09"],
+      "requisites": [
+        {
+          "id": "renamonDDNA",
+          "address": "0x00048DD6"
+        }
+      ]
+    }
+  ]
+}

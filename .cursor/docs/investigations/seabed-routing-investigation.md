@@ -1,7 +1,7 @@
 # Seabed underwater routing — memory investigation
 
 Domain: map / location  
-Status: confirmed — `SeabedRoute` / `IsSubmerged` in `PlayerAddresses.json` + Player pipeline; frontend pending  
+Status: confirmed — `seabedRoute` / `IsSubmerged` in `player-addresses.json` + Player pipeline; frontend pending  
 Related: [patterns/](../../skills/memory-compare/patterns/), [memory-regions.md](../../skills/memory-compare/memory-regions.md)
 
 ---
@@ -25,7 +25,7 @@ Example routes (confirmed):
 | `0227` Divermon's Lake | `02E2` → `02E0` | `0228` Duel Island | `0x08` |
 | `0228` Duel Island | `02E0` → `02E2` | `0227` Divermon's Lake | `0x08` *(same corridor, reverse)* |
 
-Location IDs reference `Frontend/src/database/map.json`.
+Location IDs reference `App/src/data/game/map.json`.
 
 ---
 
@@ -97,7 +97,7 @@ Snapshots used for the reverse Divermon's ↔ Duel run:
 
 | Address | Field | Type | Behavior |
 |---------|-------|------|----------|
-| `0x0004B3F8` | Current MapId | u8 | Already in `PlayerAddresses.json`. Physical map the player is on. |
+| `0x0004B3F8` | Current MapId | u8 | Already in `player-addresses.json`. Physical map the player is on. |
 | `0x0004B400` | PreviousMapId | u8 | Rolling: on each transition, receives the map the player **just left**. On first dive, equals surface entry map. |
 | `0x0004B410` | MapId mirror | u8 | Tracks current `MapId` (same value as `0x4B3F8` in all observed transitions). |
 
@@ -106,8 +106,8 @@ Snapshots used for the reverse Divermon's ↔ Duel run:
 | Address | Field | Type | Behavior |
 |---------|-------|------|----------|
 | `0x00048D68` | PreviousMapId mirror | u8 | Mirrors `0x4B400` on every observed transition (~32 bytes before name at `0x48D88`). |
-| `0x00048D78` | SeabedRoute | u8 | In `PlayerAddresses.json` as `SeabedRoute`. Set on dive; **persists** for the whole underwater session; cleared on surface emerge. Identifies the **corridor** (dock pair), independent of which end you enter. |
-| `0x00048D7A` | IsSubmerged | u8 | In `PlayerAddresses.json` as `IsSubmerged`. `0x01` while underwater; `0x00` on surface. Domain maps to `bool` (`== 0x01`). Indicates session, not which route. |
+| `0x00048D78` | SeabedRoute | u8 | In `player-addresses.json` as `seabedRoute`. Set on dive; **persists** for the whole underwater session; cleared on surface emerge. Identifies the **corridor** (dock pair), independent of which end you enter. |
+| `0x00048D7A` | IsSubmerged | u8 | In `player-addresses.json` as `IsSubmerged`. `0x01` while underwater; `0x00` on surface. Domain maps to `bool` (`== 0x01`). Indicates session, not which route. |
 
 ---
 
@@ -180,15 +180,15 @@ map IDs directly.
 
 ## Tracker implications
 
-### Done (backend Player pipeline)
+### Done (Player pipeline)
 
 - `SeabedRoute` (`0x48D78`) and `MapVariant` (`0x48D7A`, formerly
-  SeabedRouteType, formerly documented as IsSubmerged) are in `PlayerAddresses.json`, read by
-  `PlayerReader`, assembled on `Player`, and emitted via `PlayerChanged`
-  (`PlayerDTO`).
-- `PreviousMapId` (`0x4B400`) is in `PlayerAddresses.json` — same shape as
-  `MapId` (Int16 → hex `X4` string) through the Player pipeline and frontend
-  syncer (`previousMapId`).
+  SeabedRouteType, formerly documented as IsSubmerged) are in `player-addresses.json`, read by
+  `PlayerReader` and assembled on `Player` (`seabedRoute`, `mapVariant`) by
+  `PlayerAssembler`.
+- `previousMapId` (`0x4B400`) is in `player-addresses.json` — same shape as
+  `MapId` (Int16 → hex `X4` string) through the Player pipeline
+  (`previousMapId`).
 
 ### Still open
 
@@ -210,8 +210,8 @@ When `MapId` is a seabed ID (`02Ex`) and submerged (`MapVariant == 1`):
       Divermon's ↔ Duel both ways)
 - [x] `0x48D78` confirmed as corridor identity (direction-independent)
 - [x] Retrofed to `memory-regions.md` and `patterns/*.md`
-- [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `MapVariant`)
-- [x] Frontend syncer/store for `SeabedRoute` / `MapVariant`
-- [x] `PreviousMapId` (`0x4B400`) in backend + frontend syncer
+- [x] Integrated in `player-addresses.json` / TS memory layer (`seabedRoute`, `mapVariant`)
+- [x] Exposed in `useGameStore` (`player.seabedRoute` / `player.mapVariant`)
+- [x] `PreviousMapId` (`0x4B400`) in the TS memory layer (`player.previousMapId`)
 - [ ] Route table complete for all dive points
 - [ ] Reverse test for Suzaku City ↔ Suzaku UG Lake (`0x07`)

@@ -1,5 +1,5 @@
 ---
-description: Regras de domínio Digivice — arquitetura SignalR, party, journal, digievolutions, batalhas
+description: Regras de domínio Digivice — arquitetura (loop TS + patch), party, journal, digievolutions, batalhas
 alwaysApply: true
 ---
 
@@ -11,22 +11,18 @@ Tracker de memória para *Digimon World 2003* rodando no emulador *Duckstation*.
 
 ```mermaid
 graph TD
-    subgraph backendSide [Backend - C# .NET]
-        emulator[Duckstation RAM] --> gameLoop[GameLoopService]
+    subgraph tauriSide [Tauri - Rust]
+        emulator[Duckstation RAM] --> readRam[read_ram]
+    end
+    subgraph appSide [App - TS / Vue 3]
+        readRam -->|"snapshot 2 MiB"| gameLoop[GameLoop]
         gameLoop --> composer[StateComposer]
         composer --> providers[Providers]
-        providers --> loaders[Loaders]
-        loaders -->|"Addresses + Readers"| resources[Resources]
+        providers -->|"Addresses + Readers"| resources[Resources]
         resources --> assemblers[Assemblers]
         assemblers --> state[State]
-        state -->|"atual + anterior"| stateEvents[StateEventFactory]
-        stateEvents -->|"apenas alterações"| dispatcher[EventDispatcher SignalR]
-    end
-    subgraph frontendSide [Frontend - TS / Vue 3]
-        dispatcher --> handlers[signalr.handlers]
-        handlers --> converters[events converters]
-        converters --> syncers[Syncers]
-        syncers --> pinia[useGameStore]
+        state -->|"patch in place"| patcher[StatePatcher]
+        patcher --> pinia[useGameStore]
         pinia --> selectors[Selectors]
         pinia --> components[Componentes Vue]
         selectors --> components
@@ -34,51 +30,81 @@ graph TD
 ```
 
 - **Responsabilidades:**
-  - **Backend** lê a RAM e normaliza o necessário para que cada dado tenha significado próprio (sentinela → `null`, valor inválido ajustado — ex.: negativo → `0`). Não gera informação composta.
-  - **Frontend** gera informação nova a partir de dados já consistentes, em `stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`).
+  - **Camada de memória** (`App/src/memory/`, readers + assemblers) lê a RAM e normaliza o necessário para que cada dado tenha significado próprio (sentinela → `null`, valor inválido ajustado — ex.: negativo → `0`). Não gera informação composta.
+  - **Selectors** geram informação nova a partir de dados já consistentes, em `state/stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`).
   - Composição com dados estáticos (repositórios, equipamentos, i18n) fica em presenters/services, não em selectors.
 
-- **Game loop:** `GameLoopService` compõe o `State` via `StateComposer` a cada `GameLoop:PollingIntervalMs` (default **500ms**). Também emite `HealthChanged` (`HealthEventFactory`) para conexão com o emulador.
-- **Composição:** `StateComposer` → `I{Entity}Provider.Get()` → `{Entity}Loader` → `{Entity}Assembler`. Entidades do `State`: `Player`, `ImportantItems`, `Party`, `DigimonBattle`, `CardBattle`, `Auctions`, `Npcs`, `Journal`.
-- **Camadas de memória:** Addresses → Loader → Reader → Resource → Assembler (detalhe em `digivice-backend.mdc`).
-- **Diffs:** `StateEventFactory` delega a `{Entity}EventFactory`; só propriedades que mudaram entram nos DTOs (`Optional<T>`). Eventos: `PlayerChanged`, `ImportantItemsChanged`, `PartyChanged`, `DigimonBattleChanged`, `CardBattleChanged`, `AuctionsChanged`, `NpcsChanged`, `JournalChanged`.
-- **InitialState:** DTO completo do State na conexão (`StateConverter` → Pinia). `StateDTO` sempre traz as 8 entidades (`required` no C#). O backend envia `InitialState` antes de `HealthChanged(Healthy)`: `Healthy` implica estado presente.
-- **Incremental:** eventos posteriores trazem só alterações; Syncers mutam de forma cirúrgica.
-- **Regra de ouro do Syncer:** valor `undefined` (não enviado) → **não mutar**.
+- **Game loop:** `GameLoop` (TS) lê o snapshot via `read_ram` e compõe o `State` via `StateComposer` a cada `AppConfig.memory.pollingIntervalMs` (**500ms**). Saúde na `useGameStore`: `Loading` até o primeiro tick, `Healthy` com estado, `Error` (código do Rust, `memory_read_failed`, `save_not_loaded` ou `state_compose_failed`) limpa o estado.
+- **Composição:** `StateComposer` → `{Entity}Provider.get(snapshot)` → `{Entity}Reader` → `{Entity}Assembler`. Entidades do `State`: `Player`, `ImportantItems`, `Party`, `DigimonBattle`, `CardBattle`, `Auctions`, `Npcs`, `Journal`.
+- **Primeiro estado:** primeiro tick (ou primeiro após erro) atribui o `State` completo; `Healthy` implica estado presente.
+- **Incremental:** ticks seguintes passam pelo `StatePatcher` (`src/memory/patch/`): muda só o valor que mudou, listas casadas por chave, regras dependentes do estado anterior (detalhe em `digivice-frontend-sync.mdc`).
 - **SSOT:** componentes consomem o estado via `useGameState()` (lê `useGameStore`); sem controllers intermediários.
 
 ## Player
 
 - **Name não é lido** pelo Digivice (referência futura). Address `0x00048D88`, buffer 10 bytes, charset custom (A–Z `0x0E`–`0x27`, a–z `0x28`–`0x41`, espaço `0x01`, termina em `0x00`/`0xFF`).
-- `MapId` e `PreviousMapId` são expostos com o mesmo nome no DTO (string hex `X4`).
-- `SeabedRoute` e `MapVariant`: RAM `0` → `null` no `PlayerAssembler` (sem rota / sem variante).
+- `mapId` e `previousMapId` são expostos no modelo como string hex `X4`.
+- `seabedRoute` e `mapVariant`: RAM `0` → `null` no `PlayerAssembler` (sem rota / sem variante).
 
 ## Party
 
 - Máximo 3 Digimons; lista de slots **sempre** com exatamente 3 `DigimonSlot`.
-- Cada `digimonId` é único na party (o jogo não permite Digimons repetidos); por isso o `DigimonSlotDiffer` compara slots por `DigimonId`.
+- Cada `digimonId` é único na party (o jogo não permite Digimons repetidos); por isso o `StatePatcher` troca o `digimon` inteiro quando o `digimonId` do slot muda.
 - Sempre pelo menos 1 slot ocupado.
 - Slot ocupado: `digimonId` e `digimon` ambos não-nulos. Slot vazio: ambos nulos. Um nulo e outro preenchido = inconsistência.
+- **Save carregado** (`SaveLoadedValidator`, chamado pelo `StateComposer`): pelo menos 1 slot ocupado, `digimonId` sem repetição e level 1–99 em todo slot ocupado. Violação = `save_not_loaded` (tela de orientação, estado limpo). Pega DuckStation sem jogo (RAM zerada = três Kotemons nível 0), tela de título e jogo novo sem parceiros; não depende da ROM (funciona com ROMs modificadas). Jogo fechado no DuckStation deixa a RAM congelada com dados válidos: indistinguível de pausa, aceito.
+- **Slot vazio na RAM = `0xFF`** (`emptySlotId` em `party-addresses.json`), não `0`: Kotemon tem id `0`. Id ausente dos endereços de Digimons também vira slot vazio (`PartyReader`).
 - `digimonId` fica no slot; `Digimon` carrega só estado dinâmico da RAM. Dados estáticos (nome, EXP curve, digievolutions) vêm de presenters/repositórios via `digimonId`.
 - UI (`App.vue`): estado chega com 3 slots; renderizar **apenas** slots ocupados (filtro de apresentação, não omissão do modelo).
 
 ## Digimon e Digievolutions
 
-- Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio — garantido pelo `DigievolutionSlotSyncer`, que ignora o `null` e registra `storeLogger.warn`; o backend repassa a RAM sem guardar estado entre leituras.
+- Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio — garantido pelo `StatePatcher`, que mantém o slot anterior e registra `storeLogger.warn` uma vez por transição; o assembler repassa a RAM sem guardar estado entre leituras.
 - UI “empty” = slot que **nunca** foi preenchido (RAM `0` → domínio `null`), não um slot que “perdeu” evolução.
-- **Level/Dvexp do slot** (`DigievolutionSlotAssembler`): cruzamento por id com `StoredDigievolutions`; id ausente da lista → `Level = 1`, `Dvexp = 0`.
-- **DVEXP:** valor **acumulado**, nunca zera. Custo por nível depende do **tier** da digievolução (`tier` 1–5 em `digievolution.json`): 10 DVEXP por nível até o nível de corte, 50 a partir dele. Cortes: tier 1 = 99 (sempre 10), tier 2 = 95, tier 3 = 90, tier 4 = 80, tier 5 = 60 (totais 980 / 1140 / 1340 / 1740 / 2540). Barra de 10 segmentos (5 DVEXP por segmento no regime de 50); nível 99 = barra cheia. Calculado no `DigievolutionDvexpPresenter` usando o `level` da RAM para escolher o regime. RAM negativa → `0` no `DigievolutionSlotAssembler`. Nome canônico **DVEXP** (`Dvexp` em C#, `dvexp` em TS/JSON); não usar `dvxp`.
+- **Level/DVEXP do slot** (`DigimonAssembler`): cruzamento por id com `storedDigievolutions`; id ausente da lista → `level = 1`, `dvexp = 0`.
+- **DVEXP:** valor **acumulado**, nunca zera. Custo por nível depende do **tier** da digievolução (`tier` 1–5 em `digievolution.json`): 10 DVEXP por nível até o nível de corte, 50 a partir dele. Cortes: tier 1 = 99 (sempre 10), tier 2 = 95, tier 3 = 90, tier 4 = 80, tier 5 = 60 (totais 980 / 1140 / 1340 / 1740 / 2540). Barra contínua com texto `atual / máximo` do nível corrente (máximo 10 ou 50 conforme o regime); nível 99 = barra cheia com o máximo do regime. Calculado no `DigievolutionDvexpPresenter` usando o `level` da RAM para escolher o regime. RAM negativa → `0` no `DigimonAssembler`. Nome canônico **DVEXP** (`dvexp` em TS/JSON); não usar `dvxp`.
 - **DVEXP ganho em batalha** (`DvexpService.calculateBattleGain`): `max(1, floor(10 × base / min(level, 50)))`, com teto de **10** apenas enquanto a **digievolução ativa** está no regime de 10 DVEXP por nível (tier 1 sempre; tiers 2–5 abaixo do nível de corte). No regime de 50 (tier 2–5 a partir do corte) não há teto. `base` = `dvexp` do inimigo (`enemy.json`) ou da batalha inteira (NPC/tamer, `npc/*.json`); `level` = level do Digimon da party (o level dos adversários não entra). Sem digievolução ativa → sem cálculo (UI exibe `-`). Arredonda **para baixo** (`floor`), diferente da divisão de EXP entre vários participantes, que arredonda para cima. A Wiki exibe o ganho do Digimon batalhando **sozinho**; divisão por participantes fora do escopo. Validado: Natsumi (base 4) → nv 20 ganha 2, nv 24 ganha 1; Digitamamon (tier 3) contra Gesomon (base 27) ganha no máximo 10 antes do nível 90 da digievolução e 11 a partir dele.
 - **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0`, inclusive sentinela `0xFFFF`, → `null`; não usar `0` como “vazio” no contrato).
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
 - Técnicas no campo `techniques` de cada entrada do `digievolution.json`; assinatura = maior `learnAt`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
 - Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
 - **Tabelas de EXP** (`experience` em `digimon.json`): EXP **acumulado** para atingir cada level (RAM: `MemoryBlockAddress + 0x18`, Int32). Origem: estimativas de fontes externas (GameFAQs etc.), em verificação manual no jogo level a level. 5 tabelas: 3 compartilhadas por pares (Guilmon = Renamon, Agumon = Patamon, Kotemon = Veemon) e 2 individuais — Monmon (a mais rápida, menos EXP por level) e Kumamon (a mais lenta). **Todas verificadas.** Fórmula: `EXP(n) ≈ fator × (n³ + 5n − 5) + bônus` (level 1 = 0); fator Monmon 0.6, Guilmon/Renamon 0.7, Kotemon/Veemon 0.8, Agumon/Patamon 0.9, Kumamon 1.0 (exato, sem arredondamento; nos demais ±1 por arredondamento). Bônus cumulativo, igual para todos: +50 a partir do level 5, +750 a partir do 20, +2200 a partir do 40 (total 50 / 800 / 3000). A tabela original do Kumamon (fonte externa) estava errada a partir do level 8 e foi regerada pela fórmula.
-- Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE (`BlastAddress` em `DigimonsAddresses.json`).
+- Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE (`blastAddress` em `digimons-addresses.json`).
+
+## DNA Digievolutions
+
+- Dados estáticos em `dna-digievolution.json`: cada DNA DV tem uma ou mais combinações de duas digievoluções (`digievolutions`, ids de `digievolution.json`; Agunimon tem duas) e `order`, que define a ordem de exibição (ordem de liberação no jogo).
+- **Fusão disponível** (`DnaDigievolutionService.hasAvailableFusion`): a digievolução de um slot participa de alguma combinação e a outra digievolução da combinação está em um **slot de digievolução** (`digimon.digievolutions`) de **outro** Digimon da party. `storedDigievolutions` não contam; um único Digimon com as duas digievoluções não ativa a fusão. Quando disponível, o componente de digievolução mostra a marca vermelha à esquerda (nos dois lados da fusão) e um tooltip (`DnaFusionTooltip`, dados de `DnaDigievolutionService.getAvailableFusions`) com a DNA DV, os parceiros (Digimon e digievolução), tipo, elemento e efeito. No mesmo hover, o slot em foco e os slots parceiros pulsam com o degradê rosa/verde (`useDnaFusionHighlight`, estado compartilhado entre os Digimons). Sem fusão disponível, não há tooltip nem destaque.
+- O modal de DNA DV (footer) é só informativo: lista todas as DNA DVs e não usa estado de memória.
+
+## Conjuntos de armadura
+
+- Cada um dos 8 Digimons tem um conjunto especial de 4 peças: capacete, armadura, mão direita e mão esquerda. Com todas equipadas, o conjunto dá um bônus extra, somado aos bônus normais de cada peça.
+- Dados em `equipment-set.json`: chave = `digimonId`; peças em `equipments` (ids de `equipment.json`); bônus em `attributes` (mesmo formato dos equipamentos). Leitura via `EquipmentSetRepository.getByDigimonId` (`undefined` = conjunto não cadastrado).
+- Bônus variam por conjunto (não há padrão), nunca em elementos. Todos confirmados no jogo:
+  - Ronin (Kotemon): +4 em força, defesa, espírito, sabedoria e velocidade, +20 em carisma.
+  - Selvagem (Kumamon): +10 em força e defesa, +20 em carisma.
+  - Sniper (Monmon): +10 em força e velocidade, +20 em carisma.
+  - Coragem (Agumon): +10 em defesa e espírito, +20 em carisma.
+  - Dramon (Veemon): +10 em força e sabedoria, +20 em carisma.
+  - Hazard (Guilmon): +10 em sabedoria e velocidade, +20 em carisma.
+  - Yin Yang (Renamon): +10 em força e espírito, +20 em carisma.
+  - Divino (Patamon): +10 em defesa e sabedoria, +20 em carisma.
+- Conjunto completo (`EquipmentService.getCompletedSet`): todas as peças estão em `EquipmentService.getEquipmentIds`. O bônus (`calculateSetBonus`) é somado ao total do stat junto com os equipamentos, respeitando o teto de 999 do `StatService` (teto provisório, a confirmar no jogo), e entra no total de carisma da party (`PartyService.getCharisma`).
+- UI (`Stat.vue`): valor com bônus de conjunto em prata metálico (`text-dw3-metallic`); em batalha, o verde/vermelho de buff/debuff tem prioridade. O `StatsTooltip` mostra a parcela do conjunto na fórmula e na legenda.
+
+## Preços e lojas
+
+- **Preço é do item**, não da loja: qualquer loja que venda o mesmo item (consumível, equipamento ou carta) cobra o mesmo valor. Vale também para as lojas de cartas, que mudam de estoque conforme a main quest.
+- Preço em `price` no catálogo do item: `consumable-item.json` (obrigatório), `equipment.json` e `tcg/card.json` (opcional, só itens vendidos). As lojas (`shop/*.json`) listam apenas ids em `inventory`; item de loja sem `price` não é exibido.
+- **Revenda** = `floor(price / 2)` (`PriceService.getResaleValue`), nunca gravada.
+- Consumíveis que não são vendidos em loja (conhecidos só pela revenda) têm `price = 2 × revenda`. O preço real pode ser esse valor + 1; não é exibido e a revenda derivada fica exata.
+- **Leilão** é caso à parte: `bid` e `resale` próprios em `auction.json`.
 
 ## Batalhas
 
-- **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null envia `enemy: null` explícito; o syncer zera e recria o objeto completo quando um novo aparece.
+- **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null grava `enemy: null`; o patch atribui o objeto completo quando um novo aparece.
+- **MP do inimigo:** a maioria tem MP 9999 (virtualmente infinita, mesmo gastando nas técnicas); alguns têm MP "normal" (ex.: Bulbmon nível 43 = 960). Por isso a UI **não** exibe barra de MP de inimigo (decisão provisória). Evidências em `patterns-battle-slots.md`.
 - **Campo:** `Field = 0` é o campo **neutro** (valor válido, não "vazio").
 - **Digimon em batalha** (`DigimonBattleSelector.isInBattle`): `mapId === "0600"` **e** `inBattle.hp.max !== 0` daquele Digimon. O `hp.max` é trava de carregamento: na transição o `mapId` já é `0600` mas os dados de batalha ainda podem não estar carregados.
 - **Mapa em batalha** (`MapPresenter.isInBattle`): considera **apenas** `mapId === "0600"` — intencional.
@@ -87,14 +113,23 @@ graph TD
 ## Important items, Auctions e NPCs
 
 - **ImportantItems** (`ImportantItemsAssembler`): cada item é `bool` (RAM `!= 0` → `true`). Posse permanente, não quantidade.
-- **Auctions** (`AuctionsAssembler`): cada leilão é `bool` = instância consumida (bit em `0x4B38A`). Disponibilidade/janela é calculada no frontend a partir da main quest.
-- **Npcs** (`NpcsAssembler`): cada NPC tem lista fixa de `Battles` (`Id` + `Won`); `Won = Value != 0`. NPCs e batalhas vêm todos no InitialState; nunca add/remove em runtime.
+- **Auctions** (`AuctionsAssembler`): cada leilão é `bool` = instância consumida (bits em `0x4B38A` e `0x4B38B`). Disponibilidade/janela é calculada no frontend a partir da main quest.
+- **Npcs** (`NpcsAssembler`): cada NPC tem lista fixa de `Battles` (`Id` + `Won`); `Won = Value != 0`. NPCs e batalhas vêm todos no primeiro estado; nunca add/remove em runtime.
+
+## Moments
+
+- Um moment é um intervalo na timeline do jogo: missão de qualquer categoria do Journal (`quest` = id da missão) + `starts` + `ends` opcional (`MomentRaw`).
+- **Ativo** (`MomentService.isActive`): step `starts` feito **e** step `ends` (se houver) não feito. Lê o `isDone` de cada step, sem depender de cascade; missão inexistente = inativo; sem moment = sempre ativo.
+- Uso atual: bosses do `map.json` (`enemies.boss[].moment`), filtrados em `MapService.getBoss` e nos marcadores do mapa da Wiki. Boss sem moment é sempre visível.
+- Generaliza o `MainQuestAvailabilityWindow` (restrito à main quest), que pode migrar para moment no futuro.
 
 ## Journal
 
-- Estrutura das missões em JSON estático; backend lê `Value` (byte) na RAM e expõe `IsDone` (bool) no domínio/SignalR.
-- Categorias: `MainQuest`, `SideQuests`, `LegendaryWeapons`, `DriAgents`, `DuelIsland`.
+- Estrutura das missões em JSON estático; a camada de memória lê o byte na RAM (com `bitMasks`) e expõe `isDone` (bool) no modelo.
+- Categorias: `mainQuest`, `sideQuests`, `legendaryWeapons`, `driAgents`, `duelIsland`.
 - **Cascade Main Quest apenas** (`MainQuestAssembler`): step posterior `IsDone` força anteriores não feitos → `IsDone = true`. Side quests / legendary / DRI = pass-through via `QuestAssembler`.
+- **DRI agents da party inicial:** os Digimons escolhidos no início do jogo ficam só com o step 3 feito na RAM (steps 1–2 e o DDNA do step não marcados). Estado normal do jogo, não inconsistência; vale para qualquer DRI agent cujo Digimon seja inicial. Sem cascade (pass-through).
+- **Bosses de DRI agents** (enemies 403–410): aparecem no mapa (Wiki e AsukaMap) entre os steps 1 e 2 do DRI agent (moment `starts: 1, ends: 2`) e continuam pesquisáveis na Wiki. `regularAttackId` e `techniqueId` são **provisórios** (copiados do Kunemon). `memoryId` 449–456: MetalGreymon (449) confirmado em batalha (`metalgreymon.bin`); os demais (Paildramon 450, WarGrowlmon 451, MagnaAngemon 452, Taomon 453, Kyukimon 454, Armormon 455, GrapLeomon 456) identificados pela tabela de definição de inimigos na RAM (atributos e resistências iguais ao `enemy.json`), ainda sem validação em batalha.
 - **Duel Island** (`DuelIslandAssembler`): requisite não metido → todos steps `IsDone = false`; troféu (último step) `IsDone` → steps anteriores `IsDone = true`.
 - Não aplicar normalizações de uma categoria em outra sem decisão explícita de produto.
-- Todas as missões vêm no InitialState; **nunca** add/remove em runtime. Conclusão é calculada no frontend (todos steps/requisitos satisfeitos); não há flag de “missão concluída” do backend.
+- Todas as missões vêm no primeiro estado; **nunca** add/remove em runtime. Conclusão é calculada no frontend (todos steps/requisitos satisfeitos); não há flag de “missão concluída” na RAM.

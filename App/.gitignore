@@ -1,0 +1,10 @@
+node_modules
+dist
+*.local
+*.log
+
+*.tsbuildinfo
+.eslintcache
+
+# Vite
+*.timestamp-*-*.mjs

@@ -156,7 +156,7 @@ other byte encodes the same 8-pair Mobius topology.
 
 ## Product implications (not integrated yet)
 
-- Backend already reads `0x48D7A` as `MapVariant`. No new address needed for
+- The memory layer already reads `0x48D7A` as `mapVariant`. No new address needed for
   the discriminator.
 - Frontend location resolve for Mobius should key on **`mapId` + `mapVariant`**,
   similar to Seabed’s `route + mapId + mapVariant`.

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digivice — Font Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=DotGothic16&family=Exo+2:wght@400;700&family=Handjet:wght@400;700&family=Jersey+10&family=Pixelify+Sans:wght@400;700&family=Press+Start+2P&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&family=Tiny5&family=VT323&display=swap"
+    >
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 24px;
+        background-color: #000030;
+        color: white;
+        font-family: "Exo 2", sans-serif;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        font-family: "Press Start 2P", monospace;
+        font-size: 16px;
+        color: #0077ff;
+      }
+
+      .subtitle {
+        margin: 0 0 20px;
+        color: #93c5fd;
+        font-size: 14px;
+      }
+
+      .controls {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        margin: 0 -24px 24px;
+        padding: 12px 24px;
+        background-color: #000e3f;
+        border-bottom: 2px solid #0033aa;
+        font-size: 14px;
+      }
+
+      .controls label {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .controls input[type="text"] {
+        width: 420px;
+        padding: 6px 8px;
+        border: 1px solid #0055ff;
+        background-color: #000a2b;
+        color: white;
+        font-size: 14px;
+      }
+
+      .controls select {
+        padding: 5px;
+        border: 1px solid #0055ff;
+        background-color: #000a2b;
+        color: white;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .tabs button {
+        padding: 8px 14px;
+        border: 2px solid #0033aa;
+        background-color: #000e3f;
+        color: #93c5fd;
+        font-family: "Exo 2", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .tabs button.active {
+        border-color: #0077ff;
+        background-color: #0033aa;
+        color: white;
+      }
+
+      .font-section {
+        margin-bottom: 28px;
+        padding: 16px;
+        border: 2px solid #0033aa;
+        border-radius: 6px;
+        background-color: #000a2b;
+      }
+
+      .font-section header {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgb(0 51 170 / 0.5);
+      }
+
+      .font-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0077ff;
+      }
+
+      .font-category {
+        padding: 2px 8px;
+        border-radius: 4px;
+        background-color: #0033aa;
+        font-size: 12px;
+      }
+
+      .font-note {
+        color: #93c5fd;
+        font-size: 13px;
+      }
+
+      .size-row {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 12px;
+        align-items: center;
+        padding: 6px 0;
+        border-bottom: 1px dashed rgb(0 51 170 / 0.3);
+      }
+
+      .size-label {
+        font-family: "Exo 2", sans-serif;
+        font-size: 12px;
+        color: #60a5fa;
+      }
+
+      .size-label.on-grid {
+        color: #4ade80;
+      }
+
+      .sample {
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+
+      .shadowed .sample,
+      .shadowed .mock-card {
+        text-shadow: 1px 1px 0 #000;
+      }
+
+      .mock-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 20px;
+      }
+
+      .mock-card {
+        position: relative;
+        padding: 14px;
+        background-color: #000a2b;
+        clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+        outline: 2px solid #0077ff;
+        outline-offset: -2px;
+      }
+
+      .mock-title {
+        margin-bottom: 4px;
+        font-family: "Press Start 2P", monospace;
+        font-size: 16px;
+        background: linear-gradient(to bottom, #ffcc00, #ff6600);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: none;
+      }
+
+      .mock-font-label {
+        margin-bottom: 10px;
+        font-family: "Exo 2", sans-serif;
+        font-size: 11px;
+        color: #60a5fa;
+      }
+
+      .mock-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 16px;
+        margin-bottom: 10px;
+      }
+
+      .mock-stat {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .mock-stat span:last-child {
+        color: #fde047;
+      }
+
+      .mock-bar {
+        height: 8px;
+        margin: 2px 0 8px;
+        background-color: #001a5e;
+      }
+
+      .mock-bar div {
+        height: 100%;
+        background-color: #22c55e;
+      }
+
+      .mock-technique {
+        padding-top: 8px;
+        border-top: 1px solid rgb(0 51 170 / 0.5);
+        color: #bfdbfe;
+      }
+
+      .mock-technique strong {
+        color: white;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Font Preview</h1>
+    <p class="subtitle">
+      Comparação de fontes para o Digivice. Tamanhos em verde caem exatamente na grade de pixels da fonte.
+    </p>
+
+    <div class="controls">
+      <label>
+        Texto:
+        <input id="custom-text" type="text" placeholder="Digite para testar (vazio = amostras padrão)">
+      </label>
+      <label>
+        <input id="bold-toggle" type="checkbox">
+        Negrito
+      </label>
+      <label>
+        <input id="shadow-toggle" type="checkbox" checked>
+        Sombra (shadow-text)
+      </label>
+      <label>
+        Fonte do mockup:
+        <select id="mock-size">
+          <option value="10">10px</option>
+          <option value="12" selected>12px</option>
+          <option value="14">14px</option>
+          <option value="16">16px</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="tabs">
+      <button type="button" class="active" data-tab="sizes">Tamanhos</button>
+      <button type="button" data-tab="mockup">Mockup de painel</button>
+    </div>
+
+    <div id="tab-sizes" class="shadowed"></div>
+    <div id="tab-mockup" class="shadowed" hidden>
+      <p class="font-note">
+        Título sempre em Press Start 2P 16px (fonte de ambientação). O corpo usa cada fonte candidata.
+      </p>
+      <div id="mock-grid" class="mock-grid"></div>
+    </div>
+
+    <script>
+      const fonts = [
+        {
+          family: "Press Start 2P",
+          category: "Atual",
+          grid: 8,
+          note: "Grade 8px. Nítida só em 8, 16, 24…",
+        },
+        {
+          family: "Pixelify Sans",
+          category: "Pixel escalável",
+          grid: null,
+          note: "Vetorial com cara de pixel; pesos 400–700.",
+        },
+        {
+          family: "DotGothic16",
+          category: "Pixel",
+          grid: 16,
+          note: "Estilo jogo japonês; melhor em múltiplos de 16.",
+        },
+        {
+          family: "Handjet",
+          category: "Pixel escalável",
+          grid: null,
+          note: "Letras formadas por células; escala contínua.",
+        },
+        {
+          family: "Jersey 10",
+          category: "Pixel",
+          grid: 10,
+          note: "Pixel condensada; grade de 10px.",
+        },
+        {
+          family: "VT323",
+          category: "Pixel (terminal)",
+          grid: null,
+          note: "Estilo terminal antigo; alta e estreita.",
+        },
+        {
+          family: "Silkscreen",
+          category: "Pixel pequena",
+          grid: 8,
+          note: "Para rótulos curtos; caixa alta.",
+        },
+        {
+          family: "Tiny5",
+          category: "Pixel pequena",
+          grid: 10,
+          note: "Pixel minúscula; tem minúsculas.",
+        },
+        {
+          family: "Chakra Petch",
+          category: "Digital (sans)",
+          grid: null,
+          note: "Sans quadrada com cantos cortados.",
+        },
+        {
+          family: "Share Tech Mono",
+          category: "Digital (mono)",
+          grid: null,
+          note: "Monoespaçada; boa para números alinhados.",
+        },
+        {
+          family: "Exo 2",
+          category: "Digital (sans)",
+          grid: null,
+          note: "Já importada no app (usada só no Mobius Desert).",
+        },
+      ];
+
+      const sizes = [8, 9, 10, 10.4, 12, 14, 16, 20, 24];
+
+      const defaultSamples = [
+        "G6 O0 Il1 S5 B8 Z2 — 0123456789",
+        "Agumon Lv 24  HP 1250/1340  MP 87/120  EXP 98765",
+        "WarGreymon aprendeu Gaia Force! Ataque físico de fogo.",
+        "Gesomon (Wild Digimon Lv 27) — Drop: Recovery Floppy",
+      ];
+
+      const customTextInput = document.getElementById("custom-text");
+      const boldToggle = document.getElementById("bold-toggle");
+      const shadowToggle = document.getElementById("shadow-toggle");
+      const mockSizeSelect = document.getElementById("mock-size");
+      const sizesContainer = document.getElementById("tab-sizes");
+      const mockupContainer = document.getElementById("tab-mockup");
+      const mockGrid = document.getElementById("mock-grid");
+
+      function isOnGrid(size, grid) {
+        if (grid === null) {
+          return false;
+        }
+
+        return size % grid === 0;
+      }
+
+      function getSamples() {
+        const customText = customTextInput.value.trim();
+        if (customText.length > 0) {
+          return [customText];
+        }
+
+        return defaultSamples;
+      }
+
+      function createElement(tag, className, text) {
+        const element = document.createElement(tag);
+        if (className) {
+          element.className = className;
+        }
+        if (text !== undefined) {
+          element.textContent = text;
+        }
+        return element;
+      }
+
+      function renderSizes() {
+        sizesContainer.replaceChildren();
+        const fontWeight = boldToggle.checked ? 700 : 400;
+        const samples = getSamples();
+
+        for (const font of fonts) {
+          const section = createElement("section", "font-section");
+          const header = createElement("header");
+          header.append(
+            createElement("span", "font-name", font.family),
+            createElement("span", "font-category", font.category),
+            createElement("span", "font-note", font.note),
+          );
+          section.append(header);
+
+          for (const size of sizes) {
+            const row = createElement("div", "size-row");
+            const labelText = size === 10.4 ? "10.4px (0.65rem)" : `${size}px`;
+            const label = createElement("span", "size-label", labelText);
+            if (isOnGrid(size, font.grid)) {
+              label.classList.add("on-grid");
+            }
+
+            const sample = createElement("div", "sample");
+            sample.style.fontFamily = `"${font.family}", monospace`;
+            sample.style.fontSize = `${size}px`;
+            sample.style.fontWeight = fontWeight;
+            sample.innerHTML = samples.map((line) => escapeHtml(line)).join("<br>");
+
+            row.append(label, sample);
+            section.append(row);
+          }
+
+          sizesContainer.append(section);
+        }
+      }
+
+      function renderMockup() {
+        mockGrid.replaceChildren();
+        const fontSize = Number(mockSizeSelect.value);
+        const fontWeight = boldToggle.checked ? 700 : 400;
+
+        for (const font of fonts) {
+          const card = createElement("div", "mock-card");
+          card.style.fontFamily = `"${font.family}", monospace`;
+          card.style.fontSize = `${fontSize}px`;
+          card.style.fontWeight = fontWeight;
+
+          card.innerHTML = `
+            <div class="mock-title">Agumon</div>
+            <div class="mock-font-label">${escapeHtml(font.family)} — ${fontSize}px</div>
+            <div>HP 1250 / 1340</div>
+            <div class="mock-bar"><div style="width: 93%"></div></div>
+            <div class="mock-stats">
+              <div class="mock-stat"><span>Strength</span><span>186</span></div>
+              <div class="mock-stat"><span>Defense</span><span>142</span></div>
+              <div class="mock-stat"><span>Spirit</span><span>99</span></div>
+              <div class="mock-stat"><span>Wisdom</span><span>108</span></div>
+              <div class="mock-stat"><span>Speed</span><span>160</span></div>
+              <div class="mock-stat"><span>Charisma</span><span>66</span></div>
+            </div>
+            <div class="mock-technique">
+              <strong>Gaia Force</strong> — Ataque físico de fogo. Causa dano a todos os inimigos
+              e pode deixar o alvo em chamas. Custo: 68 MP.
+            </div>
+          `;
+
+          mockGrid.append(card);
+        }
+      }
+
+      function escapeHtml(text) {
+        return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+      }
+
+      function renderAll() {
+        renderSizes();
+        renderMockup();
+      }
+
+      function applyShadow() {
+        sizesContainer.classList.toggle("shadowed", shadowToggle.checked);
+        mockupContainer.classList.toggle("shadowed", shadowToggle.checked);
+      }
+
+      for (const button of document.querySelectorAll(".tabs button")) {
+        button.addEventListener("click", () => {
+          for (const otherButton of document.querySelectorAll(".tabs button")) {
+            otherButton.classList.toggle("active", otherButton === button);
+          }
+          sizesContainer.hidden = button.dataset.tab !== "sizes";
+          mockupContainer.hidden = button.dataset.tab !== "mockup";
+        });
+      }
+
+      customTextInput.addEventListener("input", renderSizes);
+      boldToggle.addEventListener("change", renderAll);
+      shadowToggle.addEventListener("change", applyShadow);
+      mockSizeSelect.addEventListener("change", renderMockup);
+
+      renderAll();
+    </script>
+  </body>
+</html>

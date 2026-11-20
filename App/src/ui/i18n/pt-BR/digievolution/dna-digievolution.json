@@ -1,0 +1,13 @@
+{
+  "dnaDigievolution": {
+    "title": "Digievoluções de DNA",
+    "description": "Estas são todas as Digievoluções de DNA disponíveis no jogo. Esta lista não reflete disponibilidade imediata e é apenas informativa.\n\nUma digievolução de DNA acontece quando você realiza uma troca entre seus Digimons em batalha selecionando duas Digievoluções que sejam compatíveis.\n\nQuando alguma Digievolução de DNA estiver disponível para ser usada, as Digievoluções envolvidas ficarão realçadas para você.",
+    "availableTitle": "Digievolução de DNA Disponível",
+    "tagWith": "Faça uma Tag com a evolução {digievolution} do {digimon}",
+    "or": "ou",
+    "effect": {
+      "reviveAndFullHealAll": "Revive e cura totalmente todos os Digimons",
+      "strengthDown": "Reduz a força do alvo"
+    }
+  }
+}

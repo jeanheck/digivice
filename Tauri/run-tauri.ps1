@@ -7,12 +7,12 @@ $ErrorActionPreference = "Stop"
 
 $TauriPath = $PSScriptRoot
 $RootPath = Split-Path -Parent $TauriPath
-$FrontendPath = Join-Path $RootPath "Frontend"
+$AppPath = Join-Path $RootPath "App"
 
 $env:TAURI_APP_PATH = $TauriPath
-$env:TAURI_FRONTEND_PATH = $FrontendPath
+$env:TAURI_FRONTEND_PATH = $AppPath
 
-Set-Location $FrontendPath
+Set-Location $AppPath
 
 if ($null -eq $TauriArgs -or $TauriArgs.Count -eq 0) {
     npx tauri

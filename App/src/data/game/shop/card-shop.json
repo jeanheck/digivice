@@ -1,0 +1,153 @@
+{
+  "asYellowCruiser": {
+    "locationId": "0211",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 27
+        },
+        "inventory": [
+          "1064",
+          "1234",
+          "1276",
+          "1193",
+          "1203",
+          "1058"
+        ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 27,
+          "ends": 88
+        },
+        "inventory": [
+          "1009",
+          "1209",
+          "1079",
+          "1167",
+          "1029",
+          "1058"
+        ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 88
+        },
+        "inventory": [
+          "1208",
+          "1166",
+          "1081",
+          "1127",
+          "1029",
+          "1058"
+        ]
+      }
+    ]
+  },
+  "seiryuCardShop": {
+    "locationId": "022F",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 88
+        },
+        "inventory": [
+          "1095",
+          "1225",
+          "1139",
+          "1184",
+          "1264",
+          "1258"
+        ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 88
+        },
+        "inventory": [
+          "1208",
+          "1166",
+          "1251",
+          "1081",
+          "1127",
+          "1258"
+        ]
+      }
+    ]
+  },
+  "suzakuCardShop": {
+    "locationId": "023E",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0,
+          "ends": 88
+        },
+        "inventory": [
+          "1095",
+          "1009",
+          "1209",
+          "1079",
+          "1167",
+          "1029"
+        ]
+      },
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 88
+        },
+        "inventory": [
+          "1208",
+          "1166",
+          "1251",
+          "1081",
+          "1127",
+          "1258"
+        ]
+      }
+    ]
+  },
+  "byakkoCardShop": {
+    "locationId": "025E",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0
+        },
+        "inventory": [
+          "1208",
+          "1166",
+          "1251",
+          "1081",
+          "1127",
+          "1258"
+        ]
+      }
+    ]
+  },
+  "genbuCardShop": {
+    "locationId": "026F",
+    "imageName": "Divermon",
+    "phases": [
+      {
+        "mainQuestAvailabilityWindow": {
+          "starts": 0
+        },
+        "inventory": [
+          "1071",
+          "1200",
+          "1115",
+          "1156",
+          "1152",
+          "1283"
+        ]
+      }
+    ]
+  }
+}

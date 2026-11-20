@@ -1,0 +1,74 @@
+import { StoryNpcDigimonBattleId } from "@/shared/constants/npc-battle.constant";
+import { NpcBattleOpponentHelper } from "@/presentation/presenters/helper/npc-battle-opponent.helper";
+import { EnemyOwnerRepository } from "@/presentation/repositories/enemy-owner.repository";
+import { EnemyRepository } from "@/presentation/repositories/enemy.repository";
+import type { NpcPartyMemberRaw } from "@/presentation/repositories/tables/raws/npc/npc-party-member.raw";
+import type { TamerDigimonBattlePartyMemberRaw } from "@/presentation/repositories/tables/raws/tamer/tamer-digimon-battle-party-member.raw";
+import type { TamerDigimonBattleRaw } from "@/presentation/repositories/tables/raws/tamer/tamer-digimon-battle.raw";
+
+export interface NpcBattleFromEnemyContext {
+  npcId: string;
+  battleOptionId: string | null;
+}
+
+export class NpcBattleFromEnemyHelper {
+  private static isPartyMemberMatch(
+    partyMember: NpcPartyMemberRaw | TamerDigimonBattlePartyMemberRaw,
+    memoryId: number,
+    groupId: number,
+  ): boolean {
+    return partyMember.enemyId === memoryId && partyMember.groupId === groupId;
+  }
+
+  private static findDigimonBattleId(
+    digimonBattles: Record<string, TamerDigimonBattleRaw> | undefined,
+    memoryId: number,
+    groupId: number,
+  ): string | null {
+    if (digimonBattles === undefined) {
+      return null;
+    }
+
+    for (const [battleId, digimonBattle] of Object.entries(digimonBattles)) {
+      const hasMatch = digimonBattle.party.some((partyMember) => {
+        return this.isPartyMemberMatch(partyMember, memoryId, groupId);
+      });
+      if (hasMatch) {
+        return battleId;
+      }
+    }
+
+    return null;
+  }
+
+  public static resolve(enemyId: string): NpcBattleFromEnemyContext | null {
+    const enemyRaw = EnemyRepository.getEnemyById(enemyId);
+    const opponentId = EnemyOwnerRepository.getOwnerId(enemyRaw.memoryId, enemyRaw.groupId);
+    if (opponentId === null || enemyRaw.groupId === null) {
+      return null;
+    }
+
+    const opponent = NpcBattleOpponentHelper.resolveById(opponentId);
+    if (opponent === undefined) {
+      return null;
+    }
+
+    if (opponent.source === "npc") {
+      return {
+        npcId: opponentId,
+        battleOptionId: `digimon-${StoryNpcDigimonBattleId}`,
+      };
+    }
+
+    const battleId = this.findDigimonBattleId(
+      opponent.raw.digimonBattles,
+      enemyRaw.memoryId,
+      enemyRaw.groupId,
+    );
+
+    return {
+      npcId: opponentId,
+      battleOptionId: battleId !== null ? `digimon-${battleId}` : null,
+    };
+  }
+}

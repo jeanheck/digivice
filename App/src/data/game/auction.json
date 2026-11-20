@@ -1,0 +1,112 @@
+[
+  {
+    "id": "divineBarrier",
+    "equipmentId": "281",
+    "mainQuestAvailabilityWindow": {
+      "starts": 4,
+      "ends": 6
+    },
+    "bid": 800,
+    "resale": 11000
+  },
+  {
+    "id": "hazardShield",
+    "equipmentId": "287",
+    "mainQuestAvailabilityWindow": {
+      "starts": 15,
+      "ends": 23
+    },
+    "bid": 800,
+    "resale": 11000
+  },
+  {
+    "id": "sniperShield",
+    "equipmentId": "282",
+    "mainQuestAvailabilityWindow": {
+      "starts": 28,
+      "ends": 34
+    },
+    "bid": 1600,
+    "resale": 11000
+  },
+  {
+    "id": "dramonShield",
+    "equipmentId": "288",
+    "mainQuestAvailabilityWindow": {
+      "starts": 36,
+      "ends": 42
+    },
+    "bid": 1600,
+    "resale": 11000
+  },
+  {
+    "id": "yinYangWand",
+    "equipmentId": "137",
+    "mainQuestAvailabilityWindow": {
+      "starts": 47,
+      "ends": 48
+    },
+    "bid": 2700,
+    "resale": 30000
+  },
+  {
+    "id": "hazardFang",
+    "equipmentId": "149",
+    "mainQuestAvailabilityWindow": {
+      "starts": 73,
+      "ends": 86
+    },
+    "bid": 2700,
+    "resale": 30000
+  },
+  {
+    "id": "sniperCannon",
+    "equipmentId": "124",
+    "mainQuestAvailabilityWindow": {
+      "starts": 88,
+      "ends": 89
+    },
+    "bid": 4000,
+    "resale": 30000
+  },
+  {
+    "id": "roninBlade",
+    "equipmentId": "98",
+    "mainQuestAvailabilityWindow": {
+      "starts": 90,
+      "ends": 92
+    },
+    "bid": 4000,
+    "resale": 30000
+  },
+  {
+    "id": "sniperGoggle",
+    "equipmentId": "222",
+    "mainQuestAvailabilityWindow": {
+      "starts": 94,
+      "ends": 96
+    },
+    "bid": 6000,
+    "resale": 11000
+  },
+  {
+    "id": "divineCrown",
+    "equipmentId": "232",
+    "mainQuestAvailabilityWindow": {
+      "starts": 97,
+      "ends": 98
+    },
+    "bid": 6000,
+    "resale": 11000
+  },
+  {
+    "id": "braveHelmet",
+    "equipmentId": "244",
+    "mainQuestAvailabilityWindow": {
+      "starts": 98,
+      "ends": 102
+    },
+    "bid": 8700,
+    "resale": 11000
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "punishment": {
+    "title": "Castigo",
+    "description": "Consigue el Arma Legendaria Castigo",
+    "requisites": {
+      "numemon": "Ve al centro de la fábrica para buscar a Numemon"
+    },
+    "steps": {
+      "1": {
+        "description": "Derrota a HiAndromon para recibir el Rifle Oxidado",
+        "locationTarget": "HiAndromon"
+      }
+    }
+  }
+}

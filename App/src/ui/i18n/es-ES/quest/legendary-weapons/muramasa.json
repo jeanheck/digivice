@@ -1,0 +1,15 @@
+{
+  "muramasa": {
+    "title": "Muramasa",
+    "description": "Consigue el Arma Legendaria Muramasa",
+    "requisites": {
+      "smellHerb": "Usa la Hierba Olorosa para atraer a Zanbamon fuera de la Tumba de la Jungla"
+    },
+    "steps": {
+      "1": {
+        "description": "Derrota a Zanbamon para recibir la Katana Oxidada",
+        "locationTarget": "Zanbamon"
+      }
+    }
+  }
+}

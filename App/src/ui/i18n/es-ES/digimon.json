@@ -1,0 +1,50 @@
+{
+  "digimon": {
+    "digievolutions": "Digievoluciones",
+    "equipments": "Equipamiento",
+    "equipmentSet": "Conjunto de equipamiento",
+    "baseDigimon": "Digimon base",
+    "digievolutionBonus": "Bonificación de digievolución",
+    "equipableBy": "Equipable por",
+    "allDigimon": "Todos los Digimon",
+    "lv": "Nv",
+    "experience": "Experiencia",
+    "hp": "PV",
+    "status": {
+      "healthy": "Sano",
+      "injured": "Herido",
+      "ko": "Fuera de combate",
+      "debuffed": "Debilitado"
+    },
+    "debuff": {
+      "poison": {
+        "affected": "Envenenado"
+      },
+      "paralyze": {
+        "affected": "Paralizado"
+      },
+      "confuse": {
+        "affected": "Confundido"
+      },
+      "sleep": {
+        "affected": "Dormido"
+      }
+    },
+    "mp": "PM",
+    "blast": "Blast",
+    "tp": "PE",
+    "trainingPoints": "Puntos de Entrenamiento",
+    "equipmentSlot": {
+      "head": "Cabeza",
+      "body": "Cuerpo",
+      "right": "Derecha",
+      "left": "Izquierda",
+      "accessory1": "Accesorios 1",
+      "accessory2": "Accesorios 2"
+    },
+    "states": {
+      "empty": "Vacío",
+      "none": "Ninguno"
+    }
+  }
+}

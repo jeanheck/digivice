@@ -171,7 +171,7 @@ class Program
 
     static string? FindMainQuestDefinitionsPath()
     {
-        string relative = Path.Combine("Backend", "Memory", "Definitions", "Quests", "MainQuestAddresses.json");
+        string relative = Path.Combine("App", "src", "data", "memory-addresses", "quests", "main-quest-addresses.json");
         var roots = new[]
         {
             Directory.GetCurrentDirectory(),
@@ -205,22 +205,22 @@ class Program
         Console.WriteLine("=== Map (should be equal if same area) ===");
         Console.WriteLine($"MapId @ 0x{mapIdAddress:X8}: 0x{before[mapIdAddress]:X2} -> 0x{after[mapIdAddress]:X2} (0227 = Divermon's Lake when 0x27)");
 
-        Console.WriteLine("\n=== Main quest steps (MainQuestAddresses.json) ===");
+        Console.WriteLine("\n=== Main quest steps (main-quest-addresses.json) ===");
         var questPath = FindMainQuestDefinitionsPath();
 
         if (questPath == null)
         {
-            Console.WriteLine("Quest definitions not found (MainQuestAddresses.json).");
+            Console.WriteLine("Quest definitions not found (main-quest-addresses.json).");
         }
         else
         {
             using var document = JsonDocument.Parse(File.ReadAllText(questPath));
             int changed = 0;
-            foreach (var step in document.RootElement.GetProperty("Steps").EnumerateArray())
+            foreach (var step in document.RootElement.GetProperty("steps").EnumerateArray())
             {
-                int number = step.GetProperty("Number").GetInt32();
-                int address = Convert.ToInt32(step.GetProperty("Address").GetString()!.Replace("0x", ""), 16);
-                var bitMasks = step.GetProperty("BitMasks")
+                int number = step.GetProperty("number").GetInt32();
+                int address = Convert.ToInt32(step.GetProperty("address").GetString()!.Replace("0x", ""), 16);
+                var bitMasks = step.GetProperty("bitMasks")
                     .EnumerateArray()
                     .Select(maskElement => Convert.ToByte(maskElement.GetString()!.Replace("0x", ""), 16))
                     .ToList();

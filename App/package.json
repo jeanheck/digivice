@@ -1,0 +1,57 @@
+{
+  "name": "digivice",
+  "version": "4.5.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "run-s lint:*",
+    "lint:oxlint": "oxlint . --fix",
+    "lint:eslint": "eslint . --fix --cache",
+    "format": "prettier --write --experimental-cli src/ tests/ *.ts",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "tauri:dev": "powershell -ExecutionPolicy Bypass -File ../Tauri/run-tauri.ps1 dev",
+    "tauri:build": "powershell -ExecutionPolicy Bypass -File ../Tauri/run-tauri.ps1 build"
+  },
+  "dependencies": {
+    "@fontsource/chakra-petch": "^5.3.0",
+    "@fontsource/exo-2": "^5.3.0",
+    "@fontsource/noto-emoji": "^5.3.2",
+    "@fontsource/press-start-2p": "^5.3.0",
+    "@tauri-apps/api": "^2.12.4",
+    "@tauri-apps/plugin-shell": "^2.5.0",
+    "pinia": "^4.1.0",
+    "vue": "^3.5.28",
+    "vue-i18n": "^11.4.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.0",
+    "@tauri-apps/cli": "^2.10.1",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "^24.10.13",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/eslint-config-typescript": "^14.9.0",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-oxlint": "~1.89.0",
+    "eslint-plugin-vue": "~10.11.1",
+    "jiti": "^2.6.1",
+    "npm-run-all2": "^8.0.4",
+    "oxlint": "~1.89.0",
+    "prettier": "3.9.10",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.2.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "vue-tsc": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

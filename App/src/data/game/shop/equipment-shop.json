@@ -1,0 +1,181 @@
+{
+  "asukaArsenal": {
+    "locationId": "020D",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "92",
+      "157",
+      "190",
+      "226",
+      "249",
+      "275",
+      "106",
+      "167",
+      "215",
+      "236",
+      "262"
+    ]
+  },
+  "asukaHeavyArsenal": {
+    "locationId": "020E",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "96",
+      "122",
+      "147",
+      "171",
+      "185",
+      "201",
+      "219",
+      "240",
+      "266",
+      "110",
+      "134",
+      "161",
+      "178",
+      "194",
+      "209",
+      "230",
+      "253",
+      "279"
+    ]
+  },
+  "seiryuArsenal": {
+    "locationId": "022F",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "93",
+      "158",
+      "191",
+      "227",
+      "250",
+      "276",
+      "107",
+      "168",
+      "216",
+      "237",
+      "263"
+    ]
+  },
+  "suzakuArsenal": {
+    "locationId": "023E",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "94",
+      "159",
+      "192",
+      "228",
+      "251",
+      "277",
+      "108",
+      "169",
+      "217",
+      "238",
+      "264"
+    ]
+  },
+  "byakkoArsenal": {
+    "locationId": "025D",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "95",
+      "120",
+      "145",
+      "170",
+      "183",
+      "199",
+      "218",
+      "239",
+      "265",
+      "109",
+      "132",
+      "160",
+      "176",
+      "193",
+      "207",
+      "229",
+      "252",
+      "278"
+    ]
+  },
+  "genbuArsenal": {
+    "locationId": "026F",
+    "imageName": "Gargomon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "97",
+      "123",
+      "148",
+      "172",
+      "186",
+      "202",
+      "220",
+      "241",
+      "267",
+      "111",
+      "135",
+      "162",
+      "179",
+      "195",
+      "210",
+      "231",
+      "254",
+      "280"
+    ]
+  },
+  "asukaPawnshop": {
+    "locationId": "020D",
+    "imageName": "Gomamon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "292",
+      "296",
+      "300",
+      "304",
+      "294",
+      "298",
+      "302",
+      "305",
+      "306",
+      "308",
+      "310",
+      "312",
+      "307",
+      "309",
+      "311",
+      "313",
+      "314",
+      "315"
+    ]
+  },
+  "suzakuPawnshop": {
+    "locationId": "023E",
+    "imageName": "Gomamon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "292",
+      "296",
+      "300",
+      "304",
+      "294",
+      "298",
+      "302",
+      "305",
+      "306",
+      "308",
+      "310",
+      "312",
+      "307",
+      "309",
+      "311",
+      "313",
+      "314",
+      "315"
+    ]
+  }
+}

@@ -13,7 +13,7 @@ Legendary weapons share **0x0004B38E** with power-of-two masks:
 
 When prior bits are set: expect `0x03 → 0x07 (+0x04)`, `0x02 → 0x0A (+0x08)`, `0x0A → 0x1A (+0x10)`.
 
-JSON: `Quests/LegendaryWeapons/*Addresses.json` — `BitMasks` array per step.
+JSON: `quests/legendary-weapons/*-addresses.json` — `bitMasks` array per step.
 
 ---
 
@@ -23,7 +23,7 @@ Main quest reuses bytes with different masks (e.g. **0x4B3E0**: `0x02`, `0x04`,
 `0x40`). A compare may show multi-bit changes — identify which **added** bit
 matches the event.
 
-JSON: `Quests/MainQuestAddresses.json` — `BitMasks` array.
+JSON: `quests/main-quest-addresses.json` — `bitMasks` array.
 
 ---
 
@@ -61,17 +61,86 @@ Island round bytes `0x4B3B2`/`0x4B3B3` (those reset after the final).
 
 ---
 
+## Main quest 89–98 — Amaterasu arc (suspected, 2026-11-03; renumbered 2026-11-05)
+
+Snapshots: `Tools/MemoryScanner/Snapshots/{before,after}-*-{89..92}.bin`
+(2026-11-05; earlier 2026-11-03 set used the old numbering 89–100).
+Chosen bits are sticky (clear in every earlier snapshot, set in every later one,
+checked over the full 2 MiB). Step numbers below are the **current** ones.
+
+| Step | Event | MapId | Address | BitMask | Alternative lit in same compare |
+|------|-------|-------|---------|---------|---------------------------------|
+| 89 | A.o.A prison | `0260` | `0x4B370` | `0x01` + `0x08` + `0x10` (value `0x19`) | counter `0x18`→`0x19`; no `0x4B3xx` bit |
+| 90 | Patamon / Leader room | `0240` | `0x4B370` | `0x02` + `0x08` + `0x10` (value `0x1A`) | counter `0x19`→`0x1A`; no `0x4B3xx` bit |
+| 91 | Suzaku Leader (battle) | `0244` | `0x4B3DF` | `0x08` | `0x48DE0` `0x01`→`0x02` |
+| 92 | Bulbmon (battle) | `0246` | `0x4B3E8` | `0x02` | — |
+| 93 | Kenny | `0293` | `0x4B3E1` | `0x20` | item-like `0x48F3C` `0→1` |
+| 94 | Qing Long Leader (battle) | `029C` | `0x4B3F2` | `0x08` + `0x80` | item-like `0x48DC6` `0→1`; `0x4B370` `0x1B`→`0x1C` |
+| 95 | Soldier at Phoenix Bay | `02A8` | `0x4B3B2` | `0x20` | `0x4B3F3` `0x01` (also sticky) |
+| 96 | Zhu Que Leader (battle) | `02AD` | `0x4B3E8` | `0x04` | item-like `0x48DC7` `0→1`; `0x4B370` `0x1C`→`0x1D` |
+| 97 | Digi-Egg | `02AE` | `0x48DC1` | raw `!= 0` | `0x4B370` `0x1D`→`0x1E` |
+| 98 | Genbu Leader (battle) | `026E` | `0x48DBC` | `0x01` | `0x4B370` `0x1E`→`0x1F`; no `0x4B3xx` bit (2026-11-04, integrated) |
+
+**Removed steps (2026-11-05):** talking to the Byakko Leader (`025E`) and the
+old man at the swamp (`0233`) came from a walkthrough; the game does not
+require them (user-tested: prison and Patamon reachable directly). Neither
+writes anything persistent (full RAM: only stack/pointers and actor table
+`0x8024D`/`0x802AD` `01→02`).
+
+**Counter value as bitmasks (confirmed approach):** `0x4B370` increments by
+one, so a value's bits toggle afterwards. Encoding the exact value
+(`0x19`, `0x1A`) as "all masks set" never fires early (smallest matching value
+is the target, counter is monotonic so far); later toggles are covered by the
+main quest cascade (step 90 holds 89 at `0x1A`; step 91 bit holds both from
+`0x1B` on). Same mechanism already used by MQ steps 6 (`0x02`) and 21
+(`0x01`+`0x08`).
+
+`0x4B370` keeps counting in this arc (`0x18`→`0x1F`, also `0x1A`→`0x1B`
+between Bulbmon and Kenny). Between snapshots, `0x4B3D1`–`0x4B3D5` and
+`0x4B3DC` gain bits on entering Amaterasu maps (map visited flags, suspected).
+
+---
+
+## Main quest 99–103 — North Sector (suspected, 2026-11-05)
+
+Snapshots: 28 files in chronological order (`before/after-*-{99..103}.bin`
+plus mid-battle `ice-witch-*`, `fire-knight-*`, `dark-knight-*`, `robot-*` and
+wild encounters). Sticky = clear in every earlier snapshot, set in every later one.
+
+Tamer bosses set **two** bits: one on **battle start** (visible in the first
+mid-battle snapshot) and one on **win** (visible in `after-*`). Win bits for
+dark knight onward are sequential in **`0x4B3E6`** (chapter story byte).
+
+| Step | Event | MapId | Win bit | Battle-start bit | Other in same compare |
+|------|-------|-------|---------|------------------|-----------------------|
+| 99 | Ice Witch (battle, group 19) | `026A` | `0x4B3E1` `0x02` | `0x4B3DF` `0x40` | item-like `0x48E8D` `0→1` |
+| 100 | Fire Knight (battle, group 20) | `026B` | `0x4B3E6` `0x01` | `0x4B3E5` `0x80` | item-like `0x48E38` `0→1` |
+| 101 | Dark Knight (battle, group 21) | `026C` | `0x4B3E6` `0x04` | `0x4B3E6` `0x02` | item-like `0x48E53` `0→1` |
+| 102 | Operator (`026D` → `02DA`) | `026D` | `0x4B3B5` `0x04` | — | `0x4B370` `0x1F`→`0x20`; `0x4B3DB` `0x04` (map visited `02DA`) |
+| 103 | Robot (battle, group 193) | `02DB` | — (no win bit in `after-robot-103`) | `0x4B3E6` `0x10` | `0x4B3E6` `0x20` came later while exploring/opening chests (user), **not** the win |
+
+**Integrated (2026-11-05):** steps 99–102 use the win bits; step 103 uses the
+battle-start bit `0x4B3E6` `0x10` (behavior on a lost battle not validated).
+
+Between `after-operator-102` and `whamon` (entering `02DB`): `0x4B3E6` `0x08`
+and `0x4B3DB` `0x08` (map visited). Between `after-robot-103` and
+`metal-seadramon`: `0x4B3E6` `0x20` together with `0x4B380` `0x80`+`0x20`,
+`0x4B381` `0x01`, `0x48E7B` / `0x48E90` `0→1` (chest-like pairs, suspected).
+Group ids < 200 → not in the BattledTamer bitfield `0x4B39A+`.
+
+---
+
 ## Raw byte step (confirmed)
 
-Empty `BitMasks: []` → step complete when `byte != 0`.
+Empty `bitMasks: []` → step complete when `byte != 0`.
 
-Example: side quests in `Quests/SideQuests/*.json`.
+Example: side quests in `quests/side-quests/*.json`.
 
 ---
 
 ## DRI agents
 
-Three steps per agent. Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`.
+Three steps per agent. Definitions: `App/src/data/memory-addresses/quests/dri-agents/`.
 
 ### DRI step 1 — shared byte (confirmed)
 
@@ -257,12 +326,12 @@ Not used as a quest step (the rematch below does not award it).
 (`0x48F1C`–`0x48F1E` qty `0→1` per win). `0x48DC2` stays `1` throughout;
 KingDivermon (final) address still needs `before/after-final` snap.
 
-**Backend integrated (2026-08-30):** `Quests/DuelIsland/AsukaTrophyAddresses.json`
-— `Id` `asukaTrophy`, 6 steps (round flags + trophy), normalize in
+**Integrated (2026-08-30):** `quests/duel-island/asuka-trophy-addresses.json`
+— `id` `asukaTrophy`, 6 steps (round flags + trophy), normalize in
 `DuelIslandAssembler`.
 
-**Backend integrated (2026-08-31, renamed 2026-09-30):**
-`Quests/DuelIsland/AsukaRematchAddresses.json` — `Id` `asukaRematch`, requisite
+**Integrated (2026-08-31, renamed 2026-09-30):**
+`quests/duel-island/asuka-rematch-addresses.json` — `id` `asukaRematch`, requisite
 `asukaTrophy` @ `0x48DC2`, same round flags; step 6 (KingDivermon) is
 **provisional** = step 5 bit (`0x4B3B3` / `0x08`) until the final snap.
 

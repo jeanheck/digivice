@@ -1,0 +1,11 @@
+{
+  "id": "folderBag",
+  "requisites": [],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x00048F42",
+      "bitMasks": []
+    }
+  ]
+}

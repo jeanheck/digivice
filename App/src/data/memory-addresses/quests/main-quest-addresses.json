@@ -1,0 +1,526 @@
+{
+  "id": "mainQuest",
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B3B6",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 3,
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 4,
+      "address": "0x0004B3E0",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 5,
+      "address": "0x0004B3E0",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 6,
+      "address": "0x0004B370",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 7,
+      "address": "0x0004B3E0",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 8,
+      "address": "0x0004B3BD",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 9,
+      "address": "0x0004B3BD",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 10,
+      "address": "0x00048F3F",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 11,
+      "address": "0x0004B3BD",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 12,
+      "address": "0x0004B3BD",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 13,
+      "address": "0x00048F3E",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 14,
+      "address": "0x0004B3C5",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 15,
+      "address": "0x0004B3DE",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 16,
+      "address": "0x0004B3BD",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 17,
+      "address": "0x0004B3AE",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 18,
+      "address": "0x0004B3AF",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 19,
+      "address": "0x0004B3AF",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 20,
+      "address": "0x0004B3AF",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 21,
+      "address": "0x0004B370",
+      "bitMasks": ["0x01", "0x08"]
+    },
+    {
+      "number": 22,
+      "address": "0x0004B3AF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 23,
+      "address": "0x00048DC5",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 24,
+      "address": "0x00048DBD",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 25,
+      "address": "0x0004B3B6",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 26,
+      "address": "0x0004B3B2",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 27,
+      "address": "0x00048DBA",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 28,
+      "address": "0x0004B3DE",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 29,
+      "address": "0x0004B3AD",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 30,
+      "address": "0x0004B3AE",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 31,
+      "address": "0x0004B3AE",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 32,
+      "address": "0x0004B3AE",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 33,
+      "address": "0x00048DBF",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 34,
+      "address": "0x0004B3B6",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 35,
+      "address": "0x0004B3B6",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 36,
+      "address": "0x0004B3B6",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 37,
+      "address": "0x0004B3AC",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 38,
+      "address": "0x0004B3B1",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 39,
+      "address": "0x0004B3B1",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 40,
+      "address": "0x0004B3BE",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 41,
+      "address": "0x00048DBE",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 42,
+      "requisites": [
+        {
+          "id": "tntBall",
+          "address": "0x048E0A"
+        }
+      ],
+      "address": "0x0004B3DE",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 43,
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 44,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 45,
+      "address": "0x0004B3E1",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 46,
+      "address": "0x0004B3AC",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 47,
+      "address": "0x0004B3E2",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 48,
+      "address": "0x0004B3E5",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 49,
+      "address": "0x0004B3E5",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 50,
+      "address": "0x0004B3E2",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 51,
+      "address": "0x0004B3E4",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 52,
+      "address": "0x00048DDF",
+      "bitMasks": []
+    },
+    {
+      "number": 53,
+      "address": "0x0004B3E4",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 54,
+      "address": "0x00048DE3",
+      "bitMasks": []
+    },
+    {
+      "number": 55,
+      "address": "0x0004B3E4",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 56,
+      "address": "0x00048DE0",
+      "bitMasks": []
+    },
+    {
+      "number": 57,
+      "address": "0x0004B3E4",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 58,
+      "address": "0x00048DE1",
+      "bitMasks": []
+    },
+    {
+      "number": 59,
+      "address": "0x0004B3E4",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 60,
+      "address": "0x0004B3E5",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 61,
+      "address": "0x0004B3CA",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 62,
+      "address": "0x0004B3B8",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 63,
+      "address": "0x0004B3B8",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 64,
+      "address": "0x0004B3DE",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 65,
+      "address": "0x0004B3CA",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 66,
+      "address": "0x0004B3B8",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 67,
+      "address": "0x0004B394",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 68,
+      "address": "0x0004B394",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 69,
+      "address": "0x0004B394",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 70,
+      "address": "0x0004B393",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 71,
+      "address": "0x0004B393",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 72,
+      "address": "0x0004B393",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 73,
+      "address": "0x0004B392",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 74,
+      "address": "0x0004B392",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 75,
+      "address": "0x0004B393",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 76,
+      "address": "0x0004B393",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 77,
+      "address": "0x0004B393",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 78,
+      "address": "0x0004B394",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 79,
+      "address": "0x0004B3E7",
+      "bitMasks": ["0x08", "0x10"]
+    },
+    {
+      "number": 80,
+      "address": "0x0004B3BA",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 81,
+      "address": "0x0004B3BA",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 82,
+      "address": "0x0004B3BB",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 83,
+      "address": "0x0004B3BB",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 84,
+      "address": "0x0004B3BB",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 85,
+      "address": "0x0004B3BB",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 86,
+      "address": "0x0004B3BB",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 87,
+      "address": "0x0004B3E7",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 88,
+      "address": "0x0004B3E7",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 89,
+      "address": "0x0004B370",
+      "bitMasks": ["0x01", "0x08", "0x10"]
+    },
+    {
+      "number": 90,
+      "address": "0x0004B370",
+      "bitMasks": ["0x02", "0x08", "0x10"]
+    },
+    {
+      "number": 91,
+      "address": "0x0004B3DF",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 92,
+      "address": "0x0004B3E8",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 93,
+      "address": "0x0004B3E1",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 94,
+      "address": "0x0004B3F2",
+      "bitMasks": ["0x08", "0x80"]
+    },
+    {
+      "number": 95,
+      "address": "0x0004B3B2",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 96,
+      "address": "0x0004B3E8",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 97,
+      "address": "0x00048DC1",
+      "bitMasks": []
+    },
+    {
+      "number": 98,
+      "address": "0x00048DBC",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 99,
+      "address": "0x0004B3E1",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 100,
+      "address": "0x0004B3E6",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 101,
+      "address": "0x0004B3E6",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 102,
+      "address": "0x0004B3B5",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 103,
+      "address": "0x0004B3E6",
+      "bitMasks": ["0x10"]
+    }
+  ]
+}

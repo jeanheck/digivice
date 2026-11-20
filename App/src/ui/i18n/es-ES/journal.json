@@ -1,0 +1,16 @@
+{
+  "journal": {
+    "sideQuests": "Misiones secundarias",
+    "legendaryWeapons": "Armas legendarias",
+    "driAgents": "Agentes DRI",
+    "duelIsland": "Isla del Duelo",
+    "questCompleted": "Misión completada",
+    "questUnavailableStarter": "Obtenido en el paquete inicial",
+    "prerequisites": "Requisitos previos",
+    "missionSteps": "Pasos de la misión",
+    "chapter": "Capítulo {number}",
+    "clickStep": "HAZ CLIC EN UN PASO DE LA MISIÓN PARA CARGAR LOS DATOS GEOGRÁFICOS",
+    "noSignal": "NO SE DETECTA SEÑAL.\nCOORDENADAS DEL OBJETIVO DESCONOCIDAS.",
+    "noSteps": "No hay pasos específicos registrados."
+  }
+}

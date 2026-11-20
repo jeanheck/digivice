@@ -1,0 +1,44 @@
+{
+  "auction": {
+    "cardIdleTitle": "Nenhum Leilão agora",
+    "cardIdleSubtitle": "Quem sabe mais tarde...",
+    "cardActiveTitle": "Leilão disponível!",
+    "cardActiveSubtitle": "Clique para saber mais!",
+    "modalTitle": "Leilões",
+    "currentIdleTitle": "Nenhum Leilão ativo",
+    "currentIdleSubtitle": "Continue avançando na missão principal",
+    "currentActiveTitle": "Leilão acontecendo agora!",
+    "currentActiveAcquirePrefix": "Adquira",
+    "bidLabel": "Lance:",
+    "resalePriceLabel": "Revenda:",
+    "bitsLabel": "bits",
+    "closesWhenLabel": "TERMINA QUANDO:",
+    "notEnoughBitsWarning": "Se você for até a Torre de Carga sem ter os Bits necessários para dar o lance no Leilão, ele não começará. Atualmente você tem {bits} Bits.",
+    "historySubtitle": "Histórico",
+    "historyTiming": {
+      "alreadyEnded": "Esse Leilão já terminou",
+      "upcoming": "Esse Leilão vai acontecer no futuro"
+    },
+    "historyParticipation": {
+      "participated": "Você participou desse leilão",
+      "missed": "Infelizmente, você perdeu esse leilão"
+    },
+    "historyActive": {
+      "timing": "Leilão acontecendo agora!",
+      "participation": "Vá até a Torre de Carga para participar!"
+    },
+    "closesWhen": {
+      "divineBarrier": "interagir com a Gôndola pela primeira vez (passo 6), ou participar do Leilão",
+      "hazardShield": "recuperar a máscara do Sepkimon (passo 23), ou participar do leilão",
+      "sniperShield": "falar com a Kail no Caminho Subterrâneo (passo 34), ou participar do leilão",
+      "dramonShield": "retornar ao Pântano Bios com o Chip TNT (passo 42), ou participar do leilão",
+      "yinYangWand": "desafiar o verdadeiro Líder Byakko (passo 48), ou participar do leilão",
+      "hazardFang": "tocar no quadro com a letra \"O\" na Sala Mestre (passo 86), ou participar do leilão",
+      "sniperCannon": "interrogar o General da A.o.A aprisionado na Caverna Subterrânea (passo 89), ou participar do leilão",
+      "roninBlade": "atravessar o Labirinto dos Bugs até o servidor de Amaterasu (passo 92), ou participar do leilão",
+      "sniperGoggle": "questionar o Líder Zhu Que sobre o Digi-Ovo do Conhecimento (passo 96), ou participar do leilão",
+      "divineCrown": "derrotar o Líder Genbu na Cidade Genbu (passo 98), ou participar do leilão",
+      "braveHelmet": "falar com o Operador na Câmara para voltar ao mundo real (passo 102), ou participar do leilão"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "enemySlotBase": "0x000A44D0",
+  "slotStride": "0x20",
+  "slotCount": "3",
+  "activeEnemySlotIndex": "0x000A446C",
+  "groupId": "0x00042B2C",
+  "id": "0x00",
+  "condition": "0x1C",
+  "strength": "0x10",
+  "defense": "0x12",
+  "speed": "0x14",
+  "hp": {
+    "max": "0x06",
+    "current": "0x08"
+  }
+}

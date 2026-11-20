@@ -67,7 +67,7 @@ Snaps: `before/after-*-card-battle.bin` for genji, natsumi, nacky,
 wong, gloria, steve; `after-lose-to-natsumi`;
 `before/after-defeat-gloria-first.bin`.
 
-Current `NpcAddresses.json`: wire **DigimonBattles** only (e.g. Genji `0x4B3DF`,
+Current `npc-addresses.json`: wire **DigimonBattles** only (e.g. Genji `0x4B3DF`,
 Natsumi `0x4B39A`). Card battles are **not** tracked in journal RAM — wiki uses
 static `npc.json` + charisma range only.
 
@@ -113,20 +113,38 @@ first stays isolated at `0x4B3DF` / `0x20` (`BattledTamer#0`). Snaps:
 | Alice | 215 | 15 | `0x4B39B` | `0x80` |
 | Nakano | 216 | 16 | `0x4B39C` | `0x01` |
 
+**Sun-region tamers (confirmed 2026-11-09):** `{tamer}-before/after-digimon-battle.bin`
+for makoto, brown, haruka, poemy, pierre, shingo (Kotemon solo). One new bit per win
+in `0x4B39C`, same `N` rule:
+
+| NPC | MapId | groupId (`0x42B2C`) | N | Address | BitMask | EXP / Bits |
+|-----|-------|---------------------|---|---------|---------|------------|
+| Haruka | `0261` | 217 | 17 | `0x4B39C` | `0x02` | 569 / 1195 |
+| Poemy | `0262` | 218 | 18 | `0x4B39C` | `0x04` | 565 / 1175 |
+| Shingo | `0264` | 219 | 19 | `0x4B39C` | `0x08` | 595 / 1110 |
+| Makoto | `0265` | 220 | 20 | `0x4B39C` | `0x10` | 607 / 1255 |
+| Brown | `0265` | **220** | 21 | `0x4B39C` | `0x20` | 607 / 1255 |
+| Pierre | `0267` | 222 | 22 | `0x4B39C` | `0x40` | 642 / 1265 |
+
+Brown reuses Makoto's encounter group 220 (same party, levels and stats) while his
+win bit is `N = 21` — `groupId − 200` does not hold for him. Wired in
+`npc-addresses.json` (battle id `first`); static data in `tamer.json`, enemies
+`enemy.json` 615–629.
+
 **Genji (2nd digimon):** `0x4B39A` / `0x01` (`0x02→0x03` in
 `genji-second` snaps; `0x4B3DF` unchanged). `groupId` 272 — does not
 follow `groupId − 200`; treat as special rematch bit until script index
 confirmed.
 
-**Backend integrated (2026-08-31):** all confirmed tamers wired in
-[`NpcAddresses.json`](../../../../Backend/Memory/Definitions/NpcAddresses.json) —
+**Integrated (2026-08-31):** all confirmed tamers wired in
+[`npc-addresses.json`](../../../../App/src/data/memory-addresses/npc-addresses.json) —
 `genji` (first+second), `natsumi`, `catherine`, `lucia`, `robert`,
 `akiba`, `chris`, `tomomi`, `mitch`, `bob`, `andy`, `george`, `meiLin`,
 `jessica`, `gordon`, `alice`, `nakano`.
 
 **A.o.A Attacker digimon battle (suspected 2026-09-02):**
 `before/after-aoa-attacker.bin` (Secret Room `0255`, MQ steps 60–61
-already complete). Current `NpcAddresses.json` entry `0x4B3CA` / `0x20`
+already complete). Current `npc-addresses.json` entry `0x4B3CA` / `0x20`
 matches **MainQuest step 61** only — byte `0xBF` in **both** snaps (bit
 already set pre-fight; **no flip on win**). Best sticky quest-band delta:
 `0x4B3E5` bit `0x08` (`0x53→0x5B`, single-bit add; same byte as MQ
@@ -137,7 +155,7 @@ validation before wiring.
 **Optional Admin Center NPC digimon battles (confirmed 2026-10-13):**
 `antes/durante/depois-{patrulheiro,soldado}-opcional-*` snaps (MQ ~66–77).
 Each win added exactly **one** new bit in `0x4B370–0x4B3F0` (no other delta
-in that band or `0x48DB0–0x48DC8`); none collide with `MainQuestAddresses.json`.
+in that band or `0x48DB0–0x48DC8`); none collide with `main-quest-addresses.json`.
 Rewards match existing groups (Bits delta 580 / 590 / 890).
 
 | Digivice `npcId` | MapId | groupId | Address | BitMask |
@@ -151,9 +169,25 @@ Rewards match existing groups (Bits delta 580 / 590 / 890).
 
 Not yet validated against a lose / reload.
 
-**Backend integrated (2026-10-13):** all six wired in
-[`NpcAddresses.json`](../../../../Backend/Memory/Definitions/NpcAddresses.json)
+**Integrated (2026-10-13):** all six wired in
+[`npc-addresses.json`](../../../../App/src/data/memory-addresses/npc-addresses.json)
 (battle id `first`) and through the Npcs pipeline / frontend sync.
+
+**North Sector main quest NPCs (suspected 2026-11-05):** `before/after-{ice-witch-99,fire-knight-100,dark-knight-101,robot-103}` + mid-battle snaps.
+Group ids < 200 (not BattledTamer). Each sets a bit on **battle start** and
+(except Robot) another on **win**; rewards measured with Kotemon fighting alone.
+
+| Digivice `npcId` | MapId | groupId | Win bit | Battle-start bit | EXP / Bits | DVEXP gained (Kotemon lv34–35) |
+|------------------|-------|---------|---------|------------------|------------|-------------------------------|
+| `iceWitch` | `026A` | 19 | `0x4B3E1` `0x02` | `0x4B3DF` `0x40` | 703 / 1410 | 13 |
+| `fireKnight` | `026B` | 20 | `0x4B3E6` `0x01` | `0x4B3E5` `0x80` | 715 / 1420 | 13 |
+| `darkKnight` | `026C` | 21 | `0x4B3E6` `0x04` | `0x4B3E6` `0x02` | 719 / 1395 | 13 |
+| `robot` | `02DB` | 193 | — | `0x4B3E6` `0x10` | 672 / 1370 | 12 |
+
+DVEXP gains fit `npc.json` `dvexp` = level of the **second** party enemy
+(= median: 46 / 47 / 48 / 44), same convention as the leaders. Wired as
+`type: "npc"` in `npc.json` (static only, like `gameMasterHeadquarters`; no
+`npc-addresses.json` entry — their win is a main quest step).
 
 **Natsumi card:** no duel flag in those snaps — only booster `0x48F19`.
 Map script does not SET a bit on `CardBattle#5`.
@@ -209,7 +243,7 @@ On transition **`0x0600 → 0x0700`** (card battle screen), **`0x4B404`** (Int32
 **card battle config id** (which fight/deck setup), **not** a unique NPC id.
 **`0`** outside card battle (`0x0600` digimon battle).
 
-Backend: `CardBattle.Id` via [`CardBattleAddresses.json`](../../../../Backend/Memory/Definitions/CardBattleAddresses.json) `Id`.
+Integrated: `cardBattle.id` via [`card-battle-addresses.json`](../../../../App/src/data/memory-addresses/card-battle-addresses.json) `id`.
 Frontend static: `cardBattles.first` / `cardBattles.second` → `id` in
 `tamer.json` / `duel-island.json` (lookup NPC by scanning those ids).
 
@@ -253,6 +287,7 @@ Same MapId `0x0700` / Prev `0x0200` in both series. Other deltas first→second:
 | `50` | gordon | mid-battle |
 | `52` | alice | mid-battle |
 | `54` | nakano | mid-battle |
+| `55` | haruka | `haruka-card-battle-first.bin` (Prev `0x0261`, 2026-11-09) |
 
 Sources: early card-battle / Duel Island / tamer mid-battle snaps (2026-08/09).
 All non-Genji `cardBattles.second.id` are **`null`** until re-snap.

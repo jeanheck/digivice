@@ -1,0 +1,22 @@
+{
+  "duelIsland": {
+    "divermon1": {
+      "name": "1º Divermon"
+    },
+    "divermon2": {
+      "name": "2º Divermon"
+    },
+    "divermon3": {
+      "name": "3º Divermon"
+    },
+    "divermon4": {
+      "name": "4º Divermon"
+    },
+    "divermon5": {
+      "name": "5º Divermon"
+    },
+    "kingDivermon": {
+      "name": "KingDivermon"
+    }
+  }
+}

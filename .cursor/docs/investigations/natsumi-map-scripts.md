@@ -493,7 +493,7 @@ Snaps: `before/after-natsumi-digimon-battle.bin`,
 |---------|---------|----------|
 | `0x0004B39A` | `0x02` | `0x00 → 0x02` on digimon win; still `0x02` after later card win |
 
-Wired in `NpcAddresses.json` → `natsumi.DigimonBattles.first`.
+Wired in `npc-addresses.json` → `natsumi.DigimonBattles.first`.
 
 Genji digimon remains `0x4B3DF` / `0x20` (`BattledTamer#0` region — different byte than Natsumi `#1`).
 

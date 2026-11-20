@@ -1,0 +1,27 @@
+{
+  "driAgentMonmon": {
+    "title": "Monmon (DRI Yang)",
+    "description": "Add Monmon to your Digimon party",
+    "requisites": {
+      "partyLevel": "Have a party level between 60 and 90",
+      "submarimon": "Have the Digi-Egg of Sincerity"
+    },
+    "steps": {
+      "1": {
+        "description": "Look for Dri Yang in Mobius Desert",
+        "locationTarget": "DRI Yang"
+      },
+      "2": {
+        "description": "Defeat Armormon in battle to receive Monmon's DDNA",
+        "locationTarget": "Armormon"
+      },
+      "3": {
+        "description": "Deliver Monmon's DNA to DRI Yang",
+        "requisites": {
+          "monmonDDNA": "Monmon's DDNA"
+        },
+        "locationTarget": "DRI Yang"
+      }
+    }
+  }
+}

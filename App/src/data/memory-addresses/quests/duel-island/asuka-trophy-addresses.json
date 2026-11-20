@@ -1,0 +1,42 @@
+{
+  "id": "asukaTrophy",
+  "requisites": [
+    {
+      "id": "submarimon",
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B3B2",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B3",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 3,
+      "address": "0x0004B3B3",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 4,
+      "address": "0x0004B3B3",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 5,
+      "address": "0x0004B3B3",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 6,
+      "address": "0x00048DC2",
+      "bitMasks": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "driAgentVeemon",
+  "requisites": [
+    {
+      "id": "byakkoLeader",
+      "address": "0x0004B3E5",
+      "bitMasks": ["0x40"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38C",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B8",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 3,
+      "address": "0x0004A404",
+      "bitMasks": ["0x07"],
+      "requisites": [
+        {
+          "id": "veemonDDNA",
+          "address": "0x00048DD3"
+        }
+      ]
+    }
+  ]
+}

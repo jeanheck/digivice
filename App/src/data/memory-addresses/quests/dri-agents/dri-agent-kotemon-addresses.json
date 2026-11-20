@@ -1,0 +1,33 @@
+{
+  "id": "driAgentKotemon",
+  "requisites": [
+    {
+      "id": "submarimon",
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38C",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x40"]
+    },
+    {
+      "number": 3,
+      "address": "0x00049494",
+      "bitMasks": ["0x03"],
+      "requisites": [
+        {
+          "id": "kotemonDDNA",
+          "address": "0x00048DC3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 description: Frontend Digivice — componentes Vue, estilo DW3, tooltips e modais
-globs: Frontend/src/{components,composables}/**,Frontend/src/App.vue,Frontend/src/style.css
+globs: App/src/ui/{components,composables}/**,App/src/App.vue,App/src/style.css
 alwaysApply: false
 ---
 
@@ -10,31 +10,34 @@ Componentes consomem o estado do jogo via `useGameState()` e **apenas o presente
 
 ## Estado garantido
 
-- `useGameState()` (`composables/use-game-state.ts`) devolve o `State` não anulável: `gameState.value.player.mapId`, sem `?.` nem fallback (`?? null`, `?? 0`, `?? []`, `{ slots: [] }`).
-- `useGameStore` direto só para status de conexão/health (ex.: `isConnected` no `Footer.vue`).
+- `useGameState()` (`ui/composables/use-game-state.ts`) devolve o `State` não anulável: `gameState.value.player.mapId`, sem `?.` nem fallback (`?? null`, `?? 0`, `?? []`, `{ slots: [] }`).
+- `useGameStore` direto só para status de health, nos composables (ex.: `useAppHealthyScreen`, `useBootLoader`); componentes não a importam.
 - Preferências persistidas do usuário via `usePreferencesStore` (ex.: família fixada em `digievolutions-modal/tree/Tree.vue`).
-- `App.vue` só renderiza o `main` com estado: `useAppHealthyScreen` retorna `loading` quando `currentState === null`. Perda de estado desmonta a árvore; novo `InitialState` remonta do zero.
+- `App.vue` só renderiza o `main` com estado. Em `Loading` (até o primeiro tick) não renderiza nada: fica visível o loader do `index.html` (`#boot-loader`, fora do `#app`), removido pelo `useBootLoader` ao sair de `Loading`. `useAppHealthyScreen` só retorna tela em `Error`. Perda de estado (erro de leitura) desmonta a árvore; o primeiro tick após a recuperação remonta do zero.
 - `useGameState` lança erro explícito se usado fora dessa árvore.
 
 ## Coerência visual e estilos
 
-Priorize `Frontend/src/style.css` e componentes similares do mesmo contexto (aparência DW3).
+Priorize `App/src/style.css` e componentes similares do mesmo contexto (aparência DW3).
 
-- Fonte única: **Press Start 2P** (global no `body`). Fundo, cor padrão e `image-rendering: pixelated` também vêm do global.
+- Fonte única: **Press Start 2P** (global no `body`). Fontes são offline, via pacotes `@fontsource/*` importados no `main.ts` (nunca link para Google Fonts). Fundo, cor padrão e `image-rendering: pixelated` também vêm do global.
 - Antes de estilizar: checar utilitários em `style.css` → componente similar → só então Tailwind/CSS novo.
+- **Perfis de resolução** (breakpoints do `@theme` no `style.css`; os padrões do Tailwind estão desligados): sem prefixo = **1280x720** (menor resolução suportada); `hd:` 1366, `fhdscaled:` 1536 (1920x1080 com escala de 125%), `hdplus:` 1600, `fhd:` 1920, `qhd:` 2560. Escrever o valor de 1280 sem prefixo e só sobrescrever nos perfis maiores. Usar apenas esses prefixos (nunca `min-[...px]:`, `sm:`, `lg:`, `2xl:`). Os cortes medem a largura da área útil da janela, não do monitor. Press Start 2P fica mais nítida em múltiplos de 8px.
 
 | Classe | Uso |
 |--------|-----|
 | `dw3-beveled` | Chanfro nos cantos |
 | `dw3-panel` + `dw3-panel-border` + `dw3-panel-inner` + `dw3-panel-content` | Painéis com borda azul chanfrada (Profile, Stats, Equipments, Digievolutions) |
-| `dw3-aside` + `dw3-aside-header` + `dw3-aside-title` | Sidebars (Map, Journal) |
+| `dw3-frame` | Moldura chanfrada dos componentes grandes (Digimon, Journal, Map, Footer): borda 2px `#0033aa`, fundo `#000e3f` (outro fundo via `[--dw3-frame-fill-color:...]`, ex.: Footer `#000a2b`). Rolagem em `div` interna, nunca no próprio elemento (o fundo é um `::before` absoluto) |
+| `dw3-aside` + `dw3-aside-header` + `dw3-aside-title` | Layout das sidebars (Map, Journal), usado junto com `dw3-frame` |
 | `shadow-text` / `shadow-text-dark` | Sombra em textos pixel |
 | `text-dw3-gold` | Destaque dourado (use com `shadow-text-dark`) |
 | `custom-scroll` | Barras de rolagem |
 | `bg-grid-pattern` | Fallback de grid (Location sem imagem) |
 
 - Tokens de cor já usados: `#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`.
-- Ícones de UI são emoji/Unicode (ex.: `📌`, `📜`, `⭐`, `✔`, `▼`, `◆`); não usar biblioteca de ícones nem SVG para ícones. Exceção: bandeiras de idioma.
+- Ícones de UI: preferir imagens do próprio jogo (WebP em `src/assets/`, via `ImageCatalog`; ex.: stats, tipo de técnica). Sem imagem adequada do jogo → emoji/Unicode (ex.: `📌`, `📜`, `⭐`, `✔`, `▼`, `◆`). Não usar biblioteca de ícones nem SVG para ícones.
+- Fontes de emoji (`@theme` do `style.css`, desenho igual em qualquer PC): `font-emoji` (**Noto Emoji**, monocromática; cor via `color`, ex.: `text-white`) e `font-emoji-color` (**Noto Color Emoji**, colorida; versão **COLRv1** servida de `src/assets/fonts/noto-color-emoji/`, porque o pacote do Fontsource usa OpenType-SVG, que o WebView2 não desenha). Escrever o emoji como entidade HTML do code point, **sem** o seletor `U+FE0F` (ex.: `&#x2B05;`): com ele o WebView2 pode trocar a fonte pelo Segoe UI Emoji do sistema.
 - Evite `<style scoped>` para padrões compartilháveis — extraia para `style.css`.
 
 **Proibido:** inventar paleta/tipografia/moldura sem checar referência; duplicar blocos longos que já têm utilitário global (ex.: refazer borda chanfrada fora de `dw3-panel`); scoped copiado de outro componente.
@@ -43,35 +46,43 @@ Priorize `Frontend/src/style.css` e componentes similares do mesmo contexto (apa
 
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
-| Posição | `composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`), flip horizontal. Sem conteúdo. |
-| Casca | `components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`maxWidth`/`placement`. Sem mouse. |
-| Casca compacta | `components/tooltip/TinyTooltip.vue` | Variante pequena (batalha); mesmas regras da casca. |
-| Conteúdo | `DefaultTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
+| Posição | `ui/composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`). Sem conteúdo. Flip na borda direita está **desligado** (teste: só offset do cursor). |
+| Casca | `ui/components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`size` (`default` \| `tiny`)/`maxWidthPx?`/`placement`/`horizontalAlign`. Teto CSS `min(90vw, Npx)`: título/default **360**, tiny **200**; `DescriptiveTooltip` passa **280**. Sem mouse. |
+| Conteúdo | `DescriptiveTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `party/digimon/digievolutions/DnaFusionTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
 
 Fluxo no **pai** (referências: `party/digimon/equipments/Equipments.vue`, `party/digimon/stats/Stats.vue`):
-1. Um `useTooltipPosition(maxWidthOpcional)`; desestruturar `show`, `x`, `y`, `showAt`, `move`, `hide`.
+1. Um `useTooltipPosition()`; desestruturar `show`, `x`, `y`, `showAt`, `move`, `hide`.
 2. Refs de conteúdo no pai (ex.: `activeVariant` + conteúdos por variante em `Stats.vue`).
-3. `mouseenter` → conteúdo + `showAt(event, { maxWidth?, placement? })`; `mousemove` → `move(event)`; `mouseleave` → `hide()`.
+3. `mouseenter` → conteúdo + `showAt(event, { placement?, align? })`; `mousemove` → `move(event)`; `mouseleave` → `hide()`.
 4. Filhos que detectam hover emitem eventos com `MouseEvent` (`@show-tooltip`, `@move-tooltip`, `@hide-tooltip`).
 
 Escolha:
-- Só título → `Tooltip` direto com `title` e slot vazio (ex.: `digievolution-techniques/Technique.vue`).
-- Título + texto → `DefaultTooltip`.
+- Só título → `Tooltip` direto com `title` e slot vazio (ex.: `digievolution-techniques/Technique.vue`); batalha usa `size="tiny"`.
+- Título + texto → `DescriptiveTooltip`.
 - Equipamento → `EquipmentsTooltip`; breakdown base + equip + total → `StatsTooltip`.
 - Vários conteúdos na mesma posição → um composable no pai + wrappers com `:show` condicional (`Stats.vue`).
 
-**Proibido:** tooltip inline (Teleport + `clientX`/`clientY` manual); composable dentro do wrapper; API imperativa (`defineExpose({ show, hide, move })`); duplicar regras de posicionamento fora do composable.
+**Proibido:** tooltip inline (Teleport + `clientX`/`clientY` manual); composable dentro do wrapper; API imperativa (`defineExpose({ show, hide, move })`); duplicar regras de posicionamento fora do composable; passar `maxWidth` por call site.
 
 ## Modais
 
-Casca: `components/modal/Modal.vue` — Teleport, overlay, ESC, clique fora, animações, hex pattern, header com close, footer bar, `custom-scroll` via `:deep`. Props de layout: `maxWidth`, `maxHeight`, `panelClass`, `showHexPattern`, `showFooterBar`, `showCloseButton`.
+Casca: `ui/components/modal/Modal.vue` — Teleport, overlay, ESC, clique fora, animações, hex pattern, header com close, footer bar, `custom-scroll` via `:deep`. Props de layout: `maxWidth`, `maxHeight`, `panelClass`, `showHexPattern`, `showFooterBar`, `showCloseButton`.
 
 Modais de domínio: `WikiModal`, `QuestModal`, `AuctionModal`, `SeabedModal`, `MobiusDesertModal`, `DigievolutionsModal`.
 
-1. Importar `Modal` via `@/components/modal/Modal.vue`.
+1. Importar `Modal` via `@/ui/components/modal/Modal.vue`.
 2. `isModalOpen` combina `isOpen` + dado mínimo (ex.: `questViewModel !== null`).
 3. `@close` → emitir `close` para o pai.
 4. Título no `#header`: `text-white`, **sem** `uppercase`.
 5. Corpo rolável: `custom-scroll` no container interno.
 
 **Proibido:** modal inline duplicando `Modal.vue`; listener de Escape ou botão de fechar custom no filho; imports relativos longos quando `@/` resolve.
+
+## Debug monitor (dev)
+
+Painel lateral de diagnóstico em `ui/components/debug-monitor/`, aberto/fechado com `F2` (estado em `localStorage`, chave `debug-monitor-open`). Exceção às regras acima, por ser ferramenta de dev:
+
+- Montado só no `App.vue`, fora do `v-if` do `AppHealthyScreen` (aparece em `Loading`/`Error`), via `import.meta.env.DEV` inline + `defineAsyncComponent` (o build de produção precisa eliminar o chunk). Nenhum outro componente o importa.
+- Lê a `useGameStore` via `ui/composables/use-debug-monitor.ts` (nunca `useGameState()`) e pode chamar selectors direto; sem presenters, repositórios nem i18n.
+- Mostra **valores crus do model** (ids, números), com rótulos literais em inglês.
+- Visual próprio: `font-mono`, sem moldura DW3.

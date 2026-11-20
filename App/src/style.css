@@ -1,0 +1,524 @@
+@import "tailwindcss";
+
+@theme {
+  /* Resolution profiles; unprefixed classes target 1280x720 */
+  --breakpoint-*: initial;
+  --breakpoint-hd: 1366px;
+  --breakpoint-fhdscaled: 1536px;
+  --breakpoint-hdplus: 1600px;
+  --breakpoint-fhd: 1920px;
+  --breakpoint-qhd: 2560px;
+
+  --font-emoji: "Noto Emoji", sans-serif;
+  --font-emoji-color: "Noto Color Emoji", sans-serif;
+  --font-chakra-petch: "Chakra Petch", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  image-rendering: pixelated;
+}
+
+/* DW3 Global Utility Classes */
+.dw3-beveled {
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+
+.dw3-panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #000a2b;
+}
+
+.dw3-panel-border {
+  position: absolute;
+  inset: 0;
+  background-color: #0077ff;
+  pointer-events: none;
+}
+
+.dw3-panel-inner {
+  position: absolute;
+  inset: 1.5px;
+  background-color: #000a2b;
+  pointer-events: none;
+}
+
+.dw3-panel-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Transparent border lets the background act as the border color; ::before paints the fill inside it */
+.dw3-frame {
+  position: relative;
+  isolation: isolate;
+  border: 2px solid transparent;
+  background-color: #0033aa;
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+
+.dw3-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--dw3-frame-fill-color, #000e3f);
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+  pointer-events: none;
+}
+
+.shadow-text {
+  text-shadow: 1px 1px 0 #000;
+}
+
+.text-outline-black {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.text-outline-black-glow {
+  text-shadow:
+    0 0 4px #000,
+    0 0 8px #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.shadow-text-dark {
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.8));
+}
+
+.text-dw3-gold {
+  background: linear-gradient(to bottom, #ffcc00, #ff6600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-dw3-metallic {
+  background: linear-gradient(to bottom, #cbd5e1, #64748b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-dw3-dna {
+  background: linear-gradient(to bottom, #ff5cf4, #1de9b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dw3-aside {
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dw3-aside-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(0 51 170 / 0.5);
+  background-color: #000e3f;
+  position: sticky;
+  top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  z-index: 10;
+}
+
+.dw3-aside-title {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0077ff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* Digievolution tree */
+.family-tree-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #001122;
+  padding: 16px;
+}
+
+.family-separator {
+  border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+  margin: 12px 0;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(0, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+.family-row {
+  margin-bottom: 8px;
+  overflow-x: auto;
+}
+
+/* Filter order matters: sepia must precede hue-rotate to produce a tintable base color */
+.pin-icon {
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition:
+    filter 0.2s,
+    opacity 0.2s;
+}
+
+.pin-icon:hover {
+  filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4);
+  opacity: 1;
+}
+
+.pin-icon-active,
+.pin-icon-active:hover {
+  filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4)
+    drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  opacity: 1;
+}
+
+.branch-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+}
+
+.branch-layout {
+  display: flex;
+  align-items: center;
+}
+
+.shared-prefix {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 8px;
+}
+
+.branch-suffixes {
+  display: flex;
+  flex-direction: column;
+}
+
+.branch-suffixes .branch-row {
+  padding: 10px 8px 10px 0;
+}
+
+.connector {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.connector-line,
+.fork-line-top,
+.fork-line-bottom {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(to right, rgba(0, 255, 255, 0.25), rgba(0, 255, 255, 0.45));
+}
+
+.connector-line {
+  width: 32px;
+}
+
+.fork-connector {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  position: relative;
+  align-self: stretch;
+  margin: 0 4px;
+}
+
+.fork-line-top,
+.fork-line-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.fork-line-top {
+  top: calc(25% + 5px);
+}
+
+.fork-line-bottom {
+  bottom: calc(25% + 5px);
+}
+
+.fork-connector::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(25% + 5px);
+  bottom: calc(25% + 5px);
+  width: 2px;
+  background: rgba(0, 255, 255, 0.3);
+}
+
+.connector-arrow,
+.fork-line-top::after,
+.fork-line-bottom::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid rgba(0, 255, 255, 0.45);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.fork-line-top::after,
+.fork-line-bottom::after {
+  content: "";
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #0033aa;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0077ff;
+}
+
+/* Tooltip transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Modal transition */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes modal-slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-modal-slide-up {
+  animation: modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes auction-border-pulse {
+  0%,
+  100% {
+    border-color: rgba(34, 211, 238, 0.5);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.2);
+  }
+
+  50% {
+    border-color: rgba(34, 211, 238, 1);
+    box-shadow: 0 0 12px 2px rgba(34, 211, 238, 0.35);
+  }
+}
+
+@keyframes auction-icon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.auction-card-active {
+  animation: auction-border-pulse 1.6s ease-in-out infinite;
+}
+
+.animate-auction-pulse {
+  animation: auction-icon-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes dna-fusion-pulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.dna-fusion-highlight-border {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #ff5cf4, #1de9b6);
+  animation: dna-fusion-pulse 2.8s ease-in-out infinite;
+}
+
+.dna-fusion-highlight-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 92, 244, 0.18), rgba(29, 233, 182, 0.18));
+  animation: dna-fusion-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes blast-pulse {
+  0%,
+  100% {
+    filter: brightness(1.05) saturate(1.15);
+    background-color: #fef08a;
+  }
+
+  50% {
+    filter: brightness(1.35) saturate(1.4);
+    background-color: #fde68a;
+  }
+}
+
+@keyframes blast-track-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px 1px rgba(250, 204, 21, 0.4);
+    border-color: #fde047;
+  }
+
+  50% {
+    box-shadow: 0 0 12px 3px rgba(250, 204, 21, 0.65);
+    border-color: #fef08a;
+  }
+}
+
+.blast-fill-mid {
+  opacity: 1;
+  filter: brightness(1.1) saturate(1.2);
+  background-color: #fef08a;
+}
+
+.blast-fill-high {
+  opacity: 1;
+  animation: blast-pulse 0.9s ease-in-out infinite;
+}
+
+.blast-track-mid {
+  box-shadow: 0 0 8px 2px rgba(250, 204, 21, 0.45);
+  border-color: #fde047;
+}
+
+.blast-track-high {
+  animation: blast-track-pulse 0.9s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, #0055ff 1px, transparent 1px),
+    linear-gradient(to bottom, #0055ff 1px, transparent 1px);
+  background-size: 15px 15px;
+}
+
+.map-info-panel {
+  width: 100%;
+  max-width: 95%;
+  padding: 0.5rem 0.75rem;
+  background-color: rgb(0 0 0 / 0.8);
+  border: 1px solid rgb(0 170 255 / 0.4);
+  border-radius: 0.25rem;
+  backdrop-filter: blur(4px);
+}
+
+.map-info-panel-fit {
+  width: fit-content;
+  max-width: 95%;
+  padding: 0.5rem 0.75rem;
+  background-color: rgb(0 0 0 / 0.8);
+  border: 1px solid rgb(0 170 255 / 0.4);
+  border-radius: 0.25rem;
+  backdrop-filter: blur(4px);
+}
+
+.map-info-panel.map-info-panel-action {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  max-width: none;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.map-info-panel.map-info-panel-action:hover {
+  background-color: rgb(0 14 63 / 0.9);
+  border-color: rgb(0 170 255 / 0.6);
+}
+
+.map-info-panel-fit.map-info-panel-action {
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.map-info-panel-fit.map-info-panel-action:hover {
+  background-color: rgb(0 14 63 / 0.9);
+  border-color: rgb(0 170 255 / 0.6);
+}

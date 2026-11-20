@@ -1,0 +1,40 @@
+{
+  "id": "fishingPole",
+  "requisites": [
+    {
+      "id": "folderBag",
+      "address": "0x00048F42"
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x04B3B0",
+      "bitMasks": ["0x02"]
+    },
+    {
+      "number": 2,
+      "address": "0x04B3B1",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 3,
+      "requisites": [
+        {
+          "id": "bambooSpear",
+          "address": "0x048E57"
+        },
+        {
+          "id": "spiderWeb",
+          "address": "0x048E09"
+        },
+        {
+          "id": "redSnapper",
+          "address": "0x00048DB7"
+        }
+      ],
+      "address": "0x048DB5",
+      "bitMasks": []
+    }
+  ]
+}

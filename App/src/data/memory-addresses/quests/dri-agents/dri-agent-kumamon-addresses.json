@@ -1,0 +1,33 @@
+{
+  "id": "driAgentKumamon",
+  "requisites": [
+    {
+      "id": "submarimon",
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38C",
+      "bitMasks": ["0x20"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B8",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 3,
+      "address": "0x00049870",
+      "bitMasks": ["0x04"],
+      "requisites": [
+        {
+          "id": "kumamonDDNA",
+          "address": "0x00048F3B"
+        }
+      ]
+    }
+  ]
+}

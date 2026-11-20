@@ -1,0 +1,17 @@
+{
+  "slots": [
+    {
+      "index": 1,
+      "address": "0x00048DA4"
+    },
+    {
+      "index": 2,
+      "address": "0x00048DA8"
+    },
+    {
+      "index": 3,
+      "address": "0x00048DAC"
+    }
+  ],
+  "emptySlotId": "0xFF"
+}

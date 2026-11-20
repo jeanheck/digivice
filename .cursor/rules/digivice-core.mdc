@@ -5,16 +5,18 @@ alwaysApply: true
 
 # Digivice — Core
 
-`.cursor/` é a fonte única de regras, skills e agents do projeto. `AI/*.md` é apenas índice.
+`.cursor/` é a fonte única de regras, skills e agents do projeto.
 
 ## Diretrizes primárias
 
 1. **Respostas objetivas**: concisas e diretas. Detalhe só se o usuário pedir.
 2. **Foque na tarefa**: não espalhe impacto sem necessidade; o usuário orienta o fluxo.
 3. **Aprovação de planos**: não execute planos de implementação antes de aprovação explícita. Mudanças mínimas podem ir direto; planos solicitados aguardam revisão.
+4. **Build e testes**: não rode build, type-check, lint nem testes após alterações, a menos que o usuário peça. Ele roda manualmente.
 
 ## Diretrizes gerais
 
 1. **Nomenclatura**: não abrevie variáveis; prefira nomes explícitos. Exceção: abreviações clássicas e culturalmente difundidas, que já têm valor próprio (ex.: `ko`, `hp`, `mp`).
 2. **Condicionais**: sempre use `{ }` em `if`, mesmo com uma linha.
 3. **Comentários**: evite quando o código é autoexplicativo; se necessário, em inglês.
+4. **Snapshots**: quando o usuário pedir para ler um snapshot (`.bin`), buscar sempre em `Tools/MemoryScanner/Snapshots/`, a não ser que ele indique explicitamente outra pasta.

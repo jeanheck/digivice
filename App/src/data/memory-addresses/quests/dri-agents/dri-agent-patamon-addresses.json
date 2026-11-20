@@ -1,0 +1,33 @@
+{
+  "id": "driAgentPatamon",
+  "requisites": [
+    {
+      "id": "submarimon",
+      "address": "0x00048DC0",
+      "bitMasks": ["0x01"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38C",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 3,
+      "address": "0x0004AF98",
+      "bitMasks": ["0x0A"],
+      "requisites": [
+        {
+          "id": "patamonDDNA",
+          "address": "0x00048DD7"
+        }
+      ]
+    }
+  ]
+}

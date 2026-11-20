@@ -1,6 +1,6 @@
 ---
-description: Convenções básicas Frontend Vue/TS Digivice — sintaxe, imports, naming, sem testes
-globs: Frontend/**/*
+description: Convenções básicas Frontend Vue/TS Digivice — sintaxe, imports, naming, escopo de testes
+globs: App/**/*
 alwaysApply: false
 ---
 
@@ -9,28 +9,64 @@ alwaysApply: false
 Regras especializadas por pasta:
 - `digivice-frontend-data.mdc` — presenters, services, repositories, viewmodels, extensions, assets.
 - `digivice-frontend-components.mdc` — componentes Vue, estilo DW3, tooltips, modais.
-- `digivice-frontend-sync.mdc` — events (DTO/converter), stores/syncers, models.
+- `digivice-frontend-sync.mdc` — loop TS → `StatePatcher` → store, selectors, models.
+- `digivice-frontend-tests.mdc` — testes da camada de leitura de memória (`tests/`).
+
+## Estrutura de `src/`
+
+Agrupada por responsabilidade; as camadas e sufixos de arquivo valem dentro de cada área. Na raiz ficam só `main.ts`, `App.vue`, `style.css`, `assets/` e `data/`, que reúne todos os JSON: `data/game/` (dados estáticos do jogo, fora do Prettier) e `data/memory-addresses/` (endereços de RAM `*-addresses.json`, lidos pelo `AddressesRepository`; o `Tools/MemoryScanner` lê `quests/main-quest-addresses.json` por caminho fixo, então não mover nem renomear).
+
+| Área | Pastas | Conteúdo |
+|---|---|---|
+| `core/` | `config/`, `logger/`, `extensions/` | Infraestrutura transversal. |
+| `memory/` | ver seção abaixo | Leitura da RAM → `State`. |
+| `state/` | `models/`, `stores/` (com `selectors/`) | Contrato do `State` e Pinia. |
+| `presentation/` | `repositories/` (com `tables/`), `services/`, `presenters/`, `viewmodels/` | O que alimenta a UI sem ser a tela: leitura dos JSON de `data/game/` (repositories), regras de domínio reutilizáveis (services), presenters e ViewModels. |
+| `ui/` | `components/`, `composables/`, `catalogs/`, `i18n/` | A tela em si: componentes e composables, incluindo o catálogo de imagens de `assets/` (`catalogs/`) e as traduções (`i18n/`: setup e JSON por idioma). |
+| `shared/` | `constants/`, `types/` | Consts e unions usadas em mais de uma área. |
+`tests/` espelha `src/` (ex.: `tests/memory/`, `tests/state/stores/`).
 
 ## Convenções básicas
 
 1. Sempre `;` no fim das instruções.
 2. Prefira aspas duplas `"` em strings.
-3. Importações com `@/` (ex.: `@/models`, `@/presenters/map/map.presenter`) em vez de caminhos relativos longos; sem extensão `.ts` (`.vue` mantém a extensão).
-4. Arquivos kebab-case com sufixo de papel (`.converter.ts`, `.dto.ts`, `.viewmodel.ts`, `.presenter.ts`, `.service.ts`, `.repository.ts`, `.syncer.ts`, `.selector.ts`, `.extensions.ts`); classes/tipos PascalCase.
+3. Importações com `@/` (ex.: `@/state/models`, `@/presentation/presenters/map/map.presenter`) em vez de caminhos relativos longos; sem extensão `.ts` (`.vue` mantém a extensão).
+4. Arquivos kebab-case com sufixo de papel (`.converter.ts`, `.viewmodel.ts`, `.presenter.ts`, `.service.ts`, `.repository.ts`, `.selector.ts`, `.extensions.ts`, `.reader.ts`, `.assembler.ts`, `.provider.ts`, `.addresses.ts`, `.snapshot.ts`, `.raw.ts`, `.error.ts`, `.resource.ts`, `.composer.ts`, `.loop.ts`, `.factory.ts`, `.initializer.ts`, `.patcher.ts`, `.validator.ts`, `.spec.ts`); classes/tipos PascalCase.
 5. **Converters:** classe `{AlgumaCoisa}Converter`; arquivo `{alguma-coisa}.converter.ts`; API pública estática `convert` (helpers privados permitidos). Dois contextos, pastas distintas:
-   - `events/converters/` — DTO (SignalR) → Model (Pinia)
-   - `presenters/converter/` — Raw → ViewModel (dados estáticos)
-6. **Sem testes no Frontend** (Vitest, `*.spec.ts`, `__tests__`): decisão intencional. Não criar, sugerir nem incluir, salvo pedido explícito.
+   - `presentation/presenters/converter/` — Raw → ViewModel (dados estáticos)
+   - `memory/converters/` — JSON de `data/memory-addresses/` (`...Raw`, valores hex em string) → tipos de endereço (`number`); as chaves são camelCase nos dois
+6. **Testes só na camada de leitura de memória:** `src/memory/**` (readers, assemblers, providers, repositories, converters, snapshot, validators, loop, patch) e as actions `applyState`/`applyError` da `useGameStore` têm testes Vitest em `App/tests/` (regra `digivice-frontend-tests.mdc`). O restante do Frontend (componentes, presenters, services, repositories, viewmodels) **não** tem testes: não criar, sugerir nem incluir, salvo pedido explícito. Nunca `__tests__` nem `*.spec.ts` dentro de `src/`.
+
+## Camada de leitura de memória (`src/memory/`)
+
+Única fonte do estado da UI. Toda leitura nova de memória entra aqui (skills `memory-field-integration`, `memory-entity-integration`, `journal-quest-integration`):
+
+| Pasta | Conteúdo |
+|---|---|
+| `snapshot/` | `MemorySnapshot` (leituras little-endian sobre os 2 MiB; `readInt16`/`readInt32` com sinal), `SnapshotProvider` (`TauriSnapshotProvider` via `read_ram`), `MemoryReadError`, `EmulatorConnectionError`, `PlayStationRamSize`. |
+| `addresses/` | Tipos de endereço (`{nome}.addresses.ts`): tipo final + `...Raw` no mesmo arquivo. |
+| `converters/` | `AddressValueConverter` (hex `0x`, decimal, negativo; inválido **lança**) + um converter por arquivo de `data/memory-addresses/`. |
+| `repositories/` | `AddressesRepository` (estático, cache lazy). Importa `@/data/memory-addresses/...` (fonte única dos endereços); pastas de quests via `import.meta.glob`, ordenadas pelo nome do arquivo. |
+| `resources/` | `{Entity}Resource`: valores crus lidos da RAM (só `number`). |
+| `readers/` | `{Entity}Reader.read(snapshot, addresses)`: função pura sobre o `MemorySnapshot`, devolve o Resource. |
+| `assemblers/` | `{Entity}Assembler.assemble(resource)`: função pura, normaliza (sentinela → `null`, hex `X4`) e devolve o model de `@/state/models`. |
+| `providers/` | `{Entity}Provider.get(snapshot)`: busca endereços no `AddressesRepository` e chama reader + assembler. |
+| `state.composer.ts` | `StateComposer.compose(snapshot)` → `State` completo; lança `SaveNotLoadedError` se o `SaveLoadedValidator` apontar violação. |
+| `validators/` | `SaveLoadedValidator.findViolation(party)`: invariantes da party (regra em `digivice-business.mdc`); devolve a descrição da violação ou `null`. `SaveNotLoadedError`. |
+| `patch/` | `StatePatcher`: patch in-place do `State` da store (regras em `digivice-frontend-sync.mdc`). |
+| `loop/` | `GameLoop` (`setTimeout` encadeado, sem sobrepor ticks; erros → `EmulatorConnectionError.code`, `memory_read_failed`, `save_not_loaded` ou `state_compose_failed`), `initializeMemoryLoop` (liga loop e `useGameStore`; chamado no `main.ts`). |
+
+- **Fonte do snapshot:** só o `read_ram`, dentro do Tauri; no navegador puro o loop não sobe e o loader do `index.html` fica na tela. A UI lê só `useGameStore`.
 
 ## Constants e types
 
 1. **Sem `enum`.** Padrão é union de literais (`type`). Objeto/array `as const` apenas quando o valor é necessário em runtime (iterar, acesso nomeado, tabela de lookup).
 2. **Local:**
-   - `constants/{nome}.constant.ts` — consts `as const`, com o type derivado **no mesmo arquivo**.
-   - `types/{nome}.type.ts` — unions usadas em mais de um arquivo (mesmo conjunto no Raw e no ViewModel conta como compartilhado).
+   - `shared/constants/{nome}.constant.ts` — consts `as const`, com o type derivado **no mesmo arquivo**.
+   - `shared/types/{nome}.type.ts` — unions usadas em mais de um arquivo (mesmo conjunto no Raw e no ViewModel conta como compartilhado).
    - Union usada em um único arquivo fica nesse arquivo.
 3. **Nomes:** PascalCase para consts, types e membros `static readonly` (sem SCREAMING_CASE). Não colidir com globais do DOM (`Element`, `Event`, `Node`). Conceitos de Digimon com prefixo `Digimon` (`DigimonAttribute`, `DigimonElement`, `DigimonCondition`, `DigimonSpecies`, `DigimonStatus`).
-4. **Valores literais:** iguais à fonte de verdade (JSON de `database/`, contrato do backend ou chave i18n — ex.: `"DigimonLevel"`, `"Healthy"`). Valor gerado no frontend → camelCase igual à chave i18n. Não inventar valor para contornar colisão (separe o mapa por categoria).
+4. **Valores literais:** iguais à fonte de verdade (JSON de `data/game/`, valor do model/`State` ou chave i18n — ex.: `"DigimonLevel"`, `"Healthy"`). Valor gerado no frontend → camelCase igual à chave i18n. Não inventar valor para contornar colisão (separe o mapa por categoria).
 5. **Const e type com o mesmo nome:** const em expressões, type em anotações; `import type` quando só o tipo é usado.
 
 ```ts

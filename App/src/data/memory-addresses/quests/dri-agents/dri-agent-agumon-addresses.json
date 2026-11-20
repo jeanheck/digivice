@@ -1,0 +1,33 @@
+{
+  "id": "driAgentAgumon",
+  "requisites": [
+    {
+      "id": "seiryuLeader",
+      "address": "0x0004B3E0",
+      "bitMasks": ["0x04"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38C",
+      "bitMasks": ["0x01"]
+    },
+    {
+      "number": 2,
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 3,
+      "address": "0x0004A028",
+      "bitMasks": ["0x06"],
+      "requisites": [
+        {
+          "id": "agumonDDNA",
+          "address": "0x00048DB6"
+        }
+      ]
+    }
+  ]
+}

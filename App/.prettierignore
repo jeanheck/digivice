@@ -1,0 +1,2 @@
+# Static game data keeps the JSON.stringify layout (one array item per line)
+src/data/game/

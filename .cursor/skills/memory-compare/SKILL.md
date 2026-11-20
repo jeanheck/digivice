@@ -37,7 +37,7 @@ Optional: gameplay context; snapshots under `Tools/MemoryScanner/Snapshots/`.
 | [memory-regions.md](memory-regions.md) | Always (RAM map, noise, domain → region) |
 | [patterns/patterns-general.md](patterns/patterns-general.md) | Always (noise signatures, possession vs progress, validation) |
 | [patterns/patterns-quests.md](patterns/patterns-quests.md) | Main/side quests, legendary weapons, DRI agents, Duel Island |
-| [patterns/patterns-battle.md](patterns/patterns-battle.md) | Digimon battle, blast, enemy, field, status |
+| [patterns/patterns-battle.md](patterns/patterns-battle.md) | Digimon battle index (address map) + blast; links to `patterns-battle-slots.md` (slots, enemy, status, drops), `patterns-battle-combatants.md` (attr/resist pair, species) and `patterns-battle-field.md` (field, curse) |
 | [patterns/patterns-card-battle.md](patterns/patterns-card-battle.md) | Tamer battles, card battles, NPC win flags |
 | [patterns/patterns-map.md](patterns/patterns-map.md) | MapId, seabed, Mobius Desert, subzones |
 
@@ -51,7 +51,7 @@ Natsumi card rematch + map scripts, DRI agent hunt, and the
 1. **Identify domain** — quest step, item obtained, level-up, map transition, battle, auction, NPC/card battle, etc.
 2. **Parse diffs** — per address: `addedBits = after & ~before`, `removedBits = before & ~after`.
 3. **Filter noise** — deprioritize addresses listed as noise in `memory-regions.md` / `patterns-general.md` unless the investigation targets that domain.
-4. **Cross-reference** — scan `Backend/Memory/Definitions/**/*.json`. Map `address → known purpose`; check offsets relative to known anchors (party slots, digimon blocks, player fields, battle slots).
+4. **Cross-reference** — scan `App/src/data/memory-addresses/**/*.json`. Map `address → known purpose`; check offsets relative to known anchors (party slots, digimon blocks, player fields, battle slots).
 5. **Rank candidates**:
    - Single-bit add (`+ flag` power of two) for progress/possession flags
    - Same byte or block as related mapped data
@@ -60,33 +60,33 @@ Natsumi card rematch + map scripts, DRI agent hunt, and the
    - For acquisitions: `+ flag` without conflicting `- flag`
 6. **Respond** with the output template. **Always suggest JSON** when the target maps to a Definitions file.
 7. **Retrofeed** in the same turn (see below).
-8. **Integration** — do not edit Definitions JSON or backend code unless the user explicitly asks beyond investigation.
+8. **Integration** — do not edit Definitions JSON or memory layer code unless the user explicitly asks beyond investigation.
 
 ## Bitmask rules
 
 - Flag set: `(byte & bitMask) != 0`; one byte holds up to 8 independent flags
-- Definitions use `BitMasks` (array) on steps and requisites; empty → `byte != 0`; multiple → **all** must be set
-- Some non-quest files use singular `BitMask` objects (`AuctionAddresses.json`, `NpcAddresses.json`)
+- Definitions use `bitMasks` (array) on steps and requisites; empty → `byte != 0`; multiple → **all** must be set
+- Some non-quest files use singular `bitMask` objects (`auction-addresses.json`, `npc-addresses.json`)
 
 ## Domain hints
 
 | Domain | Definitions / anchors | Typical diff shape |
 |--------|----------------------|-------------------|
-| Main quest | `Quests/MainQuestAddresses.json` | Bit flip in `0x4B3xx` |
-| Side quests | `Quests/SideQuests/` | Bit flip or raw byte |
-| Legendary weapons | `Quests/LegendaryWeapons/` | Sequential bit on `0x4B38E` |
-| DRI agents (8/8 done) | `Quests/DriAgents/` + `.cursor/docs/investigations/dri-agent-hunt.md` | Talk `0x4B38C` / boss `0x4B3B7`–`B8` / deliver per-agent byte |
-| Duel Island | `Quests/DuelIsland/` | Round bits `0x4B3B2` `0x80`, `0x4B3B3` `0x01`–`0x08`; trophies `0x48DC2` / `0x48DC4` |
-| Important items | `ImportantItemsAddresses.json` | Possession byte `0 → 1` in `~0x48DBx`–`0x48DCx` |
-| Player | `PlayerAddresses.json` (`Bits`, `MapId`, `PreviousMapId`, `SeabedRoute`, `MapVariant`) | MapId / PreviousMapId on transition |
-| Map / seabed / Mobius | `PlayerAddresses.json` + `patterns-map.md` | `0x48D78` / `0x48D7A` / `0x4B400` |
+| Main quest | `quests/main-quest-addresses.json` | Bit flip in `0x4B3xx` |
+| Side quests | `quests/side-quests/` | Bit flip or raw byte |
+| Legendary weapons | `quests/legendary-weapons/` | Sequential bit on `0x4B38E` |
+| DRI agents (8/8 done) | `quests/dri-agents/` + `.cursor/docs/investigations/dri-agent-hunt.md` | Talk `0x4B38C` / boss `0x4B3B7`–`B8` / deliver per-agent byte |
+| Duel Island | `quests/duel-island/` | Round bits `0x4B3B2` `0x80`, `0x4B3B3` `0x01`–`0x08`; trophies `0x48DC2` / `0x48DC4` |
+| Important items | `important-items-addresses.json` | Possession byte `0 → 1` in `~0x48DBx`–`0x48DCx` |
+| Player | `player-addresses.json` (`bits`, `mapId`, `previousMapId`, `seabedRoute`, `mapVariant`) | MapId / PreviousMapId on transition |
+| Map / seabed / Mobius | `player-addresses.json` + `patterns-map.md` | `0x48D78` / `0x48D7A` / `0x4B400` |
 | Map subzones | skill `map-subzone-investigate` | Same MapId, different encounter regions |
-| Party | `PartyAddresses.json` (slots `0x48DA4+`) | Slot ID bytes |
-| Digimon stats | `Parties/DigimonStatusAddresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |
-| Digimon battle | `Battles/*.json`, `Parties/InBattleAddresses.json` | skill `battle-memory-investigate` |
-| NPC digimon battles | `NpcAddresses.json` | BattledTamer bits `0x4B3DF`, `0x4B39A+` |
-| Card battle | `CardBattleAddresses.json` (`0x4B404`) | Config id on MapId `0x0700`; win counters `0x48E0B` / `0x48F19` |
-| Auctions | `AuctionAddresses.json` | Bits on `0x4B38A`; story window `0x4B370` |
+| Party | `party-addresses.json` (slots `0x48DA4+`) | Slot ID bytes |
+| Digimon stats | `parties/digimon-status-addresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |
+| Digimon battle | `battles/*.json`, `parties/in-battle-addresses.json` | skill `battle-memory-investigate` |
+| NPC digimon battles | `npc-addresses.json` | BattledTamer bits `0x4B3DF`, `0x4B39A+` |
+| Card battle | `card-battle-addresses.json` (`0x4B404`) | Config id on MapId `0x0700`; win counters `0x48E0B` / `0x48F19` |
+| Auctions | `auction-addresses.json` | Bits on `0x4B38A` / `0x4B38B`; story window `0x4B370` |
 | Common items | — | Quantity table `0x4858F+`; possession `~0x48ECx` may clear on sell |
 
 ## Output template
@@ -142,6 +142,6 @@ Doc: `Tools/MemoryScanner/README.md`. Value sizes: 1=byte, 2=Int16, 4=Int32.
 
 | Target | Skill |
 |--------|-------|
-| `Quests/**` tracker | `quest-pattern-backend` → `quest-pattern-frontend` |
-| Field on an existing entity | `address-field-backend` → `address-field-frontend` |
-| New entity on `State` | `memory-entity-backend` → `memory-entity-frontend` |
+| `quests/**` tracker | `journal-quest-integration` |
+| Field on an existing entity | `memory-field-integration` |
+| New entity on `State` | `memory-entity-integration` |

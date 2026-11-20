@@ -22,12 +22,11 @@ Suggested read: `(byte & 0x__) != 0`
 
 ## Suggested JSON
 
-Path examples (quest-like trackers under `Quests/`):
+Path examples (quest-like trackers under `quests/`):
 
-- `Backend/Memory/Definitions/Quests/LegendaryWeapons/{Name}Addresses.json`
-- `Backend/Memory/Definitions/Quests/DriAgents/{Name}Addresses.json`
-- `Backend/Memory/Definitions/Quests/SideQuests/{Name}Addresses.json`
-
+- `App/src/data/memory-addresses/quests/legendary-weapons/{name-kebab}-addresses.json`
+- `App/src/data/memory-addresses/quests/dri-agents/{name-kebab}-addresses.json`
+- `App/src/data/memory-addresses/quests/side-quests/{name-kebab}-addresses.json`
 ```json
 
 ```

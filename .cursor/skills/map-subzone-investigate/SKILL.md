@@ -41,7 +41,7 @@ basics from scratch — read the handoff doc first.
 
 Do **not** wire new Player fields or change `map.json` enemy phases until
 a discriminator is validated. Investigation-only unless the user explicitly
-asks to integrate (then: `address-field-backend` → `address-field-frontend`).
+asks to integrate (then: `memory-field-integration`).
 
 ## Cheat Engine / DuckStation
 

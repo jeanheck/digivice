@@ -1,0 +1,143 @@
+{
+  "asukaBlackMarket": {
+    "locationId": "020E",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "fixed",
+    "inventory": [
+      "411",
+      "414"
+    ]
+  },
+  "asukaItemShop": {
+    "locationId": "020D",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "411",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "435",
+      "436",
+      "437",
+      "438",
+      "439",
+      "440",
+      "441",
+      "442",
+      "443",
+      "444",
+      "445",
+      "446"
+    ]
+  },
+  "seiryuItemShop": {
+    "locationId": "022F",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "411",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "435",
+      "436",
+      "437",
+      "438",
+      "439",
+      "440",
+      "441",
+      "442",
+      "443",
+      "444",
+      "445",
+      "446"
+    ]
+  },
+  "suzakuItemShop": {
+    "locationId": "023E",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "411",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "435",
+      "436",
+      "437",
+      "438",
+      "439",
+      "440",
+      "441",
+      "442",
+      "443",
+      "444",
+      "445",
+      "446"
+    ]
+  },
+  "byakkoItemShop": {
+    "locationId": "025D",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "411",
+      "414",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "435",
+      "436",
+      "437",
+      "438",
+      "439",
+      "440",
+      "441",
+      "442",
+      "443",
+      "444",
+      "445",
+      "446"
+    ]
+  },
+  "genbuItemShop": {
+    "locationId": "026F",
+    "imageName": "Wizardmon",
+    "inventoryOrder": "alphabetical",
+    "inventory": [
+      "411",
+      "414",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "435",
+      "436",
+      "437",
+      "438",
+      "439",
+      "440",
+      "441",
+      "442",
+      "443",
+      "444",
+      "445",
+      "446"
+    ]
+  }
+}

@@ -13,10 +13,10 @@ identify which route or exit applies.
 
 Full method and evidence: [seabed-routing-investigation.md](../../../docs/investigations/seabed-routing-investigation.md).
 
-### Rolling PreviousMapId — `0x4B400` (confirmed, in PlayerAddresses)
+### Rolling PreviousMapId — `0x4B400` (confirmed, in `player-addresses.json`)
 
-Wired as `PreviousMapId` on the Player pipeline (`PlayerChanged`) — same type
-as `MapId` (`ReadInt16` → domain/DTO string `X4`). Frontend: `previousMapId`.
+Wired as `player.previousMapId` in the TS memory layer — same type as `mapId`
+(`readInt16` → string `X4` in `PlayerAssembler`).
 
 On every map transition, `0x4B400` receives the map the player **just left**:
 
@@ -30,9 +30,15 @@ segments, `0x4B400` is identical across routes.
 `0x48D68` mirrors `0x4B400` in the player block (not in JSON). `0x4B410`
 mirrors current `MapId` (`0x4B3F8`).
 
-### SeabedRoute — `0x48D78` (confirmed, in PlayerAddresses)
+**Correction (2026-11-04, 56 snaps):** `0x4B410` is the current **field** MapId
+(Int16): equal to `MapId` on field, but keeps the field map during digimon battle
+(`MapId 0600`, also card battle — see `patterns-card-battle.md`). `0x48D68` does
+not always mirror `0x4B400`: right after loading a save (`central-park-*`,
+`0x4B400 = 1000`) it held the current map.
 
-Wired as `SeabedRoute` on the Player backend pipeline (`PlayerChanged`).
+### SeabedRoute — `0x48D78` (confirmed, in `player-addresses.json`)
+
+Wired as `player.seabedRoute` in the TS memory layer (`PlayerReader` / `PlayerAssembler`).
 
 - Set once on dive (`0x00` → route value).
 - **Unchanged** while walking between seabed maps on the same session.
@@ -48,9 +54,9 @@ Wired as `SeabedRoute` on the Player backend pipeline (`PlayerChanged`).
 
 Table incomplete — more dive points not yet mapped.
 
-### IsSubmerged / MapVariant — `0x48D7A` (confirmed, in PlayerAddresses)
+### IsSubmerged / MapVariant — `0x48D7A` (confirmed, in `player-addresses.json`)
 
-Wired as `MapVariant` on the Player backend pipeline (`PlayerChanged`).
+Wired as `player.mapVariant` in the TS memory layer (`PlayerReader` / `PlayerAssembler`).
 
 **Seabed:** `0x01` for the entire underwater session; `0x00` on surface.
 Indicates submerged state, not which route. (Investigation notes formerly
@@ -80,6 +86,22 @@ Same address as `MapVariant`. Sixteen snapshots
 RAM scan found no other byte with that topology.
 
 Identity: `(MapId, 0x48D7A)` with `D7A ∈ 1..8`.
+
+---
+
+## Server Asuka vs Amaterasu — no global flag (2026-11-04)
+
+Amaterasu maps are a separate MapId range (`028C`–`02D6`; e.g. Central Park
+`021D` Asuka ↔ `028C` Amaterasu, Forest Inn BF `0224` ↔ `0293`). Snaps
+`central-park-asuka` / `central-park-amaterasu` + 49 classified snaps (30 Asuka,
+19 Amaterasu, field and battle): **no byte and no bit** in the 2 MiB is constant
+per server except `0x4B410` bit `0x80` (just the low byte of the field MapId —
+Amaterasu ids ≥ `0x80`) and heap noise `0x145C5A`. Pair-only candidates
+`0x48D7D`, `0x4B420`, `0x48D82`, `0x48D84` vary inside each server.
+
+Resolve the server from the MapId range, using `0x4B410` (field MapId) in
+battle. Shared maps (seabed `02E0`–`02E7`, Circuit `02E9`/`02ED`) remain
+ambiguous; no Asuka-side seabed snapshot was available to test them.
 
 ---
 

@@ -1,0 +1,10 @@
+{
+  "id": "eternally",
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38E",
+      "bitMasks": ["0x01"]
+    }
+  ]
+}

@@ -341,7 +341,7 @@ grid layers at snapshot tile coords, prints `e2e0` / `de30` correlation.
   or PreviousMapId for Asuka) — not MapId alone.
 - Pattern exists elsewhere: `map.json` phases via `lastMainQuestStepDone`
   (e.g. Wire Forest). Asuka safe/danger is **not** that pattern in the compare.
-- Do not wire backend addresses until a candidate is validated against grids.
+- Do not wire addresses into the memory layer until a candidate is validated against grids.
 
 ---
 

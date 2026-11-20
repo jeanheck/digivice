@@ -1,32 +1,31 @@
 {
-  "$schema": "../Frontend/node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "digivice",
-  "version": "0.1.0",
+  "$schema": "../App/node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Digivice",
+  "version": "../App/package.json",
   "identifier": "com.digivice.app",
   "build": {
-    "frontendDist": "../Frontend/dist",
+    "frontendDist": "../App/dist",
     "devUrl": "http://localhost:5173",
     "beforeDevCommand": {
       "script": "npm run dev",
-      "cwd": "../Frontend"
+      "cwd": "../App"
     },
     "beforeBuildCommand": {
       "script": "npm run build",
-      "cwd": "../Frontend"
-    },
-    "beforeBundleCommand": {
-      "script": "powershell -ExecutionPolicy Bypass -File ../Tauri/scripts/copy-sidecar-runtime.ps1",
-      "cwd": "../Frontend"
+      "cwd": "../App"
     }
   },
   "app": {
     "windows": [
       {
         "title": "Digivice",
-        "width": 800,
-        "height": 600,
+        "width": 1280,
+        "height": 720,
+        "minWidth": 1280,
+        "minHeight": 720,
         "resizable": true,
-        "fullscreen": false
+        "maximized": true,
+        "backgroundColor": "#000030"
       }
     ],
     "security": {
@@ -34,21 +33,12 @@
     }
   },
   "bundle": {
-    "active": true,
-    "targets": "all",
+    "active": false,
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
-      "icons/icon.icns",
       "icons/icon.ico"
-    ],
-    "externalBin": [
-      "binaries/backend"
-    ],
-    "resources": {
-      "binaries/appsettings.json": "appsettings.json",
-      "binaries/Memory/": "Memory/"
-    }
+    ]
   }
 }

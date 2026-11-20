@@ -1,6 +1,6 @@
 ---
 description: Frontend Digivice — dados estáticos (Repository, Service, Presenter, Converter, ViewModel), i18n, extensions, assets
-globs: Frontend/src/{presenters,services,repositories,viewmodels,extensions,catalogs,database}/**
+globs: App/src/{presentation,ui/catalogs,ui/i18n,core/extensions,data/game}/**
 alwaysApply: false
 ---
 
@@ -13,11 +13,11 @@ Migração dos presenters existentes para este padrão é **incremental** — pr
 | Camada | Responsabilidade |
 |--------|------------------|
 | **Component** | Pinia + **apenas o presenter da sua tela**. Não chama service/repository/converter nem presenters de outras features. |
-| **Service** (`services/`) | Regras de domínio reutilizáveis por mais de um presenter; pode orquestrar repositories. Sem Vue/presenters/ViewModel de tela. |
-| **Repository** (`repositories/`) | Dados estáticos (`database/*.json` + tipos em `repositories/tables/`) → tipos **Raw** apenas. |
-| **Converter** (`presenters/converter/`) | Puro e stateless: Raw → ViewModel. Sem repository/regra de tela. |
-| **Presenter** (`presenters/`) | Orquestra service/repo/converter; regras de tela (ex.: `[]` quando não há dado). Não monta ViewModel inline se houver transformação. |
-| **ViewModel** (`viewmodels/`) | Contrato da UI; um tipo por arquivo `{nome}.viewmodel.ts`. |
+| **Service** (`presentation/services/`) | Regras de domínio reutilizáveis por mais de um presenter; pode orquestrar repositories. Sem Vue/presenters/ViewModel de tela. |
+| **Repository** (`presentation/repositories/`) | Dados estáticos (`data/game/*.json` + tipos em `presentation/repositories/tables/`) → tipos **Raw** apenas. |
+| **Converter** (`presentation/presenters/converter/`) | Puro e stateless: Raw → ViewModel. Sem repository/regra de tela. |
+| **Presenter** (`presentation/presenters/`) | Orquestra service/repo/converter; regras de tela (ex.: `[]` quando não há dado). Não monta ViewModel inline se houver transformação. |
+| **ViewModel** (`presentation/viewmodels/`) | Contrato da UI; um tipo por arquivo `{nome}.viewmodel.ts`. |
 
 ```
 Component → (seu) Presenter → Service → Repository → Raw
@@ -29,38 +29,38 @@ Component → (seu) Presenter → Service → Repository → Raw
 
 - Cada componente chama **somente** o presenter da sua feature (ex.: `Map.vue` → `MapPresenter`). Lógica útil em outro presenter → extrair para Service antes de compartilhar.
 - Service é opcional em casos simples (presenter acessa repository/converter direto).
-- Informação derivada **apenas do estado** (model do Pinia) vem de `stores/selectors/` (ver `digivice-frontend-sync.mdc`); presenters/services consomem o selector e não reimplementam essa lógica.
+- Informação derivada **apenas do estado** (model do Pinia) vem de `state/stores/selectors/` (ver `digivice-frontend-sync.mdc`); presenters/services consomem o selector e não reimplementam essa lógica.
 - Presenters/services/selectors recebem entidades e `mapId` não anuláveis (`Quest`, `Auctions`, `ImportantItems`, `Npcs`, `locationId: string`). `| null` apenas quando o null tem significado próprio (`enemy`, `cardBattle.id`, `player.seabedRoute`, `player.mapVariant`, seleção de modal, resultado de `find`).
 
 ## Raw vs ViewModel
 
-- Raw ≈ ViewModel estruturalmente → **pass-through tipado** no presenter (sem converter). Referência: `presenters/map/seabed.presenter.ts` (`as SeabedRouteLocationViewModel`).
+- Raw ≈ ViewModel estruturalmente → **pass-through tipado** no presenter (sem converter). Referência: `presentation/presenters/map/seabed.presenter.ts` (`as SeabedRouteLocationViewModel`).
 - Qualquer transformação/projeção (subset, derivados, enriquecimento) → converter. Referência: `enemy-resumed.converter.ts` (`enemyId` + `EnemyRaw` → `EnemyResumedViewModel`). Converter pode receber parâmetros de contexto além do Raw.
 - Raw e ViewModel continuam tipos distintos mesmo quando espelhados.
 
-## Database (`src/database/`)
+## Data (`src/data/game/`)
 
-- Conceito com um único JSON fica direto na raiz de `database/` (ex.: `enemy.json`, `field.json`).
+- Conceito com um único JSON fica direto na raiz de `data/game/` (ex.: `enemy.json`, `field.json`).
 - Subpasta só quando o conceito tem mais de um JSON (ex.: `digievolution/`, `quest/`, `tcg/`). Quando um arquivo da raiz ganhar um irmão, os dois vão para uma pasta.
 - Exceção: a pasta pode ser criada antes, com um único JSON, quando o conceito já tem novos arquivos previstos (ex.: `shop/`).
-- `repositories/tables/` e `repositories/tables/raws/` não precisam espelhar essa estrutura.
+- `presentation/repositories/tables/` e `presentation/repositories/tables/raws/` não precisam espelhar essa estrutura.
 
 ## i18n
 
-Presenter/converter devolvem **chaves** (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t`, não importam `vue-i18n`. `t` / `useI18n` só no componente. Referências: `CardBattleViewModel.titleKey` (`viewmodels/map/card-battle.viewmodel.ts`) + `CardBattle.vue`; `FieldViewModel` + `DigimonBattleField.vue`.
+Presenter/converter devolvem **chaves** (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t`, não importam `vue-i18n`. `t` / `useI18n` só no componente. Referências: `CardBattleViewModel.titleKey` (`presentation/viewmodels/map/card-battle.viewmodel.ts`) + `CardBattle.vue`; `FieldViewModel` + `DigimonBattleField.vue`.
 
 Nomes de Digimons/Digievoluções são nomes próprios: literais, nunca via i18n.
 
-## Services (`src/services/`)
+## Services (`src/presentation/services/`)
 
 - Classe `{AlgumaCoisa}Service`; arquivo `{alguma-coisa}.service.ts`; métodos estáticos.
-- Existentes: `AuctionService`, `DigimonService`, `DropService`, `DvexpService`, `EquipmentService`, `MapService`, `MobiusDesertService`, `NpcService`, `PartyService`, `QuestService`, `StatService`. Reutilize antes de criar.
+- Existentes: `AuctionService`, `DigimonService`, `DnaDigievolutionService`, `DropService`, `DvexpService`, `EquipmentService`, `MapService`, `MobiusDesertService`, `MomentService`, `NpcService`, `PartyService`, `PriceService`, `QuestService`, `StatService`. Reutilize antes de criar.
 
 ## Helpers legados
 
-`presenters/helper/` contém legado (`party-level`, `location-label`, `location-encounter`, `desert-neighbor`, `digievolution-techniques`, `main-quest-range`, `quest-progress`, `npc-battle-opponent`, `npc-battle-from-enemy`, `search-item-sort`). Permanece até migração gradual para services — **não** criar helpers novos em `presenters/helper/` nem `src/helpers/`.
+`presentation/presenters/helper/` contém legado (`party-level`, `location-label`, `location-encounter`, `desert-neighbor`, `digievolution-techniques`, `quest-progress`, `npc-battle-opponent`, `npc-battle-from-enemy`, `search-item-sort`). Permanece até migração gradual para services — **não** criar helpers novos em `presentation/presenters/helper/` nem `src/helpers/`.
 
-## Extensions (`src/extensions/`)
+## Extensions (`src/core/extensions/`)
 
 - Arquivo `{alvo}.extensions.ts` (ex.: `math.extensions.ts`); side-effect com declaration merging + atribuição no builtin.
 - Importar uma vez em `main.ts`; call sites usam a API aumentada (`Math.sum`) sem import local.
@@ -70,7 +70,7 @@ Nomes de Digimons/Digievoluções são nomes próprios: literais, nunca via i18n
 
 - `imageName` em JSON estático começa com letra maiúscula e bate exatamente com o arquivo em `src/assets/` (sem extensão).
 - Nomes usados como chave de asset (ex.: boss via `enemyRaw.name`) seguem a mesma regra.
-- `ImageCatalog` (`catalogs/image.catalog.ts`) faz lookup exato; não normaliza casing.
+- `ImageCatalog` (`ui/catalogs/image.catalog.ts`) faz lookup exato; não normaliza casing.
 
 ## Proibido em código novo ou refatorado
 

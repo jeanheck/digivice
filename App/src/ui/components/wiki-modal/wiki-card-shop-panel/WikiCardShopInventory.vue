@@ -1,0 +1,31 @@
+<script setup lang="ts">
+import WikiCardShopInventoryCard from "@/ui/components/wiki-modal/wiki-card-shop-panel/WikiCardShopInventoryCard.vue";
+import type { WikiCardShopInventoryCardViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-card-shop-inventory-card.viewmodel";
+
+defineProps<{
+  cards: WikiCardShopInventoryCardViewModel[];
+}>();
+
+const emit = defineEmits<{
+  (e: "open-card", cardId: string): void;
+}>();
+
+const handleSelect = (cardId: string): void => {
+  emit("open-card", cardId);
+};
+</script>
+
+<template>
+  <div class="flex flex-col flex-1 min-h-0 overflow-hidden text-xs text-center gap-4">
+    <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll">
+      <div class="flex flex-wrap content-start justify-center gap-2 w-full">
+        <WikiCardShopInventoryCard
+          v-for="card in cards"
+          :key="card.cardId"
+          :card="card"
+          @select="handleSelect"
+        />
+      </div>
+    </div>
+  </div>
+</template>

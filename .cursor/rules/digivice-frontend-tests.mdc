@@ -1,0 +1,32 @@
+---
+description: Convenções de testes Frontend Digivice (Vitest) — escopo restrito à camada de leitura de memória, espelhamento 1:1, nomes e corner cases
+globs: App/tests/**
+alwaysApply: false
+---
+
+# Digivice — Tests (Frontend)
+
+Padrões concretos (helpers, fixtures, onde colocar cada teste): skill `frontend-memory-tests`.
+
+## Escopo
+
+- Só a camada de leitura de memória tem testes: `src/memory/**` (snapshot, converters, repositories, readers, assemblers, providers, composer, patch, loop) e as actions `applyState`/`applyError` da `useGameStore` (`tests/state/stores/use-game-store.spec.ts`).
+- Exceção: `loop/memory-loop.initializer.ts` só liga stores, config e loggers (como o `main.ts`); sem spec.
+- O restante do Frontend não tem testes (regra 6 de `digivice-frontend.mdc`).
+
+## Stack
+
+- Vitest, ambiente `node` (sem DOM, sem `@vue/test-utils`). Config: `App/vitest.config.ts` (herda `vite.config.ts`: alias `@/`, `import.meta.glob`).
+- Imports explícitos de `vitest` (`import { describe, expect, it } from "vitest";`), sem globals.
+- Tipos checados por `tsconfig.vitest.json` dentro do `npm run type-check`.
+- Rodar: `npm run test:run` (uma vez) ou `npm run test` (watch), em `App/`.
+
+## Regras
+
+1. **Local:** `App/tests/` espelhando `src/` (ex.: `src/memory/readers/player.reader.ts` → `tests/memory/readers/player.reader.spec.ts`). Nunca `*.spec.ts` ou `__tests__` dentro de `src/`.
+2. **Um arquivo de produção ↔ um arquivo de testes** (`{nome}.ts` → `{nome}.spec.ts`). Exceções (não forçar split): testes de integração de um fluxo inteiro, suites transversais, helpers compartilhados sem arquivo de produção.
+3. **Nomes em inglês:** `describe("{Classe}")` → `describe("{método}")` → `it("should {resultado} when {condição}")`.
+4. **Imports:** código de produção via `@/`; helpers de teste por caminho relativo dentro de `tests/`.
+5. **Snapshot:** montar memória com `FakeSnapshotBuilder` (`tests/helpers/`) ou carregar fixture real com `SnapshotFixtureLoader` (`tests/fixtures/snapshots/`, catalogada no README da pasta), e envolver em `MemorySnapshot`. Não montar `ArrayBuffer`/`DataView` à mão nos testes da camada (exceção: testes dos próprios helpers).
+6. **Definitions:** usar os JSONs reais via `AddressesRepository`; nunca mockar. Mock só para fronteiras externas (`invoke` do Tauri), como descrito na skill.
+7. **Corner cases:** ao finalizar, revisar o código de produção e cobrir fronteiras de sentinela (`-1`, `0`, `1`), valores negativos e `0xFFFF`, várias bitmasks, steps sem máscara, coleções vazias, busca por id vs. índice e caminhos de erro (snapshot curto, definition ausente).

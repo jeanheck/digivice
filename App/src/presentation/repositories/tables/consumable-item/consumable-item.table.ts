@@ -1,0 +1,3 @@
+import type { ConsumableItemRaw } from "@/presentation/repositories/tables/raws/consumable-item/consumable-item.raw";
+
+export type ConsumableItemTable = Record<string, ConsumableItemRaw>;

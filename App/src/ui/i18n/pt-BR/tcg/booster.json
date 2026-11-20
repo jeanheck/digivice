@@ -1,0 +1,109 @@
+{
+  "boosters": {
+    "501": {
+      "name": "Pacote 1b"
+    },
+    "502": {
+      "name": "Pacote 2b"
+    },
+    "503": {
+      "name": "Pacote 3b"
+    },
+    "504": {
+      "name": "Pacote 4b"
+    },
+    "505": {
+      "name": "Pacote 5b"
+    },
+    "506": {
+      "name": "Pacote 6b"
+    },
+    "507": {
+      "name": "Pacote 7b"
+    },
+    "508": {
+      "name": "Pacote 8b"
+    },
+    "509": {
+      "name": "Pacote 9b"
+    },
+    "510": {
+      "name": "Pacote 10b"
+    },
+    "511": {
+      "name": "Pacote 11b"
+    },
+    "512": {
+      "name": "Pacote 12b"
+    },
+    "513": {
+      "name": "Pacote 13b"
+    },
+    "514": {
+      "name": "Pacote 14b"
+    },
+    "515": {
+      "name": "Pacote 15b"
+    },
+    "516": {
+      "name": "Pacote R-01"
+    },
+    "517": {
+      "name": "Pacote R-02"
+    },
+    "518": {
+      "name": "Pacote R-03"
+    },
+    "519": {
+      "name": "Pacote R-04"
+    },
+    "520": {
+      "name": "Pacote R-05"
+    },
+    "521": {
+      "name": "Pacote 01a"
+    },
+    "522": {
+      "name": "Pacote 02a"
+    },
+    "523": {
+      "name": "Pacote 03a"
+    },
+    "524": {
+      "name": "Pacote 04a"
+    },
+    "525": {
+      "name": "Pacote 05a"
+    },
+    "526": {
+      "name": "Pacote 06a"
+    },
+    "527": {
+      "name": "Pacote 07a"
+    },
+    "528": {
+      "name": "Pacote 08a"
+    },
+    "529": {
+      "name": "Pacote 09a"
+    },
+    "530": {
+      "name": "Pacote 10a"
+    },
+    "531": {
+      "name": "Pacote 11a"
+    },
+    "532": {
+      "name": "Pacote 12a"
+    },
+    "533": {
+      "name": "Pacote 13a"
+    },
+    "534": {
+      "name": "Pacote 14a"
+    },
+    "535": {
+      "name": "Pacote 15a"
+    }
+  }
+}

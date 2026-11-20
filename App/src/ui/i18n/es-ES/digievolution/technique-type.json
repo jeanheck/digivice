@@ -1,0 +1,8 @@
+{
+  "techniqueTypes": {
+    "physical": "Física",
+    "magical": "Mágica",
+    "heal": "Curación",
+    "support": "Apoyo"
+  }
+}

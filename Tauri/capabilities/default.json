@@ -7,15 +7,6 @@
   ],
   "permissions": [
     "core:default",
-    "shell:allow-open",
-    {
-      "identifier": "shell:allow-execute",
-      "allow": [
-        {
-          "name": "binaries/backend",
-          "sidecar": true
-        }
-      ]
-    }
+    "shell:allow-open"
   ]
 }

@@ -1,0 +1,61 @@
+{
+  "experience": "0x18",
+  "level": "0x1C",
+  "tp": "0x1E",
+  "hp": {
+    "current": "0x20",
+    "max": "0x22"
+  },
+  "mp": {
+    "current": "0x24",
+    "max": "0x26"
+  },
+  "attributes": {
+    "strength": "0x28",
+    "defense": "0x2A",
+    "spirit": "0x2C",
+    "wisdom": "0x2E",
+    "speed": "0x30",
+    "charisma": "0x32"
+  },
+  "elements": {
+    "fire": "0x34",
+    "water": "0x36",
+    "ice": "0x38",
+    "wind": "0x3A",
+    "thunder": "0x3C",
+    "machine": "0x3E",
+    "dark": "0x40"
+  },
+  "equipments": {
+    "head": "0x3C0",
+    "body": "0x3C2",
+    "right": "0x3C4",
+    "left": "0x3C6",
+    "accessory1": "0x3C8",
+    "accessory2": "0x3CA"
+  },
+  "digievolutions": {
+    "activeDigievolution": "-4",
+    "slots": [
+      {
+        "index": 1,
+        "address": "0x48"
+      },
+      {
+        "index": 2,
+        "address": "0x4A"
+      },
+      {
+        "index": 3,
+        "address": "0x4C"
+      }
+    ],
+    "unlockedDigievolutionsStart": "0x50",
+    "unlockedDigievolutionEntryStride": "20",
+    "maxUnlockedDigievolutions": "60",
+    "id": "0x00",
+    "level": "0x02",
+    "dvexp": "0x04"
+  }
+}

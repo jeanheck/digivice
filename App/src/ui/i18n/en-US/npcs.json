@@ -1,0 +1,103 @@
+{
+  "npcs": {
+    "seiryuLeader": {
+      "name": "Seiryu Leader"
+    },
+    "keith": {
+      "name": "Keith"
+    },
+    "suzakuLeader": {
+      "name": "Suzaku Leader"
+    },
+    "fakeByakkoLeader": {
+      "name": "Byakko Leader"
+    },
+    "byakkoLeader": {
+      "name": "Byakko Leader"
+    },
+    "aoaAttacker": {
+      "name": "A.o.A Attacker"
+    },
+    "trooper1AdminCenterB1F": {
+      "name": "1º Trooper"
+    },
+    "trooper2AdminCenterB1F": {
+      "name": "2º Trooper"
+    },
+    "trooper3AdminCenterB1F": {
+      "name": "3º Trooper"
+    },
+    "optionalTrooper1AdminCenterB1F": {
+      "name": "4º Trooper"
+    },
+    "optionalTrooper2AdminCenterB1F": {
+      "name": "5º Trooper"
+    },
+    "trooper1BasementStairs": {
+      "name": "6º Trooper"
+    },
+    "trooper2BasementStairs": {
+      "name": "7º Trooper"
+    },
+    "trooper3BasementStairs": {
+      "name": "8º Trooper"
+    },
+    "trooper1AdminFloor1": {
+      "name": "9º Trooper"
+    },
+    "trooper2AdminFloor1": {
+      "name": "10º Trooper"
+    },
+    "optionalTrooperAdminFloor1": {
+      "name": "11º Trooper"
+    },
+    "trooper1AdminFloor2": {
+      "name": "12º Trooper"
+    },
+    "trooper2AdminFloor2": {
+      "name": "13º Trooper"
+    },
+    "soldierAdminFloor2": {
+      "name": "1º Soldier"
+    },
+    "generalAdminFloor2": {
+      "name": "General"
+    },
+    "optionalTrooper1AdminFloor2": {
+      "name": "14º Trooper"
+    },
+    "optionalSoldier1AdminFloor2": {
+      "name": "2º Soldier"
+    },
+    "optionalTrooper2AdminFloor2": {
+      "name": "15º Trooper"
+    },
+    "guardsHeadquarters": {
+      "name": "Guards"
+    },
+    "gameMasterHeadquarters": {
+      "name": "Game Master"
+    },
+    "qingLongLeader": {
+      "name": "Qing Long Leader"
+    },
+    "zhuQueLeader": {
+      "name": "Zhu Que Leader"
+    },
+    "genbuLeader": {
+      "name": "Genbu Leader"
+    },
+    "iceWitch": {
+      "name": "Ice Witch"
+    },
+    "fireKnight": {
+      "name": "Fire Knight"
+    },
+    "darkKnight": {
+      "name": "Dark Knight"
+    },
+    "mechSoldier": {
+      "name": "Mech Soldier"
+    }
+  }
+}

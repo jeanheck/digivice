@@ -1,0 +1,42 @@
+---
+description: Convenções da camada Rust/Tauri Digivice — ponte mínima de leitura da RAM do DuckStation (read_ram), códigos de erro, processo vivo e uso de unsafe
+globs: Tauri/**
+alwaysApply: false
+---
+
+# Digivice — Tauri (Rust)
+
+O antigo backend C# (sidecar com SignalR) foi removido; o código pode ser consultado na tag git `last-csharp-backend`.
+
+## Responsabilidade
+
+- O Rust é uma **ponte mínima**: acha o DuckStation, abre a memória compartilhada `duckstation_{pid}` e entrega **bytes brutos**. Nenhuma lógica de domínio (endereços, sentinelas, assemblers) vive aqui; isso é da camada TS `App/src/memory/`.
+- App só Windows e desktop: sem `lib.rs` nem estrutura de mobile. `main.rs` registra o plugin shell (usado pelo `open` de `external-link.service.ts`, capability `shell:allow-open`), o plugin `window-state` (lembra tamanho e posição da janela; só Rust, sem capability), o `MemoryState` e o comando `read_ram`. Sem sidecar nem outro processo auxiliar.
+- Build de release: `build.ps1` na raiz (`npm install`, testes, `npm run tauri:build`). `bundle.active: false`: gera só `Tauri/target/release/digivice.exe`, sem instaladores. Versão única no `App/package.json` (lida pelo `tauri.conf.json`; manter o `Cargo.toml` igual).
+
+## Desenvolvimento local
+
+- Fluxo diário: `npm run tauri:dev` (em `App/`). Sobe o Vite com HMR e abre a janela do Tauri apontando para ele (`devUrl`); só a casca Rust é compilada (debug, incremental).
+- DevTools: botão direito → Inspect ou `Ctrl+Shift+I` na janela do Tauri. No navegador comum não existe a ponte com o Rust (`invoke("read_ram")`).
+- `npm run dev` no navegador puro não lê memória; usar `npm run tauri:dev`.
+
+## Contrato do `read_ram`
+
+- Comando `async` em `src/commands.rs`; no JS, `invoke("read_ram")` resolve com um `ArrayBuffer`.
+- Sempre **2 MiB** (`RAM_SIZE`), mesmo formato dos `.bin` do `Tools/MemoryScanner` e do `FakeSnapshotBuilder`.
+- Resposta binária via `tauri::ipc::Response`; nunca serializar bytes como JSON.
+- Erro rejeita a Promise com `{ code, detail }` (`MemoryError`). Códigos, também listados em `App/src/shared/constants/emulator-connection-error-code.constant.ts` (que soma `state_compose_failed` e `save_not_loaded`, gerados pelo `GameLoop` no TS):
+  - `process_not_found` — DuckStation não está aberto.
+  - `mapping_not_found` — processo existe, mas a memória compartilhada não (exportação desligada no DuckStation) ou não pôde ser mapeada.
+  - `connection_failed` — falha inesperada ao listar ou abrir o processo.
+  - `memory_read_failed` — view menor que 2 MiB.
+- Toda chamada confere se o processo continua vivo (handle com `PROCESS_SYNCHRONIZE`, `WaitForSingleObject` com timeout 0). Processo morto descarta a sessão e reconecta: com o mapping aberto, a RAM continuaria legível e congelada depois que o emulador fecha.
+- Qualquer erro descarta a sessão; a próxima chamada reconecta do zero.
+
+## Código
+
+1. Um módulo por responsabilidade em `src/memory/`: `process.rs` (processo), `mapping.rs` (view), `handle.rs` (`OwnedHandle`), `session.rs` (sessão e `MemoryState`), `error.rs` (`MemoryError`).
+2. Recursos Win32 sempre em wrappers com `Drop` (`OwnedHandle`, `SharedMemoryView`); nunca fechar handle manualmente fora deles.
+3. Todo bloco `unsafe` e todo `unsafe impl` com comentário `// SAFETY:` justificando.
+4. Convenções Rust padrão: `rustfmt`, `snake_case`, constantes `SCREAMING_SNAKE_CASE`; nomes sem abreviação (regra geral do projeto).
+5. Build sem warnings novos (`cargo build` em `Tauri/`, rodado pelo usuário ou quando ele pedir).

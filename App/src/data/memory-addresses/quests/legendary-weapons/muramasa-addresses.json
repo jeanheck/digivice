@@ -1,0 +1,17 @@
+{
+  "id": "muramasa",
+  "requisites": [
+    {
+      "id": "smellHerb",
+      "address": "0x0004B3B6",
+      "bitMasks": ["0x02"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38E",
+      "bitMasks": ["0x04"]
+    }
+  ]
+}

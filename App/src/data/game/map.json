@@ -1,0 +1,3233 @@
+{
+  "1000": {
+    "imageName": "In Menu Screen"
+  },
+  "1300": {
+    "imageName": "Card Shop Screen"
+  },
+  "1400": {
+    "imageName": "Reward Screen"
+  },
+  "0001": {
+    "imageName": "East Sector"
+  },
+  "0002": {
+    "imageName": "South Sector"
+  },
+  "0003": {
+    "imageName": "West Sector"
+  },
+  "0004": {
+    "imageName": "North Sector"
+  },
+  "0500": {
+    "imageName": "Initial Pack Screen"
+  },
+  "0C01": {
+    "imageName": "Saving at Asuka Inn 1F"
+  },
+  "0C02": {
+    "imageName": "Saving at Seiryu Tower"
+  },
+  "0C03": {
+    "imageName": "Saving at Swamp Inn"
+  },
+  "0C04": {
+    "imageName": "Saving at Suzaku Inn"
+  },
+  "0C12": {
+    "imageName": "Saving at Forest Inn"
+  },
+  "0C13": {
+    "imageName": "Saving at Mirage Hall"
+  },
+  "0C14": {
+    "imageName": "Saving at Pelche Oasis"
+  },
+  "0A00": {
+    "imageName": "In Training Screen"
+  },
+  "0D00": {
+    "imageName": "Kadomatsu Piximon Screen"
+  },
+  "0E03": {
+    "imageName": "Cutscene"
+  },
+  "0F00": {
+    "imageName": "In Store Screen"
+  },
+  "0600": {
+    "imageName": "In Battle Screen"
+  },
+  "0700": {
+    "imageName": "In Card Battle Screen"
+  },
+  "0200": {
+    "imageName": "Asuka City",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "tamers": [
+      {
+        "id": "genji",
+        "coordinates": {
+          "x": 84,
+          "y": 30
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0201": {
+    "imageName": "Asuka City 2",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 51,
+          "y": 39
+        }
+      },
+      {
+        "location": "020A",
+        "coordinates": {
+          "x": 50,
+          "y": 91
+        }
+      },
+      {
+        "location": "020B",
+        "coordinates": {
+          "x": 22,
+          "y": 83
+        }
+      }
+    ]
+  },
+  "0202": {
+    "imageName": "Asuka Bridge",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "keith",
+        "coordinates": {
+          "x": 56,
+          "y": 33
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "dock": true
+  },
+  "0203": {
+    "imageName": "Main Lobby",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 79.5,
+          "y": 23.5
+        }
+      }
+    ]
+  },
+  "0204": {
+    "imageName": "Main Lobby",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0205": {
+    "imageName": "Asuka City 3",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0206": {
+    "imageName": "Digimon Lab",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0207": {
+    "imageName": "Login Room",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0208": {
+    "imageName": "Arena Front Desk",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0210": {
+    "imageName": "Cargo Tower",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0211": {
+    "imageName": "Yellow Cruiser",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 51,
+          "y": 39
+        }
+      },
+      {
+        "location": "020A",
+        "coordinates": {
+          "x": 50,
+          "y": 91
+        }
+      },
+      {
+        "location": "020B",
+        "coordinates": {
+          "x": 22,
+          "y": 83
+        }
+      },
+      {
+        "location": "0201",
+        "coordinates": {
+          "x": 47,
+          "y": 26
+        }
+      }
+    ],
+    "tamers": [
+      {
+        "id": "nacky",
+        "coordinates": {
+          "x": 44,
+          "y": 60
+        },
+        "labelPlacement": "right"
+      },
+      {
+        "id": "wong",
+        "coordinates": {
+          "x": 33,
+          "y": 67
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "steve",
+        "coordinates": {
+          "x": 32,
+          "y": 48
+        },
+        "labelPlacement": "above"
+      },
+      {
+        "id": "gloria",
+        "coordinates": {
+          "x": 20,
+          "y": 57
+        },
+        "labelPlacement": "left"
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "coordinates": {
+          "x": 60,
+          "y": 37
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0212": {
+    "imageName": "Water Tunnel",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0213": {
+    "imageName": "El Dorado",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0214": {
+    "imageName": "Admin Center 1F",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "trooper1AdminFloor1",
+        "coordinates": {
+          "x": 81,
+          "y": 91
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2AdminFloor1",
+        "coordinates": {
+          "x": 36.5,
+          "y": 65
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "optionalTrooperAdminFloor1",
+        "coordinates": {
+          "x": 43,
+          "y": 27
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0215": {
+    "imageName": "Basement Stairs",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "trooper1BasementStairs",
+        "coordinates": {
+          "x": 24,
+          "y": 54
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2BasementStairs",
+        "coordinates": {
+          "x": 60.5,
+          "y": 38
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper3BasementStairs",
+        "coordinates": {
+          "x": 47,
+          "y": 39
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0216": {
+    "imageName": "Prison Tower",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0217": {
+    "imageName": "Admin Center 2F",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0214",
+        "coordinates": {
+          "x": 39,
+          "y": 18
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "trooper1AdminFloor2",
+        "coordinates": {
+          "x": 66,
+          "y": 74
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2AdminFloor2",
+        "coordinates": {
+          "x": 79,
+          "y": 44
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "soldierAdminFloor2",
+        "coordinates": {
+          "x": 71,
+          "y": 44
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "generalAdminFloor2",
+        "coordinates": {
+          "x": 65,
+          "y": 32
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "optionalTrooper1AdminFloor2",
+        "coordinates": {
+          "x": 73,
+          "y": 61
+        },
+        "labelPlacement": "left"
+      },
+      {
+        "id": "optionalSoldier1AdminFloor2",
+        "coordinates": {
+          "x": 57,
+          "y": 26
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "optionalTrooper2AdminFloor2",
+        "coordinates": {
+          "x": 26,
+          "y": 33
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0218": {
+    "imageName": "Master Room",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "0219": {
+    "imageName": "A.o.A Headquarters",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "guardsHeadquarters",
+        "coordinates": {
+          "x": 26,
+          "y": 73
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "gameMasterHeadquarters",
+        "coordinates": {
+          "x": 74.5,
+          "y": 36
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "021A": {
+    "imageName": "Admin Center B1F",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "trooper1AdminCenterB1F",
+        "coordinates": {
+          "x": 22.5,
+          "y": 79
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper2AdminCenterB1F",
+        "coordinates": {
+          "x": 41.5,
+          "y": 74.5
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "trooper3AdminCenterB1F",
+        "coordinates": {
+          "x": 72,
+          "y": 25
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "optionalTrooper1AdminCenterB1F",
+        "coordinates": {
+          "x": 59,
+          "y": 66
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "optionalTrooper2AdminCenterB1F",
+        "coordinates": {
+          "x": 37,
+          "y": 33
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "021C": {
+    "imageName": "Control Room",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0202",
+        "coordinates": {
+          "x": 75,
+          "y": 77.5
+        }
+      },
+      {
+        "location": "02E1",
+        "coordinates": {
+          "x": 85.5,
+          "y": 43
+        }
+      },
+      {
+        "location": "02E0",
+        "coordinates": {
+          "x": 75,
+          "y": 40
+        }
+      },
+      {
+        "location": "021B",
+        "coordinates": {
+          "x": 89,
+          "y": 80
+        }
+      }
+    ],
+    "enemies": {
+      "boss": [
+        {
+          "id": "16",
+          "coordinates": {
+            "x": 69,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "020A": {
+    "imageName": "Asuka City - Inn 1F",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
+  },
+  "020B": {
+    "imageName": "Underground Path",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 51,
+          "y": 39
+        }
+      },
+      {
+        "location": "020A",
+        "coordinates": {
+          "x": 50,
+          "y": 91
+        }
+      }
+    ]
+  },
+  "020C": {
+    "imageName": "Asuka City - Inn 2F",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 51,
+          "y": 39
+        }
+      },
+      {
+        "location": "020A",
+        "coordinates": {
+          "x": 61,
+          "y": 16
+        }
+      }
+    ]
+  },
+  "020D": {
+    "imageName": "Smiths Shop",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "equipmentShops": [
+      {
+        "id": "asukaArsenal",
+        "coordinates": {
+          "x": 49,
+          "y": 72
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "asukaPawnshop",
+        "coordinates": {
+          "x": 56,
+          "y": 60
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "asukaItemShop",
+        "coordinates": {
+          "x": 70,
+          "y": 50
+        },
+        "labelPlacement": "above"
+      }
+    ]
+  },
+  "020E": {
+    "imageName": "Junk Shop",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "equipmentShops": [
+      {
+        "id": "asukaHeavyArsenal",
+        "coordinates": {
+          "x": 58,
+          "y": 66
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "asukaBlackMarket",
+        "coordinates": {
+          "x": 70,
+          "y": 34
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "020F": {
+    "imageName": "Lamb Chop",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 23,
+          "y": 58
+        }
+      }
+    ]
+  },
+  "021B": {
+    "imageName": "Asuka Sewers",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "0200",
+        "coordinates": {
+          "x": 51,
+          "y": 39
+        }
+      },
+      {
+        "location": "020A",
+        "coordinates": {
+          "x": 50,
+          "y": 91
+        }
+      },
+      {
+        "location": "020B",
+        "coordinates": {
+          "x": 94,
+          "y": 86
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "122",
+        "123"
+      ]
+    }
+  },
+  "021D": {
+    "imageName": "Central Park",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 50.5
+    },
+    "enemies": {
+      "walking": [
+        "71",
+        "72"
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "natsumi",
+        "coordinates": {
+          "x": 65,
+          "y": 60
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "dock": true
+  },
+  "021E": {
+    "imageName": "Wire Forest Entrance",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 46
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "71",
+            "72"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "72",
+            "85"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "183",
+            "85"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "mitch",
+        "coordinates": {
+          "x": 76,
+          "y": 32
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "021F": {
+    "imageName": "Shell Beach",
+    "worldLocation": {
+      "x": 54,
+      "y": 59
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "74",
+            "76",
+            "77"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "76",
+            "77",
+            "96"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "dock": true
+  },
+  "0220": {
+    "imageName": "Plug Cape",
+    "worldLocation": {
+      "x": 45,
+      "y": 49
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "76",
+            "77",
+            "88",
+            "91"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "76",
+            "77",
+            "96",
+            "107"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "dock": true
+  },
+  "0221": {
+    "imageName": "West Wire Forest",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 46
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "71",
+            "76",
+            "78"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "76",
+            "78",
+            "85"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "76",
+            "78",
+            "183"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "catherine",
+        "coordinates": {
+          "x": 15,
+          "y": 40
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0222": {
+    "imageName": "East Wire Forest",
+    "worldLocation": {
+      "x": 67,
+      "y": 45.5
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "71",
+            "76",
+            "78"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "78",
+            "94",
+            "82"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "183",
+            "94",
+            "82"
+          ]
+        }
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "lucia",
+        "coordinates": {
+          "x": 54,
+          "y": 26
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "robert",
+        "coordinates": {
+          "x": 72,
+          "y": 38
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0223": {
+    "imageName": "Forest Inn",
+    "worldLocation": {
+      "x": 67.25,
+      "y": 54
+    }
+  },
+  "0224": {
+    "imageName": "Forest Inn BF",
+    "worldLocation": {
+      "x": 67.25,
+      "y": 54
+    },
+    "innerLocation": [
+      {
+        "location": "0223",
+        "coordinates": {
+          "x": 58,
+          "y": 87
+        }
+      }
+    ]
+  },
+  "0225": {
+    "imageName": "Protocol Forest",
+    "worldLocation": {
+      "x": 69.5,
+      "y": 37.5
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "81",
+            "82"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "81",
+            "82",
+            "94"
+          ]
+        }
+      ]
+    }
+  },
+  "0226": {
+    "imageName": "Protocol Ruins",
+    "worldLocation": {
+      "x": 69.5,
+      "y": 37.5
+    },
+    "innerLocation": [
+      {
+        "location": "0225",
+        "coordinates": {
+          "x": 93,
+          "y": 12
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "82",
+            "84"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "84",
+            "83"
+          ]
+        }
+      ],
+      "boss": [
+        {
+          "id": "1",
+          "coordinates": {
+            "x": 76,
+            "y": 12
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0227": {
+    "imageName": "Divermons Lake",
+    "worldLocation": {
+      "x": 74.5,
+      "y": 47
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "73",
+            "76"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "73",
+            "103"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "73",
+            "97"
+          ]
+        }
+      ],
+      "fishing": [
+        "101",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "dock": true
+  },
+  "0228": {
+    "imageName": "Duel Island",
+    "worldLocation": {
+      "x": 76.5,
+      "y": 24
+    },
+    "enemies": {
+      "boss": [
+        {
+          "id": "409",
+          "coordinates": {
+            "x": 14,
+            "y": 90
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentMonmon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    },
+    "duelIsland": [
+      {
+        "id": "divermon1",
+        "coordinates": {
+          "x": 48,
+          "y": 43
+        },
+        "labelPlacement": "right"
+      },
+      {
+        "id": "divermon2",
+        "coordinates": {
+          "x": 31,
+          "y": 39
+        },
+        "labelPlacement": "above"
+      },
+      {
+        "id": "divermon3",
+        "coordinates": {
+          "x": 20,
+          "y": 43
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "divermon4",
+        "coordinates": {
+          "x": 23,
+          "y": 28
+        },
+        "labelPlacement": "above"
+      },
+      {
+        "id": "divermon5",
+        "coordinates": {
+          "x": 27,
+          "y": 20
+        },
+        "labelPlacement": "right"
+      },
+      {
+        "id": "kingDivermon",
+        "coordinates": {
+          "x": 12.5,
+          "y": 11
+        },
+        "labelPlacement": "above"
+      }
+    ],
+    "dock": true
+  },
+  "0229": {
+    "imageName": "Wind Prairie",
+    "worldLocation": {
+      "x": 81,
+      "y": 50
+    },
+    "enemies": {
+      "walking": [
+        "79",
+        "80"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "akiba",
+        "coordinates": {
+          "x": 28,
+          "y": 46
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0230": {
+    "imageName": "Seiryu Tower",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "022E",
+        "coordinates": {
+          "x": 58,
+          "y": 29.5
+        }
+      }
+    ]
+  },
+  "0231": {
+    "imageName": "Gale Tower",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    }
+  },
+  "022A": {
+    "imageName": "Kicking Forest",
+    "worldLocation": {
+      "x": 87.5,
+      "y": 46
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "74",
+            "77",
+            "86"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "74",
+            "182"
+          ]
+        }
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "184",
+        "515"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "bob",
+        "coordinates": {
+          "x": 92,
+          "y": 84
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "dock": true
+  },
+  "022B": {
+    "imageName": "Tyranno Valley",
+    "worldLocation": {
+      "x": 90.5,
+      "y": 38.5
+    },
+    "enemies": {
+      "walking": [
+        "87",
+        "88",
+        "89"
+      ],
+      "boss": [
+        {
+          "id": "2",
+          "coordinates": {
+            "x": 72,
+            "y": 24
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "022C": {
+    "imageName": "East Station",
+    "worldLocation": {
+      "x": 88,
+      "y": 53
+    },
+    "tamers": [
+      {
+        "id": "tomomi",
+        "coordinates": {
+          "x": 62,
+          "y": 28
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "022D": {
+    "imageName": "Deeper Crevice",
+    "enemies": {
+      "boss": [
+        {
+          "id": "21",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "022E": {
+    "imageName": "Seiryu City",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "seiryuLeader",
+        "coordinates": {
+          "x": 29,
+          "y": 29
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "tamers": [
+      {
+        "id": "chris",
+        "coordinates": {
+          "x": 35,
+          "y": 62
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "022F": {
+    "imageName": "Zephyr Tower",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "022E",
+        "coordinates": {
+          "x": 37,
+          "y": 51
+        }
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "coordinates": {
+          "x": 21,
+          "y": 40.5
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "equipmentShops": [
+      {
+        "id": "seiryuArsenal",
+        "coordinates": {
+          "x": 52,
+          "y": 74
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "seiryuItemShop",
+        "coordinates": {
+          "x": 64,
+          "y": 66
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0232": {
+    "imageName": "South Station",
+    "worldLocation": {
+      "x": 79,
+      "y": 65
+    },
+    "tamers": [
+      {
+        "id": "andy",
+        "coordinates": {
+          "x": 25,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0233": {
+    "imageName": "Bulk Swamp",
+    "worldLocation": {
+      "x": 79,
+      "y": 73
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "90",
+            "91",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "90",
+            "97",
+            "184"
+          ]
+        }
+      ],
+      "kickingTree": [
+        "184",
+        "517"
+      ],
+      "boss": [
+        {
+          "id": "403",
+          "coordinates": {
+            "x": 34,
+            "y": 47
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentAgumon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    },
+    "tamers": [
+      {
+        "id": "george",
+        "coordinates": {
+          "x": 78,
+          "y": 74
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0234": {
+    "imageName": "Bulk Bridge",
+    "worldLocation": {
+      "x": 79,
+      "y": 73
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "90",
+            "91",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "90",
+            "97",
+            "184"
+          ]
+        }
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "boss": [
+        {
+          "id": "410",
+          "coordinates": {
+            "x": 17,
+            "y": 26
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentVeemon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    },
+    "tamers": [
+      {
+        "id": "meiLin",
+        "coordinates": {
+          "x": 75,
+          "y": 20
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "dock": true
+  },
+  "0235": {
+    "imageName": "Bios Swamp",
+    "worldLocation": {
+      "x": 85,
+      "y": 78.5
+    },
+    "enemies": {
+      "walking": [
+        "91",
+        "103"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "184",
+        "517"
+      ]
+    }
+  },
+  "0236": {
+    "imageName": "Reliability Spot",
+    "worldLocation": {
+      "x": 85,
+      "y": 78.5
+    }
+  },
+  "0237": {
+    "imageName": "Tranquil Swamp",
+    "worldLocation": {
+      "x": 74,
+      "y": 77.5
+    },
+    "enemies": {
+      "walking": [
+        "90",
+        "91",
+        "184"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "184",
+        "517"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "jessica",
+        "coordinates": {
+          "x": 47.5,
+          "y": 31.5
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0238": {
+    "imageName": "Swamp Inn",
+    "worldLocation": {
+      "x": 68,
+      "y": 74
+    }
+  },
+  "0239": {
+    "imageName": "Shaman House",
+    "worldLocation": {
+      "x": 71,
+      "y": 67
+    }
+  },
+  "023A": {
+    "imageName": "Jungle Grave",
+    "worldLocation": {
+      "x": 79,
+      "y": 85
+    },
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "90",
+            "91",
+            "128",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 24,
+          "ids": [
+            "75",
+            "90",
+            "91",
+            "92",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 88,
+          "ids": [
+            "75",
+            "90",
+            "93",
+            "97",
+            "92",
+            "184"
+          ]
+        }
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "85",
+        "184",
+        "517"
+      ]
+    }
+  },
+  "023B": {
+    "imageName": "Phoenix Bay",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 84
+    },
+    "enemies": {
+      "walking": [
+        "86",
+        "95",
+        "182"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "85",
+        "184",
+        "517"
+      ]
+    },
+    "dock": true
+  },
+  "023C": {
+    "imageName": "Ether Jungle",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "enemies": {
+      "walking": [
+        "95",
+        "182",
+        "189"
+      ],
+      "fishing": [
+        "96",
+        "516"
+      ],
+      "kickingTree": [
+        "189",
+        "517"
+      ],
+      "boss": [
+        {
+          "id": "404",
+          "coordinates": {
+            "x": 79,
+            "y": 31.5
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentGuilmon",
+            "starts": 1,
+            "ends": 2
+          }
+        },
+        {
+          "id": "408",
+          "coordinates": {
+            "x": 21,
+            "y": 60
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentKumamon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    }
+  },
+  "023D": {
+    "imageName": "South Cape",
+    "worldLocation": {
+      "x": 43.5,
+      "y": 75
+    },
+    "enemies": {
+      "walking": [
+        "96"
+      ],
+      "fishing": [
+        "96",
+        "516"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "gordon",
+        "coordinates": {
+          "x": 46,
+          "y": 61
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "dock": true
+  },
+  "023E": {
+    "imageName": "Suzaku City",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "tamers": [
+      {
+        "id": "alice",
+        "coordinates": {
+          "x": 29,
+          "y": 63
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "suzakuCardShop",
+        "coordinates": {
+          "x": 87,
+          "y": 83
+        },
+        "labelPlacement": "above"
+      }
+    ],
+    "equipmentShops": [
+      {
+        "id": "suzakuArsenal",
+        "coordinates": {
+          "x": 58,
+          "y": 51
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "suzakuPawnshop",
+        "coordinates": {
+          "x": 70,
+          "y": 71
+        },
+        "labelPlacement": "above"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "suzakuItemShop",
+        "coordinates": {
+          "x": 65,
+          "y": 87
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "dock": true
+  },
+  "023F": {
+    "imageName": "Suzaku Inn",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    }
+  },
+  "0240": {
+    "imageName": "Suzaku Hall",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "innerLocation": [
+      {
+        "location": "023E",
+        "coordinates": {
+          "x": 42,
+          "y": 12
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "suzakuLeader",
+        "coordinates": {
+          "x": 56,
+          "y": 38
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0241": {
+    "imageName": "Suzaku UG Lake",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "innerLocation": [
+      {
+        "location": "023E",
+        "coordinates": {
+          "x": 75,
+          "y": 47.5
+        }
+      },
+      {
+        "location": "02E2",
+        "coordinates": {
+          "x": 87,
+          "y": 42
+        }
+      },
+      {
+        "location": "02E0",
+        "coordinates": {
+          "x": 75,
+          "y": 40
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "102"
+      ],
+      "boss": [
+        {
+          "id": "407",
+          "coordinates": {
+            "x": 17,
+            "y": 15
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentKotemon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    }
+  },
+  "0242": {
+    "imageName": "Jungle Shrine",
+    "worldLocation": {
+      "x": 50,
+      "y": 74
+    },
+    "enemies": {
+      "walking": [
+        "202"
+      ]
+    }
+  },
+  "0243": {
+    "imageName": "Catacomb",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "128"
+      ],
+      "boss": [
+        {
+          "id": "20",
+          "coordinates": {
+            "x": 75,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0244": {
+    "imageName": "Catacomb 2",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "128"
+      ],
+      "boss": [
+        {
+          "id": "20",
+          "coordinates": {
+            "x": 75,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0245": {
+    "imageName": "Bug Maze",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      },
+      {
+        "location": "0244",
+        "coordinates": {
+          "x": 92,
+          "y": 73
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "129",
+        "187",
+        "210",
+        "202"
+      ]
+    }
+  },
+  "0246": {
+    "imageName": "Bug Maze Pit",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "innerLocation": [
+      {
+        "location": "023C",
+        "coordinates": {
+          "x": 78,
+          "y": 14
+        }
+      },
+      {
+        "location": "0242",
+        "coordinates": {
+          "x": 88,
+          "y": 57
+        }
+      },
+      {
+        "location": "0244",
+        "coordinates": {
+          "x": 92,
+          "y": 73
+        }
+      },
+      {
+        "location": "0245",
+        "coordinates": {
+          "x": 92,
+          "y": 51
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "129",
+        "187",
+        "210",
+        "202"
+      ],
+      "boss": [
+        {
+          "id": "593",
+          "coordinates": {
+            "x": 61,
+            "y": 29
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0247": {
+    "imageName": "South Badland",
+    "worldLocation": {
+      "x": 31,
+      "y": 69.5
+    },
+    "enemies": {
+      "walking": [
+        "105",
+        "106"
+      ],
+      "fishing": [
+        "98",
+        "518"
+      ],
+      "boss": [
+        {
+          "id": "405",
+          "coordinates": {
+            "x": 91,
+            "y": 74
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentPatamon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    },
+    "dock": true
+  },
+  "0248": {
+    "imageName": "Noise Desert",
+    "worldLocation": {
+      "x": 21.5,
+      "y": 72
+    },
+    "enemies": {
+      "walking": [
+        "191",
+        "185"
+      ]
+    }
+  },
+  "0249": {
+    "imageName": "Pelche Oasis",
+    "worldLocation": {
+      "x": 18,
+      "y": 59
+    },
+    "enemies": {
+      "walking": [
+        "185",
+        "191"
+      ],
+      "fishing": [
+        "98",
+        "518"
+      ]
+    }
+  },
+  "024A": {
+    "imageName": "North Badland W",
+    "worldLocation": {
+      "x": 26,
+      "y": 56.5
+    },
+    "enemies": {
+      "walking": [
+        "104",
+        "107",
+        "186"
+      ],
+      "kickingTree": [
+        "193",
+        "517"
+      ],
+      "boss": [
+        {
+          "id": "406",
+          "coordinates": {
+            "x": 63,
+            "y": 83
+          },
+          "labelPlacement": "below",
+          "moment": {
+            "quest": "driAgentRenamon",
+            "starts": 1,
+            "ends": 2
+          }
+        }
+      ]
+    }
+  },
+  "024B": {
+    "imageName": "North Badland E",
+    "worldLocation": {
+      "x": 34.5,
+      "y": 57
+    },
+    "enemies": {
+      "walking": [
+        "105",
+        "106"
+      ],
+      "fishing": [
+        "98",
+        "518"
+      ]
+    },
+    "dock": true
+  },
+  "024C": {
+    "imageName": "Bullet Valley",
+    "worldLocation": {
+      "x": 17.5,
+      "y": 45
+    },
+    "enemies": {
+      "walking": [
+        "104",
+        "107",
+        "186"
+      ],
+      "kickingTree": [
+        "193",
+        "517"
+      ]
+    }
+  },
+  "024D": {
+    "imageName": "Dum Dum Factory",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "114",
+        "115",
+        "116",
+        "117"
+      ]
+    }
+  },
+  "024E": {
+    "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 62.5,
+          "y": 75
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
+  },
+  "024F": {
+    "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 91,
+          "y": 60
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
+  },
+  "0250": {
+    "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 75,
+          "y": 35
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
+  },
+  "0251": {
+    "imageName": "Duct Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 57,
+          "y": 19
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
+  },
+  "0252": {
+    "imageName": "Operation Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 78,
+          "y": 20
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "112",
+        "117"
+      ],
+      "boss": [
+        {
+          "id": "14",
+          "coordinates": {
+            "x": 72,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0253": {
+    "imageName": "Secret Stairs",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "112",
+        "117"
+      ]
+    }
+  },
+  "0254": {
+    "imageName": "Sewers",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 8,
+          "y": 46
+        }
+      },
+      {
+        "location": "0253",
+        "coordinates": {
+          "x": 18,
+          "y": 73.5
+        }
+      }
+    ],
+    "enemies": {
+      "walking": [
+        "118",
+        "119"
+      ],
+      "boss": [
+        {
+          "id": "15",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0255": {
+    "imageName": "Secret Room",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "innerLocation": [
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 78,
+          "y": 20
+        }
+      },
+      {
+        "location": "0252",
+        "coordinates": {
+          "x": 14,
+          "y": 70
+        }
+      },
+      {
+        "location": "024D",
+        "coordinates": {
+          "x": 8,
+          "y": 46
+        }
+      },
+      {
+        "location": "0253",
+        "coordinates": {
+          "x": 18,
+          "y": 73
+        }
+      },
+      {
+        "location": "0254",
+        "coordinates": {
+          "x": 61,
+          "y": 19
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "aoaAttacker",
+        "coordinates": {
+          "x": 67,
+          "y": 79
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0256": {
+    "imageName": "Secret Room"
+  },
+  "0257": {
+    "imageName": "Noise Desert S",
+    "worldLocation": {
+      "x": 21.5,
+      "y": 72
+    },
+    "enemies": {
+      "walking": [
+        "193"
+      ]
+    }
+  },
+  "0258": {
+    "imageName": "Mobius Desert",
+    "worldLocation": {
+      "x": 21,
+      "y": 82
+    },
+    "enemies": {
+      "walking": [
+        "110",
+        "111",
+        "193"
+      ]
+    },
+    "region": "mobiusDesert"
+  },
+  "0259": {
+    "imageName": "Mobius Desert 2",
+    "worldLocation": {
+      "x": 21,
+      "y": 82
+    },
+    "enemies": {
+      "walking": [
+        "110",
+        "111",
+        "193"
+      ]
+    },
+    "region": "mobiusDesert"
+  },
+  "025A": {
+    "imageName": "Mirage Tower",
+    "worldLocation": {
+      "x": 12.5,
+      "y": 84.5
+    },
+    "enemies": {
+      "walking": [
+        "110",
+        "193"
+      ]
+    }
+  },
+  "025B": {
+    "imageName": "Mirage Hall",
+    "worldLocation": {
+      "x": 12,
+      "y": 84.5
+    },
+    "tamers": [
+      {
+        "id": "nakano",
+        "coordinates": {
+          "x": 53,
+          "y": 69
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "025C": {
+    "imageName": "Mirage Room",
+    "worldLocation": {
+      "x": 12.5,
+      "y": 84.5
+    },
+    "innerLocation": [
+      {
+        "location": "025A",
+        "coordinates": {
+          "x": 66,
+          "y": 32
+        }
+      },
+      {
+        "location": "025B",
+        "coordinates": {
+          "x": 40,
+          "y": 16
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "byakkoLeader",
+        "coordinates": {
+          "x": 66,
+          "y": 19
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "025D": {
+    "imageName": "Byakko City",
+    "worldLocation": {
+      "x": 18.5,
+      "y": 59
+    },
+    "equipmentShops": [
+      {
+        "id": "byakkoArsenal",
+        "coordinates": {
+          "x": 44,
+          "y": 43
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "byakkoItemShop",
+        "coordinates": {
+          "x": 54,
+          "y": 36
+        },
+        "labelPlacement": "above"
+      }
+    ]
+  },
+  "025E": {
+    "imageName": "Byakko Dome",
+    "worldLocation": {
+      "x": 18.5,
+      "y": 59
+    },
+    "innerLocation": [
+      {
+        "location": "025D",
+        "coordinates": {
+          "x": 75,
+          "y": 12
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "fakeByakkoLeader",
+        "coordinates": {
+          "x": 40,
+          "y": 26
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "byakkoCardShop",
+        "coordinates": {
+          "x": 57,
+          "y": 88
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "025F": {
+    "imageName": "Storage Room"
+  },
+  "0260": {
+    "imageName": "Underground Cave",
+    "worldLocation": {
+      "x": 18.5,
+      "y": 59
+    },
+    "innerLocation": [
+      {
+        "location": "025D",
+        "coordinates": {
+          "x": 75,
+          "y": 12
+        }
+      },
+      {
+        "location": "025E",
+        "coordinates": {
+          "x": 75,
+          "y": 73
+        }
+      }
+    ]
+  },
+  "02D7": {
+    "imageName": "Corner Street"
+  },
+  "02D8": {
+    "imageName": "Online Center"
+  },
+  "02D9": {
+    "imageName": "Chamber Room"
+  },
+  "02E0": {
+    "imageName": "Seabed 0",
+    "region": "seabed"
+  },
+  "02E1": {
+    "imageName": "Seabed 1",
+    "region": "seabed"
+  },
+  "02E2": {
+    "imageName": "Seabed 2",
+    "region": "seabed"
+  },
+  "02E3": {
+    "imageName": "Seabed 3",
+    "region": "seabed"
+  },
+  "02E4": {
+    "imageName": "Seabed 4",
+    "region": "seabed"
+  },
+  "02E5": {
+    "imageName": "Seabed 5",
+    "region": "seabed"
+  },
+  "02E6": {
+    "imageName": "Seabed 6",
+    "region": "seabed"
+  },
+  "02E7": {
+    "imageName": "Seabed 7",
+    "region": "seabed"
+  },
+  "028C": {
+    "imageName": "Central Park Amaterasu",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 50.5
+    },
+    "dock": true
+  },
+  "028D": {
+    "imageName": "Wire Forest Entrance Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 46
+    }
+  },
+  "028E": {
+    "imageName": "Shell Beach Amaterasu",
+    "worldLocation": {
+      "x": 54,
+      "y": 59
+    },
+    "dock": true
+  },
+  "0290": {
+    "imageName": "West Wire Forest Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 46
+    }
+  },
+  "0291": {
+    "imageName": "East Wire Forest Amaterasu",
+    "worldLocation": {
+      "x": 67,
+      "y": 45.5
+    }
+  },
+  "0292": {
+    "imageName": "Forest Inn Amaterasu",
+    "worldLocation": {
+      "x": 67.25,
+      "y": 54
+    }
+  },
+  "0293": {
+    "imageName": "Forest Inn BF Amaterasu",
+    "worldLocation": {
+      "x": 67.25,
+      "y": 54
+    },
+    "innerLocation": [
+      {
+        "location": "0292",
+        "coordinates": {
+          "x": 58,
+          "y": 87
+        }
+      }
+    ]
+  },
+  "0296": {
+    "imageName": "Divermons Lake Amaterasu",
+    "worldLocation": {
+      "x": 74.5,
+      "y": 47
+    },
+    "dock": true
+  },
+  "0298": {
+    "imageName": "Wind Prairie Amaterasu",
+    "worldLocation": {
+      "x": 81,
+      "y": 50
+    }
+  },
+  "029C": {
+    "imageName": "Qing Long City",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    },
+    "npcs": [
+      {
+        "id": "qingLongLeader",
+        "coordinates": {
+          "x": 28,
+          "y": 68
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "029E": {
+    "imageName": "Qing Long Tower",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    },
+    "innerLocation": [
+      {
+        "location": "022E",
+        "coordinates": {
+          "x": 58,
+          "y": 29.5
+        }
+      }
+    ]
+  },
+  "02A8": {
+    "imageName": "Phoenix Bay Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 84
+    },
+    "dock": true
+  },
+  "02AB": {
+    "imageName": "Zhu Que City",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "dock": true
+  },
+  "02AD": {
+    "imageName": "Zhu Que Hall",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "innerLocation": [
+      {
+        "location": "02AB",
+        "coordinates": {
+          "x": 42,
+          "y": 12
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "zhuQueLeader",
+        "coordinates": {
+          "x": 55,
+          "y": 37
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "02AE": {
+    "imageName": "Suzaku UG Lake Amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    },
+    "innerLocation": [
+      {
+        "location": "02AB",
+        "coordinates": {
+          "x": 75,
+          "y": 47.5
+        }
+      },
+      {
+        "location": "02E2",
+        "coordinates": {
+          "x": 87,
+          "y": 42
+        }
+      },
+      {
+        "location": "02E0",
+        "coordinates": {
+          "x": 75,
+          "y": 40
+        }
+      }
+    ]
+  },
+  "02E9": {
+    "imageName": "Circuit Board"
+  },
+  "02ED": {
+    "imageName": "Circuit Board"
+  },
+  "0261": {
+    "imageName": "Boot Mountain",
+    "worldLocation": {
+      "x": 41,
+      "y": 40
+    },
+    "enemies": {
+      "walking": [
+        "148",
+        "149",
+        "190"
+      ],
+      "kickingTree": [
+        "205",
+        "521"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "haruka",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0265": {
+    "imageName": "Kulon Mine",
+    "worldLocation": {
+      "x": 35.5,
+      "y": 31
+    },
+    "enemies": {
+      "walking": [
+        "147",
+        "190",
+        "198"
+      ],
+      "kickingTree": [
+        "164",
+        "521"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "makoto",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "brown",
+        "coordinates": {
+          "x": 60,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0268": {
+    "imageName": "Kulon Pit",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
+    "enemies": {
+      "walking": [
+        "198"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "mitaka",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0269": {
+    "imageName": "Kulon Armory",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    }
+  },
+  "0266": {
+    "imageName": "Lake of Ice",
+    "enemies": {
+      "walking": [
+        "152"
+      ],
+      "fishing": [
+        "216",
+        "520"
+      ],
+      "kickingTree": [
+        "151",
+        "521"
+      ]
+    }
+  },
+  "0267": {
+    "imageName": "Legendary Gym",
+    "tamers": [
+      {
+        "id": "pierre",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0262": {
+    "imageName": "Snow Mountain",
+    "worldLocation": {
+      "x": 47.5,
+      "y": 32
+    },
+    "enemies": {
+      "walking": [
+        "150",
+        "151"
+      ],
+      "kickingTree": [
+        "151",
+        "521"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "poemy",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "0263": {
+    "imageName": "Mountain Inn",
+    "worldLocation": {
+      "x": 55.5,
+      "y": 34.5
+    }
+  },
+  "0264": {
+    "imageName": "Freeze Mountain",
+    "worldLocation": {
+      "x": 56,
+      "y": 27
+    },
+    "enemies": {
+      "walking": [
+        "150",
+        "151"
+      ]
+    },
+    "tamers": [
+      {
+        "id": "shingo",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "026E": {
+    "imageName": "Battle Gate",
+    "worldLocation": {
+      "x": 56.5,
+      "y": 19.5
+    },
+    "npcs": [
+      {
+        "id": "genbuLeader",
+        "coordinates": {
+          "x": 7,
+          "y": 54
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "026F": {
+    "imageName": "Genbu City",
+    "worldLocation": {
+      "x": 56.5,
+      "y": 19.5
+    },
+    "equipmentShops": [
+      {
+        "id": "genbuArsenal",
+        "coordinates": {
+          "x": 45,
+          "y": 49
+        },
+        "labelPlacement": "above"
+      }
+    ],
+    "itemShops": [
+      {
+        "id": "genbuItemShop",
+        "coordinates": {
+          "x": 50,
+          "y": 58
+        },
+        "labelPlacement": "below"
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "genbuCardShop",
+        "coordinates": {
+          "x": 73,
+          "y": 64
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "026A": {
+    "imageName": "Ice Dungeon",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
+    "enemies": {
+      "walking": [
+        "204",
+        "154"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "iceWitch",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "026B": {
+    "imageName": "Fire Dungeon",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
+    "enemies": {
+      "walking": [
+        "156"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "fireKnight",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "026C": {
+    "imageName": "Dark Dungeon",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    },
+    "enemies": {
+      "walking": [
+        "208",
+        "158",
+        "157"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "darkKnight",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "026D": {
+    "imageName": "Emergency Room",
+    "worldLocation": {
+      "x": 33,
+      "y": 39
+    }
+  },
+  "02DA": {
+    "imageName": "Magasta B1F",
+    "enemies": {
+      "walking": [
+        "161"
+      ]
+    }
+  },
+  "02DB": {
+    "imageName": "Magasta B2F",
+    "enemies": {
+      "walking": [
+        "139",
+        "160"
+      ]
+    },
+    "npcs": [
+      {
+        "id": "mechSoldier",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
+  },
+  "02DC": {
+    "imageName": "Magasta"
+  }
+}

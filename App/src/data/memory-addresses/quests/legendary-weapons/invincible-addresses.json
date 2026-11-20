@@ -1,0 +1,17 @@
+{
+  "id": "invincible",
+  "requisites": [
+    {
+      "id": "seiryuLeader",
+      "address": "0x0004B3B7",
+      "bitMasks": ["0x01"]
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x0004B38E",
+      "bitMasks": ["0x02"]
+    }
+  ]
+}

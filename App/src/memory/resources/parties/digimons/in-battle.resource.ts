@@ -1,0 +1,10 @@
+import type { VitalResource } from "@/memory/resources/parties/digimons/vital.resource";
+
+export interface InBattleResource {
+  condition: number;
+  strength: number;
+  defense: number;
+  speed: number;
+  hp: VitalResource;
+  mp: VitalResource;
+}

@@ -1,0 +1,16 @@
+{
+  "allySlotBase": "0x000A4470",
+  "slotStride": "0x20",
+  "condition": "0x1C",
+  "strength": "0x10",
+  "defense": "0x12",
+  "speed": "0x14",
+  "hp": {
+    "max": "0x06",
+    "current": "0x08"
+  },
+  "mp": {
+    "max": "0x0A",
+    "current": "0x0C"
+  }
+}

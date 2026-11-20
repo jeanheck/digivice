@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digivice</title>
+    <!-- Inline so the background and boot loader paint before the app bundle loads -->
+    <style>
+      html,
+      body {
+        background-color: #000030;
+        background-image: url("/src/assets/bg.webp");
+        background-size: 217px 217px;
+        background-repeat: repeat;
+        animation: slideBackground 12s linear infinite;
+      }
+
+      @keyframes slideBackground {
+        0% {
+          background-position: 0 0;
+        }
+
+        /* Must match background-size so the loop restarts seamlessly */
+        100% {
+          background-position: 217px 217px;
+        }
+      }
+
+      .boot-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .boot-loader-logo {
+        image-rendering: auto;
+      }
+
+      .boot-loader-bar {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .boot-loader-bar span {
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #0055ff;
+        background-color: #00aaff;
+        opacity: 0.2;
+        animation: bootLoaderSegment 1.25s linear infinite;
+      }
+
+      .boot-loader-bar span:nth-child(2) {
+        animation-delay: 0.25s;
+      }
+
+      .boot-loader-bar span:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+
+      .boot-loader-bar span:nth-child(4) {
+        animation-delay: 0.75s;
+      }
+
+      .boot-loader-bar span:nth-child(5) {
+        animation-delay: 1s;
+      }
+
+      @keyframes bootLoaderSegment {
+        0%,
+        40% {
+          opacity: 1;
+        }
+
+        60%,
+        100% {
+          opacity: 0.2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Outside #app so the mount does not replace it; removed by useBootLoader after the first tick -->
+    <div id="boot-loader" class="boot-loader">
+      <img class="boot-loader-logo" src="/src/assets/digivice.webp" alt="Digivice" width="620" height="130">
+      <div class="boot-loader-bar">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "id": "treeBoots",
+  "requisites": [
+    {
+      "id": "folderBag",
+      "address": "0x00048F42"
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "address": "0x04B3B0",
+      "bitMasks": ["0x04"]
+    },
+    {
+      "number": 2,
+      "address": "0x04B3B0",
+      "bitMasks": ["0x08"]
+    },
+    {
+      "number": 3,
+      "address": "0x04B3B0",
+      "bitMasks": ["0x10"]
+    },
+    {
+      "number": 4,
+      "address": "0x04B3B0",
+      "bitMasks": ["0xE0"]
+    },
+    {
+      "number": 5,
+      "address": "0x04B3B0",
+      "bitMasks": ["0xC0"]
+    },
+    {
+      "number": 6,
+      "address": "0x04B3B0",
+      "bitMasks": ["0x80"]
+    },
+    {
+      "number": 7,
+      "address": "0x04B3B1",
+      "bitMasks": ["0x01"]
+    }
+  ]
+}
