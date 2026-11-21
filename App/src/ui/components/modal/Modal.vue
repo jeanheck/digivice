@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from "vue";
 
-const DefaultFooterBarClass = "bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900";
+const DefaultFooterBarClass =
+  "bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900 in-[[data-theme=seabed]]:from-teal-900 in-[[data-theme=seabed]]:via-teal-500 in-[[data-theme=seabed]]:to-teal-900";
 
 const props = withDefaults(
   defineProps<{
@@ -57,7 +58,7 @@ onUnmounted(() => {
         @click.self="handleClose"
       >
         <div
-          class="relative w-full bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-modal-slide-up"
+          class="relative w-full bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-modal-slide-up in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:border-teal-700 in-[[data-theme=seabed]]:shadow-[0_0_20px_rgba(15,118,110,0.25)]"
           :class="[maxWidth, maxHeight, panelClass]"
         >
           <div
@@ -69,7 +70,7 @@ onUnmounted(() => {
           />
 
           <header
-            class="relative z-30 flex items-center justify-between gap-4 overflow-visible p-3 bg-linear-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 shrink-0"
+            class="relative z-30 flex items-center justify-between gap-4 overflow-visible p-3 bg-linear-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 shrink-0 in-[[data-theme=seabed]]:from-[var(--color-surface-deep)] in-[[data-theme=seabed]]:to-[var(--color-surface)] in-[[data-theme=seabed]]:border-teal-700/50"
           >
             <div class="flex min-w-0 flex-1 items-center">
               <slot name="header" />
@@ -78,7 +79,7 @@ onUnmounted(() => {
             <button
               v-if="showCloseButton"
               type="button"
-              class="text-gray-400 hover:text-red-400 transition-colors bg-black/30 w-7 h-7 flex items-center justify-center rounded border border-gray-700 hover:border-red-500 shrink-0"
+              class="text-gray-400 hover:text-red-400 transition-colors bg-black/30 w-7 h-7 flex items-center justify-center rounded border border-gray-700 hover:border-red-500 shrink-0 in-[[data-theme=seabed]]:bg-teal-800/20 in-[[data-theme=seabed]]:border-teal-700 in-[[data-theme=seabed]]:text-teal-800 in-[[data-theme=seabed]]:hover:text-red-600 in-[[data-theme=seabed]]:hover:border-red-500"
               @click="handleClose"
             >
               <svg
