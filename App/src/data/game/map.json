@@ -1,12 +1,15 @@
 {
   "1000": {
-    "imageName": "In Menu Screen"
+    "imageName": "In Menu Screen",
+    "theme": "previousMap"
   },
   "1300": {
-    "imageName": "Card Shop Screen"
+    "imageName": "Card Shop Screen",
+    "theme": "previousMap"
   },
   "1400": {
-    "imageName": "Reward Screen"
+    "imageName": "Reward Screen",
+    "theme": "previousMap"
   },
   "0001": {
     "imageName": "East Sector"
@@ -21,7 +24,8 @@
     "imageName": "North Sector"
   },
   "0500": {
-    "imageName": "Initial Pack Screen"
+    "imageName": "Initial Pack Screen",
+    "theme": "previousMap"
   },
   "0C01": {
     "imageName": "Saving at Asuka Inn 1F"
@@ -45,22 +49,27 @@
     "imageName": "Saving at Pelche Oasis"
   },
   "0A00": {
-    "imageName": "In Training Screen"
+    "imageName": "In Training Screen",
+    "theme": "previousMap"
   },
   "0D00": {
     "imageName": "Kadomatsu Piximon Screen"
   },
   "0E03": {
-    "imageName": "Cutscene"
+    "imageName": "Cutscene",
+    "theme": "previousMap"
   },
   "0F00": {
-    "imageName": "In Store Screen"
+    "imageName": "In Store Screen",
+    "theme": "previousMap"
   },
   "0600": {
-    "imageName": "In Battle Screen"
+    "imageName": "In Battle Screen",
+    "theme": "previousMap"
   },
   "0700": {
-    "imageName": "In Card Battle Screen"
+    "imageName": "In Card Battle Screen",
+    "theme": "previousMap"
   },
   "0200": {
     "imageName": "Asuka City",
@@ -2665,7 +2674,8 @@
     ]
   },
   "02D7": {
-    "imageName": "Corner Street"
+    "imageName": "Corner Street",
+    "theme": "undefined"
   },
   "02D8": {
     "imageName": "Online Center"
@@ -3202,6 +3212,7 @@
   },
   "02DA": {
     "imageName": "Magasta B1F",
+    "theme": "undefined",
     "enemies": {
       "walking": [
         "161"
@@ -3210,6 +3221,7 @@
   },
   "02DB": {
     "imageName": "Magasta B2F",
+    "theme": "undefined",
     "enemies": {
       "walking": [
         "139",
@@ -3228,6 +3240,7 @@
     ]
   },
   "02DC": {
-    "imageName": "Magasta"
+    "imageName": "Magasta",
+    "theme": "undefined"
   }
 }
