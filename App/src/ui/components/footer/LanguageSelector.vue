@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
     @mousemove="onMoveTooltip"
     @mouseleave="onHideTooltip"
   >
-    <span class="font-emoji-color text-lg leading-none">{{ activeOption.flag }}</span>
+    <span class="font-emoji-color emoji-shadow text-lg leading-none">{{ activeOption.flag }}</span>
   </button>
 
   <Teleport to="body">
@@ -123,7 +123,7 @@ onBeforeUnmount(() => {
           @mousemove="onMoveTooltip"
           @mouseleave="onHideTooltip"
         >
-          <span class="font-emoji-color text-lg leading-none">{{ option.flag }}</span>
+          <span class="font-emoji-color emoji-shadow text-lg leading-none">{{ option.flag }}</span>
         </button>
       </div>
     </Transition>

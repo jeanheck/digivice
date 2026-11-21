@@ -60,10 +60,10 @@ const groupPartyLevel = computed(() => {
     class="dw3-frame [--dw3-frame-fill-color:var(--color-surface)] w-full text-white p-2 flex items-center gap-12 px-6"
   >
     <div class="font-bold text-ms flex items-baseline cursor-default">
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-frame tracking-wider uppercase"
         >{{ $t("player.bits") }}:</span
       >
-      <span class="text-white">{{ playerBits }}</span>
+      <span class="text-white shadow-text">{{ playerBits }}</span>
     </div>
 
     <div
@@ -74,10 +74,10 @@ const groupPartyLevel = computed(() => {
       @mousemove="moveTooltip"
       @mouseleave="hideTooltip"
     >
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-frame tracking-wider uppercase"
         >{{ $t("party.groupCharisma") }}:</span
       >
-      <span class="text-white">{{ groupCharisma }}</span>
+      <span class="text-white shadow-text">{{ groupCharisma }}</span>
     </div>
 
     <div
@@ -88,10 +88,10 @@ const groupPartyLevel = computed(() => {
       @mousemove="moveTooltip"
       @mouseleave="hideTooltip"
     >
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-frame tracking-wider uppercase"
         >{{ $t("party.groupLevel") }}:</span
       >
-      <span class="text-white">{{ groupPartyLevel }}</span>
+      <span class="text-white shadow-text">{{ groupPartyLevel }}</span>
     </div>
 
     <div

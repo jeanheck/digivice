@@ -40,7 +40,7 @@ function onMouseLeave(): void {
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
-    ☕
+    <span class="font-emoji-color emoji-shadow leading-none">&#x2615;</span>
   </button>
 
   <BuyMeACoffeeModal :is-open="isBuyMeACoffeeModalOpen" @close="closeBuyMeACoffeeModal" />

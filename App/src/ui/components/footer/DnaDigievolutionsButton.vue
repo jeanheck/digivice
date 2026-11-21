@@ -40,7 +40,7 @@ function onMouseLeave(): void {
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
-    <span class="font-emoji-color leading-none">&#x1F9EC;</span>
+    <span class="font-emoji-color emoji-shadow leading-none">&#x1F9EC;</span>
   </button>
 
   <DnaDigievolutionsModal

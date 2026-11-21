@@ -5,6 +5,7 @@
   --color-frame: #0033aa;
   --color-accent: #0077ff;
   --color-accent-bright: #00aaff;
+  --color-ink: #ffffff;
 }
 
 [data-theme="asuka"] {
@@ -13,6 +14,7 @@
   --color-frame: #0033aa;
   --color-accent: #0077ff;
   --color-accent-bright: #00aaff;
+  --color-ink: #ffffff;
 }
 
 [data-theme="amaterasu"] {
@@ -21,14 +23,16 @@
   --color-frame: #aa0055;
   --color-accent: #ff66bb;
   --color-accent-bright: #ff99d1;
+  --color-ink: #ffffff;
 }
 
 [data-theme="seabed"] {
-  --color-surface: #000a2b;
-  --color-surface-deep: #000e3f;
-  --color-frame: #0033aa;
-  --color-accent: #0077ff;
-  --color-accent-bright: #00aaff;
+  --color-surface: #d0e0f0;
+  --color-surface-deep: #a8c0d8;
+  --color-frame: #4a6d63;
+  --color-accent: #6e96b4;
+  --color-accent-bright: #a5c9d7;
+  --color-ink: #1a2420;
 }
 
 [data-theme="circuitBoard"] {
@@ -37,6 +41,7 @@
   --color-frame: #0033aa;
   --color-accent: #0077ff;
   --color-accent-bright: #00aaff;
+  --color-ink: #ffffff;
 }
 
 [data-theme="undefined"] {
@@ -45,4 +50,5 @@
   --color-frame: #555555;
   --color-accent: #999999;
   --color-accent-bright: #bbbbbb;
+  --color-ink: #ffffff;
 }

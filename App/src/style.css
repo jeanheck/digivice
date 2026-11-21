@@ -22,7 +22,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  color: white;
+  color: var(--color-ink);
   font-family: "Press Start 2P", cursive;
   image-rendering: pixelated;
 }
@@ -79,6 +79,10 @@ body {
 
 .shadow-text {
   text-shadow: 1px 1px 0 #000;
+}
+
+.emoji-shadow {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.9));
 }
 
 .text-outline-black {

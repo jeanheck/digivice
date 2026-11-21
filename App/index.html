@@ -8,11 +8,41 @@
     <style>
       html,
       body {
-        background-color: #000030;
-        background-image: url("/src/assets/bg.webp");
+        background-color: #000a2b;
+        background-image: url("/src/assets/bg-asuka.webp");
         background-size: 217px 217px;
         background-repeat: repeat;
         animation: slideBackground 12s linear infinite;
+      }
+
+      html[data-theme="asuka"],
+      html[data-theme="asuka"] body {
+        background-color: #000a2b;
+        background-image: url("/src/assets/bg-asuka.webp");
+      }
+
+      html[data-theme="amaterasu"],
+      html[data-theme="amaterasu"] body {
+        background-color: #2b0018;
+        background-image: url("/src/assets/bg-amaterasu.webp");
+      }
+
+      html[data-theme="seabed"],
+      html[data-theme="seabed"] body {
+        background-color: #d0e0f0;
+        background-image: url("/src/assets/bg-seabed.webp");
+      }
+
+      html[data-theme="circuitBoard"],
+      html[data-theme="circuitBoard"] body {
+        background-color: #000a2b;
+        background-image: url("/src/assets/bg-circuit-board.webp");
+      }
+
+      html[data-theme="undefined"],
+      html[data-theme="undefined"] body {
+        background-color: #1a1a1a;
+        background-image: url("/src/assets/bg-undefined.webp");
       }
 
       @keyframes slideBackground {

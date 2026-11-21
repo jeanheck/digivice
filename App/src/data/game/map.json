@@ -2685,34 +2685,42 @@
   },
   "02E0": {
     "imageName": "Seabed 0",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E1": {
     "imageName": "Seabed 1",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E2": {
     "imageName": "Seabed 2",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E3": {
     "imageName": "Seabed 3",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E4": {
     "imageName": "Seabed 4",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E5": {
     "imageName": "Seabed 5",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E6": {
     "imageName": "Seabed 6",
+    "theme": "seabed",
     "region": "seabed"
   },
   "02E7": {
     "imageName": "Seabed 7",
+    "theme": "seabed",
     "region": "seabed"
   },
   "028C": {
@@ -2721,6 +2729,7 @@
       "x": 50.5,
       "y": 50.5
     },
+    "theme": "amaterasu",
     "dock": true
   },
   "028D": {
@@ -2728,7 +2737,8 @@
     "worldLocation": {
       "x": 60.5,
       "y": 46
-    }
+    },
+    "theme": "amaterasu"
   },
   "028E": {
     "imageName": "Shell Beach Amaterasu",
@@ -2736,6 +2746,7 @@
       "x": 54,
       "y": 59
     },
+    "theme": "amaterasu",
     "dock": true
   },
   "0290": {
@@ -2743,21 +2754,24 @@
     "worldLocation": {
       "x": 60.5,
       "y": 46
-    }
+    },
+    "theme": "amaterasu"
   },
   "0291": {
     "imageName": "East Wire Forest Amaterasu",
     "worldLocation": {
       "x": 67,
       "y": 45.5
-    }
+    },
+    "theme": "amaterasu"
   },
   "0292": {
     "imageName": "Forest Inn Amaterasu",
     "worldLocation": {
       "x": 67.25,
       "y": 54
-    }
+    },
+    "theme": "amaterasu"
   },
   "0293": {
     "imageName": "Forest Inn BF Amaterasu",
@@ -2765,6 +2779,7 @@
       "x": 67.25,
       "y": 54
     },
+    "theme": "amaterasu",
     "innerLocation": [
       {
         "location": "0292",
@@ -2781,6 +2796,7 @@
       "x": 74.5,
       "y": 47
     },
+    "theme": "amaterasu",
     "dock": true
   },
   "0298": {
@@ -2788,7 +2804,8 @@
     "worldLocation": {
       "x": 81,
       "y": 50
-    }
+    },
+    "theme": "amaterasu"
   },
   "029C": {
     "imageName": "Qing Long City",
@@ -2796,6 +2813,7 @@
       "x": 81,
       "y": 43
     },
+    "theme": "amaterasu",
     "npcs": [
       {
         "id": "qingLongLeader",
@@ -2813,6 +2831,7 @@
       "x": 81,
       "y": 43
     },
+    "theme": "amaterasu",
     "innerLocation": [
       {
         "location": "022E",
@@ -2829,6 +2848,7 @@
       "x": 60.5,
       "y": 84
     },
+    "theme": "amaterasu",
     "dock": true
   },
   "02AB": {
@@ -2837,6 +2857,7 @@
       "x": 60.5,
       "y": 77
     },
+    "theme": "amaterasu",
     "dock": true
   },
   "02AD": {
@@ -2845,6 +2866,7 @@
       "x": 60.5,
       "y": 77
     },
+    "theme": "amaterasu",
     "innerLocation": [
       {
         "location": "02AB",
@@ -2871,6 +2893,7 @@
       "x": 60.5,
       "y": 77
     },
+    "theme": "amaterasu",
     "innerLocation": [
       {
         "location": "02AB",
