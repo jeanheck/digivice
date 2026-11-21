@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./ui/styles/theme.css";
 
 @theme {
   /* Resolution profiles; unprefixed classes target 1280x720 */
@@ -35,20 +36,20 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background-color: #000a2b;
+  background-color: var(--color-surface);
 }
 
 .dw3-panel-border {
   position: absolute;
   inset: 0;
-  background-color: #0077ff;
+  background-color: var(--color-accent);
   pointer-events: none;
 }
 
 .dw3-panel-inner {
   position: absolute;
   inset: 1.5px;
-  background-color: #000a2b;
+  background-color: var(--color-surface);
   pointer-events: none;
 }
 
@@ -62,7 +63,7 @@ body {
   position: relative;
   isolation: isolate;
   border: 2px solid transparent;
-  background-color: #0033aa;
+  background-color: var(--color-frame);
   clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
 }
 
@@ -71,7 +72,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: var(--dw3-frame-fill-color, #000e3f);
+  background-color: var(--dw3-frame-fill-color, var(--color-surface-deep));
   clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
   pointer-events: none;
 }
@@ -138,8 +139,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgb(0 51 170 / 0.5);
-  background-color: #000e3f;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-frame) 50%, transparent);
+  background-color: var(--color-surface-deep);
   position: sticky;
   top: 0;
   padding-top: 0.5rem;
@@ -150,7 +151,7 @@ body {
 .dw3-aside-title {
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #0077ff;
+  color: var(--color-accent);
   text-transform: uppercase;
   font-size: 0.8rem;
 }

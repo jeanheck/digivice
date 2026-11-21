@@ -1,4 +1,5 @@
 import type { MapRegion } from "@/shared/types/map-region.type";
+import type { MapTheme } from "@/shared/types/map-theme.type";
 import type { InnerLocationRaw } from "@/presentation/repositories/tables/raws/map/inner-location.raw";
 import type { MapBossRaw } from "@/presentation/repositories/tables/raws/map/map-boss.raw";
 import type { MapDuelIslandRaw } from "@/presentation/repositories/tables/raws/map/map-duel-island.raw";
@@ -33,6 +34,7 @@ export interface MapRaw {
   itemShops?: MapShopRaw[];
   duelIsland?: MapDuelIslandRaw[];
   region?: MapRegion;
+  theme?: MapTheme;
   dock?: boolean;
 }
 

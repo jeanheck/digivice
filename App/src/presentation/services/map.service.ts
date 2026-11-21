@@ -1,5 +1,6 @@
 import type { Journal } from "@/state/models";
 import type { MapRegion } from "@/shared/types/map-region.type";
+import type { MapTheme } from "@/shared/types/map-theme.type";
 import { MomentService } from "@/presentation/services/moment.service";
 import { MapBossRepository } from "@/presentation/repositories/map-boss.repository";
 import { MapDuelIslandRepository } from "@/presentation/repositories/map-duel-island.repository";
@@ -71,6 +72,10 @@ export class MapService {
 
   public static getRegionByMapId(id: string): MapRegion {
     return MapRepository.getMapById(id).region ?? "asukaServer";
+  }
+
+  public static getThemeByMapId(id: string): MapTheme {
+    return MapRepository.getMapById(id).theme ?? "undefined";
   }
 
   public static getImageNameByMapId(id: string): string | null {

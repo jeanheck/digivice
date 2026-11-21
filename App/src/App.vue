@@ -7,9 +7,11 @@ import Party from "@/ui/components/party/Party.vue";
 import AppHealthyScreen from "@/ui/components/app-healthy/AppHealthyScreen.vue";
 import { useAppHealthyScreen } from "@/ui/composables/use-app-healthy-screen";
 import { useBootLoader } from "@/ui/composables/use-boot-loader";
+import { useMapTheme } from "@/ui/composables/use-map-theme";
 
 const healthyScreen = useAppHealthyScreen();
 const isLoading = useBootLoader();
+useMapTheme();
 
 // Checked inline so the production build drops the monitor chunk entirely.
 const DebugMonitor = import.meta.env.DEV

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, defineAsyncComponent, ref } from "vue";
 import LanguageSelector from "@/ui/components/footer/LanguageSelector.vue";
 import DnaDigievolutionsButton from "@/ui/components/footer/DnaDigievolutionsButton.vue";
 import SeabedButton from "@/ui/components/footer/SeabedButton.vue";
@@ -11,6 +11,10 @@ import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/ui/composables/use-tooltip-position";
 import { useGameState } from "@/ui/composables/use-game-state";
 import { FooterPresenter } from "@/presentation/presenters/footer/footer.presenter";
+
+const ThemeSelector = import.meta.env.DEV
+  ? defineAsyncComponent(() => import("@/ui/components/footer/ThemeSelector.vue"))
+  : null;
 
 const gameState = useGameState();
 const { t } = useI18n();
@@ -57,7 +61,7 @@ const groupPartyLevel = computed(() => {
 
 <template>
   <footer
-    class="dw3-frame [--dw3-frame-fill-color:#000a2b] w-full text-white p-2 flex items-center gap-12 px-6"
+    class="dw3-frame [--dw3-frame-fill-color:var(--color-surface)] w-full text-white p-2 flex items-center gap-12 px-6"
   >
     <div class="font-bold text-ms flex items-baseline cursor-default">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
@@ -120,6 +124,13 @@ const groupPartyLevel = computed(() => {
 
       <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
         <LanguageSelector
+          @show-tooltip="showTitleTooltip"
+          @move-tooltip="moveTooltip"
+          @hide-tooltip="hideTooltip"
+        />
+        <component
+          :is="ThemeSelector"
+          v-if="ThemeSelector"
           @show-tooltip="showTitleTooltip"
           @move-tooltip="moveTooltip"
           @hide-tooltip="hideTooltip"
