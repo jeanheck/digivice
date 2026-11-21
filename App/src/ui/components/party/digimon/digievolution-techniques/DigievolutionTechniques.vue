@@ -38,17 +38,19 @@ const evolutionAvatarUrl = computed(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-full bg-[#0c0d1b] rounded overflow-hidden relative">
+  <div
+    class="flex flex-col h-full bg-[#0c0d1b] in-[[data-theme=seabed]]:bg-[var(--color-surface)] rounded overflow-hidden relative"
+  >
     <div
-      class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-linear-to-b from-[#00051a] to-transparent shrink-0"
+      class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-linear-to-b from-[#00051a] to-transparent in-[[data-theme=seabed]]:from-[var(--color-surface-deep)] shrink-0"
     >
       <div
-        class="relative w-full h-32 bg-linear-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 shadow-inner overflow-hidden group"
+        class="relative w-full h-32 bg-linear-to-r from-cyan-950/40 to-[#001533] in-[[data-theme=seabed]]:from-teal-800/25 in-[[data-theme=seabed]]:to-[var(--color-surface-deep)] rounded-lg border border-cyan-800/50 in-[[data-theme=seabed]]:border-teal-700 shadow-inner overflow-hidden group"
       >
         <img
           v-if="evolutionAvatarUrl"
           :src="evolutionAvatarUrl"
-          class="absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] transition-opacity duration-500"
+          class="absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] in-[[data-theme=seabed]]:drop-shadow-[0_0_15px_rgba(15,118,110,0.35)] transition-opacity duration-500"
           :alt="viewModel.evolutionName"
         />
 
@@ -80,7 +82,7 @@ const evolutionAvatarUrl = computed(() => {
 
           <p
             v-if="!viewModel.techniques.length"
-            class="text-white/40 text-center py-4 text-[10px] italic border border-white/5 rounded"
+            class="text-white/40 in-[[data-theme=seabed]]:text-teal-800/60 text-center py-4 text-[10px] italic border border-white/5 in-[[data-theme=seabed]]:border-teal-700/30 rounded"
           >
             {{ $t("digievolution.noTechData") }}
           </p>
