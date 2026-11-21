@@ -27,12 +27,12 @@
 }
 
 [data-theme="seabed"] {
-  --color-surface: #d0e0f0;
-  --color-surface-deep: #a8c0d8;
-  --color-frame: #4a6d63;
-  --color-accent: #6e96b4;
-  --color-accent-bright: #a5c9d7;
-  --color-ink: #1a2420;
+  --color-surface: #e8e0d0;
+  --color-surface-deep: #c8bda8;
+  --color-frame: #4a6b63;
+  --color-accent: #5b84b1;
+  --color-accent-bright: #7aa0b8;
+  --color-ink: #302418;
 }
 
 [data-theme="circuitBoard"] {

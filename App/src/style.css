@@ -336,15 +336,15 @@ body {
 }
 
 [data-theme="seabed"] .custom-scroll::-webkit-scrollbar-track {
-  background: rgb(19 78 74 / 0.2);
+  background: rgb(74 107 99 / 0.2);
 }
 
 [data-theme="seabed"] .custom-scroll::-webkit-scrollbar-thumb {
-  background: #0f766e;
+  background: #4a6b63;
 }
 
 [data-theme="seabed"] .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #0d9488;
+  background: #5b84b1;
 }
 
 /* Tooltip transition */
@@ -534,7 +534,7 @@ body {
 /* Seabed map panels: teal-700 borders (overrides the cyan shorthand above) */
 .seabed-map .map-info-panel,
 .seabed-map .map-info-panel-fit {
-  border-color: #0f766e;
+  border-color: #4a6b63;
 }
 
 .map-info-panel.map-info-panel-action {
