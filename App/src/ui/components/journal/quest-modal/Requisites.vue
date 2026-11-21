@@ -23,7 +23,7 @@ withDefaults(
   >
     <h3
       v-if="variant === 'quest' && titleKey"
-      class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 text-center"
+      class="text-xs text-blue-500 in-[[data-theme=seabed]]:text-teal-700 font-bold uppercase tracking-wider mb-1 text-center"
     >
       {{ $t(titleKey) }}
     </h3>

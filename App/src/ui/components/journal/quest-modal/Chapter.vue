@@ -22,14 +22,18 @@ const emit = defineEmits<{
       class="flex items-center justify-between gap-3 p-2 rounded border cursor-pointer transition-colors"
       :class="
         chapter.isCurrent
-          ? 'bg-[#001a33] border-cyan-500/60 hover:border-cyan-400'
-          : 'bg-white/5 border-blue-900/50 hover:border-blue-700'
+          ? 'bg-[#001a33] border-cyan-500/60 hover:border-cyan-400 in-[[data-theme=seabed]]:bg-yellow-50 in-[[data-theme=seabed]]:border-yellow-500/60 in-[[data-theme=seabed]]:hover:border-yellow-400'
+          : 'bg-white/5 border-blue-900/50 hover:border-blue-700 in-[[data-theme=seabed]]:bg-teal-800/10 in-[[data-theme=seabed]]:border-teal-700/40 in-[[data-theme=seabed]]:hover:border-teal-600'
       "
       @click="emit('toggle', chapter.number)"
     >
       <h3
         class="text-xs font-bold uppercase tracking-wider"
-        :class="chapter.isCurrent ? 'text-cyan-300' : 'text-blue-500'"
+        :class="
+          chapter.isCurrent
+            ? 'text-cyan-300 in-[[data-theme=seabed]]:text-yellow-700'
+            : 'text-blue-500 in-[[data-theme=seabed]]:text-teal-700'
+        "
       >
         {{ $t("journal.chapter", { number: chapter.number }) }} -
         {{ $t(`${questId}.chapters.${chapter.number}.name`) }}
@@ -37,11 +41,11 @@ const emit = defineEmits<{
 
       <div class="flex items-center gap-2 shrink-0">
         <span v-if="chapter.isDone" class="text-green-400 text-xs">✔</span>
-        <span class="text-gray-400 text-xs font-medium">
+        <span class="text-gray-400 in-[[data-theme=seabed]]:text-teal-700 text-xs font-medium">
           {{ chapter.doneCount }}/{{ chapter.totalCount }}
         </span>
         <span
-          class="text-xs text-blue-500 transform transition-transform duration-300"
+          class="text-xs text-blue-500 in-[[data-theme=seabed]]:text-teal-700 transform transition-transform duration-300"
           :class="{ 'rotate-180': isExpanded }"
         >
           ▼

@@ -153,8 +153,12 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
 
     <div class="flex min-h-0 flex-1 flex-row gap-6 overflow-hidden p-4">
       <div class="flex min-w-0 flex-[1.4] flex-col gap-4 overflow-y-auto custom-scroll pr-2">
-        <div class="bg-[#000a1a] p-3 rounded border border-blue-900/50 shadow-inner">
-          <p class="text-gray-300 text-sm leading-relaxed font-medium">
+        <div
+          class="bg-[#000a1a] in-[[data-theme=seabed]]:bg-teal-800/15 p-3 rounded border border-blue-900/50 in-[[data-theme=seabed]]:border-teal-700 shadow-inner"
+        >
+          <p
+            class="text-gray-300 in-[[data-theme=seabed]]:text-teal-800 text-sm leading-relaxed font-medium"
+          >
             {{ $t(`${questViewModel!.id}.description`) }}
           </p>
         </div>
@@ -167,7 +171,9 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
         />
 
         <div v-if="questViewModel!.chapters.length > 0" class="flex flex-col gap-2">
-          <h3 class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 text-center">
+          <h3
+            class="text-xs text-blue-500 in-[[data-theme=seabed]]:text-teal-700 font-bold uppercase tracking-wider mb-1 text-center"
+          >
             {{ $t("journal.missionSteps") }}
           </h3>
 

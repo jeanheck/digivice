@@ -32,13 +32,17 @@ function closeModal(): void {
       </h2>
     </template>
 
-    <div class="flex flex-col gap-3 px-12 pt-6 pb-4 text-center text-white">
+    <div
+      class="flex flex-col gap-3 px-12 pt-6 pb-4 text-center text-white in-[[data-theme=seabed]]:text-teal-900"
+    >
       <p class="font-bold">{{ $t("buyMeACoffee.introFree") }}</p>
-      <p class="text-sm text-white/90 leading-relaxed">{{ $t("buyMeACoffee.introSupport") }}</p>
+      <p class="text-sm text-white/90 in-[[data-theme=seabed]]:text-teal-800 leading-relaxed">
+        {{ $t("buyMeACoffee.introSupport") }}
+      </p>
     </div>
 
     <div class="grid grid-cols-2 flex-1 min-h-0 py-4">
-      <div class="border-r border-[#0055ff]/50">
+      <div class="border-r border-[#0055ff]/50 in-[[data-theme=seabed]]:border-teal-700/50">
         <SupportOption
           :description="$t('buyMeACoffee.livePixDescription')"
           :qr-code-url="livePixQrCode"

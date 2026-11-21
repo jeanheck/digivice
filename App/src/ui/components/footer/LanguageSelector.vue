@@ -110,14 +110,14 @@ onBeforeUnmount(() => {
       <div
         v-if="isMenuOpen"
         ref="menuElement"
-        class="fixed z-9999 flex flex-col gap-1 p-1.5 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] -translate-x-1/2 -translate-y-full"
+        class="fixed z-9999 flex flex-col gap-1 p-1.5 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] -translate-x-1/2 -translate-y-full in-[[data-theme=seabed]]:bg-teal-900/90 in-[[data-theme=seabed]]:border-teal-700"
         :style="{ left: `${menuPosition.x}px`, top: `${menuPosition.y}px` }"
       >
         <button
           v-for="option in otherOptions"
           :key="option.locale"
           type="button"
-          class="px-1 py-0.5 leading-none rounded-sm cursor-pointer hover:bg-[#0055ff]/30 transition-colors"
+          class="px-1 py-0.5 leading-none rounded-sm cursor-pointer hover:bg-[#0055ff]/30 in-[[data-theme=seabed]]:hover:bg-teal-700/30 transition-colors"
           @click="setLocale(option.locale)"
           @mouseenter="onShowTooltip($event, option.label)"
           @mousemove="onMoveTooltip"

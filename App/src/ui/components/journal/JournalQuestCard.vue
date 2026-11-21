@@ -145,7 +145,7 @@ const onClick = () => {
     </div>
 
     <p
-      class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10"
+      class="text-gray-400 in-[[data-theme=seabed]]:text-gray-300 text-[10px] leading-tight line-clamp-1 relative z-10"
       :class="{
         'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
       }"
