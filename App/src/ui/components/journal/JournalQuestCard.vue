@@ -16,11 +16,14 @@ const emit = defineEmits<{
 }>();
 
 const QuestCardVariantClasses: Record<QuestCardVariant, string> = {
-  locked: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
-  unavailable: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
-  done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40",
-  new: "border-white/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-white",
-  active: "border-[#0033aa]/0 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]",
+  locked:
+    "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:opacity-80 in-[[data-theme=seabed]]:hover:opacity-100",
+  unavailable:
+    "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:opacity-80 in-[[data-theme=seabed]]:hover:opacity-100",
+  done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40 in-[[data-theme=seabed]]:border-emerald-700/50 in-[[data-theme=seabed]]:bg-emerald-800/15 in-[[data-theme=seabed]]:hover:bg-emerald-800/25",
+  new: "border-white/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-white in-[[data-theme=seabed]]:border-[var(--color-accent)]/70 in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:hover:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:hover:border-[var(--color-accent)]",
+  active:
+    "border-[#0033aa]/0 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff] in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:hover:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:hover:border-[var(--color-accent)]",
 };
 
 const isMainDisplayMode = computed(() => {
@@ -51,11 +54,11 @@ const titleClass = computed(() => {
   }
 
   if (props.quest.isLocked || props.quest.isUnavailable) {
-    return "text-gray-500";
+    return "text-gray-500 in-[[data-theme=seabed]]:text-[var(--color-ink)]/55";
   }
 
   if (props.quest.isDone) {
-    return "text-gray-400 line-through";
+    return "text-gray-400 line-through in-[[data-theme=seabed]]:text-emerald-800 in-[[data-theme=seabed]]:decoration-emerald-700";
   }
 
   const accentTitleClass = sideQuestPalette.value.questTitleClass;
@@ -82,10 +85,10 @@ const titleSizeClass = computed(() => {
 
 const doneIconClass = computed(() => {
   if (isMainDisplayMode.value) {
-    return "text-green-400 text-xs";
+    return "text-green-400 in-[[data-theme=seabed]]:text-emerald-700 text-xs";
   }
 
-  return "text-green-500 text-xs drop-shadow shrink-0 ml-2";
+  return "text-green-500 in-[[data-theme=seabed]]:text-emerald-700 text-xs drop-shadow shrink-0 ml-2";
 });
 
 const onClick = () => {
@@ -109,7 +112,7 @@ const onClick = () => {
   >
     <div
       v-if="!isMainDisplayMode && quest.isDone"
-      class="absolute inset-0 bg-green-500/15 pointer-events-none"
+      class="absolute inset-0 bg-green-500/15 in-[[data-theme=seabed]]:bg-emerald-600/8 pointer-events-none"
     />
 
     <div class="flex items-center justify-between mb-1 relative z-10">
@@ -141,13 +144,19 @@ const onClick = () => {
         class="font-emoji-color text-xs shrink-0 ml-2"
         >🔒</span
       >
-      <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-xs shrink-0 ml-2">❕</span>
+      <span
+        v-else-if="!isMainDisplayMode && quest.isNew"
+        class="font-emoji text-yellow-300 in-[[data-theme=seabed]]:text-yellow-600 text-xs shrink-0 ml-2"
+        >❕</span
+      >
     </div>
 
     <p
-      class="text-gray-400 in-[[data-theme=seabed]]:text-gray-300 text-[10px] leading-tight line-clamp-1 relative z-10"
+      class="text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 text-[10px] leading-tight line-clamp-1 relative z-10"
       :class="{
-        'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
+        'opacity-50 in-[[data-theme=seabed]]:opacity-90':
+          !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
+        'in-[[data-theme=seabed]]:text-emerald-800': !isMainDisplayMode && quest.isDone,
       }"
     >
       <template v-if="quest.isDone">
