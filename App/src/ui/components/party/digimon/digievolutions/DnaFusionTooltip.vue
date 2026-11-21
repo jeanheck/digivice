@@ -33,7 +33,10 @@ const { t } = useI18n();
         v-for="(fusion, fusionIndex) in fusions"
         :key="fusion.dnaDigievolution.id"
         class="flex flex-col gap-2"
-        :class="{ 'mt-2 pt-2 border-t border-[#0066cc]/50': fusionIndex > 0 }"
+        :class="{
+          'mt-2 pt-2 border-t border-[#0066cc]/50 in-[[data-theme=seabed]]:border-teal-700/50':
+            fusionIndex > 0,
+        }"
       >
         <div class="flex items-baseline justify-between gap-3">
           <span class="text-dw3-dna shadow-text-dark font-bold tracking-wider text-xs">

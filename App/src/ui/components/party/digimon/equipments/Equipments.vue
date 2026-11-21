@@ -36,7 +36,7 @@ const moveTooltip = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="dw3-panel flex flex-col">
+  <div class="dw3-panel dw3-beveled flex flex-col">
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 

@@ -22,11 +22,11 @@ const emit = defineEmits<{
     @mouseleave="emit('hideTooltip')"
   >
     <span
-      class="text-[0.8rem] font-bold text-white leading-none text-outline-black"
+      class="text-[0.8rem] font-bold text-white leading-none text-outline-black px-px py-px"
       >{{ t("digimon.tp") }}</span
     >
     <span
-      class="text-[0.8rem] font-bold text-white leading-none text-outline-black"
+      class="text-[0.8rem] font-bold text-white leading-none text-outline-black px-px py-px"
       >{{ tp }}</span
     >
   </div>

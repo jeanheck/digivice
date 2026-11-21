@@ -64,7 +64,7 @@ const tooltipTransform = computed(() => {
     <Transition name="fade">
       <div
         v-if="show"
-        class="fixed z-[10000] pointer-events-none bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm w-max"
+        class="fixed z-[10000] pointer-events-none bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm w-max in-[[data-theme=seabed]]:bg-teal-900/90 in-[[data-theme=seabed]]:border-teal-700"
         :class="
           isTiny
             ? ['p-1.5', { 'flex flex-col gap-0.5': hasSlotContent }]
@@ -84,11 +84,17 @@ const tooltipTransform = computed(() => {
             isTiny
               ? [
                   'text-[10px]',
-                  { 'border-b border-[#0066cc]/50 pb-0.5 mb-0.5': hasSlotContent },
+                  {
+                    'border-b border-[#0066cc]/50 in-[[data-theme=seabed]]:border-teal-700/50 pb-0.5 mb-0.5':
+                      hasSlotContent,
+                  },
                 ]
               : [
                   'text-sm',
-                  { 'border-b border-[#0066cc]/50 pb-1 mb-1': hasSlotContent },
+                  {
+                    'border-b border-[#0066cc]/50 in-[[data-theme=seabed]]:border-teal-700/50 pb-1 mb-1':
+                      hasSlotContent,
+                  },
                 ]
           "
         >

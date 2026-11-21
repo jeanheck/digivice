@@ -93,6 +93,12 @@ body {
     1px 1px 0 #000;
 }
 
+.drop-outline-black {
+  filter:
+    drop-shadow(-1px -1px 0 #000) drop-shadow(1px -1px 0 #000)
+    drop-shadow(-1px 1px 0 #000) drop-shadow(1px 1px 0 #000);
+}
+
 .text-outline-black-glow {
   text-shadow:
     0 0 4px #000,

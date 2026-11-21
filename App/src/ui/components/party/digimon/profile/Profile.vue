@@ -87,7 +87,7 @@ const digimonStatusTooltip = computed(() => {
 </script>
 
 <template>
-  <div class="dw3-panel flex flex-col">
+  <div class="dw3-panel dw3-beveled flex flex-col">
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
@@ -122,7 +122,7 @@ const digimonStatusTooltip = computed(() => {
 
         <div class="col-start-2 row-start-1 flex justify-between items-baseline min-w-0">
           <h2
-            class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide cursor-default text-outline-black"
+            class="text-sm font-bold text-white leading-none truncate pl-px pt-px pb-px pr-2 tracking-wide cursor-default text-outline-black"
           >
             {{ digimonName }}
           </h2>

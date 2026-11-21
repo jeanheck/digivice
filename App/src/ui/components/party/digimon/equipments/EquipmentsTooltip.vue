@@ -62,7 +62,7 @@ const equipmentNote = computed(() => {
     <div v-if="equipment" class="flex flex-col gap-1 w-full min-w-42.5">
       <div
         v-if="equipmentType"
-        class="text-blue-300 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
+        class="text-blue-300 in-[[data-theme=seabed]]:text-teal-500 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
       >
         {{ equipmentType }}
       </div>
@@ -71,7 +71,7 @@ const equipmentNote = computed(() => {
         <div
           v-for="attribute in equipment.attributes"
           :key="attribute.attribute"
-          class="flex justify-between text-xs items-center bg-[#002266]/40 px-1 rounded-sm"
+          class="flex justify-between text-xs items-center bg-[#002266]/40 in-[[data-theme=seabed]]:bg-teal-800/40 px-1 rounded-sm"
         >
           <span class="text-gray-200">{{ t("stat." + attribute.attribute.toLowerCase()) }}</span>
           <span
@@ -83,7 +83,9 @@ const equipmentNote = computed(() => {
         </div>
       </div>
 
-      <div class="mt-1 pt-1 border-t border-[#0033aa]/50 flex flex-col gap-1 text-center">
+      <div
+        class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 flex flex-col gap-1 text-center"
+      >
         <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{
           $t("digimon.equipableBy")
         }}</span>
@@ -104,7 +106,7 @@ const equipmentNote = computed(() => {
 
       <div
         v-if="equipmentNote"
-        class="mt-1 pt-1 border-t border-[#0033aa]/50 text-gray-400 text-[10px] italic leading-tight"
+        class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 text-gray-400 text-[10px] italic leading-tight"
       >
         "{{ equipmentNote }}"
       </div>

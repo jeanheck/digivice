@@ -55,12 +55,14 @@ const modifierColorClass = computed(() => {
   <Tooltip :show="show" :x="x" :y="y" :title="title" :placement="placement">
     <div class="flex flex-col w-full min-w-50">
       <div
-        class="text-white text-base font-bold text-center mb-2 tracking-wider shadow-text whitespace-nowrap"
+        class="text-white text-base font-bold text-center mb-2 tracking-wider whitespace-nowrap"
       >
-        {{ total }}
+        <span class="shadow-text">{{ total }}</span>
         <span class="text-[10px] text-gray-400 tracking-normal ml-1">
           (<span class="text-white">{{ base }}</span> +
-          <span class="text-[#0077ff] font-bold">{{ equip }}</span>
+          <span class="text-[#0077ff] in-[[data-theme=seabed]]:text-teal-500 font-bold">{{
+            equip
+          }}</span>
           <template v-if="hasEquipmentSet">
             + <span class="text-[#64748b] font-bold">{{ equipmentSet }}</span>
           </template>
@@ -79,7 +81,9 @@ const modifierColorClass = computed(() => {
           <span class="text-white">{{ t("digimon.baseDigimon") }}</span>
         </div>
         <div class="flex justify-between text-xs items-center">
-          <span class="text-[#0077ff] font-bold">{{ t("digimon.equipments") }}</span>
+          <span class="text-[#0077ff] in-[[data-theme=seabed]]:text-teal-500 font-bold">{{
+            t("digimon.equipments")
+          }}</span>
         </div>
         <div v-if="hasEquipmentSet" class="flex justify-between text-xs items-center">
           <span class="text-[#64748b] font-bold">{{ t("digimon.equipmentSet") }}</span>
