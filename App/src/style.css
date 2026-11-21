@@ -496,6 +496,12 @@ body {
   backdrop-filter: blur(4px);
 }
 
+/* Seabed map panels: teal-700 borders (overrides the cyan shorthand above) */
+.seabed-map .map-info-panel,
+.seabed-map .map-info-panel-fit {
+  border-color: #0f766e;
+}
+
 .map-info-panel.map-info-panel-action {
   flex: 1;
   min-width: 0;

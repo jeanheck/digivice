@@ -20,12 +20,20 @@ const progressPercentage = computed(() => {
 
 <template>
   <div
-    class="relative w-full h-[15px] hd:h-[20px] rounded overflow-hidden shadow-inner flex items-center justify-center border-2 border-[#00154a]"
-    :class="isActiveDigievolution ? 'bg-orange-600/35' : 'bg-blue-800/35'"
+    class="relative w-full h-[15px] hd:h-[20px] rounded overflow-hidden shadow-inner flex items-center justify-center border-2"
+    :class="
+      isActiveDigievolution
+        ? 'border-[#00154a] bg-orange-600/35'
+        : 'border-[#00154a] bg-blue-800/35 in-[[data-theme=seabed]]:border-teal-950 in-[[data-theme=seabed]]:bg-teal-800/35'
+    "
   >
     <div
       class="absolute left-0 top-0 h-full transition-all duration-500"
-      :class="isActiveDigievolution ? 'bg-linear-to-r from-orange-600 to-yellow-500' : 'bg-blue-400'"
+      :class="
+        isActiveDigievolution
+          ? 'bg-linear-to-r from-orange-600 to-yellow-500'
+          : 'bg-blue-400 in-[[data-theme=seabed]]:bg-teal-600'
+      "
       :style="{ width: `${progressPercentage}%` }"
     ></div>
 

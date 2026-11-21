@@ -26,7 +26,7 @@ const backgroundColor = computed(() => {
 
 <template>
   <div
-    class="rounded overflow-hidden shadow shrink-0 flex items-center justify-center border-2 border-[#00154a] relative cursor-help"
+    class="rounded overflow-hidden shadow shrink-0 flex items-center justify-center border-2 border-[#00154a] in-[[data-theme=seabed]]:border-teal-950 relative cursor-help"
     :style="{ backgroundColor }"
     @mouseenter="emit('showTooltip', $event)"
     @mousemove="emit('moveTooltip', $event)"

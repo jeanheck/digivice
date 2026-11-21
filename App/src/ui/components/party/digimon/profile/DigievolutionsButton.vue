@@ -13,7 +13,7 @@ function onClick(): void {
 
 <template>
   <div
-    class="w-20 h-6 bg-[#000e3f] border-2 border-[#00154a] rounded flex items-center justify-center cursor-pointer hover:bg-[#002a77] transition-colors"
+    class="w-20 h-6 bg-[#000e3f] border-2 border-[#00154a] rounded flex items-center justify-center cursor-pointer hover:bg-[#002a77] transition-colors in-[[data-theme=seabed]]:border-teal-950 in-[[data-theme=seabed]]:bg-teal-800/35 in-[[data-theme=seabed]]:hover:bg-teal-700/50"
     @click="onClick"
     @mouseenter="emit('showTooltip', $event)"
     @mousemove="emit('moveTooltip', $event)"

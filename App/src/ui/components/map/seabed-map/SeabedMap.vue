@@ -35,11 +35,12 @@ const isSafeZone = computed(() => {
 </script>
 
 <template>
-  <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
+  <div class="seabed-map relative z-10 flex flex-col flex-1 min-h-0 pt-1">
     <div class="flex flex-col items-center gap-2 shrink-0">
       <Location
         :location-id="locationId"
         :is-safe-zone="isSafeZone"
+        title-color-class="text-teal-50"
         @open-location-wiki="emit('open-location-wiki', $event)"
       />
       <Enemies :enemy-ids="enemyIds" @open-enemy-modal="emit('open-enemy-modal', $event)" />

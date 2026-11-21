@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { SeabedDirectionIcon } from "@/shared/constants/icon.constant";
 import type { SeabedDirection } from "@/shared/types/seabed-direction.type";
 import { SeabedPresenter } from "@/presentation/presenters/map/seabed.presenter";
+
+const SeabedDirectionMonoIcon = {
+  topLeft: "\u2B09",
+  top: "\u2B06",
+  topRight: "\u2B08",
+} as const satisfies Record<SeabedDirection, string>;
 
 const props = defineProps<{
   seabedRoute: number | null;
@@ -34,7 +39,7 @@ const hasLeft = computed(() => leftLocations.value.length > 0);
 const hasRight = computed(() => rightLocations.value.length > 0);
 
 function getEmergeEmoji(on: SeabedDirection): string {
-  return SeabedDirectionIcon[on];
+  return SeabedDirectionMonoIcon[on];
 }
 
 function getLocationName(locationId: string): string {
@@ -51,18 +56,22 @@ function getLocationName(locationId: string): string {
           :key="`${point.location}-${index}`"
           class="flex flex-1 flex-col items-center gap-0.5 min-w-0"
         >
-          <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">{{
-            getEmergeEmoji(point.on)
-          }}</span>
-          <span class="text-[9px] text-cyan-100 text-center leading-tight">{{
+          <span
+            class="font-emoji text-teal-500 inline-flex leading-none text-[1.1rem] -translate-y-0.5"
+            >{{ getEmergeEmoji(point.on) }}</span
+          >
+          <span class="text-[9px] text-teal-100 text-center leading-tight">{{
             getLocationName(point.location)
           }}</span>
         </div>
       </div>
 
       <div v-if="hasLeft" class="flex items-center gap-1.5 w-full">
-        <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">⬅️</span>
-        <div class="flex flex-col text-[9px] text-cyan-200 text-left leading-tight min-w-0">
+        <span
+          class="font-emoji text-teal-500 inline-flex leading-none text-[1.1rem] -translate-y-0.5"
+          >&#x2B05;</span
+        >
+        <div class="flex flex-col text-[9px] text-teal-100 text-left leading-tight min-w-0">
           <span v-for="(locationId, index) in leftLocations" :key="index">{{
             getLocationName(locationId)
           }}</span>
@@ -70,12 +79,15 @@ function getLocationName(locationId: string): string {
       </div>
 
       <div v-if="hasRight" class="flex items-center justify-end gap-1.5 w-full">
-        <div class="flex flex-col text-[9px] text-cyan-300 text-right leading-tight min-w-0">
+        <div class="flex flex-col text-[9px] text-teal-100 text-right leading-tight min-w-0">
           <span v-for="(locationId, index) in rightLocations" :key="index">{{
             getLocationName(locationId)
           }}</span>
         </div>
-        <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">➡️</span>
+        <span
+          class="font-emoji text-teal-500 inline-flex leading-none text-[1.1rem] -translate-y-0.5"
+          >&#x27A1;</span
+        >
       </div>
     </div>
   </div>

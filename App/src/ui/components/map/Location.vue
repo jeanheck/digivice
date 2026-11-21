@@ -8,10 +8,12 @@ const props = withDefaults(
     locationId: string;
     titleOverride?: string | null;
     isSafeZone?: boolean;
+    titleColorClass?: string | null;
   }>(),
   {
     titleOverride: null,
     isSafeZone: false,
+    titleColorClass: null,
   },
 );
 
@@ -34,11 +36,20 @@ const isClickable = computed(() => {
 });
 
 const titleClass = computed(() => {
-  const colorClass = props.isSafeZone ? "text-sky-300" : "text-gray-200";
-  return `text-sm font-bold ${colorClass} tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight`;
+  const colorClass =
+    props.titleColorClass ?? (props.isSafeZone ? "text-sky-300" : "text-gray-200");
+  const glowClass =
+    props.titleColorClass !== null
+      ? "drop-shadow-[0_0_5px_rgba(45,212,191,0.85)]"
+      : "drop-shadow-[0_0_5px_rgba(0,170,255,0.8)]";
+  return `text-sm font-bold ${colorClass} tracking-widest uppercase ${glowClass} leading-tight`;
 });
 
 const clickableHoverClass = computed(() => {
+  if (props.titleColorClass !== null) {
+    return "hover:brightness-125";
+  }
+
   return props.isSafeZone ? "hover:text-sky-200" : "hover:text-gray-100";
 });
 
