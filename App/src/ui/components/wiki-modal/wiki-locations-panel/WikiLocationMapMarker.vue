@@ -63,10 +63,10 @@ const handleSelect = (): void => {
       v-if="marker.imageUrl"
       :src="marker.imageUrl"
       :alt="markerLabel"
-      class="w-8 h-8 object-contain rendering-pixelated shrink-0 transition-all duration-150 drop-shadow-[0_2px_3px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.85)] group-hover:scale-105"
+      class="w-8 h-8 object-contain rendering-pixelated shrink-0 transition-all duration-150 drop-shadow-[0_2px_3px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.85)] in-[[data-theme=seabed]]:group-hover:drop-shadow-[0_0_8px_rgba(91,132,177,0.85)] group-hover:scale-105"
     />
     <span
-      class="w-max whitespace-pre-line text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center text-[9px] px-2 py-0.5 leading-tight shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+      class="w-max whitespace-pre-line text-cyan-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] drop-shadow bg-cyan-950/95 in-[[data-theme=seabed]]:bg-[var(--color-surface)] rounded border border-cyan-700/80 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 text-center text-[9px] px-2 py-0.5 leading-tight shadow-[0_0_10px_rgba(0,0,0,0.5)]"
     >
       {{ markerLabel }}
     </span>

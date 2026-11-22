@@ -106,25 +106,25 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
 
   if (option.status === "completed") {
     if (isSelected) {
-      return "text-green-300 line-through decoration-green-400 border-green-500/60 bg-green-500/20 hover:bg-green-500/30";
+      return "text-green-300 line-through decoration-green-400 border-green-500/60 bg-green-500/20 hover:bg-green-500/30 in-[[data-theme=seabed]]:text-emerald-800 in-[[data-theme=seabed]]:decoration-emerald-700 in-[[data-theme=seabed]]:border-emerald-700/50 in-[[data-theme=seabed]]:bg-emerald-800/15 in-[[data-theme=seabed]]:hover:bg-emerald-800/25";
     }
 
-    return "text-green-400/80 line-through decoration-green-500 border-green-500/40 bg-green-500/10 hover:bg-green-500/20";
+    return "text-green-400/80 line-through decoration-green-500 border-green-500/40 bg-green-500/10 hover:bg-green-500/20 in-[[data-theme=seabed]]:text-emerald-800/90 in-[[data-theme=seabed]]:decoration-emerald-700 in-[[data-theme=seabed]]:border-emerald-700/40 in-[[data-theme=seabed]]:bg-emerald-800/10 in-[[data-theme=seabed]]:hover:bg-emerald-800/20";
   }
 
   if (option.status === "available") {
     if (isSelected) {
-      return "text-cyan-300 border-cyan-500/60 bg-cyan-900/30 hover:bg-cyan-900/50";
+      return "text-cyan-300 border-cyan-500/60 bg-cyan-900/30 hover:bg-cyan-900/50 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/60 in-[[data-theme=seabed]]:bg-yellow-50 in-[[data-theme=seabed]]:hover:bg-yellow-100";
     }
 
-    return "text-cyan-300 border-cyan-700/60 bg-cyan-950/40 hover:bg-cyan-900/60";
+    return "text-cyan-300 border-cyan-700/60 bg-cyan-950/40 hover:bg-cyan-900/60 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/50 in-[[data-theme=seabed]]:bg-yellow-50/80 in-[[data-theme=seabed]]:hover:bg-yellow-100";
   }
 
   if (isSelected) {
-    return "text-gray-200 border-gray-500 bg-gray-800 hover:bg-gray-800";
+    return "text-gray-200 in-[[data-theme=seabed]]:text-white border-gray-500 bg-gray-800 hover:bg-gray-800";
   }
 
-  return "text-gray-500 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300";
+  return "text-gray-500 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]";
 };
 
 const showBattleRequirementTooltip = (
@@ -181,10 +181,10 @@ const openLocation = () => {
 <template>
   <div v-if="panelViewModel !== null" class="flex h-full min-h-0 overflow-hidden">
     <aside
-      class="w-[20%] shrink-0 flex flex-col gap-3 p-3 border-r border-[#0055ff]/30 min-h-0 overflow-y-auto custom-scroll"
+      class="w-[20%] shrink-0 flex flex-col gap-3 p-3 border-r border-[#0055ff]/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 min-h-0 overflow-y-auto custom-scroll"
     >
       <div
-        class="aspect-square w-full flex items-center justify-center bg-[#000a1a] border border-blue-900/50 rounded overflow-hidden"
+        class="aspect-square w-full flex items-center justify-center bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded overflow-hidden"
       >
         <img
           v-if="panelViewModel.imageUrl"
@@ -195,19 +195,19 @@ const openLocation = () => {
         <span v-else class="text-2xl font-bold text-gray-500"> ? </span>
       </div>
 
-      <span class="text-center text-xs font-bold text-gray-300 tracking-wide uppercase">
+      <span class="text-center text-xs font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)] tracking-wide uppercase">
         {{ $t(npcTypeLabelKey) }}
       </span>
 
       <button
         type="button"
-        class="w-full text-center px-2.5 py-2 rounded text-[10px] fhdscaled:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
+        class="w-full text-center px-2.5 py-2 rounded text-[10px] fhdscaled:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none hover:bg-blue-900/60 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/25 text-blue-300 in-[[data-theme=seabed]]:text-[var(--color-accent)] border border-blue-700/60 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 bg-blue-950/40 in-[[data-theme=seabed]]:bg-[var(--color-surface)]"
         @click="openLocation"
       >
         {{ $t(`map.${panelViewModel.locationId}`) }}
       </button>
 
-      <div class="flex flex-col gap-2 pt-2 border-t border-[#0055ff]/30">
+      <div class="flex flex-col gap-2 pt-2 border-t border-[#0055ff]/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40">
         <button
           v-for="option in battleOptions"
           :key="option.id"

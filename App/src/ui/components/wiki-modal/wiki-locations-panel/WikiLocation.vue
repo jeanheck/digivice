@@ -54,8 +54,8 @@ defineExpose({
     :class="[
       isListVariant ? 'w-full shrink-0' : 'shrink-0',
       isSelected
-        ? 'bg-blue-900/40 border-[#0033aa] text-blue-100'
-        : 'border-transparent text-white hover:bg-blue-900/40',
+        ? 'bg-blue-900/40 in-[[data-theme=seabed]]:bg-[var(--color-accent)]/20 border-[#0033aa] in-[[data-theme=seabed]]:border-[var(--color-frame)] text-blue-100 in-[[data-theme=seabed]]:text-[var(--color-ink)]'
+        : 'border-transparent text-white in-[[data-theme=seabed]]:text-[var(--color-ink)] hover:bg-blue-900/40 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/20',
     ]"
     @click="$emit('select')"
   >

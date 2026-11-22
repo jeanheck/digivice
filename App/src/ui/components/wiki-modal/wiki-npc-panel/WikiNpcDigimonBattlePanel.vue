@@ -91,7 +91,7 @@ const activeMember = computed(() => {
         />
 
         <div
-          class="w-[70%] min-w-0 h-full bg-[#000a1a] border border-blue-900/50 rounded p-2 shadow-inner flex flex-row justify-around gap-2 items-start overflow-y-auto custom-scroll"
+          class="w-[70%] min-w-0 h-full bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-2 shadow-inner flex flex-row justify-around gap-2 items-start overflow-y-auto custom-scroll"
         >
           <WikiEnemyAttributes
             :attributes="activeMember.enemy.attributes"

@@ -41,7 +41,7 @@ const handleSelect = (cardId: string): void => {
     v-if="battleViewModel !== null"
     class="flex flex-col flex-1 min-h-0 overflow-hidden text-xs text-center gap-4 p-3"
   >
-    <p class="shrink-0 text-blue-500 uppercase font-bold text-center">
+    <p class="shrink-0 text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold text-center">
       {{ folderTitle }}
     </p>
 

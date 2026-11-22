@@ -49,14 +49,14 @@ const additionalInformation = computed(() => {
     class="flex flex-col min-h-0 overflow-y-auto custom-scroll text-xs text-center gap-4"
   >
     <div class="flex flex-col gap-1">
-      <p class="bg-[#002266]/40 px-2 py-1 rounded-sm text-blue-500 uppercase font-bold">
+      <p class="bg-[#002266]/40 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/20 px-2 py-1 rounded-sm text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold">
         {{ $t("enemy.resaleValueLabel") }}
       </p>
       <p>
-        <span class="text-gray-100 uppercase font-bold"
+        <span class="text-gray-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] uppercase font-bold"
           >{{ consumableItem.resaleValue }}&nbsp;</span
         >
-        <span class="text-blue-500 uppercase font-bold">{{ $t("player.bits") }}</span>
+        <span class="text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold">{{ $t("player.bits") }}</span>
       </p>
     </div>
 
@@ -64,7 +64,7 @@ const additionalInformation = computed(() => {
       <p v-if="note !== ''" class="text-violet-400 font-bold">
         {{ note }}
       </p>
-      <p v-if="additionalInformation !== ''" class="text-gray-400 italic leading-tight">
+      <p v-if="additionalInformation !== ''" class="text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 italic leading-tight">
         {{ additionalInformation }}
       </p>
     </div>

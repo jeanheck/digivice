@@ -22,7 +22,7 @@ const handleSelect = (cardId: string): void => {
 
 <template>
   <div class="flex flex-col flex-1 min-h-0 overflow-hidden text-xs text-center gap-4">
-    <p class="bg-[#002266]/40 px-2 py-1 rounded-sm text-blue-500 uppercase font-bold shrink-0">
+    <p class="bg-[#002266]/40 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/20 px-2 py-1 rounded-sm text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold shrink-0">
       {{ $t("enemy.boosterCardsLabel") }}
     </p>
 

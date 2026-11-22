@@ -32,7 +32,7 @@ const handleSelect = (): void => {
 <template>
   <button
     type="button"
-    class="flex flex-col items-center gap-1.5 w-36 h-full px-1.5 py-2 rounded transition-colors cursor-pointer bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/60"
+    class="flex flex-col items-center gap-1.5 w-36 h-full px-1.5 py-2 rounded transition-colors cursor-pointer bg-blue-900/30 in-[[data-theme=seabed]]:bg-[var(--color-accent)]/15 hover:bg-blue-900/50 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/25 border border-blue-800/60 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50"
     @click="handleSelect"
   >
     <img
@@ -42,11 +42,11 @@ const handleSelect = (): void => {
       class="w-12 h-16 shrink-0 object-contain rendering-pixelated"
     />
     <span
-      class="h-[2.5em] w-full text-[8px] font-bold text-blue-200 leading-tight text-center line-clamp-2"
+      class="h-[2.5em] w-full text-[8px] font-bold text-blue-200 in-[[data-theme=seabed]]:text-[var(--color-ink)] leading-tight text-center line-clamp-2"
     >
       {{ cardName }}
     </span>
-    <span class="w-full shrink-0 text-[8px] font-bold text-amber-400 leading-tight text-center">
+    <span class="w-full shrink-0 text-[8px] font-bold text-amber-400 in-[[data-theme=seabed]]:text-amber-700 leading-tight text-center">
       {{ card.price }} {{ $t("enemy.bits") }}
     </span>
   </button>

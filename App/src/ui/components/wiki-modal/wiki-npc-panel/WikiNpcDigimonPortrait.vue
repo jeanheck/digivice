@@ -10,10 +10,10 @@ defineProps<{
 
 <template>
   <div
-    class="h-full min-w-0 bg-[#000a1a] border border-blue-900/50 rounded p-2 shadow-inner flex flex-col gap-1.5"
+    class="h-full min-w-0 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-2 shadow-inner flex flex-col gap-1.5"
   >
     <h4
-      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center truncate"
+      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] mb-2 border-b border-blue-900/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 pb-1 w-full text-center truncate"
     >
       {{ enemy.name }}
     </h4>
@@ -28,24 +28,24 @@ defineProps<{
 
     <div class="shrink-0 flex flex-col gap-1.5 p-1">
       <div class="flex items-center justify-between text-[10px] gap-1">
-        <span class="font-bold text-blue-500 tracking-wider uppercase shrink-0">
+        <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase shrink-0">
           {{ $t("enemy.specie") }}:
         </span>
-        <span class="font-bold text-gray-300 capitalize text-right truncate">
+        <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)] capitalize text-right truncate">
           {{ $t(`species.${enemy.species}`) }}
         </span>
       </div>
 
       <div class="flex items-center justify-between text-[10px] gap-1">
-        <span class="font-bold text-blue-500 tracking-wider uppercase shrink-0">
+        <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase shrink-0">
           {{ $t("enemy.level") }}:
         </span>
-        <span class="font-bold text-gray-300">{{ enemy.level }}</span>
+        <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ enemy.level }}</span>
       </div>
 
       <div class="flex items-center justify-between text-[10px] gap-1">
-        <span class="font-bold text-blue-500 tracking-wider uppercase shrink-0">HP:</span>
-        <span class="font-bold text-white">{{ enemy.hp }}</span>
+        <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase shrink-0">HP:</span>
+        <span class="font-bold text-white in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ enemy.hp }}</span>
       </div>
     </div>
   </div>

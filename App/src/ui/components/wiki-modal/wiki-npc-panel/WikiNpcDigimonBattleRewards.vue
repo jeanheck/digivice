@@ -46,14 +46,14 @@ const selectMember = (memberIndex: number) => {
   <div class="relative w-full shrink-0 flex items-center min-h-7">
     <div class="z-10 flex items-center justify-start gap-4 text-xs">
       <div class="flex items-center gap-2">
-        <span class="font-bold text-blue-500 tracking-wider uppercase">
+        <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">
           {{ $t("enemy.baseExp") }}:
         </span>
-        <span class="font-bold text-gray-300">{{ exp }}</span>
+        <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ exp }}</span>
       </div>
 
       <div class="flex items-center gap-2">
-        <span class="font-bold text-blue-500 tracking-wider uppercase">
+        <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">
           {{ $t("enemy.baseDvexp") }}:
         </span>
         <WikiPartyDvexp :party-dvexps="partyDvexps" />
@@ -61,10 +61,10 @@ const selectMember = (memberIndex: number) => {
     </div>
 
     <div class="z-10 ml-auto flex items-center gap-2 text-xs">
-      <span class="font-bold text-blue-500 tracking-wider uppercase">
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">
         {{ $t("enemy.bits") }}:
       </span>
-      <span class="font-bold text-gray-300">{{ bits }}</span>
+      <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ bits }}</span>
     </div>
 
     <div
@@ -73,14 +73,14 @@ const selectMember = (memberIndex: number) => {
     >
       <button
         type="button"
-        class="w-7 h-7 rounded bg-black/80 border border-blue-800 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] cursor-pointer"
+        class="w-7 h-7 rounded bg-black/80 in-[[data-theme=seabed]]:bg-[var(--color-surface)] border border-blue-800 in-[[data-theme=seabed]]:border-[var(--color-frame)] flex items-center justify-center text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] hover:bg-blue-900/80 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/30 hover:border-blue-400 in-[[data-theme=seabed]]:hover:border-[var(--color-frame)] hover:text-white in-[[data-theme=seabed]]:hover:text-[var(--color-ink)] transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none cursor-pointer"
         @click.prevent="showPreviousMember"
       >
         &lt;
       </button>
 
       <div
-        class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-blue-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]"
+        class="flex gap-2 px-3 py-1.5 bg-black/80 in-[[data-theme=seabed]]:bg-[var(--color-surface)] rounded border border-blue-900/80 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none"
       >
         <button
           v-for="memberIndex in memberCount"
@@ -89,8 +89,8 @@ const selectMember = (memberIndex: number) => {
           class="w-2 h-2 rounded-full transition-all cursor-pointer"
           :class="
             memberIndex - 1 === modelValue
-              ? 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,1)] scale-110'
-              : 'bg-blue-900 hover:bg-blue-600'
+              ? 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,1)] scale-110 in-[[data-theme=seabed]]:bg-[var(--color-accent)] in-[[data-theme=seabed]]:shadow-none'
+              : 'bg-blue-900 hover:bg-blue-600 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/40 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/50'
           "
           @click.prevent="selectMember(memberIndex - 1)"
         />
@@ -98,7 +98,7 @@ const selectMember = (memberIndex: number) => {
 
       <button
         type="button"
-        class="w-7 h-7 rounded bg-black/80 border border-blue-800 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] cursor-pointer"
+        class="w-7 h-7 rounded bg-black/80 in-[[data-theme=seabed]]:bg-[var(--color-surface)] border border-blue-800 in-[[data-theme=seabed]]:border-[var(--color-frame)] flex items-center justify-center text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] hover:bg-blue-900/80 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/30 hover:border-blue-400 in-[[data-theme=seabed]]:hover:border-[var(--color-frame)] hover:text-white in-[[data-theme=seabed]]:hover:text-[var(--color-ink)] transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none cursor-pointer"
         @click.prevent="showNextMember"
       >
         &gt;

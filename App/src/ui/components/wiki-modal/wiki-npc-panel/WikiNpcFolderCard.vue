@@ -30,7 +30,7 @@ const handleSelect = (): void => {
 <template>
   <button
     type="button"
-    class="flex flex-col items-center gap-1.5 w-28 px-1.5 py-2 rounded transition-colors cursor-pointer bg-blue-900/30 hover:bg-blue-900/50 border border-blue-800/60"
+    class="flex flex-col items-center gap-1.5 w-28 px-1.5 py-2 rounded transition-colors cursor-pointer bg-blue-900/30 in-[[data-theme=seabed]]:bg-[var(--color-accent)]/15 hover:bg-blue-900/50 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/25 border border-blue-800/60 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50"
     @click="handleSelect"
   >
     <div class="relative w-12 h-16 shrink-0">
@@ -47,12 +47,12 @@ const handleSelect = (): void => {
         ❓
       </div>
       <span
-        class="absolute -bottom-0.75 left-full -ml-1.5 px-0.5 leading-none text-[10px] font-bold text-blue-300 bg-black/85 border border-cyan-800/80 rounded-sm"
+        class="absolute -bottom-0.75 left-full -ml-1.5 px-0.5 leading-none text-[10px] font-bold text-blue-300 in-[[data-theme=seabed]]:text-[var(--color-accent)] bg-black/85 in-[[data-theme=seabed]]:bg-[var(--color-surface)] border border-cyan-800/80 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 rounded-sm"
       >
         ×{{ card.quantity }}
       </span>
     </div>
-    <span class="w-full text-[8px] font-bold text-blue-200 leading-tight text-center line-clamp-2">
+    <span class="w-full text-[8px] font-bold text-blue-200 in-[[data-theme=seabed]]:text-[var(--color-ink)] leading-tight text-center line-clamp-2">
       {{ cardName }}
     </span>
   </button>
