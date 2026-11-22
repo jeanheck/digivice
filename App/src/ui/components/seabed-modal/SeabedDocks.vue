@@ -44,7 +44,7 @@ function onSelectDock(locationId: string): void {
 
 <template>
   <div
-    class="relative shrink-0 min-h-0 overflow-visible bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
+    class="relative shrink-0 min-h-0 overflow-visible bg-[#00051a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-cyan-800/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)] in-[[data-theme=seabed]]:shadow-none"
     :style="{
       width: `${MapFrameWidthPx}px`,
       maxHeight: `${MapFrameMaxHeightPx}px`,

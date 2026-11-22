@@ -61,7 +61,9 @@ const areaSlides = computed((): MapFrameSlideViewModel[] => {
       class="flex flex-col items-center justify-center gap-3 px-8"
       :style="{ width: `${MapFrameWidthPx}px` }"
     >
-      <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
+      <span
+        class="text-cyan-500/50 in-[[data-theme=seabed]]:text-[var(--color-accent)]/60 text-sm tracking-widest text-center animate-pulse"
+      >
         {{ $t("mobiusDesert.hint") }}
       </span>
     </div>
