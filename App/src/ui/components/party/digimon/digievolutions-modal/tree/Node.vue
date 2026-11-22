@@ -43,8 +43,8 @@ const nodeAvatarUrl = computed(() => {
       class="absolute inset-0 border-2 rounded-md overflow-hidden transition-all duration-300 shadow-[0_4px_10px_black]"
       :class="[
         isSelected
-          ? 'border-cyan-400 bg-cyan-900/40 shadow-[0_0_20px_rgba(0,255,255,0.5)] scale-105 z-10'
-          : 'border-[#1a1c35] bg-[#0c0d1a]/95 hover:border-cyan-700 hover:bg-cyan-950/20',
+          ? 'border-cyan-400 bg-cyan-900/40 shadow-[0_0_20px_rgba(0,255,255,0.5)] scale-105 z-10 in-[[data-theme=seabed]]:border-[var(--color-accent)] in-[[data-theme=seabed]]:bg-[var(--color-accent)]/25 in-[[data-theme=seabed]]:shadow-[0_0_16px_rgba(91,132,177,0.4)]'
+          : 'border-[#1a1c35] bg-[#0c0d1a]/95 hover:border-cyan-700 hover:bg-cyan-950/20 in-[[data-theme=seabed]]:border-[var(--color-frame)] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:hover:border-[var(--color-accent)] in-[[data-theme=seabed]]:hover:bg-[var(--color-surface-deep)]',
         !isUnlocked ? 'grayscale-[0.4] opacity-80' : '',
       ]"
     >
@@ -76,7 +76,11 @@ const nodeAvatarUrl = computed(() => {
         <template v-for="(req, idx) in node.requirements.slice(0, 2)" :key="idx">
           <span
             class="text-[8px] font-bold tracking-tight truncate"
-            :class="isReqMet(req) ? 'text-emerald-400' : 'text-[#ddd]'"
+            :class="
+              isReqMet(req)
+                ? 'text-emerald-400 in-[[data-theme=seabed]]:text-white in-[[data-theme=seabed]]:[text-shadow:-1px_-1px_0_#4a6b63,1px_-1px_0_#4a6b63,-1px_1px_0_#4a6b63,1px_1px_0_#4a6b63]'
+                : 'text-[#ddd] in-[[data-theme=seabed]]:text-[var(--color-ink)]'
+            "
           >
             {{ NodePresenter.getRequirementText(digimonName, req, t) }}
           </span>

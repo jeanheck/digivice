@@ -175,9 +175,17 @@ body {
   padding: 16px;
 }
 
+[data-theme="seabed"] .family-tree-container {
+  background: var(--color-surface);
+}
+
 .family-separator {
   border-bottom: 1px solid rgba(0, 102, 204, 0.3);
   margin: 12px 0;
+}
+
+[data-theme="seabed"] .family-separator {
+  border-bottom-color: color-mix(in srgb, var(--color-frame) 40%, transparent);
 }
 
 .empty-state {
@@ -212,6 +220,18 @@ body {
 .pin-icon-active:hover {
   filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4)
     drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  opacity: 1;
+}
+
+[data-theme="seabed"] .pin-icon:hover {
+  filter: grayscale(1) sepia(1) hue-rotate(175deg) saturate(3.2) brightness(0.95);
+  opacity: 1;
+}
+
+[data-theme="seabed"] .pin-icon-active,
+[data-theme="seabed"] .pin-icon-active:hover {
+  filter: grayscale(1) sepia(1) hue-rotate(175deg) saturate(3.2) brightness(0.95)
+    drop-shadow(0 0 4px rgba(91, 132, 177, 0.7));
   opacity: 1;
 }
 
@@ -256,6 +276,16 @@ body {
   background: linear-gradient(to right, rgba(0, 255, 255, 0.25), rgba(0, 255, 255, 0.45));
 }
 
+[data-theme="seabed"] .connector-line,
+[data-theme="seabed"] .fork-line-top,
+[data-theme="seabed"] .fork-line-bottom {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--color-accent) 35%, transparent),
+    color-mix(in srgb, var(--color-accent) 65%, transparent)
+  );
+}
+
 .connector-line {
   width: 32px;
 }
@@ -297,6 +327,10 @@ body {
   background: rgba(0, 255, 255, 0.3);
 }
 
+[data-theme="seabed"] .fork-connector::before {
+  background: color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
 .connector-arrow,
 .fork-line-top::after,
 .fork-line-bottom::after {
@@ -309,6 +343,12 @@ body {
   border-left: 5px solid rgba(0, 255, 255, 0.45);
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
+}
+
+[data-theme="seabed"] .connector-arrow,
+[data-theme="seabed"] .fork-line-top::after,
+[data-theme="seabed"] .fork-line-bottom::after {
+  border-left-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
 }
 
 .fork-line-top::after,
