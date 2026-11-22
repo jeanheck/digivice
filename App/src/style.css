@@ -171,21 +171,13 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: #001122;
+  background: var(--color-surface);
   padding: 16px;
 }
 
-[data-theme="seabed"] .family-tree-container {
-  background: var(--color-surface);
-}
-
 .family-separator {
-  border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-frame) 40%, transparent);
   margin: 12px 0;
-}
-
-[data-theme="seabed"] .family-separator {
-  border-bottom-color: color-mix(in srgb, var(--color-frame) 40%, transparent);
 }
 
 .empty-state {
@@ -273,16 +265,10 @@ body {
 .fork-line-bottom {
   position: relative;
   height: 2px;
-  background: linear-gradient(to right, rgba(0, 255, 255, 0.25), rgba(0, 255, 255, 0.45));
-}
-
-[data-theme="seabed"] .connector-line,
-[data-theme="seabed"] .fork-line-top,
-[data-theme="seabed"] .fork-line-bottom {
   background: linear-gradient(
     to right,
-    color-mix(in srgb, var(--color-accent) 35%, transparent),
-    color-mix(in srgb, var(--color-accent) 65%, transparent)
+    color-mix(in srgb, var(--color-accent-bright) 25%, transparent),
+    color-mix(in srgb, var(--color-accent-bright) 45%, transparent)
   );
 }
 
@@ -324,11 +310,7 @@ body {
   top: calc(25% + 5px);
   bottom: calc(25% + 5px);
   width: 2px;
-  background: rgba(0, 255, 255, 0.3);
-}
-
-[data-theme="seabed"] .fork-connector::before {
-  background: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  background: color-mix(in srgb, var(--color-accent-bright) 30%, transparent);
 }
 
 .connector-arrow,
@@ -340,15 +322,9 @@ body {
   transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-left: 5px solid rgba(0, 255, 255, 0.45);
+  border-left: 5px solid color-mix(in srgb, var(--color-accent-bright) 45%, transparent);
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-}
-
-[data-theme="seabed"] .connector-arrow,
-[data-theme="seabed"] .fork-line-top::after,
-[data-theme="seabed"] .fork-line-bottom::after {
-  border-left-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
 }
 
 .fork-line-top::after,
@@ -362,29 +338,17 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  background: color-mix(in srgb, var(--color-frame) 20%, transparent);
   border-radius: 10px;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: #0033aa;
+  background: var(--color-frame);
   border-radius: 10px;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #0077ff;
-}
-
-[data-theme="seabed"] .custom-scroll::-webkit-scrollbar-track {
-  background: rgb(74 107 99 / 0.2);
-}
-
-[data-theme="seabed"] .custom-scroll::-webkit-scrollbar-thumb {
-  background: #4a6b63;
-}
-
-[data-theme="seabed"] .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #5b84b1;
+  background: var(--color-accent);
 }
 
 /* Tooltip transition */
@@ -555,8 +519,8 @@ body {
   width: 100%;
   max-width: 95%;
   padding: 0.5rem 0.75rem;
-  background-color: rgb(0 0 0 / 0.8);
-  border: 1px solid rgb(0 170 255 / 0.4);
+  background-color: color-mix(in srgb, var(--color-panel) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent-bright) 40%, transparent);
   border-radius: 0.25rem;
   backdrop-filter: blur(4px);
 }
@@ -565,16 +529,10 @@ body {
   width: fit-content;
   max-width: 95%;
   padding: 0.5rem 0.75rem;
-  background-color: rgb(0 0 0 / 0.8);
-  border: 1px solid rgb(0 170 255 / 0.4);
+  background-color: color-mix(in srgb, var(--color-panel) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent-bright) 40%, transparent);
   border-radius: 0.25rem;
   backdrop-filter: blur(4px);
-}
-
-/* Seabed map panels: teal-700 borders (overrides the cyan shorthand above) */
-.seabed-map .map-info-panel,
-.seabed-map .map-info-panel-fit {
-  border-color: #4a6b63;
 }
 
 .map-info-panel.map-info-panel-action {
@@ -593,8 +551,8 @@ body {
 }
 
 .map-info-panel.map-info-panel-action:hover {
-  background-color: rgb(0 14 63 / 0.9);
-  border-color: rgb(0 170 255 / 0.6);
+  background-color: color-mix(in srgb, var(--color-surface-deep) 90%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent-bright) 60%, transparent);
 }
 
 .map-info-panel-fit.map-info-panel-action {
@@ -605,6 +563,6 @@ body {
 }
 
 .map-info-panel-fit.map-info-panel-action:hover {
-  background-color: rgb(0 14 63 / 0.9);
-  border-color: rgb(0 170 255 / 0.6);
+  background-color: color-mix(in srgb, var(--color-surface-deep) 90%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent-bright) 60%, transparent);
 }

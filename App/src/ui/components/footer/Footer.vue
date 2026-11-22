@@ -57,13 +57,13 @@ const groupPartyLevel = computed(() => {
 
 <template>
   <footer
-    class="dw3-frame [--dw3-frame-fill-color:var(--color-surface)] w-full text-white p-2 flex items-center gap-12 px-6"
+    class="dw3-frame [--dw3-frame-fill-color:var(--color-surface)] w-full text-ink p-2 flex items-center gap-12 px-6"
   >
     <div class="font-bold text-ms flex items-baseline cursor-default">
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 in-[[data-theme=seabed]]:text-teal-700 tracking-wider uppercase"
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-ink-muted tracking-wider uppercase"
         >{{ $t("player.bits") }}:</span
       >
-      <span class="text-white text-outline-black">{{ playerBits }}</span>
+      <span class="text-ink text-outline-black">{{ playerBits }}</span>
     </div>
 
     <div
@@ -74,10 +74,10 @@ const groupPartyLevel = computed(() => {
       @mousemove="moveTooltip"
       @mouseleave="hideTooltip"
     >
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 in-[[data-theme=seabed]]:text-teal-700 tracking-wider uppercase"
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-ink-muted tracking-wider uppercase"
         >{{ $t("party.groupCharisma") }}:</span
       >
-      <span class="text-white text-outline-black">{{ groupCharisma }}</span>
+      <span class="text-ink text-outline-black">{{ groupCharisma }}</span>
     </div>
 
     <div
@@ -88,18 +88,16 @@ const groupPartyLevel = computed(() => {
       @mousemove="moveTooltip"
       @mouseleave="hideTooltip"
     >
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 in-[[data-theme=seabed]]:text-teal-700 tracking-wider uppercase"
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-ink-muted tracking-wider uppercase"
         >{{ $t("party.groupLevel") }}:</span
       >
-      <span class="text-white text-outline-black">{{ groupPartyLevel }}</span>
+      <span class="text-ink text-outline-black">{{ groupPartyLevel }}</span>
     </div>
 
     <div
       class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3 text-sm opacity-80"
     >
-      <div
-        class="flex items-center gap-3 border-r border-blue-900 in-[[data-theme=seabed]]:border-[var(--color-frame)] pr-3"
-      >
+      <div class="flex items-center gap-3 border-r border-frame pr-3">
         <SeabedButton
           @show-tooltip="(event) => showTitleTooltip(event, t('seabed.title'))"
           @move-tooltip="moveTooltip"
@@ -112,9 +110,7 @@ const groupPartyLevel = computed(() => {
         />
       </div>
 
-      <div
-        class="flex items-center gap-3 border-r border-blue-900 in-[[data-theme=seabed]]:border-[var(--color-frame)] pr-3"
-      >
+      <div class="flex items-center gap-3 border-r border-frame pr-3">
         <DnaDigievolutionsButton
           @show-tooltip="(event) => showTitleTooltip(event, t('dnaDigievolution.title'))"
           @move-tooltip="moveTooltip"
@@ -122,9 +118,7 @@ const groupPartyLevel = computed(() => {
         />
       </div>
 
-      <div
-        class="flex items-center gap-3 border-r border-blue-900 in-[[data-theme=seabed]]:border-[var(--color-frame)] pr-3"
-      >
+      <div class="flex items-center gap-3 border-r border-frame pr-3">
         <LanguageSelector
           @show-tooltip="showTitleTooltip"
           @move-tooltip="moveTooltip"

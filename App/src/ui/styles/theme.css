@@ -2,53 +2,65 @@
 @theme {
   --color-surface: #000a2b;
   --color-surface-deep: #000e3f;
+  --color-panel: #000a1a;
   --color-frame: #0033aa;
   --color-accent: #0077ff;
   --color-accent-bright: #00aaff;
   --color-ink: #ffffff;
+  --color-ink-muted: #93c5fd;
 }
 
 [data-theme="asuka"] {
   --color-surface: #000a2b;
   --color-surface-deep: #000e3f;
+  --color-panel: #000a1a;
   --color-frame: #0033aa;
   --color-accent: #0077ff;
   --color-accent-bright: #00aaff;
   --color-ink: #ffffff;
+  --color-ink-muted: #93c5fd;
 }
 
 [data-theme="amaterasu"] {
   --color-surface: #2b0018;
   --color-surface-deep: #3f001e;
+  --color-panel: #3f001e;
   --color-frame: #aa0055;
   --color-accent: #ff66bb;
   --color-accent-bright: #ff99d1;
   --color-ink: #ffffff;
+  --color-ink-muted: #ff99d1;
 }
 
 [data-theme="seabed"] {
   --color-surface: #e8e0d0;
   --color-surface-deep: #c8bda8;
+  --color-panel: #c8bda8;
   --color-frame: #4a6b63;
   --color-accent: #5b84b1;
   --color-accent-bright: #7aa0b8;
   --color-ink: #302418;
+  --color-ink-muted: #0f766e;
 }
 
 [data-theme="circuitBoard"] {
   --color-surface: #000a2b;
   --color-surface-deep: #000e3f;
+  --color-panel: #000a1a;
   --color-frame: #0033aa;
   --color-accent: #0077ff;
   --color-accent-bright: #00aaff;
   --color-ink: #ffffff;
+  --color-ink-muted: #93c5fd;
 }
 
 [data-theme="undefined"] {
   --color-surface: #1a1a1a;
   --color-surface-deep: #121212;
+  --color-panel: #121212;
   --color-frame: #555555;
   --color-accent: #999999;
   --color-accent-bright: #bbbbbb;
   --color-ink: #ffffff;
+  --color-ink-muted: #9ca3af;
 }
