@@ -43,10 +43,14 @@ function calculateValue(condition: EnemyConditionViewModel): string {
 
 function calculateColorClass(condition: EnemyConditionViewModel): string {
   if (isBooleanCondition(condition)) {
-    return condition.can ? "text-green-400" : "text-red-400";
+    return condition.can
+      ? "text-green-400 in-[[data-theme=seabed]]:text-emerald-700"
+      : "text-red-400 in-[[data-theme=seabed]]:text-red-700";
   }
 
-  return condition.can ? "text-white" : "text-red-400";
+  return condition.can
+    ? "text-white in-[[data-theme=seabed]]:[text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]"
+    : "text-red-400 in-[[data-theme=seabed]]:text-red-700";
 }
 
 function calculateTooltip(condition: EnemyConditionViewModel): string {
@@ -62,9 +66,11 @@ function calculateTooltip(condition: EnemyConditionViewModel): string {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col items-center gap-1 border-l border-blue-900/10 pl-3">
+  <div
+    class="flex-1 flex flex-col items-center gap-1 border-l border-blue-900/10 in-[[data-theme=seabed]]:border-[var(--color-frame)]/20 pl-3"
+  >
     <h4
-      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center"
+      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] mb-2 border-b border-blue-900/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 pb-1 w-full text-center"
     >
       {{ $t("enemy.status") }}
     </h4>

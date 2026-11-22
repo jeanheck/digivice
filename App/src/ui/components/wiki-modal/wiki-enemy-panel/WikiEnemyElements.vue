@@ -19,9 +19,11 @@ const stats = computed(() => {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col items-center gap-1 border-l border-blue-900/10 pl-3">
+  <div
+    class="flex-1 flex flex-col items-center gap-1 border-l border-blue-900/10 in-[[data-theme=seabed]]:border-[var(--color-frame)]/20 pl-3"
+  >
     <h4
-      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center"
+      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] mb-2 border-b border-blue-900/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 pb-1 w-full text-center"
     >
       {{ $t("enemy.elements") }}
     </h4>
@@ -43,7 +45,9 @@ const stats = computed(() => {
           class="w-[25.5px] h-[27px] object-contain rendering-pixelated"
         />
       </div>
-      <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">
+      <div
+        class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center in-[[data-theme=seabed]]:[text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]"
+      >
         {{ stat.value }}
       </div>
     </div>

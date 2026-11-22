@@ -42,15 +42,17 @@ const handleDropClick = (drop: WikiEnemyDropViewModel): void => {
 
 <template>
   <div
-    class="h-full min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm flex flex-col min-w-0"
+    class="h-full min-h-32 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner text-sm flex flex-col min-w-0"
   >
-    <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-1 w-full">
+    <h4
+      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] mb-1 w-full"
+    >
       {{ $t(sectionLabelKey) }}
     </h4>
 
     <span
       v-if="!hasDrops"
-      class="flex flex-1 min-h-0 items-center justify-center text-gray-200 text-xs"
+      class="flex flex-1 min-h-0 items-center justify-center text-gray-200 in-[[data-theme=seabed]]:text-white text-xs"
     >
       {{ $t("drops.none") }}
     </span>
@@ -59,11 +61,13 @@ const handleDropClick = (drop: WikiEnemyDropViewModel): void => {
         v-for="drop in drops"
         :key="`${drop.dropId}-${drop.locationOnly ?? ''}`"
         type="button"
-        class="text-center px-2.5 py-2 rounded text-[9px] fhdscaled:text-[11px] font-bold tracking-wide transition-colors cursor-pointer hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
+        class="text-center px-2.5 py-2 rounded text-[9px] fhdscaled:text-[11px] font-bold tracking-wide transition-colors cursor-pointer hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40 in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/20"
         @click="handleDropClick(drop)"
       >
         <span class="block">{{ $t(drop.labelKey) }}</span>
-        <span class="block min-h-3 text-[9px] font-normal text-gray-300 leading-tight">
+        <span
+          class="block min-h-3 text-[9px] font-normal text-gray-300 in-[[data-theme=seabed]]:text-yellow-700/80 leading-tight"
+        >
           {{ drop.locationOnly ? locationOnlyLabel(drop.locationOnly) : "" }}
         </span>
       </button>

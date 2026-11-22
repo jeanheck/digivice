@@ -59,39 +59,41 @@ const handleOpenLocation = (locationId: string): void => {
 
 <template>
   <div
-    class="h-full bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5 min-h-0"
+    class="h-full bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5 min-h-0"
   >
     <div class="flex items-center justify-between text-xs shrink-0">
-      <span class="font-bold text-blue-500 tracking-wider uppercase"
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase"
         >{{ $t("enemy.specie") }}:</span
       >
-      <span class="font-bold text-gray-300 capitalize">{{ $t(`species.${enemy.species}`) }}</span>
+      <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)] capitalize">{{ $t(`species.${enemy.species}`) }}</span>
     </div>
 
     <div class="flex items-center justify-between text-xs shrink-0">
-      <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.level") }}:</span>
-      <span class="font-bold text-gray-300">{{ enemy.level }}</span>
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">{{ $t("enemy.level") }}:</span>
+      <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ enemy.level }}</span>
     </div>
 
     <div class="flex items-center justify-between text-xs shrink-0">
-      <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
-      <span class="font-bold text-white">{{ enemy.hp }}</span>
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">HP:</span>
+      <span class="font-bold text-white in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{
+        enemy.hp
+      }}</span>
     </div>
 
     <div v-if="showBaseExp" class="flex items-center justify-between text-xs shrink-0">
-      <span class="font-bold text-blue-500 tracking-wider uppercase">
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">
         {{ $t("enemy.baseExp") }}:
       </span>
-      <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
+      <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ enemy.exp }}</span>
     </div>
 
     <div v-if="showBaseBits" class="flex items-center justify-between text-xs shrink-0">
-      <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.bits") }}:</span>
-      <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">{{ $t("enemy.bits") }}:</span>
+      <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ enemy.bits }}</span>
     </div>
 
     <div v-if="showDvexp" class="flex items-center justify-between text-xs shrink-0">
-      <span class="font-bold text-blue-500 tracking-wider uppercase">
+      <span class="font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase">
         {{ $t("enemy.baseDvexp") }}:
       </span>
 
@@ -100,11 +102,11 @@ const handleOpenLocation = (locationId: string): void => {
 
     <div
       v-if="showLocations"
-      class="border-t border-blue-900/50 pt-2.5 flex flex-col flex-1 min-h-0 gap-1.5 text-xs"
+      class="border-t border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 pt-2.5 flex flex-col flex-1 min-h-0 gap-1.5 text-xs"
     >
       <span
         v-if="hasLocations"
-        class="text-center font-bold text-blue-500 tracking-wider uppercase shrink-0"
+        class="text-center font-bold text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider uppercase shrink-0"
       >
         {{ $t("enemy.whereToFind") }}
       </span>
