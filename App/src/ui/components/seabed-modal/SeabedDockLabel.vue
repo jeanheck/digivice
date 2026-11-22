@@ -30,7 +30,7 @@ function getLabelPlacementClasses(labelPlacement: LabelPlacement): string {
     :style="{ left: dock.x + '%', top: dock.y + '%' }"
   >
     <div
-      class="absolute w-max whitespace-nowrap text-cyan-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] drop-shadow bg-cyan-950/95 in-[[data-theme=seabed]]:bg-[var(--color-surface)] rounded border border-cyan-700/80 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 text-center shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5"
+      class="absolute w-max whitespace-nowrap text-white drop-shadow bg-zinc-900/95 rounded border border-zinc-500 text-center shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5"
       :class="getLabelPlacementClasses(dock.labelPlacement)"
     >
       {{ $t(`map.${dock.location}`) }}

@@ -96,14 +96,10 @@ const closeModal = () => {
           class="flex flex-col items-center justify-center gap-3 px-8"
           :style="{ width: `${MapFrameWidthPx}px` }"
         >
-          <span
-            class="text-cyan-500/50 in-[[data-theme=seabed]]:text-[var(--color-accent)]/60 text-sm tracking-widest text-center animate-pulse"
-          >
+          <span class="text-zinc-400 text-sm tracking-widest text-center animate-pulse">
             {{ $t("seabed.noDock") }}
           </span>
-          <span
-            class="text-cyan-500/50 in-[[data-theme=seabed]]:text-[var(--color-accent)]/60 text-sm tracking-widest text-center animate-pulse"
-          >
+          <span class="text-zinc-400 text-sm tracking-widest text-center animate-pulse">
             {{ $t("seabed.noDockHint") }}
           </span>
         </div>

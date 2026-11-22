@@ -123,25 +123,23 @@ watch(
 <template>
   <div
     v-if="activeSlide"
-    class="relative shrink-0 min-h-0 bg-[#00051a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-cyan-800/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)] in-[[data-theme=seabed]]:shadow-none"
+    class="relative shrink-0 min-h-0 bg-zinc-900 border border-zinc-600 rounded"
     :class="mapFrameOverflowClass"
     :style="mapFrameStyle"
   >
     <div
       v-if="showPagination"
-      class="flex items-center justify-center gap-3 px-3 py-2 border-b border-cyan-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 bg-black/40 in-[[data-theme=seabed]]:bg-[var(--color-surface)]/80 z-20"
+      class="flex items-center justify-center gap-3 px-3 py-2 border-b border-zinc-700 bg-zinc-950/80 z-20"
     >
       <button
         type="button"
-        class="w-7 h-7 rounded bg-black/80 in-[[data-theme=seabed]]:bg-[var(--color-surface)] border border-cyan-800 in-[[data-theme=seabed]]:border-[var(--color-frame)] flex items-center justify-center text-cyan-400 in-[[data-theme=seabed]]:text-[var(--color-accent)] hover:bg-cyan-900/80 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/30 hover:border-cyan-400 in-[[data-theme=seabed]]:hover:border-[var(--color-frame)] hover:text-white in-[[data-theme=seabed]]:hover:text-[var(--color-ink)] transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none"
+        class="w-7 h-7 rounded bg-zinc-800 border border-zinc-600 flex items-center justify-center text-zinc-200 hover:bg-zinc-700 hover:border-zinc-400 hover:text-white transition-all font-bold text-sm"
         @click.prevent="showPreviousSlide"
       >
         &lt;
       </button>
 
-      <div
-        class="flex gap-2 px-3 py-1.5 bg-black/80 in-[[data-theme=seabed]]:bg-[var(--color-surface)] rounded border border-cyan-900/80 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none"
-      >
+      <div class="flex gap-2 px-3 py-1.5 bg-zinc-800 rounded border border-zinc-600">
         <button
           v-for="(_, slideDotIndex) in slides"
           :key="slideDotIndex"
@@ -149,8 +147,8 @@ watch(
           class="w-2 h-2 rounded-full transition-all cursor-pointer"
           :class="
             Number(slideDotIndex) === currentSlideIndex
-              ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110 in-[[data-theme=seabed]]:bg-[var(--color-accent)] in-[[data-theme=seabed]]:shadow-none'
-              : 'bg-cyan-900 hover:bg-cyan-600 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/40 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/50'
+              ? 'bg-white scale-110'
+              : 'bg-zinc-600 hover:bg-zinc-400'
           "
           @click.prevent="selectSlide(Number(slideDotIndex))"
         />
@@ -158,7 +156,7 @@ watch(
 
       <button
         type="button"
-        class="w-7 h-7 rounded bg-black/80 in-[[data-theme=seabed]]:bg-[var(--color-surface)] border border-cyan-800 in-[[data-theme=seabed]]:border-[var(--color-frame)] flex items-center justify-center text-cyan-400 in-[[data-theme=seabed]]:text-[var(--color-accent)] hover:bg-cyan-900/80 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/30 hover:border-cyan-400 in-[[data-theme=seabed]]:hover:border-[var(--color-frame)] hover:text-white in-[[data-theme=seabed]]:hover:text-[var(--color-ink)] transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none"
+        class="w-7 h-7 rounded bg-zinc-800 border border-zinc-600 flex items-center justify-center text-zinc-200 hover:bg-zinc-700 hover:border-zinc-400 hover:text-white transition-all font-bold text-sm"
         @click.prevent="showNextSlide"
       >
         &gt;
@@ -189,10 +187,10 @@ watch(
         }"
       >
         <div
-          class="absolute inset-0 rounded-full border border-cyan-400 in-[[data-theme=seabed]]:border-[var(--color-accent)] animate-ping opacity-90"
+          class="absolute inset-0 rounded-full border border-yellow-400 animate-ping opacity-90"
         />
         <div
-          class="rounded-full bg-cyan-400 in-[[data-theme=seabed]]:bg-[var(--color-accent)] shadow-[0_0_8px_rgba(0,255,255,1)] in-[[data-theme=seabed]]:shadow-none"
+          class="rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.85)]"
           :style="{
             width: pinDotSizePx + 'px',
             height: pinDotSizePx + 'px',
@@ -200,7 +198,7 @@ watch(
         />
         <div
           v-if="hasPinLabel(pin)"
-          class="absolute w-max whitespace-nowrap text-cyan-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] drop-shadow bg-cyan-950/95 in-[[data-theme=seabed]]:bg-[var(--color-surface)] rounded border border-cyan-700/80 in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight"
+          class="absolute w-max whitespace-nowrap text-white drop-shadow bg-zinc-900/95 rounded border border-zinc-500 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight"
           :class="[pinLabelClass, getPinLabelHorizontalAnchorClass(pin.coordinates.x)]"
           :style="getPinLabelVerticalAnchorStyle(pin.coordinates.y)"
         >

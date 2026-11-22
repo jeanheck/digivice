@@ -44,11 +44,7 @@ function isRouteHovered(hoveredRouteId: string | null, routeId: string): boolean
           :stroke-opacity="isRouteHovered(hoveredRouteId, route.id) ? 1 : 0.5"
           :stroke-width="isRouteHovered(hoveredRouteId, route.id) ? 1.3 : 1.1"
           pointer-events="none"
-          :class="
-            isRouteHovered(hoveredRouteId, route.id)
-              ? 'text-cyan-300 in-[[data-theme=seabed]]:text-[var(--color-accent-bright)]'
-              : 'text-cyan-500 in-[[data-theme=seabed]]:text-[var(--color-accent)]'
-          "
+          class="text-white"
         />
       </template>
     </template>

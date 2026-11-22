@@ -35,9 +35,7 @@ function onDockClick(): void {
       class="rounded-full w-full h-full transition-all"
       :class="[
         dock.type === 'dead-end' ? 'cursor-help' : 'cursor-pointer',
-        isHovered
-          ? 'bg-cyan-300 in-[[data-theme=seabed]]:bg-[var(--color-accent-bright)]'
-          : 'bg-cyan-500/50 in-[[data-theme=seabed]]:bg-[var(--color-accent)]/50',
+        isHovered ? 'bg-white' : 'bg-white/50',
       ]"
     />
   </div>
