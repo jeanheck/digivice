@@ -27,7 +27,7 @@ const onSelectStep = (step: StepViewModel) => {
   <div class="flex flex-col gap-2">
     <h3
       v-if="showTitle"
-      class="text-xs text-blue-500 in-[[data-theme=seabed]]:text-teal-700 font-bold uppercase tracking-wider mb-1 text-center"
+      class="text-xs text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] font-bold uppercase tracking-wider mb-1 text-center"
     >
       {{ $t("journal.missionSteps") }}
     </h3>
@@ -49,8 +49,8 @@ const onSelectStep = (step: StepViewModel) => {
         class="shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
         :class="
           stepViewModel.isDone
-            ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]'
-            : 'bg-black/50 border-gray-600'
+            ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)] in-[[data-theme=seabed]]:bg-teal-700/15 in-[[data-theme=seabed]]:border-teal-700 in-[[data-theme=seabed]]:text-teal-700 in-[[data-theme=seabed]]:shadow-none'
+            : 'bg-black/50 border-gray-600 in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:border-[var(--color-frame)]/50'
         "
       >
         <span v-if="stepViewModel.isDone" class="text-xs">✔</span>
@@ -62,7 +62,7 @@ const onSelectStep = (step: StepViewModel) => {
           :class="
             stepViewModel.isDone
               ? 'text-gray-400 line-through decoration-green-900'
-              : 'text-gray-200 in-[[data-theme=seabed]]:text-teal-500'
+              : 'text-gray-200 in-[[data-theme=seabed]]:text-teal-700'
           "
         >
           {{ stepViewModel.number }} -

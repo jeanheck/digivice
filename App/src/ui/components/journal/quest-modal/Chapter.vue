@@ -32,7 +32,7 @@ const emit = defineEmits<{
         :class="
           chapter.isCurrent
             ? 'text-cyan-300 in-[[data-theme=seabed]]:text-yellow-700'
-            : 'text-blue-500 in-[[data-theme=seabed]]:text-teal-700'
+            : 'text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)]'
         "
       >
         {{ $t("journal.chapter", { number: chapter.number }) }} -
@@ -40,7 +40,11 @@ const emit = defineEmits<{
       </h3>
 
       <div class="flex items-center gap-2 shrink-0">
-        <span v-if="chapter.isDone" class="text-green-400 text-xs">✔</span>
+        <span
+          v-if="chapter.isDone"
+          class="text-green-400 in-[[data-theme=seabed]]:text-teal-700 text-xs"
+          >✔</span
+        >
         <span class="text-gray-400 in-[[data-theme=seabed]]:text-teal-700 text-xs font-medium">
           {{ chapter.doneCount }}/{{ chapter.totalCount }}
         </span>
