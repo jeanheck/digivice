@@ -97,7 +97,9 @@ const groupPartyLevel = computed(() => {
     <div
       class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3 text-sm opacity-80"
     >
-      <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
+      <div
+        class="flex items-center gap-3 border-r border-blue-900 in-[[data-theme=seabed]]:border-[var(--color-frame)] pr-3"
+      >
         <SeabedButton
           @show-tooltip="(event) => showTitleTooltip(event, t('seabed.title'))"
           @move-tooltip="moveTooltip"
@@ -110,7 +112,9 @@ const groupPartyLevel = computed(() => {
         />
       </div>
 
-      <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
+      <div
+        class="flex items-center gap-3 border-r border-blue-900 in-[[data-theme=seabed]]:border-[var(--color-frame)] pr-3"
+      >
         <DnaDigievolutionsButton
           @show-tooltip="(event) => showTitleTooltip(event, t('dnaDigievolution.title'))"
           @move-tooltip="moveTooltip"
@@ -118,7 +122,9 @@ const groupPartyLevel = computed(() => {
         />
       </div>
 
-      <div class="flex items-center gap-3 border-r border-blue-900 pr-3">
+      <div
+        class="flex items-center gap-3 border-r border-blue-900 in-[[data-theme=seabed]]:border-[var(--color-frame)] pr-3"
+      >
         <LanguageSelector
           @show-tooltip="showTitleTooltip"
           @move-tooltip="moveTooltip"

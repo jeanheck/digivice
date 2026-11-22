@@ -36,7 +36,9 @@ const closeModal = () => {
     </template>
 
     <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4">
-      <p class="text-sm text-white/90 leading-relaxed mb-4 whitespace-pre-line">
+      <p
+        class="text-sm text-white/90 in-[[data-theme=seabed]]:text-[var(--color-ink)]/90 leading-relaxed mb-4 whitespace-pre-line"
+      >
         {{ $t("dnaDigievolution.description") }}
       </p>
 
