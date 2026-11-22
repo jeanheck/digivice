@@ -26,27 +26,27 @@ const techniqueLabels = computed(() => {
 
 <template>
   <div
-    class="h-full min-h-32 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner text-sm"
+    class="h-full min-h-32 bg-panel border border-frame/50 rounded p-4 shadow-inner text-sm"
   >
     <div class="flex flex-col gap-5">
       <div class="flex flex-col gap-1.5">
-        <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] w-full">
+        <h4 class="text-[10px] uppercase font-bold tracking-widest text-accent w-full">
           {{ $t("enemy.regularAttack") }}
         </h4>
-        <span class="text-gray-200 in-[[data-theme=seabed]]:text-white text-xs">
+        <span class="text-ink text-xs">
           {{ regularAttackLabel }}
         </span>
       </div>
 
       <div class="flex flex-col gap-1.5">
-        <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] w-full">
+        <h4 class="text-[10px] uppercase font-bold tracking-widest text-accent w-full">
           {{ $t("enemy.technique") }}
         </h4>
         <div class="flex flex-col gap-1">
           <span
             v-for="(techniqueLabel, index) in techniqueLabels"
             :key="index"
-            class="text-gray-200 in-[[data-theme=seabed]]:text-white text-xs"
+            class="text-ink text-xs"
           >
             {{ techniqueLabel }}
           </span>

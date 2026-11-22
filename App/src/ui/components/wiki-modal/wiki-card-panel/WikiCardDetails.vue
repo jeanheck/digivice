@@ -38,7 +38,7 @@ const cardNote = computed(() => {
 
 <template>
   <section
-    class="flex-1 w-full min-h-0 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner flex flex-col items-center text-center gap-4 overflow-y-auto custom-scroll"
+    class="flex-1 w-full min-h-0 bg-panel border border-frame/50 rounded p-4 shadow-inner flex flex-col items-center text-center gap-4 overflow-y-auto custom-scroll"
   >
     <img
       v-if="cardImageUrl"
@@ -48,15 +48,15 @@ const cardNote = computed(() => {
     />
 
     <template v-if="isActionCard">
-      <p v-if="cardNote !== ''" class="text-xs text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 italic">
+      <p v-if="cardNote !== ''" class="text-xs text-ink/70 italic">
         {{ cardNote }}
       </p>
     </template>
     <template v-else>
-      <p v-if="card.points" class="text-gray-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] uppercase font-bold">
+      <p v-if="card.points" class="text-ink uppercase font-bold">
         AP {{ card.points.ap }} / HP {{ card.points.hp }}
       </p>
-      <p class="text-gray-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] uppercase font-bold">
+      <p class="text-ink uppercase font-bold">
         {{ $t(`cardType.${card.type}`) }}
       </p>
     </template>

@@ -30,7 +30,7 @@ const handleSelect = (): void => {
 <template>
   <button
     type="button"
-    class="flex flex-col items-center gap-1.5 w-36 px-1.5 py-2 rounded transition-colors cursor-pointer bg-blue-900/30 in-[[data-theme=seabed]]:bg-[var(--color-accent)]/15 hover:bg-blue-900/50 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/25 border border-blue-800/60 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50"
+    class="flex flex-col items-center gap-1.5 w-36 px-1.5 py-2 rounded transition-colors cursor-pointer bg-accent/15 hover:bg-accent/25 border border-frame/50"
     @click="handleSelect"
   >
     <img
@@ -39,7 +39,7 @@ const handleSelect = (): void => {
       :alt="cardName"
       class="w-12 h-16 object-contain rendering-pixelated"
     />
-    <span class="w-full text-[8px] font-bold text-blue-200 in-[[data-theme=seabed]]:text-[var(--color-ink)] leading-tight text-center line-clamp-2">
+    <span class="w-full text-[8px] font-bold text-ink leading-tight text-center line-clamp-2">
       {{ cardName }}
     </span>
   </button>

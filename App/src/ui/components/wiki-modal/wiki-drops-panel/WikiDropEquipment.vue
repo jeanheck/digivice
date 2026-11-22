@@ -35,16 +35,16 @@ const equipmentNote = computed(() => {
 <template>
   <div class="flex flex-col min-h-0 overflow-y-auto custom-scroll text-xs text-center gap-4">
     <div v-if="equipmentType" class="flex flex-col gap-1">
-      <p class="bg-[#002266]/40 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/20 px-2 py-1 rounded-sm text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold">
+      <p class="bg-frame/20 px-2 py-1 rounded-sm text-accent uppercase font-bold">
         {{ $t("enemy.type") }}
       </p>
-      <p class="text-gray-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] uppercase font-bold">
+      <p class="text-ink uppercase font-bold">
         {{ equipmentType }}
       </p>
     </div>
 
     <div v-if="equipment.attributes.length > 0" class="flex flex-col gap-1">
-      <p class="bg-[#002266]/40 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/20 px-2 py-1 rounded-sm text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold">
+      <p class="bg-frame/20 px-2 py-1 rounded-sm text-accent uppercase font-bold">
         {{ $t("enemy.attributes") }}
       </p>
       <div class="flex flex-col gap-0.5 w-1/5 mx-auto">
@@ -53,7 +53,7 @@ const equipmentNote = computed(() => {
           :key="attribute.attribute"
           class="flex justify-between text-xs items-center px-2 py-1 rounded-sm"
         >
-          <span class="text-gray-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] uppercase">{{
+          <span class="text-ink uppercase">{{
             t("stat." + attribute.attribute.toLowerCase())
           }}</span>
           <span
@@ -71,10 +71,10 @@ const equipmentNote = computed(() => {
     </div>
 
     <div class="flex flex-col gap-1">
-      <p class="bg-[#002266]/40 in-[[data-theme=seabed]]:bg-[var(--color-frame)]/20 px-2 py-1 rounded-sm text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] uppercase font-bold">
+      <p class="bg-frame/20 px-2 py-1 rounded-sm text-accent uppercase font-bold">
         {{ $t("digimon.equipableBy") }}
       </p>
-      <p class="text-gray-100 in-[[data-theme=seabed]]:text-[var(--color-ink)] text-[11px] leading-tight">
+      <p class="text-ink text-[11px] leading-tight">
         <template v-if="equipment.equipableDigimonIds.length === 0">
           {{ $t("digimon.states.none") }}
         </template>
@@ -89,7 +89,7 @@ const equipmentNote = computed(() => {
       </p>
     </div>
 
-    <p v-if="equipmentNote" class="mt-2 text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 text-[10px] italic leading-tight">
+    <p v-if="equipmentNote" class="mt-2 text-ink/70 text-[10px] italic leading-tight">
       "{{ equipmentNote }}"
     </p>
   </div>

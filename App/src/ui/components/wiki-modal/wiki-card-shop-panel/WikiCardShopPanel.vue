@@ -36,7 +36,7 @@ const handleOpenLocation = (locationId: string): void => {
 <template>
   <div class="p-4 flex flex-col gap-4 h-full min-h-0 overflow-hidden">
     <section
-      class="flex-1 w-full min-h-0 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner flex flex-col"
+      class="flex-1 w-full min-h-0 bg-panel border border-frame/50 rounded p-4 shadow-inner flex flex-col"
     >
       <WikiCardShopInventory :cards="cardShopViewModel.cards" @open-card="handleOpenCard" />
     </section>

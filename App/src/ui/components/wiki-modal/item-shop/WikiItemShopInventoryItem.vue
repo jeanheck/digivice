@@ -42,7 +42,7 @@ const handleSelect = (): void => {
 <template>
   <button
     type="button"
-    class="flex items-start gap-3 w-full px-3 py-2 rounded text-left transition-colors cursor-pointer bg-blue-900/30 in-[[data-theme=seabed]]:bg-[var(--color-accent)]/15 hover:bg-blue-900/50 in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/25 border border-blue-800/60 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50"
+    class="flex items-start gap-3 w-full px-3 py-2 rounded text-left transition-colors cursor-pointer bg-accent/15 hover:bg-accent/25 border border-frame/50"
     @click="handleSelect"
   >
     <img
@@ -53,20 +53,20 @@ const handleSelect = (): void => {
     />
     <span class="flex flex-col gap-1 flex-1 min-w-0">
       <span class="flex items-start justify-between gap-2">
-        <span class="text-xs font-bold text-white in-[[data-theme=seabed]]:text-[var(--color-ink)] tracking-wide truncate">
+        <span class="text-xs font-bold text-ink tracking-wide truncate">
           {{ $t(item.nameKey) }}
         </span>
         <span class="flex items-baseline gap-1 shrink-0 text-[10px] font-bold whitespace-nowrap">
           <span class="text-amber-400 in-[[data-theme=seabed]]:text-amber-700">{{ item.price }}</span>
-          <span class="text-white in-[[data-theme=seabed]]:text-[var(--color-ink)]">{{ $t("enemy.bits") }}</span>
+          <span class="text-ink">{{ $t("enemy.bits") }}</span>
         </span>
       </span>
-      <span v-if="note !== ''" class="text-[8px] text-blue-300 in-[[data-theme=seabed]]:text-[var(--color-accent)]/80 leading-tight line-clamp-2">
+      <span v-if="note !== ''" class="text-[8px] text-ink-muted leading-tight line-clamp-2">
         {{ note }}
       </span>
       <span
         v-if="additionalInformation !== ''"
-        class="text-[8px] text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 italic leading-tight"
+        class="text-[8px] text-ink/70 italic leading-tight"
       >
         {{ additionalInformation }}
       </span>

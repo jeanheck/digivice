@@ -21,7 +21,7 @@ const stats = computed(() => {
 <template>
   <div class="flex-1 flex flex-col items-center gap-1">
     <h4
-      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] mb-2 border-b border-blue-900/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 pb-1 w-full text-center"
+      class="text-[10px] uppercase font-bold tracking-widest text-accent mb-2 border-b border-frame/40 pb-1 w-full text-center"
     >
       {{ $t("enemy.attributes") }}
     </h4>
@@ -44,7 +44,7 @@ const stats = computed(() => {
         />
       </div>
       <div
-        class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center in-[[data-theme=seabed]]:[text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]"
+        class="font-bold tracking-widest text-shadow text-ink text-sm w-12 text-center"
       >
         {{ stat.value }}
       </div>

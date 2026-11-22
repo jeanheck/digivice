@@ -27,7 +27,7 @@ const rightColumnItems = computed(() => {
   <div class="flex flex-col flex-1 min-h-0 overflow-hidden">
     <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll">
       <div
-        class="grid grid-cols-2 divide-x divide-blue-900/50 in-[[data-theme=seabed]]:divide-[var(--color-frame)]/40 w-full"
+        class="grid grid-cols-2 divide-x divide-frame/40 w-full"
       >
         <div class="flex flex-col gap-2 pr-4">
           <template v-for="item in leftColumnItems" :key="itemKey(item)">

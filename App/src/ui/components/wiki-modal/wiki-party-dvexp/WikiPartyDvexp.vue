@@ -19,7 +19,7 @@ defineProps<{
         :alt="partyDvexp.digimonName"
         class="w-7.5 h-7.5 object-contain rendering-pixelated"
       />
-      <span class="font-bold text-gray-300 in-[[data-theme=seabed]]:text-white">{{
+      <span class="font-bold text-ink">{{
         partyDvexp.dvexp ?? "-"
       }}</span>
     </span>

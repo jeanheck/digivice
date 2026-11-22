@@ -22,12 +22,12 @@ const handleSelect = (source: WikiDroppedBySourceViewModel): void => {
 </script>
 
 <template>
-  <section class="shrink-0 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner">
-    <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] mb-3">
+  <section class="shrink-0 bg-panel border border-frame/50 rounded p-4 shadow-inner">
+    <h4 class="text-[10px] uppercase font-bold tracking-widest text-accent mb-3">
       {{ $t(sectionLabelKey) }}
     </h4>
 
-    <p v-if="sources.length === 0" class="text-xs text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 italic">
+    <p v-if="sources.length === 0" class="text-xs text-ink/70 italic">
       {{ $t(emptyLabelKey) }}
     </p>
     <div v-else class="flex flex-wrap gap-2">

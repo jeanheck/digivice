@@ -68,7 +68,7 @@ const forwardHideStatTooltip = (): void => {
     </div>
 
     <div
-      class="h-full min-h-0 overflow-y-auto custom-scroll bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
+      class="h-full min-h-0 overflow-y-auto custom-scroll bg-panel border border-frame/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
     >
       <WikiEnemyAttributes
         :attributes="enemy.attributes"
