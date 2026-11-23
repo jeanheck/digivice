@@ -8,13 +8,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="dw3-panel dw3-beveled text-white">
+  <div class="dw3-panel dw3-beveled text-ink">
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
     <div class="dw3-panel-content flex gap-4 w-full p-3">
       <div
-        class="w-28 h-28 shrink-0 bg-[#000a1a] in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] border border-blue-900/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 rounded flex items-center justify-center overflow-hidden"
+        class="w-28 h-28 shrink-0 bg-surface-deep border border-frame/50 rounded flex items-center justify-center overflow-hidden"
       >
         <img
           v-if="dnaDigievolution.imageUrl"
@@ -24,7 +24,7 @@ defineProps<{
         />
         <span
           v-else
-          class="text-cyan-500/50 in-[[data-theme=seabed]]:text-[var(--color-accent)]/50 text-2xl font-bold"
+          class="text-accent/50 text-2xl font-bold"
         >
           ?
         </span>
@@ -36,7 +36,7 @@ defineProps<{
             {{ dnaDigievolution.name }}
           </span>
           <span
-            class="text-[10px] text-blue-300 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider whitespace-nowrap"
+            class="text-[10px] text-accent tracking-wider whitespace-nowrap"
           >
             {{ $t("digimon.mp") }}: {{ dnaDigievolution.mp }}
           </span>
@@ -46,7 +46,7 @@ defineProps<{
           <template v-for="(fusion, fusionIndex) in dnaDigievolution.fusions" :key="fusionIndex">
             <span
               v-if="fusionIndex > 0"
-              class="text-[9px] text-white/60 in-[[data-theme=seabed]]:text-[var(--color-ink)]/60 uppercase tracking-widest text-center"
+              class="text-[9px] text-ink-muted/60 uppercase tracking-widest text-center"
             >
               {{ $t("dnaDigievolution.or") }}
             </span>
@@ -55,7 +55,7 @@ defineProps<{
         </div>
 
         <div
-          class="flex items-center gap-4 pt-2 border-t border-[#0066cc]/40 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 text-[12px] uppercase tracking-wider in-[[data-theme=seabed]]:text-[var(--color-ink)]"
+          class="flex items-center gap-4 pt-2 border-t border-frame/50 text-[12px] uppercase tracking-wider text-ink"
         >
           <span class="flex items-center gap-1.5">
             <img
@@ -79,7 +79,7 @@ defineProps<{
 
         <p
           v-if="dnaDigievolution.effectKey !== null"
-          class="text-[10px] leading-tight text-white/85 in-[[data-theme=seabed]]:text-[var(--color-ink)]/85"
+          class="text-[10px] leading-tight text-ink/85"
         >
           {{ $t(dnaDigievolution.effectKey) }}
         </p>

@@ -31,68 +31,68 @@ const closesWhenText = computed(() => {
 
 <template>
   <div
-    class="p-4 rounded border relative overflow-hidden shrink-0 border-cyan-400/80 bg-[#001a2a] auction-card-active in-[[data-theme=seabed]]:border-yellow-500/80 in-[[data-theme=seabed]]:bg-yellow-50"
+    class="p-4 rounded border relative overflow-hidden shrink-0 border-accent/80 bg-panel auction-card-active in-[[data-theme=seabed]]:border-yellow-500/80 in-[[data-theme=seabed]]:bg-yellow-50"
   >
     <div
-      class="absolute inset-0 bg-cyan-500/10 in-[[data-theme=seabed]]:bg-yellow-400/15 pointer-events-none"
+      class="absolute inset-0 bg-accent/15 in-[[data-theme=seabed]]:bg-yellow-400/15 pointer-events-none"
     />
 
     <div class="relative z-10 space-y-2">
       <div class="flex items-start justify-between gap-2">
         <h3
-          class="font-bold text-sm leading-snug text-cyan-300 in-[[data-theme=seabed]]:text-yellow-700"
+          class="font-bold text-sm leading-snug text-accent-bright in-[[data-theme=seabed]]:text-yellow-700"
         >
           {{ $t("auction.currentActiveTitle") }}
         </h3>
 
         <span
-          class="text-xs shrink-0 text-cyan-300 in-[[data-theme=seabed]]:text-yellow-600 animate-auction-pulse"
+          class="text-xs shrink-0 text-accent-bright in-[[data-theme=seabed]]:text-yellow-600 animate-auction-pulse"
         >
           ◆
         </span>
       </div>
 
       <p class="text-[11px] leading-relaxed">
-        <span class="text-white in-[[data-theme=seabed]]:text-teal-950">{{
+        <span class="text-ink">{{
           $t("auction.currentActiveAcquirePrefix")
         }}</span>
-        <span class="text-cyan-300 in-[[data-theme=seabed]]:text-yellow-700"
+        <span class="text-accent-bright in-[[data-theme=seabed]]:text-yellow-700"
           >&nbsp;{{ equipmentName }}</span
         >
-        <span class="text-white in-[[data-theme=seabed]]:text-teal-950">!</span>
+        <span class="text-ink">!</span>
       </p>
 
       <div class="flex flex-wrap gap-x-4 gap-y-1 pt-1">
         <p class="text-[10px]">
-          <span class="text-white in-[[data-theme=seabed]]:text-teal-950">{{
+          <span class="text-ink">{{
             $t("auction.bidLabel")
           }}</span>
-          <span class="text-cyan-300 in-[[data-theme=seabed]]:text-yellow-700"
+          <span class="text-accent-bright in-[[data-theme=seabed]]:text-yellow-700"
             >&nbsp;{{ auction.bid }}&nbsp;</span
           >
-          <span class="text-white in-[[data-theme=seabed]]:text-teal-950">
+          <span class="text-ink">
             {{ $t("auction.bitsLabel") }}&nbsp;-</span
           >
         </p>
         <p class="text-[10px]">
-          <span class="text-white in-[[data-theme=seabed]]:text-teal-950">{{
+          <span class="text-ink">{{
             $t("auction.resalePriceLabel")
           }}</span>
-          <span class="text-cyan-300 in-[[data-theme=seabed]]:text-yellow-700"
+          <span class="text-accent-bright in-[[data-theme=seabed]]:text-yellow-700"
             >&nbsp;{{ auction.resale }}&nbsp;</span
           >
-          <span class="text-white in-[[data-theme=seabed]]:text-teal-950">
+          <span class="text-ink">
             {{ $t("auction.bitsLabel") }}</span
           >
         </p>
       </div>
 
-      <div class="pt-2 border-t border-cyan-400/20 in-[[data-theme=seabed]]:border-yellow-500/30">
+      <div class="pt-2 border-t border-accent/20 in-[[data-theme=seabed]]:border-yellow-500/30">
         <p class="text-[10px] leading-relaxed">
-          <span class="text-white in-[[data-theme=seabed]]:text-teal-950">{{
+          <span class="text-ink">{{
             $t("auction.closesWhenLabel")
           }}</span>
-          <span class="text-cyan-200/80 in-[[data-theme=seabed]]:text-yellow-700/80"
+          <span class="text-ink/80 in-[[data-theme=seabed]]:text-yellow-700/80"
             >&nbsp;{{ closesWhenText }}</span
           >
         </p>
@@ -100,7 +100,7 @@ const closesWhenText = computed(() => {
 
       <div
         v-if="showNotEnoughBitsWarning"
-        class="pt-2 border-t border-cyan-400/20 in-[[data-theme=seabed]]:border-yellow-500/30"
+        class="pt-2 border-t border-accent/20 in-[[data-theme=seabed]]:border-yellow-500/30"
       >
         <p
           class="text-[10px] leading-relaxed text-red-400 in-[[data-theme=seabed]]:text-red-600"

@@ -62,7 +62,7 @@ const equipmentNote = computed(() => {
     <div v-if="equipment" class="flex flex-col gap-1 w-full min-w-42.5">
       <div
         v-if="equipmentType"
-        class="text-blue-300 in-[[data-theme=seabed]]:text-teal-700 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
+        class="text-accent text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
       >
         {{ equipmentType }}
       </div>
@@ -71,9 +71,9 @@ const equipmentNote = computed(() => {
         <div
           v-for="attribute in equipment.attributes"
           :key="attribute.attribute"
-          class="flex justify-between text-xs items-center bg-[#002266]/40 in-[[data-theme=seabed]]:bg-teal-800/40 px-1 rounded-sm"
+          class="flex justify-between text-xs items-center bg-accent/40 px-1 rounded-sm"
         >
-          <span class="text-gray-200">{{ t("stat." + attribute.attribute.toLowerCase()) }}</span>
+          <span class="text-ink">{{ t("stat." + attribute.attribute.toLowerCase()) }}</span>
           <span
             :class="attribute.type === '+' ? 'text-green-400' : 'text-red-400'"
             class="font-bold tracking-wider"
@@ -84,12 +84,12 @@ const equipmentNote = computed(() => {
       </div>
 
       <div
-        class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 flex flex-col gap-1 text-center"
+        class="mt-1 pt-1 border-t border-frame/50 flex flex-col gap-1 text-center"
       >
-        <span class="text-gray-400 in-[[data-theme=seabed]]:text-gray-700 text-[9px] uppercase tracking-widest leading-none">{{
+        <span class="text-ink-muted text-[9px] uppercase tracking-widest leading-none">{{
           $t("digimon.equipableBy")
         }}</span>
-        <span class="text-gray-200 in-[[data-theme=seabed]]:text-gray-800 text-[11px] leading-tight">
+        <span class="text-ink text-[11px] leading-tight">
           <template v-if="equipment.equipableDigimonIds.length === 0">
             {{ $t("digimon.states.none") }}
           </template>
@@ -106,7 +106,7 @@ const equipmentNote = computed(() => {
 
       <div
         v-if="equipmentNote"
-        class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 text-gray-400 in-[[data-theme=seabed]]:text-gray-700 text-[10px] italic leading-tight"
+        class="mt-1 pt-1 border-t border-frame/50 text-ink-muted text-[10px] italic leading-tight"
       >
         "{{ equipmentNote }}"
       </div>

@@ -16,14 +16,11 @@ const emit = defineEmits<{
 }>();
 
 const QuestCardVariantClasses: Record<QuestCardVariant, string> = {
-  locked:
-    "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:opacity-80 in-[[data-theme=seabed]]:hover:opacity-100",
-  unavailable:
-    "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:opacity-80 in-[[data-theme=seabed]]:hover:opacity-100",
+  locked: "border-frame/50 bg-surface-deep opacity-50 hover:opacity-70",
+  unavailable: "border-frame/50 bg-surface-deep opacity-50 hover:opacity-70",
   done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40 in-[[data-theme=seabed]]:border-emerald-700/50 in-[[data-theme=seabed]]:bg-emerald-800/15 in-[[data-theme=seabed]]:hover:bg-emerald-800/25",
-  new: "border-white/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-white in-[[data-theme=seabed]]:border-[var(--color-accent)]/70 in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:hover:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:hover:border-[var(--color-accent)]",
-  active:
-    "border-[#0033aa]/0 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff] in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:hover:bg-[var(--color-surface-deep)] in-[[data-theme=seabed]]:hover:border-[var(--color-accent)]",
+  new: "border-accent/70 bg-surface hover:bg-surface-deep hover:border-accent",
+  active: "border-frame/40 bg-surface hover:bg-surface-deep hover:border-accent",
 };
 
 const isMainDisplayMode = computed(() => {
@@ -54,11 +51,11 @@ const titleClass = computed(() => {
   }
 
   if (props.quest.isLocked || props.quest.isUnavailable) {
-    return "text-gray-500 in-[[data-theme=seabed]]:text-[var(--color-ink)]/55";
+    return "text-ink-muted/55";
   }
 
   if (props.quest.isDone) {
-    return "text-gray-400 line-through in-[[data-theme=seabed]]:text-emerald-800 in-[[data-theme=seabed]]:decoration-emerald-700";
+    return "text-ink-muted line-through in-[[data-theme=seabed]]:text-emerald-800 in-[[data-theme=seabed]]:decoration-emerald-700";
   }
 
   const accentTitleClass = sideQuestPalette.value.questTitleClass;
@@ -152,10 +149,9 @@ const onClick = () => {
     </div>
 
     <p
-      class="text-gray-400 in-[[data-theme=seabed]]:text-[var(--color-ink)]/70 text-[10px] leading-tight line-clamp-1 relative z-10"
+      class="text-ink-muted/70 text-[10px] leading-tight line-clamp-1 relative z-10"
       :class="{
-        'opacity-50 in-[[data-theme=seabed]]:opacity-90':
-          !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
+        'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
         'in-[[data-theme=seabed]]:text-emerald-800': !isMainDisplayMode && quest.isDone,
       }"
     >

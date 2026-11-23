@@ -40,7 +40,7 @@ function onMouseEnter(event: MouseEvent): void {
 <template>
   <div
     :class="[
-      'flex items-center py-1 border-b border-[#0033aa] in-[[data-theme=seabed]]:border-teal-700 last:border-0',
+      'flex items-center py-1 border-b border-frame last:border-0',
       isEquipped ? 'cursor-help' : 'cursor-default',
     ]"
     @mouseenter="onMouseEnter"
@@ -51,7 +51,7 @@ function onMouseEnter(event: MouseEvent): void {
       class="w-full truncate font-bold text-center"
       :class="
         isEquipped
-          ? 'text-[10px] fhdscaled:text-sm tracking-widest text-[#0077ff] in-[[data-theme=seabed]]:text-teal-700'
+          ? 'text-[10px] fhdscaled:text-sm tracking-widest text-accent-bright'
           : 'text-gray-400 text-[10px] fhdscaled:text-sm'
       "
     >

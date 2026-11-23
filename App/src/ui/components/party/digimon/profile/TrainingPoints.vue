@@ -16,7 +16,7 @@ const emit = defineEmits<{
 
 <template>
   <div
-    class="w-20 h-6 bg-[#000e3f] border-2 border-[#00154a] rounded flex items-center justify-center gap-1.25 cursor-help in-[[data-theme=seabed]]:border-teal-950 in-[[data-theme=seabed]]:bg-teal-800/35"
+    class="w-20 h-6 bg-surface-deep border-2 border-frame rounded flex items-center justify-center gap-1.25 cursor-help"
     @mouseenter="emit('showTooltip', $event)"
     @mousemove="emit('moveTooltip', $event)"
     @mouseleave="emit('hideTooltip')"

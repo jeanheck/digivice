@@ -16,18 +16,18 @@ async function openLink(): Promise<void> {
 <template>
   <div class="flex h-full flex-col items-center justify-center gap-4 px-8 text-center">
     <p
-      class="text-sm text-white/90 in-[[data-theme=seabed]]:text-teal-800 leading-relaxed max-w-md"
+      class="text-sm text-ink/90 leading-relaxed max-w-md"
     >
       {{ description }}
     </p>
 
     <img :src="qrCodeUrl" :alt="qrCodeAlt" class="w-56 h-56 rounded bg-white p-2 object-contain" />
 
-    <p class="text-sm text-white/90 in-[[data-theme=seabed]]:text-teal-800">
+    <p class="text-sm text-ink/90">
       {{ $t("buyMeACoffee.orClickLink") }}
       <button
         type="button"
-        class="text-cyan-300 in-[[data-theme=seabed]]:text-yellow-600 underline hover:text-cyan-100 in-[[data-theme=seabed]]:hover:text-yellow-500 transition-colors cursor-pointer"
+        class="text-accent-bright in-[[data-theme=seabed]]:text-yellow-600 underline hover:text-ink in-[[data-theme=seabed]]:hover:text-yellow-500 transition-colors cursor-pointer"
         @click="openLink"
       >
         {{ link }}

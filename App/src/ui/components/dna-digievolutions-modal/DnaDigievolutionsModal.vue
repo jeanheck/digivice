@@ -30,14 +30,14 @@ const closeModal = () => {
     @close="closeModal"
   >
     <template #header>
-      <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
+      <h2 class="text-ink font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
         {{ $t("dnaDigievolution.title") }}
       </h2>
     </template>
 
     <div class="flex-1 min-h-0 overflow-y-auto custom-scroll p-4">
       <p
-        class="text-sm text-white/90 in-[[data-theme=seabed]]:text-[var(--color-ink)]/90 leading-relaxed mb-4 whitespace-pre-line"
+        class="text-sm text-ink/90 leading-relaxed mb-4 whitespace-pre-line"
       >
         {{ $t("dnaDigievolution.description") }}
       </p>

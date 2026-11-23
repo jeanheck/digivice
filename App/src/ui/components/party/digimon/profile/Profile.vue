@@ -143,7 +143,7 @@ const digimonStatusTooltip = computed(() => {
             @hide-tooltip="onHideTooltip"
           />
           <div
-            class="mt-auto pt-1 border-b border-[#0033aa]/50 in-[[data-theme=seabed]]:border-[var(--color-frame)]/50"
+            class="mt-auto pt-1 border-b border-frame/50"
           ></div>
         </div>
 

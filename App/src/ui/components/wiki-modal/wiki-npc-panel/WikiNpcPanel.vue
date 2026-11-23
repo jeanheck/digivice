@@ -114,17 +114,17 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
 
   if (option.status === "available") {
     if (isSelected) {
-      return "text-cyan-300 border-cyan-500/60 bg-cyan-900/30 hover:bg-cyan-900/50 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/60 in-[[data-theme=seabed]]:bg-yellow-50 in-[[data-theme=seabed]]:hover:bg-yellow-100";
+      return "text-accent-bright border-accent/60 bg-accent/25 hover:bg-accent/35 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/60 in-[[data-theme=seabed]]:bg-yellow-50 in-[[data-theme=seabed]]:hover:bg-yellow-100";
     }
 
-    return "text-cyan-300 border-cyan-700/60 bg-cyan-950/40 hover:bg-cyan-900/60 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/50 in-[[data-theme=seabed]]:bg-yellow-50/80 in-[[data-theme=seabed]]:hover:bg-yellow-100";
+    return "text-accent-bright border-accent/50 bg-panel/80 hover:bg-accent/20 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/50 in-[[data-theme=seabed]]:bg-yellow-50/80 in-[[data-theme=seabed]]:hover:bg-yellow-100";
   }
 
   if (isSelected) {
-    return "text-ink border-gray-500 bg-gray-800 hover:bg-gray-800";
+    return "text-ink border-frame bg-surface-deep hover:bg-surface-deep";
   }
 
-  return "text-gray-500 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-ink";
+  return "text-ink-muted border-frame/50 bg-surface-deep/80 hover:bg-surface-deep hover:text-ink";
 };
 
 const showBattleRequirementTooltip = (

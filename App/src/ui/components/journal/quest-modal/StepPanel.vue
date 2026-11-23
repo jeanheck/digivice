@@ -57,15 +57,15 @@ const localMapSlides = computed(() => {
 
 <template>
   <div
-    class="flex min-h-0 flex-[0.6] flex-col items-center gap-4 overflow-x-hidden overflow-y-auto custom-scroll [scrollbar-gutter:stable] border-l border-[#0055ff]/30 in-[[data-theme=seabed]]:border-teal-700/40 pl-6"
+    class="flex min-h-0 flex-[0.6] flex-col items-center gap-4 overflow-x-hidden overflow-y-auto custom-scroll [scrollbar-gutter:stable] border-l border-frame/40 pl-6"
     :style="{ minWidth: `${MapPanelMinWidthPx}px` }"
   >
     <div
       v-if="!selectedStep"
-      class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 in-[[data-theme=seabed]]:border-yellow-500/40 bg-[#000a1a] in-[[data-theme=seabed]]:bg-yellow-50/80 rounded min-h-100"
+      class="flex-1 flex flex-col items-center justify-center border border-accent/40 in-[[data-theme=seabed]]:border-yellow-500/40 bg-surface-deep in-[[data-theme=seabed]]:bg-yellow-50/80 rounded min-h-100"
     >
       <span
-        class="text-cyan-500/50 in-[[data-theme=seabed]]:text-yellow-600/70 text-sm tracking-widest text-center px-8 animate-pulse whitespace-pre-line"
+        class="text-accent/60 in-[[data-theme=seabed]]:text-yellow-600/70 text-sm tracking-widest text-center px-8 animate-pulse whitespace-pre-line"
       >
         {{ $t("journal.clickStep") }}
       </span>

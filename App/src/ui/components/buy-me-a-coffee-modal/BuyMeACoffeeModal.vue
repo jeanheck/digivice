@@ -27,22 +27,22 @@ function closeModal(): void {
     @close="closeModal"
   >
     <template #header>
-      <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
+      <h2 class="text-ink font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
         {{ $t("buyMeACoffee.title") }}
       </h2>
     </template>
 
     <div
-      class="flex flex-col gap-3 px-12 pt-6 pb-4 text-center text-white in-[[data-theme=seabed]]:text-teal-900"
+      class="flex flex-col gap-3 px-12 pt-6 pb-4 text-center text-ink"
     >
       <p class="font-bold">{{ $t("buyMeACoffee.introFree") }}</p>
-      <p class="text-sm text-white/90 in-[[data-theme=seabed]]:text-teal-800 leading-relaxed">
+      <p class="text-sm text-ink/90 leading-relaxed">
         {{ $t("buyMeACoffee.introSupport") }}
       </p>
     </div>
 
     <div class="grid grid-cols-2 flex-1 min-h-0 py-4">
-      <div class="border-r border-[#0055ff]/50 in-[[data-theme=seabed]]:border-teal-700/50">
+      <div class="border-r border-frame/50">
         <SupportOption
           :description="$t('buyMeACoffee.livePixDescription')"
           :qr-code-url="livePixQrCode"

@@ -62,7 +62,7 @@ const handleMarkerSelect = (marker: WikiLocationMapMarkerViewModel): void => {
 <template>
   <div
     v-if="imageUrl"
-    class="relative shrink-0 min-h-0 bg-panel border border-frame/60 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)] in-[[data-theme=seabed]]:shadow-none overflow-hidden"
+    class="relative shrink-0 min-h-0 bg-panel border border-frame/60 rounded shadow-[0_0_15px_color-mix(in_srgb,var(--color-accent)_10%,transparent)] overflow-hidden"
     :style="frameStyle"
   >
     <div class="relative" :style="mapImageFrameStyle">

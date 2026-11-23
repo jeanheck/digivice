@@ -73,14 +73,14 @@ const selectMember = (memberIndex: number) => {
     >
       <button
         type="button"
-        class="w-7 h-7 rounded bg-surface border border-frame flex items-center justify-center text-accent hover:bg-accent/30 hover:border-frame hover:text-ink transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none cursor-pointer"
+        class="w-7 h-7 rounded bg-surface border border-frame flex items-center justify-center text-accent hover:bg-accent/30 hover:border-frame hover:text-ink transition-all font-bold text-sm shadow-[0_0_10px_color-mix(in_srgb,var(--color-accent)_20%,transparent)] cursor-pointer"
         @click.prevent="showPreviousMember"
       >
         &lt;
       </button>
 
       <div
-        class="flex gap-2 px-3 py-1.5 bg-surface rounded border border-frame/60 shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none"
+        class="flex gap-2 px-3 py-1.5 bg-surface rounded border border-frame/60 shadow-[0_0_10px_color-mix(in_srgb,var(--color-accent)_20%,transparent)]"
       >
         <button
           v-for="memberIndex in memberCount"
@@ -89,7 +89,7 @@ const selectMember = (memberIndex: number) => {
           class="w-2 h-2 rounded-full transition-all cursor-pointer"
           :class="
             memberIndex - 1 === modelValue
-              ? 'bg-accent scale-110 in-[[data-theme=seabed]]:shadow-none'
+              ? 'bg-accent scale-110'
               : 'bg-frame/40 hover:bg-accent/50'
           "
           @click.prevent="selectMember(memberIndex - 1)"
@@ -98,7 +98,7 @@ const selectMember = (memberIndex: number) => {
 
       <button
         type="button"
-        class="w-7 h-7 rounded bg-surface border border-frame flex items-center justify-center text-accent hover:bg-accent/30 hover:border-frame hover:text-ink transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] in-[[data-theme=seabed]]:shadow-none cursor-pointer"
+        class="w-7 h-7 rounded bg-surface border border-frame flex items-center justify-center text-accent hover:bg-accent/30 hover:border-frame hover:text-ink transition-all font-bold text-sm shadow-[0_0_10px_color-mix(in_srgb,var(--color-accent)_20%,transparent)] cursor-pointer"
         @click.prevent="showNextMember"
       >
         &gt;

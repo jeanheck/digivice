@@ -101,25 +101,25 @@ const handleSearchSelect = (item: SearchItemViewModel) => {
       v-model="inputValue"
       type="text"
       :placeholder="placeholder"
-      class="w-full bg-[#001a33]/60 border border-[#0055ff]/50 rounded px-3 py-1 text-xs text-[#00aaff] placeholder-[#00aaff]/40 outline-none focus:border-[#00aaff] focus:bg-[#002244] transition-all in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:border-[var(--color-frame)]/60 in-[[data-theme=seabed]]:text-[var(--color-ink)] in-[[data-theme=seabed]]:placeholder-[var(--color-accent)]/55 in-[[data-theme=seabed]]:focus:border-[var(--color-accent)] in-[[data-theme=seabed]]:focus:bg-[var(--color-surface-deep)]"
+      class="w-full bg-surface/60 border border-frame/60 rounded px-3 py-1 text-xs text-accent-bright placeholder-accent/55 outline-none focus:border-accent focus:bg-surface-deep transition-all"
       @focus="handleFocus"
       @blur="handleBlur"
     />
     <div
       v-if="showDropdown && isFocused && searchQuery"
-      class="absolute top-full left-0 right-0 mt-1 bg-[#001122] border border-[#0055ff]/50 rounded shadow-[0_4px_12px_rgba(0,119,255,0.2)] max-h-48 overflow-y-auto custom-scroll z-50 flex flex-col in-[[data-theme=seabed]]:bg-[var(--color-surface)] in-[[data-theme=seabed]]:border-[var(--color-frame)]/50 in-[[data-theme=seabed]]:shadow-[0_4px_12px_rgba(91,132,177,0.25)]"
+      class="absolute top-full left-0 right-0 mt-1 bg-surface border border-frame/50 rounded shadow-[0_4px_12px_color-mix(in_srgb,var(--color-accent)_25%,transparent)] max-h-48 overflow-y-auto custom-scroll z-50 flex flex-col"
     >
       <template v-if="filteredItems.length > 0">
         <div
           v-for="item in filteredItems"
           :key="`${item.kind}-${item.id}`"
-          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20 flex items-baseline gap-2 in-[[data-theme=seabed]]:text-[var(--color-ink)] in-[[data-theme=seabed]]:hover:bg-[var(--color-accent)]/25 in-[[data-theme=seabed]]:hover:text-[var(--color-ink)] in-[[data-theme=seabed]]:border-[var(--color-frame)]/25"
+          class="px-3 py-1.5 text-xs text-accent-bright hover:bg-accent/25 hover:text-ink cursor-pointer transition-colors border-b last:border-b-0 border-frame/25 flex items-baseline gap-2"
           @mousedown.prevent="handleSearchSelect(item)"
         >
           <span class="leading-none">{{ item.name }}</span>
           <span
             v-if="item.kindLabelKey !== undefined || item.kind"
-            class="text-[10px] leading-none text-[#00aaff]/50 in-[[data-theme=seabed]]:text-[var(--color-accent)]"
+            class="text-[10px] leading-none text-accent"
           >
             {{
               item.kindLabelKey !== undefined
@@ -133,7 +133,7 @@ const handleSearchSelect = (item: SearchItemViewModel) => {
       </template>
       <p
         v-else
-        class="px-3 py-2 text-xs text-[#00aaff]/50 italic in-[[data-theme=seabed]]:text-[var(--color-accent)]/70"
+        class="px-3 py-2 text-xs text-accent/70 italic"
       >
         {{ noResultsLabel }}
       </p>

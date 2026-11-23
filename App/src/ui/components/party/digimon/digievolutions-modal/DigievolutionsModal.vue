@@ -100,7 +100,7 @@ const selectedSearchId = computed(() => {
 
     <div class="flex flex-1 overflow-hidden min-h-0">
       <div
-        class="w-[75%] min-w-0 h-full border-r border-[#0055ff]/30 in-[[data-theme=seabed]]:border-[var(--color-frame)]/40 relative"
+        class="w-[75%] min-w-0 h-full border-r border-frame/40 relative"
       >
         <Tree
           :digimon-name="digimonName"
@@ -112,7 +112,7 @@ const selectedSearchId = computed(() => {
       </div>
 
       <div
-        class="w-[25%] min-w-100 h-full bg-[#000a1a]/60 in-[[data-theme=seabed]]:bg-[var(--color-surface-deep)]/70 overflow-y-auto custom-scroll flex flex-col"
+        class="w-[25%] min-w-100 h-full bg-surface-deep/70 overflow-y-auto custom-scroll flex flex-col"
       >
         <div v-if="selectedDigievolutionId !== undefined" class="flex-1 flex flex-col p-1">
           <DigievolutionTechniques
@@ -126,7 +126,7 @@ const selectedSearchId = computed(() => {
 
         <div v-else class="flex-1 flex flex-col items-center justify-center p-12 text-center">
           <p
-            class="text-[10px] text-blue-300/40 in-[[data-theme=seabed]]:text-[var(--color-ink)]/45 leading-relaxed max-w-50"
+            class="text-[10px] text-ink-muted/45 leading-relaxed max-w-50"
           >
             {{ $t("digievolution.selectNode") }}
           </p>

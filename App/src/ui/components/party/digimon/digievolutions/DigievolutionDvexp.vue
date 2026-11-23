@@ -24,7 +24,7 @@ const progressPercentage = computed(() => {
     :class="
       isActiveDigievolution
         ? 'border-[#00154a] bg-orange-600/35'
-        : 'border-[#00154a] bg-blue-800/35 in-[[data-theme=seabed]]:border-teal-950 in-[[data-theme=seabed]]:bg-teal-800/35'
+        : 'border-frame bg-accent/25'
     "
   >
     <div
@@ -32,7 +32,7 @@ const progressPercentage = computed(() => {
       :class="
         isActiveDigievolution
           ? 'bg-linear-to-r from-orange-600 to-yellow-500'
-          : 'bg-blue-400 in-[[data-theme=seabed]]:bg-teal-600'
+          : 'bg-accent'
       "
       :style="{ width: `${progressPercentage}%` }"
     ></div>

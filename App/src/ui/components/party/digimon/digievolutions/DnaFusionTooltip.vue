@@ -34,7 +34,7 @@ const { t } = useI18n();
         :key="fusion.dnaDigievolution.id"
         class="flex flex-col gap-2"
         :class="{
-          'mt-2 pt-2 border-t border-[#0066cc]/50 in-[[data-theme=seabed]]:border-teal-700/50':
+          'mt-2 pt-2 border-t border-frame/50':
             fusionIndex > 0,
         }"
       >
@@ -42,7 +42,7 @@ const { t } = useI18n();
           <span class="text-dw3-dna shadow-text-dark font-bold tracking-wider text-xs">
             {{ fusion.dnaDigievolution.name }}
           </span>
-          <span class="text-[10px] text-blue-300 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider whitespace-nowrap">
+          <span class="text-[10px] text-accent tracking-wider whitespace-nowrap">
             {{ t("digimon.mp") }}: {{ fusion.dnaDigievolution.mp }}
           </span>
         </div>
@@ -51,7 +51,7 @@ const { t } = useI18n();
           <span
             v-for="partner in fusion.partners"
             :key="`${partner.digimonName}-${partner.digievolutionName}`"
-            class="text-gray-200 text-[11px] leading-tight"
+            class="text-ink text-[11px] leading-tight"
           >
             {{
               t("dnaDigievolution.tagWith", {
@@ -62,7 +62,7 @@ const { t } = useI18n();
           </span>
         </div>
 
-        <div class="flex items-center gap-4 text-[10px] uppercase tracking-wider text-white">
+        <div class="flex items-center gap-4 text-[10px] uppercase tracking-wider text-ink">
           <span class="flex items-center gap-1.5">
             <img
               v-if="fusion.dnaDigievolution.typeImageUrl"
@@ -88,7 +88,7 @@ const { t } = useI18n();
 
         <p
           v-if="fusion.dnaDigievolution.effectKey !== null"
-          class="text-[10px] leading-tight text-white/85"
+          class="text-[10px] leading-tight text-ink/85"
         >
           {{ t(fusion.dnaDigievolution.effectKey) }}
         </p>

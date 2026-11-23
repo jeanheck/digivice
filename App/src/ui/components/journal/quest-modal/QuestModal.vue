@@ -146,7 +146,7 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
     @close="closeModal"
   >
     <template #header>
-      <h2 class="text-white font-bold tracking-widest drop-shadow">
+      <h2 class="text-ink font-bold tracking-widest drop-shadow">
         {{ $t(`${questViewModel!.id}.title`) }}
       </h2>
     </template>
@@ -154,10 +154,10 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
     <div class="flex min-h-0 flex-1 flex-row gap-6 overflow-hidden p-4">
       <div class="flex min-w-0 flex-[1.4] flex-col gap-4 overflow-y-auto custom-scroll pr-2">
         <div
-          class="bg-[#000a1a] in-[[data-theme=seabed]]:bg-teal-800/15 p-3 rounded border border-blue-900/50 in-[[data-theme=seabed]]:border-teal-700 shadow-inner"
+          class="bg-accent/15 p-3 rounded border border-frame shadow-inner"
         >
           <p
-            class="text-gray-300 in-[[data-theme=seabed]]:text-teal-800 text-sm leading-relaxed font-medium"
+            class="text-ink text-sm leading-relaxed font-medium"
           >
             {{ $t(`${questViewModel!.id}.description`) }}
           </p>
@@ -172,7 +172,7 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
 
         <div v-if="questViewModel!.chapters.length > 0" class="flex flex-col gap-2">
           <h3
-            class="text-xs text-blue-500 in-[[data-theme=seabed]]:text-[var(--color-accent)] font-bold uppercase tracking-wider mb-1 text-center"
+            class="text-xs text-accent font-bold uppercase tracking-wider mb-1 text-center"
           >
             {{ $t("journal.missionSteps") }}
           </h3>

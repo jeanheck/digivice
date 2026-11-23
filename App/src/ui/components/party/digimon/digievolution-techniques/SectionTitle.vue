@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div
-    class="text-[9px] text-indigo-400/80 in-[[data-theme=seabed]]:text-teal-700 mb-2 flex items-center uppercase tracking-widest"
+    class="text-[9px] text-accent-bright/80 mb-2 flex items-center uppercase tracking-widest"
   >
     {{ label }}
   </div>

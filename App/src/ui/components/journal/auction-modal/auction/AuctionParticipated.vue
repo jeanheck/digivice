@@ -27,7 +27,7 @@ defineProps<{
     </div>
 
     <p
-      class="text-[10px] leading-tight relative z-10 text-gray-400 in-[[data-theme=seabed]]:text-teal-800/70"
+      class="text-[10px] leading-tight relative z-10 text-ink-muted/70"
     >
       {{ $t("auction.historyTiming.alreadyEnded") }}
     </p>
