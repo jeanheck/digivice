@@ -55,11 +55,11 @@ const modifierColorClass = computed(() => {
   <Tooltip :show="show" :x="x" :y="y" :title="title" :placement="placement">
     <div class="flex flex-col w-full min-w-50">
       <div
-        class="text-ink text-base font-bold text-center mb-2 tracking-wider whitespace-nowrap"
+        class="text-white text-base font-bold text-center mb-2 tracking-wider whitespace-nowrap"
       >
         <span class="shadow-text">{{ total }}</span>
         <span class="text-[10px] text-ink-muted tracking-normal ml-1">
-          (<span class="text-ink">{{ base }}</span> +
+          (<span class="text-white">{{ base }}</span> +
           <span class="text-accent font-bold">{{
             equip
           }}</span>
@@ -78,7 +78,7 @@ const modifierColorClass = computed(() => {
 
       <div class="flex flex-col gap-0.5">
         <div class="flex justify-between text-xs items-center">
-          <span class="text-ink">{{ t("digimon.baseDigimon") }}</span>
+          <span class="text-white">{{ t("digimon.baseDigimon") }}</span>
         </div>
         <div class="flex justify-between text-xs items-center">
           <span class="text-accent font-bold">{{

@@ -149,8 +149,10 @@ const onClick = () => {
     </div>
 
     <p
-      class="text-ink-muted/70 text-[10px] leading-tight line-clamp-1 relative z-10"
+      class="text-[10px] leading-tight line-clamp-1 relative z-10"
       :class="{
+        'text-yellow-700': quest.isDone,
+        'text-ink-muted/70': !quest.isDone,
         'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
         'in-[[data-theme=seabed]]:text-emerald-800': !isMainDisplayMode && quest.isDone,
       }"
