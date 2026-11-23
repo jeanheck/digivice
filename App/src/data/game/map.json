@@ -2016,6 +2016,7 @@
   },
   "0245": {
     "imageName": "Bug Maze",
+    "theme": "undefined",
     "worldLocation": {
       "x": 52,
       "y": 82.5
@@ -2054,6 +2055,7 @@
   },
   "0246": {
     "imageName": "Bug Maze Pit",
+    "theme": "undefined",
     "worldLocation": {
       "x": 52,
       "y": 82.5

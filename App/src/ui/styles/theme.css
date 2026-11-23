@@ -304,12 +304,12 @@
 }
 
 [data-theme="undefined"] {
-  --color-surface: #1a1a1a;
-  --color-surface-deep: #121212;
-  --color-panel: #121212;
+  --color-surface: #0a0a0a;
+  --color-surface-deep: #000000;
+  --color-panel: #141414;
   --color-frame: #555555;
   --color-accent: #999999;
-  --color-accent-bright: #bbbbbb;
+  --color-accent-bright: #ffffff;
   --color-ink: #ffffff;
   --color-ink-muted: #9ca3af;
 
@@ -322,42 +322,42 @@
   --color-danger-surface: #1a0a0f;
 
   --color-highlight: #bbbbbb;
-  --color-highlight-bright: #bbbbbb;
+  --color-highlight-bright: #ffffff;
   --color-highlight-surface: rgb(153 153 153 / 0.15);
   --color-highlight-border: rgb(187 187 187 / 0.8);
 
-  --color-price: #fbbf24;
-  --color-exclusive: #d8b4fe;
-  --color-signature: #fde047;
-  --color-signature-surface: rgb(66 32 6 / 0.4);
+  --color-price: #bbbbbb;
+  --color-exclusive: #9ca3af;
+  --color-signature: #ffffff;
+  --color-signature-surface: rgb(255 255 255 / 0.12);
 
-  --color-element-fire: #fb923c;
-  --color-element-water: #60a5fa;
-  --color-element-ice: #67e8f9;
-  --color-element-wind: #d1d5db;
-  --color-element-thunder: #fde047;
-  --color-element-dark: #c084fc;
+  --color-element-fire: #e5e5e5;
+  --color-element-water: #d4d4d4;
+  --color-element-ice: #c4c4c4;
+  --color-element-wind: #a3a3a3;
+  --color-element-thunder: #d4d4d4;
+  --color-element-dark: #737373;
   --color-element-machine: #9ca3af;
 
   --color-req-met: #34d399;
 
-  --color-journal-emerald: #34d399;
-  --color-journal-emerald-border: #065f46;
-  --color-journal-emerald-hover: rgb(6 78 59 / 0.3);
-  --color-journal-cyan: #22d3ee;
-  --color-journal-cyan-border: #155e75;
-  --color-journal-cyan-hover: rgb(8 51 68 / 0.3);
-  --color-journal-teal: #2dd4bf;
-  --color-journal-teal-border: #115e59;
-  --color-journal-teal-hover: rgb(19 78 74 / 0.3);
-  --color-journal-sky: #38bdf8;
-  --color-journal-sky-border: #075985;
-  --color-journal-sky-hover: rgb(12 74 110 / 0.3);
+  --color-journal-emerald: #ffffff;
+  --color-journal-emerald-border: #555555;
+  --color-journal-emerald-hover: rgb(255 255 255 / 0.12);
+  --color-journal-cyan: #ffffff;
+  --color-journal-cyan-border: #555555;
+  --color-journal-cyan-hover: rgb(255 255 255 / 0.12);
+  --color-journal-teal: #ffffff;
+  --color-journal-teal-border: #555555;
+  --color-journal-teal-hover: rgb(255 255 255 / 0.12);
+  --color-journal-sky: #ffffff;
+  --color-journal-sky-border: #555555;
+  --color-journal-sky-hover: rgb(255 255 255 / 0.12);
 
-  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(0deg) saturate(0) brightness(1.2);
-  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(0deg) saturate(0) brightness(1.2)
-    drop-shadow(0 0 4px rgba(187, 187, 187, 0.6));
-  --auction-pulse-rgb: 187, 187, 187;
+  --pin-hover-filter: grayscale(1) brightness(1.5);
+  --pin-active-filter: grayscale(1) brightness(1.5)
+    drop-shadow(0 0 4px rgba(200, 200, 200, 0.65));
+  --auction-pulse-rgb: 200, 200, 200;
 
   --color-stat-base: #ffffff;
   --stat-base-outline: none;
