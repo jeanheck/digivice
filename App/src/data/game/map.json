@@ -605,6 +605,7 @@
   },
   "020B": {
     "imageName": "Underground Path",
+    "theme": "asuka",
     "worldLocation": {
       "x": 50.5,
       "y": 43
@@ -1753,6 +1754,7 @@
   },
   "023B": {
     "imageName": "Phoenix Bay",
+    "theme": "asuka",
     "worldLocation": {
       "x": 60.5,
       "y": 84
@@ -1948,6 +1950,7 @@
   },
   "0241": {
     "imageName": "Suzaku UG Lake",
+    "theme": "asuka",
     "worldLocation": {
       "x": 60.5,
       "y": 77
@@ -2303,6 +2306,7 @@
   },
   "024C": {
     "imageName": "Bullet Valley",
+    "theme": "asuka",
     "worldLocation": {
       "x": 17.5,
       "y": 45
@@ -3030,6 +3034,7 @@
   },
   "0261": {
     "imageName": "Boot Mountain",
+    "theme": "asuka",
     "worldLocation": {
       "x": 41,
       "y": 40
