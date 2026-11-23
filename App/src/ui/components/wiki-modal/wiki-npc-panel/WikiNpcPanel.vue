@@ -106,18 +106,18 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
 
   if (option.status === "completed") {
     if (isSelected) {
-      return "text-green-300 line-through decoration-green-400 border-green-500/60 bg-green-500/20 hover:bg-green-500/30 in-[[data-theme=seabed]]:text-emerald-800 in-[[data-theme=seabed]]:decoration-emerald-700 in-[[data-theme=seabed]]:border-emerald-700/50 in-[[data-theme=seabed]]:bg-emerald-800/15 in-[[data-theme=seabed]]:hover:bg-emerald-800/25";
+      return "text-success line-through decoration-success border-success/60 bg-success-surface hover:bg-success-surface";
     }
 
-    return "text-green-400/80 line-through decoration-green-500 border-green-500/40 bg-green-500/10 hover:bg-green-500/20 in-[[data-theme=seabed]]:text-emerald-800/90 in-[[data-theme=seabed]]:decoration-emerald-700 in-[[data-theme=seabed]]:border-emerald-700/40 in-[[data-theme=seabed]]:bg-emerald-800/10 in-[[data-theme=seabed]]:hover:bg-emerald-800/20";
+    return "text-success/80 line-through decoration-success border-success/40 bg-success-surface hover:bg-success-surface";
   }
 
   if (option.status === "available") {
     if (isSelected) {
-      return "text-accent-bright border-accent/60 bg-accent/25 hover:bg-accent/35 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/60 in-[[data-theme=seabed]]:bg-yellow-50 in-[[data-theme=seabed]]:hover:bg-yellow-100";
+      return "text-highlight border-highlight-border/60 bg-highlight-surface hover:bg-highlight-surface";
     }
 
-    return "text-accent-bright border-accent/50 bg-panel/80 hover:bg-accent/20 in-[[data-theme=seabed]]:text-yellow-700 in-[[data-theme=seabed]]:border-yellow-500/50 in-[[data-theme=seabed]]:bg-yellow-50/80 in-[[data-theme=seabed]]:hover:bg-yellow-100";
+    return "text-highlight border-highlight-border/50 bg-highlight-surface/80 hover:bg-highlight-surface";
   }
 
   if (isSelected) {

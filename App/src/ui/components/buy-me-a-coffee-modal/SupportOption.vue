@@ -27,7 +27,7 @@ async function openLink(): Promise<void> {
       {{ $t("buyMeACoffee.orClickLink") }}
       <button
         type="button"
-        class="text-accent-bright in-[[data-theme=seabed]]:text-yellow-600 underline hover:text-ink in-[[data-theme=seabed]]:hover:text-yellow-500 transition-colors cursor-pointer"
+        class="text-highlight-bright underline hover:text-highlight transition-colors cursor-pointer"
         @click="openLink"
       >
         {{ link }}

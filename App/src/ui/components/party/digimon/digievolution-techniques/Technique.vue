@@ -61,24 +61,24 @@ const iconUrl = computed(() => {
 });
 
 const TechniqueElementColorClass: Record<string, string> = {
-  fire: "text-orange-400 in-[[data-theme=seabed]]:text-orange-600",
-  water: "text-blue-400 in-[[data-theme=seabed]]:text-blue-600",
-  ice: "text-cyan-300 in-[[data-theme=seabed]]:text-cyan-600",
-  wind: "text-gray-300 in-[[data-theme=seabed]]:text-gray-600",
-  thunder: "text-yellow-300 in-[[data-theme=seabed]]:text-yellow-600",
-  dark: "text-purple-400 in-[[data-theme=seabed]]:text-purple-600",
-  machine: "text-gray-400 in-[[data-theme=seabed]]:text-gray-600",
+  fire: "text-element-fire",
+  water: "text-element-water",
+  ice: "text-element-ice",
+  wind: "text-element-wind",
+  thunder: "text-element-thunder",
+  dark: "text-element-dark",
+  machine: "text-element-machine",
   none: "text-ink-muted",
 };
 
 const UnlockedTechniqueElementColorClass: Record<string, string> = {
-  fire: "text-orange-300 in-[[data-theme=seabed]]:text-orange-600",
-  water: "text-blue-300 in-[[data-theme=seabed]]:text-blue-600",
-  ice: "text-cyan-200 in-[[data-theme=seabed]]:text-cyan-600",
-  wind: "text-gray-200 in-[[data-theme=seabed]]:text-gray-600",
-  thunder: "text-yellow-200 in-[[data-theme=seabed]]:text-yellow-600",
-  dark: "text-purple-300 in-[[data-theme=seabed]]:text-purple-600",
-  machine: "text-gray-300 in-[[data-theme=seabed]]:text-gray-600",
+  fire: "text-element-fire",
+  water: "text-element-water",
+  ice: "text-element-ice",
+  wind: "text-element-wind",
+  thunder: "text-element-thunder",
+  dark: "text-element-dark",
+  machine: "text-element-machine",
   none: "text-ink-muted/70",
 };
 
@@ -97,7 +97,7 @@ function getTechniqueElementColorClass(element: string): string {
     class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs"
     :class="{
       'bg-surface-deep/50 border-frame/25 opacity-50': !technique.isUnlocked,
-      'bg-yellow-950/40 border-yellow-400/70 shadow-[0_0_10px_rgba(234,179,8,0.3)] in-[[data-theme=seabed]]:bg-yellow-100/80 in-[[data-theme=seabed]]:border-yellow-500/70 in-[[data-theme=seabed]]:shadow-[0_0_10px_rgba(234,179,8,0.2)]':
+      'bg-signature-surface border-signature/70 shadow-[0_0_10px_color-mix(in_srgb,var(--color-signature)_30%,transparent)]':
         technique.isSignature && technique.isUnlocked,
       'bg-panel/80 border-accent': !technique.isSignature && technique.isUnlocked,
     }"
@@ -161,10 +161,10 @@ function getTechniqueElementColorClass(element: string): string {
           :class="
             technique.isUnlocked
               ? technique.isSignature
-                ? 'text-yellow-200 in-[[data-theme=seabed]]:text-yellow-700'
+                ? 'text-signature'
                 : 'text-ink'
               : technique.isSignature
-                ? 'text-yellow-300 in-[[data-theme=seabed]]:text-yellow-700'
+                ? 'text-signature'
                 : 'text-ink-muted'
           "
         >

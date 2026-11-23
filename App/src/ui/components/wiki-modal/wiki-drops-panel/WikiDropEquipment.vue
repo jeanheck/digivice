@@ -59,8 +59,8 @@ const equipmentNote = computed(() => {
           <span
             :class="
               attribute.type === '+'
-                ? 'text-green-400 in-[[data-theme=seabed]]:text-emerald-700'
-                : 'text-red-400 in-[[data-theme=seabed]]:text-red-700'
+                ? 'text-success'
+                : 'text-danger'
             "
             class="font-bold tracking-wider"
           >
@@ -79,7 +79,7 @@ const equipmentNote = computed(() => {
           {{ $t("digimon.states.none") }}
         </template>
         <template v-else-if="equipment.equipableDigimonIds.length === 8">
-          <span class="text-purple-300 in-[[data-theme=seabed]]:text-purple-700 font-bold uppercase tracking-wider text-[10px]">
+          <span class="text-exclusive font-bold uppercase tracking-wider text-[10px]">
             {{ $t("digimon.allDigimon") }}
           </span>
         </template>

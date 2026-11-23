@@ -57,7 +57,7 @@ const handleSelect = (): void => {
           {{ $t(item.nameKey) }}
         </span>
         <span class="flex items-baseline gap-1 shrink-0 text-[10px] font-bold whitespace-nowrap">
-          <span class="text-amber-400 in-[[data-theme=seabed]]:text-amber-700">{{ item.price }}</span>
+          <span class="text-price">{{ item.price }}</span>
           <span class="text-ink">{{ $t("enemy.bits") }}</span>
         </span>
       </span>

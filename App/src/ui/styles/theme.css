@@ -8,6 +8,52 @@
   --color-accent-bright: #00aaff;
   --color-ink: #ffffff;
   --color-ink-muted: #93c5fd;
+
+  --color-success: #4ade80;
+  --color-success-muted: #166534;
+  --color-success-surface: rgb(34 197 94 / 0.15);
+
+  --color-danger: #f87171;
+  --color-danger-muted: #881337;
+  --color-danger-surface: #1a0a0f;
+
+  --color-highlight: #00aaff;
+  --color-highlight-bright: #00aaff;
+  --color-highlight-surface: rgb(0 119 255 / 0.15);
+  --color-highlight-border: rgb(0 170 255 / 0.8);
+
+  --color-price: #fbbf24;
+  --color-exclusive: #d8b4fe;
+  --color-signature: #fde047;
+  --color-signature-surface: rgb(66 32 6 / 0.4);
+
+  --color-element-fire: #fb923c;
+  --color-element-water: #60a5fa;
+  --color-element-ice: #67e8f9;
+  --color-element-wind: #d1d5db;
+  --color-element-thunder: #fde047;
+  --color-element-dark: #c084fc;
+  --color-element-machine: #9ca3af;
+
+  --color-req-met: #34d399;
+
+  --color-journal-emerald: #34d399;
+  --color-journal-emerald-border: #065f46;
+  --color-journal-emerald-hover: rgb(6 78 59 / 0.3);
+  --color-journal-cyan: #22d3ee;
+  --color-journal-cyan-border: #155e75;
+  --color-journal-cyan-hover: rgb(8 51 68 / 0.3);
+  --color-journal-teal: #2dd4bf;
+  --color-journal-teal-border: #115e59;
+  --color-journal-teal-hover: rgb(19 78 74 / 0.3);
+  --color-journal-sky: #38bdf8;
+  --color-journal-sky-border: #075985;
+  --color-journal-sky-hover: rgb(12 74 110 / 0.3);
+
+  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4);
+  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4)
+    drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  --auction-pulse-rgb: 34, 211, 238;
 }
 
 [data-theme="asuka"] {
@@ -19,6 +65,52 @@
   --color-accent-bright: #00aaff;
   --color-ink: #ffffff;
   --color-ink-muted: #93c5fd;
+
+  --color-success: #4ade80;
+  --color-success-muted: #166534;
+  --color-success-surface: rgb(34 197 94 / 0.15);
+
+  --color-danger: #f87171;
+  --color-danger-muted: #881337;
+  --color-danger-surface: #1a0a0f;
+
+  --color-highlight: #00aaff;
+  --color-highlight-bright: #00aaff;
+  --color-highlight-surface: rgb(0 119 255 / 0.15);
+  --color-highlight-border: rgb(0 170 255 / 0.8);
+
+  --color-price: #fbbf24;
+  --color-exclusive: #d8b4fe;
+  --color-signature: #fde047;
+  --color-signature-surface: rgb(66 32 6 / 0.4);
+
+  --color-element-fire: #fb923c;
+  --color-element-water: #60a5fa;
+  --color-element-ice: #67e8f9;
+  --color-element-wind: #d1d5db;
+  --color-element-thunder: #fde047;
+  --color-element-dark: #c084fc;
+  --color-element-machine: #9ca3af;
+
+  --color-req-met: #34d399;
+
+  --color-journal-emerald: #34d399;
+  --color-journal-emerald-border: #065f46;
+  --color-journal-emerald-hover: rgb(6 78 59 / 0.3);
+  --color-journal-cyan: #22d3ee;
+  --color-journal-cyan-border: #155e75;
+  --color-journal-cyan-hover: rgb(8 51 68 / 0.3);
+  --color-journal-teal: #2dd4bf;
+  --color-journal-teal-border: #115e59;
+  --color-journal-teal-hover: rgb(19 78 74 / 0.3);
+  --color-journal-sky: #38bdf8;
+  --color-journal-sky-border: #075985;
+  --color-journal-sky-hover: rgb(12 74 110 / 0.3);
+
+  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4);
+  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4)
+    drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  --auction-pulse-rgb: 34, 211, 238;
 }
 
 [data-theme="amaterasu"] {
@@ -30,6 +122,52 @@
   --color-accent-bright: #ff99d1;
   --color-ink: #ffffff;
   --color-ink-muted: #ff99d1;
+
+  --color-success: #4ade80;
+  --color-success-muted: #166534;
+  --color-success-surface: rgb(34 197 94 / 0.15);
+
+  --color-danger: #f87171;
+  --color-danger-muted: #881337;
+  --color-danger-surface: #1a0a0f;
+
+  --color-highlight: #ff99d1;
+  --color-highlight-bright: #ff99d1;
+  --color-highlight-surface: rgb(255 102 187 / 0.15);
+  --color-highlight-border: rgb(255 102 187 / 0.8);
+
+  --color-price: #fbbf24;
+  --color-exclusive: #d8b4fe;
+  --color-signature: #fde047;
+  --color-signature-surface: rgb(66 32 6 / 0.4);
+
+  --color-element-fire: #fb923c;
+  --color-element-water: #60a5fa;
+  --color-element-ice: #67e8f9;
+  --color-element-wind: #d1d5db;
+  --color-element-thunder: #fde047;
+  --color-element-dark: #c084fc;
+  --color-element-machine: #9ca3af;
+
+  --color-req-met: #34d399;
+
+  --color-journal-emerald: #ff99d1;
+  --color-journal-emerald-border: #aa0055;
+  --color-journal-emerald-hover: rgb(255 102 187 / 0.2);
+  --color-journal-cyan: #ff99d1;
+  --color-journal-cyan-border: #aa0055;
+  --color-journal-cyan-hover: rgb(255 102 187 / 0.2);
+  --color-journal-teal: #ff99d1;
+  --color-journal-teal-border: #aa0055;
+  --color-journal-teal-hover: rgb(255 102 187 / 0.2);
+  --color-journal-sky: #ff99d1;
+  --color-journal-sky-border: #aa0055;
+  --color-journal-sky-hover: rgb(255 102 187 / 0.2);
+
+  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(300deg) saturate(4) brightness(1.3);
+  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(300deg) saturate(4) brightness(1.3)
+    drop-shadow(0 0 4px rgba(255, 102, 187, 0.6));
+  --auction-pulse-rgb: 255, 102, 187;
 }
 
 [data-theme="seabed"] {
@@ -41,6 +179,52 @@
   --color-accent-bright: #7aa0b8;
   --color-ink: #302418;
   --color-ink-muted: #0f766e;
+
+  --color-success: #047857;
+  --color-success-muted: #065f46;
+  --color-success-surface: rgb(5 150 105 / 0.08);
+
+  --color-danger: #b91c1c;
+  --color-danger-muted: #991b1b;
+  --color-danger-surface: rgb(69 10 10 / 0.15);
+
+  --color-highlight: #a16207;
+  --color-highlight-bright: #ca8a04;
+  --color-highlight-surface: #fefce8;
+  --color-highlight-border: rgb(234 179 8 / 0.8);
+
+  --color-price: #b45309;
+  --color-exclusive: #7e22ce;
+  --color-signature: #a16207;
+  --color-signature-surface: rgb(254 249 195 / 0.8);
+
+  --color-element-fire: #ea580c;
+  --color-element-water: #2563eb;
+  --color-element-ice: #0891b2;
+  --color-element-wind: #4b5563;
+  --color-element-thunder: #ca8a04;
+  --color-element-dark: #9333ea;
+  --color-element-machine: #4b5563;
+
+  --color-req-met: #ffffff;
+
+  --color-journal-emerald: #0f766e;
+  --color-journal-emerald-border: #0f766e;
+  --color-journal-emerald-hover: rgb(15 118 110 / 0.3);
+  --color-journal-cyan: #0f766e;
+  --color-journal-cyan-border: #0f766e;
+  --color-journal-cyan-hover: rgb(15 118 110 / 0.3);
+  --color-journal-teal: #0f766e;
+  --color-journal-teal-border: #0f766e;
+  --color-journal-teal-hover: rgb(15 118 110 / 0.3);
+  --color-journal-sky: #0f766e;
+  --color-journal-sky-border: #0f766e;
+  --color-journal-sky-hover: rgb(15 118 110 / 0.3);
+
+  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(175deg) saturate(3.2) brightness(0.95);
+  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(175deg) saturate(3.2) brightness(0.95)
+    drop-shadow(0 0 4px rgba(91, 132, 177, 0.7));
+  --auction-pulse-rgb: 234, 179, 8;
 }
 
 [data-theme="circuitBoard"] {
@@ -52,6 +236,52 @@
   --color-accent-bright: #00aaff;
   --color-ink: #ffffff;
   --color-ink-muted: #93c5fd;
+
+  --color-success: #4ade80;
+  --color-success-muted: #166534;
+  --color-success-surface: rgb(34 197 94 / 0.15);
+
+  --color-danger: #f87171;
+  --color-danger-muted: #881337;
+  --color-danger-surface: #1a0a0f;
+
+  --color-highlight: #00aaff;
+  --color-highlight-bright: #00aaff;
+  --color-highlight-surface: rgb(0 119 255 / 0.15);
+  --color-highlight-border: rgb(0 170 255 / 0.8);
+
+  --color-price: #fbbf24;
+  --color-exclusive: #d8b4fe;
+  --color-signature: #fde047;
+  --color-signature-surface: rgb(66 32 6 / 0.4);
+
+  --color-element-fire: #fb923c;
+  --color-element-water: #60a5fa;
+  --color-element-ice: #67e8f9;
+  --color-element-wind: #d1d5db;
+  --color-element-thunder: #fde047;
+  --color-element-dark: #c084fc;
+  --color-element-machine: #9ca3af;
+
+  --color-req-met: #34d399;
+
+  --color-journal-emerald: #34d399;
+  --color-journal-emerald-border: #065f46;
+  --color-journal-emerald-hover: rgb(6 78 59 / 0.3);
+  --color-journal-cyan: #22d3ee;
+  --color-journal-cyan-border: #155e75;
+  --color-journal-cyan-hover: rgb(8 51 68 / 0.3);
+  --color-journal-teal: #2dd4bf;
+  --color-journal-teal-border: #115e59;
+  --color-journal-teal-hover: rgb(19 78 74 / 0.3);
+  --color-journal-sky: #38bdf8;
+  --color-journal-sky-border: #075985;
+  --color-journal-sky-hover: rgb(12 74 110 / 0.3);
+
+  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4);
+  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(4) brightness(1.4)
+    drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  --auction-pulse-rgb: 34, 211, 238;
 }
 
 [data-theme="undefined"] {
@@ -63,4 +293,50 @@
   --color-accent-bright: #bbbbbb;
   --color-ink: #ffffff;
   --color-ink-muted: #9ca3af;
+
+  --color-success: #4ade80;
+  --color-success-muted: #166534;
+  --color-success-surface: rgb(34 197 94 / 0.15);
+
+  --color-danger: #f87171;
+  --color-danger-muted: #881337;
+  --color-danger-surface: #1a0a0f;
+
+  --color-highlight: #bbbbbb;
+  --color-highlight-bright: #bbbbbb;
+  --color-highlight-surface: rgb(153 153 153 / 0.15);
+  --color-highlight-border: rgb(187 187 187 / 0.8);
+
+  --color-price: #fbbf24;
+  --color-exclusive: #d8b4fe;
+  --color-signature: #fde047;
+  --color-signature-surface: rgb(66 32 6 / 0.4);
+
+  --color-element-fire: #fb923c;
+  --color-element-water: #60a5fa;
+  --color-element-ice: #67e8f9;
+  --color-element-wind: #d1d5db;
+  --color-element-thunder: #fde047;
+  --color-element-dark: #c084fc;
+  --color-element-machine: #9ca3af;
+
+  --color-req-met: #34d399;
+
+  --color-journal-emerald: #34d399;
+  --color-journal-emerald-border: #065f46;
+  --color-journal-emerald-hover: rgb(6 78 59 / 0.3);
+  --color-journal-cyan: #22d3ee;
+  --color-journal-cyan-border: #155e75;
+  --color-journal-cyan-hover: rgb(8 51 68 / 0.3);
+  --color-journal-teal: #2dd4bf;
+  --color-journal-teal-border: #115e59;
+  --color-journal-teal-hover: rgb(19 78 74 / 0.3);
+  --color-journal-sky: #38bdf8;
+  --color-journal-sky-border: #075985;
+  --color-journal-sky-hover: rgb(12 74 110 / 0.3);
+
+  --pin-hover-filter: grayscale(1) sepia(1) hue-rotate(0deg) saturate(0) brightness(1.2);
+  --pin-active-filter: grayscale(1) sepia(1) hue-rotate(0deg) saturate(0) brightness(1.2)
+    drop-shadow(0 0 4px rgba(187, 187, 187, 0.6));
+  --auction-pulse-rgb: 187, 187, 187;
 }

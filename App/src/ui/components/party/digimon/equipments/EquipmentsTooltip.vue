@@ -94,7 +94,7 @@ const equipmentNote = computed(() => {
             {{ $t("digimon.states.none") }}
           </template>
           <template v-else-if="equipment.equipableDigimonIds.length === 8">
-            <span class="text-purple-300 in-[[data-theme=seabed]]:text-purple-700 font-bold uppercase tracking-wider text-[10px]">{{
+            <span class="text-exclusive font-bold uppercase tracking-wider text-[10px]">{{
               $t("digimon.allDigimon")
             }}</span>
           </template>

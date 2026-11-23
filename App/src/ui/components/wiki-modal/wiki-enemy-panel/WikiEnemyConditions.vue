@@ -43,14 +43,10 @@ function calculateValue(condition: EnemyConditionViewModel): string {
 
 function calculateColorClass(condition: EnemyConditionViewModel): string {
   if (isBooleanCondition(condition)) {
-    return condition.can
-      ? "text-green-400 in-[[data-theme=seabed]]:text-emerald-700"
-      : "text-red-400 in-[[data-theme=seabed]]:text-red-700";
+    return condition.can ? "text-success" : "text-danger";
   }
 
-  return condition.can
-    ? "text-ink"
-    : "text-red-400 in-[[data-theme=seabed]]:text-red-700";
+  return condition.can ? "text-ink" : "text-danger";
 }
 
 function calculateTooltip(condition: EnemyConditionViewModel): string {

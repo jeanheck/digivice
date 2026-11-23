@@ -38,9 +38,9 @@ const onSelectStep = (step: StepViewModel) => {
       class="flex items-start gap-3 p-2 rounded border transition-all cursor-pointer group"
       :class="
         stepViewModel.isDone
-          ? 'bg-green-900/10 border-green-800/30'
+          ? 'bg-success-surface border-success-muted/30'
           : selectedStepNumber === stepViewModel.number
-            ? 'bg-panel border-accent shadow-[0_0_10px_color-mix(in_srgb,var(--color-accent)_20%,transparent)] in-[[data-theme=seabed]]:bg-yellow-50 in-[[data-theme=seabed]]:border-yellow-500 in-[[data-theme=seabed]]:shadow-[0_0_10px_rgba(234,179,8,0.2)]'
+            ? 'bg-highlight-surface border-highlight-border shadow-[0_0_10px_color-mix(in_srgb,var(--color-highlight)_20%,transparent)]'
             : 'bg-accent/5 border-frame/30'
       "
       @click="onSelectStep(stepViewModel)"
@@ -49,7 +49,7 @@ const onSelectStep = (step: StepViewModel) => {
         class="shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
         :class="
           stepViewModel.isDone
-            ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)] in-[[data-theme=seabed]]:bg-teal-700/15 in-[[data-theme=seabed]]:border-teal-700 in-[[data-theme=seabed]]:text-teal-700 in-[[data-theme=seabed]]:shadow-none'
+            ? 'bg-success-surface border-success text-success'
             : 'bg-surface-deep border-frame/50'
         "
       >

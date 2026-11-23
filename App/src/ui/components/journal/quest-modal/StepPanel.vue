@@ -62,10 +62,10 @@ const localMapSlides = computed(() => {
   >
     <div
       v-if="!selectedStep"
-      class="flex-1 flex flex-col items-center justify-center border border-accent/40 in-[[data-theme=seabed]]:border-yellow-500/40 bg-surface-deep in-[[data-theme=seabed]]:bg-yellow-50/80 rounded min-h-100"
+      class="flex-1 flex flex-col items-center justify-center border border-highlight-border/40 bg-highlight-surface/80 rounded min-h-100"
     >
       <span
-        class="text-accent/60 in-[[data-theme=seabed]]:text-yellow-600/70 text-sm tracking-widest text-center px-8 animate-pulse whitespace-pre-line"
+        class="text-highlight-bright/70 text-sm tracking-widest text-center px-8 animate-pulse whitespace-pre-line"
       >
         {{ $t("journal.clickStep") }}
       </span>

@@ -61,12 +61,12 @@ const handleDropClick = (drop: WikiEnemyDropViewModel): void => {
         v-for="drop in drops"
         :key="`${drop.dropId}-${drop.locationOnly ?? ''}`"
         type="button"
-        class="text-center px-2.5 py-2 rounded text-[9px] fhdscaled:text-[11px] font-bold tracking-wide transition-colors cursor-pointer hover:bg-accent/20 text-ink-muted border border-frame/50 bg-surface in-[[data-theme=seabed]]:text-yellow-700"
+        class="text-center px-2.5 py-2 rounded text-[9px] fhdscaled:text-[11px] font-bold tracking-wide transition-colors cursor-pointer hover:bg-accent/20 text-highlight border border-frame/50 bg-surface"
         @click="handleDropClick(drop)"
       >
         <span class="block">{{ $t(drop.labelKey) }}</span>
         <span
-          class="block min-h-3 text-[9px] font-normal text-ink/70 in-[[data-theme=seabed]]:text-yellow-700/80 leading-tight"
+          class="block min-h-3 text-[9px] font-normal text-highlight/80 leading-tight"
         >
           {{ drop.locationOnly ? locationOnlyLabel(drop.locationOnly) : "" }}
         </span>

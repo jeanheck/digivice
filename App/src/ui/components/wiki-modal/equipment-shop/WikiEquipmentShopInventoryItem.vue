@@ -37,7 +37,7 @@ const handleSelect = (): void => {
           </span>
         </span>
         <span class="flex items-baseline gap-1 shrink-0 text-[10px] font-bold whitespace-nowrap">
-          <span class="text-amber-400 in-[[data-theme=seabed]]:text-amber-700">{{ item.price }}</span>
+          <span class="text-price">{{ item.price }}</span>
           <span class="text-ink">{{ $t("enemy.bits") }}</span>
         </span>
       </span>
@@ -60,8 +60,8 @@ const handleSelect = (): void => {
             <span
               :class="
                 attribute.type === '+'
-                  ? 'text-green-400 in-[[data-theme=seabed]]:text-emerald-700'
-                  : 'text-red-400 in-[[data-theme=seabed]]:text-red-700'
+                  ? 'text-success'
+                  : 'text-danger'
               "
             >
               {{ attribute.type }}{{ attribute.value }}
@@ -75,7 +75,7 @@ const handleSelect = (): void => {
               {{ $t("digimon.states.none") }}
             </template>
             <template v-else-if="item.equipment.equipableDigimonIds.length === 8">
-              <span class="text-purple-300 in-[[data-theme=seabed]]:text-purple-700 font-bold uppercase">{{ $t("digimon.allDigimon") }}</span>
+              <span class="text-exclusive font-bold uppercase">{{ $t("digimon.allDigimon") }}</span>
             </template>
             <template v-else>
               {{ item.equipment.equipableDigimonNames.join(", ") }}

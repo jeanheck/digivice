@@ -18,7 +18,7 @@ const emit = defineEmits<{
 const QuestCardVariantClasses: Record<QuestCardVariant, string> = {
   locked: "border-frame/50 bg-surface-deep opacity-50 hover:opacity-70",
   unavailable: "border-frame/50 bg-surface-deep opacity-50 hover:opacity-70",
-  done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40 in-[[data-theme=seabed]]:border-emerald-700/50 in-[[data-theme=seabed]]:bg-emerald-800/15 in-[[data-theme=seabed]]:hover:bg-emerald-800/25",
+  done: "border-success-muted/50 bg-success-surface hover:bg-success-surface",
   new: "border-accent/70 bg-surface hover:bg-surface-deep hover:border-accent",
   active: "border-frame/40 bg-surface hover:bg-surface-deep hover:border-accent",
 };
@@ -55,7 +55,7 @@ const titleClass = computed(() => {
   }
 
   if (props.quest.isDone) {
-    return "text-ink-muted line-through in-[[data-theme=seabed]]:text-emerald-800 in-[[data-theme=seabed]]:decoration-emerald-700";
+    return "text-success line-through decoration-success";
   }
 
   const accentTitleClass = sideQuestPalette.value.questTitleClass;
@@ -82,10 +82,10 @@ const titleSizeClass = computed(() => {
 
 const doneIconClass = computed(() => {
   if (isMainDisplayMode.value) {
-    return "text-green-400 in-[[data-theme=seabed]]:text-emerald-700 text-xs";
+    return "text-success text-xs";
   }
 
-  return "text-green-500 in-[[data-theme=seabed]]:text-emerald-700 text-xs drop-shadow shrink-0 ml-2";
+  return "text-success text-xs drop-shadow shrink-0 ml-2";
 });
 
 const onClick = () => {
@@ -109,7 +109,7 @@ const onClick = () => {
   >
     <div
       v-if="!isMainDisplayMode && quest.isDone"
-      class="absolute inset-0 bg-green-500/15 in-[[data-theme=seabed]]:bg-emerald-600/8 pointer-events-none"
+      class="absolute inset-0 bg-success-surface pointer-events-none"
     />
 
     <div class="flex items-center justify-between mb-1 relative z-10">
@@ -143,7 +143,7 @@ const onClick = () => {
       >
       <span
         v-else-if="!isMainDisplayMode && quest.isNew"
-        class="font-emoji text-yellow-300 in-[[data-theme=seabed]]:text-yellow-600 text-xs shrink-0 ml-2"
+        class="font-emoji text-highlight-bright text-xs shrink-0 ml-2"
         >❕</span
       >
     </div>
@@ -151,10 +151,10 @@ const onClick = () => {
     <p
       class="text-[10px] leading-tight line-clamp-1 relative z-10"
       :class="{
-        'text-yellow-700': quest.isDone,
+        'text-highlight': quest.isDone && isMainDisplayMode,
+        'text-success': quest.isDone && !isMainDisplayMode,
         'text-ink-muted/70': !quest.isDone,
         'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
-        'in-[[data-theme=seabed]]:text-emerald-800': !isMainDisplayMode && quest.isDone,
       }"
     >
       <template v-if="quest.isDone">

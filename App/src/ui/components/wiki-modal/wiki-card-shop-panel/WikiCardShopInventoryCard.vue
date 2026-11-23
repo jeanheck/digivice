@@ -46,7 +46,7 @@ const handleSelect = (): void => {
     >
       {{ cardName }}
     </span>
-    <span class="w-full shrink-0 text-[8px] font-bold text-amber-400 in-[[data-theme=seabed]]:text-amber-700 leading-tight text-center">
+    <span class="w-full shrink-0 text-[8px] font-bold text-price leading-tight text-center">
       {{ card.price }} {{ $t("enemy.bits") }}
     </span>
   </button>

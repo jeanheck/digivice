@@ -19,7 +19,7 @@ const getSourceIcon = (source: WikiLocationEncounterLineViewModel["source"]): st
 };
 
 const getEnemyButtonClass = (): string => {
-  return "text-red-400 hover:text-red-200 drop-shadow-[0_0_2px_rgba(158,55,55,0.8)] in-[[data-theme=seabed]]:text-red-700 in-[[data-theme=seabed]]:hover:text-red-800 in-[[data-theme=seabed]]:drop-shadow-none";
+  return "text-danger hover:text-danger/80";
 };
 
 const handleOpenEnemy = (enemyId: string): void => {
