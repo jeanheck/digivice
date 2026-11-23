@@ -77,7 +77,7 @@ const nodeAvatarUrl = computed(() => {
           <span
             class="text-[8px] font-bold tracking-tight truncate"
             :class="
-              isReqMet(req) ? 'text-req-met text-dw3-outlined' : 'text-ink'
+              isReqMet(req) ? 'text-req-met text-outline-black' : 'text-ink'
             "
           >
             {{ NodePresenter.getRequirementText(digimonName, req, t) }}
