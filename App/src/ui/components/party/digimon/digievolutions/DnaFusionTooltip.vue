@@ -42,7 +42,7 @@ const { t } = useI18n();
           <span class="text-dw3-dna shadow-text-dark font-bold tracking-wider text-xs">
             {{ fusion.dnaDigievolution.name }}
           </span>
-          <span class="text-[10px] text-blue-300 tracking-wider whitespace-nowrap">
+          <span class="text-[10px] text-blue-300 in-[[data-theme=seabed]]:text-[var(--color-accent)] tracking-wider whitespace-nowrap">
             {{ t("digimon.mp") }}: {{ fusion.dnaDigievolution.mp }}
           </span>
         </div>

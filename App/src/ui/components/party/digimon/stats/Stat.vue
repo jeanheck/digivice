@@ -62,7 +62,7 @@ const valueClass = computed(() => {
     return "text-dw3-metallic shadow-text-dark";
   }
 
-  return "text-outline-black";
+  return "text-dw3-outlined";
 });
 </script>
 

@@ -60,7 +60,7 @@ const modifierColorClass = computed(() => {
         <span class="shadow-text">{{ total }}</span>
         <span class="text-[10px] text-gray-400 tracking-normal ml-1">
           (<span class="text-white">{{ base }}</span> +
-          <span class="text-[#0077ff] in-[[data-theme=seabed]]:text-teal-500 font-bold">{{
+          <span class="text-[#0077ff] in-[[data-theme=seabed]]:text-teal-700 font-bold">{{
             equip
           }}</span>
           <template v-if="hasEquipmentSet">
@@ -81,7 +81,7 @@ const modifierColorClass = computed(() => {
           <span class="text-white">{{ t("digimon.baseDigimon") }}</span>
         </div>
         <div class="flex justify-between text-xs items-center">
-          <span class="text-[#0077ff] in-[[data-theme=seabed]]:text-teal-500 font-bold">{{
+          <span class="text-[#0077ff] in-[[data-theme=seabed]]:text-teal-700 font-bold">{{
             t("digimon.equipments")
           }}</span>
         </div>

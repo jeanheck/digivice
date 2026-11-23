@@ -62,7 +62,7 @@ const equipmentNote = computed(() => {
     <div v-if="equipment" class="flex flex-col gap-1 w-full min-w-42.5">
       <div
         v-if="equipmentType"
-        class="text-blue-300 in-[[data-theme=seabed]]:text-teal-500 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
+        class="text-blue-300 in-[[data-theme=seabed]]:text-teal-700 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
       >
         {{ equipmentType }}
       </div>
@@ -86,15 +86,15 @@ const equipmentNote = computed(() => {
       <div
         class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 flex flex-col gap-1 text-center"
       >
-        <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{
+        <span class="text-gray-400 in-[[data-theme=seabed]]:text-gray-700 text-[9px] uppercase tracking-widest leading-none">{{
           $t("digimon.equipableBy")
         }}</span>
-        <span class="text-gray-200 text-[11px] leading-tight">
+        <span class="text-gray-200 in-[[data-theme=seabed]]:text-gray-800 text-[11px] leading-tight">
           <template v-if="equipment.equipableDigimonIds.length === 0">
             {{ $t("digimon.states.none") }}
           </template>
           <template v-else-if="equipment.equipableDigimonIds.length === 8">
-            <span class="text-purple-300 font-bold uppercase tracking-wider text-[10px]">{{
+            <span class="text-purple-300 in-[[data-theme=seabed]]:text-purple-700 font-bold uppercase tracking-wider text-[10px]">{{
               $t("digimon.allDigimon")
             }}</span>
           </template>
@@ -106,7 +106,7 @@ const equipmentNote = computed(() => {
 
       <div
         v-if="equipmentNote"
-        class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 text-gray-400 text-[10px] italic leading-tight"
+        class="mt-1 pt-1 border-t border-[#0033aa]/50 in-[[data-theme=seabed]]:border-teal-700/50 text-gray-400 in-[[data-theme=seabed]]:text-gray-700 text-[10px] italic leading-tight"
       >
         "{{ equipmentNote }}"
       </div>

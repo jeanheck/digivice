@@ -63,7 +63,7 @@ const groupPartyLevel = computed(() => {
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-ink-muted tracking-wider uppercase"
         >{{ $t("player.bits") }}:</span
       >
-      <span class="text-ink text-outline-black">{{ playerBits }}</span>
+      <span class="text-dw3-outlined">{{ playerBits }}</span>
     </div>
 
     <div
@@ -77,7 +77,7 @@ const groupPartyLevel = computed(() => {
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-ink-muted tracking-wider uppercase"
         >{{ $t("party.groupCharisma") }}:</span
       >
-      <span class="text-ink text-outline-black">{{ groupCharisma }}</span>
+      <span class="text-dw3-outlined">{{ groupCharisma }}</span>
     </div>
 
     <div
@@ -91,7 +91,7 @@ const groupPartyLevel = computed(() => {
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-ink-muted tracking-wider uppercase"
         >{{ $t("party.groupLevel") }}:</span
       >
-      <span class="text-ink text-outline-black">{{ groupPartyLevel }}</span>
+      <span class="text-dw3-outlined">{{ groupPartyLevel }}</span>
     </div>
 
     <div
