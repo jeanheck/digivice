@@ -2919,10 +2919,12 @@
     ]
   },
   "02E9": {
-    "imageName": "Circuit Board"
+    "imageName": "Circuit Board",
+    "theme": "circuitBoard"
   },
   "02ED": {
-    "imageName": "Circuit Board"
+    "imageName": "Circuit Board",
+    "theme": "circuitBoard"
   },
   "0261": {
     "imageName": "Boot Mountain",

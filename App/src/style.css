@@ -123,6 +123,12 @@ body {
     1px 1px 0 #000;
 }
 
+/* StatsTooltip digimon base — white; outline only when theme sets --stat-base-outline */
+.text-stat-base {
+  color: var(--color-stat-base);
+  text-shadow: var(--stat-base-outline);
+}
+
 .text-dw3-gold {
   background: linear-gradient(to bottom, #ffcc00, #ff6600);
   -webkit-background-clip: text;

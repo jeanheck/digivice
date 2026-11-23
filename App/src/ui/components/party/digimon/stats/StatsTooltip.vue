@@ -57,9 +57,9 @@ const modifierColorClass = computed(() => {
       <div
         class="text-white text-base font-bold text-center mb-2 tracking-wider whitespace-nowrap"
       >
-        <span class="shadow-text">{{ total }}</span>
+        <span class="text-stat-base">{{ total }}</span>
         <span class="text-[10px] text-ink-muted tracking-normal ml-1">
-          (<span class="text-white">{{ base }}</span> +
+          (<span class="text-stat-base">{{ base }}</span> +
           <span class="text-accent font-bold">{{
             equip
           }}</span>
@@ -78,7 +78,7 @@ const modifierColorClass = computed(() => {
 
       <div class="flex flex-col gap-0.5">
         <div class="flex justify-between text-xs items-center">
-          <span class="text-white">{{ t("digimon.baseDigimon") }}</span>
+          <span class="text-stat-base">{{ t("digimon.baseDigimon") }}</span>
         </div>
         <div class="flex justify-between text-xs items-center">
           <span class="text-accent font-bold">{{
