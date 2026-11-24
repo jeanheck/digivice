@@ -3134,8 +3134,8 @@
     "imageName": "Lake of Ice",
     "theme": "asuka",
     "worldLocation": {
-      "x": 50,
-      "y": 50
+      "x": 20,
+      "y": 20
     },
     "enemies": {
       "walking": [

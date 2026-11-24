@@ -29,7 +29,7 @@ export class SeabedModalPresenter {
     }
 
     const seabedDockRaw = SeabedDockRepository.getDockByLocationId(locationId);
-    if (seabedDockRaw === null) {
+    if (seabedDockRaw === null || seabedDockRaw.docks.length === 0) {
       return null;
     }
 

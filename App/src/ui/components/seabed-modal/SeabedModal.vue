@@ -58,12 +58,12 @@ const dockSlides = computed((): MapFrameSlideViewModel[] => {
   return [
     {
       imageUrl: viewModel.imageUrl,
-      pins: [
-        {
-          coordinates: viewModel.coordinates,
-          label: t("seabed.dock"),
-        },
-      ],
+      pins: viewModel.pins.map((pin) => {
+        return {
+          coordinates: pin.coordinates,
+          label: t(pin.labelKey),
+        };
+      }),
     },
   ];
 });
