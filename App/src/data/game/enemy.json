@@ -4264,7 +4264,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkMatter",
     "memoryId": 302,
-    "groupId": null,
+    "groupId": 96,
     "drops": [
       {
         "dropId": 358,
@@ -4326,7 +4326,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkFear",
     "memoryId": 364,
-    "groupId": null,
+    "groupId": 97,
     "drops": [
       {
         "dropId": 409,
@@ -4382,7 +4382,7 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 365,
-    "groupId": null,
+    "groupId": 98,
     "drops": [
       {
         "dropId": 426,
@@ -4438,7 +4438,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 226,
-    "groupId": null,
+    "groupId": 99,
     "locations": [
       {
         "id": "0291",
@@ -4512,7 +4512,7 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 140,
-    "groupId": null,
+    "groupId": 100,
     "drops": [
       {
         "dropId": 408,
@@ -4568,7 +4568,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 138,
-    "groupId": null,
+    "groupId": 101,
     "drops": [
       {
         "dropId": 349,
@@ -4944,7 +4944,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 244,
-    "groupId": null,
+    "groupId": 108,
     "drops": [
       {
         "dropId": 327,
@@ -5000,7 +5000,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 126,
-    "groupId": null,
+    "groupId": 109,
     "drops": [
       {
         "dropId": 421,
@@ -8035,7 +8035,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 414,
-    "groupId": null,
+    "groupId": 166,
     "drops": [
       {
         "dropId": 337,
@@ -8764,7 +8764,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 428,
-    "groupId": null,
+    "groupId": 180,
     "drops": [
       {
         "dropId": 418,
