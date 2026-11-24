@@ -38,6 +38,13 @@
     "heartBreakAttack": "Heart Break Attack (Magic, Lowers Enemy Strength)",
     "autoRecover": "Auto Recover (Heals a small portion of HP every turn)",
     "helterSkelter": "Helter Skelter (Forces the Digimon to revert to its base form)",
-    "gigaDestroyer": "Giga Destroyer (Magic, Machine)"
+    "gigaDestroyer": "Giga Destroyer (Magic, Machine)",
+    "gateOfDestiny": "Gate of Destiny (Magic)",
+    "bladeTwister": "Blade Twister (Physical, Wind)",
+    "bonhitsusen": "Bonhitsusen (Physical)",
+    "desperadoBlaster": "Desperado Blaster (Physical)",
+    "justiceStrike": "Justice Strike (Physical)",
+    "atomicBlaster": "Atomic Blaster (Magic, Fire)",
+    "cycloneTurbine": "Cyclone Turbine (Physical)"
   }
 }

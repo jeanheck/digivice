@@ -8912,7 +8912,7 @@
     "bits": 520,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "atomicBlaster",
     "memoryId": 451,
     "groupId": 265,
     "locations": [
@@ -8963,7 +8963,7 @@
     "bits": 560,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "gateOfDestiny",
     "memoryId": 452,
     "groupId": 266,
     "locations": [
@@ -9014,7 +9014,7 @@
     "bits": 580,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "bonhitsusen",
     "memoryId": 453,
     "groupId": 267,
     "locations": [
@@ -9065,7 +9065,7 @@
     "bits": 560,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "bladeTwister",
     "memoryId": 454,
     "groupId": 268,
     "locations": [
@@ -9116,7 +9116,7 @@
     "bits": 560,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "cycloneTurbine",
     "memoryId": 456,
     "groupId": 269,
     "locations": [
@@ -9167,7 +9167,7 @@
     "bits": 560,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "justiceStrike",
     "memoryId": 455,
     "groupId": 270,
     "locations": [
@@ -9218,7 +9218,7 @@
     "bits": 380,
     "boss": true,
     "regularAttackId": "noElement",
-    "techniqueId": "none",
+    "techniqueId": "desperadoBlaster",
     "memoryId": 450,
     "groupId": 271,
     "locations": [
