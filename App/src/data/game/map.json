@@ -2507,8 +2507,8 @@
         {
           "id": "15",
           "coordinates": {
-            "x": 50,
-            "y": 50
+            "x": 54,
+            "y": 60
           },
           "labelPlacement": "below"
         }
@@ -3055,8 +3055,8 @@
       {
         "id": "haruka",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 44,
+          "y": 66
         },
         "labelPlacement": "below"
       }
@@ -3084,16 +3084,16 @@
       {
         "id": "makoto",
         "coordinates": {
-          "x": 40,
-          "y": 50
+          "x": 33,
+          "y": 23
         },
         "labelPlacement": "below"
       },
       {
         "id": "brown",
         "coordinates": {
-          "x": 60,
-          "y": 50
+          "x": 78,
+          "y": 28
         },
         "labelPlacement": "below"
       }
@@ -3115,8 +3115,8 @@
       {
         "id": "mitaka",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 80,
+          "y": 32
         },
         "labelPlacement": "below"
       }
@@ -3134,8 +3134,8 @@
     "imageName": "Lake of Ice",
     "theme": "asuka",
     "worldLocation": {
-      "x": 20,
-      "y": 20
+      "x": 29,
+      "y": 26
     },
     "enemies": {
       "walking": [
@@ -3155,12 +3155,16 @@
   "0267": {
     "imageName": "Legendary Gym",
     "theme": "asuka",
+    "worldLocation": {
+      "x": 18,
+      "y": 24
+    },
     "tamers": [
       {
         "id": "pierre",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 41,
+          "y": 24
         },
         "labelPlacement": "below"
       }
@@ -3187,8 +3191,8 @@
       {
         "id": "poemy",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 58,
+          "y": 45
         },
         "labelPlacement": "below"
       }
@@ -3219,8 +3223,8 @@
       {
         "id": "shingo",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 42,
+          "y": 40
         },
         "labelPlacement": "below"
       }
