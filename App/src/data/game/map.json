@@ -3132,6 +3132,10 @@
   "0266": {
     "imageName": "Lake of Ice",
     "theme": "asuka",
+    "worldLocation": {
+      "x": 50,
+      "y": 50
+    },
     "enemies": {
       "walking": [
         "152"
@@ -3144,7 +3148,8 @@
         "151",
         "521"
       ]
-    }
+    },
+    "dock": true
   },
   "0267": {
     "imageName": "Legendary Gym",

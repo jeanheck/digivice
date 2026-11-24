@@ -44,5 +44,11 @@
       { "location": "0220", "x": 44.5, "y": 50, "type": "normal", "labelPlacement": "above" },
       { "location": "024B", "x": 34, "y": 56.5, "type": "normal", "labelPlacement": "below" }
     ]
+  },
+  "8": {
+    "docks": [
+      { "location": "0266", "x": 50, "y": 50, "type": "normal", "labelPlacement": "below" },
+      { "location": "02E7", "x": 52, "y": 48, "type": "dead-end", "labelPlacement": "above" }
+    ]
   }
 }

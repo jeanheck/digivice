@@ -231,6 +231,45 @@
       }
     }
   },
+  "6": {
+    "enemies": {
+      "walking": [
+        "100"
+      ]
+    },
+    "maps": {
+      "02E3-1": {
+        "emerge": [
+          {
+            "on": "topRight",
+            "location": "0266"
+          }
+        ],
+        "left": [
+          "02E4"
+        ],
+        "right": []
+      },
+      "02E4-1": {
+        "emerge": [],
+        "left": [
+          "02E7"
+        ],
+        "right": [
+          "02E3",
+          "0266"
+        ]
+      },
+      "02E7-1": {
+        "emerge": [],
+        "left": [],
+        "right": [
+          "02E4",
+          "0266"
+        ]
+      }
+    }
+  },
   "7": {
     "enemies": {
       "walking": [
