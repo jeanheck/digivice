@@ -1,9 +1,14 @@
 {
   "map": {
-    "0001": "Sector Este",
-    "0002": "Sector Sur",
-    "0003": "Sector Oeste",
-    "0004": "Sector Norte",
+    "0001": "Sector Este (Asuka)",
+    "0002": "Sector Sur (Asuka)",
+    "0003": "Sector Oeste (Asuka)",
+    "0004": "Sector Norte (Asuka)",
+    "0005": "Sector Este (Amaterasu)",
+    "0006": "Sector Sur (Amaterasu)",
+    "0007": "Sector Oeste (Amaterasu)",
+    "0008": "Sector Norte (Amaterasu)",
+    "0009": "Sector Sur/Oeste (Asuka)",
     "0500": "Elige tu paquete inicial",
     "1000": "En el menú",
     "1300": "Tienda de cartas",

@@ -9552,7 +9552,13 @@
     "drops": [
       {
         "dropId": 504,
-        "type": "booster"
+        "type": "booster",
+        "locationOnly": "0009"
+      },
+      {
+        "dropId": 506,
+        "type": "booster",
+        "locationOnly": "0005"
       },
       {
         "dropId": 517,
@@ -9607,6 +9613,30 @@
         "sources": [
           "kickingTree"
         ]
+      },
+      {
+        "id": "028C",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "028D",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "028E",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "028F",
+        "sources": [
+          "kickingTree"
+        ]
       }
     ]
   },
@@ -9656,6 +9686,11 @@
         "dropId": 505,
         "type": "booster",
         "locationOnly": "0003"
+      },
+      {
+        "dropId": 507,
+        "type": "booster",
+        "locationOnly": "0005"
       }
     ],
     "locations": [
@@ -9673,6 +9708,30 @@
       },
       {
         "id": "024B",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "028C",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "028D",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "028E",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "028F",
         "sources": [
           "fishing"
         ]
