@@ -43,6 +43,14 @@
     "imageName": "Saving at Suzaku Inn",
     "theme": "previousMap"
   },
+  "0C08": {
+    "imageName": "Saving at Emergency Room",
+    "theme": "previousMap"
+  },
+  "0C09": {
+    "imageName": "Saving at Genbu City",
+    "theme": "previousMap"
+  },
   "0C12": {
     "imageName": "Saving at Forest Inn",
     "theme": "previousMap"
@@ -53,6 +61,22 @@
   },
   "0C14": {
     "imageName": "Saving at Pelche Oasis",
+    "theme": "previousMap"
+  },
+  "0C15": {
+    "imageName": "Saving at Mountain Inn",
+    "theme": "previousMap"
+  },
+  "0C0B": {
+    "imageName": "Saving at Forest Inn Amaterasu",
+    "theme": "previousMap"
+  },
+  "0C0C": {
+    "imageName": "Saving at Qing Long Tower",
+    "theme": "previousMap"
+  },
+  "0C0D": {
+    "imageName": "Saving at Qing Long Tower",
     "theme": "previousMap"
   },
   "0A00": {
@@ -2689,8 +2713,8 @@
     "imageName": "Byakko City",
     "theme": "asuka",
     "worldLocation": {
-      "x": 18.5,
-      "y": 59
+      "x": 15,
+      "y": 68
     },
     "equipmentShops": [
       {
@@ -2717,8 +2741,8 @@
     "imageName": "Byakko Dome",
     "theme": "asuka",
     "worldLocation": {
-      "x": 18.5,
-      "y": 59
+      "x": 15,
+      "y": 68
     },
     "innerLocation": [
       {
@@ -2758,8 +2782,8 @@
     "imageName": "Underground Cave",
     "theme": "asuka",
     "worldLocation": {
-      "x": 18.5,
-      "y": 59
+      "x": 15,
+      "y": 68
     },
     "innerLocation": [
       {
@@ -2830,6 +2854,15 @@
     "theme": "seabed",
     "region": "seabed"
   },
+  "0272": {
+    "imageName": "Amaterasu Bridge",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    },
+    "dock": true
+  },
   "028C": {
     "imageName": "Central Park Amaterasu",
     "theme": "amaterasu",
@@ -2849,6 +2882,15 @@
   },
   "028E": {
     "imageName": "Shell Beach Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 54,
+      "y": 59
+    },
+    "dock": true
+  },
+  "028F": {
+    "imageName": "Plug Cape Amaterasu",
     "theme": "amaterasu",
     "worldLocation": {
       "x": 54,

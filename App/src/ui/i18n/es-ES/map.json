@@ -12,9 +12,15 @@
     "0C02": "Guardando en la Torre Seiryu",
     "0C03": "Guardando en la Posada del Pantano",
     "0C04": "Guardando en la Posada Suzaku",
+    "0C08": "Guardando en la Cámara",
+    "0C09": "Guardando en la Ciudad Genbu",
     "0C12": "Guardando en la Posada Bosque",
     "0C13": "Guardando en el Salón Espejismo",
     "0C14": "Guardando en el Oasis Pelche",
+    "0C15": "Guardando en la Posada Montaña",
+    "0C0B": "Guardando en la Posada Bosque",
+    "0C0C": "Guardando en la Torre Qing Long",
+    "0C0D": "Guardando en la Posada Zhu Que",
     "0A00": "Entrenando",
     "0D00": "Dr. Kadomatsu / Piximon",
     "0E03": "Escena",
@@ -155,13 +161,15 @@
     "0263": "Mountain Inn",
     "0264": "Freeze Mountain",
     "026E": "Portão de Batalha",
-    "026F": "Genbu City",
+    "026F": "Ciudad Genbu",
     "026A": "Ice Dungeon",
     "026B": "Fire Dungeon",
     "026C": "Dark Dungeon",
     "026D": "Emergency Room",
     "02DA": "Magasta B1F",
     "02DB": "Magasta B2F",
-    "02DC": "Magasta: Andar 1"
+    "02DC": "Magasta: Andar 1",
+    "028F": "Capa de Conexión",
+    "0272": "Puente Amaterasu"
   }
 }
