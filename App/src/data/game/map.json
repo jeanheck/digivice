@@ -2970,6 +2970,16 @@
     "worldLocation": {
       "x": 67,
       "y": 45.5
+    },
+    "enemies": {
+      "walking": [
+        "188",
+        "131"
+      ],
+      "kickingTree": [
+        "517",
+        "136"
+      ]
     }
   },
   "0292": {
@@ -2997,12 +3007,64 @@
       }
     ]
   },
+  "0294": {
+    "imageName": "Protocol Forest Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 69.5,
+      "y": 37.5
+    },
+    "enemies": {
+      "walking": [
+        "136",
+        "133"
+      ]
+    }
+  },
+  "0295": {
+    "imageName": "Protocol Ruins Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 69.5,
+      "y": 37.5
+    },
+    "enemies": {
+      "walking": [
+        "134",
+        "133"
+      ],
+      "boss": [
+        {
+          "id": "411",
+          "coordinates": {
+            "x": 76,
+            "y": 12
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
   "0296": {
     "imageName": "Divermons Lake Amaterasu",
     "theme": "amaterasu",
     "worldLocation": {
       "x": 74.5,
       "y": 47
+    },
+    "enemies": {
+      "walking": [
+        "143",
+        "188"
+      ],
+      "fishing": [
+        "101",
+        "518"
+      ],
+      "kickingTree": [
+        "517",
+        "136"
+      ]
     },
     "dock": true
   },
@@ -3012,6 +3074,16 @@
     "worldLocation": {
       "x": 81,
       "y": 50
+    },
+    "enemies": {
+      "walking": [
+        "188",
+        "131"
+      ],
+      "kickingTree": [
+        "517",
+        "136"
+      ]
     }
   },
   "029C": {
@@ -3031,6 +3103,14 @@
         "labelPlacement": "below"
       }
     ]
+  },
+  "029D": {
+    "imageName": "Zephyr Tower Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    }
   },
   "029E": {
     "imageName": "Qing Long Tower",
@@ -3055,6 +3135,21 @@
     "worldLocation": {
       "x": 60.5,
       "y": 84
+    },
+    "enemies": {
+      "walking": [
+        "213",
+        "146",
+        "194"
+      ],
+      "kickingTree": [
+        "214",
+        "519"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
     },
     "dock": true
   },
@@ -3498,5 +3593,152 @@
   "02DC": {
     "imageName": "Magasta",
     "theme": "undefined"
+  },
+  "029F": {
+    "imageName": "Gale Tower Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    }
+  },
+  "0299": {
+    "imageName": "Kicking Forest Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 87.5,
+      "y": 46
+    },
+    "enemies": {
+      "walking": [
+        "143",
+        "136"
+      ],
+      "kickingTree": [
+        "519",
+        "214"
+      ],
+      "fishing": [
+        "143",
+        "518"
+      ]
+    }
+  },
+  "029B": {
+    "imageName": "East Station Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 88,
+      "y": 53
+    }
+  },
+  "029A": {
+    "imageName": "Tyranno Valley Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 90.5,
+      "y": 38.5
+    },
+    "enemies": {
+      "walking": [
+        "138",
+        "137"
+      ],
+      "boss": [
+        {
+          "id": "412",
+          "coordinates": {
+            "x": 72,
+            "y": 24
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "0297": {
+    "imageName": "Duel Island Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 76.5,
+      "y": 24
+    }
+  },
+  "02A9": {
+    "imageName": "Ether Jungle Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "enemies": {
+      "walking": [
+        "213",
+        "146",
+        "132"
+      ],
+      "kickingTree": [
+        "214",
+        "519"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
+    }
+  },
+  "02AF": {
+    "imageName": "Jungle Shrine Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 50,
+      "y": 74
+    },
+    "enemies": {
+      "walking": [
+        "203"
+      ]
+    }
+  },
+  "02B0": {
+    "imageName": "Catacomb Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 52,
+      "y": 82.5
+    },
+    "enemies": {
+      "walking": [
+        "145"
+      ],
+      "boss": [
+        {
+          "id": "413",
+          "coordinates": {
+            "x": 75,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
+    }
+  },
+  "02AA": {
+    "imageName": "South Cape Amaterasu",
+    "theme": "asuka",
+    "worldLocation": {
+      "x": 43.5,
+      "y": 75
+    },
+    "enemies": {
+      "walking": [
+        "132",
+        "194"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
+    }
   }
 }
