@@ -5,10 +5,10 @@ import type { SeabedDirection } from "@/shared/types/seabed-direction.type";
 import { SeabedPresenter } from "@/presentation/presenters/map/seabed.presenter";
 
 const SeabedDirectionMonoIcon = {
-  topLeft: "\u2B09",
-  top: "\u2B06",
-  topRight: "\u2B08",
-} as const satisfies Record<SeabedDirection, string>;
+  topLeft: { character: "\u2B06", rotateClass: "-rotate-45" },
+  top: { character: "\u2B06", rotateClass: "" },
+  topRight: { character: "\u2B06", rotateClass: "rotate-45" },
+} as const satisfies Record<SeabedDirection, { character: string; rotateClass: string }>;
 
 const props = defineProps<{
   seabedRoute: number | null;
@@ -39,7 +39,11 @@ const hasLeft = computed(() => leftLocations.value.length > 0);
 const hasRight = computed(() => rightLocations.value.length > 0);
 
 function getEmergeEmoji(on: SeabedDirection): string {
-  return SeabedDirectionMonoIcon[on];
+  return SeabedDirectionMonoIcon[on].character;
+}
+
+function getEmergeRotateClass(on: SeabedDirection): string {
+  return SeabedDirectionMonoIcon[on].rotateClass;
 }
 
 function getLocationName(locationId: string): string {
@@ -58,6 +62,7 @@ function getLocationName(locationId: string): string {
         >
           <span
             class="font-emoji text-teal-500 inline-flex leading-none text-[1.1rem] -translate-y-0.5"
+            :class="getEmergeRotateClass(point.on)"
             >{{ getEmergeEmoji(point.on) }}</span
           >
           <span class="text-[9px] text-teal-100 text-center leading-tight">{{
