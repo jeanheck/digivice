@@ -27,6 +27,7 @@
     "0C0C": "Guardando en la Torre Qing Long",
     "0C0D": "Guardando en la Posada Zhu Que",
     "0C16": "Guardando en la Posada del Pantano",
+    "0C18": "Guardando en el Oasis Pelche",
     "0A00": "Entrenando",
     "0D00": "Dr. Kadomatsu / Piximon",
     "0E03": "Escena",
@@ -195,6 +196,14 @@
     "02A4": "Pantano Tranquilo",
     "02A5": "Posada del Pantano",
     "02A1": "Pantano Yermo",
-    "02A0": "Estación Sur"
+    "02A0": "Estación Sur",
+    "02B1": "Tierras Baldías del Sur",
+    "02A6": "Casa del Chamán",
+    "02AC": "Posada Zhu Que",
+    "02B2": "Desierto Ruido",
+    "02B3": "Oasis Pelche",
+    "02B4": "Tierras Baldías del Norte O",
+    "02B6": "Valle Bala",
+    "02B7": "Fábrica Dum Dum"
   }
 }

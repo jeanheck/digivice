@@ -67,6 +67,14 @@
     "imageName": "Saving at Mountain Inn",
     "theme": "previousMap"
   },
+  "0C16": {
+    "imageName": "Saving at Swamp Inn Amaterasu",
+    "theme": "previousMap"
+  },
+  "0C18": {
+    "imageName": "Saving at Pelche Oasis Amaterasu",
+    "theme": "previousMap"
+  },
   "0C0B": {
     "imageName": "Saving at Forest Inn Amaterasu",
     "theme": "previousMap"
@@ -3747,6 +3755,22 @@
     "worldLocation": {
       "x": 79,
       "y": 85
+    },
+    "enemies": {
+      "walking": [
+        "142",
+        "192",
+        "196",
+        "144"
+      ],
+      "kickingTree": [
+        "214",
+        "519"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
     }
   },
   "02A2": {
@@ -3755,6 +3779,16 @@
     "worldLocation": {
       "x": 79,
       "y": 73
+    },
+    "enemies": {
+      "walking": [
+        "142",
+        "196"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
     }
   },
   "02A3": {
@@ -3763,6 +3797,20 @@
     "worldLocation": {
       "x": 85,
       "y": 78.5
+    },
+    "enemies": {
+      "walking": [
+        "142",
+        "196"
+      ],
+      "kickingTree": [
+        "214",
+        "519"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
     }
   },
   "02A4": {
@@ -3771,6 +3819,20 @@
     "worldLocation": {
       "x": 74,
       "y": 77.5
+    },
+    "enemies": {
+      "walking": [
+        "142",
+        "196"
+      ],
+      "kickingTree": [
+        "214",
+        "519"
+      ],
+      "fishing": [
+        "143",
+        "520"
+      ]
     }
   },
   "02A5": {
@@ -3787,6 +3849,16 @@
     "worldLocation": {
       "x": 79,
       "y": 73
+    },
+    "enemies": {
+      "walking": [
+        "142",
+        "196"
+      ],
+      "kickingTree": [
+        "214",
+        "519"
+      ]
     }
   },
   "02A0": {
@@ -3795,6 +3867,126 @@
     "worldLocation": {
       "x": 79,
       "y": 65
+    }
+  },
+  "02B1": {
+    "imageName": "South Badland Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 31,
+      "y": 69.5
+    },
+    "enemies": {
+      "walking": [
+        "169",
+        "170"
+      ],
+      "fishing": [
+        "217",
+        "522"
+      ]
+    }
+  },
+  "02A6": {
+    "imageName": "Shaman House Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 71,
+      "y": 67
+    }
+  },
+  "02AC": {
+    "imageName": "Zhu Que Inn",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    }
+  },
+  "02B2": {
+    "imageName": "Noise Desert Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 21.5,
+      "y": 72
+    },
+    "enemies": {
+      "walking": [
+        "171",
+        "109",
+        "209"
+      ]
+    }
+  },
+  "02B3": {
+    "imageName": "Pelche Oasis Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 59
+    },
+    "enemies": {
+      "walking": [
+        "171",
+        "209"
+      ],
+      "fishing": [
+        "217",
+        "522"
+      ]
+    }
+  },
+  "02B4": {
+    "imageName": "North Badland W Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 26,
+      "y": 56.5
+    },
+    "enemies": {
+      "walking": [
+        "135",
+        "168",
+        "167"
+      ],
+      "kickingTree": [
+        "212",
+        "521"
+      ]
+    }
+  },
+  "02B6": {
+    "imageName": "Bullet Valley Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 17.5,
+      "y": 45
+    },
+    "enemies": {
+      "walking": [
+        "135",
+        "168",
+        "167"
+      ],
+      "kickingTree": [
+        "212",
+        "521"
+      ]
+    }
+  },
+  "02B7": {
+    "imageName": "Dum Dum Factory Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "201",
+        "176",
+        "124"
+      ]
     }
   }
 }

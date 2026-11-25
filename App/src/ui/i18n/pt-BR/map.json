@@ -27,6 +27,7 @@
     "0C0C": "Salvando em Torre Qing Long",
     "0C0D": "Salvando em Pousada Zhu Que",
     "0C16": "Salvando em Pousada Pantanal",
+    "0C18": "Salvando em Pelche Oásis",
     "0A00": "Em Treinamento",
     "0D00": "Dr. Kadomatsu / Piximon",
     "0E03": "Cutscene",
@@ -195,6 +196,14 @@
     "02A4": "Pântano Tranquilo",
     "02A5": "Pousada Pantanal",
     "02A1": "Pântano",
-    "02A0": "Estação Sul"
+    "02A0": "Estação Sul",
+    "02B1": "Terreno Baldio (Sul)",
+    "02A6": "Casa Xamã",
+    "02AC": "Pousada Zhu Que",
+    "02B2": "Deserto Barulhento",
+    "02B3": "Pelche Oásis",
+    "02B4": "Terreno Baldio (Noroeste)",
+    "02B6": "Vale Bullet",
+    "02B7": "Fábrica Dum Dum"
   }
 }
