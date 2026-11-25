@@ -71,8 +71,16 @@
     "imageName": "Saving at Swamp Inn Amaterasu",
     "theme": "previousMap"
   },
+  "0C17": {
+    "imageName": "Saving at Mirage Hall Amaterasu",
+    "theme": "previousMap"
+  },
   "0C18": {
     "imageName": "Saving at Pelche Oasis Amaterasu",
+    "theme": "previousMap"
+  },
+  "0C19": {
+    "imageName": "Saving at Mountain Inn Amaterasu",
     "theme": "previousMap"
   },
   "0C0B": {
@@ -3987,6 +3995,190 @@
         "176",
         "124"
       ]
+    }
+  },
+  "02B9": {
+    "imageName": "Duct Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02BA": {
+    "imageName": "Duct Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02B8": {
+    "imageName": "Duct Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02BB": {
+    "imageName": "Duct Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02BC": {
+    "imageName": "Operation Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02BD": {
+    "imageName": "Secret Stairs Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02BE": {
+    "imageName": "Sewers Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02BF": {
+    "imageName": "Secret Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 38
+    }
+  },
+  "02B5": {
+    "imageName": "North Badland E Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 34.5,
+      "y": 57
+    }
+  },
+  "02C0": {
+    "imageName": "Noise Desert S Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 21.5,
+      "y": 72
+    }
+  },
+  "02C1": {
+    "imageName": "Mobius Desert Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 21,
+      "y": 82
+    }
+  },
+  "02C2": {
+    "imageName": "Mobius Desert 2 Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 21,
+      "y": 82
+    }
+  },
+  "02C3": {
+    "imageName": "Mirage Tower Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 12.5,
+      "y": 84.5
+    }
+  },
+  "02C4": {
+    "imageName": "Mirage Hall Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 12,
+      "y": 84.5
+    }
+  },
+  "02C5": {
+    "imageName": "Mirage Room Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 12.5,
+      "y": 84.5
+    }
+  },
+  "02C9": {
+    "imageName": "Boot Mountain Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 41,
+      "y": 40
+    }
+  },
+  "02CA": {
+    "imageName": "Snow Mountain Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 47.5,
+      "y": 32
+    }
+  },
+  "02CB": {
+    "imageName": "Mountain Inn Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 55.5,
+      "y": 34.5
+    }
+  },
+  "02CC": {
+    "imageName": "Freeze Mountain Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 56,
+      "y": 27
+    }
+  },
+  "02D5": {
+    "imageName": "Battle Gate Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 56.5,
+      "y": 19.5
+    }
+  },
+  "02CD": {
+    "imageName": "Kulon Mine Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 35.5,
+      "y": 31
+    }
+  },
+  "02CE": {
+    "imageName": "Lake of Ice Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 29,
+      "y": 26
+    }
+  },
+  "02CF": {
+    "imageName": "Legendary Gym Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 18,
+      "y": 24
     }
   }
 }
