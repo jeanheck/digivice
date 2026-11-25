@@ -26,6 +26,7 @@
     "0C0B": "Saving at Forest Inn",
     "0C0C": "Saving at Qing Long Tower",
     "0C0D": "Saving at Zhu Que Inn",
+    "0C16": "Saving at Swamp Inn",
     "0A00": "In Training",
     "0D00": "Dr. Kadomatsu / Piximon",
     "0E03": "Cutscene",
@@ -187,6 +188,13 @@
     "02A9": "Ether Jungle",
     "02AF": "Jungle Shrine",
     "02B0": "Catacomb",
-    "02AA": "South Cape"
+    "02AA": "South Cape",
+    "02A7": "Jungle Grave",
+    "02A2": "Bulk Bridge",
+    "02A3": "Bios Swamp",
+    "02A4": "Tranquil Swamp",
+    "02A5": "Swamp Inn",
+    "02A1": "Bulk Swamp",
+    "02A0": "South Station"
   }
 }

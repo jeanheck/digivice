@@ -26,6 +26,7 @@
     "0C0B": "Guardando en la Posada Bosque",
     "0C0C": "Guardando en la Torre Qing Long",
     "0C0D": "Guardando en la Posada Zhu Que",
+    "0C16": "Guardando en la Posada del Pantano",
     "0A00": "Entrenando",
     "0D00": "Dr. Kadomatsu / Piximon",
     "0E03": "Escena",
@@ -187,6 +188,13 @@
     "02A9": "Jungla Éter",
     "02AF": "Santuario de la Jungla",
     "02B0": "Catacumba",
-    "02AA": "Cabo Sur"
+    "02AA": "Cabo Sur",
+    "02A7": "Selva Sepultura",
+    "02A2": "Puente Bulk",
+    "02A3": "Pantano Bios",
+    "02A4": "Pantano Tranquilo",
+    "02A5": "Posada del Pantano",
+    "02A1": "Pantano Yermo",
+    "02A0": "Estación Sur"
   }
 }

@@ -26,6 +26,7 @@
     "0C0B": "Salvando em Pousada Florestal",
     "0C0C": "Salvando em Torre Qing Long",
     "0C0D": "Salvando em Pousada Zhu Que",
+    "0C16": "Salvando em Pousada Pantanal",
     "0A00": "Em Treinamento",
     "0D00": "Dr. Kadomatsu / Piximon",
     "0E03": "Cutscene",
@@ -187,6 +188,13 @@
     "02A9": "Selva de Éter",
     "02AF": "Santuário da Selva",
     "02B0": "Catacumba",
-    "02AA": "Cabo Sul"
+    "02AA": "Cabo Sul",
+    "02A7": "Selva Sepultura",
+    "02A2": "Ponte do Pântano",
+    "02A3": "Pântano Bios",
+    "02A4": "Pântano Tranquilo",
+    "02A5": "Pousada Pantanal",
+    "02A1": "Pântano",
+    "02A0": "Estação Sul"
   }
 }

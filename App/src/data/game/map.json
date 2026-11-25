@@ -3725,7 +3725,7 @@
   },
   "02AA": {
     "imageName": "South Cape Amaterasu",
-    "theme": "asuka",
+    "theme": "amaterasu",
     "worldLocation": {
       "x": 43.5,
       "y": 75
@@ -3739,6 +3739,62 @@
         "143",
         "520"
       ]
+    }
+  },
+  "02A7": {
+    "imageName": "Jungle Grave Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 79,
+      "y": 85
+    }
+  },
+  "02A2": {
+    "imageName": "Bulk Bridge Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 79,
+      "y": 73
+    }
+  },
+  "02A3": {
+    "imageName": "Bios Swamp Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 85,
+      "y": 78.5
+    }
+  },
+  "02A4": {
+    "imageName": "Tranquil Swamp Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 74,
+      "y": 77.5
+    }
+  },
+  "02A5": {
+    "imageName": "Swamp Inn Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 68,
+      "y": 74
+    }
+  },
+  "02A1": {
+    "imageName": "Bulk Swamp Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 79,
+      "y": 73
+    }
+  },
+  "02A0": {
+    "imageName": "South Station Amaterasu",
+    "theme": "amaterasu",
+    "worldLocation": {
+      "x": 79,
+      "y": 65
     }
   }
 }
