@@ -1,4 +1,4 @@
 export interface TamerCharismaRequiredRaw {
-  min: number;
+  min?: number;
   max?: number;
 }

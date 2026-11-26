@@ -7,8 +7,8 @@ export interface WikiNpcPartyMemberViewModel {
 }
 
 export interface WikiNpcDigimonBattleViewModel {
-  exp: number;
-  dvexp: number;
+  exp: number | null;
+  dvexp: number | null;
   bits: number;
   partyMemberCount: number;
   members: WikiNpcPartyMemberViewModel[];

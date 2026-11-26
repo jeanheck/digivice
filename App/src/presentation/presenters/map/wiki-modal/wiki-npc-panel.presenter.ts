@@ -15,6 +15,10 @@ export class WikiNpcPanelPresenter {
   }
 
   public static formatCharismaRange(charismaRequired: TamerCharismaRequiredRaw): string {
+    if (charismaRequired.min === undefined) {
+      return "";
+    }
+
     if (charismaRequired.max !== undefined) {
       return `(${charismaRequired.min}~${charismaRequired.max})`;
     }
@@ -42,7 +46,7 @@ export class WikiNpcPanelPresenter {
       id: `${kind}-${battleId}`,
       kind,
       battleId,
-      charismaMin: charismaRequired.min,
+      charismaMin: charismaRequired.min ?? null,
       charismaRangeText: this.formatCharismaRange(charismaRequired),
       won,
       status: NpcService.getBattleStatus(won, false),
@@ -196,8 +200,10 @@ export class WikiNpcPanelPresenter {
     );
 
     return [...cardOptions, ...digimonOptions].sort((firstOption, secondOption) => {
-      if (firstOption.charismaMin !== secondOption.charismaMin) {
-        return firstOption.charismaMin - secondOption.charismaMin;
+      const firstCharismaMin = firstOption.charismaMin ?? Number.POSITIVE_INFINITY;
+      const secondCharismaMin = secondOption.charismaMin ?? Number.POSITIVE_INFINITY;
+      if (firstCharismaMin !== secondCharismaMin) {
+        return firstCharismaMin - secondCharismaMin;
       }
 
       if (firstOption.kind === secondOption.kind) {

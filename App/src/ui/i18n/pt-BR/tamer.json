@@ -83,6 +83,33 @@
     },
     "mitaka": {
       "name": "Mitaka"
+    },
+    "patrol1WestWireForestAmaterasu": {
+      "name": "1º Patrulheiro"
+    },
+    "patrol2WestWireForestAmaterasu": {
+      "name": "2º Patrulheiro"
+    },
+    "patrolWindPrairieAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolKickingForestAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolBulkSwampAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolBulkBridgeAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolTranquilSwampAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrol1ZhuQueCity": {
+      "name": "1º Patrulheiro"
+    },
+    "patrol2ZhuQueCity": {
+      "name": "2º Patrulheiro"
     }
   }
 }

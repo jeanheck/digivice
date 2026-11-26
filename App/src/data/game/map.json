@@ -2986,7 +2986,25 @@
     "worldLocation": {
       "x": 60.5,
       "y": 46
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrol1WestWireForestAmaterasu",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "patrol2WestWireForestAmaterasu",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "0291": {
     "imageName": "East Wire Forest Amaterasu",
@@ -3108,7 +3126,17 @@
         "517",
         "136"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolWindPrairieAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "029C": {
     "imageName": "Qing Long City",
@@ -3184,7 +3212,25 @@
       "x": 60.5,
       "y": 77
     },
-    "dock": true
+    "dock": true,
+    "tamers": [
+      {
+        "id": "patrol1ZhuQueCity",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "patrol2ZhuQueCity",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02AD": {
     "imageName": "Zhu Que Hall",
@@ -3646,7 +3692,17 @@
         "143",
         "518"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolKickingForestAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "029B": {
     "imageName": "East Station Amaterasu",
@@ -3805,7 +3861,17 @@
         "143",
         "520"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolBulkBridgeAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02A3": {
     "imageName": "Bios Swamp Amaterasu",
@@ -3849,7 +3915,17 @@
         "143",
         "520"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolTranquilSwampAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02A5": {
     "imageName": "Swamp Inn Amaterasu",
@@ -3875,7 +3951,17 @@
         "214",
         "519"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolBulkSwampAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02A0": {
     "imageName": "South Station Amaterasu",

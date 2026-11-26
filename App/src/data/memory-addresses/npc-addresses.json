@@ -282,5 +282,77 @@
         "bitMask": "0x20"
       }
     }
+  },
+  "patrol1WestWireForestAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39D",
+        "bitMask": "0x10"
+      }
+    }
+  },
+  "patrol2WestWireForestAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39D",
+        "bitMask": "0x20"
+      }
+    }
+  },
+  "patrolWindPrairieAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39D",
+        "bitMask": "0x40"
+      }
+    }
+  },
+  "patrolKickingForestAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39D",
+        "bitMask": "0x80"
+      }
+    }
+  },
+  "patrolBulkSwampAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x01"
+      }
+    }
+  },
+  "patrolBulkBridgeAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x02"
+      }
+    }
+  },
+  "patrolTranquilSwampAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x04"
+      }
+    }
+  },
+  "patrol1ZhuQueCity": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x08"
+      }
+    }
+  },
+  "patrol2ZhuQueCity": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x10"
+      }
+    }
   }
 }

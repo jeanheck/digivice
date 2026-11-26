@@ -27,7 +27,7 @@ export class NpcService {
     partyCharisma: number,
     charismaRequired: TamerCharismaRequiredRaw,
   ): boolean {
-    if (partyCharisma < charismaRequired.min) {
+    if (charismaRequired.min !== undefined && partyCharisma < charismaRequired.min) {
       return false;
     }
 

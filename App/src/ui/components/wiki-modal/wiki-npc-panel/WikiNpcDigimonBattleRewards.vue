@@ -4,7 +4,7 @@ import WikiPartyDvexp from "@/ui/components/wiki-modal/wiki-party-dvexp/WikiPart
 import type { PartyDvexpViewModel } from "@/presentation/viewmodels/dvexp/party-dvexp.viewmodel";
 
 const props = defineProps<{
-  exp: number;
+  exp: number | null;
   partyDvexps: PartyDvexpViewModel[];
   bits: number;
   memberCount: number;
@@ -49,7 +49,7 @@ const selectMember = (memberIndex: number) => {
         <span class="font-bold text-accent tracking-wider uppercase">
           {{ $t("enemy.baseExp") }}:
         </span>
-        <span class="font-bold text-ink">{{ exp }}</span>
+        <span class="font-bold text-ink">{{ exp ?? "-" }}</span>
       </div>
 
       <div class="flex items-center gap-2">

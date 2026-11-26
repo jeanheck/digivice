@@ -11,7 +11,11 @@ import type { PartyDvexpViewModel } from "@/presentation/viewmodels/dvexp/party-
 import type { WikiNpcDigimonBattleViewModel } from "@/presentation/viewmodels/wiki-modal/wiki-npc-digimon-battle.viewmodel";
 
 export class WikiNpcDigimonBattlePresenter {
-  public static getPartyDvexp(party: Party, battleBaseDvexp: number): PartyDvexpViewModel[] {
+  public static getPartyDvexp(party: Party, battleBaseDvexp: number | null): PartyDvexpViewModel[] {
+    if (battleBaseDvexp === null) {
+      return [];
+    }
+
     return DvexpService.getPartyBattleGains(party, battleBaseDvexp).map((gain) => {
       return PartyDvexpConverter.convert(gain, DigimonRepository.getNameById(gain.digimonId));
     });

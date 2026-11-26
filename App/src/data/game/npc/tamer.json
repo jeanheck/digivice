@@ -1190,5 +1190,227 @@
       }
     },
     "imageName": "Man 4"
+  },
+  "patrol1WestWireForestAmaterasu": {
+    "locationId": "0290",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 203,
+            "groupId": 225
+          },
+          {
+            "enemyId": 136,
+            "groupId": 225
+          },
+          {
+            "enemyId": 8,
+            "groupId": 225
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1220
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol2WestWireForestAmaterasu": {
+    "locationId": "0290",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 166,
+            "groupId": 226
+          },
+          {
+            "enemyId": 397,
+            "groupId": 226
+          },
+          {
+            "enemyId": 39,
+            "groupId": 226
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1145
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolWindPrairieAmaterasu": {
+    "locationId": "0298",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 210,
+            "groupId": 227
+          },
+          {
+            "enemyId": 14,
+            "groupId": 227
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 725
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolKickingForestAmaterasu": {
+    "locationId": "0299",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 35,
+            "groupId": 228
+          },
+          {
+            "enemyId": 241,
+            "groupId": 228
+          },
+          {
+            "enemyId": 165,
+            "groupId": 228
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 990
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolBulkSwampAmaterasu": {
+    "locationId": "02A1",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 37,
+            "groupId": 229
+          },
+          {
+            "enemyId": 223,
+            "groupId": 229
+          },
+          {
+            "enemyId": 364,
+            "groupId": 229
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1110
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolBulkBridgeAmaterasu": {
+    "locationId": "02A2",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 122,
+            "groupId": 230
+          },
+          {
+            "enemyId": 143,
+            "groupId": 230
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 715
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolTranquilSwampAmaterasu": {
+    "locationId": "02A4",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 61,
+            "groupId": 231
+          },
+          {
+            "enemyId": 408,
+            "groupId": 231
+          },
+          {
+            "enemyId": 121,
+            "groupId": 231
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1050
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol1ZhuQueCity": {
+    "locationId": "02AB",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 220,
+            "groupId": 232
+          },
+          {
+            "enemyId": 221,
+            "groupId": 232
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 680
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol2ZhuQueCity": {
+    "locationId": "02AB",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {},
+        "party": [
+          {
+            "enemyId": 126,
+            "groupId": 233
+          },
+          {
+            "enemyId": 8,
+            "groupId": 233
+          },
+          {
+            "enemyId": 140,
+            "groupId": 233
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1110
+      }
+    },
+    "imageName": "Trooper"
   }
 }

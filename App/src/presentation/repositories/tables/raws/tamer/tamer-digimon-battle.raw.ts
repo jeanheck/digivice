@@ -5,8 +5,8 @@ import type { TamerTrophyRequiredRaw } from "./tamer-trophy-required.raw";
 export interface TamerDigimonBattleRaw {
   charismaRequired: TamerCharismaRequiredRaw;
   party: TamerDigimonBattlePartyMemberRaw[];
-  exp: number;
-  dvexp: number;
+  exp: number | null;
+  dvexp: number | null;
   bit: number;
   trophyRequired?: TamerTrophyRequiredRaw;
 }

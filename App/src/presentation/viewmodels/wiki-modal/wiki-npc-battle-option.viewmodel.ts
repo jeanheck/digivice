@@ -6,7 +6,7 @@ export interface WikiNpcBattleOptionViewModel {
   id: string;
   kind: NpcBattleKind;
   battleId: string;
-  charismaMin: number;
+  charismaMin: number | null;
   charismaRangeText: string;
   won: boolean;
   status: NpcBattleStatus;
