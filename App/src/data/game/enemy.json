@@ -5670,7 +5670,7 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 327,
-    "groupId": null,
+    "groupId": 118,
     "drops": [
       {
         "dropId": 341,
@@ -6243,7 +6243,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 215,
-    "groupId": null,
+    "groupId": 129,
     "locations": [
       {
         "id": "02D2",
@@ -6945,7 +6945,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
     "memoryId": 312,
-    "groupId": null,
+    "groupId": 142,
     "drops": [
       {
         "dropId": 359,
@@ -9328,7 +9328,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 429,
-    "groupId": null,
+    "groupId": 181,
     "drops": [
       {
         "dropId": 328,
