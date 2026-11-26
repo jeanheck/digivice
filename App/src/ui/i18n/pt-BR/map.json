@@ -17,8 +17,10 @@
     "0C02": "Salvando em Torre Seiryu",
     "0C03": "Salvando em Pousada Pantanal",
     "0C04": "Salvando em Pousada Suzaku",
+    "0C07": "Salvando em Armas Kulon",
     "0C08": "Salvando em Câmara",
     "0C09": "Salvando na Cidade Genbu",
+    "0C10": "Salvando em Armas Kulon",
     "0C12": "Salvando em Pousada Florestal",
     "0C13": "Salvando em Salão Miragem",
     "0C14": "Salvando em Pelche Oásis",
@@ -229,6 +231,11 @@
     "02D5": "Portão de Batalha",
     "02CD": "Mina Kulon",
     "02CE": "Lago de Gelo",
-    "02CF": "Ginásio Lendário"
+    "02CF": "Ginásio Lendário",
+    "02D0": "Abismo Kulon",
+    "02D1": "Armas Kulon",
+    "02D2": "Masmorra de Gelo",
+    "02D3": "Masmorra de Fogo",
+    "02D4": "Masmorra das Trevas"
   }
 }

@@ -17,8 +17,10 @@
     "0C02": "Saving at Seiryu Tower",
     "0C03": "Saving at Swamp Inn",
     "0C04": "Saving at Suzaku Inn",
+    "0C07": "Saving at Kulon Armory",
     "0C08": "Saving at Emergency Room",
     "0C09": "Saving at Genbu City",
+    "0C10": "Saving at Kulon Armory",
     "0C12": "Saving at Forest Inn",
     "0C13": "Saving at Mirage Hall",
     "0C14": "Saving at Pelche Oasis",
@@ -229,6 +231,11 @@
     "02D5": "Battle Gate",
     "02CD": "Kulon Mine",
     "02CE": "Lake of Ice",
-    "02CF": "Legendary Gym"
+    "02CF": "Legendary Gym",
+    "02D0": "Kulon Pit",
+    "02D1": "Kulon Armory",
+    "02D2": "Ice Dungeon",
+    "02D3": "Fire Dungeon",
+    "02D4": "Dark Dungeon"
   }
 }

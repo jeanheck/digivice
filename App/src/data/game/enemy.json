@@ -5676,6 +5676,14 @@
         "dropId": 341,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "02D3",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "156": {
@@ -6235,7 +6243,15 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 215,
-    "groupId": null
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02D2",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "167": {
     "name": "Valkyriemon",
@@ -6636,6 +6652,12 @@
         "sources": [
           "walking"
         ]
+      },
+      {
+        "id": "02D3",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -6689,6 +6711,12 @@
     "locations": [
       {
         "id": "02CD",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02D0",
         "sources": [
           "walking"
         ]
@@ -6922,6 +6950,14 @@
       {
         "dropId": 359,
         "type": "equipment"
+      }
+    ],
+    "locations": [
+      {
+        "id": "02D4",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -8237,6 +8273,12 @@
         "sources": [
           "walking"
         ]
+      },
+      {
+        "id": "02D0",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -9292,6 +9334,14 @@
         "dropId": 328,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "02D4",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "219": {
@@ -9386,6 +9436,12 @@
     "locations": [
       {
         "id": "02C9",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02D3",
         "sources": [
           "walking"
         ]
@@ -9604,6 +9660,12 @@
         "id": "02CE",
         "sources": [
           "kickingTree"
+        ]
+      },
+      {
+        "id": "02D2",
+        "sources": [
+          "walking"
         ]
       }
     ]
