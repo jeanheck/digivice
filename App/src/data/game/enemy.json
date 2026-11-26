@@ -2955,7 +2955,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 273,
-    "groupId": null,
+    "groupId": 72,
     "locations": [
       {
         "id": "02B2",
@@ -3692,7 +3692,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 227,
-    "groupId": null,
+    "groupId": 83,
     "drops": [
       {
         "dropId": 332,
@@ -3748,7 +3748,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 171,
-    "groupId": null,
+    "groupId": 84,
     "locations": [
       {
         "id": "02BE",
@@ -5537,7 +5537,7 @@
     "regularAttackId": "machineElementCounterPhysical",
     "techniqueId": "none",
     "memoryId": 41,
-    "groupId": null,
+    "groupId": 116,
     "locations": [
       {
         "id": "02B8",
@@ -6629,7 +6629,7 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 272,
-    "groupId": null,
+    "groupId": 136,
     "locations": [
       {
         "id": "02C9",
@@ -6679,7 +6679,7 @@
     "regularAttackId": "thunderElementCounterPhysical",
     "techniqueId": "none",
     "memoryId": 190,
-    "groupId": null,
+    "groupId": 137,
     "drops": [
       {
         "dropId": 338,
@@ -8044,7 +8044,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 409,
-    "groupId": null,
+    "groupId": 160,
     "locations": [
       {
         "id": "02CA",
@@ -8162,7 +8162,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 410,
-    "groupId": null,
+    "groupId": 162,
     "drops": [
       {
         "dropId": 428,
@@ -8224,7 +8224,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 411,
-    "groupId": null,
+    "groupId": 163,
     "drops": [
       {
         "dropId": 353,
@@ -9334,7 +9334,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 430,
-    "groupId": null
+    "groupId": 182
   },
   "220": {
     "name": "BlueMeramon",
@@ -9376,7 +9376,7 @@
     "regularAttackId": "fireElement",
     "techniqueId": "flameSphere",
     "memoryId": 104,
-    "groupId": null,
+    "groupId": 183,
     "drops": [
       {
         "dropId": 324,
@@ -9432,7 +9432,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 431,
-    "groupId": null,
+    "groupId": 184,
     "locations": [
       {
         "id": "02CA",
@@ -9530,7 +9530,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 433,
-    "groupId": null,
+    "groupId": 186,
     "drops": [
       {
         "dropId": 420,
@@ -9586,7 +9586,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 434,
-    "groupId": null,
+    "groupId": 187,
     "drops": [
       {
         "dropId": 347,
@@ -10270,7 +10270,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 445,
-    "groupId": null,
+    "groupId": 23,
     "locations": [
       {
         "id": "02BC",
@@ -10321,7 +10321,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 446,
-    "groupId": null,
+    "groupId": 24,
     "locations": [
       {
         "id": "02BE",
