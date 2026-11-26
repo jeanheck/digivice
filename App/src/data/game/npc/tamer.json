@@ -1195,7 +1195,9 @@
     "locationId": "0290",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 203,
@@ -1221,7 +1223,9 @@
     "locationId": "0290",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 166,
@@ -1247,7 +1251,9 @@
     "locationId": "0298",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 210,
@@ -1269,7 +1275,9 @@
     "locationId": "0299",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 35,
@@ -1295,7 +1303,9 @@
     "locationId": "02A1",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 37,
@@ -1321,7 +1331,9 @@
     "locationId": "02A2",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 122,
@@ -1343,7 +1355,9 @@
     "locationId": "02A4",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 61,
@@ -1369,7 +1383,9 @@
     "locationId": "02AB",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 220,
@@ -1391,7 +1407,9 @@
     "locationId": "02AB",
     "digimonBattles": {
       "first": {
-        "charismaRequired": {},
+        "charismaRequired": {
+          "min": 990
+        },
         "party": [
           {
             "enemyId": 126,
