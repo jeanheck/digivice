@@ -354,5 +354,133 @@
         "bitMask": "0x10"
       }
     }
+  },
+  "patrolSouthBadlandAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x20"
+      }
+    }
+  },
+  "patrolNoiseDesertAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x40"
+      }
+    }
+  },
+  "patrolNorthBadlandWAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39E",
+        "bitMask": "0x80"
+      }
+    }
+  },
+  "patrolNorthBadlandEAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x01"
+      }
+    }
+  },
+  "patrolNoiseDesertSAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x02"
+      }
+    }
+  },
+  "takuya": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x08"
+      }
+    }
+  },
+  "murdock": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x10"
+      }
+    }
+  },
+  "banch": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x20"
+      }
+    }
+  },
+  "patrol1BootMountainAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x40"
+      }
+    }
+  },
+  "patrol2BootMountainAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B39F",
+        "bitMask": "0x80"
+      }
+    }
+  },
+  "patrol2SnowMountainAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B3A0",
+        "bitMask": "0x01"
+      }
+    }
+  },
+  "patrol1SnowMountainAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B3A0",
+        "bitMask": "0x02"
+      }
+    }
+  },
+  "patrol1FreezeMountainAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B3A0",
+        "bitMask": "0x04"
+      }
+    }
+  },
+  "patrol2FreezeMountainAmaterasu": {
+    "battles": {
+      "first": {
+        "address": "0x0004B3A0",
+        "bitMask": "0x08"
+      }
+    }
+  },
+  "mai": {
+    "battles": {
+      "first": {
+        "address": "0x0004B3A0",
+        "bitMask": "0x10"
+      }
+    }
+  },
+  "gon": {
+    "battles": {
+      "first": {
+        "address": "0x0004B3A0",
+        "bitMask": "0x20"
+      }
+    }
   }
 }

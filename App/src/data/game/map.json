@@ -3987,7 +3987,17 @@
         "217",
         "522"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolSouthBadlandAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02A6": {
     "imageName": "Shaman House Amaterasu",
@@ -4018,7 +4028,17 @@
         "109",
         "209"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolNoiseDesertAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02B3": {
     "imageName": "Pelche Oasis Amaterasu",
@@ -4055,7 +4075,17 @@
         "212",
         "521"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolNorthBadlandWAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02B6": {
     "imageName": "Bullet Valley Amaterasu",
@@ -4229,7 +4259,17 @@
         "217",
         "522"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolNorthBadlandEAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02C0": {
     "imageName": "Noise Desert S Amaterasu",
@@ -4242,7 +4282,17 @@
       "walking": [
         "109"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrolNoiseDesertSAmaterasu",
+        "coordinates": {
+          "x": 40,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02C1": {
     "imageName": "Mobius Desert Amaterasu",
@@ -4293,7 +4343,33 @@
     "worldLocation": {
       "x": 12,
       "y": 84.5
-    }
+    },
+    "tamers": [
+      {
+        "id": "murdock",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "takuya",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "banch",
+        "coordinates": {
+          "x": 70,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02C5": {
     "imageName": "Mirage Room Amaterasu",
@@ -4319,7 +4395,25 @@
         "212",
         "521"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrol1BootMountainAmaterasu",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "patrol2BootMountainAmaterasu",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02CA": {
     "imageName": "Snow Mountain Amaterasu",
@@ -4337,7 +4431,25 @@
         "224",
         "521"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrol1SnowMountainAmaterasu",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "patrol2SnowMountainAmaterasu",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02CB": {
     "imageName": "Mountain Inn Amaterasu",
@@ -4359,7 +4471,25 @@
         "197",
         "221"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "patrol1FreezeMountainAmaterasu",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "patrol2FreezeMountainAmaterasu",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02D5": {
     "imageName": "Battle Gate Amaterasu",
@@ -4414,7 +4544,25 @@
     "worldLocation": {
       "x": 18,
       "y": 24
-    }
+    },
+    "tamers": [
+      {
+        "id": "mai",
+        "coordinates": {
+          "x": 30,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      },
+      {
+        "id": "gon",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
+      }
+    ]
   },
   "02D0": {
     "imageName": "Kulon Pit Amaterasu",

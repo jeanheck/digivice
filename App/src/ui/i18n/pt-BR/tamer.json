@@ -110,6 +110,54 @@
     },
     "patrol2ZhuQueCity": {
       "name": "2º Patrulheiro"
+    },
+    "patrolSouthBadlandAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolNoiseDesertAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolNorthBadlandWAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolNorthBadlandEAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "patrolNoiseDesertSAmaterasu": {
+      "name": "Patrulheiro"
+    },
+    "murdock": {
+      "name": "Murdock"
+    },
+    "takuya": {
+      "name": "Takuya"
+    },
+    "banch": {
+      "name": "Banch"
+    },
+    "patrol1BootMountainAmaterasu": {
+      "name": "1º Patrulheiro"
+    },
+    "patrol2BootMountainAmaterasu": {
+      "name": "2º Patrulheiro"
+    },
+    "patrol1SnowMountainAmaterasu": {
+      "name": "1º Patrulheiro"
+    },
+    "patrol2SnowMountainAmaterasu": {
+      "name": "2º Patrulheiro"
+    },
+    "patrol1FreezeMountainAmaterasu": {
+      "name": "1º Patrulheiro"
+    },
+    "patrol2FreezeMountainAmaterasu": {
+      "name": "2º Patrulheiro"
+    },
+    "mai": {
+      "name": "Mai"
+    },
+    "gon": {
+      "name": "Gon"
     }
   }
 }

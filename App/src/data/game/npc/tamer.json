@@ -1430,5 +1430,437 @@
       }
     },
     "imageName": "Trooper"
+  },
+  "patrolSouthBadlandAmaterasu": {
+    "locationId": "02B1",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 170,
+            "groupId": 234
+          },
+          {
+            "enemyId": 223,
+            "groupId": 234
+          },
+          {
+            "enemyId": 404,
+            "groupId": 234
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1330
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolNoiseDesertAmaterasu": {
+    "locationId": "02B2",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 4,
+            "groupId": 235
+          },
+          {
+            "enemyId": 198,
+            "groupId": 235
+          },
+          {
+            "enemyId": 424,
+            "groupId": 235
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1510
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolNorthBadlandWAmaterasu": {
+    "locationId": "02B4",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 210,
+            "groupId": 236
+          },
+          {
+            "enemyId": 14,
+            "groupId": 236
+          },
+          {
+            "enemyId": 269,
+            "groupId": 236
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1375
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolNorthBadlandEAmaterasu": {
+    "locationId": "02B5",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 397,
+            "groupId": 237
+          },
+          {
+            "enemyId": 171,
+            "groupId": 237
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 545
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrolNoiseDesertSAmaterasu": {
+    "locationId": "02C0",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 126,
+            "groupId": 238
+          },
+          {
+            "enemyId": 138,
+            "groupId": 238
+          },
+          {
+            "enemyId": 212,
+            "groupId": 238
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1320
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "murdock": {
+    "locationId": "02C4",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 224,
+            "groupId": 241
+          },
+          {
+            "enemyId": 225,
+            "groupId": 241
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 910
+      }
+    },
+    "imageName": "Man 2"
+  },
+  "takuya": {
+    "locationId": "02C4",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 395,
+            "groupId": 240
+          },
+          {
+            "enemyId": 226,
+            "groupId": 240
+          },
+          {
+            "enemyId": 60,
+            "groupId": 240
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1485
+      }
+    },
+    "imageName": "Man 3"
+  },
+  "banch": {
+    "locationId": "02C4",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "party": [
+          {
+            "enemyId": 419,
+            "groupId": 242
+          },
+          {
+            "enemyId": 54,
+            "groupId": 242
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 900
+      }
+    },
+    "imageName": "Man 4"
+  },
+  "patrol1BootMountainAmaterasu": {
+    "locationId": "02C9",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 176,
+            "groupId": 243
+          },
+          {
+            "enemyId": 229,
+            "groupId": 243
+          },
+          {
+            "enemyId": 41,
+            "groupId": 243
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1625
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol2BootMountainAmaterasu": {
+    "locationId": "02C9",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 203,
+            "groupId": 244
+          },
+          {
+            "enemyId": 8,
+            "groupId": 244
+          },
+          {
+            "enemyId": 409,
+            "groupId": 244
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1565
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol1SnowMountainAmaterasu": {
+    "locationId": "02CA",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 197,
+            "groupId": 246
+          },
+          {
+            "enemyId": 132,
+            "groupId": 246
+          },
+          {
+            "enemyId": 110,
+            "groupId": 246
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1600
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol2SnowMountainAmaterasu": {
+    "locationId": "02CA",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 206,
+            "groupId": 245
+          },
+          {
+            "enemyId": 365,
+            "groupId": 245
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1570
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol1FreezeMountainAmaterasu": {
+    "locationId": "02CC",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 224,
+            "groupId": 247
+          },
+          {
+            "enemyId": 225,
+            "groupId": 247
+          },
+          {
+            "enemyId": 281,
+            "groupId": 247
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1570
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "patrol2FreezeMountainAmaterasu": {
+    "locationId": "02CC",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 226,
+            "groupId": 248
+          },
+          {
+            "enemyId": 60,
+            "groupId": 248
+          },
+          {
+            "enemyId": 423,
+            "groupId": 248
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1740
+      }
+    },
+    "imageName": "Trooper"
+  },
+  "mai": {
+    "locationId": "02CF",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 122,
+            "groupId": 249
+          },
+          {
+            "enemyId": 143,
+            "groupId": 249
+          },
+          {
+            "enemyId": 250,
+            "groupId": 249
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1680
+      }
+    },
+    "imageName": "Woman 1"
+  },
+  "gon": {
+    "locationId": "02CF",
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1482
+        },
+        "party": [
+          {
+            "enemyId": 405,
+            "groupId": 250
+          },
+          {
+            "enemyId": 425,
+            "groupId": 250
+          },
+          {
+            "enemyId": 428,
+            "groupId": 250
+          }
+        ],
+        "exp": null,
+        "dvexp": null,
+        "bit": 1920
+      }
+    },
+    "imageName": "Man 5"
   }
 }
