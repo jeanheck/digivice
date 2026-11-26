@@ -4003,6 +4003,11 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "153"
+      ]
     }
   },
   "02BA": {
@@ -4011,6 +4016,11 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "153"
+      ]
     }
   },
   "02B8": {
@@ -4019,6 +4029,11 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "153"
+      ]
     }
   },
   "02BB": {
@@ -4027,6 +4042,11 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "153"
+      ]
     }
   },
   "02BC": {
@@ -4035,6 +4055,22 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "153",
+        "201"
+      ],
+      "boss": [
+        {
+          "id": "414",
+          "coordinates": {
+            "x": 72,
+            "y": 23
+          },
+          "labelPlacement": "below"
+        }
+      ]
     }
   },
   "02BD": {
@@ -4043,6 +4079,12 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "153",
+        "201"
+      ]
     }
   },
   "02BE": {
@@ -4051,6 +4093,22 @@
     "worldLocation": {
       "x": 18,
       "y": 38
+    },
+    "enemies": {
+      "walking": [
+        "121",
+        "120"
+      ],
+      "boss": [
+        {
+          "id": "415",
+          "coordinates": {
+            "x": 54,
+            "y": 60
+          },
+          "labelPlacement": "below"
+        }
+      ]
     }
   },
   "02BF": {
@@ -4067,6 +4125,16 @@
     "worldLocation": {
       "x": 34.5,
       "y": 57
+    },
+    "enemies": {
+      "walking": [
+        "170",
+        "169"
+      ],
+      "fishing": [
+        "217",
+        "522"
+      ]
     }
   },
   "02C0": {
@@ -4075,6 +4143,11 @@
     "worldLocation": {
       "x": 21.5,
       "y": 72
+    },
+    "enemies": {
+      "walking": [
+        "109"
+      ]
     }
   },
   "02C1": {
@@ -4083,7 +4156,14 @@
     "worldLocation": {
       "x": 21,
       "y": 82
-    }
+    },
+    "enemies": {
+      "walking": [
+        "199",
+        "109"
+      ]
+    },
+    "region": "mobiusDesert"
   },
   "02C2": {
     "imageName": "Mobius Desert 2 Amaterasu",
@@ -4091,7 +4171,14 @@
     "worldLocation": {
       "x": 21,
       "y": 82
-    }
+    },
+    "enemies": {
+      "walking": [
+        "199",
+        "109"
+      ]
+    },
+    "region": "mobiusDesert"
   },
   "02C3": {
     "imageName": "Mirage Tower Amaterasu",
@@ -4099,6 +4186,11 @@
     "worldLocation": {
       "x": 12.5,
       "y": 84.5
+    },
+    "enemies": {
+      "walking": [
+        "109"
+      ]
     }
   },
   "02C4": {
@@ -4123,6 +4215,16 @@
     "worldLocation": {
       "x": 41,
       "y": 40
+    },
+    "enemies": {
+      "walking": [
+        "173",
+        "220"
+      ],
+      "kickingTree": [
+        "212",
+        "521"
+      ]
     }
   },
   "02CA": {
@@ -4131,6 +4233,16 @@
     "worldLocation": {
       "x": 47.5,
       "y": 32
+    },
+    "enemies": {
+      "walking": [
+        "197",
+        "221"
+      ],
+      "kickingTree": [
+        "224",
+        "521"
+      ]
     }
   },
   "02CB": {
@@ -4147,6 +4259,12 @@
     "worldLocation": {
       "x": 56,
       "y": 27
+    },
+    "enemies": {
+      "walking": [
+        "197",
+        "221"
+      ]
     }
   },
   "02D5": {
@@ -4163,6 +4281,16 @@
     "worldLocation": {
       "x": 35.5,
       "y": 31
+    },
+    "enemies": {
+      "walking": [
+        "174",
+        "200"
+      ],
+      "kickingTree": [
+        "212",
+        "521"
+      ]
     }
   },
   "02CE": {
@@ -4171,6 +4299,19 @@
     "worldLocation": {
       "x": 29,
       "y": 26
+    },
+    "enemies": {
+      "walking": [
+        "197"
+      ],
+      "kickingTree": [
+        "224",
+        "521"
+      ],
+      "fishing": [
+        "223",
+        "522"
+      ]
     }
   },
   "02CF": {

@@ -2962,6 +2962,30 @@
         "sources": [
           "walking"
         ]
+      },
+      {
+        "id": "02C0",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02C1",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02C2",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02C3",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -3674,6 +3698,14 @@
         "dropId": 332,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "02BE",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "121": {
@@ -3716,7 +3748,15 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 171,
-    "groupId": null
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02BE",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "122": {
     "name": "Raremon",
@@ -5497,7 +5537,45 @@
     "regularAttackId": "machineElementCounterPhysical",
     "techniqueId": "none",
     "memoryId": 41,
-    "groupId": null
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02B8",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02B9",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02BA",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02BB",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02BC",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02BD",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "154": {
     "name": "Vikemon",
@@ -6336,6 +6414,12 @@
         "sources": [
           "walking"
         ]
+      },
+      {
+        "id": "02B5",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -6389,6 +6473,12 @@
     "locations": [
       {
         "id": "02B1",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02B5",
         "sources": [
           "walking"
         ]
@@ -6539,7 +6629,15 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 272,
-    "groupId": null
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02C9",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "174": {
     "name": "Boltmon",
@@ -6586,6 +6684,14 @@
       {
         "dropId": 338,
         "type": "equipment"
+      }
+    ],
+    "locations": [
+      {
+        "id": "02CD",
+        "sources": [
+          "walking"
+        ]
       }
     ]
   },
@@ -7938,7 +8044,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 409,
-    "groupId": null
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02CA",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02CC",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02CE",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "198": {
     "name": "Fugamon",
@@ -8042,6 +8168,20 @@
         "dropId": 428,
         "type": "consumableItem"
       }
+    ],
+    "locations": [
+      {
+        "id": "02C1",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02C2",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "200": {
@@ -8090,6 +8230,14 @@
         "dropId": 353,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "02CD",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "201": {
@@ -8136,6 +8284,18 @@
     "locations": [
       {
         "id": "02B7",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02BC",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02BD",
         "sources": [
           "walking"
         ]
@@ -8715,6 +8875,18 @@
         "sources": [
           "kickingTree"
         ]
+      },
+      {
+        "id": "02C9",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "02CD",
+        "sources": [
+          "kickingTree"
+        ]
       }
     ]
   },
@@ -9065,6 +9237,12 @@
         "sources": [
           "fishing"
         ]
+      },
+      {
+        "id": "02B5",
+        "sources": [
+          "fishing"
+        ]
       }
     ]
   },
@@ -9204,6 +9382,14 @@
         "dropId": 324,
         "type": "equipment"
       }
+    ],
+    "locations": [
+      {
+        "id": "02C9",
+        "sources": [
+          "walking"
+        ]
+      }
     ]
   },
   "221": {
@@ -9246,7 +9432,21 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 431,
-    "groupId": null
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02CA",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "02CC",
+        "sources": [
+          "walking"
+        ]
+      }
+    ]
   },
   "222": {
     "name": "MetalSeadramon(Black)",
@@ -9336,6 +9536,14 @@
         "dropId": 420,
         "type": "consumableItem"
       }
+    ],
+    "locations": [
+      {
+        "id": "02CE",
+        "sources": [
+          "fishing"
+        ]
+      }
     ]
   },
   "224": {
@@ -9383,6 +9591,20 @@
       {
         "dropId": 347,
         "type": "equipment"
+      }
+    ],
+    "locations": [
+      {
+        "id": "02CA",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "02CE",
+        "sources": [
+          "kickingTree"
+        ]
       }
     ]
   },
@@ -10001,6 +10223,108 @@
     "locations": [
       {
         "id": "02B0",
+        "sources": [
+          "boss"
+        ]
+      }
+    ]
+  },
+  "414": {
+    "name": "BK WarGrowlmon",
+    "level": 55,
+    "hp": 2880,
+    "species": "machine",
+    "rate": 0,
+    "strength": 750,
+    "defense": 510,
+    "spirit": 493,
+    "wisdom": 600,
+    "speed": 600,
+    "fire": 117,
+    "water": 60,
+    "ice": 430,
+    "wind": 430,
+    "thunder": 60,
+    "machine": 430,
+    "dark": 430,
+    "canPoison": true,
+    "poison": 50,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": false,
+    "confuse": 0,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": false,
+    "dvexp": 55,
+    "exp": 550,
+    "bits": 1100,
+    "boss": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 445,
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02BC",
+        "sources": [
+          "boss"
+        ]
+      }
+    ]
+  },
+  "415": {
+    "name": "BK KingNumemon",
+    "level": 57,
+    "hp": 2976,
+    "species": "rare",
+    "rate": 0,
+    "strength": 620,
+    "defense": 775,
+    "spirit": 510,
+    "wisdom": 527,
+    "speed": 496,
+    "fire": 118,
+    "water": 440,
+    "ice": 118,
+    "wind": 118,
+    "thunder": 118,
+    "machine": 118,
+    "dark": 440,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": false,
+    "dvexp": 57,
+    "exp": 570,
+    "bits": 1140,
+    "boss": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 446,
+    "groupId": null,
+    "locations": [
+      {
+        "id": "02BE",
         "sources": [
           "boss"
         ]
@@ -10819,6 +11143,30 @@
         "sources": [
           "kickingTree"
         ]
+      },
+      {
+        "id": "02C9",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "02CA",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "02CD",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "02CE",
+        "sources": [
+          "kickingTree"
+        ]
       }
     ],
     "drops": [
@@ -10875,6 +11223,11 @@
         "dropId": 513,
         "type": "booster",
         "locationOnly": "0007"
+      },
+      {
+        "dropId": 515,
+        "type": "booster",
+        "locationOnly": "02CE"
       }
     ],
     "locations": [
@@ -10886,6 +11239,18 @@
       },
       {
         "id": "02B3",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "02B5",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "02CE",
         "sources": [
           "fishing"
         ]
